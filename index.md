@@ -13,7 +13,12 @@ You, members of our organization, will break into teams (undergrads in teams of 
 Your team will create its own consultant firm (with a name, slogan, logo, etc.) and have a web presence (e.g., using GitHub Pages) to communicate your tasks and accomplishments to your organization's management and the clients.
 The consultation firms have provided the following websites.
 
-*TBA*
+- [Dukes of Hazards](https://giraffename.github.io/)
+- [HAM Landslide Analysis](https://hamlandslideanalysis.weebly.com/)
+- [Landslide Policies](https://edgeworth-consulting.github.io/Landslide-Policies/)
+- [Mola Mola consulting](https://molamolaconsulting.github.io/Landslide_Research_Project/)
+- [Tunis Disaster Analysis](https://tunisda.weebly.com/)
+
 
 ## References
 
