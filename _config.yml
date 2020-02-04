@@ -2,6 +2,6 @@ title: Advanced GIS Analysis and Programming
 author: Tyler W. Davis
 description: Taking GIS to the next level
 theme: jekyll-theme-slate
-show_downloads: True
+show_downloads: False
 google_analytics: ""
 markdown: kramdown
