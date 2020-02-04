@@ -16,7 +16,7 @@ The consultation firms have provided the following websites.
 - [Dukes of Hazards](https://giraffename.github.io/)
 - [HAM Landslide Analysis](https://hamlandslideanalysis.weebly.com/)
 - [Landslide Policies](https://edgeworth-consulting.github.io/Landslide-Policies/)
-- [Mola Mola consulting](https://molamolaconsulting.github.io/Landslide_Research_Project/)
+- [Mola Mola consulting](https://molamolaconsulting.github.io/)
 - [Tunis Disaster Analysis](https://tunisda.weebly.com/)
 
 
