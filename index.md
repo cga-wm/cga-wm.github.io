@@ -1,6 +1,5 @@
 ---
 title: "Advanced GIS Analysis and Programming"
-layout: default
 ---
 
 # Advanced GIS Analysis and Programming
