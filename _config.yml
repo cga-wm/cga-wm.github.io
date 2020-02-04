@@ -3,5 +3,5 @@ author: Tyler W. Davis
 description: Taking GIS to the next level
 theme: jekyll-theme-slate
 show_downloads: False
-google_analytics: ""
+google_analytics: False
 markdown: kramdown
