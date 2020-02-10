@@ -3,12 +3,12 @@
 
 @import "jekyll-theme-slate";
 
-.main-nav > a {
+.main-nav a {
     color: #FFF;
     font-weight: bold;
     text-decoration: none;
 }
-.main-nav > a:hover {
+.main-nav a:hover {
     color: #00FFFF;
 }
 a.active {
