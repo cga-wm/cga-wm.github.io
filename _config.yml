@@ -5,3 +5,5 @@ theme: jekyll-theme-slate
 show_downloads: False
 google_analytics: False
 markdown: kramdown
+plugins:
+    - jekyll-menus
