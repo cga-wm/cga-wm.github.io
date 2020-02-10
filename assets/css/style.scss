@@ -5,14 +5,14 @@
 
 .main-nav a {
     color: #FFF;
-    font-weight: bold;
     text-decoration: none;
 }
 .main-nav a:hover {
     color: #00FFFF;
+    font-weight: normal;
 }
 a.active {
-    color: #00FFFF;
+    font-weight: bold;
 }
 .main-nav{
     background:#373737;
