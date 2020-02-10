@@ -72,5 +72,8 @@ where:
 
 Skill Building Challenge: Highest US landslide density challenge
 
-* downloading landslide point data (website)
-* give as an assignment to see what methods students come up with
+> Based on US landslide inventory, where is there the greatest density of landslide occurrence in square kilometers?
+>
+
+* find and download landslide point data
+* in teams, come up with a method to solve the challenge
