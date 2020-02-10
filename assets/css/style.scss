@@ -3,6 +3,17 @@
 
 @import "jekyll-theme-slate";
 
+.main-nav > a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+.main-nav > a:hover {
+    color: #00FFFF;
+}
+a.active {
+    color: #00FFFF;
+}
 .main-nav{
     background:#373737;
     background:-moz-linear-gradient(top, #212121, #373737);
