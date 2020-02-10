@@ -21,7 +21,9 @@ The consultation firms have provided the following websites.
 - [HAM Landslide Analysis](https://hamlandslideanalysis.weebly.com/)
 - [Landslide Policies](https://edgeworth-consulting.github.io/Landslide-Policies/)
 - [Mola Mola consulting](https://molamolaconsulting.github.io/)
+- [Slope Consulting](https://slopeconsulting.github.io/)
 - [Tunis Disaster Analysis](https://tunisda.weebly.com/)
+- [Unstable Land Consulting](https://unstable-ground-consulting.github.io/Landslide-Susceptibility/)
 
 
 ## References
