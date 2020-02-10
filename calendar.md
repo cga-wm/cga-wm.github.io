@@ -23,7 +23,7 @@ Readings/Announcements
 ## Day 2 / Week 3
 Start class with brief video (choose one):
 
-- [Landslides | National Geographic]( https://youtu.be/mknStAMia0Q)
+- [Landslides \| National Geographic]( https://youtu.be/mknStAMia0Q)
 - [When Nature Strikes - Landslides](https://youtu.be/dj44dpr8oHs?t=18)
 - [Mount St. Helens Disintegrates in Enormous Landslide](https://youtu.be/UK--hvgP2uY)
 
