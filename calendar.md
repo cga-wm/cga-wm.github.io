@@ -57,20 +57,17 @@ The Physical Factors of Landslides by Hall & Walker, 2017  [(pptx)](https://d32o
 
 The Critical Rainfall Threshold Model ([Iverson, 2000](https://doi.org/10.1029/2000WR900090))
 
-$$
-F_s = (\tan \phi) / (\tan \theta) + [C - \psi_t * \gamma_w * (tan \phi)] / [\gamma_r * H * (\sin \theta) * (\cos \theta)]
-$$
+Fs = (tan φ) / (tan θ) + [C - ψt * γw * (tan φ)] / [γr * H * (sin θ) * (cos θ)]
 
 where:
 
-- $$\phi$$ is internal angle of friction (deg)
-- $$\theta$$ is hillslope (deg)
-- $$C$$ is soil cohesion (Pa = kg/m/s^2)
-- $$\psi_t$$ is pressure head (m); h/cosθ
-- $$\gamma_w$$ is unit weight of water (N/m^3); N=kg*m/s^2
-- $$\gamma_r$$ is unit weight of soil regolith (N/m^3)
-- $$H$$ is soil regolith thickness (m)
-
+- φ is internal angle of friction (deg)
+- θ is hillslope (deg)
+- C is soil cohesion (Pa = kg/m/s^2)
+- ψt is pressure head (m); h/cosθ
+- γw is unit weight of water (N/m^3); N=kg*m/s^2
+- γr is unit weight of soil regolith (N/m^3)
+- H is soil regolith thickness (m)
 
 
 Skill Building Challenge: Highest US landslide density challenge
