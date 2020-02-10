@@ -1,7 +1,7 @@
 ---
 title: "Resources"
 layout: default
-menus: header
+navigation_weight: 2
 ---
 
 # Resources

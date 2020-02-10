@@ -1,10 +1,7 @@
 ---
 title: "Advanced GIS Analysis and Programming"
 layout: default
-menus:
-    header:
-        title: "Home"
-        weight: 1
+navigation_weight: 1
 ---
 
 # Landslide Analysis Project
