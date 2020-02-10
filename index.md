@@ -1,5 +1,5 @@
 ---
-title: "Advanced GIS Analysis and Programming"
+title: "Home"
 layout: default
 navigation_weight: 1
 ---
