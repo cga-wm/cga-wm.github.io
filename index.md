@@ -23,9 +23,22 @@ The consultation firms have provided the following websites.
 - [Unstable Land Consulting](https://unstable-ground-consulting.github.io/Landslide-Susceptibility/)
 
 
+## Consultants
+
+| Team | Members | Countries |
+| ---- | ------- | --------- |
+| [Unstable Land Consulting](https://unstable-ground-consulting.github.io/Landslide-Susceptibility/) | Jake Werner | Nauru, Albania, Belize, and the USA |
+| [Dukes of Hazards](https://giraffename.github.io/) | Jeremy Elkayam and Colleen Scott | Bhutan, Sint Maarten (Dutch part), Latvia, and the USA |
+| [HAM Landslide Analysis](https://hamlandslideanalysis.weebly.com/) | Matt Cusick, Alexa, and Henry | France, Egypt, Gibraltar, and the USA |
+| [Tunis Disaster Analysis](https://tunisda.weebly.com/) | Ian Thompson, Morgan Brickey, and Michele Fong | Mayotte, Tunisia, the British Indian Ocean Territory, and the USA |
+| [Landslide Policies](https://edgeworth-consulting.github.io/Landslide-Policies/) | Erica Stephan and Victoria Haver | the Marshall Islands, Malaysia, Cuba, and the USA |
+| [Mola Mola consulting](https://molamolaconsulting.github.io/) | Jesus and Tate Smith | Somalia, Estonia, Mozambique, and the USA |
+| [Slope Consulting](https://slopeconsulting.github.io/) | Sean O'Rahilly | French Polynesia, Bahrain, Jordan, the USA |
+
 ## References
 
 - [How to setup a GitHub Organization, project and team](https://github.com/collab-uniba/socialcde4eclipse/wiki/How-to-setup-a-GitHub-organization,-project-and-team)
 - [Creating GitHub Pages site](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site)
 - [Creating and Hosting a Personal Site on GitHub](http://jmcglone.com/guides/github-pages/)
+- [Simple navigation menus in Jekyll](https://learn.cloudcannon.com/jekyll/simple-navigation/)
 - [Jekyll's directory structure](https://jekyllrb.com/docs/structure/)
