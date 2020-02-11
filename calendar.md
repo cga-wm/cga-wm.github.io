@@ -75,6 +75,7 @@ where:
 - γr is unit weight of soil regolith (N/m^3)
 - H is soil regolith thickness (m)
 
+With knowledge of these variables, now we need to find the data to support them.
 
 Skill Building Challenge: Highest US landslide density challenge
 
