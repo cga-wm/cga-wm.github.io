@@ -67,6 +67,7 @@ Fs = -----  +  --------------------------
 
 where:
 
+- Fs is the factor of safety
 - φ is internal angle of friction (deg)
 - θ is hillslope (deg)
 - C is soil cohesion (Pa = kg/m/s^2)
