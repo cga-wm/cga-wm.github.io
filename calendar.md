@@ -59,7 +59,11 @@ Material Strength and Landsliding Assessment by Hall & Walker, 2017 ([pptx](http
 
 The Critical Rainfall Threshold Model ([Iverson, 2000](https://doi.org/10.1029/2000WR900090))
 
-Fs = (tan φ) / (tan θ) + [C - ψt * γw * (tan φ)] / [γr * H * (sin θ) * (cos θ)]
+```
+     tan φ       C - ψt * γw * (tan φ) 
+Fs = -----  +  --------------------------
+     tan θ     γr * H * (sin θ) * (cos θ)
+```
 
 where:
 
