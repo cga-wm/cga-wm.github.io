@@ -60,7 +60,7 @@ Material Strength and Landsliding Assessment by Hall & Walker, 2017 ([pptx](http
 The Critical Rainfall Threshold Model (Eq. 28, [Iverson, 2000](https://doi.org/10.1029/2000WR900090))
 
 ```
-     tan φ       C - ψt * γw * (tan φ) 
+     tan φ       C - ψt * γw * (tan φ)
 Fs = -----  +  --------------------------
      tan θ     γr * H * (sin θ) * (cos θ)
 ```
@@ -71,7 +71,7 @@ where:
 - φ is internal angle of friction (deg)
 - θ is hillslope (deg)
 - C is soil cohesion (Pa = kg/m/s^2)
-- ψt is pressure head (m); h/cosθ
+- ψt is pressure head (m) = h * cosθ (Eq. 6, [Gabet et al., 2004](https://doi.org/10.1016/j.geomorph.2004.03.011))
 - γw is unit weight of water (N/m^3); N=kg*m/s^2
 - γr is unit weight of soil regolith (N/m^3)
 - H is soil regolith thickness (m)
