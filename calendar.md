@@ -57,7 +57,7 @@ The Physical Factors of Landslides by Hall & Walker, 2017  [(pptx)](https://d32o
 
 Material Strength and Landsliding Assessment by Hall & Walker, 2017 ([pptx](https://d32ogoqmya1dw8.cloudfront.net/files/getsi/teaching_materials/surface_processes/unit_3_strength_assessment.v12.pptx))
 
-The Critical Rainfall Threshold Model ([Iverson, 2000](https://doi.org/10.1029/2000WR900090))
+The Critical Rainfall Threshold Model (Eq. 28, [Iverson, 2000](https://doi.org/10.1029/2000WR900090))
 
 ```
      tan φ       C - ψt * γw * (tan φ) 
