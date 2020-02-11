@@ -27,6 +27,9 @@ navigation_weight: 2
 :   - Some typical values of soil friction angle for different USCS soil types at normally consolidated condition.
     - Copyright &copy; 2008 - Geotechdata.info
 
+[TanDEM-X Science Server](https://tandemx-science.dlr.de/)
+:   - Global 12, 30, and 90 m digital elevation models
+
 [USDA Web Soil Survey](https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm)
 :   - Soil data for the US and its territories
     - Soil Survey Staff, Natural Resources Conservation Service, United States Department of Agriculture. Web Soil Survey. Available online at http://websoilsurvey.nrcs.usda.gov/. Accessed 02/10/2020.
