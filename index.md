@@ -12,16 +12,6 @@ In this first scenario, you work for an organization that has tasked you, the GI
 You, members of our organization, will break into teams (undergrads in teams of 2--3 and graduates/certificate students as individuals or pairs) and will be assigned international clients (chosen at random, see [the Python script (.py)](/assets/random_country_generator.py)).
 Your team will create its own consultant firm (with a name, slogan, logo, etc.) and have a web presence (e.g., using GitHub Pages) to communicate your tasks and accomplishments to your organization's management and the clients.
 
-The consultation firms have provided the following websites.
-
-- [Dukes of Hazards](https://giraffename.github.io/)
-- [HAM Landslide Analysis](https://hamlandslideanalysis.weebly.com/)
-- [Landslide Policies](https://edgeworth-consulting.github.io/Landslide-Policies/)
-- [Mola Mola consulting](https://molamolaconsulting.github.io/)
-- [Slope Consulting](https://slopeconsulting.github.io/)
-- [Tunis Disaster Analysis](https://tunisda.weebly.com/)
-- [Unstable Land Consulting](https://unstable-ground-consulting.github.io/Landslide-Susceptibility/)
-
 
 ## Consultants
 
