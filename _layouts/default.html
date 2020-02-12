@@ -5,6 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" media="none" onload="if(media!='all')media='all'">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
 {% seo %}
@@ -46,6 +47,23 @@
     {% endfor %}
     </ul>
     </nav>
+
+    <div class="navmenu">
+        <label for="show-menu" class="show-menu"><i class="fas fa-bars"></i></label>
+        <input type="checkbox" id="show-menu" role="button">
+            <ul id="menu">
+            {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
+            {% for p in navigation_pages %}
+              {% if p.navigation_weight %}
+              <li>
+                <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
+                  {{ p.title }}
+                </a>
+              </li>
+            {% endif %}
+            {% endfor %}
+            </ul>
+    </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">

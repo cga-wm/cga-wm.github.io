@@ -22,3 +22,66 @@ a.active {
     background:-o-linear-gradient(top, #212121, #373737);
     background:linear-gradient(to top, #212121, #373737)
 }
+
+.navmenu ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
+}
+.navmenu li {
+    display:inline-block;
+    float: left;
+}
+.navmenu li a {
+    display: block;
+    min-width: 140px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #f8f8f8;
+    background: #323232;
+    text-decoration: none;
+}
+.navmenu li:hover a {
+    color: #323232;
+    background: #ffffff;
+}
+.navmenu li ul {
+    display: none;
+}
+.show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #f8f8f8;
+    background: #323232;
+    text-align: left;
+    padding: 10px 10px;
+    display: none;
+}
+input[type=checkbox]{
+    display: none;
+}
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+@media screen and (max-width : 575px){
+    .navmenu ul {
+        position: static;
+        display: none;
+    }
+    .navmenu li {
+        margin-bottom: 0px;
+    }
+    .navmenu ul li, li a {
+        width: 100%;
+    }
+    .navmenu li a {
+        text-align: left;
+        padding-left: 10px;
+    }
+    .show-menu {
+        display:block;
+    }
+}
