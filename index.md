@@ -9,7 +9,7 @@ Landslides may occur in every country of the world and impact every aspect of th
 
 In this first scenario, you work for an organization that has tasked you, the GIS experts, to sort out landslide susceptibility for several international clients.
 
-You, members of our organization, will break into teams (undergrads in teams of 2--3 and graduates/certificate students as individuals or pairs) and will be assigned international clients (chosen at random, see [the Python script (.py)](/assets/random_country_generator.py)).
+You, members of our organization, will break into teams (undergrads in teams of 2--3 and graduates/certificate students as individuals or pairs) and will be assigned international clients (chosen at random, see [the Python script (.py)](/assets/scripts/random_country_generator.py)).
 Your team will create its own consultant firm (with a name, slogan, logo, etc.) and have a web presence (e.g., using GitHub Pages) to communicate your tasks and accomplishments to your organization's management and the clients.
 
 
