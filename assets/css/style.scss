@@ -4,6 +4,9 @@
 @import "jekyll-theme-slate";
 
 .navmenu{
+    position: fixed;
+    width: 100%;
+    height: 40px;
     background:#373737;
     background:-moz-linear-gradient(top, #212121, #373737);
     background:-webkit-linear-gradient(top, #212121, #373737);
