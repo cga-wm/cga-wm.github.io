@@ -12,27 +12,27 @@
   </head>
 
   <body>
+    <!-- Navigation -->
+    <div class="navmenu">
+      <label for="show-menu" class="show-menu"><i class="fas fa-bars"></i></label>
+      <input type="checkbox" id="show-menu" role="button">
+      <ul id="menu">
+        {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
+        {% for p in navigation_pages %}
+        {% if p.navigation_weight %}
+        <li>
+          <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
+            {{ p.title }}
+          </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
 
-      <!-- Navigation -->
-      <div class="navmenu">
-          <label for="show-menu" class="show-menu"><i class="fas fa-bars"></i></label>
-          <input type="checkbox" id="show-menu" role="button">
-              <ul id="menu">
-              {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
-              {% for p in navigation_pages %}
-                {% if p.navigation_weight %}
-                <li>
-                  <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
-                    {{ p.title }}
-                  </a>
-                </li>
-              {% endif %}
-              {% endfor %}
-              </ul>
-      </div>
-
-      <!-- HEADER -->
-    <div id="header_wrap" class="outer">
+    <!-- HEADER -->
+    <section id="Home">
+      <div id="header_wrap" class="outer">
         <header class="inner">
           {% if site.github.is_project_page %}
             <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
@@ -48,14 +48,17 @@
             </section>
           {% endif %}
         </header>
-    </div>
+      </div>
+    </section>
 
     <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        {{ content }}
-      </section>
-    </div>
+    <section id="Main">
+      <div id="main_content_wrap" class="outer">
+        <section id="main_content" class="inner">
+          {{ content }}
+        </section>
+      </div>
+    </section>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
