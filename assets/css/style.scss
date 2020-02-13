@@ -46,38 +46,3 @@
 .navmenu li ul {
   display: none;
 }
-.show-menu {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  color: #f2f2f2;
-  background: #212121;
-  text-align: left;
-  padding: 10px 10px;
-  display: none;
-}
-input[type=checkbox]{
-  display: none;
-}
-input[type=checkbox]:checked ~ #menu{
-  display: block;
-}
-@media screen and (max-width : 575px){
-  .navmenu ul {
-      position: static;
-      display: none;
-  }
-  .navmenu li {
-      margin-bottom: 0px;
-  }
-  .navmenu ul li, li a {
-      width: 100%;
-  }
-  .navmenu li a {
-      text-align: left;
-      padding-left: 10px;
-  }
-  .show-menu {
-      display:block;
-      z-index: 1001;
-  }
-}
