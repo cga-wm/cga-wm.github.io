@@ -3,18 +3,7 @@
 
 @import "jekyll-theme-slate";
 
-.main-nav a {
-    color: #FFF;
-    text-decoration: none;
-}
-.main-nav a:hover {
-    color: #00FFFF;
-    font-weight: normal;
-}
-a.active {
-    font-weight: bold;
-}
-.main-nav{
+.navmenu{
     background:#373737;
     background:-moz-linear-gradient(top, #212121, #373737);
     background:-webkit-linear-gradient(top, #212121, #373737);
@@ -40,13 +29,14 @@ a.active {
     text-align: center;
     line-height: 40px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #f8f8f8;
-    background: #323232;
+    color: #f2f2f2;
+    background: #373737;
     text-decoration: none;
 }
 .navmenu li:hover a {
-    color: #323232;
-    background: #ffffff;
+    color: #373737;
+    background: #f2f2f2;
+    font-weight: normal;
 }
 .navmenu li ul {
     display: none;
@@ -54,8 +44,8 @@ a.active {
 .show-menu {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
-    color: #f8f8f8;
-    background: #323232;
+    color: #f2f2f2;
+    background: #373737;
     text-align: left;
     padding: 10px 10px;
     display: none;
