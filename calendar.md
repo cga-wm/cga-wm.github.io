@@ -85,3 +85,8 @@ Skill Building Challenge: Highest US landslide density challenge
 
 * find and download landslide point data
 * in teams, come up with a method to solve the challenge
+
+## Day 4 / Week 5
+- Review challenge problem from last week
+- Intro to Programming
+    - review example [Python script (.py)](/assets/scripts/example.py)
