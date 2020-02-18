@@ -5,8 +5,8 @@ navigation_weight: 4
 ---
 
 {% for post in site.posts %}
-    # {{post.title}}
-    {{post.date | date: '%B %d, %Y'}}
+# {{post.title}}
+{{post.date | date: '%B %d, %Y'}}
 
-    {{post.excerpt}}
+{{post.excerpt}}
 {% endfor %}
