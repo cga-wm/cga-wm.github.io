@@ -8,5 +8,5 @@ navigation_weight: 4
 # {{post.title}}
 {{post.date | date: '%B %d, %Y'}}
 
-{{post.excerpt}}
+{{post.content}}
 {% endfor %}
