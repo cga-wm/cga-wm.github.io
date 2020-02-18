@@ -1,47 +1,35 @@
 ---
-title: "Part 1 | Performance Accomplishments"
+title: "Part 1 - Performance Accomplishments"
 layout: default
 ---
 
-# INSTRUCTIONS
-
-  - > Following this page, you will find a template for GIS 420 - Performance Accomplishments.
-
-  - > For each course objective and project learning outcome, delete the Lorem Ipsum text and replace it with a description of your own accomplishments that meet the intended objective (see Performance Review Worksheet for expectations). Note that there is room for other activities that may help meet and exceed these objectives.
-
-  - > You may include examples of your work or links to documents, websites, or other media to support your descriptions for your accomplishments.
-
-  - > This form is due by 9 AM on 16 March 2020.
-
-# WHAT TO INCLUDE
-
-Your accomplishments narrative should address the breadth, scope and/or impact of achievements and may contain items such as:
-
-  - > Innovation in approach
-
-  - > Flexibility, adaptability, and resourcefulness despite the presence of obstacles
-
-  - > Measurable improvements or efficiencies.
-
-  - > Favorable feedback and evaluations from others, including colleagues or other accolades/recognition that you receive.
-
-  - > Significant collaborations.
-
-# TIPS
-
-  - > Include examples where appropriate.
-
-  - > Be brief and specific.
-
-  - > Use clear, concise statements or bullets.
-
-  - > Describe accomplishments with regard to quantity, quality, timeliness, or other measure of performance.
-
-  - > Use language that a lay audience will understand; avoid highly technical language.
-
-  - > Avoid personal beliefs or philosophies; focus on specific challenges and results achieved.
-
-\[DELETE THIS PAGE BEFORE SUBMITTING\]
+> # INSTRUCTIONS
+>
+> - Following this page, you will find a template for GIS 420 - Performance Accomplishments.
+> - For each course objective and project learning outcome, delete the Lorem Ipsum text and replace it with a description of your own accomplishments that meet the intended objective (see Performance Review Worksheet for expectations). Note that there is room for other activities that may help meet and exceed these objectives.
+> - You may include examples of your work or links to documents, websites, or other media to support your descriptions for your accomplishments.
+> - This form is due by 9 AM on 16 March 2020.
+>
+> # WHAT TO INCLUDE
+>
+> Your accomplishments narrative should address the breadth, scope and/or impact of achievements and may contain items such as:
+>
+> - Innovation in approach
+> - Flexibility, adaptability, and resourcefulness despite the presence of obstacles
+> - Measurable improvements or efficiencies.
+> - Favorable feedback and evaluations from others, including colleagues or other accolades/recognition that you receive.
+> - Significant collaborations.
+>
+> # TIPS
+>
+> - Include examples where appropriate.
+> - Be brief and specific.
+> - Use clear, concise statements or bullets.
+> - Describe accomplishments with regard to quantity, quality, timeliness, or other measure of performance.
+> - Use language that a lay audience will understand; avoid highly technical language.
+> - Avoid personal beliefs or philosophies; focus on specific challenges and results achieved.
+>
+> \[DELETE THIS PAGE BEFORE SUBMITTING\]
 
 GIS 420/520 - Spring 2020 - Performance Accomplishments I
 

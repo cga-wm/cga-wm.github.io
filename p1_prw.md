@@ -9,55 +9,57 @@ layout: default
 |                    | GIS420 (Spring 2020)     | 01/27/2020                | 03/16/2020              |
 
 <table>
-<thead>
-<tr class="header">
-<th><strong>2. COURSE OBJECTIVES</strong></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Standard (Describe the level expected for "Fully Successful" performance. Include measures indicators of quality, quantity, cost effectiveness, or timeliness.)</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><ol type="1">
-<li><p>Design a geospatial model or modeling framework to solve the critical rainfall threshold method for analyzing landslide susceptibility. <span class="underline">Graduate students must include an additional model (or modeling framework) based on additional readings/research.</span></p></li>
-<li><p>Describes/presents at least one example of geoethics based on individual research as well as from discussions with colleagues/classmates. <span class="underline">Graduate students must incorporate an ethical dilemma into their project.</span></p></li>
-<li><p>Participates in at least one skill-building activity (<em>learning</em>). Maintains a project-specific log of individual/group activities (<em>time management</em>). Designs and implements a means for storing relevant project input/output data and geoprocessing layers, prescribing their necessary metadata including data source, author/maintainer, creation date, scale, and scope of use (<em>data organization</em>). The choice of data organization method should be based on best practices for the field or domain science.</p></li>
-<li><p>Publishes a web log of coordinated/targeted activities that address a real-world scenario, which includes at least a purpose statement, a timeline of accomplishments, a review of at least one relevant publication, and a summary of conclusions or a discussion. Speaks clearly and cogently to classmates and professor during discussions and project progress reports.</p></li>
-</ol></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Rating</td>
-<td></td>
-<td>Exceeds</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td>Fully Meets</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td>Does Not Meet</td>
-</tr>
-<tr class="even">
-<td>Accomplishments</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+    <tr class="header">
+      <th><strong>2. COURSE OBJECTIVES</strong></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td>Standard (Describe the level expected for "Fully Successful" performance. Include measures indicators of quality, quantity, cost effectiveness, or timeliness.)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="even">
+      <td>
+        <ol type="1">
+          <li><p>Design a geospatial model or modeling framework to solve the critical rainfall threshold method for analyzing landslide susceptibility. <span class="underline">Graduate students must include an additional model (or modeling framework) based on additional readings/research.</span></p></li>
+          <li><p>Describes/presents at least one example of geoethics based on individual research as well as from discussions with colleagues/classmates. <span class="underline">Graduate students must incorporate an ethical dilemma into their project.</span></p></li>
+          <li><p>Participates in at least one skill-building activity (<em>learning</em>). Maintains a project-specific log of individual/group activities (<em>time management</em>). Designs and implements a means for storing relevant project input/output data and geoprocessing layers, prescribing their necessary metadata including data source, author/maintainer, creation date, scale, and scope of use (<em>data organization</em>). The choice of data organization method should be based on best practices for the field or domain science.</p></li>
+          <li><p>Publishes a web log of coordinated/targeted activities that address a real-world scenario, which includes at least a purpose statement, a timeline of accomplishments, a review of at least one relevant publication, and a summary of conclusions or a discussion. Speaks clearly and cogently to classmates and professor during discussions and project progress reports.</p></li>
+        </ol>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td>Rating</td>
+      <td></td>
+      <td>Exceeds</td>
+    </tr>
+    <tr class="even">
+      <td></td>
+      <td></td>
+      <td>Fully Meets</td>
+    </tr>
+    <tr class="odd">
+      <td></td>
+      <td></td>
+      <td>Does Not Meet</td>
+    </tr>
+    <tr class="even">
+      <td>Accomplishments</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="odd">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
 </table>
 
 <table>
