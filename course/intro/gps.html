@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Global Positioning Systems</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 201 - Intro to GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Chapters
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Intro</a>
+    </li>
+    <li>
+      <a href="data.html">Data</a>
+    </li>
+    <li>
+      <a href="crs.html">CRS</a>
+    </li>
+    <li>
+      <a href="geostats.html">Geostats</a>
+    </li>
+    <li>
+      <a href="ethics.html">Ethics</a>
+    </li>
+    <li>
+      <a href="applications.html">Applications</a>
+    </li>
+    <li>
+      <a href="gps.html">GPS</a>
+    </li>
+    <li>
+      <a href="rs.html">RS</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Global Positioning Systems</h1>
+
+</div>
+
+
+<blockquote>
+<p>There’s power in knowing where potentially anything in the world is."</p>
+—Greg Milner, journalist and author
+</center>
+</blockquote>
+<div id="what-is-gps" class="section level2">
+<h2>What is GPS?</h2>
+<p>GPS (Global Positioning System) is essentially a highly reliable signal sent from space that carries two critical pieces of information: location and time.</p>
+</div>
+<div id="what-is-gps-used-for" class="section level2">
+<h2>What is GPS used for?</h2>
+<p>The sky is really the limit on what you can do with GPS.</p>
+<p>Some examples of GPS application include:</p>
+<ul>
+<li>fleet management (i.e., GPS tracking)</li>
+<li>navigation</li>
+<li>precision agriculture</li>
+<li>science
+<ul>
+<li>Continuously Operating Reference Stations, <a href="https://www.ngs.noaa.gov/CORS/">CORS</a>
+<ul>
+<li>consists of “monuments” that are located all over the world</li>
+<li>performs differential GPS (DGPS)</li>
+<li>provides Global Navigation Satellite System (GNSS) data consisting of carrier phase and code range measurements in support of three dimensional positioning, meteorology, space weather, and geophysical applications throughout the United States, its territories, and a few foreign countries</li>
+</ul></li>
+</ul></li>
+<li>timing (e.g., credit card transactions, stock market trades)</li>
+</ul>
+</div>
+<div id="how-does-gps-work" class="section level2">
+<h2>How does GPS work?</h2>
+<p>The basic methodology of GPS:</p>
+<ul>
+<li>A GPS signal originates from an orbiting satellite above Earth and travels at approximately the speed of light to the surface, which takes about 70 milliseconds (0.07 seconds)</li>
+<li>A GPS receiver (user) at the surface observes the GPS signal, which now carries a phase change</li>
+<li>By using the phase change, the delay time between when the signal was sent by the satellite and when it was received by the user can be estimated</li>
+<li>Knowing this delay time (or time of arrival), the <em>range</em> (the distance from the user to the satellite) can be calculated (i.e., distance <span class="math inline">\(=\)</span> velocity <span class="math inline">\(\times\)</span> time)</li>
+<li>Finally, by knowing the distance between the user and several (at least four) GPS satellites (known as a <em>lock</em> or a <em>fix</em>), the location of the user can be determined</li>
+</ul>
+<p>There are four key elements to making GPS work:</p>
+<div class="figure">
+<img src="images/elements_of_gps.png" alt="" />
+<p class="caption">Elements of GPS. Image modified from “1.6 Satellites” in GPS: An Introduction to Satellite Navigation. Stanford University. 2016. <a href="https://youtu.be/2wbrN0pag7w" class="uri">https://youtu.be/2wbrN0pag7w</a></p>
+</div>
+<ol style="list-style-type: decimal">
+<li>Known transmission time
+<ul>
+<li>based on high-precision clocks and Einstein’s theory of general (time travels faster under lower gravity) and special relativity</li>
+</ul></li>
+<li>Known satellite location
+<ul>
+<li>based on globally distributed reference networks and Newtonian physics</li>
+</ul></li>
+<li>Speed of radio wave
+<ul>
+<li>very close to the speed of light (1 foot per nanosecond)</li>
+</ul></li>
+<li>Time of arrival
+<ul>
+<li>based on correlation of spread spectrum signals</li>
+</ul></li>
+</ol>
+<p>With these four key elements we can begin to solve the “pseudo-range” equation. It is called pseudo-range because it is not the true range, but is equal to the true range plus some bias (due to the differences in time between the satellite and user).</p>
+<p>This distance defines a sphere around a satellite. When combined with three more satellite distances, these distances can pin-point a location.</p>
+<p>Because GPS measures distance, it uses the method of <strong>trilateration</strong>, rather than <strong>triangulation</strong>, which is used by surveyors for measuring angles.</p>
+<div class="figure">
+<img src="https://gisgeography.com/wp-content/uploads/2016/11/GPS-Trilateration-Feature-678x322.png" alt="" />
+<p class="caption">Image from <a href="https://gisgeography.com/">GIS Geography</a> (2016). <a href="https://gisgeography.com/wp-content/uploads/2016/11/GPS-Trilateration-Feature-678x322.png" class="uri">https://gisgeography.com/wp-content/uploads/2016/11/GPS-Trilateration-Feature-678x322.png</a></p>
+</div>
+<p>Note than the receiver clock is not synchronized to the GPS time. The result of these asynchronous clocks is a bias.</p>
+<p>The fact that GPS uses a pseudo-range rather than the true range allows for the user’s GPS receiver to function with a low-cost, low-precision clock. If this were not the case, the proliferation of GPS as we know it today would have never happened due to the incredible expense of high-precision clocks.</p>
+<p>Because GPS receivers must solve for their time bias (at the extra expense of needing a fourth satellite), there is the added bonus that every GPS receiver has a measure of its exact time.</p>
+<div id="true-range-equation" class="section level4">
+<h4>True range equation</h4>
+<p>At the very basic level, we are trying to estimate the true range (or distance) between the satellite and the receiver. This distance can be calculated (assuming a perfect vacuum between the satellite and receiver) as the following:</p>
+<p><span class="math inline">\(c \times \left( t_\mathrm{arrival} - t_\mathrm{transmit} \right) = d\)</span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(t_\mathrm{arrival}\)</span> is the time of arrival (clock time on the receiver when the message was received)</li>
+<li><span class="math inline">\(t_\mathrm{transmit}\)</span> is the time of transmission (clock time on the satellite when the message originated)</li>
+<li><span class="math inline">\(d\)</span> is the distance between the receiver and the satellite</li>
+<li><span class="math inline">\(c\)</span> is the speed of light</li>
+</ul>
+<p>Due to asynchronous receiver/satellite time, the bias affects the arrival time; therefore, the range equation becomes more like the following:</p>
+<p><span class="math inline">\(c \times \left( t_\mathrm{arrival} + t_\mathrm{bias} - t_\mathrm{transmit} \right) = d\)</span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(t_\mathrm{bias}\)</span> is the clock bias due to asynchronous receiver/satellite time</li>
+</ul>
+</div>
+<div id="pseudo-range-equation" class="section level4">
+<h4>Pseudo-range equation</h4>
+<p>Due to the clock bias, there are four unknown variables to be solved for in the pseudo-range equation. These include the clock offset of the user’s receiver (i.e., the bias) and the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span> coordinates of the user’s location (i.e., the latitude, longitude and altitude). Because there are four unknowns, the user must have links with at least four different GPS satellites (known as a “lock” or “fix”).</p>
+<p><span class="math inline">\(\tau_{c}(t) = \left( \frac{d_{u}^{(k)}}{c} + b_u - \delta B^{(k)} \right) + \delta I_u^{(k)} + \delta T_u^{(k)} + \nu_u^{(k)}\)</span></p>
+<p><span class="math inline">\(d_u^{(k)} = \sqrt{\left( x_u - x^{(k)} \right)^2 + \left( y_u - y^{(k)} \right)^2 + \left( z_u - z^{(k)} \right)^2}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(b_u\)</span> is the clock offset of the user clock relative to GPS system time (unknown)</li>
+<li><span class="math inline">\(\left(x_u, y_u, z_u \right)\)</span> is the user’s location (unknown)</li>
+</ul>
+</div>
+</div>
+<div id="how-do-we-find-the-satellites" class="section level2">
+<h2>How do we find the satellites?</h2>
+<p>The known location of the GPS satellites is key for how GPS works.</p>
+<p>The science behind satellite locations comes, in part, from our understanding of planetary orbits as described by Johannes Kepler (1571–1630) in his <a href="#keplers-three-laws">three laws</a>. Kepler’s laws were further developed by Issac Newton (1642–1727), who drafted the governing equation in his <a href="#newtons-law-of-gravity">law of gravity</a>. Satellite operators across a global network of observation stations receive measurements from satellites to determine their locations. Using Newtonian physics, future satellite locations can be predicted based on their current position.</p>
+</div>
+<div id="a-brief-history-of-gps" class="section level2">
+<h2>A brief history of GPS</h2>
+<p>The US Navy launched the first satellite-based geopositioning system (the predecessor of our modern-day GPS) in 1959, called the TRANSIT system.</p>
+<p>Today’s modern GPS went from concept to realization in the 1970s under the direction of <a href="https://en.wikipedia.org/wiki/Bradford_Parkinson">Brad Parkinson</a> who was integral in the creation of the NAVSTAR program, which is now known as the <a href="#the-global-positioning-system">Global Positioning System</a>.</p>
+<p>In 1978, the first “portable” GPS receiver was created; it was a backpack unit weighing in at around 25 pounds.</p>
+<p>In 1989, the first commercial handheld GPS receiver was introduced (Magellan, copyright 2017 MiTAC International Corporation), which cost about $1000.</p>
+<p>In 1999, the first commercially available GPS phone is released (Benefon Esc!).</p>
+<p>In 2005, GPS becomes integrated into smartphones, which utilize a GPS-embedded chip that costs about $1.</p>
+</div>
+<div id="the-global-positioning-system" class="section level1">
+<h1>The Global Positioning System</h1>
+<p>The Global Positioning System is comprised of three main segments:</p>
+<dl>
+<dt>Space</dt>
+<dd>the satellites
+</dd>
+<dt>Control</dt>
+<dd>the worldwide monitoring and control stations
+</dd>
+<dt>User</dt>
+<dd>the signal receivers
+</dd>
+</dl>
+<div id="space-segment" class="section level2">
+<h2>Space Segment</h2>
+<p>In the United States, GPS satellites fly at an altitude of about 12,500 miles. The satellites make up a <em>constellation</em>, a series of satellites working together for a common purpose, that are arranged in six equally-spaced orbital planes surrounding Earth. Each plane consists of four “slots” that make up a 24-satellite arrangement that ensures that a GPS receiver on the ground can get a <em>lock</em>, or a fix on at least four satellites. As of October 17, 2017, there were a total of 31 operational satellites in the GPS constellation. (<a href="https://www.gps.gov/systems/gps/space/" class="uri">https://www.gps.gov/systems/gps/space/</a>)</p>
+<div class="figure">
+<img src="images/100225-F-JZ027-160.JPG" alt="" />
+<p class="caption">The GPS satellite constellation. Image from media.defense.gov (2018). <a href="https://media.defense.gov/2010/Feb/25/2000391199/-1/-1/0/100225-F-JZ027-160.JPG" class="uri">https://media.defense.gov/2010/Feb/25/2000391199/-1/-1/0/100225-F-JZ027-160.JPG</a></p>
+</div>
+<div id="a-message-from-space" class="section level3">
+<h3>A Message From Space</h3>
+<p>The satellite’s radio transmission is comprised of two parts (both are transmitted simultaneously):</p>
+<ol style="list-style-type: decimal">
+<li>Navigation Message</li>
+<li>Navigation Signal</li>
+</ol>
+<p>The navigation message is one of the two threads of data transmitted by the GPS satellites. The message consists of five subframes:</p>
+<ol style="list-style-type: decimal">
+<li>Satellites health condition (clock status and correction)</li>
+<li>Satellite ephemeris (1/2)</li>
+<li>Satellite ephemeris (2/2)</li>
+<li>Satellite almanac (1/2)</li>
+<li>Satellite almanac (2/2)</li>
+</ol>
+<p>The navigation signal includes the <em>carrier</em> and the <em>code</em>. The carrier is characterized by its frequency or wavelength. GPS signals are transmitted at certain frequencies. For example: GPS L1 has a frequency of 1.57542 GHz and GPS L2 has a frequency of 1.2276 GHz.</p>
+<p>The code is used to identify which satellite is transmitting. This is accomplished by using pseudo-random numbers (PRN) to identify individual satellites. Each GPS receiver has a list of PRNs that align with the code sent from a given satellite.</p>
+<div class="figure">
+<img src="images/bitsanim.gif" alt="" />
+<p class="caption">PRN correlation animation used to identify GPS satellites. Image by The Geographer’s Craft Project, Department of Geography, The University of Colorado at Boulder (2015). Online. <a href="https://www.colorado.edu/geography/gcraft/notes/gps/gif/bitsanim.gif" class="uri">https://www.colorado.edu/geography/gcraft/notes/gps/gif/bitsanim.gif</a></p>
+</div>
+</div>
+</div>
+<div id="control-segment" class="section level2">
+<h2>Control Segment</h2>
+<p>A reference network that continuously monitors the exact locations of the GPS satellite constellation. The locations of these ground stations are well known. To determine the locations of the satellites, it is the case of solving the GPS problem in reverse. These locations are then transmitted back to the satellites, such that this information can be re-transmitted back down to user GPS receivers.</p>
+<p>The original GPS locations were in Hawaii (Eastern Pacific), Schriever U.S. Air Force Base in Colorado (North America), Ascension Island (South Atlantic), Diego Garcia (Indian Ocean), and Kwajalein (Western Pacific).</p>
+<p>Over time, this original network has been augmented with additional stations.</p>
+<div class="figure">
+<img src="images/map.png" alt="" />
+<p class="caption">The GPS operation “ground” control segment. Image from www.gps.gov (2018). <a href="https://www.gps.gov/systems/gps/control/map.png" class="uri">https://www.gps.gov/systems/gps/control/map.png</a></p>
+</div>
+<p>One of the most important aspects of the control segment is keeping GPS time. The GPS system time is the synchronized time that all satellites share. Small differences can occur between GPS time and the satellite clock. Corrections can be handled either digitally (accounted for through the GPS signal) or physically (an actual change to the satellite clock).</p>
+</div>
+<div id="user-segment" class="section level2">
+<h2>User Segment</h2>
+<p>Similar to the Internet, GPS has become an essential part of the global information infrastructure. The free, open, and dependable nature of GPS has led to the development of hundreds of applications affecting every aspect of modern life. GPS technology is now in everything from cell phones and wristwatches to construction equipment, shipping containers, and ATM’s. (<a href="https://www.gps.gov/applications/" class="uri">https://www.gps.gov/applications/</a>)</p>
+</div>
+</div>
+<div id="mobile-applications" class="section level1">
+<h1>Mobile Applications</h1>
+<p>In this course, we will be utilizing ESRI’s <a href="https://doc.arcgis.com/en/collector/">Collector</a> for ArcGIS. The app is available for iOS, Android and Windows 10 devices. We will be installing them on the iPad 4 mini tablets.</p>
+<div id="collector" class="section level2">
+<h2>Collector</h2>
+<p>Collector is one of several mobile apps provided by ESRI for ArcGIS. Collector requires you to have an ESRI account (this was created for you and consists of your Catawba username followed by “_catu”).</p>
+<p>Before we begin using collector, we need to create a hosted editable feature service (feature layer), which can be done in <a href="https://www.arcgis.com/home/index.html">ArcGIS Online</a>. In the “Content” page, in the top left select “Create” –&gt; “Feature Layer.”</p>
+<p><em>Note: your account settings may not allow you to create a hosted feature layer, in which case, one will be created for you.</em></p>
+<p>For feature layers, there are several templates that are provided by ESRI (e.g., “Field Notes”). Select the types of features (i.e., points, lines and/or polygons) you want to map. Specify the extents for your feature layer by zooming into or out of the map area. Give your feature layer a title.</p>
+<p>Select your new feature layer to open its Overview page. In the top right, click the arrow next to “Open in Map Viewer” and select “Add to new map.”</p>
+<p>You may edit your map settings (e.g., basemap, bookmarks, symbology). When you are done editing, click “Save” and give your new web map a title. You may share your web map with other users. All edits done to a shared web map will be accessible to all users.</p>
+</div>
+<div id="arcade" class="section level2">
+<h2>Arcade</h2>
+<p><a href="https://developers.arcgis.com/arcade/">Arcade</a> is a new secure and portable expression language with the goal of being able to run across all ArcGIS products (mobile, desktop and cloud) <span class="citation">(Barker 2016)</span>.</p>
+<p>The benefit of Arcade is its ability to create new derived attributes as on-the-fly calculations, rather than using the field calculator on a new field. This is handy for simple operations like changing the units of a field or calculating averages across fields without the overhead of storing the results in the database <span class="citation">(Berry 2016)</span>.</p>
+</div>
+<div id="uses" class="section level2">
+<h2>Uses</h2>
+<ul>
+<li>Ground truths</li>
+<li>Inspections</li>
+<li>Assessments</li>
+<li>Inventories</li>
+<li>Control points</li>
+<li>and others</li>
+</ul>
+</div>
+</div>
+<div id="glossary" class="section level1">
+<h1>Glossary</h1>
+<dl>
+<dt>A-GPS</dt>
+<dd><ul>
+<li>Assisted Global Positioning System (GPS)</li>
+<li>uses the range from GPS satellites, but receives the data (clock and satellite almanac) from a land-based cellular network to improve the time for GPS signal lock</li>
+</ul>
+</dd>
+<dt>Apogee</dt>
+<dd><ul>
+<li>the proximal point in an object’s orbit; in the case of GPS, it is the point along the satellite’s orbit where it is closest to Earth</li>
+</ul>
+</dd>
+<dt>ARNS</dt>
+<dd><ul>
+<li>Aeronautical Radio Navigation Signal</li>
+<li>a band of the radio spectrum allocated for aviation</li>
+</ul>
+</dd>
+<dt>ASV</dt>
+<dd><ul>
+<li>Autonomous Surface Craft</li>
+</ul>
+</dd>
+<dt>bands</dt>
+<dd><ul>
+<li>radio bands (or frequency bands) are used to break up the RF spectrum into nominal frequencies for transmitting information; these bands are then allocated to certain services</li>
+</ul>
+</dd>
+<dt>C/A</dt>
+<dd><ul>
+<li>Course Acquisition (or Clear Access)</li>
+<li>a navigation signal code sent from GPS satellites</li>
+</ul>
+</dd>
+<dt>Clock Phase</dt>
+<dd><ul>
+<li>the quantity that results when a flow or a rate is accumulated or summed</li>
+</ul>
+</dd>
+<dt>Clock Rate</dt>
+<dd><ul>
+<li>the difference between two phase measurements divided by the duration of time that lapsed between taking the two measurements</li>
+</ul>
+</dd>
+<dt>Constellation</dt>
+<dd><ul>
+<li>a system of satellites that work together to achieve a single purpose</li>
+<li>also called a “satellite swarm”</li>
+</ul>
+</dd>
+<dt>DGPS</dt>
+<dd><ul>
+<li>Differential Global Positioning Systems</li>
+</ul>
+</dd>
+<dt>EHF</dt>
+<dd><ul>
+<li>Extremely High Frequency</li>
+<li>RF band (30 GHz–300 GHz)</li>
+</ul>
+</dd>
+<dt>EGNOS</dt>
+<dd><ul>
+<li>European Geostationary Navigation Overlay Service</li>
+<li>European <strong>SBAS</strong></li>
+</ul>
+</dd>
+<dt>Geodesy</dt>
+<dd><ul>
+<li>a scientific discipline dealing with the measurement and representation of the Earth, primarily: Earth’s shape, gravity field, and orientation in space</li>
+<li>it includes the quantification of properties of Earth’s surface and subsurface (e.g., crustal motion, ice sheets, glaciers, ocean tides and atmosphere)</li>
+<li>it utilizes GPS to continuously monitor changes in these properties</li>
+</ul>
+</dd>
+<dt>GIS</dt>
+<dd><ul>
+<li>Geographic Information System</li>
+<li>visualization and analysis tool</li>
+</ul>
+</dd>
+<dt>GLONASS</dt>
+<dd><ul>
+<li><em>transliteration:</em> Globalnaya Navigazionnaya Sputnikovaya Sistema (Global Navigation Satellite System)</li>
+<li>Russia’s version of GPS</li>
+</ul>
+</dd>
+<dt>GNSS</dt>
+<dd><ul>
+<li>Global Navigation Satellite System</li>
+<li><em>Special Topic:</em> used in remote sensing (GNSS-R)</li>
+</ul>
+</dd>
+<dt>GPS</dt>
+<dd><ul>
+<li>Global Positioning System</li>
+<li>data collection tool</li>
+</ul>
+</dd>
+<dt>HF</dt>
+<dd><ul>
+<li>High Frequency</li>
+<li>RF band (3 MHz–30 MHz)</li>
+</ul>
+</dd>
+<dt>L1</dt>
+<dd><ul>
+<li>Link 1</li>
+<li>GPS navigation signal frequency (1.57542 GHz)</li>
+<li>most commonly used GPS signal (supports 2–3 billion civilian receivers)</li>
+</ul>
+</dd>
+<dt>L2</dt>
+<dd><ul>
+<li>Link 2</li>
+<li>GPS navigation signal frequency (1.2276 GHz)</li>
+<li>first used in 2005</li>
+<li>used by both civilian and military receivers</li>
+<li>provides a “backup” signal in the event L1 is unusable</li>
+<li>combined with L1, it helps cancel out the largest error source from the GPS signal</li>
+</ul>
+</dd>
+<dt>LEO</dt>
+<dd><ul>
+<li>Low Earth Orbit</li>
+<li>this is where surveillance and spy satellites are located; it is closer to Earth than MEO, which allows for quality photographs of the surface to be taken</li>
+</ul>
+</dd>
+<dt>LF</dt>
+<dd><ul>
+<li>Low Frequency</li>
+<li>RF band (30–300 kHz)</li>
+</ul>
+</dd>
+<dt>Lock (or Fix)</dt>
+<dd><ul>
+<li>when a GPS receiver has a lock or fix, there are at least four satellites in good view in order to provide an accurate account of location and time</li>
+</ul>
+</dd>
+<dt>MEO</dt>
+<dd><ul>
+<li>Mean Earth Orbit</li>
+<li>this is where the majority of GPS satellites are located; it is farther away than LEO, which provides about 1/3 of Earth’s surface in view of each satellite, reducing the total number of satellites required for global coverage</li>
+</ul>
+</dd>
+<dt>MF</dt>
+<dd><ul>
+<li>Medium Frequency</li>
+<li>RF band (300–3,000 kHz)</li>
+</ul>
+</dd>
+<dt>MSAS</dt>
+<dd><ul>
+<li>Multi-functional Satellite Augmentation System</li>
+<li>Japanese <strong>SBAS</strong></li>
+</ul>
+</dd>
+<dt>Multipath Error</dt>
+<dd><ul>
+<li>occurs when multiple instances of the same GPS signal are collected at a receiver due to the signal bouncing off obstructions (e.g., trees, buildings, other tall objects)</li>
+</ul>
+</dd>
+<dt>NMEA</dt>
+<dd><ul>
+<li>National Marine Electronics Association</li>
+<li>develop specifications (format) for communicating GPS data</li>
+</ul>
+</dd>
+<dt>NOAA</dt>
+<dd><ul>
+<li>National Oceanic and Atmospheric Administration</li>
+</ul>
+</dd>
+<dt>Perigee</dt>
+<dd><ul>
+<li>the extreme point in an object’s orbit; in the case of GPS, it is the point along the satellite’s orbit where it is farthest from Earth</li>
+</ul>
+</dd>
+<dt>Phase Cycle</dt>
+<dd><ul>
+<li>the periodic reset of a <strong>Clock Phase</strong></li>
+</ul>
+</dd>
+<dt>PRN</dt>
+<dd><ul>
+<li>Pseudo Random Number</li>
+<li>unique numeric look-up value assigned to satellites</li>
+</ul>
+</dd>
+<dt>Pseudo Range</dt>
+<dd><ul>
+<li>distance calculated between a GPS receiver and a satellite with the presence of a phase error between the two clocks</li>
+</ul>
+</dd>
+<dt>QNSS</dt>
+<dd><ul>
+<li>three frequencies patterned to complement GPS</li>
+</ul>
+</dd>
+<dt>Range</dt>
+<dd><ul>
+<li>distance between GPS receiver and a satellite</li>
+</ul>
+</dd>
+<dt>Rate</dt>
+<dd><ul>
+<li>the distance traveled over a given amount of time; a velocity</li>
+</ul>
+</dd>
+<dt>RF</dt>
+<dd><ul>
+<li>Radio Frequency</li>
+</ul>
+</dd>
+<dt>RNSS</dt>
+<dd><ul>
+<li>Radio Navigation Satellite System</li>
+<li>a band of the radio spectrum allocated for navigation satellites</li>
+<li>includes GPS L1 and L2 frequencies</li>
+</ul>
+</dd>
+<dt>ROV</dt>
+<dd><ul>
+<li>Remotely Operated Vehicle</li>
+</ul>
+</dd>
+<dt>PNT</dt>
+<dd><ul>
+<li>Position, Navigation and Timing</li>
+<li>services provided by GPS</li>
+</ul>
+</dd>
+<dt>SBAS</dt>
+<dd><ul>
+<li>Satellite-Based Augmentation Systems</li>
+<li>complementary to <strong>GNSS</strong>; SBAS is a system of satellites and ground stations that provide GPS signal corrections to compensate GNSS accuracy, integrity, continuity and availability</li>
+<li>provides location accuracy within 3 meters</li>
+<li>see also <strong>EGNOS</strong>, <strong>MSAS</strong> and <strong>WAAS</strong></li>
+</ul>
+</dd>
+<dt>SHF</dt>
+<dd><ul>
+<li>Super High Frequency</li>
+<li>RF band (3 GHz–30 GHz)</li>
+</ul>
+</dd>
+<dt>SV</dt>
+<dd><ul>
+<li>Space Vehicle</li>
+<li>another name for satellite</li>
+</ul>
+</dd>
+<dt>TTFF</dt>
+<dd><ul>
+<li>Time To First Fix</li>
+<li>the time it takes for a GPS receiver takes to accurately compute your position and time using at least four satellites after it is powered on</li>
+</ul>
+</dd>
+<dt>UHF</dt>
+<dd><ul>
+<li>Ultra High Frequency</li>
+<li>RF band (300 MHz–3,000 MHz)</li>
+</ul>
+</dd>
+<dt>UNAVCO</dt>
+<dd><ul>
+<li>Originated as the University NAVSTAR Consortium in 1984; it is a non-profit university-governed consortium that facilitates geoscience research and education using geodesy</li>
+</ul>
+</dd>
+<dt>USV</dt>
+<dd><ul>
+<li>Unmanned Surface Vehicle</li>
+</ul>
+</dd>
+<dt>VHF</dt>
+<dd><ul>
+<li>Very High Frequency</li>
+<li>RF band (30 MHz–300 MHz)</li>
+<li>This band carried most early TV stations</li>
+</ul>
+</dd>
+<dt>WAAS</dt>
+<dd><ul>
+<li>Wide Area Augmentation System</li>
+<li>North American <strong>SBAS</strong></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div id="appendix" class="section level1">
+<h1>Appendix</h1>
+<div id="einsteins-theory-of-relativity" class="section level3">
+<h3>Einstein’s Theory of Relativity</h3>
+<dl>
+<dt>Special Relativity</dt>
+<dd>Time flows differently according to the state of motion (i.e., events that are simultaneous for one observer may not be for another). This is represented by the famous equation: <span class="math inline">\(E = m c^2\)</span>, which shows that mass increases with speed. A conclusion from this work is that time slows down for objects in motion.
+</dd>
+<dt>General Relativity</dt>
+<dd><em>The Principle of Equivalence</em> that states that acceleration and gravity are indistinguishable. Massive objects cause a distortion in space-time, which is felt as gravity. As a result, time does not pass at the same rate for everyone. Under more gravitational force, time travels slower.
+</dd>
+</dl>
+</div>
+<div id="keplers-three-laws" class="section level3">
+<h3>Kepler’s Three Laws</h3>
+<dl>
+<dt>The Law of Ellipses</dt>
+<dd>All planets orbit the sun in ellipses with the Sun located at one focus of the ellipse.
+</dd>
+</dl>
+<div class="figure">
+<img src="https://astronomer-wpengine.netdna-ssl.com/wp-content/uploads/2013/06/kepler1.gif" id="id" class="class" width="347" height="231" alt="" />
+<p class="caption">Figure. Kepler’s Law of Ellipses <span class="citation">(Ventrudo 2013)</span>. Copyright 2008–2018 Mintaka Publishing Inc.</p>
+</div>
+<dl>
+<dt>The Law of Equal Areas</dt>
+<dd>A line joining a planet and the Sun sweeps out equal areas during equal intervals of time. This is because as a planet gets closer to the Sun, it has less potential energy and more kinetic energy (i.e., planets move faster when they are closer to the Sun).
+</dd>
+</dl>
+<div class="figure">
+<img src="https://astronomer-wpengine.netdna-ssl.com/wp-content/uploads/2013/06/kepler2.gif" id="id" class="class" width="347" height="186" alt="" />
+<p class="caption">Figure. Kepler’s Law of Equal Areas <span class="citation">(Ventrudo 2013)</span>. Copyright 2008–2018 Mintaka Publishing Inc.</p>
+</div>
+<dl>
+<dt>The Law of Harmonies</dt>
+<dd>The square of the orbital period, <span class="math inline">\(P\)</span>, of a planet is directly proportional to the cube of the semi-major axis of its orbit, <span class="math inline">\(a\)</span> (i.e., planets move slower when they are farther from the sun and whatever influence makes planets go around the sun weakens with distance).
+</dd>
+</dl>
+<p><span class="math inline">\(P^2 \propto a^3\)</span></p>
+</div>
+<div id="keplerian-elements" class="section level3">
+<h3>Keplerian Elements</h3>
+<p>The orbits of the satellites are described using six Keplerian elements.</p>
+<div class="figure">
+<img src="images/orbital_elements.png" alt="" />
+<p class="caption">The Keplerian orbital parameters. Image modified from spaceflight.nasa.gov. Accessed 19 January 2018. <a href="https://spaceflight.nasa.gov/realdata/elements/graphs.html" class="uri">https://spaceflight.nasa.gov/realdata/elements/graphs.html</a></p>
+</div>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(a\)</span> is the semi-major axis of the orbit ellipse</li>
+<li><span class="math inline">\(e\)</span> is the eccentricity of the ellipse</li>
+<li><span class="math inline">\(i\)</span> is the inclination angle; describes the pitch between the satellite’s orbital plane (hashed) and Earth’s equatorial plane (gray)</li>
+<li><span class="math inline">\(\Omega\)</span> is the angle of the right ascension of the ascending node; the angle between the vector connecting Earth’s center and the vernal equinox (along 0 degrees longitude at the Prime Meridian and 0 degrees latitude at the equator) and the vector connecting Earth’s center to the intersection of the equatorial and orbital planes</li>
+<li><span class="math inline">\(\omega\)</span> is the angle of the perigee of the satellite orbit</li>
+<li><span class="math inline">\(\nu\)</span> is the true anomaly; the angle describing the location of the satellite within its orbit with respect to the perigee</li>
+</ul>
+</div>
+<div id="newtons-law-of-gravity" class="section level3">
+<h3>Newton’s Law of Gravity</h3>
+<p>Every point mass attracts every single other point mass by a force pointing along the line intersecting both points. The force is proportional to the product of the two masses and inversely proportional to the square of the distance between them <span class="citation">(Newton 1687)</span>:</p>
+<p><span class="math inline">\(F = -\frac{G M m}{r^2}\)</span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(F\)</span> is the force of attraction between two bodies</li>
+<li><span class="math inline">\(M\)</span> is the mass of one body</li>
+<li><span class="math inline">\(m\)</span> is mass of the second body</li>
+<li><span class="math inline">\(r\)</span> is the distance between two the bodies</li>
+<li><span class="math inline">\(G\)</span> is the gravitational constant (6.674 N m<sup>2</sup>/kg<sup>2</sup>)</li>
+</ul>
+</div>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references hanging-indent">
+<div id="ref-barker16">
+<p>Barker, Paul. 2016. “Introducing Arcade.” <a href="https://www.esri.com/arcgis-blog/products/apps/uncategorized/introducing-arcade/">https://www.esri.com/arcgis-blog/products/apps/uncategorized/introducing-arcade/</a>.</p>
+</div>
+<div id="ref-berry16">
+<p>Berry, Lisa. 2016. “Use Arcade Expressions to Map Your Ideas.” <a href="https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/use-arcade-expressions-to-map-your-ideas/">https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/use-arcade-expressions-to-map-your-ideas/</a>.</p>
+</div>
+<div id="ref-newton87">
+<p>Newton, Isaac. 1687. <em>Philosophiae Naturalis Principia Mathematica</em>. London: Royal Society of London.</p>
+</div>
+<div id="ref-ventrudo13">
+<p>Ventrudo, Brian. 2013. “Kepler’s Laws.” <a href="https://oneminuteastronomer.com/8626/keplers-laws/">https://oneminuteastronomer.com/8626/keplers-laws/</a>.</p>
+</div>
+</div>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

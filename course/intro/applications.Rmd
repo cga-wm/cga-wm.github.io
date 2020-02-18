@@ -1,0 +1,118 @@
+---
+title: "Applications"
+bibliography: refs.bib
+---
+
+> We cannot manage what we do not measure.&#8221;
+>
+> --- [Pavan Sukhdev](https://en.wikipedia.org/wiki/Pavan_Sukhdev), environmental economist
+
+The power of GIS is its ability to answer certain types of questions, such as [@maguire91]:
+
+- Locations (*What is at ...?*)
+- Conditions (*Where is it ...?*)
+- Trends (*What has changed ...?*)
+- Routing (*Which is the best way ...?*)
+- Patterns (*What is the pattern ...?*)
+- Modelling (*What if ...?*)
+
+Geographic Information Systems are sometimes categorized based on the questions they are used to address.
+Some of these application-specific classifications include the following [@maguire91]:
+
+- Cadastral information systems
+- Image-based information systems
+- Land data systems
+- Geographically referenced information systems
+- Natural resource management information systems
+- Market analysis information systems
+- Multipurpose cadastre
+- Planning information systems
+- Property information systems
+- Soil information systems
+- Spatial information systems
+- Spatial decision support systems
+- Urban information systems
+
+One of the first major areas of GIS application was in natural resource management, which may include the management of some of the following [@footelynch95]:
+
+- wildlife habitat
+- wild and scenic rivers
+- recreational resources
+- floodplains
+- wetlands
+- agricultural lands
+- aquifers
+- forests
+
+Other applications are also investigated below.
+
+## Natural Disasters and Emergency Management
+
+*Emergency management* is the organization and management of resources and responsibilities for dealing with all aspects of emergencies [@nrc07].
+The four phases of emergency management include the following:
+
+- preparedness
+- response
+- recovery
+- mitigation
+
+All disasters have a temporal and geographic footprint that identifies the duration of impact and its extent on the Earth's surface.
+The term *geospatial* is used to refer to the interdependent resources---imagery, maps, data sets, tools, and procedures---that tie every event, feature, or entity to a location on the Earth's surface and use this information for some purpose.
+Although location is an essential part of any item of geospatial data, it is the ability to link a location to the properties of events, features, or entities at that location that gives geospatial data their value.
+
+Throughout this document, three types of geospatial data are discussed:
+
+Framework data
+
+:   comprise of seven geographic themes that are most commonly produced and used by most organizations in their day-to-day geospatial activities (i.e., [geodetic control](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#geodetic), [orthoimagery](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#orthoimage), [elevation](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#elevation), [transportation](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#transportation), [hydrography](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#hydrography), [governmental units](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#governmental), and [cadastral information](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#cadastral))
+
+Foundation data
+
+:   support the day-to-day operations of the private or public sector (e.g., maps or data sets of soils, land use, weather, underground pipes, or overhead power lines)
+
+Event-related data
+
+:   include all those items collected specifically to respond to and recover from a particular disaster event (e.g., the locations of casualties; the locations of response resources; imagery and inventories of property and environmental damage; and earthquake aftershock or chemical plume data)
+
+
+## Watershed Delineation
+
+DEM
+:   Digital Elevation Map
+
+Outlet
+:   any point along a river, stream or creek; defines a unique watershed
+
+Watershed
+:   an area of land that drains all the streams and rainfall to a common outlet (also known as a drainage basin or catchment)
+
+A watershed is the area of land where all of the water that falls in it and drains off of it goes to a common outlet.
+Watersheds are important because the amount and the quality of water of a river are affected by things (e.g., human activity, pollution runoff, heavy rainfall), which are happening in the land area "above" the river-outflow point [@usgs16].
+
+**Delineating a Watershed in GIS**
+
+There are several ways to delineate a watershed; however, using standard GIS tools, the following are the basic steps for delineation.
+
+Required spatial data:
+
+- Elevation (raster) data; elevation or topographic data are required, which may be in the form of a digital elevation map (DEM) or other raster file format
+- Outlet location; a watershed is defined by its outlet, which can be any point location along a river, stream or creek---typically, an outlet is defined at a critical juncture (e.g., where two rivers meet) or just upstream of a city or town (e.g., for flood management)
+
+Geoprocessing tools:
+
+- fill sinks
+- calculate flow direction
+- calculate flow accumulation
+- define the pour point
+- delineate the watershed
+
+
+## Habitat Suitability Delineation
+
+Habitat suitability rank
+:   identification of potential living areas based on various grades of suitability criteria
+
+Habitat suitability
+:   identification of optimal living areas based on a set of suitability criteria
+
+## References

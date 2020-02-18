@@ -1,0 +1,114 @@
+---
+title: "Resources"
+---
+
+### Additional Reading
+
+[Geographic Information Systems, First Edition, 1991](https://www.wiley.com/legacy/wileychi/gis/volumes.html) ---  Copyright &copy; John Wiley & Sons 1991. Converted to HTML by Jim Harper. Last updated January 16, 2001.
+
+[Geometric Aspects of Mapping](http://kartoweb.itc.nl/geometrics/index.html) --- provides information on concepts of spatial referencing, including a brief introduction followed by more in-depth notes on coordinate systems, reference surfaces, map projections and coordinate transformations. International Institute for Geo-Information Science and Earth Observation (ITC), Enschede, 2009.
+
+[GIS as an Integrating Technology](https://www.colorado.edu/geography/gcraft/notes/intro/intro_f.html) --- materials by Kenneth E. Foote and Margaret Lynch, The Geographer's Craft Project, Department of Geography, The University of Colorado at Boulder. Copyright 2000--2015.
+
+[GPS: The Global Positioning System](https://www.gps.gov/). Maintained by the National Coordination Office for Space-Based Positioning, Navigation, and Timing. 2018.
+
+[GPS Basics](https://learn.sparkfun.com/tutorials/gps-basics). Written by Aaron Weiss (a1ronzo). Available online at SparkFun Electronics. Accessed 18 January 2018.
+
+[GPS Tutorial](http://www.trimble.com/gps_tutorial/). Trimble Inc. 2018.
+
+[Intro to GIS and Spatial Analysis](https://mgimond.github.io/Spatial/index.html) --- a compilation of lecture notes into an online textbook on data manipulation & visualization and exploratory spatial data analysis by Manuel Gimond
+
+[Johannes Kepler: His Life, His Laws and Times](https://www.nasa.gov/kepler/education/johannes). National Aeronautics and Space Administration (NASA). 2017.
+
+[The Global Positioning System](https://www.colorado.edu/geography/gcraft/notes/gps/gps_f.html). Written by Peter H. Dana, Department of Geography, University of Texas at Austin. 1994. Provided by Ken Foote, The Geographer's Craft, Department of Geography, University of Colorado at Boulder. 2015.
+
+[The Nature of Geographic Information](https://www.e-education.psu.edu/natureofgeoinfo/) --- an open-access textbook to promote understanding of the Geographic Information Science and Technology enterprise.
+
+
+### General information
+
+[ArcGIS Tutorials](https://mgimond.github.io/ArcGIS_tutorials/index.html)
+
+[Do you know where you are? - The Global Positioning System](https://oceanservice.noaa.gov/education/tutorial_geodesy/geo09_gps.html). National Oceanic and Atmospheric Administration (NOAA). 2017.
+
+[Documentation for ArcGIS](https://doc.arcgis.com/en/)
+
+[GIS Certification Institute](https://www.gisci.org) --- a non-profit organization that provides the GIS community with a complete certification program leading to Certified GIS Professional recognition focused on six key knowledge areas: *Conceptual Foundations*, *Cartography and Visualization*, *GIS Design Aspects and Data Modelling*, *GIS Analytical Methods*, *Data Manipulation*, and *Geospatial Data*
+
+[Geo Lounge](https://www.geolounge.com/maps/) --- an information site about all things geography.  Learn about maps and cartography as well as articles covering GIS (geographic information systems), GPS, remote sensing, and other geospatial technologies.
+
+[Geography & Map Reading Room](https://www.loc.gov/rr/geogmap/index.html) ---- The Geography and Map Division of the Library of Congress provides cartographic and geographic information for all parts of the world to the Congress, Federal agencies, state and local governments, the scholarly community, and to the general public; it is the largest and most comprehensive cartographic collection in the world, numbering over 5.2 million maps.
+
+[GIS Lounge](https://www.gislounge.com/) --- news, data and information on GIS
+
+[GPS: An Introduction to Satellite Navigation](https://www.youtube.com/playlist?list=PLGvhNIiu1ubyEOJga50LJMzVXtbUq6CPo) ("GPS MOOC"). Stanford University. 2014.
+
+[Living Atlas of the World](https://livingatlas.arcgis.com/) --- the foremost collection of global geographic information from Esri and its partners, including maps, apps, and data layers used to support critical decision making.
+
+[Map Projections](http://geology.isu.edu/wapi/geostac/Field_Exercise/topomaps/map_proj.htm) --- Geospatial Training and Analysis
+
+[Mapping our Changing World](https://www.e-education.psu.edu/geog160/) --- An e-class in geography by Xi Liu at Penn State University
+
+[National Geospatial-Intelligence Agency](https://www.nga.mil)
+
+[Projections and Coordinate Systems](https://courses.washington.edu/gis250/lessons/projection/)
+
+[The GIS Encyclopedia](http://wiki.gis.com)
+
+[The World Factbook](https://www.cia.gov/library/publications/the-world-factbook/docs/refmaps.html) --- Regional and world maps provided by the United States Central Intelligence Agency
+
+[UNAVCO](https://www.unavco.org/unavco.html)
+
+[Working with ZIP files](https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm) --- a review on viewing, opening and extracting data from .zip files on Windows machines.
+
+
+### Geospatial data
+
+[ASTER Volcano Archive](https://ava.jpl.nasa.gov/) --- the world's largest specialty archive of volcano data, including publicly available high-resolution multispectral ASTER data.
+
+[Carteret County GIS](https://www.carteretcountync.gov/469/GIS-Services) --- download the most current public GIS data and access a variety of web applications.
+
+[Catawba College Campus Addresses for GPS and Mapping](https://catawba.edu/about/campus/maps/campus-addresses-gps-and-mapping-services/) --- includes latitude and longitude coordinates for campus buildings.
+
+[EarthExplorer](https://earthexplorer.usgs.gov/) --- search, download, and order satellite images, aerial photographs, and cartographic products.
+
+[FAO GeoNetwork](http://www.fao.org/geonetwork/srv/en/main.home) --- provides interactive maps, satellite imagery and related spatial databases for sustainable development and decision making in agriculture, forestry, fisheries and food security.
+
+[Fuzzy Gazeteer](http://isodp.hof-university.de/fuzzyg/query/) --- name search for feature locations from all over the world
+
+[GeoPlatform](https://www.geoplatform.gov/) --- using collaboration, common data, services, applications and shared infrastructure to address national and regional issues and priorities (The Federal Geographic Data Committee).
+
+[National Land Cover Database](https://www.mrlc.gov/index.php) --- provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
+
+[Natural Earth](http://www.naturalearthdata.com/) --- a public domain map dataset featuring vector and raster data.
+
+[NCDOT](https://connect.ncdot.gov/resources/gis/Pages/GIS-Data-Layers.aspx) --- North Carolina county and state road system shapefiles.
+
+[NC OneMap GeoPortal](http://data.nconemap.gov/geoportal) --- the geospatial backbone supporting North Carolina data and map service users. It is an organized effort of numerous partners throughout North Carolina, involving local, state, and federal government agencies, the private sector and academia.
+
+[Global Shark Attack File](http://www.sharkattackfile.net/) --- a time-stamped semi-geolocated incident log of global shark attacks.
+
+[TopoView](https://ngmdb.usgs.gov/topoview/) --- a digital repository of USGS 1:250,000 scale and larger (more detailed) maps printed between 1884 (the inception of the topographic mapping program), and 2006.
+
+[USGS TNM](https://viewer.nationalmap.gov/launch/) --- GIS data download and visualization services.
+
+
+### Online tools and software
+
+[ConnectGIS](https://carteret.connectgis.com/Map.aspx) --- an online GIS portal and mapping tool for Carteret County, NC.
+
+[EnviroAtlas](https://www.epa.gov/enviroatlas) --- interactive tools that allow users to discover, analyze, and download data and maps related to ecosystem services, or the benefits people receive from nature
+
+[GeoDa](https://geodacenter.github.io/) --- a free and open source software tool that provides a user-friendly graphical user interface for exploratory spatial data analysis developed by Dr. Luc Anselin and his team. GeoDa runs on Windows, MacOSX and Linux (Ubuntu).
+
+[GeoHack](https://tools.wmflabs.org/geohack/) --- a modified version of map sources from Egil Kvaleberg's gis extension. It is designed to do simple HTML replacements of a template on Wikipedia and serve it to the client. It is used by Wikipedia to provide links to various mapping services, when a user clicks on a link with geographical coordinates. For example, [click here](https://tools.wmflabs.org/geohack/geohack.php?params=35_41_25.8_N_80_28_49_W) to GeoHack the Center for the Environment.
+
+[GEOLocate Web Application](http://www.geo-locate.org/web/WebGeoref.aspx) --- simply type in your locality description and get back georeferenced results.
+
+[Google Earth](https://www.google.com/earth/) --- software that renders a 3D representation of Earth based on satellite imagery based on the superimposition of images obtained from satellite imagery, aerial photography, and GIS data onto a 3D globe, allowing users to see cities and landscapes from various angles.
+
+[OpenStreetMap.org](https://www.openstreetmap.org/#map=16/35.6918/-80.4897) --- a collaborative project to create a free editable map of the world.
+
+[ReefBase](http://www.reefbase.org/) ---  A Global Information System for Coral Reefs.
+
+[USGS Data and Tools](https://www.usgs.gov/products/data-and-tools/overview) --- digital information provided in a format suitable for direct input to software that can analyze its meaning in the scientific, engineering, or business context.

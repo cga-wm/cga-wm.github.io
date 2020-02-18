@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Introduction to GIS</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 201 - Intro to GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Chapters
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Intro</a>
+    </li>
+    <li>
+      <a href="data.html">Data</a>
+    </li>
+    <li>
+      <a href="crs.html">CRS</a>
+    </li>
+    <li>
+      <a href="geostats.html">Geostats</a>
+    </li>
+    <li>
+      <a href="ethics.html">Ethics</a>
+    </li>
+    <li>
+      <a href="applications.html">Applications</a>
+    </li>
+    <li>
+      <a href="gps.html">GPS</a>
+    </li>
+    <li>
+      <a href="rs.html">RS</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Introduction to GIS</h1>
+
+</div>
+
+
+<div id="it-all-starts-with-a-map" class="section level2">
+<h2>It All Starts With a Map</h2>
+<blockquote>
+<p>Maps are both the raw material and the product of geographic information systems (GIS)."</p>
+<p>— Xi Liu, Penn State University</p>
+</blockquote>
+<div id="what-are-maps" class="section level3">
+<h3>What are maps?</h3>
+<div class="figure">
+<img src="images/gis_in_layers.png" id="fig:layers" class="float-rt-img" width="223" height="400" alt="" />
+<p class="caption">FIGURE. GIS representing the real world in thematic layers. © 2018 Pearson Education, Inc.</p>
+</div>
+<p>A map is a symbolic representation that approximates any real-world location or object in three dimensions onto a two-dimensional surface (for example: on paper or on a computer monitor). These symbolic representations may consist of several visual variables including: <em>shape</em>, <em>orientation</em>, <em>color</em>, <em>texture</em>, <em>value</em>, and <em>size</em>.</p>
+<p>More generally speaking, maps are information and, as we know, information is powerful. When it comes to information, good information can help improve our lives by empowering us to make better decisions. Information comes from our understanding of data—in this case, the symbolic representations of the spatial arrangement of our world, which are called <em>features</em>.</p>
+<p>GIS typically convey maps in separate <em>thematic layers</em>, or features of common geographic information, which may represent roads, houses, vegetation cover, population density, etc. Because the layers are geographically referenced, they may overlay one another to build a more complete picture of the geographic area (see figure pictured right.)</p>
+<p><a href="https://en.wikipedia.org/wiki/Roger_Tomlinson">Dr. Roger Tomlinson</a>—considered the “father of GIS”—describes the concepts of thematic layers and overlays as the cornerstone of GIS.</p>
+<p>Maps also serve as a form of communication that can illustrate similarities and differences between places.</p>
+<p>Maps help us conceptualize by enabling us to reconstruct our past, illustrate the present, and plan for the future.</p>
+<p>Understanding maps allows us to answer important questions, like the “where” (i.e., <em>absolute</em> and <em>relative locations</em>) and “what” (i.e., properties and attributes) of important features.</p>
+<dl>
+<dt>map</dt>
+<dd>a way of representing any real-world location or object on a two-dimensional surface (for example: on paper or a computer monitor)
+</dd>
+<dt>feature</dt>
+<dd>a symbolic representation of the real world (e.g., points, lines and polygons)
+</dd>
+<dt>absolute location</dt>
+<dd>a way of describing a position based on a fixed point on Earth (e.g., longitude and latitude)
+</dd>
+<dt>relative location</dt>
+<dd>a position defined with respect to other locations
+</dd>
+</dl>
+</div>
+<div id="what-is-gis" class="section level3">
+<h3>What is GIS?</h3>
+<blockquote>
+<p>Geographic information systems (GIS) are computer-based systems to aid in the collection, maintenance, storage, analysis, output, and distribution of spatial data and information."</p>
+<p>— <span class="citation">Bolstad (2012)</span></p>
+</blockquote>
+<p>Because of the importance of spatial information, we have developed tools called geographic information systems (GIS). We use GIS to gather and use spatial data.</p>
+<p>The breadth of GIS encompasses the latest technology of advanced communication networks and software down to the simplest hand-drawn field maps. Modern technology is changing the way we use GIS and how we gather and use spatial data continues to evolve.</p>
+<p>Note that many GIS software packages exist—some quite specialized, others quite broad—and the techniques that will be explored in this course form a common core of GIS that can be applied across various platforms.</p>
+</div>
+<div id="why-use-gis" class="section level3">
+<h3>Why use GIS?</h3>
+<p>GIS lends us the utilization of maps, which we saw provides us with the tools to answer questions regarding the “what” and the “where” of things. These are important questions for planning and resource management. There is another use for GIS, which is to answer analytical questions, such as “why” or “what if” through GIS models and prediction.</p>
+<p>While GIS was originally an extension of managing and analyzing traditional paper maps, it has since become primarily a computer-based field and there are several reasons for this, including the following:</p>
+<ul>
+<li>computers are better at handling complex spatial analyses that would otherwise be impossible or impractical on paper</li>
+<li>computers provide large storage capacity for managing a massive amount of map data</li>
+<li>computers allow for the integration of other digital multimedia content (photos, videos, websites, etc.) into map documents</li>
+<li>computers allow multiple mapping layers to be viewed in the same projection and map scale (pending appropriate conversions)</li>
+<li>computers and computer networks allow for maps to be easily copied and shared with other users</li>
+<li>computers eliminate <em>some</em> of the biases associated with paper maps</li>
+<li>computer-based maps are easier to update, fix or amend than paper copies</li>
+<li>computer-based maps are easier to customize for individual uses</li>
+<li>computers foster the development of new tools and processes to further our understanding of spatial data</li>
+</ul>
+</div>
+</div>
+<div id="software" class="section level2">
+<h2>Software</h2>
+<div id="arcgis" class="section level3">
+<h3>ArcGIS</h3>
+<div class="figure">
+<img src="images/arcgis_family.png" id="fig:arcfam" class="float-rt-img" width="200" height="200" alt="" />
+<p class="caption">FIGURE. The ArcGIS family. © 2009 ESRI.</p>
+</div>
+<p>ArcGIS is developed by Environmental Systems Research Institute, Inc. (referred to as Esri).</p>
+<p>ArcGIS Desktop allows you to create, edit and analyze geographic data on your desktop. This includes the ability to:</p>
+<ul>
+<li>see your data on a map</li>
+<li>analyze your data to reveal patterns, relationships and trends that are not apparent in tabular format</li>
+<li>create publication-quality maps</li>
+</ul>
+<p>ArcGIS Desktop applications include:</p>
+<ul>
+<li><em>ArcCatalog</em>: browse geographic data sources and create/update metadata</li>
+<li><em>ArcMap</em>: display and query geographic data on maps and edit/export data</li>
+<li><em>ArcToolbox</em>: access to powerful tools for performing geoprocesses, spatial analysis and data conversions</li>
+</ul>
+</div>
+<div id="arcmap" class="section level3">
+<h3>ArcMap</h3>
+<dl>
+<dt>Main Concepts:</dt>
+<dd><ul>
+<li>Map document</li>
+<li>Data frame</li>
+<li>Layer</li>
+<li>Map scale</li>
+<li>Pathname</li>
+<li>Source</li>
+<li>Thematic mapping</li>
+</ul>
+</dd>
+</dl>
+<p>ArcMap uses map documents (.mxd files) to collect spatial data for visualization and analysis. Map documents do not contain any GIS data; rather, they store the names and locations of sources (i.e., spatial data). Therefore spatial data can be shared across multiple map documents, but <strong>any change to a data source will affect all map documents that reference it.</strong></p>
+<p>The names and locations of sources are stored as pathnames (i.e., the source’s address on your computer). Pathnames may be stored either as absolute pathnames (i.e., the source address beginning with your computer’s driver letter) or relative pathnames (i.e., the source address relative to the folder containing the current map document). Absolute pathnames are a good way of referencing data sets that are always in the same location for every user. Relative pathnames are better for referencing data sets that are moved about (e.g., located on a USB drive).</p>
+<p>Layers with pathnames that cannot be found (e.g., because the source address has changed), will show with a red exclamation point beside their name in ArcMap’s Table of Contents.</p>
+<p>Spatial data (e.g., feature class or raster) are added to a map document as layers. A layer serves as a reference that points to spatial data and includes information for ArcMap on how to display and use these data.</p>
+<p>Layers are organized under data frames. A data frame is a group of layers that are all drawn together.</p>
+<p>It is a strength of ArcMap to produce maps, not just of a layer’s spatial features, but also to highlight the non-spatial information associated with these features (e.g., attributes). This technique is called thematic mapping.</p>
+<p>Spatial data is visualized in ArcMap at varying map scales, which can be interactively changed by zooming into or out of the map. The map scale is a measure of the size of features presented in the visualization to their actual size, typically represented as a fraction or ratio. For example, a typical topographic map by the United States Geological Survey has the scale 1:24,000. This means that every 1 inch on the map represents 24,000 inches on the ground.</p>
+</div>
+<div id="arcgis-pro" class="section level3">
+<h3>ArcGIS Pro</h3>
+<p>The next evolution of ESRI’s ArcGIS Desktop software slated to replace ArcMap. ArcPro uses projects (.aprx files) as the basis for bringing together data layers and visualizations.</p>
+<p>For help, see <a href="https://www.esri.com/training/catalog/57630435851d31e02a43f007/getting-started-with-arcgis-pro/">Getting Started with ArcGIS Pro</a>.</p>
+</div>
+<div id="qgis" class="section level3">
+<h3>QGIS</h3>
+<p>QGIS is an open-source GIS program, which has evolved in recent years to be a strong competitor to ArcGIS as a personal GIS platform. QGIS has a decent user interface and it is also possible to script and automate analyses.</p>
+<p>One of the strengths of QGIS is that—in addition to providing a GIS interface of its own—it also integrates tools from a range of other GIS programs. These include:</p>
+<ul>
+<li>The Geospatial Data Abstraction Library (<a href="http://www.gdal.org/">GDAL</a>), which provides a suite of tools and programs for converting and manipulating spatial data</li>
+<li>The Geographic Resources Analysis Support System (<a href="http://grass.osgeo.org/">GRASS GIS</a>), which is a complete GIS system in its own right, but has until recently been largely a command-line application.</li>
+</ul>
+</div>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references hanging-indent">
+<div id="ref-bolstad12">
+<p>Bolstad, Paul. 2012. <em>GIS Fundamentals: A First Text on Geographic Information Systems</em>. 4th ed. White Bear Lake, MN: Elder Press.</p>
+</div>
+</div>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

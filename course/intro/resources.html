@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Resources</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 201 - Intro to GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Chapters
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Intro</a>
+    </li>
+    <li>
+      <a href="data.html">Data</a>
+    </li>
+    <li>
+      <a href="crs.html">CRS</a>
+    </li>
+    <li>
+      <a href="geostats.html">Geostats</a>
+    </li>
+    <li>
+      <a href="ethics.html">Ethics</a>
+    </li>
+    <li>
+      <a href="applications.html">Applications</a>
+    </li>
+    <li>
+      <a href="gps.html">GPS</a>
+    </li>
+    <li>
+      <a href="rs.html">RS</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Resources</h1>
+
+</div>
+
+
+<div id="additional-reading" class="section level3">
+<h3>Additional Reading</h3>
+<p><a href="https://www.wiley.com/legacy/wileychi/gis/volumes.html">Geographic Information Systems, First Edition, 1991</a> — Copyright © John Wiley &amp; Sons 1991. Converted to HTML by Jim Harper. Last updated January 16, 2001.</p>
+<p><a href="http://kartoweb.itc.nl/geometrics/index.html">Geometric Aspects of Mapping</a> — provides information on concepts of spatial referencing, including a brief introduction followed by more in-depth notes on coordinate systems, reference surfaces, map projections and coordinate transformations. International Institute for Geo-Information Science and Earth Observation (ITC), Enschede, 2009.</p>
+<p><a href="https://www.colorado.edu/geography/gcraft/notes/intro/intro_f.html">GIS as an Integrating Technology</a> — materials by Kenneth E. Foote and Margaret Lynch, The Geographer’s Craft Project, Department of Geography, The University of Colorado at Boulder. Copyright 2000–2015.</p>
+<p><a href="https://www.gps.gov/">GPS: The Global Positioning System</a>. Maintained by the National Coordination Office for Space-Based Positioning, Navigation, and Timing. 2018.</p>
+<p><a href="https://learn.sparkfun.com/tutorials/gps-basics">GPS Basics</a>. Written by Aaron Weiss (a1ronzo). Available online at SparkFun Electronics. Accessed 18 January 2018.</p>
+<p><a href="http://www.trimble.com/gps_tutorial/">GPS Tutorial</a>. Trimble Inc. 2018.</p>
+<p><a href="https://mgimond.github.io/Spatial/index.html">Intro to GIS and Spatial Analysis</a> — a compilation of lecture notes into an online textbook on data manipulation &amp; visualization and exploratory spatial data analysis by Manuel Gimond</p>
+<p><a href="https://www.nasa.gov/kepler/education/johannes">Johannes Kepler: His Life, His Laws and Times</a>. National Aeronautics and Space Administration (NASA). 2017.</p>
+<p><a href="https://www.colorado.edu/geography/gcraft/notes/gps/gps_f.html">The Global Positioning System</a>. Written by Peter H. Dana, Department of Geography, University of Texas at Austin. 1994. Provided by Ken Foote, The Geographer’s Craft, Department of Geography, University of Colorado at Boulder. 2015.</p>
+<p><a href="https://www.e-education.psu.edu/natureofgeoinfo/">The Nature of Geographic Information</a> — an open-access textbook to promote understanding of the Geographic Information Science and Technology enterprise.</p>
+</div>
+<div id="general-information" class="section level3">
+<h3>General information</h3>
+<p><a href="https://mgimond.github.io/ArcGIS_tutorials/index.html">ArcGIS Tutorials</a></p>
+<p><a href="https://oceanservice.noaa.gov/education/tutorial_geodesy/geo09_gps.html">Do you know where you are? - The Global Positioning System</a>. National Oceanic and Atmospheric Administration (NOAA). 2017.</p>
+<p><a href="https://doc.arcgis.com/en/">Documentation for ArcGIS</a></p>
+<p><a href="https://www.gisci.org">GIS Certification Institute</a> — a non-profit organization that provides the GIS community with a complete certification program leading to Certified GIS Professional recognition focused on six key knowledge areas: <em>Conceptual Foundations</em>, <em>Cartography and Visualization</em>, <em>GIS Design Aspects and Data Modelling</em>, <em>GIS Analytical Methods</em>, <em>Data Manipulation</em>, and <em>Geospatial Data</em></p>
+<p><a href="https://www.geolounge.com/maps/">Geo Lounge</a> — an information site about all things geography. Learn about maps and cartography as well as articles covering GIS (geographic information systems), GPS, remote sensing, and other geospatial technologies.</p>
+<p><a href="https://www.loc.gov/rr/geogmap/index.html">Geography &amp; Map Reading Room</a> —- The Geography and Map Division of the Library of Congress provides cartographic and geographic information for all parts of the world to the Congress, Federal agencies, state and local governments, the scholarly community, and to the general public; it is the largest and most comprehensive cartographic collection in the world, numbering over 5.2 million maps.</p>
+<p><a href="https://www.gislounge.com/">GIS Lounge</a> — news, data and information on GIS</p>
+<p><a href="https://www.youtube.com/playlist?list=PLGvhNIiu1ubyEOJga50LJMzVXtbUq6CPo">GPS: An Introduction to Satellite Navigation</a> (“GPS MOOC”). Stanford University. 2014.</p>
+<p><a href="https://livingatlas.arcgis.com/">Living Atlas of the World</a> — the foremost collection of global geographic information from Esri and its partners, including maps, apps, and data layers used to support critical decision making.</p>
+<p><a href="http://geology.isu.edu/wapi/geostac/Field_Exercise/topomaps/map_proj.htm">Map Projections</a> — Geospatial Training and Analysis</p>
+<p><a href="https://www.e-education.psu.edu/geog160/">Mapping our Changing World</a> — An e-class in geography by Xi Liu at Penn State University</p>
+<p><a href="https://www.nga.mil">National Geospatial-Intelligence Agency</a></p>
+<p><a href="https://courses.washington.edu/gis250/lessons/projection/">Projections and Coordinate Systems</a></p>
+<p><a href="http://wiki.gis.com">The GIS Encyclopedia</a></p>
+<p><a href="https://www.cia.gov/library/publications/the-world-factbook/docs/refmaps.html">The World Factbook</a> — Regional and world maps provided by the United States Central Intelligence Agency</p>
+<p><a href="https://www.unavco.org/unavco.html">UNAVCO</a></p>
+<p><a href="https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm">Working with ZIP files</a> — a review on viewing, opening and extracting data from .zip files on Windows machines.</p>
+</div>
+<div id="geospatial-data" class="section level3">
+<h3>Geospatial data</h3>
+<p><a href="https://ava.jpl.nasa.gov/">ASTER Volcano Archive</a> — the world’s largest specialty archive of volcano data, including publicly available high-resolution multispectral ASTER data.</p>
+<p><a href="https://www.carteretcountync.gov/469/GIS-Services">Carteret County GIS</a> — download the most current public GIS data and access a variety of web applications.</p>
+<p><a href="https://catawba.edu/about/campus/maps/campus-addresses-gps-and-mapping-services/">Catawba College Campus Addresses for GPS and Mapping</a> — includes latitude and longitude coordinates for campus buildings.</p>
+<p><a href="https://earthexplorer.usgs.gov/">EarthExplorer</a> — search, download, and order satellite images, aerial photographs, and cartographic products.</p>
+<p><a href="http://www.fao.org/geonetwork/srv/en/main.home">FAO GeoNetwork</a> — provides interactive maps, satellite imagery and related spatial databases for sustainable development and decision making in agriculture, forestry, fisheries and food security.</p>
+<p><a href="http://isodp.hof-university.de/fuzzyg/query/">Fuzzy Gazeteer</a> — name search for feature locations from all over the world</p>
+<p><a href="https://www.geoplatform.gov/">GeoPlatform</a> — using collaboration, common data, services, applications and shared infrastructure to address national and regional issues and priorities (The Federal Geographic Data Committee).</p>
+<p><a href="https://www.mrlc.gov/index.php">National Land Cover Database</a> — provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.</p>
+<p><a href="http://www.naturalearthdata.com/">Natural Earth</a> — a public domain map dataset featuring vector and raster data.</p>
+<p><a href="https://connect.ncdot.gov/resources/gis/Pages/GIS-Data-Layers.aspx">NCDOT</a> — North Carolina county and state road system shapefiles.</p>
+<p><a href="http://data.nconemap.gov/geoportal">NC OneMap GeoPortal</a> — the geospatial backbone supporting North Carolina data and map service users. It is an organized effort of numerous partners throughout North Carolina, involving local, state, and federal government agencies, the private sector and academia.</p>
+<p><a href="http://www.sharkattackfile.net/">Global Shark Attack File</a> — a time-stamped semi-geolocated incident log of global shark attacks.</p>
+<p><a href="https://ngmdb.usgs.gov/topoview/">TopoView</a> — a digital repository of USGS 1:250,000 scale and larger (more detailed) maps printed between 1884 (the inception of the topographic mapping program), and 2006.</p>
+<p><a href="https://viewer.nationalmap.gov/launch/">USGS TNM</a> — GIS data download and visualization services.</p>
+</div>
+<div id="online-tools-and-software" class="section level3">
+<h3>Online tools and software</h3>
+<p><a href="https://carteret.connectgis.com/Map.aspx">ConnectGIS</a> — an online GIS portal and mapping tool for Carteret County, NC.</p>
+<p><a href="https://www.epa.gov/enviroatlas">EnviroAtlas</a> — interactive tools that allow users to discover, analyze, and download data and maps related to ecosystem services, or the benefits people receive from nature</p>
+<p><a href="https://geodacenter.github.io/">GeoDa</a> — a free and open source software tool that provides a user-friendly graphical user interface for exploratory spatial data analysis developed by Dr. Luc Anselin and his team. GeoDa runs on Windows, MacOSX and Linux (Ubuntu).</p>
+<p><a href="https://tools.wmflabs.org/geohack/">GeoHack</a> — a modified version of map sources from Egil Kvaleberg’s gis extension. It is designed to do simple HTML replacements of a template on Wikipedia and serve it to the client. It is used by Wikipedia to provide links to various mapping services, when a user clicks on a link with geographical coordinates. For example, <a href="https://tools.wmflabs.org/geohack/geohack.php?params=35_41_25.8_N_80_28_49_W">click here</a> to GeoHack the Center for the Environment.</p>
+<p><a href="http://www.geo-locate.org/web/WebGeoref.aspx">GEOLocate Web Application</a> — simply type in your locality description and get back georeferenced results.</p>
+<p><a href="https://www.google.com/earth/">Google Earth</a> — software that renders a 3D representation of Earth based on satellite imagery based on the superimposition of images obtained from satellite imagery, aerial photography, and GIS data onto a 3D globe, allowing users to see cities and landscapes from various angles.</p>
+<p><a href="https://www.openstreetmap.org/#map=16/35.6918/-80.4897">OpenStreetMap.org</a> — a collaborative project to create a free editable map of the world.</p>
+<p><a href="http://www.reefbase.org/">ReefBase</a> — A Global Information System for Coral Reefs.</p>
+<p><a href="https://www.usgs.gov/products/data-and-tools/overview">USGS Data and Tools</a> — digital information provided in a format suitable for direct input to software that can analyze its meaning in the scientific, engineering, or business context.</p>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

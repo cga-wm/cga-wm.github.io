@@ -1,0 +1,41 @@
+---
+title: "Geostatistics"
+bibliography: refs.bib
+---
+
+> Everything is related to everything else, but near things are more related than distant things.&#8221;
+>
+> ---The First Law of Geography by [Waldo Tobler](https://en.wikipedia.org/wiki/Waldo_R._Tobler)
+
+## History
+
+As a discipline, geostatistics was firmly established in the 1960s by the French engineer [Georges Matheron](https://en.wikipedia.org/wiki/Georges_Matheron), who was interested in the appraisal of ore reserves in mining.
+
+Geostatistics did not develop overnight.
+Like other disciplines, it has built on previous results, many of which were formulated with different objectives in various fields.
+
+Seminal ideas conceptually related to what today we call geostatistics or spatial statistics are found in the work of several pioneers, including:
+
+* 1940s: [Andrey N. Kolmogorov](https://en.wikipedia.org/wiki/Andrey_Kolmogorov) in turbulent flow and [Norbert Wiener](https://en.wikipedia.org/wiki/Norbert_Wiener) in stochastic processing
+* 1950s: [Danie G. Krige](https://en.wikipedia.org/wiki/Danie_G._Krige) in mining
+* 1960s: B. Mathern in forestry and L.S. Gandin (Russian) in meteorology
+
+## Challenge
+
+Most geological phenomena are extraordinarily complex in their interrelationships and vast in their geographical extension.
+Ordinarily, engineers and geoscientists are faced with corporate or scientific requirements to properly prepare geological models with measurements involving a significantly small fraction of the entire area or volume of interest.
+Exact descriptions of such systems are neither feasible nor economically possible and therefore the results are necessarily uncertain.
+It should be noted, however, that **uncertainty is not an intrinsic property of the systems**, rather it is the result of the incomplete knowledge of the observer.[@olea09]
+
+## Objectives and Methods
+
+The main objective of geostatistics is the characterization of spatial systems that are incompletely known.
+
+Geostatistics makes use of a collection of numerical techniques for the characterization of spatial attributes using primarily two tools:
+
+* probabilistic models
+* pattern recognition techniques
+
+The probabilistic models are used as a way to handle uncertainty in results away from sampling locations, making a radical departure from alternative approaches like inverse distance estimation methods.
+
+## References

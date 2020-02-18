@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Applications</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 201 - Intro to GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Chapters
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Intro</a>
+    </li>
+    <li>
+      <a href="data.html">Data</a>
+    </li>
+    <li>
+      <a href="crs.html">CRS</a>
+    </li>
+    <li>
+      <a href="geostats.html">Geostats</a>
+    </li>
+    <li>
+      <a href="ethics.html">Ethics</a>
+    </li>
+    <li>
+      <a href="applications.html">Applications</a>
+    </li>
+    <li>
+      <a href="gps.html">GPS</a>
+    </li>
+    <li>
+      <a href="rs.html">RS</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Applications</h1>
+
+</div>
+
+
+<blockquote>
+<p>We cannot manage what we do not measure.”</p>
+<p>— <a href="https://en.wikipedia.org/wiki/Pavan_Sukhdev">Pavan Sukhdev</a>, environmental economist</p>
+</blockquote>
+<p>The power of GIS is its ability to answer certain types of questions, such as <span class="citation">(Maguire 1991)</span>:</p>
+<ul>
+<li>Locations (<em>What is at …?</em>)</li>
+<li>Conditions (<em>Where is it …?</em>)</li>
+<li>Trends (<em>What has changed …?</em>)</li>
+<li>Routing (<em>Which is the best way …?</em>)</li>
+<li>Patterns (<em>What is the pattern …?</em>)</li>
+<li>Modelling (<em>What if …?</em>)</li>
+</ul>
+<p>Geographic Information Systems are sometimes categorized based on the questions they are used to address. Some of these application-specific classifications include the following <span class="citation">(Maguire 1991)</span>:</p>
+<ul>
+<li>Cadastral information systems</li>
+<li>Image-based information systems</li>
+<li>Land data systems</li>
+<li>Geographically referenced information systems</li>
+<li>Natural resource management information systems</li>
+<li>Market analysis information systems</li>
+<li>Multipurpose cadastre</li>
+<li>Planning information systems</li>
+<li>Property information systems</li>
+<li>Soil information systems</li>
+<li>Spatial information systems</li>
+<li>Spatial decision support systems</li>
+<li>Urban information systems</li>
+</ul>
+<p>One of the first major areas of GIS application was in natural resource management, which may include the management of some of the following <span class="citation">(Foote and Lynch 1995)</span>:</p>
+<ul>
+<li>wildlife habitat</li>
+<li>wild and scenic rivers</li>
+<li>recreational resources</li>
+<li>floodplains</li>
+<li>wetlands</li>
+<li>agricultural lands</li>
+<li>aquifers</li>
+<li>forests</li>
+</ul>
+<p>Other applications are also investigated below.</p>
+<div id="natural-disasters-and-emergency-management" class="section level2">
+<h2>Natural Disasters and Emergency Management</h2>
+<p><em>Emergency management</em> is the organization and management of resources and responsibilities for dealing with all aspects of emergencies <span class="citation">(National Research Council 2007)</span>. The four phases of emergency management include the following:</p>
+<ul>
+<li>preparedness</li>
+<li>response</li>
+<li>recovery</li>
+<li>mitigation</li>
+</ul>
+<p>All disasters have a temporal and geographic footprint that identifies the duration of impact and its extent on the Earth’s surface. The term <em>geospatial</em> is used to refer to the interdependent resources—imagery, maps, data sets, tools, and procedures—that tie every event, feature, or entity to a location on the Earth’s surface and use this information for some purpose. Although location is an essential part of any item of geospatial data, it is the ability to link a location to the properties of events, features, or entities at that location that gives geospatial data their value.</p>
+<p>Throughout this document, three types of geospatial data are discussed:</p>
+<dl>
+<dt>Framework data</dt>
+<dd><p>comprise of seven geographic themes that are most commonly produced and used by most organizations in their day-to-day geospatial activities (i.e., <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#geodetic">geodetic control</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#orthoimage">orthoimagery</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#elevation">elevation</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#transportation">transportation</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#hydrography">hydrography</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#governmental">governmental units</a>, and <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#cadastral">cadastral information</a>)</p>
+</dd>
+<dt>Foundation data</dt>
+<dd><p>support the day-to-day operations of the private or public sector (e.g., maps or data sets of soils, land use, weather, underground pipes, or overhead power lines)</p>
+</dd>
+<dt>Event-related data</dt>
+<dd><p>include all those items collected specifically to respond to and recover from a particular disaster event (e.g., the locations of casualties; the locations of response resources; imagery and inventories of property and environmental damage; and earthquake aftershock or chemical plume data)</p>
+</dd>
+</dl>
+</div>
+<div id="watershed-delineation" class="section level2">
+<h2>Watershed Delineation</h2>
+<dl>
+<dt>DEM</dt>
+<dd>Digital Elevation Map
+</dd>
+<dt>Outlet</dt>
+<dd>any point along a river, stream or creek; defines a unique watershed
+</dd>
+<dt>Watershed</dt>
+<dd>an area of land that drains all the streams and rainfall to a common outlet (also known as a drainage basin or catchment)
+</dd>
+</dl>
+<p>A watershed is the area of land where all of the water that falls in it and drains off of it goes to a common outlet. Watersheds are important because the amount and the quality of water of a river are affected by things (e.g., human activity, pollution runoff, heavy rainfall), which are happening in the land area “above” the river-outflow point <span class="citation">(U. S. Geological Survey 2016)</span>.</p>
+<p><strong>Delineating a Watershed in GIS</strong></p>
+<p>There are several ways to delineate a watershed; however, using standard GIS tools, the following are the basic steps for delineation.</p>
+<p>Required spatial data:</p>
+<ul>
+<li>Elevation (raster) data; elevation or topographic data are required, which may be in the form of a digital elevation map (DEM) or other raster file format</li>
+<li>Outlet location; a watershed is defined by its outlet, which can be any point location along a river, stream or creek—typically, an outlet is defined at a critical juncture (e.g., where two rivers meet) or just upstream of a city or town (e.g., for flood management)</li>
+</ul>
+<p>Geoprocessing tools:</p>
+<ul>
+<li>fill sinks</li>
+<li>calculate flow direction</li>
+<li>calculate flow accumulation</li>
+<li>define the pour point</li>
+<li>delineate the watershed</li>
+</ul>
+</div>
+<div id="habitat-suitability-delineation" class="section level2">
+<h2>Habitat Suitability Delineation</h2>
+<dl>
+<dt>Habitat suitability rank</dt>
+<dd>identification of potential living areas based on various grades of suitability criteria
+</dd>
+<dt>Habitat suitability</dt>
+<dd>identification of optimal living areas based on a set of suitability criteria
+</dd>
+</dl>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references hanging-indent">
+<div id="ref-footelynch95">
+<p>Foote, Kenneth E., and Margaret Lynch. 1995. “Geographic Information Systems as an Integrating Technology: Context, Concepts, and Definitions.” In <em>The Geographer’s Craft Project</em>. Boulder, CO: Department of Geography, The University of Colorado at Boulder.</p>
+</div>
+<div id="ref-maguire91">
+<p>Maguire, D. J. 1991. “An Overview and Definition of Gis.” In <em>Geographic Information Systems</em>, 1st ed., 9–20. Hoboken, NJ: John Wiley &amp; Sons Ltd.</p>
+</div>
+<div id="ref-nrc07">
+<p>National Research Council. 2007. <em>Successful Response Starts with a Map: Improving Geospatial Support for Disaster Management</em>. Washington, DC: The National Academies Press. <a href="https://doi.org/10.17226/11793">https://doi.org/10.17226/11793</a>.</p>
+</div>
+<div id="ref-usgs16">
+<p>U. S. Geological Survey. 2016. “What Is a Watershed?” <a href="https://water.usgs.gov/edu/watershed.html">https://water.usgs.gov/edu/watershed.html</a>.</p>
+</div>
+</div>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

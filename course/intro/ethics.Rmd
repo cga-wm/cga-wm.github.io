@@ -1,0 +1,23 @@
+---
+title: "The Ethics of GIS"
+bibliography: refs.bib
+---
+
+All modern information systems enable users to create documents easily and to disseminate those documents widely.
+These properties of rapid, inexpensive creation and dissemination usually have good consequences.
+For example, during the recovery from Hurricane Katrina in 2005, emergency personnel used geographic information systems to tailor maps and spatial analyses to specific requests.
+GIS dramatically decreased the time necessary to create ad hoc maps, and they enabled real-time changes to maps that would not have been possible on paper maps. [@graeff08]
+
+While GIS can promote the good by providing accurate data quickly, GIS can also cause harm through misrepresentations and biases.
+Biases are an inherent in all information systems and come about in one of three ways:
+
+preexisting bias
+:    a personal or societal bias that occurs before data are added to a computer system; this can be intentional or unintentional, for example whether or not to include a particular sensitive location.
+
+technical bias
+:   results from limitations on hardware, software, or algorithms; for example, screen size may limit the number of choices that a user sees, thus creating a bias against those options that are hidden or obscured.
+
+emergent bias
+:   arises after an information system is in use; for example, decisions that are made based on old information have a bias when that information changes and the user does not have access to the latest information or the information is not updated in a timely manner.
+
+## References 

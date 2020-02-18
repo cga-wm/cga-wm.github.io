@@ -1,0 +1,34 @@
+name: "intro-to-gis"
+output_dir: "."
+navbar:
+    title: "GIS 201 - Intro to GIS"
+    right:
+        - text: "Chapters"
+          menu:
+              - text: Intro
+                href: intro.html
+              - text: Data
+                href: data.html
+              - text: CRS
+                href: crs.html
+              - text: Geostats
+                href: geostats.html
+              - text: Ethics
+                href: ethics.html
+              - text: Applications
+                href: applications.html
+              - text: GPS
+                href: gps.html
+              - text: RS
+                href: rs.html
+        - text: "Resources"
+          href: resources.html
+
+output:
+    html_document:
+        toc: false
+        theme: flatly
+        highlight: haddock
+        css: "styles.css"
+        include:
+            after_body: footer.html

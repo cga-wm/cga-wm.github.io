@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Data</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 201 - Intro to GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Chapters
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Intro</a>
+    </li>
+    <li>
+      <a href="data.html">Data</a>
+    </li>
+    <li>
+      <a href="crs.html">CRS</a>
+    </li>
+    <li>
+      <a href="geostats.html">Geostats</a>
+    </li>
+    <li>
+      <a href="ethics.html">Ethics</a>
+    </li>
+    <li>
+      <a href="applications.html">Applications</a>
+    </li>
+    <li>
+      <a href="gps.html">GPS</a>
+    </li>
+    <li>
+      <a href="rs.html">RS</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Data</h1>
+
+</div>
+
+
+<blockquote>
+<p>You can have data without information, but you cannot have information without data.”</p>
+<p>— Daniel Keys Moran, author and computer programmer</p>
+</blockquote>
+<div id="spatial-data" class="section level2">
+<h2>Spatial Data</h2>
+<div id="whats-so-special-about-spatial" class="section level3">
+<h3>What’s so special about spatial?</h3>
+<blockquote>
+<p>GIS is like the machinery that transforms data into the commodity–information–that is needed to solve problems or create opportunities.”</p>
+<p>— <span class="citation">DiBiase (2018)</span></p>
+</blockquote>
+<p>GIS data files are complicated. One GIS dataset often consists of multiple linked files that contain different bits of information. It is common for a particular GIS dataset to have a data file and then separate files used to describe the spatial parts of the data.</p>
+<p>Spatial data is traditionally found in one of two formats: <strong>vector</strong> or <strong>raster</strong>.</p>
+<table style="width:78%;">
+<colgroup>
+<col width="38%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Vector</th>
+<th align="left">Raster</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mathematical equations</td>
+<td align="left">Pixel based</td>
+</tr>
+<tr class="even">
+<td align="left">Easily scaled without losing quality</td>
+<td align="left">Does not scale up very well; typically in a prescribed resolution</td>
+</tr>
+<tr class="odd">
+<td align="left">Large dimensions maintain small file size</td>
+<td align="left">Large dimensions have large file sizes</td>
+</tr>
+<tr class="even">
+<td align="left">Can be easily converted into raster format</td>
+<td align="left">Depending on complexity, conversion to vector can be very time consuming</td>
+</tr>
+<tr class="odd">
+<td align="left"><img src="images/vector_point.jpg" title="Vector Point" height="150" alt="Vector points" /></td>
+<td align="left"><img src="images/raster_point.jpg" title="Raster Point" height="150" alt="Raster points" /></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/vector_line.jpg" title="Vector Line" height="150" alt="Vector lines" /></td>
+<td align="left"><img src="images/raster_line.jpg" title="Raster Line" height="150" alt="Raster lines" /></td>
+</tr>
+<tr class="odd">
+<td align="left"><img src="images/vector_area.jpg" title="Vector Area" height="150" alt="Vector areas" /></td>
+<td align="left"><img src="images/raster_area.jpg" title="Raster Area" height="150" alt="Raster areas" /></td>
+</tr>
+<tr class="even">
+<td align="left">Example: <a href="https://www.intmath.com/vectors/math-vector-art.php#intbezcurves">Vectors in Action</a></td>
+<td align="left">Example: <a href="http://makepixelart.com/free">Raster drawing</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="vector-data" class="section level2">
+<h2>Vector Data</h2>
+<dl>
+<dt>Vector Data</dt>
+<dd>a classification of spatially referenced data, which includes <em>points</em>, <em>lines</em> (polylines) and <em>areas</em> (polygons)
+</dd>
+<dt>Points</dt>
+<dd>objects represented by a single pair of locational coordinates (for example, <em>x</em> and <em>y</em> or <em>latitude</em> and <em>longitude</em>); dimension = 0
+</dd>
+<dt>Lines</dt>
+<dd>sets of ordered and connected points that may describe linear features (for example, boundaries, roads, or rivers); dimension = 1
+</dd>
+<dt>Areas</dt>
+<dd>collections of line segments that close to form discrete units; dimension = 2
+</dd>
+<dt>Main Concepts:</dt>
+<dd><ul>
+<li>Attributes</li>
+<li>Feature Class</li>
+<li>Shapefile</li>
+</ul>
+</dd>
+</dl>
+<p>Vector data is the generic term for GIS data built up from defined points in space. These can simply be points or can be linked into lines and polygons. These features may also include additional non-spatial information called attributes. GIS store these attributes in a table, which is linked to the spatial data.</p>
+<p>Vector data does not really have a resolution because each point identifies a unique point in space. These points are recorded with a certain precision (e.g., GPS is often ±10 meters or so) but this precision may not be known. Despite this, vector data can still be imprecise or inaccurate!</p>
+<p>A common file format for storing vector data is the <em>shapefile</em>. A shapefile is actually a collection of at least four files, all of which share the same name, but have different file extensions that relate to the following information.</p>
+<ul>
+<li><strong>.shp</strong>—The coordinates of the GIS vector features. A shapefile will only contain one type of point, line or polygon data.</li>
+<li><strong>.shx</strong>—The extent (or limits) of the coordinates. These are used so often, it is convenient to have them stored in a separate file.</li>
+<li><strong>.prj</strong>—The projection system of the coordinates.</li>
+<li><strong>.dbf</strong>—A database file containing the attributes of each geographic feature.</li>
+</ul>
+<p>A collection of same-type features (point, line or polygon) is called a feature class.</p>
+<p>The key point here is that you have to keep all of the different parts of shapefiles together for the data to work.</p>
+<p><em>Be careful when moving GIS files!</em></p>
+</div>
+<div id="raster-data" class="section level2">
+<h2>Raster Data</h2>
+<p>Raster data is the GIS term for gridded data: an equally spaced grid where each cell (or pixel) has one value (digital number or DN) that represents the dominant value of that cell. These values can be continuous (e.g. elevation or temperature) or discrete (e.g. population densities or habitat categories). Sometimes raster data may contain null or ‘no data’ cells. Examples of raster data include aerial and satellite imagery.</p>
+<p>Raster datasets come in three varieties <span class="citation">(Dempsey 2012)</span>:</p>
+<ul>
+<li>thematic (e.g., Digital Elevation Model)</li>
+<li>spectral (e.g., aerial or satellite imagery used to derive vegetation or geologic information based on spectral signatures)</li>
+<li>picture (e.g., photograph)</li>
+</ul>
+<p>The main advantage of raster data is the ability to portray continuous data that cannot be well represented by points, lines or polygons.</p>
+<p>The main disadvantage of raster data is its inaccuracy as compared to vector data.</p>
+<dl>
+<dt>Raster Data</dt>
+<dd>a classification of spatially referenced data, which comprise of cell-based surfaces
+</dd>
+<dt>Cell</dt>
+<dd>a square or rectangular pixel in a raster dataset
+</dd>
+<dt>Continuous data</dt>
+<dd>data that do not have well-defined geographic boundaries and when mapped appear to have smooth transitions from one value to another (e.g., temperature, elevation)
+</dd>
+<dt>Discrete data</dt>
+<dd>data that have specific values in fixed locations (e.g., buildings, roads, land cover types)
+</dd>
+<dt>DN</dt>
+<dd>digital number; the value of a raster cell
+</dd>
+<dt>Pixel</dt>
+<dd>short for picture element; the smallest element of information in an image
+</dd>
+</dl>
+<div id="georeferencing" class="section level3">
+<h3>Georeferencing</h3>
+<p>A georeferenced raster dataset has several pieces of geographic information:</p>
+<ul>
+<li>the projection of the raster data</li>
+<li>the resolution of the cells (dimension of each cell in the units of the projection)</li>
+<li>a reference point with known coordinates (usually the top left corner of the grid)</li>
+</ul>
+<p>Many raster datasets are already georeferenced. In these cases, when the raster is added to a GIS map, the data will automatically appear in the correct place with reference to the projection.</p>
+<p>In other cases, the raster data is not georeferenced—this is often the case with aerial photos, some satellite images or scans of paper maps. In order to turn such data into a GIS dataset, the data need to be georeferenced.</p>
+<p>In georeferencing, a set of ground control points (GCPs) are used to orient the image in space and then this oriented image is resampled into a new dataset with cell boundaries and cell size defined in the projection.</p>
+<dl>
+<dt>Georeferencing</dt>
+<dd>to define something in physical space (e.g., location, coordinate reference system, map projection)
+</dd>
+</dl>
+</div>
+</div>
+<div id="metadata" class="section level2">
+<h2>Metadata</h2>
+<blockquote>
+<p>The data about other data.”</p>
+<p>—Meriam Webster</p>
+</blockquote>
+<p>Evaluating the quality of data can be difficult, especially if it was created by someone else. Therefore, there is an obligation to those who create data to include a report that summarizes the data quality (e.g., the spatial accuracy) in addition to information on other aspects of the data (e.g., the creation date or when it was last updated, the geographic area/extent, the coordinate system, explanations of attributes, copyright info and/or use restrictions), in such a way as to inform potential users of the data’s limitations and uses such that they can determine whether is best suited for their purpose. This collection of information about data is called <strong>metadata</strong>. <span class="citation">(Price 2012)</span></p>
+<p>Geographic metadata seeks to answer questions, such as:</p>
+<ul>
+<li>Who developed the data?</li>
+<li>When was the data collected?</li>
+<li>How were the data processed?</li>
+<li>How are the data attributes defined?</li>
+<li>In what formats are the data available?</li>
+<li>How does one obtain the data?</li>
+</ul>
+<div id="standards" class="section level3">
+<h3>Standards</h3>
+<p>The Federal Geographic Data Committee (FGDC) and the International Organization for Standardization (ISO) have worked together to develop metadata standards, including:</p>
+<ul>
+<li>Content Standard for Digital Geospatial Metadata (CSDGM)</li>
+<li>ISO 19115</li>
+</ul>
+<p>Faced with several standards, preparing a complete set of metadata can be a daunting task; however, it most cases, some information is better than none. Regardless of the standard, the core components of the metadata record should include (<a href="https://www.fgdc.gov/metadata" class="uri">https://www.fgdc.gov/metadata</a>):</p>
+<dl>
+<dt>Metadata Record Information</dt>
+<dd>information about the metadata record including the language in which the record is written, a unique file identifier for the metadata record, the metadata standard used to organize the record, a point of contact for the metadata record, and the date that the metadata record written
+</dd>
+<dt>Identification Information</dt>
+<dd>citation-level information about the data including the title, abstract, purpose for creation, status, keywords (theme and place), and extent (temporal, vertical and horizontal)
+</dd>
+<dt>Constraints Information</dt>
+<dd>information about legal and security limitations to data access and use
+</dd>
+<dt>Data Quality Information</dt>
+<dd>information about the processes and sources used to develop the data and positional and/or accuracy assessments performed
+</dd>
+<dt>Maintenance Information</dt>
+<dd>information about the scope and frequency of data updates
+</dd>
+<dt>Spatial Representation</dt>
+<dd>information about the mechanism used to represent spatial data (grid, point, vector)
+</dd>
+<dt>Reference System Information</dt>
+<dd>information about the reference systems used to represent geographic position and time
+</dd>
+<dt>Content Information</dt>
+<dd>information about the data set entities and attributes
+</dd>
+<dt>Symbology Information</dt>
+<dd>information about the symbols used to represent spatial features
+</dd>
+<dt>Distribution Information</dt>
+<dd>information about the data distributors and methods for obtaining the data
+</dd>
+<dt>Metadata Extension Information</dt>
+<dd>information about custom, user-based, changes to the elements, domains or conditionality of the standard
+</dd>
+<dt>Application Schema Information</dt>
+<dd>information about the schema or data models used to structure the data
+</dd>
+</dl>
+<div class="figure">
+<img src="images/geometa.png" alt="" />
+<p class="caption">Content Standard for Digital Geospatial Metadata (CSDGM) graphical representation. FGDC.gov.</p>
+</div>
+</div>
+</div>
+<div id="databases" class="section level2">
+<h2>Databases</h2>
+<p>Geographic data (e.g., vector, raster and table) may be collectively stored together in what is called a geodatabase—a versatile format convenient for data editing and management.</p>
+<p>These are several types of geodatabases. The one we are focused on in this class is the <em>File geodatabase</em>.</p>
+<dl>
+<dt>File Geodatabase</dt>
+<dd><p>This database type is designed for individuals or small groups. The data set is stored as a separate file within a system folder and each file can be up to one terabyte in size.</p>
+<p>File geodatabases are best for cross-platform operations (i.e., accessible by multiple operating system architectures, such as Windows, Macintosh, and Linux). <span class="citation">(Price 2012)</span></p>
+</dd>
+</dl>
+</div>
+<div id="database-design" class="section level2">
+<h2>Database design</h2>
+<p>Good databases do not happen by accident <span class="citation">(Price 2012)</span>. Geodatabases are created as empty shells. These shells have a defined organizational structure (this data model is called a <em>schema</em>) into which feature classes and other objects can be added.</p>
+<p>One organizational method is to create <em>feature datasets</em>. A feature dataset is a collection of feature classes that are related to one another (e.g., they are categorically similar) and share the same spatial reference.</p>
+<p>One advantage of geodatabases is the ability to define a set of rules for data attributes. This is accomplished through the use of an attribute <em>domain</em>—pre-defined attribute value constraints.</p>
+<p>There are two types of domains: <em>range domains</em> and <em>coded domains</em>.</p>
+<dl>
+<dt>Range domains</dt>
+<dd>A specification of the lowest and highest acceptable values.
+</dd>
+<dt>Coded domains</dt>
+<dd>A specification list of acceptable values. These values are made of code and textual description pairs.
+</dd>
+</dl>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references hanging-indent">
+<div id="ref-dempsey12">
+<p>Dempsey, Caitlin. 2012. “GIS Data Explored - Vector and Raster Data.” <a href="https://www.gislounge.com/geodatabases-explored-vector-and-raster-data/">https://www.gislounge.com/geodatabases-explored-vector-and-raster-data/</a>.</p>
+</div>
+<div id="ref-dibiase18">
+<p>DiBiase, David. 2018. <em>The Nature of Geographic Information</em>. University Park, PA: Penn State’s College of Earth; Mineral Sciences. <a href="https://www.e-education.psu.edu/natureofgeoinfo/">https://www.e-education.psu.edu/natureofgeoinfo/</a>.</p>
+</div>
+<div id="ref-price12">
+<p>Price, Maribeth. 2012. <em>Mastering Arcgis</em>. 5th ed. New York, NY: McGraw Hill.</p>
+</div>
+</div>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

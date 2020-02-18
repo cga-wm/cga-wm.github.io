@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Coordinate Reference Systems</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 201 - Intro to GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Chapters
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Intro</a>
+    </li>
+    <li>
+      <a href="data.html">Data</a>
+    </li>
+    <li>
+      <a href="crs.html">CRS</a>
+    </li>
+    <li>
+      <a href="geostats.html">Geostats</a>
+    </li>
+    <li>
+      <a href="ethics.html">Ethics</a>
+    </li>
+    <li>
+      <a href="applications.html">Applications</a>
+    </li>
+    <li>
+      <a href="gps.html">GPS</a>
+    </li>
+    <li>
+      <a href="rs.html">RS</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Coordinate Reference Systems</h1>
+
+</div>
+
+
+<blockquote>
+<p>To any point on the earth’s surface may be attached a locational reference of some form, be it a pair of Cartesian coordinates at large scales or latitude and longitude at smaller scales.”</p>
+<p>— <span class="citation">Maling (1991)</span></p>
+</blockquote>
+<div id="the-shape-of-the-earth" class="section level2">
+<h2>The Shape of the Earth</h2>
+<p>The origin of geographic coordinates begins with how we define the size and shape of Earth. Earth was originally thought to be in the shape of a sphere. This was first reasoned by Pythagoras (570–495 B.C.) and later by Aristotle (384–322 B.C.). It was not until Sir Isaac Newton (1643–1727 C.E.) that Earth’s shape was reasoned to be an <em>ellipsoid</em>.</p>
+<dl>
+<dt>ellipsoid</dt>
+<dd>three dimensional shape generated by rotating an ellipse about its shorter axis
+</dd>
+<dt>geoid</dt>
+<dd>irregular three-dimensional shape representing Earth at approximately mean sea level based on Earth’s gravity fields
+</dd>
+</dl>
+<p>Earth’s circumference was first calculated within 4% of modern estimates by Eratosthenes (276–194 B.C.).</p>
+</div>
+<div id="geographic-coordinate-systems-gcs" class="section level2">
+<h2>Geographic Coordinate Systems (GCS)</h2>
+<p>In order to display and analyze maps on screen, a GIS system uses coordinate pairs that specify the location and shape of a particular feature. The geographic coordinate system (GCS) aids defining where coordinate pairs are located in space, whereby <em>x</em>-<em>y</em> coordinate pairs are defined in degrees of longitude and latitude.</p>
+<p>GIS tools layer geospatial data for a given area; therefore it is important that the coordinate systems of these layers be the same.</p>
+<dl>
+<dt>datum</dt>
+<dd>a reference from which spatial measurements are made; a set of points (coordinate locations) specifying positions on Earth’s surface
+</dd>
+<dt>latitude</dt>
+<dd>angular measurement north or south of the equator; also known as parallels
+</dd>
+<dt>longitude</dt>
+<dd>angular distance measured east or west from a given meridian (e.g., the Prime Meridian located at the Royal Observatory in Greenwich, England); also known as meridians
+</dd>
+<dt>origin</dt>
+<dd>defined by coordinates (0,0)
+</dd>
+<dt>point</dt>
+<dd>described by a single <em>x</em>-<em>y</em> coordinate pair
+</dd>
+<dt>line</dt>
+<dd>a series of <em>x</em>-<em>y</em> coordinates
+</dd>
+</dl>
+<p>In reality, layers are often not in the same coordinate system or resolution; therefore, they must undergo projection or transformation.</p>
+</div>
+<div id="projected-coordinate-systems" class="section level2">
+<h2>Projected Coordinate Systems</h2>
+<p>Because the earth is not flat, any map is a projection of the surface of the Earth onto a flat surface, whether it is a printed map or GIS data on a screen.</p>
+<p>To complicate things, a map projection is actually defined by two components:</p>
+<ol style="list-style-type: decimal">
+<li>The <em>geographic coordinate system</em>, which describes the position of the points on the surface of the Earth as latitude and longitude. The geographic coordinates will vary depending on the model used to describe the surface of the earth. The model (or datum) consists of a spheroid—the shape of the earth in terms of radius and flattening—and this can be local or global.</li>
+<li>The <em>projected coordinate system</em>, which are the XY positions of latitude and longitude points on the flattened surface.</li>
+</ol>
+<p>To maximize information from a given map, it is ideal that it preserves the shape, area, distance and direction; however, these properties cannot all be preserved at once.</p>
+<dl>
+<dt>Mercator Projection</dt>
+<dd><p>cylindrical projection that preserves angles and shapes of small objects, but distorts the size and shape of large objects</p>
+<div class="figure">
+<img src="images/mercator.jpg" width="500" alt="" />
+<p class="caption">Mercator Projection. <a href="http://wiki.gis.com/wiki/images/6/62/Usgs_map_mercator.svg" class="uri">http://wiki.gis.com/wiki/images/6/62/Usgs_map_mercator.svg</a></p>
+</div>
+</dd>
+<dt>Transverse Mercator Projection</dt>
+<dd><p>the Mercator projection rotated 90 degrees</p>
+<div class="figure">
+<img src="images/traverse_mercator.jpg" width="500" alt="" />
+<p class="caption">Transverse Mercator Projection. <a href="http://wiki.gis.com/wiki/images/b/b9/Usgs_map_traverse_mercator.PNG" class="uri">http://wiki.gis.com/wiki/images/b/b9/Usgs_map_traverse_mercator.PNG</a></p>
+</div>
+</dd>
+<dt>USA Contiguous Albers Equal Area Conic USGS version</dt>
+<dd><p>used by the USGS, this coordinate system is good for mapping the continental United States with minimal distortion. It is best for land masses that extend from east to west more than north to south, making it perfectly suitable for the U.S.</p>
+<div class="figure">
+<img src="images/albers.jpg" width="500" alt="" />
+<p class="caption">USA Contiguous Albers Equal Area Conic. <a href="https://egsc.usgs.gov/isb//pubs/MapProjections/graphics/albers.gif" class="uri">https://egsc.usgs.gov/isb//pubs/MapProjections/graphics/albers.gif</a></p>
+</div>
+</dd>
+<dt>Universal Transverse Mercator (UTM) Coordinate System</dt>
+<dd><p>a standard set of map projections developed by the U.S. Military and widely adopted for coordinate specification over regional study areas. There are 60 six-degree wide UTM zones.</p>
+<div class="figure">
+<img src="http://wiki.gis.com/wiki/images/e/ed/Utm-zones.jpg" id="id" class="class" width="500" height="250" alt="" />
+<p class="caption">UTM. <a href="http://wiki.gis.com/wiki/images/e/ed/Utm-zones.jpg" class="uri">http://wiki.gis.com/wiki/images/e/ed/Utm-zones.jpg</a></p>
+</div>
+</dd>
+</dl>
+<div id="projection-types" class="section level3">
+<h3>Projection Types</h3>
+<p>There are hundreds of different projections, some of which are defined below.</p>
+<ul>
+<li>Conformal: maintains local angles and shapes</li>
+<li>Equal-area: maintains area</li>
+<li>Equal-distant: maintains distance</li>
+<li>True-direction: maintains directions with respect to a fixed central point</li>
+<li>Universal Transverse Mercator (UTM): maintains both conformal and equal area</li>
+</ul>
+<div class="figure">
+<img src="https://imgs.xkcd.com/comics/bad_map_projection_time_zones.png" alt="" />
+<p class="caption">Bad Map Projection: Time Zones (<a href="https://xkcd.com/1799/" class="uri">https://xkcd.com/1799/</a>)</p>
+</div>
+</div>
+<div id="projection-distortions" class="section level3">
+<h3>Projection Distortions</h3>
+<p>The Mercator projection attempts to flatten the spherical surface of Earth, which results in the exaggeration of object sizes as the distance from the equator increases.</p>
+<div class="figure">
+<img src="http://wiki.gis.com/wiki/images/8/87/Tissot_mercator.png" id="id" class="class" width="500" height="500" alt="" />
+<p class="caption">Shape/area distortions from Mercator projection.</p>
+</div>
+<p>Due to these limitations, for large-scale maps, equal-area projections are recommended in place of the Mercator projection.</p>
+<p><em>Geodesic</em> geometry attempts to account for distance distortions caused by coordinate system projections. A geodesic line represents the shortest distance between two points across the Earth’s surface. For example, if you wanted to determine the shortest distance between two cities for an airplane’s flight path.</p>
+<div class="figure">
+<img src="images/geodesic.png" alt="" />
+<p class="caption">The geodesic (red) and planar (blue) paths between Los Angeles and London. <a href="https://developers.arcgis.com" class="uri">https://developers.arcgis.com</a></p>
+</div>
+<p>What this all boils down to is that if you want to work with GIS datasets, then you need to remember that datasets come with a projection. You must keep track of these projections or your data are not going to be where you think they are.</p>
+</div>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references hanging-indent">
+<div id="ref-maling91">
+<p>Maling, D. H. 1991. “Coordinate Systems and Map Projections.” In <em>Geographic Information Systems</em>, 1st ed., 135–46. Hoboken, NJ: John Wiley &amp; Sons Ltd.</p>
+</div>
+</div>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

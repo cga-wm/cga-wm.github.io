@@ -1,0 +1,16 @@
+---
+title: "Intro to Geographic Information Systems"
+pagetitle: "Intro GIS"
+author: Center for Geospatial Analysis
+bibliography: refs.bib
+---
+
+****
+
+```{r echo=FALSE, tidy=TRUE, comment=NA}
+# Print the current date (based on local computer time)
+cat("Last updated:", as.character(Sys.Date()))
+```
+
+This course provides an introduction to the fundamentals of geospatial technologies, including using Geographic Information Systems (GIS), Global Positioning Systems (GPS), basics of cartography, remote sensing and spatial analysis.
+Emphasis will be on hands-on application of these technologies to create maps, to organize and visualize spatial data, and to utilize spatial data to analyze and address social, economic, political and environmental issues.as a tool in earth and environmental science and policy.

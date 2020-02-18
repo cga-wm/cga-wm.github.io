@@ -1,0 +1,163 @@
+---
+title: "Remote Sensing"
+bibliography: refs.bib
+---
+
+> Measure what can be measured, and make measurable what cannot be measured.&#8221;
+>
+>--- Galileo
+
+Atmospheric window
+:   a region of the EM spectrum that is not blocked by Earth's atmosphere
+
+Photon
+:   a discrete electromagnetic radiation packet of energy
+
+Pixel
+:   a picture element; the quantized spatial resolution of a remotely sensed image
+
+Remote sensing
+:   the collection and interpretation about a target without being in physical contact with it (broad definition); more specifically, it is the non-contact recording of information from the electromagnetic spectrum by means of instruments on platforms (e.g., spacecraft) and the analysis of this information by means of visual and digital image processing
+
+Remote sensing is a non-contact method of recording information through the collection (or emission-and-collection) of electromagnetic (EM) radiation via sensors aboard aircraft or spacecraft.
+More than just a collection system, remote sensing also consists of the art and science of making measurements.
+It is these measurements---images---that can be integrated into GIS.
+Once measurements have been made, those working in remote sensing are also specialized in the manipulation, analysis and visualization of the collected images.
+
+Remote sensing is useful for measuring:
+
+* *X-Y* geographic locations
+* *Z* topographic information
+* vegetation health (e.g., chlorophyll content, water content, percent biomass, phytoplankton)
+* surface (e.g., sea surface) temperature
+* surface roughness
+* soil moisture and evaporation
+* atmospheric chemistry, temperature, water content, wind speed, precipitation, cloud coverage
+* snow and ice coverage
+* volcanoes and volcanic activity
+* earthquakes
+* land use
+* ocean health
+* etc.
+
+:   **Table**. An incomplete list of the advantages and disadvantages of remote sensing.
+
++-------------------------------------+---------------------------------------+
+| Advantages                          | Disadvantages                         |
++-------------------------------------+---------------------------------------+
+| - unobtrusive                       | - not a panacea for everything!       |
+| - unbiased data collection          | - human-introduced errors             |
+| - non single-point data             | - (active) EM radiation emission      |
+|   (large spatial coverage)          | - calibration requirements over time  |
+| - in-situ data collection           | - expensive                           |
+| - continuous observations from      |                                       |
+|   a geostationary altitude          |                                       |
++-------------------------------------+---------------------------------------+
+
+
+## Electromagnetic (EM) spectrum
+
+![**Figure**. The EM Spectrum ([NASA's Imagine Universe](https://imagine.gsfc.nasa.gov/science/toolbox/emspectrum1.html))](images/EM_spectrum_compare_level1_lg.jpg)
+
+
+## Electromagnetic detection
+
+Electromagnetic (EM) waves
+
+- vary in wavelength, &nu;, frequency, &lambda;, and energy, E, which are all mathematically interrelated
+- range from gamma (short wavelength/high energy) to radio (long wavelength/low energy)
+- travel in discrete packets of energy called *photons*
+
+Wavelengths
+
+:   - *gamma rays*---(&le;0.0001 microns)
+        - measure changes in the energy state of protons and neutrons
+    - *X-rays*---(&le;0.01 microns)
+        - measure photon absorption by the inner shell of electrons
+    - *ultra violet (UV)*---(&le;0.4 microns)
+        - measure photon emission/absorption by the outer shell of electrons;
+        - provide information regarding transition metals (e.g., Fe^2+^, Fe^3+^, Cu^2+^) and chlorophyll
+    - *visible light (VIS)*---(&le;0.67 microns)
+        - blue (0.450--0.495 microns)
+        - green (0.495--0.570 microns)
+        - red (0.620--0.720 microns)
+    - *near infrared (NIR)*---(&le;1.5 microns)
+        - similar to UV
+    - *short-wave infrared (SWIR)*---(&le;3.0 microns)
+        - measure vibrational structure of certain minerals (e.g., OH^--^, CaCO~3~)
+    - *thermal infrared (TIR)*---(&le;100 microns)
+        - provide information on molecules and their bond strength;
+        - excellent for mineralogy;
+        - also provide information on surface temperature (e.g., cloud-top radiation for precipitation estimation)
+    - *microwaves*---(0.1 cm--10 m)
+        - provide little to no information on composition, but a lot of information about particle size and surface roughness
+
+![**Figure**. Electromagnetic wavelength [@nasa16]](https://www.nasa.gov/sites/default/files/thumbnails/image/ems-introduction.jpeg)
+
+Not all wavelengths in the EM spectrum can reach the surface of the Earth.
+Water (H~2~O), carbon dioxide (CO~2~), and ozone (O~3~) are the main atmospheric gases that absorb photons in the visible (VIS) to near infrared (NIR) energy bands.
+Regions that are not blocked by the Earth's atmospheric gases and/or dust particles are called *atmospheric windows*.
+
+Even through atmospheric windows, EM energy interacts with gases and particulates before it interacts with the surface.
+There are five categories for energy interaction:
+
+1. reflection
+    - energy returns from the surface with a reflection angle equal and opposite to the incidence angle
+2. scattering
+    - deflection in multiple directions
+    - *selective (Rayleigh) scattering*
+        - caused by particles that are __much smaller__ than the wavelength being scattered (e.g., effects of N~2~, O~2~, and O~3~ on shorter VIS wavelengths cause the sky to look blue)
+    - *selective (Mie) scattering*
+        - caused by particles that are __about equal__ to the wavelength being scattered (e.g., effects of dust and smoke pollution on longer VIS wavelengths cause red skies)
+    - *non-selective scattering*
+        - caused by particles that are __much larger__ than the wavelength being scattered (e.g., effects of water vapor and ice crystals on all VIS wavelengths cause clouds and fog to look white)
+3. transmission/refraction
+    - energy passes through a material
+    - may be refracted due to the difference in density between the two materials
+4. absorption
+    - energy is transformed (e.g., heating)
+5. emission
+    - energy is released
+
+
+## Remote sensing systems
+
+![**Figure**. Satellite missions to advance our understanding of Earth (NASA). https://espd.gsfc.nasa.gov/images/esmo.jpg](images/esmo.jpg)
+
+There are two types of [remote sensing systems](https://earthdata.nasa.gov/user-resources/remote-sensors).
+
+passive
+:   detects energy from natural illumination or emission
+
+    *Examples*: camera, visible/near infrared instruments, thermal instruments
+
+active
+:   provides the energy/illumination that is reflected back to a sensor for detection
+
+    *Examples*: camera with flash, flashlight and eye, radar, lasers
+
+
+Sensing systems are typically onboard an orbiting satellite.
+The sensor "views" a portion of the Earth's surface, called the swath.
+
+![**Figure**. Image swath from an orbiting satellite.](http://nile.riverawarenesskit.org/English/NRAK/EO/assets/images/5-graphics-4_copy02.jpg)
+
+
+## Image processing and analysis
+
+Remote sensing measurements are collected as images (i.e., raster format).
+Images are a collection of *pixels* (picture elements).
+Pixels store recorded values, which are called digital numbers (DNs).
+For a typical gray-scale image, DNs are stored as 8-bit integers with values that range from 0--255.
+
+__Note: the human eye can only distinguish about 30 shades of gray.__
+
+To visualize the images, only a single 8-bit image can be used in each of the three primary colors (i.e., red, green and blue).
+The mixing of these primary colors produces all other colors.
+
+The comparison of two or more spectral bands can help elucidate information about certain surface processes.
+For example, healthy vegetation exhibits a peak in the NIR spectral band, as well as a (albeit much smaller) peak in the VIS green.
+
+![**Figure**. Spectral signatures of soil, vegetation and water. [@siegmund05. [Online](https://www.seos-project.eu/remotesensing/remotesensing-c01-p06.html).]](images/Reflexionskurven.jpg)
+
+## References
