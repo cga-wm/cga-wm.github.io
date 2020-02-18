@@ -88,6 +88,13 @@ Skill Building Challenge: Highest US landslide density challenge
 
 ## Day 4 / Week 5
 - Review challenge problem from last week
+    - [Point to Raster](https://pro.arcgis.com/en/pro-app/tool-reference/conversion/point-to-raster.htm)
+    - [Create Fishnet](https://pro.arcgis.com/en/pro-app/tool-reference/data-management/how-create-fishnet-works.htm)
 - Intro to Programming (to be continued on 2/24)
+    - Reading (Ch 2; [Geoprocessing with Python](https://livebook.manning.com/book/geoprocessing-with-python/chapter-2/1). Garrard, 2016).
+    - Practice giving instructions (the robot activity)
+    - Grouping instructions to form functions
+    - Grouping functions and attributes to form classes
     - review example [Python script (.py)](/assets/scripts/example.py)
-- Reading (Ch 2; [Geoprocessing with Python](https://livebook.manning.com/book/geoprocessing-with-python/chapter-2/1). Garrard, 2016).
+        - give your human a new attribute
+        - give your human a new ability (function)
