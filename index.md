@@ -15,7 +15,7 @@ Your team will create its own consultant firm (with a name, slogan, logo, etc.) 
 
 ## Syllabus and Performance Assessment
 - [Course Syllabus (Spring 2020)](https://drdavis.space/teaching/gis/cga-adv/syllabus/2020/spring/)
-- [Performance Accomplishments](p1_prw.html)
+- [Performance Accomplishments](p1_pa.html)
 - [Performance Review Worksheet](p1_prw.html)
 
 
