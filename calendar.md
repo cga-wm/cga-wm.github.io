@@ -88,5 +88,6 @@ Skill Building Challenge: Highest US landslide density challenge
 
 ## Day 4 / Week 5
 - Review challenge problem from last week
-- Intro to Programming
+- Intro to Programming (to be continued on 2/24)
     - review example [Python script (.py)](/assets/scripts/example.py)
+- Reading (Ch 2; [Geoprocessing with Python](https://livebook.manning.com/book/geoprocessing-with-python/chapter-2/1). Garrard, 2016).
