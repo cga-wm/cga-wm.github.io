@@ -12,26 +12,26 @@
   </head>
 
   <body>
+    <!-- Navigation -->
+    <div class="navmenu">
+      <ul id="menu">
+        {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
+        {% for p in navigation_pages %}
+        {% if p.navigation_weight %}
+        <li>
+          <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
+            {{ p.title }}
+          </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
     <div class="mycontent">
       <!-- HEADER -->
       <div id="header_wrap" class="outer">
         <header class="inner">
-          <!-- Navigation -->
-          <div class="navmenu">
-            <ul id="menu">
-              {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
-              {% for p in navigation_pages %}
-              {% if p.navigation_weight %}
-              <li>
-                <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
-                  {{ p.title }}
-                </a>
-              </li>
-              {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-
           {% if site.github.is_project_page %}
             <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
           {% endif %}
