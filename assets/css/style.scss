@@ -45,3 +45,9 @@
 .navmenu li ul {
   display: none;
 }
+
+@media only screen and (max-width: 560px) {
+    .navmenu {
+        min-height: 80px;
+    }
+}
