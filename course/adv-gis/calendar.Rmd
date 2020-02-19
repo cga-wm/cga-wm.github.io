@@ -42,7 +42,9 @@ We end the class with a skill-building challenge: finding the highest density of
     * The Physical Factors of Landslides by Hall & Walker, 2017  [(pptx)](https://d32ogoqmya1dw8.cloudfront.net/files/getsi/teaching_materials/surface_processes/unit_3_physical_factors.v6.pptx)
     * Material Strength and Landsliding Assessment by Hall & Walker, 2017 ([pptx](https://d32ogoqmya1dw8.cloudfront.net/files/getsi/teaching_materials/surface_processes/unit_3_strength_assessment.v12.pptx))
 * Review the critical rainfall threshold model
-    - find the data
+    - find data
+        - [Soil Cohesion Angle](http://www.geotechdata.info/parameter/cohesion.html)
+        - [Soil Friction Angle](http://www.geotechdata.info/parameter/angle-of-friction.html)
 * Skill Building Challenge: Highest US landslide density challenge
 
 ### Day 4 - Week 5

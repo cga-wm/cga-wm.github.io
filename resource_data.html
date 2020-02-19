@@ -11,7 +11,7 @@
 
 
 
-<title>Landslide Analysis Project</title>
+<title>Data</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -21,6 +21,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -252,7 +254,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">GIS 420/520 - Advanced GIS</a>
+      <a class="navbar-brand" href="index.html">CGA-WM</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -261,25 +263,40 @@ $(document).ready(function () {
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Projects
+    Courses
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="project_1.html">Part 1</a>
+      <a href="course/intro/index.html">Intro GIS</a>
     </li>
-    <li class="dropdown-header">Part 2</li>
+    <li>
+      <a href="course/adv-gis/index.html">Advanced GIS</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_howto.html">How To</a>
+    </li>
   </ul>
 </li>
 <li>
-  <a href="calendar.html">Calendar</a>
-</li>
-<li>
-  <a href="blog.html">Blog</a>
-</li>
-<li>
-  <a href="../../index.html">CGA-WM</a>
+  <a href="https://github.com/cga-wm/cga-wm.github.io">
+    <span class="fa fa-github"></span>
+     
+    GitHub
+  </a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -290,89 +307,82 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Landslide Analysis Project</h1>
+<h1 class="title toc-ignore">Data</h1>
 
 </div>
 
 
-<blockquote>
-<p>Design/develop a Python-based ArcGIS Toolbox for analyzing landslide susceptibility.</p>
-</blockquote>
-<p>Landslides may occur in every country of the world and impact every aspect of the human condition from public health; property value, taxes, and insurance; government spending, national aid, and political agendas; ethics, economics and social inequality; to hazard identification, mitigation, science and research.</p>
-<p>In this first scenario, you work for an organization that has tasked you, the GIS experts, to sort out landslide susceptibility for several international clients.</p>
-<p>You, members of our organization, will break into teams (undergrads in teams of 2–3 and graduates/certificate students as individuals or pairs) and will be assigned international clients (chosen at random, see <a href="scripts/random_country_generator.py">the Python script (.py)</a>). Your team will create its own consultant firm (with a name, slogan, logo, etc.) and have a web presence (e.g., using GitHub Pages) to communicate your tasks and accomplishments to your organization’s management and the clients.</p>
-<div id="consultants" class="section level2">
-<h2>Consultants</h2>
-<table>
-<colgroup>
-<col width="20%" />
-<col width="35%" />
-<col width="45%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Team</th>
-<th>Members</th>
-<th>Countries</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="https://unstable-ground-consulting.github.io/Landslide-Susceptibility/">Unstable Land Consulting</a></td>
-<td>Jake Werner</td>
-<td>Nauru, Albania, Belize, and the USA</td>
-</tr>
-<tr class="even">
-<td><a href="https://giraffename.github.io/">Dukes of Hazards</a></td>
-<td>Jeremy Elkayam and Colleen Scott</td>
-<td>Bhutan, Sint Maarten (Dutch part), Latvia, and the USA</td>
-</tr>
-<tr class="odd">
-<td><a href="https://hamlandslideanalysis.weebly.com/">HAM Landslide Analysis</a></td>
-<td>Matt Cusick, Alexa, and Henry</td>
-<td>France, Egypt, Gibraltar, and the USA</td>
-</tr>
-<tr class="even">
-<td><a href="https://tunisda.weebly.com/">Tunis Disaster Analysis</a></td>
-<td>Ian Thompson, Morgan Brickey, and Michele Fong</td>
-<td>Mayotte, Tunisia, the British Indian Ocean Territory, and the USA</td>
-</tr>
-<tr class="odd">
-<td><a href="https://edgeworth-consulting.github.io/Landslide-Policies/">Landslide Policies</a></td>
-<td>Erica Stephan and Victoria Haver</td>
-<td>the Marshall Islands, Malaysia, Cuba, and the USA</td>
-</tr>
-<tr class="even">
-<td><a href="https://molamolaconsulting.github.io/">Mola Mola consulting</a></td>
-<td>Jesus and Tate Smith</td>
-<td>Somalia, Estonia, Mozambique, and the USA</td>
-</tr>
-<tr class="odd">
-<td><a href="https://slopeconsulting.github.io/">Slope Consulting</a></td>
-<td>Sean O’Rahilly</td>
-<td>French Polynesia, Bahrain, Jordan, the USA</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="the-susceptibility-model" class="section level2">
-<h2>The Susceptibility Model</h2>
-<p>The Critical Rainfall Threshold Model (Eq. 28, <a href="https://doi.org/10.1029/2000WR900090">Iverson, 2000</a>).</p>
-<pre><code>     tan φ       C - ψt * γw * (tan φ)
-Fs = -----  +  --------------------------
-     tan θ     γr * H * (sin θ) * (cos θ)</code></pre>
-<p>where:</p>
-<ul>
-<li>Fs is the factor of safety</li>
-<li>φ is internal angle of friction (deg)</li>
-<li>θ is hillslope (deg)</li>
-<li>C is soil cohesion (Pa = kg/m/s^2)</li>
-<li>ψt is pressure head (m) = h * cosθ (Eq. 6, <a href="https://doi.org/10.1016/j.geomorph.2004.03.011">Gabet et al., 2004</a>)</li>
-<li>γw is unit weight of water (N/m^3); N=kg*m/s^2</li>
-<li>γr is unit weight of soil regolith (N/m^3)</li>
-<li>H is soil regolith thickness (m)</li>
+<hr />
+<dl>
+<dt><a href="https://ava.jpl.nasa.gov/">ASTER Volcano Archive</a></dt>
+<dd>the world’s largest specialty archive of volcano data, including publicly available high-resolution multispectral ASTER data.
+</dd>
+<dt><a href="https://earthexplorer.usgs.gov/">EarthExplorer</a></dt>
+<dd>search, download, and order satellite images, aerial photographs, and cartographic products.
+</dd>
+<dt><a href="https://esdac.jrc.ec.europa.eu/themes/landslides">European Commission Joint Research Centre - ESDAC</a></dt>
+<dd><ul>
+<li>European landslide inventory.</li>
 </ul>
-</div>
+</dd>
+<dt><a href="http://www.fao.org/geonetwork/srv/en/main.home">FAO GeoNetwork</a></dt>
+<dd>provides interactive maps, satellite imagery and related spatial databases for sustainable development and decision making in agriculture, forestry, fisheries and food security.
+</dd>
+<dt><a href="http://isodp.hof-university.de/fuzzyg/query/">Fuzzy Gazeteer</a></dt>
+<dd>name search for feature locations from all over the world
+</dd>
+<dt><a href="https://www.geoplatform.gov/">GeoPlatform</a></dt>
+<dd>using collaboration, common data, services, applications and shared infrastructure to address national and regional issues and priorities (The Federal Geographic Data Committee).
+</dd>
+<dt><a href="https://webarchive.iiasa.ac.at/Research/LUC/External-World-soil-database/HTML/">Harmonized World Soil Database v 1.2</a></dt>
+<dd><ul>
+<li>Global elevation, slope, and aspect data in 5 min and 30 arc second resolutions.</li>
+<li>FAO/IIASA/ISRIC/ISSCAS/JRC, 2012. Harmonized World Soil Database (version 1.2). FAO, Rome, Italy and IIASA, Laxenburg, Austria.</li>
+</ul>
+</dd>
+<dt><a href="https://www.isric.org/projects/soil-and-terrain-soter-database-programme">ISRIC SOTER Database</a></dt>
+<dd><ul>
+<li>Soil and terrain maps for South America, Africa (parts), Europe (parts), and Asia (parts) from 1986 to 2016.</li>
+<li>ISRIC – World Soil Information, Droevendaalsesteeg 3 (Building 101), 6708 PB Wageningen, The Netherlands.</li>
+</ul>
+</dd>
+<dt><a href="https://www.mrlc.gov/index.php">National Land Cover Database</a></dt>
+<dd>provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
+</dd>
+<dt><a href="http://www.naturalearthdata.com/">Natural Earth</a></dt>
+<dd>a public domain map dataset featuring vector and raster data.
+</dd>
+<dt><a href="https://opentopography.org/">OpenTopography</a></dt>
+<dd><ul>
+<li>OpenTopography aims to democratize access to high-resolution topographic data in a manner that serves users with varied expertise, application domains, and computing resources.</li>
+</ul>
+</dd>
+<dt><a href="http://www.sharkattackfile.net/">Global Shark Attack File</a></dt>
+<dd>a time-stamped semi-geolocated incident log of global shark attacks.
+</dd>
+<dt><a href="https://tandemx-science.dlr.de/">TanDEM-X Science Server</a></dt>
+<dd><ul>
+<li>Global 12, 30, and 90 m digital elevation models</li>
+</ul>
+</dd>
+<dt><a href="https://ngmdb.usgs.gov/topoview/">TopoView</a></dt>
+<dd>a digital repository of USGS 1:250,000 scale and larger (more detailed) maps printed between 1884 (the inception of the topographic mapping program), and 2006.
+</dd>
+<dt><a href="https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm">USDA Web Soil Survey</a></dt>
+<dd><ul>
+<li>Soil data for the US and its territories</li>
+<li>Soil Survey Staff, Natural Resources Conservation Service, United States Department of Agriculture. Web Soil Survey. Available online at <a href="http://websoilsurvey.nrcs.usda.gov/" class="uri">http://websoilsurvey.nrcs.usda.gov/</a>. Accessed 02/10/2020.</li>
+</ul>
+</dd>
+<dt><a href="https://earthexplorer.usgs.gov/">USGS EarthExplorer</a></dt>
+<dd><ul>
+<li>An online search, discovery, and ordering tool developed by the United States Geological Survey (USGS) that supports the searching of satellite, aircraft, and other remote sensing inventories through interactive and textual-based queries.</li>
+</ul>
+</dd>
+<dt><a href="https://viewer.nationalmap.gov/launch/">USGS TNM</a></dt>
+<dd>GIS data download and visualization services.
+</dd>
+</dl>
 
 <footer class="myfoot">
     <div class="foot-text">

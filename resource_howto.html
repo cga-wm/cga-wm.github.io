@@ -11,7 +11,7 @@
 
 
 
-<title>Resources</title>
+<title>How To</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -21,6 +21,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -252,7 +254,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">GIS 420/520 - Advanced GIS</a>
+      <a class="navbar-brand" href="index.html">CGA-WM</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -261,28 +263,40 @@ $(document).ready(function () {
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Projects
+    Courses
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="project_1.html">Part 1</a>
+      <a href="course/intro/index.html">Intro GIS</a>
     </li>
-    <li class="dropdown-header">Part 2</li>
+    <li>
+      <a href="course/adv-gis/index.html">Advanced GIS</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_howto.html">How To</a>
+    </li>
   </ul>
 </li>
 <li>
-  <a href="calendar.html">Calendar</a>
-</li>
-<li>
-  <a href="blog.html">Blog</a>
-</li>
-<li>
-  <a href="resources.html">Resources</a>
-</li>
-<li>
-  <a href="../../index.html">CGA-WM</a>
+  <a href="https://github.com/cga-wm/cga-wm.github.io">
+    <span class="fa fa-github"></span>
+     
+    GitHub
+  </a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -293,74 +307,24 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Resources</h1>
+<h1 class="title toc-ignore">How To</h1>
 
 </div>
 
 
-<div id="data" class="section level2">
-<h2>Data</h2>
-<dl>
-<dt><a href="https://esdac.jrc.ec.europa.eu/themes/landslides">European Commission Joint Research Centre - ESDAC</a></dt>
-<dd><ul>
-<li>European landslide inventory.</li>
-</ul>
-</dd>
-<dt><a href="https://webarchive.iiasa.ac.at/Research/LUC/External-World-soil-database/HTML/">Harmonized World Soil Database v 1.2</a></dt>
-<dd><ul>
-<li>Global elevation, slope, and aspect data in 5 min and 30 arc second resolutions.</li>
-<li>FAO/IIASA/ISRIC/ISSCAS/JRC, 2012. Harmonized World Soil Database (version 1.2). FAO, Rome, Italy and IIASA, Laxenburg, Austria.</li>
-</ul>
-</dd>
-<dt><a href="https://www.isric.org/projects/soil-and-terrain-soter-database-programme">ISRIC SOTER Database</a></dt>
-<dd><ul>
-<li>Soil and terrain maps for South America, Africa (parts), Europe (parts), and Asia (parts) from 1986 to 2016.</li>
-<li>ISRIC – World Soil Information, Droevendaalsesteeg 3 (Building 101), 6708 PB Wageningen, The Netherlands.</li>
-</ul>
-</dd>
-<dt><a href="https://opentopography.org/">OpenTopography</a></dt>
-<dd><ul>
-<li>OpenTopography aims to democratize access to high-resolution topographic data in a manner that serves users with varied expertise, application domains, and computing resources.</li>
-</ul>
-</dd>
-<dt><a href="http://www.geotechdata.info/parameter/cohesion.html">Soil Cohesion Angle</a></dt>
-<dd><ul>
-<li>Some typical values of soil cohesion are given below for different soil types.</li>
-<li>Copyright © 2008 - Geotechdata.info</li>
-</ul>
-</dd>
-<dt><a href="http://www.geotechdata.info/parameter/angle-of-friction.html">Soil Friction Angle</a></dt>
-<dd><ul>
-<li>Some typical values of soil friction angle for different USCS soil types at normally consolidated condition.</li>
-<li>Copyright © 2008 - Geotechdata.info</li>
-</ul>
-</dd>
-<dt><a href="https://tandemx-science.dlr.de/">TanDEM-X Science Server</a></dt>
-<dd><ul>
-<li>Global 12, 30, and 90 m digital elevation models</li>
-</ul>
-</dd>
-<dt><a href="https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm">USDA Web Soil Survey</a></dt>
-<dd><ul>
-<li>Soil data for the US and its territories</li>
-<li>Soil Survey Staff, Natural Resources Conservation Service, United States Department of Agriculture. Web Soil Survey. Available online at <a href="http://websoilsurvey.nrcs.usda.gov/" class="uri">http://websoilsurvey.nrcs.usda.gov/</a>. Accessed 02/10/2020.</li>
-</ul>
-</dd>
-<dt><a href="https://earthexplorer.usgs.gov/">USGS EarthExplorer</a></dt>
-<dd><ul>
-<li>An online search, discovery, and ordering tool developed by the United States Geological Survey (USGS) that supports the searching of satellite, aircraft, and other remote sensing inventories through interactive and textual-based queries.</li>
-</ul>
-</dd>
-</dl>
-</div>
-<div id="how-to-hack-into-arcgis-pros-python" class="section level2">
-<h2>How to Hack into ArcGIS Pro’s Python</h2>
+<hr />
+<div id="hack-into-arcgis-pros-python" class="section level2">
+<h2>Hack into ArcGIS Pro’s Python</h2>
 <p><a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm</a></p>
 <ul>
+<li>Open ArcGIS Pro and go to Settings (bottom left) and click on Python</li>
+<li>Click on Manage Environments</li>
 <li>Clone ArcGIS Pro python environment and name it (e.g., ‘adv-gis’)</li>
 <li>Create user environment that points to <code>...\Program Files\ArcGIS\Pro\bin\Python\Scripts\</code></li>
-<li>Open terminal, type <code>activate adv-gis</code></li>
+<li>Open a new Command Prompt window and type <code>activate adv-gis</code></li>
+<li>Try loading arcpy from Python</li>
 </ul>
+<pre class="shell"><code>python -c &quot;import arcpy; print(arcpy.__name__)&quot;</code></pre>
 </div>
 
 <footer class="myfoot">

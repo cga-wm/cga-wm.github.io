@@ -18,3 +18,7 @@ footer {
 .foot-text {
     text-align: center;
 }
+
+dt {
+    margin-top: 20px;
+}

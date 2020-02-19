@@ -61,38 +61,6 @@ title: "Resources"
 
 [Working with ZIP files](https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm) --- a review on viewing, opening and extracting data from .zip files on Windows machines.
 
-
-### Geospatial data
-
-[ASTER Volcano Archive](https://ava.jpl.nasa.gov/) --- the world's largest specialty archive of volcano data, including publicly available high-resolution multispectral ASTER data.
-
-[Carteret County GIS](https://www.carteretcountync.gov/469/GIS-Services) --- download the most current public GIS data and access a variety of web applications.
-
-[Catawba College Campus Addresses for GPS and Mapping](https://catawba.edu/about/campus/maps/campus-addresses-gps-and-mapping-services/) --- includes latitude and longitude coordinates for campus buildings.
-
-[EarthExplorer](https://earthexplorer.usgs.gov/) --- search, download, and order satellite images, aerial photographs, and cartographic products.
-
-[FAO GeoNetwork](http://www.fao.org/geonetwork/srv/en/main.home) --- provides interactive maps, satellite imagery and related spatial databases for sustainable development and decision making in agriculture, forestry, fisheries and food security.
-
-[Fuzzy Gazeteer](http://isodp.hof-university.de/fuzzyg/query/) --- name search for feature locations from all over the world
-
-[GeoPlatform](https://www.geoplatform.gov/) --- using collaboration, common data, services, applications and shared infrastructure to address national and regional issues and priorities (The Federal Geographic Data Committee).
-
-[National Land Cover Database](https://www.mrlc.gov/index.php) --- provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
-
-[Natural Earth](http://www.naturalearthdata.com/) --- a public domain map dataset featuring vector and raster data.
-
-[NCDOT](https://connect.ncdot.gov/resources/gis/Pages/GIS-Data-Layers.aspx) --- North Carolina county and state road system shapefiles.
-
-[NC OneMap GeoPortal](http://data.nconemap.gov/geoportal) --- the geospatial backbone supporting North Carolina data and map service users. It is an organized effort of numerous partners throughout North Carolina, involving local, state, and federal government agencies, the private sector and academia.
-
-[Global Shark Attack File](http://www.sharkattackfile.net/) --- a time-stamped semi-geolocated incident log of global shark attacks.
-
-[TopoView](https://ngmdb.usgs.gov/topoview/) --- a digital repository of USGS 1:250,000 scale and larger (more detailed) maps printed between 1884 (the inception of the topographic mapping program), and 2006.
-
-[USGS TNM](https://viewer.nationalmap.gov/launch/) --- GIS data download and visualization services.
-
-
 ### Online tools and software
 
 [ConnectGIS](https://carteret.connectgis.com/Map.aspx) --- an online GIS portal and mapping tool for Carteret County, NC.

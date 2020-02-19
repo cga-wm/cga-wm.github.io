@@ -12,8 +12,6 @@ navbar:
           href: calendar.html
         - text: Blog
           href: blog.html
-        - text: Resources
-          href: resources.html
         - text: CGA-WM
           href: ../../index.html
 

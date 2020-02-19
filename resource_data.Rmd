@@ -1,0 +1,59 @@
+---
+title: Data
+---
+
+***
+
+[ASTER Volcano Archive](https://ava.jpl.nasa.gov/)
+:   the world's largest specialty archive of volcano data, including publicly available high-resolution multispectral ASTER data.
+
+[EarthExplorer](https://earthexplorer.usgs.gov/)
+:   search, download, and order satellite images, aerial photographs, and cartographic products.
+
+[European Commission Joint Research Centre - ESDAC](https://esdac.jrc.ec.europa.eu/themes/landslides)
+:    - European landslide inventory.
+
+[FAO GeoNetwork](http://www.fao.org/geonetwork/srv/en/main.home)
+:   provides interactive maps, satellite imagery and related spatial databases for sustainable development and decision making in agriculture, forestry, fisheries and food security.
+
+[Fuzzy Gazeteer](http://isodp.hof-university.de/fuzzyg/query/)
+:   name search for feature locations from all over the world
+
+[GeoPlatform](https://www.geoplatform.gov/)
+:   using collaboration, common data, services, applications and shared infrastructure to address national and regional issues and priorities (The Federal Geographic Data Committee).
+
+[Harmonized World Soil Database v 1.2](https://webarchive.iiasa.ac.at/Research/LUC/External-World-soil-database/HTML/)
+:   - Global elevation, slope, and aspect data in 5 min and 30 arc second resolutions.
+    - FAO/IIASA/ISRIC/ISSCAS/JRC, 2012. Harmonized World Soil Database (version 1.2). FAO, Rome, Italy and IIASA, Laxenburg, Austria.
+
+[ISRIC SOTER Database](https://www.isric.org/projects/soil-and-terrain-soter-database-programme)
+:   - Soil and terrain maps for South America, Africa (parts), Europe (parts), and Asia (parts) from 1986 to 2016.
+    - ISRIC – World Soil Information, Droevendaalsesteeg 3 (Building 101), 6708 PB Wageningen, The Netherlands.
+
+[National Land Cover Database](https://www.mrlc.gov/index.php)
+:   provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
+
+[Natural Earth](http://www.naturalearthdata.com/)
+:   a public domain map dataset featuring vector and raster data.
+
+[OpenTopography](https://opentopography.org/)
+:   - OpenTopography aims to democratize access to high-resolution topographic data in a manner that serves users with varied expertise, application domains, and computing resources.
+
+[Global Shark Attack File](http://www.sharkattackfile.net/)
+:   a time-stamped semi-geolocated incident log of global shark attacks.
+
+[TanDEM-X Science Server](https://tandemx-science.dlr.de/)
+:   - Global 12, 30, and 90 m digital elevation models
+
+[TopoView](https://ngmdb.usgs.gov/topoview/)
+:   a digital repository of USGS 1:250,000 scale and larger (more detailed) maps printed between 1884 (the inception of the topographic mapping program), and 2006.
+
+[USDA Web Soil Survey](https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm)
+:   - Soil data for the US and its territories
+    - Soil Survey Staff, Natural Resources Conservation Service, United States Department of Agriculture. Web Soil Survey. Available online at http://websoilsurvey.nrcs.usda.gov/. Accessed 02/10/2020.
+
+[USGS EarthExplorer](https://earthexplorer.usgs.gov/)
+: - An online search, discovery, and ordering tool developed by the United States Geological Survey (USGS) that supports the searching of satellite, aircraft, and other remote sensing inventories through interactive and textual-based queries.
+
+[USGS TNM](https://viewer.nationalmap.gov/launch/)
+:   GIS data download and visualization services.
