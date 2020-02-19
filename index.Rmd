@@ -5,7 +5,7 @@ author: "cga-wm.github.io"
 
 ****
 
-The Center for Geospatial Analysis (CGA) is now on GitHub!
+The Center for Geospatial Analysis at William & Mary (CGA-WM) is now on GitHub!
 
 The CGA is William & Mary's comprehensive resource for those interested in learning and utilizing geographic information systems (GIS).
 We offer students and faculty access to the hardware, software, and expertise they need to make the most of this powerful mapping tool.
