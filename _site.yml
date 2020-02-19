@@ -10,7 +10,7 @@ navbar:
             - text: "Advanced GIS"
               href: course/adv-gis/index.html
         - text: Code
-          href: code/
+          href: code.html
 
 output:
     html_document:

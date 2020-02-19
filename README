@@ -8,7 +8,8 @@
 This folder contains the website files for the CGA-WM organization.
 
 ## FILES
-### \_site.yml  
+
+### \_site.yml
 * The YAML file for designing the organization website.
 
 ### .gitignore
@@ -18,9 +19,7 @@ This folder contains the website files for the CGA-WM organization.
 * The R script used to build the organization website.
     Built using R 3.6.2, rmarkdown 2.1, and pandoc 2.9.1.1
 
-```shell
-Rscript build.R
-```
+    `Rscript build.R`
 
 ### footer.html
 * The HTML file used as a footer on each page of the organization website.

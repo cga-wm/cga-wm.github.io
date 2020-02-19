@@ -1,0 +1,14 @@
+---
+title: "Code"
+author: Center for Geospatial Analysis
+---
+
+****
+
+```{r echo=FALSE, results='asis', comment=NA}
+# Print the current date (based on local computer time)
+cat("Updated:", as.character(Sys.Date()))
+```
+
+## myspi.pyt
+- ArcGIS Pro Python-based toolbox for calculating the summed point influence of point features that fall within a cost surface.
