@@ -9,8 +9,9 @@ navbar:
               href: course/intro/index.html
             - text: "Advanced GIS"
               href: course/adv-gis/index.html
-        - text: Code
-          href: code.html
+        - text: GitHub
+          icon: fa-github
+          href: https://github.com/cga-wm/cga-wm.github.io
 
 output:
     html_document:
