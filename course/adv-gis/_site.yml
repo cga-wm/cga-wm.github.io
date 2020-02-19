@@ -7,7 +7,6 @@ navbar:
           menu:
             - text: "Part 1"
               href: project_1.html
-            - text: "Part 2"
         - text: Calendar
           href: calendar.html
         - text: Blog

@@ -4,6 +4,9 @@ title: "Landslide Analysis Project"
 
 > Design/develop a Python-based ArcGIS Toolbox for analyzing landslide susceptibility.
 
+- Performance Review Worksheet ([.docx][prwdocx]) ([.gdoc][prwgdoc])
+- Performance Accomplishments ([.docx][padocx]) ([.gdoc][pagdoc])
+
 Landslides may occur in every country of the world and impact every aspect of the human condition from public health; property value, taxes, and insurance; government spending, national aid, and political agendas; ethics, economics and social inequality; to hazard identification, mitigation, science and research.
 
 In this first scenario, you work for an organization that has tasked you, the GIS experts, to sort out landslide susceptibility for several international clients.
@@ -44,3 +47,8 @@ where:
 - γw is unit weight of water (N/m^3); N=kg*m/s^2
 - γr is unit weight of soil regolith (N/m^3)
 - H is soil regolith thickness (m)
+
+[prwdocx]: docs\GIS420-520_S20_PRW-1.docx
+[padocx]: docs\GIS420-520_S20_PA-1.docx
+[prwgdoc]: https://docs.google.com/document/d/1Imlo0qUh7pSh2pn_6FOhjprq35SD2munp1YMLrpBoV0/edit?usp=sharing
+[pagdoc]: https://docs.google.com/document/d/1g5FgJ4xieyl9dPvzktkNZMOetml7QIT98QlhhxXlsXk/edit?usp=sharing
