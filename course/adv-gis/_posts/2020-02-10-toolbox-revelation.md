@@ -1,5 +1,5 @@
-## 2020-02-10 \| Toolbox Revelation
-
+## Toolbox Revelation
+##### 2020-02-10
 
 This week in advanced GIS, I wrapped up my first draft of a working ArcGIS Toolbox for the CGA's Middle Earth class.
 The class tutorial relied on a toolbox that was created several years ago using `arcgisscripting`, which had suddenly and unexpectedly stopped working.
@@ -17,7 +17,8 @@ There is still the lingering problem where I create dependencies on folder locat
 
 This, to be addressed at another time.
 
-### Jekyll Updates
+**Jekyll Updates**
+
 The navigation bar still haunts me.
 I was able to get a CSS style that makes the navigation bar stay at the top of the screen, but I can't seem to make it responsive to screen width.
 Sorry to those of you looking at this website on mobile devices.

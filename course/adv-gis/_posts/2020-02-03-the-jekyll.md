@@ -1,5 +1,5 @@
-## 2020-02-03 \| The Jekyll 
-
+## The Jekyll
+##### 2020-02-03
 
 > Jekyll, thou art a villainous foe.
 

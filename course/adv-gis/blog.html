@@ -299,7 +299,9 @@ $(document).ready(function () {
 
 
 <div id="hacking-python" class="section level2">
-<h2>2020-02-17 | Hacking Python</h2>
+<h2>Hacking Python</h2>
+<div id="section" class="section level5">
+<h5>2020-02-17</h5>
 <p>In an effort to run a simple python script in the CGA classroom, I opted to create an example python script that showcases a basic class structure that can be easily manipulated. The hope was to use this as a launching point towards writing a python-based toolbox for the first part of this class.</p>
 <p>Of course, Python 3 does not run from the command line on the classroom’s machines, even though a version of Python 3 is installed.</p>
 <p>A first ditch effort was to add to the user’s environment variables the path to the Python 3 executable, which completely and utterly failed. <em>Caveat, a student adeptly pointed out that by changing the executable’s name from Python.exe to Python3.exe, you can totally call it from the command line.</em> Rather, I went through the arduous process of hacking into ArcGIS Pro’s python environment, which is a three-step process:</p>
@@ -309,8 +311,7 @@ $(document).ready(function () {
 <li>Activate the cloned python environment from the command line</li>
 </ol>
 <p>This seems completely ridiculous at first glance; however, in my opinion, programming works best when the testing environment is separate from the working environment.</p>
-<div id="jekyll-updates" class="section level3">
-<h3>Jekyll Updates</h3>
+<p><strong>Jekyll Updates</strong></p>
 <p>Well, I have finally decided to read through some of the Jekyll documentation and in doing so, I have created my blog. This required creating a _posts directory that contains very specifically named markdown files and creating a blog.md (with a proper YAML header) that uses Liquid tags to read each markdown file in my _posts directory and prints them in reverse chronological order.</p>
 <p>Finally.</p>
 <p>The other success story was removing the <code>overflow=hidden</code> property from my navigation menu; now I can see all my buttons in a tiny window! I also added a responsive element to the CSS to make the navigation bar twice the height when the screen size is small.</p>
@@ -318,20 +319,23 @@ $(document).ready(function () {
 </div>
 </div>
 <div id="toolbox-revelation" class="section level2">
-<h2>2020-02-10 | Toolbox Revelation</h2>
+<h2>Toolbox Revelation</h2>
+<div id="section-1" class="section level5">
+<h5>2020-02-10</h5>
 <p>This week in advanced GIS, I wrapped up my first draft of a working ArcGIS Toolbox for the CGA’s Middle Earth class. The class tutorial relied on a toolbox that was created several years ago using <code>arcgisscripting</code>, which had suddenly and unexpectedly stopped working. I took upon the challenge of upgrading <code>arcgisscripting</code> to <code>arcpy</code> for ArcGIS Pro as I debugged the code.</p>
 <p>The first setback was testing the code, because the workflow for a toolbox is not clearly defined anywhere. Therefore, I started just as I would any project with a basic script separated into functions, classes, and the <code>if __name__ is "__main__"</code> block at the bottom.</p>
 <p>While I found a method for hacking into ArcGIS Pro’s python environment, on my laptop, I am already hacking into OSGEO4W’s (QGIS) python, so I’m a little frustrated with switching back-and-forth between the two for the ease of command-line use (I tried virtual environments, but it doesn’t like the PYTHON_PATH environment variable linking to OSGEO4W).</p>
 <p>Having tested a good portion of the python script via importing the class on ArcGIS Pro’s python command line and running through the methods with the typical debugging, I approached the “all-in” moment to go to the toolbox PYT script (you literally just change the file extension from .py to .pyt), but now as a toolbox, you gain access to drop-down menus and the progress bar (secret messages!). As I loaded the PYT into Python as a new toolbox, I was having to wait 5–10 minutes before the toolbox became available and I kept getting this RUNTIME ERROR message before I finally realized that that stinking <code>if __name__ is "__main__"</code> is actually running when the toolbox is loaded! So I removed it and now the toolbox loads super quick. There is still the lingering problem where I create dependencies on folder location in the tool class’s init, which also, interestingly, is called when the toolbox is imported and has created errors when sharing a toolbox in a folder that moves from one computer to another as the absolute paths change.</p>
 <p>This, to be addressed at another time.</p>
-<div id="jekyll-updates-1" class="section level3">
-<h3>Jekyll Updates</h3>
+<p><strong>Jekyll Updates</strong></p>
 <p>The navigation bar still haunts me. I was able to get a CSS style that makes the navigation bar stay at the top of the screen, but I can’t seem to make it responsive to screen width. Sorry to those of you looking at this website on mobile devices. I also found a way to create an ordered navigation using a sort by navigation_weight variable that I added to each page’s YAML header.</p>
 <p>This can be considered a positive development.</p>
 </div>
 </div>
 <div id="the-jekyll" class="section level2">
-<h2>2020-02-03 | The Jekyll</h2>
+<h2>The Jekyll</h2>
+<div id="section-2" class="section level5">
+<h5>2020-02-03</h5>
 <blockquote>
 <p>Jekyll, thou art a villainous foe.</p>
 </blockquote>
@@ -353,6 +357,7 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <p>Overall, I am washed with a feeling of dissatisfaction.</p>
+</div>
 </div>
 
 <footer class="myfoot">
