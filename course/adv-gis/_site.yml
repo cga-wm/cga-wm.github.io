@@ -1,0 +1,25 @@
+name: "adv-gis"
+output_dir: "."
+navbar:
+    title: "GIS 420/520 - Advanced GIS"
+    right:
+        - text: Projects
+          menu:
+            - text: "Part 1"
+              href: project_1.html
+            - text: "Part 2"
+        - text: Calendar
+          href: calendar.html
+        - text: Blog
+          href: blog.html
+        - text: Resources
+          href: resources.html
+
+output:
+    html_document:
+        toc: false
+        theme: flatly
+        highlight: haddock
+        css: "styles.css"
+        include:
+            after_body: footer.html

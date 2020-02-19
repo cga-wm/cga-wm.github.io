@@ -1,0 +1,14 @@
+---
+title: "Blog"
+---
+
+```{r echo = FALSE, results = 'asis'}
+post.path <- "_posts"
+my.files <- list.files(path = post.path, pattern = ".*md$")
+my.files <- sort(my.files, decreasing = TRUE)
+for (f in my.files){
+    f.path <- file.path(post.path, f)
+    cat(readLines(f.path), sep = "\n")
+    cat("\n")
+}
+```

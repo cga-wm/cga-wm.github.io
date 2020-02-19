@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Calendar</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 420/520 - Advanced GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="project_1.html">Part 1</a>
+    </li>
+    <li class="dropdown-header">Part 2</li>
+  </ul>
+</li>
+<li>
+  <a href="calendar.html">Calendar</a>
+</li>
+<li>
+  <a href="blog.html">Blog</a>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Calendar</h1>
+
+</div>
+
+
+<div id="day-0-week-1" class="section level3">
+<h3>Day 0 / Week 1</h3>
+<p>no class</p>
+</div>
+<div id="day-1-week-2" class="section level3">
+<h3>Day 1 / Week 2</h3>
+<p>Readings/Announcements</p>
+<ul>
+<li>Chapter 3.1 (<a href="https://www.nap.edu/read/11793/chapter/5" class="uri">https://www.nap.edu/read/11793/chapter/5</a>)</li>
+<li>How to find Swem 215 aka the CGA Classroom</li>
+</ul>
+<p><a href="https://drdavis.space/teaching/gis/ice-breaker/">Ice Breaker Challenge</a></p>
+<ul>
+<li>work in two teams to deliver spatially significant solutions</li>
+</ul>
+</div>
+<div id="day-2-week-3" class="section level3">
+<h3>Day 2 / Week 3</h3>
+<p>Start class with brief video (choose one):</p>
+<ul>
+<li><a href="https://youtu.be/mknStAMia0Q">Landslides | National Geographic</a></li>
+<li><a href="https://youtu.be/dj44dpr8oHs?t=18">When Nature Strikes - Landslides</a></li>
+<li><a href="https://youtu.be/UK--hvgP2uY">Mount St. Helens Disintegrates in Enormous Landslide</a></li>
+</ul>
+<p>Pop-up consultant firm &amp; website challenge</p>
+<blockquote>
+<p>In this first scenario, you work for an organization that has tasked you, the GIS experts, to sort out landslide susceptibility for several international clients.</p>
+<p>As an organization, we will break into teams (undergrads in teams of 2–3 and graduates/certificate students as individuals or pairs) and will be assigned international clients (chosen at random). Your team will create its own consultant firm (with a name, slogan, logo, etc.) and have a web presence (using GitHub Pages) to communicate your tasks and accomplishments to your clients.</p>
+<p>This week, your goals are to:</p>
+<ul>
+<li>form teams</li>
+<li>create your consultant firm</li>
+<li>build a web page (blog-style); be sure to include relevant information, such as your firm’s name, logo, mission statement, member names, contact, the works</li>
+<li>determine what might be the motivating reasons for landslide susceptibility analysis for your clients (sometimes you need to tell people what they should be interested in); it may be national security, public health, insurance rates, taxation, etc. (your choice)</li>
+<li>build your mission statement based on interests for landslide disaster/emergency (politics/zoning, business/insurance, social/inequality, environmental/research)</li>
+</ul>
+</blockquote>
+<p>References</p>
+<ul>
+<li><a href="https://github.com/collab-uniba/socialcde4eclipse/wiki/How-to-setup-a-GitHub-organization,-project-and-team">How to setup a GitHub Organization, project and team</a></li>
+<li><a href="https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site">Creating GitHub Pages site</a></li>
+<li><a href="http://jmcglone.com/guides/github-pages/">Creating and Hosting a Personal Site on GitHub</a></li>
+<li><a href="https://learn.cloudcannon.com/jekyll/simple-navigation/">Simple navigation menus in Jekyll</a></li>
+<li><a href="https://jekyllrb.com/docs/structure/">Jekyll’s directory structure</a></li>
+</ul>
+</div>
+<div id="day-3-week-4" class="section level3">
+<h3>Day 3 / Week 4</h3>
+<p>The Physical Factors of Landslides by Hall &amp; Walker, 2017 <a href="https://d32ogoqmya1dw8.cloudfront.net/files/getsi/teaching_materials/surface_processes/unit_3_physical_factors.v6.pptx">(pptx)</a></p>
+<p>Material Strength and Landsliding Assessment by Hall &amp; Walker, 2017 (<a href="https://d32ogoqmya1dw8.cloudfront.net/files/getsi/teaching_materials/surface_processes/unit_3_strength_assessment.v12.pptx">pptx</a>)</p>
+<p>The Critical Rainfall Threshold Model (Eq. 28, <a href="https://doi.org/10.1029/2000WR900090">Iverson, 2000</a>)</p>
+<pre><code>     tan φ       C - ψt * γw * (tan φ)
+Fs = -----  +  --------------------------
+     tan θ     γr * H * (sin θ) * (cos θ)</code></pre>
+<p>where:</p>
+<ul>
+<li>Fs is the factor of safety</li>
+<li>φ is internal angle of friction (deg)</li>
+<li>θ is hillslope (deg)</li>
+<li>C is soil cohesion (Pa = kg/m/s^2)</li>
+<li>ψt is pressure head (m) = h * cosθ (Eq. 6, <a href="https://doi.org/10.1016/j.geomorph.2004.03.011">Gabet et al., 2004</a>)</li>
+<li>γw is unit weight of water (N/m^3); N=kg*m/s^2</li>
+<li>γr is unit weight of soil regolith (N/m^3)</li>
+<li>H is soil regolith thickness (m)</li>
+</ul>
+<p>With knowledge of these variables, now we need to find the data to support them.</p>
+<p>Skill Building Challenge: Highest US landslide density challenge</p>
+<blockquote>
+<p>Based on US landslide inventory, where is there the greatest density of landslide occurrence in square kilometers?</p>
+</blockquote>
+<ul>
+<li>find and download landslide point data</li>
+<li>in teams, come up with a method to solve the challenge</li>
+</ul>
+</div>
+<div id="day-4-week-5" class="section level3">
+<h3>Day 4 / Week 5</h3>
+<ul>
+<li>Review challenge problem from last week
+<ul>
+<li><a href="https://pro.arcgis.com/en/pro-app/tool-reference/conversion/point-to-raster.htm">Point to Raster</a></li>
+<li><a href="https://pro.arcgis.com/en/pro-app/tool-reference/data-management/how-create-fishnet-works.htm">Create Fishnet</a></li>
+</ul></li>
+<li>Intro to Programming (to be continued on 2/24)
+<ul>
+<li>Reading (Ch 2; <a href="https://livebook.manning.com/book/geoprocessing-with-python/chapter-2/1">Geoprocessing with Python</a>. Garrard, 2016).</li>
+<li>Practice giving instructions (the robot activity)</li>
+<li>Grouping instructions to form functions</li>
+<li>Grouping functions and attributes to form classes</li>
+<li>review example <a href="scripts/example.py">Python script (.py)</a>
+<ul>
+<li>give your human a new attribute</li>
+<li>give your human a new ability (function)</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
