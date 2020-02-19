@@ -1,7 +1,7 @@
 name: "cga-wm.github.io"
 output_dir: "."
 navbar:
-    title: "CGA"
+    title: "CGA-WM"
     right:
         - text: Courses
           menu:

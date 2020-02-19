@@ -23,7 +23,7 @@ navbar:
                 href: rs.html
         - text: "Resources"
           href: resources.html
-        - text: CGA
+        - text: CGA-WM
           href: ../../index.html
 
 output:
