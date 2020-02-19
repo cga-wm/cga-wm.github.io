@@ -7,9 +7,9 @@ bibliography: refs.bib
 
 ****
 
-```{r echo=FALSE, tidy=TRUE, comment=NA}
+```{r echo=FALSE, results='asis', comment=NA}
 # Print the current date (based on local computer time)
-cat("Last updated:", as.character(Sys.Date()))
+cat("Updated:", as.character(Sys.Date()))
 ```
 
 This course provides an introduction to the fundamentals of geospatial technologies, including using Geographic Information Systems (GIS), Global Positioning Systems (GPS), basics of cartography, remote sensing and spatial analysis.
