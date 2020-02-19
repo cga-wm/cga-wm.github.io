@@ -1,0 +1,17 @@
+---
+title: "CGA-WM"
+author: Center for Geospatial Analysis
+---
+
+****
+
+```{r echo=FALSE, results='asis', comment=NA}
+# Print the current date (based on local computer time)
+cat("Updated:", as.character(Sys.Date()))
+```
+
+The Center for Geospatial Analysis is William & Mary's comprehensive resource for those interested in learning and utilizing geographic information systems (GIS).
+We offer students and faculty access to the hardware, software, and expertise they need to make the most of this powerful mapping tool.
+
+Our courses are open to undergraduate and graduate students in any program, and we also host free workshops for faculty, staff, and students.
+Whether you're in the arts or sciences, business or law, learning how to best visualize, analyze, and share spatial data can greatly improve the quality and value of any project or proposal.

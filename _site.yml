@@ -1,0 +1,22 @@
+name: "cga-wm.github.io"
+output_dir: "."
+navbar:
+    title: "CGA"
+    right:
+        - text: Courses
+          menu:
+            - text: "Intro GIS"
+              href: course/intro/index.html
+            - text: "Advanced GIS"
+              href: course/adv-gis/index.html
+        - text: Code
+          href: code/
+
+output:
+    html_document:
+        toc: false
+        theme: flatly
+        highlight: haddock
+        css: "styles.css"
+        include:
+            after_body: footer.html

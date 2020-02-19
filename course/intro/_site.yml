@@ -23,6 +23,8 @@ navbar:
                 href: rs.html
         - text: "Resources"
           href: resources.html
+        - text: CGA
+          href: ../../index.html
 
 output:
     html_document:
