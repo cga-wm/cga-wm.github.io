@@ -358,6 +358,24 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
+<div id="the-susceptibility-model" class="section level2">
+<h2>The Susceptibility Model</h2>
+<p>The Critical Rainfall Threshold Model (Eq. 28, <a href="https://doi.org/10.1029/2000WR900090">Iverson, 2000</a>).</p>
+<pre><code>     tan φ       C - ψt * γw * (tan φ)
+Fs = -----  +  --------------------------
+     tan θ     γr * H * (sin θ) * (cos θ)</code></pre>
+<p>where:</p>
+<ul>
+<li>Fs is the factor of safety</li>
+<li>φ is internal angle of friction (deg)</li>
+<li>θ is hillslope (deg)</li>
+<li>C is soil cohesion (Pa = kg/m/s^2)</li>
+<li>ψt is pressure head (m) = h * cosθ (Eq. 6, <a href="https://doi.org/10.1016/j.geomorph.2004.03.011">Gabet et al., 2004</a>)</li>
+<li>γw is unit weight of water (N/m^3); N=kg*m/s^2</li>
+<li>γr is unit weight of soil regolith (N/m^3)</li>
+<li>H is soil regolith thickness (m)</li>
+</ul>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
