@@ -5,7 +5,7 @@ navbar:
     right:
         - text: Projects
           menu:
-            - text: "Part 1"
+            - text: "Risk Assessment"
               href: project_1.html
         - text: Calendar
           href: calendar.html

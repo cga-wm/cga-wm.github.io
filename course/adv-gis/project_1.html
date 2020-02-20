@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Landslide Analysis Project" />
 
 
-<title>Landslide Analysis Project</title>
+<title>Risk Assessment</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -267,7 +268,7 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="project_1.html">Part 1</a>
+      <a href="project_1.html">Risk Assessment</a>
     </li>
   </ul>
 </li>
@@ -289,14 +290,13 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Landslide Analysis Project</h1>
+<h1 class="title toc-ignore">Risk Assessment</h1>
+<h4 class="author">Landslide Analysis Project</h4>
 
 </div>
 
 
-<blockquote>
-<p>Design/develop a Python-based ArcGIS Toolbox for analyzing landslide susceptibility.</p>
-</blockquote>
+<hr />
 <ul>
 <li>Performance Review Worksheet (<a href="docs\GIS420-520_S20_PRW-1.docx">.docx</a>) (<a href="https://docs.google.com/document/d/1Imlo0qUh7pSh2pn_6FOhjprq35SD2munp1YMLrpBoV0/edit?usp=sharing">.gdoc</a>)</li>
 <li>Performance Accomplishments (<a href="docs\GIS420-520_S20_PA-1.docx">.docx</a>) (<a href="https://docs.google.com/document/d/1g5FgJ4xieyl9dPvzktkNZMOetml7QIT98QlhhxXlsXk/edit?usp=sharing">.gdoc</a>)</li>
@@ -304,6 +304,7 @@ $(document).ready(function () {
 <p>Landslides may occur in every country of the world and impact every aspect of the human condition from public health; property value, taxes, and insurance; government spending, national aid, and political agendas; ethics, economics and social inequality; to hazard identification, mitigation, science and research.</p>
 <p>In this first scenario, you work for an organization that has tasked you, the GIS experts, to sort out landslide susceptibility for several international clients.</p>
 <p>You, members of our organization, will break into teams (undergrads in teams of 2–3 and graduates/certificate students as individuals or pairs) and will be assigned international clients (chosen at random, see <a href="scripts/random_country_generator.py">the Python script (.py)</a>). Your team will create its own consultant firm (with a name, slogan, logo, etc.) and have a web presence (e.g., using GitHub Pages) to communicate your tasks and accomplishments to your organization’s management and the clients.</p>
+<hr />
 <div id="consultants" class="section level2">
 <h2>Consultants</h2>
 <table>
@@ -357,6 +358,7 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<hr />
 </div>
 <div id="the-susceptibility-model" class="section level2">
 <h2>The Susceptibility Model</h2>
@@ -375,6 +377,34 @@ Fs = -----  +  --------------------------
 <li>γr is unit weight of soil regolith (N/m^3)</li>
 <li>H is soil regolith thickness (m)</li>
 </ul>
+<hr />
+</div>
+<div id="example-project-outline" class="section level2">
+<h2>Example Project Outline</h2>
+<ol style="list-style-type: decimal">
+<li>Select a city or town from one of your assigned countries</li>
+<li>Create a base map of your town/city
+<ul>
+<li>Include information relevant to hazard analysis (e.g., properties, roads, utilities, and other critical infrastructure); consider what information you include and what information you exclude (candidate for your ethics discussion)</li>
+<li>Create new spatial data (e.g., geocoding, georeferencing); this is candidate for your ‘how-to’</li>
+</ul></li>
+<li>Find elevation data for your study area
+<ul>
+<li>do a little research to determine whether your elevation data is a DEM, DTM, or DSM</li>
+<li>try examining more than one DEM for your study region and analyze their differences; which is the better candidate and why?</li>
+<li>calculate slopes based on elevation</li>
+</ul></li>
+<li>Find soil maps of your study region; you may have to go to the library for paper versions if online maps are not available (luckily, the library is conveniently located)
+<ul>
+<li>rasterize soil maps (if necessary)</li>
+<li>classify soil maps for cohesion and friction angle values; this may end up being a raster of one value for the whole study area</li>
+</ul></li>
+<li>Research soil depth and average to maximum rainfall events for your study area; use these values in your susceptibility model</li>
+<li>Assemble a geoprocessing workflow (e.g., model builder, python script, or toolbox) for the susceptibility model given above; another candidate for your ‘how-to’</li>
+<li>Overlay susceptibility with your base map to identify at-risk infrastructure</li>
+<li>Simulate a landslide by artificially increasing the land surface elevation in areas of susceptibility to emphasize risk to your client</li>
+<li>Repeat for any additional cities you have time for</li>
+</ol>
 </div>
 
 <footer class="myfoot">

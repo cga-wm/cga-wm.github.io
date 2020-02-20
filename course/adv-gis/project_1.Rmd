@@ -1,8 +1,9 @@
 ---
-title: "Landslide Analysis Project"
+title: "Risk Assessment"
+author: "Landslide Analysis Project"
 ---
 
-> Design/develop a Python-based ArcGIS Toolbox for analyzing landslide susceptibility.
+***
 
 - Performance Review Worksheet ([.docx][prwdocx]) ([.gdoc][prwgdoc])
 - Performance Accomplishments ([.docx][padocx]) ([.gdoc][pagdoc])
@@ -14,6 +15,7 @@ In this first scenario, you work for an organization that has tasked you, the GI
 You, members of our organization, will break into teams (undergrads in teams of 2--3 and graduates/certificate students as individuals or pairs) and will be assigned international clients (chosen at random, see [the Python script (.py)](scripts/random_country_generator.py)).
 Your team will create its own consultant firm (with a name, slogan, logo, etc.) and have a web presence (e.g., using GitHub Pages) to communicate your tasks and accomplishments to your organization's management and the clients.
 
+***
 
 ## Consultants
 
@@ -27,6 +29,7 @@ Your team will create its own consultant firm (with a name, slogan, logo, etc.) 
 | [Mola Mola consulting](https://molamolaconsulting.github.io/) | Jesus and Tate Smith | Somalia, Estonia, Mozambique, and the USA |
 | [Slope Consulting](https://slopeconsulting.github.io/) | Sean O'Rahilly | French Polynesia, Bahrain, Jordan, the USA |
 
+***
 
 ## The Susceptibility Model
 The Critical Rainfall Threshold Model (Eq. 28, [Iverson, 2000](https://doi.org/10.1029/2000WR900090)).
@@ -52,3 +55,24 @@ where:
 [padocx]: docs\GIS420-520_S20_PA-1.docx
 [prwgdoc]: https://docs.google.com/document/d/1Imlo0qUh7pSh2pn_6FOhjprq35SD2munp1YMLrpBoV0/edit?usp=sharing
 [pagdoc]: https://docs.google.com/document/d/1g5FgJ4xieyl9dPvzktkNZMOetml7QIT98QlhhxXlsXk/edit?usp=sharing
+
+***
+
+## Example Project Outline
+
+1. Select a city or town from one of your assigned countries
+1. Create a base map of your town/city
+    - Include information relevant to hazard analysis (e.g., properties, roads, utilities, and other critical infrastructure); consider what information you include and what information you exclude (candidate for your ethics discussion)
+    - Create new spatial data (e.g., geocoding, georeferencing); this is candidate for your 'how-to'
+1. Find elevation data for your study area
+    - do a little research to determine whether your elevation data is a DEM, DTM, or DSM
+    - try examining more than one DEM for your study region and analyze their differences; which is the better candidate and why?
+    - calculate slopes based on elevation
+1. Find soil maps of your study region; you may have to go to the library for paper versions if online maps are not available (luckily, the library is conveniently located)
+    - rasterize soil maps (if necessary)
+    - classify soil maps for cohesion and friction angle values; this may end up being a raster of one value for the whole study area
+1. Research soil depth and average to maximum rainfall events for your study area; use these values in your susceptibility model
+1. Assemble a geoprocessing workflow (e.g., model builder, python script, or toolbox) for the susceptibility model given above; another candidate for your 'how-to'
+1. Overlay susceptibility with your base map to identify at-risk infrastructure
+1. Simulate a landslide by artificially increasing the land surface elevation in areas of susceptibility to emphasize risk to your client
+1. Repeat for any additional cities you have time for
