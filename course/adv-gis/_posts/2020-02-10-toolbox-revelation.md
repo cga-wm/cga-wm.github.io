@@ -17,6 +17,8 @@ There is still the lingering problem where I create dependencies on folder locat
 
 This, to be addressed at another time.
 
+**Update**: the SPI toolbox has been forked from WildlifeConservationSocietyCI's SPI repository and is available at the [CGA-WM GitHub organization](https://github.com/cga-wm/spi).
+
 **Jekyll Updates**
 
 The navigation bar still haunts me.

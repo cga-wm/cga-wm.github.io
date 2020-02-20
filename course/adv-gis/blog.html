@@ -295,6 +295,7 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
+<li><a href="#growing-pains">Growing Pains</a></li>
 <li><a href="#hacking-python">Hacking Python</a></li>
 <li><a href="#toolbox-revelation">Toolbox Revelation</a></li>
 <li><a href="#the-jekyll">The Jekyll</a></li>
@@ -302,9 +303,22 @@ $(document).ready(function () {
 </div>
 
 <hr />
+<div id="growing-pains" class="section level2">
+<h2>Growing Pains</h2>
+<div id="section" class="section level5">
+<h5>2020-02-20</h5>
+<p>Sometimes you realize that starting simple isn’t actually a bad thing and ambition gets the better of you.</p>
+<p>In the first crack at the advanced GIS class, I went all in on tackling problems I don’t have answers to. My thinking was, if I don’t know the answer, then students may feel more at ease at trying new methods and experimenting with various approaches. The reality is, none of us know what to do and little to nothing gets done.</p>
+<p>The first set back was definitely the website (my fault). Naively, I guessed that Jekyll’s “simple blogging site” would be just a matter of a few mouse clicks, edit these few fields, and away you go. The spread out documentation and lack of good tutorials played the first minor key and set the tune of this composition. The upside is, I now have a working template that I can share with students so they don’t have the same struggle I did. (REMINDER: share your Jekyll site template).</p>
+<p>Not having class the first week of the semester has also created a challenge as we have an unbalanced before-and-after spring break schedule. I’ve opted for a longer second half of the semester project, since exams and projects in other classes tend to slow down a class’s pace.</p>
+<p>In hindsight, next iteration should play more to my own strengths (i.e., water); though, I would not have been able to come up with several ideas integral to the class if I hadn’t stumbled at this first attempt.</p>
+<p>That’s growing pains for you.</p>
+<hr />
+</div>
+</div>
 <div id="hacking-python" class="section level2">
 <h2>Hacking Python</h2>
-<div id="section" class="section level5">
+<div id="section-1" class="section level5">
 <h5>2020-02-17</h5>
 <p>In an effort to run a simple python script in the CGA classroom, I opted to create an example python script that showcases a basic class structure that can be easily manipulated. The hope was to use this as a launching point towards writing a python-based toolbox for the first part of this class.</p>
 <p>Of course, Python 3 does not run from the command line on the classroom’s machines, even though a version of Python 3 is installed.</p>
@@ -329,13 +343,14 @@ $(document).ready(function () {
 </div>
 <div id="toolbox-revelation" class="section level2">
 <h2>Toolbox Revelation</h2>
-<div id="section-1" class="section level5">
+<div id="section-2" class="section level5">
 <h5>2020-02-10</h5>
 <p>This week in advanced GIS, I wrapped up my first draft of a working ArcGIS Toolbox for the CGA’s Middle Earth class. The class tutorial relied on a toolbox that was created several years ago using <code>arcgisscripting</code>, which had suddenly and unexpectedly stopped working. I took upon the challenge of upgrading <code>arcgisscripting</code> to <code>arcpy</code> for ArcGIS Pro as I debugged the code.</p>
 <p>The first setback was testing the code, because the workflow for a toolbox is not clearly defined anywhere. Therefore, I started just as I would any project with a basic script separated into functions, classes, and the <code>if __name__ is "__main__"</code> block at the bottom.</p>
 <p>While I found a method for hacking into ArcGIS Pro’s python environment, on my laptop, I am already hacking into OSGEO4W’s (QGIS) python, so I’m a little frustrated with switching back-and-forth between the two for the ease of command-line use (I tried virtual environments, but it doesn’t like the PYTHON_PATH environment variable linking to OSGEO4W).</p>
 <p>Having tested a good portion of the python script via importing the class on ArcGIS Pro’s python command line and running through the methods with the typical debugging, I approached the “all-in” moment to go to the toolbox PYT script (you literally just change the file extension from .py to .pyt), but now as a toolbox, you gain access to drop-down menus and the progress bar (secret messages!). As I loaded the PYT into Python as a new toolbox, I was having to wait 5–10 minutes before the toolbox became available and I kept getting this RUNTIME ERROR message before I finally realized that that stinking <code>if __name__ is "__main__"</code> is actually running when the toolbox is loaded! So I removed it and now the toolbox loads super quick. There is still the lingering problem where I create dependencies on folder location in the tool class’s init, which also, interestingly, is called when the toolbox is imported and has created errors when sharing a toolbox in a folder that moves from one computer to another as the absolute paths change.</p>
 <p>This, to be addressed at another time.</p>
+<p><strong>Update</strong>: the SPI toolbox has been forked from WildlifeConservationSocietyCI’s SPI repository and is available at the <a href="https://github.com/cga-wm/spi">CGA-WM GitHub organization</a>.</p>
 <p><strong>Jekyll Updates</strong></p>
 <p>The navigation bar still haunts me. I was able to get a CSS style that makes the navigation bar stay at the top of the screen, but I can’t seem to make it responsive to screen width. Sorry to those of you looking at this website on mobile devices. I also found a way to create an ordered navigation using a sort by navigation_weight variable that I added to each page’s YAML header.</p>
 <p>This can be considered a positive development.</p>
@@ -344,7 +359,7 @@ $(document).ready(function () {
 </div>
 <div id="the-jekyll" class="section level2">
 <h2>The Jekyll</h2>
-<div id="section-2" class="section level5">
+<div id="section-3" class="section level5">
 <h5>2020-02-03</h5>
 <blockquote>
 <p>Jekyll, thou art a villainous foe.</p>
