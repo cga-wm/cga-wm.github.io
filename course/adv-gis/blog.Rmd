@@ -1,6 +1,11 @@
 ---
 title: "Blog"
+output:
+  html_document:
+    toc: true
 ---
+
+***
 
 ```{r echo = FALSE, results = 'asis'}
 post.path <- "_posts"
@@ -9,6 +14,6 @@ my.files <- sort(my.files, decreasing = TRUE)
 for (f in my.files){
     f.path <- file.path(post.path, f)
     cat(readLines(f.path), sep = "\n")
-    cat("\n")
+    cat("\n***\n")
 }
 ```

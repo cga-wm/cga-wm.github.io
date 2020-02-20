@@ -293,7 +293,15 @@ $(document).ready(function () {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#hacking-python">Hacking Python</a></li>
+<li><a href="#toolbox-revelation">Toolbox Revelation</a></li>
+<li><a href="#the-jekyll">The Jekyll</a></li>
+</ul>
+</div>
 
+<hr />
 <div id="hacking-python" class="section level2">
 <h2>Hacking Python</h2>
 <div id="section" class="section level5">
@@ -308,10 +316,15 @@ $(document).ready(function () {
 </ol>
 <p>This seems completely ridiculous at first glance; however, in my opinion, programming works best when the testing environment is separate from the working environment.</p>
 <p><strong>Jekyll Updates</strong></p>
-<p>Well, I have finally decided to read through some of the Jekyll documentation and in doing so, I have created my blog. This required creating a _posts directory that contains very specifically named markdown files and creating a blog.md (with a proper YAML header) that uses Liquid tags to read each markdown file in my _posts directory and prints them in reverse chronological order.</p>
+<p>I attempted to leave Jekyll behind for an alternative blogging site (<a href="https://bookdown.org/yihui/blogdown/">R blogdown</a>), but after a few hours, it became obvious that this was <em>even more complicated than Jekyll</em>.</p>
+<p>So, I have finally decided to read through some of the Jekyll documentation and in doing so, I have created my blog site. This required creating a _posts directory that contains very specifically named markdown files and creating a blog.md (with a proper YAML header) that uses Liquid tags to read each markdown file in my _posts directory and prints them in reverse chronological order.</p>
 <p>Finally.</p>
 <p>The other success story was removing the <code>overflow=hidden</code> property from my navigation menu; now I can see all my buttons in a tiny window! I also added a responsive element to the CSS to make the navigation bar twice the height when the screen size is small.</p>
 <p>I feel that I have reached some small level of nirvana. It has only taken several weeks and many lost hours of development to get here.</p>
+<p><strong>Update</strong></p>
+<p>After getting a Jekyll blogging website to work, I decided that that mountain has been climbed and I’ve torn it down and rebuilt it using <a href="https://rmarkdown.rstudio.com/lesson-13.html">R Markdown Website</a>, which I use for my <a href="https://spatial-data-discovery.github.io/">Spatial Data Discovery</a> class.</p>
+<p>So long Jekyll, it’s been… emotional.</p>
+<hr />
 </div>
 </div>
 <div id="toolbox-revelation" class="section level2">
@@ -326,6 +339,7 @@ $(document).ready(function () {
 <p><strong>Jekyll Updates</strong></p>
 <p>The navigation bar still haunts me. I was able to get a CSS style that makes the navigation bar stay at the top of the screen, but I can’t seem to make it responsive to screen width. Sorry to those of you looking at this website on mobile devices. I also found a way to create an ordered navigation using a sort by navigation_weight variable that I added to each page’s YAML header.</p>
 <p>This can be considered a positive development.</p>
+<hr />
 </div>
 </div>
 <div id="the-jekyll" class="section level2">
@@ -353,6 +367,7 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <p>Overall, I am washed with a feeling of dissatisfaction.</p>
+<hr />
 </div>
 </div>
 

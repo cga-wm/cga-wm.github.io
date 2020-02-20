@@ -18,7 +18,9 @@ This seems completely ridiculous at first glance; however, in my opinion, progra
 
 **Jekyll Updates**
 
-Well, I have finally decided to read through some of the Jekyll documentation and in doing so, I have created my blog.
+I attempted to leave Jekyll behind for an alternative blogging site ([R blogdown](https://bookdown.org/yihui/blogdown/)), but after a few hours, it became obvious that this was *even more complicated than Jekyll*.
+
+So, I have finally decided to read through some of the Jekyll documentation and in doing so, I have created my blog site.
 This required creating a \_posts directory that contains very specifically named markdown files and creating a blog.md (with a proper YAML header) that uses Liquid tags to read each markdown file in my \_posts directory and prints them in reverse chronological order.
 
 Finally.
@@ -28,3 +30,9 @@ I also added a responsive element to the CSS to make the navigation bar twice th
 
 I feel that I have reached some small level of nirvana.
 It has only taken several weeks and many lost hours of development to get here.
+
+**Update**
+
+After getting a Jekyll blogging website to work, I decided that that mountain has been climbed and I've torn it down and rebuilt it using [R Markdown Website](https://rmarkdown.rstudio.com/lesson-13.html), which I use for my [Spatial Data Discovery](https://spatial-data-discovery.github.io/) class.
+
+So long Jekyll, it's been... emotional.
