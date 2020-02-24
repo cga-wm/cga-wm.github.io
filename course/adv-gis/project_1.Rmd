@@ -76,3 +76,21 @@ where:
 1. Overlay susceptibility with your base map to identify at-risk infrastructure
 1. Simulate a landslide by artificially increasing the land surface elevation in areas of susceptibility to emphasize risk to your client
 1. Repeat for any additional cities you have time for
+
+**Case Study: Collbran, Colorado**
+
+1. Decide on a CRS (e.g., NAD83 UTM 13N; datum matches DEM and is recommended by CDOT)
+1. Download digital elevation data (e.g., [The National Map](https://viewer.nationalmap.gov/basic/))
+1. Project raster
+1. Add your city to the map by creating a plain text file (e.g., point.txt), creating an XY Point table (such as the one below), and importing to GIS
+
+    ```
+    ID,LAT,LON,CITY,STATE
+    0,39.240016,-107.963956,Collbran,CO
+    ```
+1. Project point
+1. Extract DEM by mask (e.g., buffer or poly)
+    - Note: had to use Cell Statistics to knit together two DEM tiles
+1. Calculate slope
+1. Download soil data (e.g., STATSGO2)
+    - Note: use MUKEY (map unit key) to determine MUSYM (map unit symbol)
