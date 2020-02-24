@@ -295,6 +295,7 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
+<li><a href="#a-case-study">A Case Study</a></li>
 <li><a href="#growing-pains">Growing Pains</a></li>
 <li><a href="#hacking-python">Hacking Python</a></li>
 <li><a href="#toolbox-revelation">Toolbox Revelation</a></li>
@@ -303,9 +304,70 @@ $(document).ready(function () {
 </div>
 
 <hr />
+<div id="a-case-study" class="section level2">
+<h2>A Case Study</h2>
+<div id="section" class="section level4">
+<h4>2020-02-24</h4>
+<p>This week, we take a look at how far we’ve gotten towards modeling our landslide susceptibility. Here’s what’s been done so far.</p>
+<ol style="list-style-type: decimal">
+<li><p>Decide on a town or city.</p>
+<ul>
+<li>For this case study, I chose Collbran, Colorado because it was listed as having the largest landslide in Colorado (cite Wikipedia article).</li>
+</ul></li>
+<li><p>Decide on a CRS</p>
+<ul>
+<li>I have chosen NAD83 UTM 13N because the datum matches the DEM data I found (see next point) and is also recommended by CDOT (missing link)</li>
+</ul></li>
+<li><p>Download digital elevation data (e.g., <a href="https://viewer.nationalmap.gov/basic/">The National Map</a>)</p>
+<ul>
+<li>I had to download two tiles n40w108 and n40w109 because my town is located near the tile intersection</li>
+</ul>
+<p><img src="images/2020-02-24_dem.png" /></p></li>
+<li><p>Project raster(s)</p></li>
+<li><p>Add city to the map by creating a plain text file (e.g., point.txt), creating an XY Point table (such as the one below), and importing to GIS</p>
+<pre><code>ID,LAT,LON,CITY,STATE
+0,39.240016,-107.963956,Collbran,CO</code></pre>
+<p><img src="images/2020-02-24_dem_dot.png" /></p></li>
+<li><p>Project point</p></li>
+<li><p>Extract DEM by mask (e.g., buffer or poly)</p>
+<ul>
+<li>Chose to create a 10 km buffer around my town because the town limits was pretty small and a 10 km buffer area is less than 100,000 acres—the maximum area for downloading a web soil survey spatial map</li>
+<li>Note: I had to use Cell Statistics to knit together two DEM tiles after mask extraction; I chose to knit after extraction because the files are smaller and processing time would be faster.</li>
+</ul>
+<p><img src="images/2020-02-24_dem_buff.png" /></p></li>
+<li><p>Calculate slope</p>
+<p><img src="images/2020-02-24_slope.png" /></p></li>
+<li><p>Download soil data (e.g., <a href="https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm">Soil Web Survey</a>)</p>
+<ul>
+<li>To get my Area of Interest (AOI), I exported the buffer to a shape file and used the shapefile to set my AOI</li>
+</ul>
+<p><img src="images/2020-02-24_soils.png" /></p></li>
+<li><p>Figure out what the soil survey is actually saying</p>
+<ul>
+<li>Data is from the Digital General Soil Map of the United States (STATSGO2) database (see Tables and Columns report found <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/geo/?cid=nrcs142p2_053631">here</a>) and uses a map unit key (MUKEY) and map unit symbol (MUSYM) to relate the shapefile’s attribute table to soil information (presumably in the tabular files)</li>
+<li>Files of interest:
+<ul>
+<li>comp.txt (link between mapunit key and component key)</li>
+<li>chorizon.txt (link between component key and horizon key)</li>
+<li>chunifie.txt (link between horizon key and horizon unified classification)</li>
+<li>muagatt.txt (link between map unit symbol and minimum bedrock depth, cm)</li>
+</ul></li>
+<li>I need to build a table that matches map unit key –&gt; component key –&gt; horizon key –&gt; unified classification –&gt; angle of friction/cohesion</li>
+<li>First attempt at adding ASCII table to ArcGIS Pro failed (everything dumped into a single field; so, it doesn’t seem to recognize the pipe character “|” as a delimiter)</li>
+</ul></li>
+</ol>
+<p><strong>Current Challenges</strong></p>
+<ul>
+<li>Create a table/link between map units (in the attribute table) to unified soil classification (in chunifie.txt)</li>
+<li>Create a table of unified soil classification and soil cohesion and angle of friction (<em>which values to choose and why</em>)</li>
+<li>Create a table/link between map symbols and minimum bedrock depth (cm) found in muagatt.txt</li>
+</ul>
+<hr />
+</div>
+</div>
 <div id="growing-pains" class="section level2">
 <h2>Growing Pains</h2>
-<div id="section" class="section level5">
+<div id="section-1" class="section level5">
 <h5>2020-02-20</h5>
 <p>Sometimes you realize that starting simple isn’t actually a bad thing and ambition gets the better of you.</p>
 <p>In the first crack at the advanced GIS class, I went all in on tackling problems I don’t have answers to. My thinking was, if I don’t know the answer, then students may feel more at ease at trying new methods and experimenting with various approaches. The reality is, none of us know what to do and little to nothing gets done.</p>
@@ -318,7 +380,7 @@ $(document).ready(function () {
 </div>
 <div id="hacking-python" class="section level2">
 <h2>Hacking Python</h2>
-<div id="section-1" class="section level5">
+<div id="section-2" class="section level5">
 <h5>2020-02-17</h5>
 <p>In an effort to run a simple python script in the CGA classroom, I opted to create an example python script that showcases a basic class structure that can be easily manipulated. The hope was to use this as a launching point towards writing a python-based toolbox for the first part of this class.</p>
 <p>Of course, Python 3 does not run from the command line on the classroom’s machines, even though a version of Python 3 is installed.</p>
@@ -343,7 +405,7 @@ $(document).ready(function () {
 </div>
 <div id="toolbox-revelation" class="section level2">
 <h2>Toolbox Revelation</h2>
-<div id="section-2" class="section level5">
+<div id="section-3" class="section level5">
 <h5>2020-02-10</h5>
 <p>This week in advanced GIS, I wrapped up my first draft of a working ArcGIS Toolbox for the CGA’s Middle Earth class. The class tutorial relied on a toolbox that was created several years ago using <code>arcgisscripting</code>, which had suddenly and unexpectedly stopped working. I took upon the challenge of upgrading <code>arcgisscripting</code> to <code>arcpy</code> for ArcGIS Pro as I debugged the code.</p>
 <p>The first setback was testing the code, because the workflow for a toolbox is not clearly defined anywhere. Therefore, I started just as I would any project with a basic script separated into functions, classes, and the <code>if __name__ is "__main__"</code> block at the bottom.</p>
@@ -359,7 +421,7 @@ $(document).ready(function () {
 </div>
 <div id="the-jekyll" class="section level2">
 <h2>The Jekyll</h2>
-<div id="section-3" class="section level5">
+<div id="section-4" class="section level5">
 <h5>2020-02-03</h5>
 <blockquote>
 <p>Jekyll, thou art a villainous foe.</p>
