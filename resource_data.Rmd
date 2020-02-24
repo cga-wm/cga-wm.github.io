@@ -55,5 +55,5 @@ title: Data
 [USGS EarthExplorer](https://earthexplorer.usgs.gov/)
 : - An online search, discovery, and ordering tool developed by the United States Geological Survey (USGS) that supports the searching of satellite, aircraft, and other remote sensing inventories through interactive and textual-based queries.
 
-[USGS TNM](https://viewer.nationalmap.gov/launch/)
+[USGS TNM](https://www.usgs.gov/core-science-systems/ngp/tnm-delivery/)
 :   GIS data download and visualization services.
