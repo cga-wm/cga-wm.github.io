@@ -29,10 +29,12 @@ Here's what's been done so far.
 
     ![](images/2020-02-24_dem_buff.png)
 1. Calculate slope
+    - Raster dataset ([geotiff](https://drive.google.com/file/d/1Ga08i5TkKl-J_83qyaLQgQoWoi5dN3_z/view?usp=sharing))
 
     ![](images/2020-02-24_slope.png)
 1. Download soil data (e.g., [Soil Web Survey](https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm))
     - To get my Area of Interest (AOI), I exported the buffer to a shape file and used the shapefile to set my AOI
+    - Soil Web Survey AOI shapefile and tabular data ([zip](https://drive.google.com/file/d/1Yi5MA91dbeu9_uNt6yMithPhKhyQ3vLf/view?usp=sharing))
 
     ![](images/2020-02-24_soils.png)
 1. Figure out what the soil survey is actually saying
