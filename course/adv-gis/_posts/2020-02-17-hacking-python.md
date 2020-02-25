@@ -35,4 +35,10 @@ It has only taken several weeks and many lost hours of development to get here.
 
 After getting a Jekyll blogging website to work, I decided that that mountain has been climbed and I've torn it down and rebuilt it using [R Markdown Website](https://rmarkdown.rstudio.com/lesson-13.html), which I use for my [Spatial Data Discovery](https://spatial-data-discovery.github.io/) class.
 
+The example Jekyll site template that I got working is available [here (zip)](https://drive.google.com/file/d/1zlClR6zW6RO-MaarbzzUisDM1ChPiZMp/view?usp=sharing) for those brave enough to venture forth.
+
+- add blog posts to \_post directory
+- add any files (.txt, .zip, .png) to assets folder to link from anywhere on the website
+- use the "navigation_weight" in the YAML header to order your navigation bar entries
+
 So long Jekyll, it's been... emotional.
