@@ -47,7 +47,7 @@ where:
 - φ is internal angle of friction (deg)
 - θ is hillslope (deg)
 - C is soil cohesion (Pa = kg/m/s^2)
-- ψt is pressure head (m) = h * cosθ (Eq. 6, [Gabet et al., 2004](https://doi.org/10.1016/j.geomorph.2004.03.011))
+- ψt is pressure head (m) = h/cosθ (Eq. 6, [Gabet et al., 2004](https://doi.org/10.1016/j.geomorph.2004.03.011))
 - γw is unit weight of water (N/m^3); N=kg*m/s^2
 - γr is unit weight of soil regolith (N/m^3)
 - H is soil regolith thickness (m)
