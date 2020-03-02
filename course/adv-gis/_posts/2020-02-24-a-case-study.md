@@ -37,6 +37,14 @@ Here's what's been done so far.
     - Soil Web Survey AOI shapefile and tabular data ([zip](https://drive.google.com/file/d/1Yi5MA91dbeu9_uNt6yMithPhKhyQ3vLf/view?usp=sharing))
 
     ![](images/2020-02-24_soils.png)
+1. Export soils attribute table to CSV (e.g., use ArcGIS Pro's [Table to Table](https://pro.arcgis.com/en/pro-app/tool-reference/conversion/table-to-table.htm) geoprocessing tool)
+
+    ```
+    FID ,AREASYMBOL ,SPATIALVER ,MUSYM ,MUKEY
+    0 ,CO682 ,6 ,10 ,496669
+    1 ,CO682 ,6 ,48 ,496710
+    ```
+
 1. Figure out what the soil survey is actually saying
     - Data is from the Digital General Soil Map of the United States (STATSGO2) database (see Tables and Columns report found [here](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/geo/?cid=nrcs142p2_053631)) and uses a map unit key (MUKEY) and map unit symbol (MUSYM) to relate the shapefile's attribute table to soil information (presumably in the tabular files)
     - Files of interest:
@@ -47,8 +55,6 @@ Here's what's been done so far.
     - I need to build a table that matches map unit key --> component key --> horizon key --> unified classification --> angle of friction/cohesion
     - First attempt at adding ASCII table to ArcGIS Pro failed (everything dumped into a single field; so, it doesn't seem to recognize the pipe character "\|" as a delimiter)
 
-**Current Challenges**
+**Update**
 
-* Create a table/link between map units (in the attribute table) to unified soil classification (in chunifie.txt)
-* Create a table of unified soil classification and soil cohesion and angle of friction (_which values to choose and why_)
-* Create a table/link between map symbols and minimum bedrock depth (cm) found in muagatt.txt
+So it turns out that neither MUSYM nor MUKEY in the attribute table matches anything in any of the files in the tabular directory; so, that's about three hours gone.

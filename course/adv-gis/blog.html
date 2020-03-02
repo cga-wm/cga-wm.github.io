@@ -346,6 +346,10 @@ $(document).ready(function () {
 <li>Soil Web Survey AOI shapefile and tabular data (<a href="https://drive.google.com/file/d/1Yi5MA91dbeu9_uNt6yMithPhKhyQ3vLf/view?usp=sharing">zip</a>)</li>
 </ul>
 <p><img src="images/2020-02-24_soils.png" /></p></li>
+<li><p>Export soils attribute table to CSV (e.g., use ArcGIS Pro’s <a href="https://pro.arcgis.com/en/pro-app/tool-reference/conversion/table-to-table.htm">Table to Table</a> geoprocessing tool)</p>
+<pre><code>FID ,AREASYMBOL ,SPATIALVER ,MUSYM ,MUKEY
+0 ,CO682 ,6 ,10 ,496669
+1 ,CO682 ,6 ,48 ,496710</code></pre></li>
 <li><p>Figure out what the soil survey is actually saying</p>
 <ul>
 <li>Data is from the Digital General Soil Map of the United States (STATSGO2) database (see Tables and Columns report found <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/geo/?cid=nrcs142p2_053631">here</a>) and uses a map unit key (MUKEY) and map unit symbol (MUSYM) to relate the shapefile’s attribute table to soil information (presumably in the tabular files)</li>
@@ -360,12 +364,8 @@ $(document).ready(function () {
 <li>First attempt at adding ASCII table to ArcGIS Pro failed (everything dumped into a single field; so, it doesn’t seem to recognize the pipe character “|” as a delimiter)</li>
 </ul></li>
 </ol>
-<p><strong>Current Challenges</strong></p>
-<ul>
-<li>Create a table/link between map units (in the attribute table) to unified soil classification (in chunifie.txt)</li>
-<li>Create a table of unified soil classification and soil cohesion and angle of friction (<em>which values to choose and why</em>)</li>
-<li>Create a table/link between map symbols and minimum bedrock depth (cm) found in muagatt.txt</li>
-</ul>
+<p><strong>Update</strong></p>
+<p>So it turns out that neither MUSYM nor MUKEY in the attribute table matches anything in any of the files in the tabular directory; so, that’s about three hours gone.</p>
 <hr />
 </div>
 </div>
