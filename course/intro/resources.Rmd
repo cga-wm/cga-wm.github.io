@@ -53,6 +53,8 @@ title: "Resources"
 
 [Projections and Coordinate Systems](https://courses.washington.edu/gis250/lessons/projection/)
 
+[The Field Calculator Unleashed (pdf)](https://www.esri.com/news/arcuser/0405/files/fieldcalc_1.pdf)
+
 [The GIS Encyclopedia](http://wiki.gis.com)
 
 [The World Factbook](https://www.cia.gov/library/publications/the-world-factbook/docs/refmaps.html) --- Regional and world maps provided by the United States Central Intelligence Agency
