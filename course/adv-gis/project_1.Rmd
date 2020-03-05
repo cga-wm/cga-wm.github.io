@@ -33,12 +33,12 @@ Your team will create its own consultant firm (with a name, slogan, logo, etc.) 
 ***
 
 ## The Susceptibility Model
-The Critical Rainfall Threshold Model (Eq. 28, [Iverson, 2000](https://doi.org/10.1029/2000WR900090)).
+The Critical Rainfall Threshold Model (Eq. 28, [Iverson, 2000](https://doi.org/10.1029/2000WR900090)), `Fs = Ff + Fc - Fw`.
 
 ```
-     tan φ                 C                    ψt * γw * (tan φ)
-Fs = -----  +  -------------------------- - ----------------------------
-     tan θ     γr * H * (sin θ) * (cos θ)    γr * H * (sin θ) * (cos θ)
+     tan φ                 C                       ψt * γw * (tan φ)
+Fs = -----  +  --------------------------  -  ----------------------------
+     tan θ     γr * H * (sin θ) * (cos θ)      γr * H * (sin θ) * (cos θ)
 ```
 
 where:

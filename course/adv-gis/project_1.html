@@ -363,10 +363,10 @@ $(document).ready(function () {
 </div>
 <div id="the-susceptibility-model" class="section level2">
 <h2>The Susceptibility Model</h2>
-<p>The Critical Rainfall Threshold Model (Eq. 28, <a href="https://doi.org/10.1029/2000WR900090">Iverson, 2000</a>).</p>
-<pre><code>     tan φ                 C                    ψt * γw * (tan φ)
-Fs = -----  +  -------------------------- - ----------------------------
-     tan θ     γr * H * (sin θ) * (cos θ)    γr * H * (sin θ) * (cos θ)</code></pre>
+<p>The Critical Rainfall Threshold Model (Eq. 28, <a href="https://doi.org/10.1029/2000WR900090">Iverson, 2000</a>), <code>Fs = Ff + Fc - Fw</code>.</p>
+<pre><code>     tan φ                 C                       ψt * γw * (tan φ)
+Fs = -----  +  --------------------------  -  ----------------------------
+     tan θ     γr * H * (sin θ) * (cos θ)      γr * H * (sin θ) * (cos θ)</code></pre>
 <p>where:</p>
 <ul>
 <li>Fs is the factor of safety</li>
