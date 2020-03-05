@@ -1,5 +1,5 @@
 # README
-* LAST UPDATED: 2020-02-11
+* LAST UPDATED: 2020-03-05
 * ORGANIZATION: cga-wm
 * REPOSITORY: cga-wm.github.io/assets/scripts/
 
@@ -8,8 +8,14 @@ See below for the file list and descriptions.
 
 ## Files
 
-### myspi.pyt
-* An ArcGIS Python toolbox for calculating SPI (a cost-distance-based influence surface raster) based on the work of Fisher & Didier (2013).
+### crit_rain_thresh.py
+* This script contains the "sandbox" of methods for creating the critical rainfall threshold model, which is to become a Python toolbox.
+
+### lsa.pyt
+* This is a Python toolbox/tool for calculating landslide susceptibility.
+
+### example.py
+* An example script for examining how Python classes work.
 
 ### random_country_generator.py
 * A python script that reads a student/team text file and assigns each team/person a random list of countries based on the current IBAN country codes.

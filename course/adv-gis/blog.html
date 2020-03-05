@@ -295,6 +295,7 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
+<li><a href="#the-landslide-analysis-toolbox">The Landslide Analysis Toolbox</a></li>
 <li><a href="#plan-b">Plan B</a></li>
 <li><a href="#a-case-study">A Case Study</a></li>
 <li><a href="#growing-pains">Growing Pains</a></li>
@@ -305,9 +306,36 @@ $(document).ready(function () {
 </div>
 
 <hr />
+<div id="the-landslide-analysis-toolbox" class="section level2">
+<h2>The Landslide Analysis Toolbox</h2>
+<div id="section" class="section level4">
+<h4>2020-03-05</h4>
+<p>The first approach to creating the toolbox is to get all the data, layers, and processes together and in the right order. To approach this, I started on the Python interpreter in ArcGIS.</p>
+<p>In my ArcGIS Pro project folder, I created a <code>\Scripts</code> directory and made a blank plain text file (<code>crit_rain_thresh.py</code>) where I copy over working code.</p>
+<p>A nice thing about ArcGIS is that it creates a file (<code>.pyHistory</code>) in the project folder that contains all the executed commands you type on the Python interpreter. While testing, I can just copy-and-paste the good stuff from here to my script file.</p>
+<p>Here’s the <a href="scripts/crit_rain_thresh.py">Python script (.py)</a> I ended up with after testing.</p>
+<p>The next step is converting the procedure from script to Toolbox, which means creating classes—one for the toolbox and one for each tool inside the toolbox.</p>
+<p>Esri has published <a href="https://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/a-template-for-python-toolboxes.htm">The Python toolbox template</a>, which sets up the framework for the toolbox and geoprocessing tool. In this example, I only need one tool (Critical Rainfall Threshold Model) in my Toolbox (Landslide Analysis) with six parameters:</p>
+<ol style="list-style-type: decimal">
+<li>Hillslope raster (deg)</li>
+<li>Soil internal friction angle raster (deg)</li>
+<li>Soil cohesion raster (Pa)</li>
+<li>Depth of regolith raster (m)</li>
+<li>Depth of soil moisture value (m)</li>
+<li>Output factor of safety (Fs) raster</li>
+</ol>
+<p>I did not give the user the ability to change γ<sub>r</sub> or γ<sub>w</sub>, but it could be added later.</p>
+<p>Here’s the <a href="scripts/lsa.pyt">Python Toolbox (.pyt)</a> I ended up with.</p>
+<p>To get the toolbox in ArcGIS Pro, open your project file and, in the Catalog pane, right-click on Toolboxes and click “Add Toolbox” (note: <strong>not</strong> New Python Toolbox; the toolbox is already created!). The tool ran in something like five seconds, which was a little disappointing because I took time to write progress labels (the progress bar you see after you click “Run”) that are quickly passed over. On the upside, the tool runs in five seconds!</p>
+<p>The output Fs raster is not filtered for values. For landslide susceptibility, we are interested in values between 0 and 1. Arguably, values of 1.25 and 1.5 could also be of interest.</p>
+<p>There are some NODATA values that crop up in the output raster, which seem to be related to pixels where Fw &gt; Fc + Ff. My guess is that I don’t take into consideration water depth greater than regolith depth and it may be an artifact of bad coding.</p>
+<p>Regardless, it was four and a half hours well spent.</p>
+<hr />
+</div>
+</div>
 <div id="plan-b" class="section level2">
 <h2>Plan B</h2>
-<div id="section" class="section level4">
+<div id="section-1" class="section level4">
 <h4>2020-03-02</h4>
 <p>Due to minor setback of Web Soil Survey’s tabular data, we push on. In this brute-force method, let’s look at each map unit symbol to get an idea of the soil types (most all are a well-drained loam). We also have some water (MUSYM = 79), rock (MUSYM = 2, 61, 102, 180, and 181), poor-drained gravelly sand (MUSYM = 36). We can also take a look at the depth to permanent layer (bedrock), which varies from 0 inches to &gt;80 inches.</p>
 <p>For a first-order approach, let’s assume the following:</p>
@@ -316,7 +344,7 @@ $(document).ready(function () {
 <tr class="header">
 <th align="left">Soil Type</th>
 <th align="right">C (kPa)</th>
-<th align="right">ψ (deg)</th>
+<th align="right">φ (deg)</th>
 <th align="right">γ<sub>r</sub> (N/m3)</th>
 </tr>
 </thead>
@@ -341,16 +369,23 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
-<p>Using a combo-attack of “Select by Attributes” and “Calculate Field,” it is possible to prescribe values for γ<sub>r</sub>, C, H, and ψ</p>
-<p>The last few pieces of the puzzle require some information about water. We know that the unit weight of water is 10,000 N/m3. To get water depth, typically we would look at a time series of rainfall over the region and calculate event statistics to determine the 10, 50, and 100 year storms.</p>
+<p>Using a combo-attack of “Select by Attributes” and “Calculate Field,” it is possible to prescribe values for γ<sub>r</sub>, C, H, and φ.</p>
+<p>The last few pieces of the puzzle require some information about water. We know that the unit weight of water is 10,000 N/m3 (γ<sub>w</sub>). To get water depth, typically we would look at a time series of rainfall over the region and calculate event statistics to determine the 10, 50, and 100 year storms.</p>
 <p>In our study site, the average annual rainfall is between 400 and 500 mm (16–20 inches) with the winter being the wettest part of the year with an average of about 50 mm (2 inches) of rain per month.</p>
 <p>In September of 2013, central Colorado received a reported 200 mm (8 inches) of rainfall. Let’s make this a worst case scenario.</p>
+<p>Back in ArcGIS Pro, we have four raster layers:</p>
+<ul>
+<li>hillslope (DEM-based)</li>
+<li>cohesion (based on soil map/type)</li>
+<li>depth of regolith (based on soil map)</li>
+<li>soil internal angle of friction (based on soil map/type)</li>
+</ul>
 <hr />
 </div>
 </div>
 <div id="a-case-study" class="section level2">
 <h2>A Case Study</h2>
-<div id="section-1" class="section level4">
+<div id="section-2" class="section level4">
 <h4>2020-02-24</h4>
 <p>This week, we take a look at how far we’ve gotten towards modeling our landslide susceptibility. Here’s what’s been done so far.</p>
 <ol style="list-style-type: decimal">
@@ -415,7 +450,7 @@ $(document).ready(function () {
 </div>
 <div id="growing-pains" class="section level2">
 <h2>Growing Pains</h2>
-<div id="section-2" class="section level5">
+<div id="section-3" class="section level5">
 <h5>2020-02-20</h5>
 <p>Sometimes you realize that starting simple isn’t actually a bad thing and ambition gets the better of you.</p>
 <p>In the first crack at the advanced GIS class, I went all in on tackling problems I don’t have answers to. My thinking was, if I don’t know the answer, then students may feel more at ease at trying new methods and experimenting with various approaches. The reality is, none of us know what to do and little to nothing gets done.</p>
@@ -428,7 +463,7 @@ $(document).ready(function () {
 </div>
 <div id="hacking-python" class="section level2">
 <h2>Hacking Python</h2>
-<div id="section-3" class="section level5">
+<div id="section-4" class="section level5">
 <h5>2020-02-17</h5>
 <p>In an effort to run a simple python script in the CGA classroom, I opted to create an example python script that showcases a basic class structure that can be easily manipulated. The hope was to use this as a launching point towards writing a python-based toolbox for the first part of this class.</p>
 <p>Of course, Python 3 does not run from the command line on the classroom’s machines, even though a version of Python 3 is installed.</p>
@@ -459,7 +494,7 @@ $(document).ready(function () {
 </div>
 <div id="toolbox-revelation" class="section level2">
 <h2>Toolbox Revelation</h2>
-<div id="section-4" class="section level5">
+<div id="section-5" class="section level5">
 <h5>2020-02-10</h5>
 <p>This week in advanced GIS, I wrapped up my first draft of a working ArcGIS Toolbox for the CGA’s Middle Earth class. The class tutorial relied on a toolbox that was created several years ago using <code>arcgisscripting</code>, which had suddenly and unexpectedly stopped working. I took upon the challenge of upgrading <code>arcgisscripting</code> to <code>arcpy</code> for ArcGIS Pro as I debugged the code.</p>
 <p>The first setback was testing the code, because the workflow for a toolbox is not clearly defined anywhere. Therefore, I started just as I would any project with a basic script separated into functions, classes, and the <code>if __name__ is "__main__"</code> block at the bottom.</p>
@@ -475,7 +510,7 @@ $(document).ready(function () {
 </div>
 <div id="the-jekyll" class="section level2">
 <h2>The Jekyll</h2>
-<div id="section-5" class="section level5">
+<div id="section-6" class="section level5">
 <h5>2020-02-03</h5>
 <blockquote>
 <p>Jekyll, thou art a villainous foe.</p>
