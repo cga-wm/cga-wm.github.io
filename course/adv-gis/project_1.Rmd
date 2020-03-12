@@ -8,7 +8,7 @@ author: "Landslide Analysis Project"
 - Performance Accomplishments ([.docx][padocx]) ([.gdoc][pagdoc]) **&#8592; please email completed form to professor by 9 AM on 16 March 2020**
 - Performance Review Worksheet ([.docx][prwdocx]) ([.gdoc][prwgdoc])
 - Evaluation Sign-Up Sheet ([.gdoc][esus1])
-- Group Sign-Up Sheet ([.gdoc](gsus1))
+- Group Sign-Up Sheet ([.gdoc][gsus1])
 
 Landslides may occur in every country of the world and impact every aspect of the human condition from public health; property value, taxes, and insurance; government spending, national aid, and political agendas; ethics, economics and social inequality; to hazard identification, mitigation, science and research.
 
