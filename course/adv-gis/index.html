@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Center for Geospatial Analysis" />
@@ -14,7 +14,6 @@
 
 <title>Advanced GIS</title>
 
-<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -55,7 +54,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +70,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +175,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +221,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +233,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -291,13 +297,13 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Advanced GIS Analysis &amp; Programming</h1>
-<h4 class="author">Center for Geospatial Analysis</h4>
+<h4 class="author"><em>Center for Geospatial Analysis</em></h4>
 
 </div>
 
 
 <hr />
-<p>Updated: 2020-03-12</p>
+<p>Updated: 2020-03-14</p>
 <p>This course extends the existing base of GIS knowledge and skills by amplifying programmatic approaches to spatial data and analysis. Lectures, labs, and projects emphasize GIS model development, develop spatial database architecture and design best practices, and extend knowledge of web GIS by authoring and consuming geographic web services. Students will become familiar with methods of leveraging programming languages (such as Python) to make GIS processing easier, faster, and more accurate by scripting and automating data management, production, manipulation, and analysis procedures. Activities develop GIS analysis skills with examples from government, social science, physical science, and the humanities.</p>
 <ul>
 <li><a href="https://drdavis.space/teaching/gis/cga-adv/syllabus/2020/spring/">Course Syllabus (Spring 2020)</a></li>
@@ -325,23 +331,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

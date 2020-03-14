@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Landslide Analysis Project" />
@@ -14,7 +14,6 @@
 
 <title>Risk Assessment</title>
 
-<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -55,7 +54,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +70,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +175,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +221,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +233,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -291,14 +297,14 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Risk Assessment</h1>
-<h4 class="author">Landslide Analysis Project</h4>
+<h4 class="author"><em>Landslide Analysis Project</em></h4>
 
 </div>
 
 
 <hr />
 <ul>
-<li>Performance Accomplishments (<a href="docs\GIS420-520_S20_PA-1.docx">.docx</a>) (<a href="https://docs.google.com/document/d/1g5FgJ4xieyl9dPvzktkNZMOetml7QIT98QlhhxXlsXk/edit?usp=sharing">.gdoc</a>) <strong>← please email completed form to professor by 9 AM on 16 March 2020</strong></li>
+<li>Performance Accomplishments (<a href="docs\GIS420-520_S20_PA-1.docx">.docx</a>) (<a href="https://docs.google.com/document/d/1g5FgJ4xieyl9dPvzktkNZMOetml7QIT98QlhhxXlsXk/edit?usp=sharing">.gdoc</a>) <strong>← please email completed form to professor by 9 AM on 23 March 2020</strong></li>
 <li>Performance Review Worksheet (<a href="docs\GIS420-520_S20_PRW-1.docx">.docx</a>) (<a href="https://docs.google.com/document/d/1Imlo0qUh7pSh2pn_6FOhjprq35SD2munp1YMLrpBoV0/edit?usp=sharing">.gdoc</a>)</li>
 <li>Evaluation Sign-Up Sheet (<a href="https://docs.google.com/spreadsheets/d/1_0FP0fRHuniI3wL1UyGTFopvj-Hi6Y4RPPkbMHkJyY0/edit?usp=sharing">.gdoc</a>)</li>
 <li>Group Sign-Up Sheet (<a href="https://docs.google.com/spreadsheets/d/12JU9kP3h-AxnYTQ94clRRjTtgdyHwLhPzryoLE5TNO4/edit?usp=sharing">.gdoc</a>)</li>
@@ -311,9 +317,9 @@ $(document).ready(function () {
 <h2>Consultants</h2>
 <table>
 <colgroup>
-<col width="20%" />
-<col width="35%" />
-<col width="45%" />
+<col width="19%" />
+<col width="41%" />
+<col width="38%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -364,20 +370,20 @@ $(document).ready(function () {
 </div>
 <div id="the-susceptibility-model" class="section level2">
 <h2>The Susceptibility Model</h2>
-<p>The Critical Rainfall Threshold Model (Eq. 28, <a href="https://doi.org/10.1029/2000WR900090">Iverson, 2000</a>), <code>Fs = Ff + Fc - Fw</code>.</p>
-<pre><code>     tan φ                 C                       ψt * γw * (tan φ)
-Fs = -----  +  --------------------------  -  ----------------------------
-     tan θ     γr * H * (sin θ) * (cos θ)      γr * H * (sin θ) * (cos θ)</code></pre>
+<p>The Critical Rainfall Threshold Model (Eq. 28, <a href="https://doi.org/10.1029/2000WR900090">Iverson, 2000</a>) is given by <span class="math inline">\(F_s = F_f + F_c - F_w\)</span>, which may be expressed by the following.</p>
+<p><span class="math display">\[
+F_s = \frac{\tan \phi}{\tan \theta} + \frac{C}{\gamma_r * H * \sin \theta * \cos \theta} - \frac{\psi_t * \gamma_w * \tan \phi}{\gamma_r * H * \sin \theta * \cos \theta}
+\]</span></p>
 <p>where:</p>
 <ul>
-<li>Fs is the factor of safety</li>
-<li>φ is internal angle of friction (deg)</li>
-<li>θ is hillslope (deg)</li>
-<li>C is soil cohesion (Pa = kg/m/s^2)</li>
-<li>ψt is pressure head (m) = h/cosθ (Eq. 6, <a href="https://doi.org/10.1016/j.geomorph.2004.03.011">Gabet et al., 2004</a>)</li>
-<li>γw is unit weight of water (N/m^3); N=kg*m/s^2</li>
-<li>γr is unit weight of soil regolith (N/m^3)</li>
-<li>H is soil regolith thickness (m)</li>
+<li><span class="math inline">\(F_s\)</span> is the factor of safety</li>
+<li><span class="math inline">\(\phi\)</span> is internal angle of friction (deg)</li>
+<li><span class="math inline">\(\theta\)</span> is hillslope (deg)</li>
+<li><span class="math inline">\(C\)</span> is soil cohesion (Pa = kg/m/s^2)</li>
+<li><span class="math inline">\(\psi_t\)</span> is pressure head (m) (Eq. 6, <a href="https://doi.org/10.1016/j.geomorph.2004.03.011">Gabet et al., 2004</a>)</li>
+<li><span class="math inline">\(\gamma_w\)</span> is unit weight of water (N/m^3); N=kg*m/s^2</li>
+<li><span class="math inline">\(\gamma_r\)</span> is unit weight of soil regolith (N/m^3)</li>
+<li><span class="math inline">\(H\)</span> is soil regolith thickness (m)</li>
 </ul>
 <hr />
 </div>
@@ -412,9 +418,9 @@ Fs = -----  +  --------------------------  -  ----------------------------
 <div id="the-consultants-meeting" class="section level2">
 <h2>The Consultants Meeting</h2>
 <ul>
-<li><p><strong>When</strong>: Monday, 16 March 2020</p></li>
-<li><p><strong>Where</strong>: CGA</p></li>
-<li><p><strong>Who</strong>: Everyone</p></li>
+<li><strong>When</strong>: Monday, 23 March 2020</li>
+<li><strong>Where</strong>: CGA</li>
+<li><strong>Who</strong>: Everyone</li>
 <li><p><strong>Why</strong>: All consultant groups are to meet to discuss the state of their work including any results, conclusions, challenges, and setbacks with their client (played by a bonafide CGA Fellow). This is a real-world simulation of a client meet, so please be professional and respectful. You can expect that the client will report back to your professor.</p>
 <p>Just as you would meet with a real client, you should have materials prepared for the client to look at (e.g., a report with figures/tables/graphs). You may ask your client to go to your website or visit web materials, such as a presentation or report file (add link to the group sign-up sheet). You should <em>not</em> expect the client to have ArcGIS software or know how it works. Remember, you are the GIS expert.</p>
 <p>During this time, you will also be meeting with your professor to review your Performance Accomplishments (see sign-up sheet); time is limited, so please have your materials ready prior to meeting.</p></li>
@@ -444,23 +450,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

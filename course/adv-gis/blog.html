@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
 <title>Blog</title>
 
-<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -54,7 +53,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -68,6 +69,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -172,6 +174,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -216,7 +220,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -229,17 +232,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -389,47 +395,47 @@ $(document).ready(function () {
 <h4>2020-02-24</h4>
 <p>This week, we take a look at how far we’ve gotten towards modeling our landslide susceptibility. Here’s what’s been done so far.</p>
 <ol style="list-style-type: decimal">
-<li><p>Decide on a town or city.</p>
+<li>Decide on a town or city.
 <ul>
 <li>For this case study, I chose Collbran, Colorado because it was listed as having the largest landslide in Colorado (cite Wikipedia article).</li>
 </ul></li>
-<li><p>Decide on a CRS</p>
+<li>Decide on a CRS
 <ul>
 <li>I have chosen NAD83 UTM 13N because the datum matches the DEM data I found (see next point) and is also recommended by CDOT (missing link)</li>
 </ul></li>
-<li><p>Download digital elevation data (e.g., <a href="https://viewer.nationalmap.gov/basic/">The National Map</a>)</p>
+<li>Download digital elevation data (e.g., <a href="https://viewer.nationalmap.gov/basic/">The National Map</a>)
 <ul>
 <li>I had to download two tiles n40w108 and n40w109 because my town is located near the tile intersection</li>
 </ul>
-<p><img src="images/2020-02-24_dem.png" /></p></li>
-<li><p>Project raster(s)</p></li>
+<img src="images/2020-02-24_dem.png" /></li>
+<li>Project raster(s)</li>
 <li><p>Add city to the map by creating a plain text file (e.g., point.txt), creating an XY Point table (such as the one below), and importing to GIS</p>
 <pre><code>ID,LAT,LON,CITY,STATE
 0,39.240016,-107.963956,Collbran,CO</code></pre>
-<p><img src="images/2020-02-24_dem_dot.png" /></p></li>
-<li><p>Project point</p></li>
-<li><p>Extract DEM by mask (e.g., buffer or poly)</p>
+<img src="images/2020-02-24_dem_dot.png" /></li>
+<li>Project point</li>
+<li>Extract DEM by mask (e.g., buffer or poly)
 <ul>
 <li>Chose to create a 10 km buffer around my town because the town limits was pretty small and a 10 km buffer area is less than 100,000 acres—the maximum area for downloading a web soil survey spatial map</li>
 <li>Note: I had to use Cell Statistics to knit together two DEM tiles after mask extraction; I chose to knit after extraction because the files are smaller and processing time would be faster.</li>
 </ul>
-<p><img src="images/2020-02-24_dem_buff.png" /></p></li>
-<li><p>Calculate slope</p>
+<img src="images/2020-02-24_dem_buff.png" /></li>
+<li>Calculate slope
 <ul>
 <li>Raster dataset (<a href="https://drive.google.com/file/d/1Ga08i5TkKl-J_83qyaLQgQoWoi5dN3_z/view?usp=sharing">geotiff</a>)</li>
 </ul>
-<p><img src="images/2020-02-24_slope.png" /></p></li>
-<li><p>Download soil data (e.g., <a href="https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm">Soil Web Survey</a>)</p>
+<img src="images/2020-02-24_slope.png" /></li>
+<li>Download soil data (e.g., <a href="https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm">Soil Web Survey</a>)
 <ul>
 <li>To get my Area of Interest (AOI), I exported the buffer to a shape file and used the shapefile to set my AOI</li>
 <li>Soil Web Survey AOI shapefile and tabular data (<a href="https://drive.google.com/file/d/1Yi5MA91dbeu9_uNt6yMithPhKhyQ3vLf/view?usp=sharing">zip</a>)</li>
 </ul>
-<p><img src="images/2020-02-24_soils.png" /></p></li>
+<img src="images/2020-02-24_soils.png" /></li>
 <li><p>Export soils attribute table to CSV (e.g., use ArcGIS Pro’s <a href="https://pro.arcgis.com/en/pro-app/tool-reference/conversion/table-to-table.htm">Table to Table</a> geoprocessing tool)</p>
 <pre><code>FID ,AREASYMBOL ,SPATIALVER ,MUSYM ,MUKEY
 0 ,CO682 ,6 ,10 ,496669
 1 ,CO682 ,6 ,48 ,496710</code></pre></li>
-<li><p>Figure out what the soil survey is actually saying</p>
+<li>Figure out what the soil survey is actually saying
 <ul>
 <li>Data is from the Digital General Soil Map of the United States (STATSGO2) database (see Tables and Columns report found <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/geo/?cid=nrcs142p2_053631">here</a>) and uses a map unit key (MUKEY) and map unit symbol (MUSYM) to relate the shapefile’s attribute table to soil information (presumably in the tabular files)</li>
 <li>Files of interest:
@@ -497,9 +503,9 @@ $(document).ready(function () {
 <div id="section-5" class="section level5">
 <h5>2020-02-10</h5>
 <p>This week in advanced GIS, I wrapped up my first draft of a working ArcGIS Toolbox for the CGA’s Middle Earth class. The class tutorial relied on a toolbox that was created several years ago using <code>arcgisscripting</code>, which had suddenly and unexpectedly stopped working. I took upon the challenge of upgrading <code>arcgisscripting</code> to <code>arcpy</code> for ArcGIS Pro as I debugged the code.</p>
-<p>The first setback was testing the code, because the workflow for a toolbox is not clearly defined anywhere. Therefore, I started just as I would any project with a basic script separated into functions, classes, and the <code>if __name__ is "__main__"</code> block at the bottom.</p>
+<p>The first setback was testing the code, because the workflow for a toolbox is not clearly defined anywhere. Therefore, I started just as I would any project with a basic script separated into functions, classes, and the <code>if __name__ is &quot;__main__&quot;</code> block at the bottom.</p>
 <p>While I found a method for hacking into ArcGIS Pro’s python environment, on my laptop, I am already hacking into OSGEO4W’s (QGIS) python, so I’m a little frustrated with switching back-and-forth between the two for the ease of command-line use (I tried virtual environments, but it doesn’t like the PYTHON_PATH environment variable linking to OSGEO4W).</p>
-<p>Having tested a good portion of the python script via importing the class on ArcGIS Pro’s python command line and running through the methods with the typical debugging, I approached the “all-in” moment to go to the toolbox PYT script (you literally just change the file extension from .py to .pyt), but now as a toolbox, you gain access to drop-down menus and the progress bar (secret messages!). As I loaded the PYT into Python as a new toolbox, I was having to wait 5–10 minutes before the toolbox became available and I kept getting this RUNTIME ERROR message before I finally realized that that stinking <code>if __name__ is "__main__"</code> is actually running when the toolbox is loaded! So I removed it and now the toolbox loads super quick. There is still the lingering problem where I create dependencies on folder location in the tool class’s init, which also, interestingly, is called when the toolbox is imported and has created errors when sharing a toolbox in a folder that moves from one computer to another as the absolute paths change.</p>
+<p>Having tested a good portion of the python script via importing the class on ArcGIS Pro’s python command line and running through the methods with the typical debugging, I approached the “all-in” moment to go to the toolbox PYT script (you literally just change the file extension from .py to .pyt), but now as a toolbox, you gain access to drop-down menus and the progress bar (secret messages!). As I loaded the PYT into Python as a new toolbox, I was having to wait 5–10 minutes before the toolbox became available and I kept getting this RUNTIME ERROR message before I finally realized that that stinking <code>if __name__ is &quot;__main__&quot;</code> is actually running when the toolbox is loaded! So I removed it and now the toolbox loads super quick. There is still the lingering problem where I create dependencies on folder location in the tool class’s init, which also, interestingly, is called when the toolbox is imported and has created errors when sharing a toolbox in a folder that moves from one computer to another as the absolute paths change.</p>
 <p>This, to be addressed at another time.</p>
 <p><strong>Update</strong>: the SPI toolbox has been forked from WildlifeConservationSocietyCI’s SPI repository and is available at the <a href="https://github.com/cga-wm/spi">CGA-WM GitHub organization</a>.</p>
 <p><strong>Jekyll Updates</strong></p>
@@ -559,23 +565,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
