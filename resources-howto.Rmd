@@ -18,5 +18,9 @@ title: "How To"
 python -c "import arcpy; print(arcpy.__name__)"
 ```
 
+***
+
 ## Work with Zip Files
-Check out this [tutorial](https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm) on viewing, opening and extracting data from .zip files on Windows machines.
+[https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm](https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm)
+
+Check out this tutorial on viewing, opening and extracting data from .zip files on Windows machines.
