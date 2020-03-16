@@ -12,9 +12,9 @@ navbar:
         - text: Resources
           menu:
               - text: "Data"
-                href: resource_data.html
+                href: resources-data.html
               - text: "How To"
-                href: resource_howto.html
+                href: resources-howto.html
         - text: GitHub
           icon: fa-github
           href: https://github.com/cga-wm/cga-wm.github.io
