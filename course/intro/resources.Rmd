@@ -8,7 +8,7 @@ title: "Resources"
 
 [Geometric Aspects of Mapping](http://kartoweb.itc.nl/geometrics/index.html) --- provides information on concepts of spatial referencing, including a brief introduction followed by more in-depth notes on coordinate systems, reference surfaces, map projections and coordinate transformations. International Institute for Geo-Information Science and Earth Observation (ITC), Enschede, 2009.
 
-[GIS as an Integrating Technology](https://www.colorado.edu/geography/gcraft/notes/intro/intro_f.html) --- materials by Kenneth E. Foote and Margaret Lynch, The Geographer's Craft Project, Department of Geography, The University of Colorado at Boulder. Copyright 2000--2015.
+[GIS as an Integrating Technology](https://foote.geography.uconn.edu/gcraft/contents.html) --- materials by Kenneth E. Foote and Margaret Lynch, The Geographer's Craft Project, Department of Geography, The University of Colorado at Boulder. Copyright 2000--2015.
 
 [GPS: The Global Positioning System](https://www.gps.gov/). Maintained by the National Coordination Office for Space-Based Positioning, Navigation, and Timing. 2018.
 
@@ -20,9 +20,18 @@ title: "Resources"
 
 [Johannes Kepler: His Life, His Laws and Times](https://www.nasa.gov/kepler/education/johannes). National Aeronautics and Space Administration (NASA). 2017.
 
-[The Global Positioning System](https://www.colorado.edu/geography/gcraft/notes/gps/gps_f.html). Written by Peter H. Dana, Department of Geography, University of Texas at Austin. 1994. Provided by Ken Foote, The Geographer's Craft, Department of Geography, University of Colorado at Boulder. 2015.
+[The Global Positioning System](https://foote.geography.uconn.edu/gcraft/notes/gps/gps_f.html). Written by Peter H. Dana, Department of Geography, University of Texas at Austin. 1994. Provided by Ken Foote, The Geographer's Craft, Department of Geography, University of Colorado at Boulder. 2015.
 
 [The Nature of Geographic Information](https://www.e-education.psu.edu/natureofgeoinfo/) --- an open-access textbook to promote understanding of the Geographic Information Science and Technology enterprise.
+
+
+### Podcasts
+
+[Esri and the Science of Where](https://www.esri.com/about/newsroom/podcast/) ---  this podcast is to help executives and leaders in the industry and government understand how modern GIS technology enables digital transformation and drives growth.
+
+[Geodorable](http://cast.rocks/hosting/6022/feeds/1I9KO.html) --- by New Zealanders Chris Morris & Mark Thompson.
+
+[VerySpatial](https://veryspatial.com/) --- your source for information on Geography and geospatial technologies.
 
 
 ### General information
@@ -35,7 +44,7 @@ title: "Resources"
 
 [GIS Certification Institute](https://www.gisci.org) --- a non-profit organization that provides the GIS community with a complete certification program leading to Certified GIS Professional recognition focused on six key knowledge areas: *Conceptual Foundations*, *Cartography and Visualization*, *GIS Design Aspects and Data Modelling*, *GIS Analytical Methods*, *Data Manipulation*, and *Geospatial Data*
 
-[Geo Lounge](https://www.geolounge.com/maps/) --- an information site about all things geography.  Learn about maps and cartography as well as articles covering GIS (geographic information systems), GPS, remote sensing, and other geospatial technologies.
+[Geography Realm](https://www.geographyrealm.com/) --- an information site about all things geography (formerly Geo Lounge). Find information here about physical and human geography as well as guides for learning about geography and developing a career in geography.
 
 [Geography & Map Reading Room](https://www.loc.gov/rr/geogmap/index.html) ---- The Geography and Map Division of the Library of Congress provides cartographic and geographic information for all parts of the world to the Congress, Federal agencies, state and local governments, the scholarly community, and to the general public; it is the largest and most comprehensive cartographic collection in the world, numbering over 5.2 million maps.
 
@@ -55,17 +64,14 @@ title: "Resources"
 
 [The Field Calculator Unleashed (pdf)](https://www.esri.com/news/arcuser/0405/files/fieldcalc_1.pdf)
 
-[The GIS Encyclopedia](http://wiki.gis.com)
+[The GIS Encyclopedia](http://wiki.gis.com/wiki/index.php/New_to_GIS)
 
 [The World Factbook](https://www.cia.gov/library/publications/the-world-factbook/docs/refmaps.html) --- Regional and world maps provided by the United States Central Intelligence Agency
 
 [UNAVCO](https://www.unavco.org/unavco.html)
 
-[Working with ZIP files](https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm) --- a review on viewing, opening and extracting data from .zip files on Windows machines.
 
 ### Online tools and software
-
-[ConnectGIS](https://carteret.connectgis.com/Map.aspx) --- an online GIS portal and mapping tool for Carteret County, NC.
 
 [EnviroAtlas](https://www.epa.gov/enviroatlas) --- interactive tools that allow users to discover, analyze, and download data and maps related to ecosystem services, or the benefits people receive from nature
 

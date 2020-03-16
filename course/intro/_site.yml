@@ -19,8 +19,8 @@ navbar:
                 href: applications.html
               - text: GPS
                 href: gps.html
-              - text: RS
-                href: rs.html
+              - text: Remote Sensing
+                href: remote-sensing.html
         - text: "Resources"
           href: resources.html
         - text: CGA-WM
