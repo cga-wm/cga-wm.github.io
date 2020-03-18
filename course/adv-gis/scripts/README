@@ -19,3 +19,6 @@ See below for the file list and descriptions.
 
 ### random_country_generator.py
 * A python script that reads a student/team text file and assigns each team/person a random list of countries based on the current IBAN country codes.
+
+### shp_zipper.py
+* A python script for conveniently zipping shapefiles.
