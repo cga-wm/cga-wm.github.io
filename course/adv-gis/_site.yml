@@ -5,8 +5,10 @@ navbar:
     right:
         - text: Projects
           menu:
-            - text: "Risk Assessment"
-              href: project_1.html
+            - text: "Landslides"
+              href: project-landslides.html
+            - text: "Geofencing"
+              href: project-geofencing.html
         - text: Calendar
           href: calendar.html
         - text: Blog

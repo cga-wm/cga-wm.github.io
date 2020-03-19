@@ -1,0 +1,22 @@
+---
+title: "Web Applications"
+author: "The Geofencing Project"
+---
+
+***
+
+- Performance Review Worksheet ([.docx][prwdocx]) ([.gdoc][prwgdoc]) **&#8592; please email completed form to professor by 9 AM on 5 May 2020**
+- Evaluation Sign-Up Sheet ([.gdoc][esus1])
+- Group Sign-Up Sheet ([.gdoc][gsus1])
+
+[esus1]: #
+[gsus1]: #
+[prwdocx]: #
+[prwgdoc]: #
+
+***
+
+## An Example Project Outline
+
+
+***

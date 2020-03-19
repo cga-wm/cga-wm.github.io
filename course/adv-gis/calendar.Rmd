@@ -2,71 +2,84 @@
 title: "Calendar"
 ---
 
-### Day 0 - Week 1
+***
+
+### Week 1
+#### January 20, 2020
+
 No class.
 
+***
 
-### Day 1 - Week 2
-This week, we tackle the two [Ice Breaker Challenges](https://drdavis.space/teaching/gis/ice-breaker/) and review the syllabus/assessment requirements for the class.
+### Week 2
+#### January 27, 2020
 
-* Readings/Announcements
-    * Chapter 3.1 (https://www.nap.edu/read/11793/chapter/5)
-    * How to find Swem 215 aka the CGA Classroom
+This week, we tackle the two Ice Breaker Challenges and review the syllabus/assessment requirements for the class.
 
+***
 
-### Day 2 - Week 3
+### Week 3
+#### February 3, 2020
+
 This week, we begin the first class project.
 Your goals are to create a consulting firm, build a web presence that includes a blog (where you will track your daily/weekly learning activities), and craft a mission statement about how/why you are identifying landslide susceptibility.
 You are assigned multiple countries from which to choose to represent.
 
-* Videos
-    - [Landslides \| National Geographic]( https://youtu.be/mknStAMia0Q)
-    - [When Nature Strikes - Landslides](https://youtu.be/dj44dpr8oHs?t=18)
-    - [Mount St. Helens Disintegrates in Enormous Landslide](https://youtu.be/UK--hvgP2uY)
-* Pop-up consultant firm & website challenge
-* Website building references
-    - [How to setup a GitHub Organization, project and team](https://github.com/collab-uniba/socialcde4eclipse/wiki/How-to-setup-a-GitHub-organization,-project-and-team)
-    - [Creating GitHub Pages site](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site)
-    - [Creating and Hosting a Personal Site on GitHub](http://jmcglone.com/guides/github-pages/)
-    - [Simple navigation menus in Jekyll](https://learn.cloudcannon.com/jekyll/simple-navigation/)
-    - [Jekyll's directory structure](https://jekyllrb.com/docs/structure/)
+***
 
+### Week 4
+#### February 10, 2020
 
-### Day 3 - Week 4
 This week, we review the physics that drives mass wasting events (i.e., landslides).
 We apply these core concepts to the factor of safety (FS) susceptibility index and link it with our susceptibility model.
 We take a preliminary stab at finding data (and/or processes) to support the variables in our model.
 We end the class with a skill-building challenge: finding the highest density of landslide occurrences in the United States.
 
-* Background material:
-    * The Physical Factors of Landslides by Hall & Walker, 2017  [(pptx)](https://d32ogoqmya1dw8.cloudfront.net/files/getsi/teaching_materials/surface_processes/unit_3_physical_factors.v6.pptx)
-    * Material Strength and Landsliding Assessment by Hall & Walker, 2017 ([pptx](https://d32ogoqmya1dw8.cloudfront.net/files/getsi/teaching_materials/surface_processes/unit_3_strength_assessment.v12.pptx))
-* Review the critical rainfall threshold model
-    - find data
-        - [Soil Cohesion Angle](http://www.geotechdata.info/parameter/cohesion.html)
-        - [Soil Friction Angle](http://www.geotechdata.info/parameter/angle-of-friction.html)
-* Skill Building Challenge: Highest US landslide density challenge
+***
 
-### Day 4 - Week 5
+### Week 5
+#### February 17, 2020
+
 This week, we review your solutions to last week's challenge problem and introduce some basic concepts and motivation for programming in GIS.
 
-- Candidates for solution
-    - [Point to Raster](https://pro.arcgis.com/en/pro-app/tool-reference/conversion/point-to-raster.htm)
-    - [Create Fishnet](https://pro.arcgis.com/en/pro-app/tool-reference/data-management/how-create-fishnet-works.htm)
-- Intro to Programming
-    - Reading (Ch 2; [Geoprocessing with Python](https://livebook.manning.com/book/geoprocessing-with-python/chapter-2/1). Garrard, 2016).
-    - Practice giving instructions (the robot activity)
-    - Why we group instructions to form functions
-    - Why we group functions and attributes to form classes
+***
 
+### Week 6
+#### February 24, 2020
 
-### Day 5 - Week 6
-The lecture/demonstration this week is optional and is aimed toward those with little to no programming background.
+This week is aimed toward those with little to no programming background.
 We cover some of the basics of object oriented programming and how to connect these concepts to the ArcGIS Toolbox.
-If you choose not to attend, the expectation is that you will work with your team on your firm's report.
 
-* Programming for the non-pythonic
-    - review object oriented programming
-    - walkthrough example [Python script (.py)](scripts/example.py)
-* Connecting python classes to python toolboxes
-    - [Creating a new Python toolbox](https://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/creating-a-new-python-toolbox.htm)
+***
+
+### Week 7
+#### March 2, 2020
+
+This week we discuss geoethics in regards to data collection, data sharing, and data privacy.
+We wrap up collaborating on data and methods for the first project and taking a closer look at how to develop your own toolbox in ArcGIS Pro.
+
+**Recitation**: Thursday, 5 March 2020
+
+***
+
+### Week 8
+#### March 9, 2020
+
+No class - Spring Break
+
+***
+
+### Week 9
+#### March 16, 2020
+
+No class - reasons
+
+***
+
+### Week 10
+#### March 23, 2020
+
+Evaluations and client meeting.
+This week marks the end of part 1 and the beginning of part 2.
+
+***
