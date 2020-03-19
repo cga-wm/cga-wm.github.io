@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2020-03-18" />
+
+<title>QGIS and Me</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 420/520 - Advanced GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="project_1.html">Risk Assessment</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="calendar.html">Calendar</a>
+</li>
+<li>
+  <a href="blog.html">Blog</a>
+</li>
+<li>
+  <a href="../../index.html">CGA-WM</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">QGIS and Me</h1>
+<h4 class="date">2020-03-18</h4>
+
+</div>
+
+
+<p>Open source GIS for the win; except we haven’t taught it in any classes yet. Here we go. Let’s start with a bit about QGIS and how you get a copy of it.</p>
+<p>QGIS is the leading open-source desktop GIS software, is available <a href="https://www.qgis.org">here</a>. This means that no matter which major operating system you are running (Windows, macOS, or a flavor of Linux), you should be able to get QGIS up and running.</p>
+<p>One of the strengths of QGIS is that—in addition to providing a GIS interface of its own—it also integrates tools from a range of other GIS programs. These include:</p>
+<ul>
+<li>The Geospatial Data Abstraction Library (<a href="http://www.gdal.org/">GDAL</a>), which provides a suite of tools and programs for converting and manipulating spatial data</li>
+<li>The Geographic Resources Analysis Support System (<a href="http://grass.osgeo.org/">GRASS GIS</a>), which is a complete GIS system in its own right, but has until recently been largely a command-line application.</li>
+</ul>
+<div id="installation" class="section level2">
+<h2>Installation</h2>
+<p>Clicking on the <strong>Download Now</strong> option will take you to “Download QGIS for your platform” page.</p>
+<div id="on-a-mac" class="section level3">
+<h3>On a Mac</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/908NyL7roFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="on-windows" class="section level3">
+<h3>On Windows</h3>
+<p>I prefer to use the OSGeo4W Network Installer (64-bit), but you are welcome to use the standalone installer.</p>
+<p>The reason I like the OSGeo4W Network Installer is that I get the Advanced Install options screen.</p>
+<p>When you run the installer, you will get a screen like this:</p>
+<p><img src="images/osgeo4w_netinstall-1.png" /></p>
+<p>I personally like to know what I’m getting, so I do the Advanced Install, which takes you to a series of menus where you click “Next” to</p>
+<ul>
+<li>Choose Installation Type: Install from Internet</li>
+<li>Choose Installation Directory: Install for All Users (Recommended)</li>
+<li>Select Local Package Directory: defaults directories are fine</li>
+<li>Select Connection Type: Direct Connection</li>
+<li>Choose Download Sites: I use the second one, <a href="http://download.osgeo.org" class="uri">http://download.osgeo.org</a> (I think the first one is in France)</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="images/osgeo4w_netinstall-2.png" /></td>
+<td align="right"><img src="images/osgeo4w_netinstall-3.png" /></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/osgeo4w_netinstall-4.png" /></td>
+<td align="right"><img src="images/osgeo4w_netinstall-5.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>After muddling through those option screens you are presented with the “Select Packages” screen.</p>
+<p><img src="images/osgeo4w_netinstall-6.png" /></p>
+<p>Here’s where things get interesting. You have options to select the packages you want from the following drop-down menus:</p>
+<ul>
+<li>Commandline_Utilities</li>
+<li>Desktop</li>
+<li>Libs</li>
+<li>Web</li>
+</ul>
+<p>Once you’ve selected your personal options, the next screen will check to make certain all dependencies are met and ask that you also include them with your download/installation. We can always come back to this screen to add/change/remove options later, so let’s start with just getting the goods, which I personally choose to be qgis-ltr-full under Desktop or just type it in the search at the top. Click Skip to change it to Install. In the image below, you’ll see that I’ve already installed a version.</p>
+<p><img src="images/osgeo4w_netinstall-7.png" /></p>
+<p>Clicking Next will take you to the Resolve Dependencies screen. Click Next to install these packages to meet dependencies.</p>
+<p>If you have time to browse, you’ll find some nice Easter eggs available in OSGeo4W, including:</p>
+<ul>
+<li>Libs/ffmpeg (audo/video encoding)</li>
+<li>Libs/java (the Java runtime environment)</li>
+<li>Libs/opencv (computer vision library)</li>
+<li>Libs/python3-pandas (data analysis and statistics package)</li>
+</ul>
+</div>
+</div>
+<div id="interface" class="section level2">
+<h2>Interface</h2>
+<p>When you open QGIS Desktop, click on the <strong>New Project</strong> button in the toolbar. Just like ArcGIS, QGIS also stores your work (e.g., links to data layers, symbology, label preferences) in a project file.</p>
+<ul>
+<li>The QGIS project file (.qgs)</li>
+<li>The ArcMap project file (.mxd)</li>
+<li>The ArcGIS Pro project file (.aprx)</li>
+</ul>
+<p>No matter the flavor of GIS software, no spatial data is stored in your project file.</p>
+<table>
+<caption>Table: Side by side comparison of QGIS Desktop (left) and ArcGIS Pro (right).</caption>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="images/2020-03-18_qgis_desktop.png" /></td>
+<td align="right"><img src="images/2020-03-18_arcgis_desktop.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>The graphical user interface (GUI) of QGIS has analogs to ArcGIS:</p>
+<ul>
+<li><strong>Browser</strong> = <strong>Catalog Pane</strong></li>
+<li><strong>Layers</strong> = <strong>Contents Pane</strong></li>
+<li><strong>Processing Toolbox</strong> = <strong>Geoprocessing Pane</strong></li>
+</ul>
+<p>Some things are rearranged a bit, including the status bar, which is below the map pane in ArcGIS Pro and along the bottom of the window in QGIS. ArcGIS Pro utilizes the Microsoft Office-esque ribbon with groups and tools while QGIS uses the more standard menus and toolbars.</p>
+<p>Notably, QGIS projects do not start you out with a basemap, while ArcGIS Pro gives you two representational state transfer (REST) services for a basemap and hillshade.</p>
+<p>To get a basemap in QGIS, you can either double-click on OpenStreetMap under XYZ Tiles in the Browser or install the <a href="https://digital-geography.com/qgis-quickmapservices/">QuickMapServices plugin</a>, which offers some options for basemap layers or dozens when you get the contributed pack from the plugin settings.</p>
+</div>
+<div id="notable-differences" class="section level2">
+<h2>Notable Differences</h2>
+<p>Working in QGIS after spending time with ArcGIS, you will come across some notable differences, such as:</p>
+<p>Add Data</p>
+<ul>
+<li>ArcGIS does not really care about the data model of the spatial data you want to add to a map. In QGIS, the Data Source Manager requires you select the data model (e.g., Vector, Raster, Delimited Text) and choose the correct file. This can be tricky, especially for shapefiles, where there are several files associated with a single shapefile. Luckily, in the bottom corner of the selection window, there is a file filter that lets you choose what type of data you are expecting to find. By default, the filter is set to <strong>All files (*)</strong>.</li>
+</ul>
+<p>Projections</p>
+<ul>
+<li><strong>Project</strong> and <strong>Project Raster</strong> are big deals in the world of ArcGIS; however, data projections, by default, are handled on the fly in QGIS to match the projection of your project. <a href="https://docs.qgis.org/3.10/en/docs/user_manual/working_with_projections/working_with_projections.html">Read more</a>. If you want your data in a new/different projection, you have to right-click the layer to Export to a new raster or vector and specify what the new CRS should be.</li>
+</ul>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

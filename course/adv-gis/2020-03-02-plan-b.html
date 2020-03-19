@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2020-03-02" />
 
-<title>Blog</title>
+<title>Plan B</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -289,93 +290,55 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Blog</h1>
+<h1 class="title toc-ignore">Plan B</h1>
+<h4 class="date">2020-03-02</h4>
 
 </div>
 
 
-<hr />
-<h3>
-QGIS and Me
-</h3>
-<h4>
-2020-03-18
-</h4>
-<p>
-Open source GIS for the win! Kind of. <a class='intext-link' href='2020-03-18-qgis-and-me.html'>Read more</a>.
-</p>
-<h3>
-St. Patrick’s Day
-</h3>
-<h4>
-2020-03-17
-</h4>
-<p>
-Working on a utility script during the COVID-19 crisis. <a class='intext-link' href='2020-03-17-st-patricks-day.html'>Read more</a>.
-</p>
-<h3>
-The Landslide Analysis Toolbox
-</h3>
-<h4>
-2020-03-05
-</h4>
-<p>
-Figuring out how to write a Python toolbox in ArcGIS Pro. <a class='intext-link' href='2020-03-05-the-lsa-toolbox.html'>Read more</a>.
-</p>
-<h3>
-Plan B
-</h3>
-<h4>
-2020-03-02
-</h4>
-<p>
-In the real world it seems that well over 80% of your GIS work is dealing with data. It’s only a minor setback; honestly. <a class='intext-link' href='2020-03-02-plan-b.html'>Read more</a>.
-</p>
-<h3>
-A Case Study
-</h3>
-<h4>
-2020-02-24
-</h4>
-<p>
-This week, we take a look at how far we’ve gotten towards modeling our landslide susceptibility. <a class='intext-link' href='2020-02-24-a-case-study.html'>Read more</a>.
-</p>
-<h3>
-Growing Pains
-</h3>
-<h4>
-2020-02-20
-</h4>
-<p>
-Sometimes you realize that starting simple isn’t actually a bad thing and that ambition can get the better of you. As long as we got each other… growing pains! <a class='intext-link' href='2020-02-20-growing-pains.html'>Read more</a>.
-</p>
-<h3>
-Hacking Python
-</h3>
-<h4>
-2020-02-17
-</h4>
-<p>
-Things get tricky without Python installed on the classroom computers; ArcGIS Pro to the rescue! Finally solve the Rubik’s cube that is Jekyll only in time to abandon it completely. <a class='intext-link' href='2020-02-17-hacking-python.html'>Read more</a>.
-</p>
-<h3>
-Toolbox Revelation
-</h3>
-<h4>
-2020-02-10
-</h4>
-<p>
-A first draft of working on a ArcGIS Python toolbox (and all the setbacks that entails). I take a small step forward working with Jekyll. <a class='intext-link' href='2020-02-10-toolbox-revelation.html'>Read more</a>.
-</p>
-<h3>
-The Jekyll
-</h3>
-<h4>
-2020-02-03
-</h4>
-<p>
-The failed attempts of using Jekyll as a simple blogging site begins. What have I gotten myself into? <a class='intext-link' href='2020-02-03-the-jekyll.html'>Read more</a>.
-</p>
+<p>Due to minor setback of Web Soil Survey’s tabular data, we push on. In this brute-force method, let’s look at each map unit symbol to get an idea of the soil types (most all are a well-drained loam). We also have some water (MUSYM = 79), rock (MUSYM = 2, 61, 102, 180, and 181), poor-drained gravelly sand (MUSYM = 36). We can also take a look at the depth to permanent layer (bedrock), which varies from 0 inches to &gt;80 inches.</p>
+<p>For a first-order approach, let’s assume the following:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Soil Type</th>
+<th align="right">C (kPa)</th>
+<th align="right">φ (deg)</th>
+<th align="right">γ<sub>r</sub> (N/m3)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Loams (<em>any</em>)</td>
+<td align="right">20</td>
+<td align="right">32</td>
+<td align="right">20,000</td>
+</tr>
+<tr class="even">
+<td align="left">Rock/poorly drained</td>
+<td align="right">0</td>
+<td align="right">45</td>
+<td align="right">20,000</td>
+</tr>
+<tr class="odd">
+<td align="left">Water</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Using a combo-attack of “Select by Attributes” and “Calculate Field,” it is possible to prescribe values for γ<sub>r</sub>, C, H, and φ.</p>
+<p>The last few pieces of the puzzle require some information about water. We know that the unit weight of water is 10,000 N/m3 (γ<sub>w</sub>). To get water depth, typically we would look at a time series of rainfall over the region and calculate event statistics to determine the 10, 50, and 100 year storms.</p>
+<p>In our study site, the average annual rainfall is between 400 and 500 mm (16–20 inches) with the winter being the wettest part of the year with an average of about 50 mm (2 inches) of rain per month.</p>
+<p>In September of 2013, central Colorado received a reported 200 mm (8 inches) of rainfall. Let’s make this a worst case scenario.</p>
+<p>Back in ArcGIS Pro, we have four raster layers:</p>
+<ul>
+<li>hillslope (DEM-based)</li>
+<li>cohesion (based on soil map/type)</li>
+<li>depth of regolith (based on soil map)</li>
+<li>soil internal angle of friction (based on soil map/type)</li>
+</ul>
 
 <footer class="myfoot">
     <div class="foot-text">

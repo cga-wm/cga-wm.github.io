@@ -1,5 +1,9 @@
-## The Jekyll
-##### 2020-02-03
+---
+title: "The Jekyll"
+date: 2020-02-03
+url: 2020-02-03-the-jekyll.html
+summary: "The failed attempts of using Jekyll as a simple blogging site begins. What have I gotten myself into?"
+---
 
 > Jekyll, thou art a villainous foe.
 

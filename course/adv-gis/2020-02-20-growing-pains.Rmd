@@ -1,5 +1,9 @@
-## Growing Pains
-##### 2020-02-20
+---
+title: "Growing Pains"
+date: 2020-02-20
+url: 2020-02-20-growing-pains.html
+summary: "Sometimes you realize that starting simple isn't actually a bad thing and that ambition can get the better of you. As long as we got each other... growing pains!"
+---
 
 Sometimes you realize that starting simple isn't actually a bad thing and ambition gets the better of you.
 
@@ -11,7 +15,6 @@ The first set back was definitely the website (my fault).
 Naively, I guessed that Jekyll's "simple blogging site" would be just a matter of a few mouse clicks, edit these few fields, and away you go.
 The spread out documentation and lack of good tutorials played the first minor key and set the tune of this composition.
 The upside is, I now have a working template that I can share with students so they don't have the same struggle I did.
-(REMINDER: share your Jekyll site template).
 
 Not having class the first week of the semester has also created a challenge as we have an unbalanced before-and-after spring break schedule.
 I've opted for a longer second half of the semester project, since exams and projects in other classes tend to slow down a class's pace.

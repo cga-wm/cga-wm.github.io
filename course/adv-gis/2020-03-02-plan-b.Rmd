@@ -1,5 +1,9 @@
-## Plan B
-#### 2020-03-02
+---
+title: "Plan B"
+date: 2020-03-02
+url: 2020-03-02-plan-b.html
+summary: "In the real world it seems that well over 80% of your GIS work is dealing with data. It's only a minor setback; honestly."
+---
 
 Due to minor setback of Web Soil Survey's tabular data, we push on.
 In this brute-force method, let's look at each map unit symbol to get an idea of the soil types (most all are a well-drained loam).

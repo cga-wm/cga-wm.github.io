@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2020-03-17" />
 
-<title>Blog</title>
+<title>St. Patrick’s Day</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -289,93 +290,21 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Blog</h1>
+<h1 class="title toc-ignore">St. Patrick’s Day</h1>
+<h4 class="date">2020-03-17</h4>
 
 </div>
 
 
-<hr />
-<h3>
-QGIS and Me
-</h3>
-<h4>
-2020-03-18
-</h4>
-<p>
-Open source GIS for the win! Kind of. <a class='intext-link' href='2020-03-18-qgis-and-me.html'>Read more</a>.
-</p>
-<h3>
-St. Patrick’s Day
-</h3>
-<h4>
-2020-03-17
-</h4>
-<p>
-Working on a utility script during the COVID-19 crisis. <a class='intext-link' href='2020-03-17-st-patricks-day.html'>Read more</a>.
-</p>
-<h3>
-The Landslide Analysis Toolbox
-</h3>
-<h4>
-2020-03-05
-</h4>
-<p>
-Figuring out how to write a Python toolbox in ArcGIS Pro. <a class='intext-link' href='2020-03-05-the-lsa-toolbox.html'>Read more</a>.
-</p>
-<h3>
-Plan B
-</h3>
-<h4>
-2020-03-02
-</h4>
-<p>
-In the real world it seems that well over 80% of your GIS work is dealing with data. It’s only a minor setback; honestly. <a class='intext-link' href='2020-03-02-plan-b.html'>Read more</a>.
-</p>
-<h3>
-A Case Study
-</h3>
-<h4>
-2020-02-24
-</h4>
-<p>
-This week, we take a look at how far we’ve gotten towards modeling our landslide susceptibility. <a class='intext-link' href='2020-02-24-a-case-study.html'>Read more</a>.
-</p>
-<h3>
-Growing Pains
-</h3>
-<h4>
-2020-02-20
-</h4>
-<p>
-Sometimes you realize that starting simple isn’t actually a bad thing and that ambition can get the better of you. As long as we got each other… growing pains! <a class='intext-link' href='2020-02-20-growing-pains.html'>Read more</a>.
-</p>
-<h3>
-Hacking Python
-</h3>
-<h4>
-2020-02-17
-</h4>
-<p>
-Things get tricky without Python installed on the classroom computers; ArcGIS Pro to the rescue! Finally solve the Rubik’s cube that is Jekyll only in time to abandon it completely. <a class='intext-link' href='2020-02-17-hacking-python.html'>Read more</a>.
-</p>
-<h3>
-Toolbox Revelation
-</h3>
-<h4>
-2020-02-10
-</h4>
-<p>
-A first draft of working on a ArcGIS Python toolbox (and all the setbacks that entails). I take a small step forward working with Jekyll. <a class='intext-link' href='2020-02-10-toolbox-revelation.html'>Read more</a>.
-</p>
-<h3>
-The Jekyll
-</h3>
-<h4>
-2020-02-03
-</h4>
-<p>
-The failed attempts of using Jekyll as a simple blogging site begins. What have I gotten myself into? <a class='intext-link' href='2020-02-03-the-jekyll.html'>Read more</a>.
-</p>
+<p>Well, it’s St. Patrick’s Day and the college has extended its spring break closure for an additional week due to the outbreak of COVID-19 along the Peninsula (now considered a hot-spot in Virginia). So, it looks like we are going to move a lot GIS instruction online because our resources for emergency remote teaching are just limited.</p>
+<p>Taking a short break from grading and general worriment, I thought to help get things uploaded to ArcGIS Online, I’d put together a helper script that looks for shapefiles in the local directory (i.e., the same directory that you run the script) and zips them.</p>
+<p>This is what I came up with: <a href="scripts/shp_zipper.py">shp_zipper (py)</a></p>
+<p>I ran into two predicaments when developing this code.</p>
+<ol style="list-style-type: decimal">
+<li>I thought <code>os.path.splitext</code> was clever for quickly parsing file extensions to check against valid shapefile extensions; however, some shapefile extensions are compound (e.g, .shp.xml) and it made me double-think this approach. I started looking into regular expressions, because they are awesome, but I ended up just running the splitext function on the file prefix twice; not ideal, but functional for the time being.</li>
+<li>Sometimes you may come across a single file that has one of the valid extensions (e.g., file.xml), which is not a part of a shapefile. I decided to use a dictionary to store the file prefix (everything to the left of the <code>.</code> in the file name) as a key and make a list of all file extensions (everything to the right of the <code>.</code> in the file name, including the <code>.</code>) as the value pair. This let me do a clever <code>if not all</code> check to see that the main three files (i.e., .shp, .shx, and .dbf) are in the list. Now, I have a list of all valid shapefiles in the local directory.</li>
+</ol>
+<p>I decided to include <code>argparse</code> to give some flexibility as to whether the user wants to delete the original files after they have been zipped (i.e., cleanup the directory).</p>
 
 <footer class="myfoot">
     <div class="foot-text">

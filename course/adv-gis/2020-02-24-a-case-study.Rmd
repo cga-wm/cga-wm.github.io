@@ -1,5 +1,9 @@
-## A Case Study
-#### 2020-02-24
+---
+title: "A Case Study"
+date: 2020-02-24
+url: 2020-02-24-a-case-study.html
+summary: "This week, we take a look at how far we've gotten towards modeling our landslide susceptibility."
+---
 
 This week, we take a look at how far we've gotten towards modeling our landslide susceptibility.
 Here's what's been done so far.

@@ -1,0 +1,24 @@
+---
+title: "St. Patrick's Day"
+date: 2020-03-17
+url: 2020-03-17-st-patricks-day.html
+summary: "Working on a utility script during the COVID-19 crisis."
+---
+
+Well, it's St. Patrick's Day and the college has extended its spring break closure for an additional week due to the outbreak of COVID-19 along the Peninsula (now considered a hot-spot in Virginia).
+So, it looks like we are going to move a lot GIS instruction online because our resources for emergency remote teaching are just limited.
+
+Taking a short break from grading and general worriment, I thought to help get things uploaded to ArcGIS Online, I'd put together a helper script that looks for shapefiles in the local directory (i.e., the same directory that you run the script) and zips them.
+
+This is what I came up with: [shp_zipper (py)](scripts/shp_zipper.py)
+
+I ran into two predicaments when developing this code.
+
+1. I thought `os.path.splitext` was clever for quickly parsing file extensions to check against valid shapefile extensions; however, some shapefile extensions are compound (e.g, .shp.xml) and it made me double-think this approach.
+    I started looking into regular expressions, because they are awesome, but I ended up just running the splitext function on the file prefix twice; not ideal, but functional for the time being.
+2. Sometimes you may come across a single file that has one of the valid extensions (e.g., file.xml), which is not a part of a shapefile.
+    I decided to use a dictionary to store the file prefix (everything to the left of the `.` in the file name) as a key and make a list of all file extensions (everything to the right of the `.` in the file name, including the `.`) as the value pair.
+    This let me do a clever `if not all` check to see that the main three files (i.e., .shp, .shx, and .dbf) are in the list.
+    Now, I have a list of all valid shapefiles in the local directory.
+
+I decided to include `argparse` to give some flexibility as to whether the user wants to delete the original files after they have been zipped (i.e., cleanup the directory).

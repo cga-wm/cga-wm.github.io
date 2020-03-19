@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2020-02-10" />
 
-<title>Blog</title>
+<title>Toolbox Revelation</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -289,93 +290,23 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Blog</h1>
+<h1 class="title toc-ignore">Toolbox Revelation</h1>
+<h4 class="date">2020-02-10</h4>
 
 </div>
 
 
-<hr />
-<h3>
-QGIS and Me
-</h3>
-<h4>
-2020-03-18
-</h4>
-<p>
-Open source GIS for the win! Kind of. <a class='intext-link' href='2020-03-18-qgis-and-me.html'>Read more</a>.
-</p>
-<h3>
-St. Patrick’s Day
-</h3>
-<h4>
-2020-03-17
-</h4>
-<p>
-Working on a utility script during the COVID-19 crisis. <a class='intext-link' href='2020-03-17-st-patricks-day.html'>Read more</a>.
-</p>
-<h3>
-The Landslide Analysis Toolbox
-</h3>
-<h4>
-2020-03-05
-</h4>
-<p>
-Figuring out how to write a Python toolbox in ArcGIS Pro. <a class='intext-link' href='2020-03-05-the-lsa-toolbox.html'>Read more</a>.
-</p>
-<h3>
-Plan B
-</h3>
-<h4>
-2020-03-02
-</h4>
-<p>
-In the real world it seems that well over 80% of your GIS work is dealing with data. It’s only a minor setback; honestly. <a class='intext-link' href='2020-03-02-plan-b.html'>Read more</a>.
-</p>
-<h3>
-A Case Study
-</h3>
-<h4>
-2020-02-24
-</h4>
-<p>
-This week, we take a look at how far we’ve gotten towards modeling our landslide susceptibility. <a class='intext-link' href='2020-02-24-a-case-study.html'>Read more</a>.
-</p>
-<h3>
-Growing Pains
-</h3>
-<h4>
-2020-02-20
-</h4>
-<p>
-Sometimes you realize that starting simple isn’t actually a bad thing and that ambition can get the better of you. As long as we got each other… growing pains! <a class='intext-link' href='2020-02-20-growing-pains.html'>Read more</a>.
-</p>
-<h3>
-Hacking Python
-</h3>
-<h4>
-2020-02-17
-</h4>
-<p>
-Things get tricky without Python installed on the classroom computers; ArcGIS Pro to the rescue! Finally solve the Rubik’s cube that is Jekyll only in time to abandon it completely. <a class='intext-link' href='2020-02-17-hacking-python.html'>Read more</a>.
-</p>
-<h3>
-Toolbox Revelation
-</h3>
-<h4>
-2020-02-10
-</h4>
-<p>
-A first draft of working on a ArcGIS Python toolbox (and all the setbacks that entails). I take a small step forward working with Jekyll. <a class='intext-link' href='2020-02-10-toolbox-revelation.html'>Read more</a>.
-</p>
-<h3>
-The Jekyll
-</h3>
-<h4>
-2020-02-03
-</h4>
-<p>
-The failed attempts of using Jekyll as a simple blogging site begins. What have I gotten myself into? <a class='intext-link' href='2020-02-03-the-jekyll.html'>Read more</a>.
-</p>
+<p>This week in advanced GIS, I wrapped up my first draft of a working ArcGIS Toolbox for the CGA’s Middle Earth class. The class tutorial relied on a toolbox that was created several years ago using <code>arcgisscripting</code>, which had suddenly and unexpectedly stopped working. I took upon the challenge of upgrading <code>arcgisscripting</code> to <code>arcpy</code> for ArcGIS Pro as I debugged the code.</p>
+<p>The first setback was testing the code, because the workflow for a toolbox is not clearly defined anywhere. Therefore, I started just as I would any project with a basic script separated into functions, classes, and the <code>if __name__ is "__main__"</code> block at the bottom.</p>
+<p>While I found a method for hacking into ArcGIS Pro’s python environment, on my laptop, I am already hacking into OSGEO4W’s (QGIS) python, so I’m a little frustrated with switching back-and-forth between the two for the ease of command-line use (I tried virtual environments, but it doesn’t like the PYTHON_PATH environment variable linking to OSGEO4W).</p>
+<p>Having tested a good portion of the python script via importing the class on ArcGIS Pro’s python console and running through the methods with the typical debugging, I approached the “all-in” moment to go to the toolbox PYT script (you literally just change the file extension from .py to .pyt), but now as a toolbox, you gain access to drop-down menus and the progress bar (secret messages!).</p>
+<p>As I loaded the PYT into Python as a new toolbox, I was having to wait 5–10 minutes before the toolbox became available and I kept getting this RUNTIME ERROR message before I finally realized that that stinking <code>if __name__ is "__main__"</code> is actually running when the toolbox is loaded!</p>
+<p>So I removed it and now the toolbox loads super quick. There is still the lingering problem where I create dependencies on folder location in the tool class’s init, which also, interestingly, is called when the toolbox is imported and has created errors when sharing a toolbox in a folder that moves from one computer to another as the absolute paths change.</p>
+<p>This, to be addressed at another time.</p>
+<p><strong>Update</strong>: the SPI toolbox has been forked from WildlifeConservationSocietyCI’s SPI repository and is available at the <a href="https://github.com/cga-wm/spi">CGA-WM GitHub organization</a>.</p>
+<p><strong>Jekyll Updates</strong></p>
+<p>The navigation bar still haunts me. I was able to get a CSS style that makes the navigation bar stay at the top of the screen, but I can’t seem to make it responsive to screen width. Sorry to those of you looking at this website on mobile devices. I also found a way to create an ordered navigation using a sort by navigation_weight variable that I added to each page’s YAML header.</p>
+<p>This can be considered a positive development.</p>
 
 <footer class="myfoot">
     <div class="foot-text">

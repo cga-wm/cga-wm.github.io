@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2020-03-05" />
 
-<title>Blog</title>
+<title>The Landslide Analysis Toolbox</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -289,93 +290,32 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Blog</h1>
+<h1 class="title toc-ignore">The Landslide Analysis Toolbox</h1>
+<h4 class="date">2020-03-05</h4>
 
 </div>
 
 
-<hr />
-<h3>
-QGIS and Me
-</h3>
-<h4>
-2020-03-18
-</h4>
-<p>
-Open source GIS for the win! Kind of. <a class='intext-link' href='2020-03-18-qgis-and-me.html'>Read more</a>.
-</p>
-<h3>
-St. Patrick’s Day
-</h3>
-<h4>
-2020-03-17
-</h4>
-<p>
-Working on a utility script during the COVID-19 crisis. <a class='intext-link' href='2020-03-17-st-patricks-day.html'>Read more</a>.
-</p>
-<h3>
-The Landslide Analysis Toolbox
-</h3>
-<h4>
-2020-03-05
-</h4>
-<p>
-Figuring out how to write a Python toolbox in ArcGIS Pro. <a class='intext-link' href='2020-03-05-the-lsa-toolbox.html'>Read more</a>.
-</p>
-<h3>
-Plan B
-</h3>
-<h4>
-2020-03-02
-</h4>
-<p>
-In the real world it seems that well over 80% of your GIS work is dealing with data. It’s only a minor setback; honestly. <a class='intext-link' href='2020-03-02-plan-b.html'>Read more</a>.
-</p>
-<h3>
-A Case Study
-</h3>
-<h4>
-2020-02-24
-</h4>
-<p>
-This week, we take a look at how far we’ve gotten towards modeling our landslide susceptibility. <a class='intext-link' href='2020-02-24-a-case-study.html'>Read more</a>.
-</p>
-<h3>
-Growing Pains
-</h3>
-<h4>
-2020-02-20
-</h4>
-<p>
-Sometimes you realize that starting simple isn’t actually a bad thing and that ambition can get the better of you. As long as we got each other… growing pains! <a class='intext-link' href='2020-02-20-growing-pains.html'>Read more</a>.
-</p>
-<h3>
-Hacking Python
-</h3>
-<h4>
-2020-02-17
-</h4>
-<p>
-Things get tricky without Python installed on the classroom computers; ArcGIS Pro to the rescue! Finally solve the Rubik’s cube that is Jekyll only in time to abandon it completely. <a class='intext-link' href='2020-02-17-hacking-python.html'>Read more</a>.
-</p>
-<h3>
-Toolbox Revelation
-</h3>
-<h4>
-2020-02-10
-</h4>
-<p>
-A first draft of working on a ArcGIS Python toolbox (and all the setbacks that entails). I take a small step forward working with Jekyll. <a class='intext-link' href='2020-02-10-toolbox-revelation.html'>Read more</a>.
-</p>
-<h3>
-The Jekyll
-</h3>
-<h4>
-2020-02-03
-</h4>
-<p>
-The failed attempts of using Jekyll as a simple blogging site begins. What have I gotten myself into? <a class='intext-link' href='2020-02-03-the-jekyll.html'>Read more</a>.
-</p>
+<p>The first approach to creating the toolbox is to get all the data, layers, and processes together and in the right order. To approach this, I started on the Python interpreter in ArcGIS.</p>
+<p>In my ArcGIS Pro project folder, I created a <code>\Scripts</code> directory and made a blank plain text file (<code>crit_rain_thresh.py</code>) where I copy over working code.</p>
+<p>A nice thing about ArcGIS is that it creates a file (<code>.pyHistory</code>) in the project folder that contains all the executed commands you type on the Python interpreter. While testing, I can just copy-and-paste the good stuff from here to my script file.</p>
+<p>Here’s the <a href="scripts/crit_rain_thresh.py">Python script (.py)</a> I ended up with after testing.</p>
+<p>The next step is converting the procedure from script to Toolbox, which means creating classes—one for the toolbox and one for each tool inside the toolbox.</p>
+<p>Esri has published <a href="https://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/a-template-for-python-toolboxes.htm">The Python toolbox template</a>, which sets up the framework for the toolbox and geoprocessing tool. In this example, I only need one tool (Critical Rainfall Threshold Model) in my Toolbox (Landslide Analysis) with six parameters:</p>
+<ol style="list-style-type: decimal">
+<li>Hillslope raster (deg)</li>
+<li>Soil internal friction angle raster (deg)</li>
+<li>Soil cohesion raster (Pa)</li>
+<li>Depth of regolith raster (m)</li>
+<li>Depth of soil moisture value (m)</li>
+<li>Output factor of safety (Fs) raster</li>
+</ol>
+<p>I did not give the user the ability to change γ<sub>r</sub> or γ<sub>w</sub>, but it could be added later.</p>
+<p>Here’s the <a href="scripts/lsa.pyt">Python Toolbox (.pyt)</a> I ended up with.</p>
+<p>To get the toolbox in ArcGIS Pro, open your project file and, in the Catalog pane, right-click on Toolboxes and click “Add Toolbox” (note: <strong>not</strong> New Python Toolbox; the toolbox is already created!). The tool ran in something like five seconds, which was a little disappointing because I took time to write progress labels (the progress bar you see after you click “Run”) that are quickly passed over. On the upside, the tool runs in five seconds!</p>
+<p>The output Fs raster is not filtered for values. For landslide susceptibility, we are interested in values between 0 and 1. Arguably, values of 1.25 and 1.5 could also be of interest.</p>
+<p>There are some NODATA values that crop up in the output raster, which seem to be related to pixels where Fw &gt; Fc + Ff. My guess is that I don’t take into consideration water depth greater than regolith depth and it may be an artifact of bad coding.</p>
+<p>Regardless, it was four and a half hours well spent.</p>
 
 <footer class="myfoot">
     <div class="foot-text">

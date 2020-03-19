@@ -1,5 +1,9 @@
-## Hacking Python
-##### 2020-02-17
+---
+title: "Hacking Python"
+date: 2020-02-17
+url: 2020-02-17-hacking-python.html
+summary: "Things get tricky without Python installed on the classroom computers; ArcGIS Pro to the rescue! Finally solve the Rubik's cube that is Jekyll only in time to abandon it completely."
+---
 
 In an effort to run a simple python script in the CGA classroom, I opted to create an example python script that showcases a basic class structure that can be easily manipulated.
 The hope was to use this as a launching point towards writing a python-based toolbox for the first part of this class.

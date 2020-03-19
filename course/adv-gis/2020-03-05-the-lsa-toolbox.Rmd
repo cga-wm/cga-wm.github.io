@@ -1,5 +1,9 @@
-## The Landslide Analysis Toolbox
-#### 2020-03-05
+---
+title: "The Landslide Analysis Toolbox"
+date: 2020-03-05
+url: 2020-03-05-the-lsa-toolbox.html
+summary: "Figuring out how to write a Python toolbox in ArcGIS Pro."
+---
 
 The first approach to creating the toolbox is to get all the data, layers, and processes together and in the right order.
 To approach this, I started on the Python interpreter in ArcGIS.
