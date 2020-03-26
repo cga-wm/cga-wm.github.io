@@ -46,7 +46,7 @@ title: "Resources"
 
 [Geography Realm](https://www.geographyrealm.com/) --- an information site about all things geography (formerly Geo Lounge). Find information here about physical and human geography as well as guides for learning about geography and developing a career in geography.
 
-[Geography & Map Reading Room](https://www.loc.gov/rr/geogmap/index.html) ---- The Geography and Map Division of the Library of Congress provides cartographic and geographic information for all parts of the world to the Congress, Federal agencies, state and local governments, the scholarly community, and to the general public; it is the largest and most comprehensive cartographic collection in the world, numbering over 5.2 million maps.
+[Geography & Map Reading Room](https://www.loc.gov/rr/geogmap/index.html) --- The Geography and Map Division of the Library of Congress provides cartographic and geographic information for all parts of the world to the Congress, Federal agencies, state and local governments, the scholarly community, and to the general public; it is the largest and most comprehensive cartographic collection in the world, numbering over 5.2 million maps.
 
 [GIS Lounge](https://www.gislounge.com/) --- news, data and information on GIS
 
