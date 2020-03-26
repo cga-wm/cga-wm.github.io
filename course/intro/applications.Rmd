@@ -46,6 +46,8 @@ One of the first major areas of GIS application was in natural resource manageme
 
 Other applications are also investigated below.
 
+***
+
 ## Natural Disasters and Emergency Management
 
 *Emergency management* is the organization and management of resources and responsibilities for dealing with all aspects of emergencies [@nrc07].
@@ -60,20 +62,7 @@ All disasters have a temporal and geographic footprint that identifies the durat
 The term *geospatial* is used to refer to the interdependent resources---imagery, maps, data sets, tools, and procedures---that tie every event, feature, or entity to a location on the Earth's surface and use this information for some purpose.
 Although location is an essential part of any item of geospatial data, it is the ability to link a location to the properties of events, features, or entities at that location that gives geospatial data their value.
 
-Throughout this document, three types of geospatial data are discussed:
-
-Framework data
-
-:   comprise of seven geographic themes that are most commonly produced and used by most organizations in their day-to-day geospatial activities (i.e., [geodetic control](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#geodetic), [orthoimagery](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#orthoimage), [elevation](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#elevation), [transportation](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#transportation), [hydrography](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#hydrography), [governmental units](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#governmental), and [cadastral information](https://www.fgdc.gov/initiatives/framework/handbook/appendixA#cadastral))
-
-Foundation data
-
-:   support the day-to-day operations of the private or public sector (e.g., maps or data sets of soils, land use, weather, underground pipes, or overhead power lines)
-
-Event-related data
-
-:   include all those items collected specifically to respond to and recover from a particular disaster event (e.g., the locations of casualties; the locations of response resources; imagery and inventories of property and environmental damage; and earthquake aftershock or chemical plume data)
-
+***
 
 ## Watershed Delineation
 
@@ -106,13 +95,43 @@ Geoprocessing tools:
 - define the pour point
 - delineate the watershed
 
+***
 
-## Habitat Suitability Delineation
+## Habitat Suitability
 
 Habitat suitability rank
 :   identification of potential living areas based on various grades of suitability criteria
 
 Habitat suitability
 :   identification of optimal living areas based on a set of suitability criteria
+
+***
+
+## Geostatistics
+As a discipline, geostatistics was firmly established in the 1960s by the French engineer [Georges Matheron](https://en.wikipedia.org/wiki/Georges_Matheron), who was interested in the appraisal of ore reserves in mining.
+
+Geostatistics did not develop overnight.
+Like other disciplines, it has built on previous results, many of which were formulated with different objectives in various fields.
+
+Seminal ideas conceptually related to what today we call geostatistics or spatial statistics are found in the work of several pioneers, including:
+
+* 1940s: [Andrey N. Kolmogorov](https://en.wikipedia.org/wiki/Andrey_Kolmogorov) in turbulent flow and [Norbert Wiener](https://en.wikipedia.org/wiki/Norbert_Wiener) in stochastic processing
+* 1950s: [Danie G. Krige](https://en.wikipedia.org/wiki/Danie_G._Krige) in mining
+* 1960s: B. Mathern in forestry and L.S. Gandin (Russian) in meteorology
+
+Most geological phenomena are extraordinarily complex in their interrelationships and vast in their geographical extension.
+Ordinarily, engineers and geoscientists are faced with corporate or scientific requirements to properly prepare geological models with measurements involving a significantly small fraction of the entire area or volume of interest.
+Exact descriptions of such systems are neither feasible nor economically possible and therefore the results are necessarily uncertain.
+It should be noted, however, that **uncertainty is not an intrinsic property of the systems**, rather it is the result of the incomplete knowledge of the observer.[@olea09]
+
+The main objective of geostatistics is the characterization of spatial systems that are incompletely known.
+
+Geostatistics makes use of a collection of numerical techniques for the characterization of spatial attributes using primarily two tools:
+
+* probabilistic models
+* pattern recognition techniques
+
+The probabilistic models are used as a way to handle uncertainty in results away from sampling locations, making a radical departure from alternative approaches like inverse distance estimation methods.
+
 
 ## References

@@ -7,18 +7,16 @@ navbar:
           menu:
               - text: Intro
                 href: intro.html
-              - text: Data
-                href: data.html
               - text: CRS
                 href: crs.html
-              - text: Geostats
-                href: geostats.html
+              - text: Data
+                href: data.html
+              - text: GPS
+                href: gps.html
               - text: Ethics
                 href: ethics.html
               - text: Applications
                 href: applications.html
-              - text: GPS
-                href: gps.html
               - text: Remote Sensing
                 href: remote-sensing.html
         - text: "Resources"

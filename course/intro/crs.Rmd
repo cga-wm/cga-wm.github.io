@@ -98,8 +98,6 @@ There are hundreds of different projections, some of which are defined below.
 - True-direction: maintains directions with respect to a fixed central point
 - Universal Transverse Mercator (UTM): maintains both conformal and equal area
 
-![Bad Map Projection: Time Zones (https://xkcd.com/1799/)](https://imgs.xkcd.com/comics/bad_map_projection_time_zones.png)
-
 ### Projection Distortions
 
 The Mercator projection attempts to flatten the spherical surface of Earth, which results in the exaggeration of object sizes as the distance from the equator increases.
