@@ -1,0 +1,298 @@
+---
+title: "Remote Sensing with QGIS"
+---
+
+The goal of this lesson is to introduce you to the field of Remote Sensing and the geographic information software, [QGIS](http://www.qgis.org), the leading open-source desktop GIS software.
+
+<div class="info">
+Before you begin, please read the [chapter on remote sensing](chapter-7-remote-sensing.html).
+</div>
+
+We will investigate Earth observations in three spectral bands (visible to near-infrared) from the [Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)](https://asterweb.jpl.nasa.gov/instrument.asp), a high-resolution sensor onboard NASA's [Terra](https://terra.nasa.gov/about) satellite.
+
+![**Figure 1**. The Terra satellite and its sensors: Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER), Clouds and Earth's Radiant Energy System (CERES), Multi-angle Imaging Spectroradiometer (MISR), Moderate-resolution Imaging Spectroradiometer (MODIS), and Measurements of Pollution in the Troposphere (MOPITT). (NASA.gov)](images/643743main_terra_instruments_full.jpg)
+
+## Setup
+
+### Get QGIS
+The 2019-2020 LTR (long-term service release) of QGIS is version 3.10 'A Coru&ntilde;a'.
+If you want to install QGIS on your own computer, simply go to the QGIS website:
+
+- http://www.qgis.org/en/site/forusers/download.html
+
+and download the installer for your operating system (it is available for all major OS's including Windows[^1], Mac[^2] and Linux[^3]).
+
+[^1]: Windows is a registered trademark of Microsoft Corporation in the United States and/or other countries.
+[^2]: Mac is a trademark of Apple Inc., registered in the United States and other countries.
+[^3]: Linux&reg; is the registered trademark of Linus Torvalds in the United States and other countries.
+
+For help using QGIS, you may wish to consult the [QGIS Documentation](https://www.qgis.org/en/docs/index.html), which includes a user guide and training modules.
+
+### Get data
+There are three raster images you need to download.
+They are available in a single zip file.
+Download `bands123` [(.zip)](#) and extract the compressed zip file to your computer.
+
+The zip file should contain the following six files:
+
+:   The six files located in the unzipped RS_bands123 folder.
+
++---------------------+----------------------+
+| - band1.tif         | - band1.tif.aux.xml  |
+| - band2.tif         | - band2.tif.aux.xml  |
+| - band3.tif         | - band3.tif.aux.xml  |
++---------------------+----------------------+
+
+Copy these six files to your workspace folder (e.g., `C:\Workspace\rs`).
+
+## QGIS
+Launch the QGIS Desktop app.
+
+Once the software has loaded, you may be greeted with a Tips! popup, which you can dismiss.
+
+_Note: some icons may look different, depending on the version of QGIS.__
+
+Click on the New Project button, ![](images/mActionFileNew.png "New Project"){height=20 width=20}, in the toolbar to open a new blank project.
+
+Click the Save Project button, ![](images/mActionFileSave.png "Save Project"){height=20 width=20}, in the toolbar and save your project to your workspace folder.
+
+__Note that the .qgs project file is similar to the .mxd ArcMap map document and the .aprx ArcGIS Pro project file.__
+
+Take a look at the software's graphical user interface (GUI)---an example is shown in **Figure 2** below---and notice some of the similarities and differences.
+
+- A menu bar and two toolbars replace the ArcGIS Pro ribbon
+- Panels replace panes
+- A similar map view and status bar below the map
+
+![**Figure 2**. QGIS GUI with Alaska sample data. The GUI is comprised of five components: (1) Menu Bar, (2) Toolbars, (3) Panels, (4) Map View, (5) Status Bar. Note that yours may look slightly different depending on the type of computer you are using.](images/startup.png "QGIS GUI")
+
+## Image Exploration
+In the Manage Layers Toolbar (on the far left), click the icon to Add Raster Layer, ![](images/mActionAddRasterLayer.png){#id .class height=20 width=20}, and add `band1.tif`.
+
+The layer `band1` is added to the Layers Panel.
+
+Double-click the layer name to open the Layer Properties window.
+
+Under "General," find the layer's coordinate reference system.
+
+> Q1. What is the layer's coordinate system?
+<!-- North American Datum 1927, UTM Zone 11N -->
+
+Under "Metadata," investigate the properties (you may have to scroll down to find Properties).
+
+> Q2. What is the pixel size? What are the units for the pixel size?
+<!-- 15 meters x 15 meters -->
+>
+> Q3. What is the data type?
+<!-- byte -->
+>
+> Q4. In what wavelength of the electromagnetic (EM) spectrum is this image taken? What does this wavelength represent?
+<!-- 0.556 visible green -->
+
+Using WordPad, open the `band1.tif.aux.xml` file.
+
+> Q5. How many lines and samples are in the image? Based on the number of lines and samples (i.e., columns and rows) and the data type (from Q3), what is the file size that you would expect band1.tif to have?
+<!-- lines: 1700; samples: 1700
+    1700 x 1700 x 1 byte = 2.89 MB -->
+>
+> Q6. Based on the number of samples (i.e., number of pixels across the image) and the pixel size (from Q2), what is the swath size (in kilometers)?
+<!-- 1700 pixels x 15 m/px = 25.5 km -->
+
+## Grayscale Image Analysis
+Use the Pan Map and Zoom In/Out tools to investigate the grayscale band1 image.
+
+> Q7. What is the large dark area in the right part of the image?
+<!-- Lake Mead -->
+>
+> Q8. Can you find the location of one of the golf courses? *Hint: what would you expect the DN value of this feature to be in this wavelength?*
+
+To investigate a pixel's DN value, use the Identify Features button (![](images/mActionIdentify.png){#id .class height=20 width=20}) and click on a pixel to open the Identify Results panel.
+
+Find the southern-most boat marina.
+
+> Q9. What could that bright group of pixels be?
+
+Open the layer properties again.
+
+Under "Histogram," click the Compute Histogram button, then click the "Save plot" button and save a copy of the histogram (e.g., `hist1.png`) to your workspace folder.
+Investigate the histogram.
+
+> Q10. What feature is likely causing the spike in the histogram at lower DN values?
+<!-- Likely something metal; a boat or roof of a shed -->
+
+Under "Style" in the Band rendering section, the color gradient is currently set to "Black to white" with a linear stretch between the defined min and max values.
+Based on the histogram, see if you can highlight the lake and any patterns within it by applying different max/min values.
+
+> Q11. What DN range did you choose? What patterns did this range reveal in the lake? What are the patterns, their general direction and what might their cause be?
+
+Load back the image's original min and max values.
+
+## Color Image Analysis
+Click the Add Raster Layer button and add `band2.tif` and `band3.tif`.
+
+Take a moment to investigate these two bands and how they compare to band 1.
+
+Click on Raster in the Menu Bar, go to Miscellaneous, and click on "Merge."
+
+- Click the "Select..." button next to "Input files"
+    - use the Ctrl key to select "band1.tif," "band2.tif," and "band3.tif"
+- Click on "Select..." next to Output file
+    - in your workspace folder, save the output as "band321.tif"
+- Check the box next to "No data value" and assign it to zero
+- Check the box next to "Place each input file into a separate band"
+- Click OK to run the tool
+
+Uncheck band1, band2 and band3 layers.
+
+Open the layer properties of band321.
+
+Under "Style" set the following:
+
+- Band rendering
+    - Red: band2
+    - Green: band3
+    - Blue: band1
+- Load the min/max values
+    - click load (use actual values instead of estimates)
+- Band rendering
+    - change contrast enhancement to "Stretch to MinMax"
+
+Examine the false color image.
+
+> Q12. What does the green color signify in this image?
+>
+> Q13. Are the golf courses easier to see in this image? Why or why not?
+>
+> Q14. Can you find the cloud in this image? Where is it approximately located?
+
+Use the Identify Features tool to find the DN values of the cloud.
+
+> Q15. What are the average DN values of each band for the cloud?
+>
+> Q16. What is the dark object directly to the upper left of the cloud?
+
+Open the output folder and check the file size of `band321.tif`.
+
+> Q17. Does the file size match what you expect based on the number of samples, lines and bands?
+
+## Spatial Filters
+
+### High-pass filter
+The first image processing filter we will test is the high-pass filter.
+
+Create a new Text Document in the folder on your USB drive.
+Call the file "filter.txt" (*double check to make certain your file is not named `filter.txt.txt`, as QGIS will complain about this*) and copy-and-paste the following into the text file, save, and close the file.
+
+```
+TITLE     3x3 high-pass filter
+MATRIX    3
+-1 -1 -1
+-1 8 -1
+-1 -1 -1
+DIVISOR   9
+TYPE      P
+
+```
+
+Click on Processing in the Menu Bar and select Toolbox to open the Processing Toolbox panel.
+
+In the search bar, type "mfilter" and select `r.mfilter` or navigate to:
+
+- GRASS GIS 7 commands
+    - Raster (r.\*)
+        - r.mfilter - Performs raster map matrix filter
+
+In the r.mfilter tool window input/select the following:
+
+- Input layer: band1
+- Filter file: filter.txt (click the ... button and find the `filter.txt` file you created)
+- Number of times to repeat the filter: 1
+- Filtered: hp_filter.tif (click the ... button, click "Save to file," and save the output to your folder)
+- Click Run
+
+In the Style of the layer properties:
+
+- under Band rendering, update the max/min values (use actual values)
+- under Color rendering, change the blending mode from "Normal" to "Overlay"
+
+> Q18. What improvements are the result of the high-pass filter?
+
+### Directional filter
+To highlight the patterns in the lake, we can run a directional filter over band1 that emphasizes brightness variations of interest.
+
+Uncheck the high pass filter layer.
+
+Create a second new Text Document called `vfilter.txt` and copy-and-paste the following, save and close the file.
+
+```
+TITLE     3x3 directional (valley) filter
+MATRIX    3
+0  1  1
+-1  0  1
+-1  -1  0
+DIVISOR   1
+TYPE      P
+
+```
+
+Run the `r.mfilter` tool again only using the vfilter.txt this time.
+Save the output as `dfilter1.tif` and include this image in your lab report.
+
+Name the layer "Valleys" in the General of the layer properties.
+
+In the Style of the layer properties:
+
+- under Band rendering, update the max/min values (use actual values)
+    - set the max value equal to zero (0) to emphasize only the negative values
+- under Color rendering, change the blending mode from "Normal" to "Soft light"
+
+Take a moment to compare and contrast the different features that the two filters highlight (high-pass versus directional) over landscapes and urban areas.
+
+CHALLENGE
+
+:   - Create a third filter text file (`pfilter.txt`)
+    - Swap the negative an positive values to emphasize peaks instead of valleys
+    - Save the filter as `dfilter2.tif`
+    - Name the new layer "Peaks"
+    - Update the actual max/min values
+    - Set the maximum value to zero (0)
+    - Change the blending mode to "Soft light"
+    - Apply both the peaks and valleys filters over band 1
+    - How does the image look now?
+
+> Q19. What is the benefit of the directional filter for showing patterns in the lake over changing the linear stretch of DN values as was done in the grayscale analysis?
+
+## Image Layout and Export
+Use the Print Composer button (![](images/mActionNewComposer.png){#id .class height=20 width=20}) to create output figures (also available through the Project menu in the menu bar).
+
+You may give your new Print Composer a name (optional) and click OK.
+
+The print composer window looks similar to QGIS, where there is a menu bar, toolbars, and a composer viewer, which shows you what your figure will look like (similar to the layouts in ArcGIS).
+
+In the toolbar on the left, click Add New Map, ![](images/mActionAddMap.png){#id .class height=20 width=20}, then click and drag a square over your blank page.
+
+Use the tools in the toolbar on the left to add other items to your figure, such as text (Add new label, ![](images/mActionLabel.png){#id .class height=20 width=20}), legend (Add new legend, ![](images/mActionAddLegend.png){#id .class height=20 width=20}), scale (Add new scalebar, ![](images/mActionScaleBar.png){#id .class height=20 width=20}).
+
+For each item, when they are selected (using the Select/Move item tool, ![](images/mActionSelect.png){#id .class height=20 width=20}, in the toolbar on the left), their properties will appear in the panel on the right.
+You can edit item properties in the Item properties tab (e.g., text and font styles for labels).
+
+When the figure looks as you want it, click on either the Export as image (![](images/mActionSaveMapAsImage.png){#id .class height=20 width=20}) or Export as PDF (![](images/mActionSaveAsPDF.png){#id .class height=20 width=20}) button in the toolbar at the top (also found in the Composer menu in the menu bar).
+
+## Deliverables
+Please write a summary of your work for this activity.
+
+You may work together in groups.
+Please turn in one report per group (make certain everyone's names are listed in the report).
+
+Your report should include a brief introduction (e.g., where the data came from and what the data represents), the methods you implemented, the results you found.
+Include the following figures:
+
+- histogram of band1
+- the linear stretch
+- a false color image
+- filtered images
+
+Use the questions posed throughout the activity as a guide.
+
+In your report include a short review of your experience using QGIS.
+Feel free to compared QGIS to the other GIS software tools you have used.

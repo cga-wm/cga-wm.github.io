@@ -3,6 +3,10 @@ output_dir: "."
 navbar:
     title: "GIS 201 - Intro to GIS"
     right:
+        - text: "Lessons"
+          menu:
+              - text: "Remote Sensing with QGIS"
+                href: lesson-remote-sensing-with-qgis.html
         - text: "Chapters"
           menu:
               - text: "1. Intro"
