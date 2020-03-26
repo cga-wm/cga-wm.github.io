@@ -267,28 +267,25 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="intro.html">Intro</a>
+      <a href="chapter-1-intro.html">1. Intro</a>
     </li>
     <li>
-      <a href="data.html">Data</a>
+      <a href="chapter-2-crs.html">2. CRS</a>
     </li>
     <li>
-      <a href="crs.html">CRS</a>
+      <a href="chapter-3-data.html">3. Data</a>
     </li>
     <li>
-      <a href="geostats.html">Geostats</a>
+      <a href="chapter-4-gps.html">4. GPS</a>
     </li>
     <li>
-      <a href="ethics.html">Ethics</a>
+      <a href="chapter-5-ethics.html">5. Ethics</a>
     </li>
     <li>
-      <a href="applications.html">Applications</a>
+      <a href="chapter-6-applications.html">6. Applications</a>
     </li>
     <li>
-      <a href="gps.html">GPS</a>
-    </li>
-    <li>
-      <a href="remote-sensing.html">Remote Sensing</a>
+      <a href="chapter-7-remote-sensing.html">7. Remote Sensing</a>
     </li>
   </ul>
 </li>
@@ -353,6 +350,7 @@ $(document).ready(function () {
 <li>forests</li>
 </ul>
 <p>Other applications are also investigated below.</p>
+<hr />
 <div id="natural-disasters-and-emergency-management" class="section level2">
 <h2>Natural Disasters and Emergency Management</h2>
 <p><em>Emergency management</em> is the organization and management of resources and responsibilities for dealing with all aspects of emergencies <span class="citation">(National Research Council 2007)</span>. The four phases of emergency management include the following:</p>
@@ -363,18 +361,7 @@ $(document).ready(function () {
 <li>mitigation</li>
 </ul>
 <p>All disasters have a temporal and geographic footprint that identifies the duration of impact and its extent on the Earth’s surface. The term <em>geospatial</em> is used to refer to the interdependent resources—imagery, maps, data sets, tools, and procedures—that tie every event, feature, or entity to a location on the Earth’s surface and use this information for some purpose. Although location is an essential part of any item of geospatial data, it is the ability to link a location to the properties of events, features, or entities at that location that gives geospatial data their value.</p>
-<p>Throughout this document, three types of geospatial data are discussed:</p>
-<dl>
-<dt>Framework data</dt>
-<dd><p>comprise of seven geographic themes that are most commonly produced and used by most organizations in their day-to-day geospatial activities (i.e., <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#geodetic">geodetic control</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#orthoimage">orthoimagery</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#elevation">elevation</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#transportation">transportation</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#hydrography">hydrography</a>, <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#governmental">governmental units</a>, and <a href="https://www.fgdc.gov/initiatives/framework/handbook/appendixA#cadastral">cadastral information</a>)</p>
-</dd>
-<dt>Foundation data</dt>
-<dd><p>support the day-to-day operations of the private or public sector (e.g., maps or data sets of soils, land use, weather, underground pipes, or overhead power lines)</p>
-</dd>
-<dt>Event-related data</dt>
-<dd><p>include all those items collected specifically to respond to and recover from a particular disaster event (e.g., the locations of casualties; the locations of response resources; imagery and inventories of property and environmental damage; and earthquake aftershock or chemical plume data)</p>
-</dd>
-</dl>
+<hr />
 </div>
 <div id="watershed-delineation" class="section level2">
 <h2>Watershed Delineation</h2>
@@ -405,9 +392,10 @@ $(document).ready(function () {
 <li>define the pour point</li>
 <li>delineate the watershed</li>
 </ul>
+<hr />
 </div>
-<div id="habitat-suitability-delineation" class="section level2">
-<h2>Habitat Suitability Delineation</h2>
+<div id="habitat-suitability" class="section level2">
+<h2>Habitat Suitability</h2>
 <dl>
 <dt>Habitat suitability rank</dt>
 <dd>identification of potential living areas based on various grades of suitability criteria
@@ -416,6 +404,26 @@ $(document).ready(function () {
 <dd>identification of optimal living areas based on a set of suitability criteria
 </dd>
 </dl>
+<hr />
+</div>
+<div id="geostatistics" class="section level2">
+<h2>Geostatistics</h2>
+<p>As a discipline, geostatistics was firmly established in the 1960s by the French engineer <a href="https://en.wikipedia.org/wiki/Georges_Matheron">Georges Matheron</a>, who was interested in the appraisal of ore reserves in mining.</p>
+<p>Geostatistics did not develop overnight. Like other disciplines, it has built on previous results, many of which were formulated with different objectives in various fields.</p>
+<p>Seminal ideas conceptually related to what today we call geostatistics or spatial statistics are found in the work of several pioneers, including:</p>
+<ul>
+<li>1940s: <a href="https://en.wikipedia.org/wiki/Andrey_Kolmogorov">Andrey N. Kolmogorov</a> in turbulent flow and <a href="https://en.wikipedia.org/wiki/Norbert_Wiener">Norbert Wiener</a> in stochastic processing</li>
+<li>1950s: <a href="https://en.wikipedia.org/wiki/Danie_G._Krige">Danie G. Krige</a> in mining</li>
+<li>1960s: B. Mathern in forestry and L.S. Gandin (Russian) in meteorology</li>
+</ul>
+<p>Most geological phenomena are extraordinarily complex in their interrelationships and vast in their geographical extension. Ordinarily, engineers and geoscientists are faced with corporate or scientific requirements to properly prepare geological models with measurements involving a significantly small fraction of the entire area or volume of interest. Exact descriptions of such systems are neither feasible nor economically possible and therefore the results are necessarily uncertain. It should be noted, however, that <strong>uncertainty is not an intrinsic property of the systems</strong>, rather it is the result of the incomplete knowledge of the observer.<span class="citation">(Olea 2009)</span></p>
+<p>The main objective of geostatistics is the characterization of spatial systems that are incompletely known.</p>
+<p>Geostatistics makes use of a collection of numerical techniques for the characterization of spatial attributes using primarily two tools:</p>
+<ul>
+<li>probabilistic models</li>
+<li>pattern recognition techniques</li>
+</ul>
+<p>The probabilistic models are used as a way to handle uncertainty in results away from sampling locations, making a radical departure from alternative approaches like inverse distance estimation methods.</p>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="unnumbered">References</h2>
@@ -428,6 +436,9 @@ $(document).ready(function () {
 </div>
 <div id="ref-nrc07">
 <p>National Research Council. 2007. <em>Successful Response Starts with a Map: Improving Geospatial Support for Disaster Management</em>. Washington, DC: The National Academies Press. <a href="https://doi.org/10.17226/11793">https://doi.org/10.17226/11793</a>.</p>
+</div>
+<div id="ref-olea09">
+<p>Olea, Richard A. 2009. “A Practical Primer on Geostatistics.” Open-File Report 2009-1103. United States Geological Survey.</p>
 </div>
 <div id="ref-usgs16">
 <p>U. S. Geological Survey. 2016. “What Is a Watershed?” <a href="https://water.usgs.gov/edu/watershed.html">https://water.usgs.gov/edu/watershed.html</a>.</p>

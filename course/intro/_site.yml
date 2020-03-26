@@ -5,20 +5,20 @@ navbar:
     right:
         - text: "Chapters"
           menu:
-              - text: Intro
-                href: intro.html
-              - text: CRS
-                href: crs.html
-              - text: Data
-                href: data.html
-              - text: GPS
-                href: gps.html
-              - text: Ethics
-                href: ethics.html
-              - text: Applications
-                href: applications.html
-              - text: Remote Sensing
-                href: remote-sensing.html
+              - text: "1. Intro"
+                href: chapter-1-intro.html
+              - text: "2. CRS"
+                href: chapter-2-crs.html
+              - text: "3. Data"
+                href: chapter-3-data.html
+              - text: "4. GPS"
+                href: chapter-4-gps.html
+              - text: "5. Ethics"
+                href: chapter-5-ethics.html
+              - text: "6. Applications"
+                href: chapter-6-applications.html
+              - text: "7. Remote Sensing"
+                href: chapter-7-remote-sensing.html
         - text: "Resources"
           href: resources.html
         - text: CGA-WM
