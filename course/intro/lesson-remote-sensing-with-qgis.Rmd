@@ -1,5 +1,9 @@
 ---
 title: "Remote Sensing with QGIS"
+output:
+    html_document:
+        toc: true
+        toc_float: true
 ---
 
 The goal of this lesson is to introduce you to the field of Remote Sensing and the geographic information software, [QGIS](http://www.qgis.org), the leading open-source desktop GIS software.
@@ -31,7 +35,7 @@ For help using QGIS, you may wish to consult the [QGIS Documentation](https://ww
 ### Get data
 There are three raster images you need to download.
 They are available in a single zip file.
-Download `bands123` [(.zip)](#) and extract the compressed zip file to your computer.
+Download `bands123` [(.zip)](https://drive.google.com/file/d/15ZvjdVAyvQgPiccmGqnbHXgDEUdh_UD0/view?usp=sharing) and extract the compressed zip file to your computer.
 
 The zip file should contain the following six files:
 
@@ -50,7 +54,7 @@ Launch the QGIS Desktop app.
 
 Once the software has loaded, you may be greeted with a Tips! popup, which you can dismiss.
 
-_Note: some icons may look different, depending on the version of QGIS.__
+*Note: some icons may look different, depending on the version of QGIS.*
 
 Click on the New Project button, ![](images/mActionFileNew.png "New Project"){height=20 width=20}, in the toolbar to open a new blank project.
 
@@ -149,61 +153,84 @@ Q9. What feature is likely causing the spike in the histogram at lower DN values
 <span style="color:#efefef;">Notice that the DN values match that large dark area; so that's Lake Mead again.</span>
 </div>
 
-Okay, now see if you can find the southern-most boat marina.
+Let's take an even deeper look.
+
+Open the layer properties again.
+Under "Symbology," you will see in the Band rendering section that the render type is "Singleband gray" and that the color gradient is currently set to "Black to white" with a contrast enhancement set to stretch to min/max values.
+
+Based on the histogram and your investigation of the DN values, see if you can find any patterns within the dark region by applying different max/min values.
 
 <div class="question">
-Q10. What could that bright group of pixels be?
+Q10. What DN range did you choose? What patterns did this range reveal in the lake? What are the patterns, their general direction and what might their cause be?
 
-<span style="color:#efefef;">Likely something metal; a boat or roof of a shed</span>
-</div>
-
-Under "Style" in the Band rendering section, the color gradient is currently set to "Black to white" with a linear stretch between the defined min and max values.
-Based on the histogram, see if you can highlight the lake and any patterns within it by applying different max/min values.
-
-<div class="question">
-Q11. What DN range did you choose? What patterns did this range reveal in the lake? What are the patterns, their general direction and what might their cause be?
+<span style="color:#efefef;">Min/max values of 50 and 75 reveal cloud-like features in the water.</span>
 </div>
 
 Load back the image's original min and max values.
 
+_You can do this by clicking to expand the Min / Max Value Settings, selecting the Min / max radio button, setting the accuracy to Actual (slower), and clicking "Apply."_
+
+Okay, now that we know we are looking at a lake, see if you can find the southern-most boat marina.
+
+<div class="question">
+Q11. What could that bright group of pixels be?
+
+<span style="color:#efefef;">Likely something metal; a boat or roof of a shed</span>
+</div>
+
+That's it for single-band grayscale analysis.
+Now, let's take a look at some color images.
+
 ## Color Image Analysis
-Click the Add Raster Layer button and add `band2.tif` and `band3.tif`.
+Use the Data Source Manager to add raster layers `band2.tif` and `band3.tif`.
 
 Take a moment to investigate these two bands and how they compare to band 1.
 
-Click on Raster in the Menu Bar, go to Miscellaneous, and click on "Merge."
+_You can change each layer's visibility by ticking the checkbox next to their name in the Layers panel. Also, check out their layer properties and/or their `.aux.xml` files._
 
-- Click the "Select..." button next to "Input files"
-    - use the Ctrl key to select "band1.tif," "band2.tif," and "band3.tif"
-- Click on "Select..." next to Output file
-    - in your workspace folder, save the output as "band321.tif"
-- Check the box next to "No data value" and assign it to zero
+In the Menu Bar, click on "Raster" and under Miscellaneous and click on "Merge."
+
+- Click the "..." button next to "Input layers"
+    - select all ("band1," "band2," and "band3")
 - Check the box next to "Place each input file into a separate band"
+- Change the output data type to "Byte"
+- Click on "..." button next to where it says "[Save to temporary file]" and select "Save to file"
+    - in your workspace folder, save the output as "band321.tif"
 - Click OK to run the tool
 
-Uncheck band1, band2 and band3 layers.
+Uncheck band1, band2 and band3 in the Layers panel, keeping band321 visible.
 
 Open the layer properties of band321.
 
 Under "Style" set the following:
 
 - Band rendering
-    - Red: band2
-    - Green: band3
-    - Blue: band1
-- Load the min/max values
-    - click load (use actual values instead of estimates)
-- Band rendering
-    - change contrast enhancement to "Stretch to MinMax"
+    - Red band: band2
+    - Green band: band3
+    - Blue band: band1
+    - Contrast enhancement: "Stretch to MinMax"
+- Load the min/max value settings
+    - select Min/max
+    - select Actual (slower) accuracy
 
 Examine the false color image.
+
+*A false-color image is an image that depicts an object in colors that differ from those a photograph would show.*
 
 <div class=question>
 Q12. What does the green color signify in this image?
 
+<span style="color:#efefef;">
+green: band3 (nir), which should be highlighting vegetation
+</span>
+
 Q13. Are the golf courses easier to see in this image? Why or why not?
 
+<span style="color:#efefef;">Yes, they show up green.</span>
+
 Q14. Can you find the cloud in this image? Where is it approximately located?
+
+<span style="color:#efefef;">it's near (691087,4007653); not the black spot above it</span>
 </div>
 
 Use the Identify Features tool to find the DN values of the cloud.
@@ -211,21 +238,31 @@ Use the Identify Features tool to find the DN values of the cloud.
 <div class="question">
 Q15. What are the average DN values of each band for the cloud?
 
+<span style="color:#efefef;">they should be near 255 in the visible spectrum</span>
+
 Q16. What is the dark object directly to the upper left of the cloud?
+
+<span style="color:#efefef;">that's the cloud's shadow on the ground</span>
 </div>
 
 Open the output folder and check the file size of `band321.tif`.
 
 <div class="question">
 Q17. Does the file size match what you expect based on the number of samples, lines and bands?
+
+<span style="color:#efefef;">
+(1700) x (1700) x (3 bands) x (1 byte) = 8.67 MB
+</span>
 </div>
 
 ## Spatial Filters
 
 ### High-pass filter
-The first image processing filter we will test is the high-pass filter.
+The first image-processing filter we will test is the high-pass filter.
 
-Create a new Text Document in the folder on your USB drive.
+Uncheck all layers except for band1.
+
+Create a new Text Document in your workspace folder.
 Call the file "filter.txt" (*double check to make certain your file is not named `filter.txt.txt`, as QGIS will complain about this*) and copy-and-paste the following into the text file, save, and close the file.
 
 ```
@@ -247,6 +284,10 @@ In the search bar, type "mfilter" and select `r.mfilter` or navigate to:
     - Raster (r.\*)
         - r.mfilter - Performs raster map matrix filter
 
+<div class="error">
+If you receive an error message that GRASS is not properly configured, save and close QGIS, open the QGIS Desktop with GRASS app, and reopen your project file.
+</div>
+
 In the r.mfilter tool window input/select the following:
 
 - Input layer: band1
@@ -255,7 +296,7 @@ In the r.mfilter tool window input/select the following:
 - Filtered: hp_filter.tif (click the ... button, click "Save to file," and save the output to your folder)
 - Click Run
 
-In the Style of the layer properties:
+In the Symbology of the layer properties:
 
 - under Band rendering, update the max/min values (use actual values)
 - under Color rendering, change the blending mode from "Normal" to "Overlay"
@@ -265,7 +306,7 @@ Q18. What improvements are the result of the high-pass filter?
 </div>
 
 ### Directional filter
-To highlight the patterns in the lake, we can run a directional filter over band1 that emphasizes brightness variations of interest.
+To highlight the patterns in the lake, we can run a directional filter over band1 that emphasizes the variations of interest.
 
 Uncheck the high pass filter layer.
 
@@ -287,7 +328,7 @@ Save the output as `dfilter1.tif` and include this image in your lab report.
 
 Name the layer "Valleys" in the General of the layer properties.
 
-In the Style of the layer properties:
+In the Symbology of the layer properties:
 
 - under Band rendering, update the max/min values (use actual values)
     - set the max value equal to zero (0) to emphasize only the negative values
@@ -312,20 +353,20 @@ Q19. What is the benefit of the directional filter for showing patterns in the l
 </div>
 
 ## Image Layout and Export
-Use the Print Composer button (![](images/mActionNewComposer.png){#id .class height=20 width=20}) to create output figures (also available through the Project menu in the menu bar).
+Use the New Print Layout button, ![](images/mActionNewLayout.png){height=20 width=20}, to create output figures (also available through the Project menu in the menu bar).
 
 You may give your new Print Composer a name (optional) and click OK.
 
-The print composer window looks similar to QGIS, where there is a menu bar, toolbars, and a composer viewer, which shows you what your figure will look like (similar to the layouts in ArcGIS).
+The print composer window looks similar to the QGIS GUI, where there is a menu bar, toolbars, and a composer viewer, which shows you what your figure will look like (similar to the layouts in ArcGIS).
 
-In the toolbar on the left, click Add New Map, ![](images/mActionAddMap.png){#id .class height=20 width=20}, then click and drag a square over your blank page.
+In the toolbar on the left, click Add New Map, ![](images/mActionAddMap.png){height=20 width=20}, then click and drag a square over your blank page.
 
-Use the tools in the toolbar on the left to add other items to your figure, such as text (Add new label, ![](images/mActionLabel.png){#id .class height=20 width=20}), legend (Add new legend, ![](images/mActionAddLegend.png){#id .class height=20 width=20}), scale (Add new scalebar, ![](images/mActionScaleBar.png){#id .class height=20 width=20}).
+Use the tools in the toolbar on the left to add other items to your figure, such as text (Add new label, ![](images/mActionLabel.png){height=20 width=20}), legend (Add new legend, ![](images/mActionAddLegend.png){height=20 width=20}), scale (Add new scalebar, ![](images/mActionScaleBar.png){height=20 width=20}).
 
-For each item, when they are selected (using the Select/Move item tool, ![](images/mActionSelect.png){#id .class height=20 width=20}, in the toolbar on the left), their properties will appear in the panel on the right.
+For each item, when they are selected (using the Select/Move item tool, ![](images/mActionSelect.png){height=20 width=20}, in the toolbar on the left), their properties will appear in the panel on the right.
 You can edit item properties in the Item properties tab (e.g., text and font styles for labels).
 
-When the figure looks as you want it, click on either the Export as image (![](images/mActionSaveMapAsImage.png){#id .class height=20 width=20}) or Export as PDF (![](images/mActionSaveAsPDF.png){#id .class height=20 width=20}) button in the toolbar at the top (also found in the Composer menu in the menu bar).
+When the figure looks as you want it, click on either the Export as image (![](images/mActionSaveMapAsImage.png){height=20 width=20}) or Export as PDF (![](images/mActionSaveAsPDF.png){height=20 width=20}) button in the toolbar at the top (also found in the Composer menu in the menu bar).
 
 ## Deliverables
 Please write a summary of your work for this activity.

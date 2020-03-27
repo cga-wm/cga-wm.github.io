@@ -20,6 +20,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
@@ -233,6 +236,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -240,6 +306,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -343,7 +419,7 @@ $(document).ready(function () {
 </div>
 <div id="get-data" class="section level3">
 <h3>Get data</h3>
-<p>There are three raster images you need to download. They are available in a single zip file. Download <code>bands123</code> <a href="#">(.zip)</a> and extract the compressed zip file to your computer.</p>
+<p>There are three raster images you need to download. They are available in a single zip file. Download <code>bands123</code> <a href="https://drive.google.com/file/d/15ZvjdVAyvQgPiccmGqnbHXgDEUdh_UD0/view?usp=sharing">(.zip)</a> and extract the compressed zip file to your computer.</p>
 <p>The zip file should contain the following six files:</p>
 <table style="width:62%;">
 <caption>The six files located in the unzipped RS_bands123 folder.</caption>
@@ -373,7 +449,7 @@ $(document).ready(function () {
 <h2>QGIS</h2>
 <p>Launch the QGIS Desktop app.</p>
 <p>Once the software has loaded, you may be greeted with a Tips! popup, which you can dismiss.</p>
-<p>_Note: some icons may look different, depending on the version of QGIS.__</p>
+<p><em>Note: some icons may look different, depending on the version of QGIS.</em></p>
 <p>Click on the New Project button, <img src="images/mActionFileNew.png" title="New Project" width="20" height="20" />, in the toolbar to open a new blank project.</p>
 <p>Click the Save Project button, <img src="images/mActionFileSave.png" title="Save Project" width="20" height="20" />, in the toolbar and save your project to your workspace folder.</p>
 <p><strong>Note that the .qgs project file is similar to the .mxd ArcMap map document and the .aprx ArcGIS Pro project file.</strong></p>
@@ -426,6 +502,7 @@ $(document).ready(function () {
 <p>Q7. Can you find the location of one of the golf courses?<br /> (Hint: what would you expect the DN value of this feature to be in this wavelength?)</p>
 </div>
 <p>To investigate a pixel’s DN value, use the Identify Features button (<img src="images/mActionIdentify.png" id="id" class="class" width="20" height="20" />) and click on a pixel to open the Identify Results panel.</p>
+<p>Click around to investigate the DN values found within the dark area in the right part of the image.</p>
 <div class="question">
 <p>Q8. What do you think is making the large dark area in the right part of the image?</p>
 <p><span style="color:#efefef;">Lake Mead</span></p>
@@ -435,78 +512,90 @@ $(document).ready(function () {
 <p>Under “Histogram,” click the Compute Histogram button, then click the “Save plot” button (little blue diskette) and save a copy of the histogram (e.g., <code>hist1.png</code>) to your workspace folder. Investigate the histogram.</p>
 <div class="question">
 <p>Q9. What feature is likely causing the spike in the histogram at lower DN values?</p>
-<p><span style="color:#efefef;">That’s Lake Mead again.</span></p>
+<p><span style="color:#efefef;">Notice that the DN values match that large dark area; so that’s Lake Mead again.</span></p>
 </div>
-<p>Okay, now see if you can find the southern-most boat marina.</p>
+<p>Let’s take an even deeper look.</p>
+<p>Open the layer properties again. Under “Symbology,” you will see in the Band rendering section that the render type is “Singleband gray” and that the color gradient is currently set to “Black to white” with a contrast enhancement set to stretch to min/max values.</p>
+<p>Based on the histogram and your investigation of the DN values, see if you can find any patterns within the dark region by applying different max/min values.</p>
 <div class="question">
-<p>Q10. What could that bright group of pixels be?</p>
-<p><span style="color:#efefef;">Likely something metal; a boat or roof of a shed</span></p>
-</div>
-<p>Under “Style” in the Band rendering section, the color gradient is currently set to “Black to white” with a linear stretch between the defined min and max values. Based on the histogram, see if you can highlight the lake and any patterns within it by applying different max/min values.</p>
-<div class="question">
-<p>Q11. What DN range did you choose? What patterns did this range reveal in the lake? What are the patterns, their general direction and what might their cause be?</p>
+<p>Q10. What DN range did you choose? What patterns did this range reveal in the lake? What are the patterns, their general direction and what might their cause be?</p>
+<p><span style="color:#efefef;">Min/max values of 50 and 75 reveal cloud-like features in the water.</span></p>
 </div>
 <p>Load back the image’s original min and max values.</p>
+<p><em>You can do this by clicking to expand the Min / Max Value Settings, selecting the Min / max radio button, setting the accuracy to Actual (slower), and clicking “Apply.”</em></p>
+<p>Okay, now that we know we are looking at a lake, see if you can find the southern-most boat marina.</p>
+<div class="question">
+<p>Q11. What could that bright group of pixels be?</p>
+<p><span style="color:#efefef;">Likely something metal; a boat or roof of a shed</span></p>
+</div>
+<p>That’s it for single-band grayscale analysis. Now, let’s take a look at some color images.</p>
 </div>
 <div id="color-image-analysis" class="section level2">
 <h2>Color Image Analysis</h2>
-<p>Click the Add Raster Layer button and add <code>band2.tif</code> and <code>band3.tif</code>.</p>
+<p>Use the Data Source Manager to add raster layers <code>band2.tif</code> and <code>band3.tif</code>.</p>
 <p>Take a moment to investigate these two bands and how they compare to band 1.</p>
-<p>Click on Raster in the Menu Bar, go to Miscellaneous, and click on “Merge.”</p>
+<p><em>You can change each layer’s visibility by ticking the checkbox next to their name in the Layers panel. Also, check out their layer properties and/or their <code>.aux.xml</code> files.</em></p>
+<p>In the Menu Bar, click on “Raster” and under Miscellaneous and click on “Merge.”</p>
 <ul>
-<li>Click the “Select…” button next to “Input files”
+<li>Click the “…” button next to “Input layers”
 <ul>
-<li>use the Ctrl key to select “band1.tif,” “band2.tif,” and “band3.tif”</li>
+<li>select all (“band1,” “band2,” and “band3”)</li>
 </ul></li>
-<li>Click on “Select…” next to Output file
+<li>Check the box next to “Place each input file into a separate band”</li>
+<li>Change the output data type to “Byte”</li>
+<li>Click on “…” button next to where it says “[Save to temporary file]” and select “Save to file”
 <ul>
 <li>in your workspace folder, save the output as “band321.tif”</li>
 </ul></li>
-<li>Check the box next to “No data value” and assign it to zero</li>
-<li>Check the box next to “Place each input file into a separate band”</li>
 <li>Click OK to run the tool</li>
 </ul>
-<p>Uncheck band1, band2 and band3 layers.</p>
+<p>Uncheck band1, band2 and band3 in the Layers panel, keeping band321 visible.</p>
 <p>Open the layer properties of band321.</p>
 <p>Under “Style” set the following:</p>
 <ul>
 <li>Band rendering
 <ul>
-<li>Red: band2</li>
-<li>Green: band3</li>
-<li>Blue: band1</li>
+<li>Red band: band2</li>
+<li>Green band: band3</li>
+<li>Blue band: band1</li>
+<li>Contrast enhancement: “Stretch to MinMax”</li>
 </ul></li>
-<li>Load the min/max values
+<li>Load the min/max value settings
 <ul>
-<li>click load (use actual values instead of estimates)</li>
-</ul></li>
-<li>Band rendering
-<ul>
-<li>change contrast enhancement to “Stretch to MinMax”</li>
+<li>select Min/max</li>
+<li>select Actual (slower) accuracy</li>
 </ul></li>
 </ul>
 <p>Examine the false color image.</p>
+<p><em>A false-color image is an image that depicts an object in colors that differ from those a photograph would show.</em></p>
 <div class="question">
 <p>Q12. What does the green color signify in this image?</p>
+<p><span style="color:#efefef;"> green: band3 (nir), which should be highlighting vegetation </span></p>
 <p>Q13. Are the golf courses easier to see in this image? Why or why not?</p>
+<p><span style="color:#efefef;">Yes, they show up green.</span></p>
 <p>Q14. Can you find the cloud in this image? Where is it approximately located?</p>
+<p><span style="color:#efefef;">it’s near (691087,4007653); not the black spot above it</span></p>
 </div>
 <p>Use the Identify Features tool to find the DN values of the cloud.</p>
 <div class="question">
 <p>Q15. What are the average DN values of each band for the cloud?</p>
+<p><span style="color:#efefef;">they should be near 255 in the visible spectrum</span></p>
 <p>Q16. What is the dark object directly to the upper left of the cloud?</p>
+<p><span style="color:#efefef;">that’s the cloud’s shadow on the ground</span></p>
 </div>
 <p>Open the output folder and check the file size of <code>band321.tif</code>.</p>
 <div class="question">
 <p>Q17. Does the file size match what you expect based on the number of samples, lines and bands?</p>
+<p><span style="color:#efefef;"> (1700) x (1700) x (3 bands) x (1 byte) = 8.67 MB </span></p>
 </div>
 </div>
 <div id="spatial-filters" class="section level2">
 <h2>Spatial Filters</h2>
 <div id="high-pass-filter" class="section level3">
 <h3>High-pass filter</h3>
-<p>The first image processing filter we will test is the high-pass filter.</p>
-<p>Create a new Text Document in the folder on your USB drive. Call the file “filter.txt” (<em>double check to make certain your file is not named <code>filter.txt.txt</code>, as QGIS will complain about this</em>) and copy-and-paste the following into the text file, save, and close the file.</p>
+<p>The first image-processing filter we will test is the high-pass filter.</p>
+<p>Uncheck all layers except for band1.</p>
+<p>Create a new Text Document in your workspace folder. Call the file “filter.txt” (<em>double check to make certain your file is not named <code>filter.txt.txt</code>, as QGIS will complain about this</em>) and copy-and-paste the following into the text file, save, and close the file.</p>
 <pre><code>TITLE     3x3 high-pass filter
 MATRIX    3
 -1 -1 -1
@@ -526,6 +615,9 @@ TYPE      P
 </ul></li>
 </ul></li>
 </ul>
+<div class="error">
+<p>If you receive an error message that GRASS is not properly configured, save and close QGIS, open the QGIS Desktop with GRASS app, and reopen your project file.</p>
+</div>
 <p>In the r.mfilter tool window input/select the following:</p>
 <ul>
 <li>Input layer: band1</li>
@@ -534,7 +626,7 @@ TYPE      P
 <li>Filtered: hp_filter.tif (click the … button, click “Save to file,” and save the output to your folder)</li>
 <li>Click Run</li>
 </ul>
-<p>In the Style of the layer properties:</p>
+<p>In the Symbology of the layer properties:</p>
 <ul>
 <li>under Band rendering, update the max/min values (use actual values)</li>
 <li>under Color rendering, change the blending mode from “Normal” to “Overlay”</li>
@@ -545,7 +637,7 @@ TYPE      P
 </div>
 <div id="directional-filter" class="section level3">
 <h3>Directional filter</h3>
-<p>To highlight the patterns in the lake, we can run a directional filter over band1 that emphasizes brightness variations of interest.</p>
+<p>To highlight the patterns in the lake, we can run a directional filter over band1 that emphasizes the variations of interest.</p>
 <p>Uncheck the high pass filter layer.</p>
 <p>Create a second new Text Document called <code>vfilter.txt</code> and copy-and-paste the following, save and close the file.</p>
 <pre><code>TITLE     3x3 directional (valley) filter
@@ -558,7 +650,7 @@ TYPE      P
 </code></pre>
 <p>Run the <code>r.mfilter</code> tool again only using the vfilter.txt this time. Save the output as <code>dfilter1.tif</code> and include this image in your lab report.</p>
 <p>Name the layer “Valleys” in the General of the layer properties.</p>
-<p>In the Style of the layer properties:</p>
+<p>In the Symbology of the layer properties:</p>
 <ul>
 <li>under Band rendering, update the max/min values (use actual values)
 <ul>
@@ -589,13 +681,13 @@ TYPE      P
 </div>
 <div id="image-layout-and-export" class="section level2">
 <h2>Image Layout and Export</h2>
-<p>Use the Print Composer button (<img src="images/mActionNewComposer.png" id="id" class="class" width="20" height="20" />) to create output figures (also available through the Project menu in the menu bar).</p>
+<p>Use the New Print Layout button, <img src="images/mActionNewLayout.png" width="20" height="20" />, to create output figures (also available through the Project menu in the menu bar).</p>
 <p>You may give your new Print Composer a name (optional) and click OK.</p>
-<p>The print composer window looks similar to QGIS, where there is a menu bar, toolbars, and a composer viewer, which shows you what your figure will look like (similar to the layouts in ArcGIS).</p>
-<p>In the toolbar on the left, click Add New Map, <img src="images/mActionAddMap.png" id="id" class="class" width="20" height="20" />, then click and drag a square over your blank page.</p>
-<p>Use the tools in the toolbar on the left to add other items to your figure, such as text (Add new label, <img src="images/mActionLabel.png" id="id" class="class" width="20" height="20" />), legend (Add new legend, <img src="images/mActionAddLegend.png" id="id" class="class" width="20" height="20" />), scale (Add new scalebar, <img src="images/mActionScaleBar.png" id="id" class="class" width="20" height="20" />).</p>
-<p>For each item, when they are selected (using the Select/Move item tool, <img src="images/mActionSelect.png" id="id" class="class" width="20" height="20" />, in the toolbar on the left), their properties will appear in the panel on the right. You can edit item properties in the Item properties tab (e.g., text and font styles for labels).</p>
-<p>When the figure looks as you want it, click on either the Export as image (<img src="images/mActionSaveMapAsImage.png" id="id" class="class" width="20" height="20" />) or Export as PDF (<img src="images/mActionSaveAsPDF.png" id="id" class="class" width="20" height="20" />) button in the toolbar at the top (also found in the Composer menu in the menu bar).</p>
+<p>The print composer window looks similar to the QGIS GUI, where there is a menu bar, toolbars, and a composer viewer, which shows you what your figure will look like (similar to the layouts in ArcGIS).</p>
+<p>In the toolbar on the left, click Add New Map, <img src="images/mActionAddMap.png" width="20" height="20" />, then click and drag a square over your blank page.</p>
+<p>Use the tools in the toolbar on the left to add other items to your figure, such as text (Add new label, <img src="images/mActionLabel.png" width="20" height="20" />), legend (Add new legend, <img src="images/mActionAddLegend.png" width="20" height="20" />), scale (Add new scalebar, <img src="images/mActionScaleBar.png" width="20" height="20" />).</p>
+<p>For each item, when they are selected (using the Select/Move item tool, <img src="images/mActionSelect.png" width="20" height="20" />, in the toolbar on the left), their properties will appear in the panel on the right. You can edit item properties in the Item properties tab (e.g., text and font styles for labels).</p>
+<p>When the figure looks as you want it, click on either the Export as image (<img src="images/mActionSaveMapAsImage.png" width="20" height="20" />) or Export as PDF (<img src="images/mActionSaveAsPDF.png" width="20" height="20" />) button in the toolbar at the top (also found in the Composer menu in the menu bar).</p>
 </div>
 <div id="deliverables" class="section level2">
 <h2>Deliverables</h2>
@@ -627,6 +719,8 @@ TYPE      P
 </footer>
 
 
+</div>
+</div>
 
 </div>
 
@@ -659,6 +753,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
