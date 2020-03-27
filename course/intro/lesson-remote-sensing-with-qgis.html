@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Remote Sensing with QGIS</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 201 - Intro to GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Lessons
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="lesson-remote-sensing-with-qgis.html">Remote Sensing with QGIS</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Chapters
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="chapter-1-intro.html">1. Intro</a>
+    </li>
+    <li>
+      <a href="chapter-2-crs.html">2. CRS</a>
+    </li>
+    <li>
+      <a href="chapter-3-data.html">3. Data</a>
+    </li>
+    <li>
+      <a href="chapter-4-gps.html">4. GPS</a>
+    </li>
+    <li>
+      <a href="chapter-5-ethics.html">5. Ethics</a>
+    </li>
+    <li>
+      <a href="chapter-6-applications.html">6. Applications</a>
+    </li>
+    <li>
+      <a href="chapter-7-remote-sensing.html">7. Remote Sensing</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+<li>
+  <a href="../../index.html">CGA-WM</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Remote Sensing with QGIS</h1>
+
+</div>
+
+
+<p>The goal of this lesson is to introduce you to the field of Remote Sensing and the geographic information software, <a href="http://www.qgis.org">QGIS</a>, the leading open-source desktop GIS software.</p>
+<div class="info">
+<p>Before you begin, please read the <a href="chapter-7-remote-sensing.html">chapter on remote sensing</a>.</p>
+</div>
+<p>We will investigate Earth observations in three spectral bands (visible to near-infrared) from the <a href="https://asterweb.jpl.nasa.gov/instrument.asp">Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)</a>, a high-resolution sensor onboard NASA’s <a href="https://terra.nasa.gov/about">Terra</a> satellite.</p>
+<div class="figure">
+<img src="images/643743main_terra_instruments_full.jpg" alt="" />
+<p class="caption"><strong>Figure 1</strong>. The Terra satellite and its sensors: Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER), Clouds and Earth’s Radiant Energy System (CERES), Multi-angle Imaging Spectroradiometer (MISR), Moderate-resolution Imaging Spectroradiometer (MODIS), and Measurements of Pollution in the Troposphere (MOPITT). (NASA.gov)</p>
+</div>
+<div id="setup" class="section level2">
+<h2>Setup</h2>
+<div id="get-qgis" class="section level3">
+<h3>Get QGIS</h3>
+<p>The 2019-2020 LTR (long-term service release) of QGIS is version 3.10 ‘A Coruña’. If you want to install QGIS on your own computer, simply go to the QGIS website:</p>
+<ul>
+<li><a href="http://www.qgis.org/en/site/forusers/download.html" class="uri">http://www.qgis.org/en/site/forusers/download.html</a></li>
+</ul>
+<p>and download the installer for your operating system (it is available for all major OS’s including Windows<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, Mac<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> and Linux<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>).</p>
+<p>For help using QGIS, you may wish to consult the <a href="https://www.qgis.org/en/docs/index.html">QGIS Documentation</a>, which includes a user guide and training modules.</p>
+</div>
+<div id="get-data" class="section level3">
+<h3>Get data</h3>
+<p>There are three raster images you need to download. They are available in a single zip file. Download <code>bands123</code> <a href="#">(.zip)</a> and extract the compressed zip file to your computer.</p>
+<p>The zip file should contain the following six files:</p>
+<table style="width:62%;">
+<caption>The six files located in the unzipped RS_bands123 folder.</caption>
+<colgroup>
+<col width="30%" />
+<col width="31%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><ul>
+<li>band1.tif</li>
+<li>band2.tif</li>
+<li>band3.tif</li>
+</ul></td>
+<td><ul>
+<li>band1.tif.aux.xml</li>
+<li>band2.tif.aux.xml</li>
+<li>band3.tif.aux.xml</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p>Copy these six files to your workspace folder (e.g., <code>C:\Workspace\rs</code>).</p>
+</div>
+</div>
+<div id="qgis" class="section level2">
+<h2>QGIS</h2>
+<p>Launch the QGIS Desktop app.</p>
+<p>Once the software has loaded, you may be greeted with a Tips! popup, which you can dismiss.</p>
+<p>_Note: some icons may look different, depending on the version of QGIS.__</p>
+<p>Click on the New Project button, <img src="images/mActionFileNew.png" title="New Project" width="20" height="20" />, in the toolbar to open a new blank project.</p>
+<p>Click the Save Project button, <img src="images/mActionFileSave.png" title="Save Project" width="20" height="20" />, in the toolbar and save your project to your workspace folder.</p>
+<p><strong>Note that the .qgs project file is similar to the .mxd ArcMap map document and the .aprx ArcGIS Pro project file.</strong></p>
+<p>Take a look at the software’s graphical user interface (GUI)—an example is shown in <strong>Figure 2</strong> below—and notice some of the similarities and differences.</p>
+<ul>
+<li>A menu bar and two toolbars replace the ArcGIS Pro ribbon</li>
+<li>Panels replace panes</li>
+<li>A similar map view and status bar below the map</li>
+</ul>
+<div class="figure">
+<img src="images/startup.png" title="QGIS GUI" alt="" />
+<p class="caption"><strong>Figure 2</strong>. QGIS GUI with Alaska sample data. The GUI is comprised of five components: (1) Menu Bar, (2) Toolbars, (3) Panels, (4) Map View, (5) Status Bar. Note that yours may look slightly different depending on the type of computer you are using.</p>
+</div>
+</div>
+<div id="image-exploration" class="section level2">
+<h2>Image Exploration</h2>
+<p>In the Toolbar, click the button for the Data Source Manager, <img src="images/mActionDataSourceManager.png" />, to open the Data Source Manager window and click the icon to Add Raster Layer, <img src="images/mActionAddRasterLayer.png" width="20" height="20" />.</p>
+<p>Next to the Source input box, click the ellipses, navigate to your workspace folder and add <code>band1.tif</code>.</p>
+<p><em>Note: when you click “Add,” you may receive a pop-up window about selecting a transformation for band1; you may click “OK” to select the first recommended option.</em></p>
+<p>Click “Close” to exit the Data Source Manager.</p>
+<p>The layer <code>band1</code> is added to the Layers Panel.</p>
+<p>Double-click the layer name to open the Layer Properties window.</p>
+<p>Under “Information,” find the layer’s coordinate reference system (CRS).</p>
+<div class="question">
+<p>Q1. What is the layer’s coordinate system?</p>
+<p><span style="color:#efefef;">EPSG:26711 - North American Datum 1927, UTM Zone 11N</span></p>
+</div>
+<p>In the information from provider section, investigate the properties (you may have to scroll down to find Properties).</p>
+<div class="question">
+<p>Q2. What is the <strong>pixel size</strong>? What is the <strong>unit</strong> for the pixel size?</p>
+<p><span style="color:#efefef;">15 meters x 15 meters</span></p>
+<p>Q3. What is the <strong>data type</strong>?</p>
+<p><span style="color:#efefef;">Byte - eight bit unsigned integer<span></p>
+<p>Q4. In what wavelength of the electromagnetic (EM) spectrum is this image taken? What does this wavelength represent? <em>Hint: refer to the chapter on remote sensing for information on wavelengths.</em></p>
+<p><span style="color:#efefef;">0.556 microns - visible green</span></p>
+</div>
+<p>Back in your workspace folder, open the <code>band1.tif.aux.xml</code> file (e.g., WordPad in Windows).</p>
+<div class="question">
+<p>Q5. How many lines and samples are in the image? Based on the number of lines and samples (i.e., columns and rows) and the data type (from Q3), what is the file size that you would expect band1.tif to have?</p>
+<p><span style="color:#efefef;">lines: 1700; samples: 1700; (1700) x (1700) x (1 byte) = 2.89 MB</span></p>
+<p>Q6. Based on the number of samples (i.e., number of pixels across the image) and the pixel size (from Q2), what is the swath size (in kilometers)?</p>
+<p><span style="color:#efefef;">(1700 pixels) x (15 m/px) = 25.5 km</span></p>
+</div>
+<p>You can close <code>band1.tif.aux.xml</code> and return to your QGIS project.</p>
+</div>
+<div id="grayscale-image-analysis" class="section level2">
+<h2>Grayscale Image Analysis</h2>
+<p>Use the Pan Map and Zoom In/Out tools to investigate the grayscale band1 image.</p>
+<div class="question">
+<p>Q7. Can you find the location of one of the golf courses?<br /> (Hint: what would you expect the DN value of this feature to be in this wavelength?)</p>
+</div>
+<p>To investigate a pixel’s DN value, use the Identify Features button (<img src="images/mActionIdentify.png" id="id" class="class" width="20" height="20" />) and click on a pixel to open the Identify Results panel.</p>
+<div class="question">
+<p>Q8. What do you think is making the large dark area in the right part of the image?</p>
+<p><span style="color:#efefef;">Lake Mead</span></p>
+</div>
+<p>Let’s take a deeper look.</p>
+<p>Open the layer properties again.</p>
+<p>Under “Histogram,” click the Compute Histogram button, then click the “Save plot” button (little blue diskette) and save a copy of the histogram (e.g., <code>hist1.png</code>) to your workspace folder. Investigate the histogram.</p>
+<div class="question">
+<p>Q9. What feature is likely causing the spike in the histogram at lower DN values?</p>
+<p><span style="color:#efefef;">That’s Lake Mead again.</span></p>
+</div>
+<p>Okay, now see if you can find the southern-most boat marina.</p>
+<div class="question">
+<p>Q10. What could that bright group of pixels be?</p>
+<p><span style="color:#efefef;">Likely something metal; a boat or roof of a shed</span></p>
+</div>
+<p>Under “Style” in the Band rendering section, the color gradient is currently set to “Black to white” with a linear stretch between the defined min and max values. Based on the histogram, see if you can highlight the lake and any patterns within it by applying different max/min values.</p>
+<div class="question">
+<p>Q11. What DN range did you choose? What patterns did this range reveal in the lake? What are the patterns, their general direction and what might their cause be?</p>
+</div>
+<p>Load back the image’s original min and max values.</p>
+</div>
+<div id="color-image-analysis" class="section level2">
+<h2>Color Image Analysis</h2>
+<p>Click the Add Raster Layer button and add <code>band2.tif</code> and <code>band3.tif</code>.</p>
+<p>Take a moment to investigate these two bands and how they compare to band 1.</p>
+<p>Click on Raster in the Menu Bar, go to Miscellaneous, and click on “Merge.”</p>
+<ul>
+<li>Click the “Select…” button next to “Input files”
+<ul>
+<li>use the Ctrl key to select “band1.tif,” “band2.tif,” and “band3.tif”</li>
+</ul></li>
+<li>Click on “Select…” next to Output file
+<ul>
+<li>in your workspace folder, save the output as “band321.tif”</li>
+</ul></li>
+<li>Check the box next to “No data value” and assign it to zero</li>
+<li>Check the box next to “Place each input file into a separate band”</li>
+<li>Click OK to run the tool</li>
+</ul>
+<p>Uncheck band1, band2 and band3 layers.</p>
+<p>Open the layer properties of band321.</p>
+<p>Under “Style” set the following:</p>
+<ul>
+<li>Band rendering
+<ul>
+<li>Red: band2</li>
+<li>Green: band3</li>
+<li>Blue: band1</li>
+</ul></li>
+<li>Load the min/max values
+<ul>
+<li>click load (use actual values instead of estimates)</li>
+</ul></li>
+<li>Band rendering
+<ul>
+<li>change contrast enhancement to “Stretch to MinMax”</li>
+</ul></li>
+</ul>
+<p>Examine the false color image.</p>
+<div class="question">
+<p>Q12. What does the green color signify in this image?</p>
+<p>Q13. Are the golf courses easier to see in this image? Why or why not?</p>
+<p>Q14. Can you find the cloud in this image? Where is it approximately located?</p>
+</div>
+<p>Use the Identify Features tool to find the DN values of the cloud.</p>
+<div class="question">
+<p>Q15. What are the average DN values of each band for the cloud?</p>
+<p>Q16. What is the dark object directly to the upper left of the cloud?</p>
+</div>
+<p>Open the output folder and check the file size of <code>band321.tif</code>.</p>
+<div class="question">
+<p>Q17. Does the file size match what you expect based on the number of samples, lines and bands?</p>
+</div>
+</div>
+<div id="spatial-filters" class="section level2">
+<h2>Spatial Filters</h2>
+<div id="high-pass-filter" class="section level3">
+<h3>High-pass filter</h3>
+<p>The first image processing filter we will test is the high-pass filter.</p>
+<p>Create a new Text Document in the folder on your USB drive. Call the file “filter.txt” (<em>double check to make certain your file is not named <code>filter.txt.txt</code>, as QGIS will complain about this</em>) and copy-and-paste the following into the text file, save, and close the file.</p>
+<pre><code>TITLE     3x3 high-pass filter
+MATRIX    3
+-1 -1 -1
+-1 8 -1
+-1 -1 -1
+DIVISOR   9
+TYPE      P
+</code></pre>
+<p>Click on Processing in the Menu Bar and select Toolbox to open the Processing Toolbox panel.</p>
+<p>In the search bar, type “mfilter” and select <code>r.mfilter</code> or navigate to:</p>
+<ul>
+<li>GRASS GIS 7 commands
+<ul>
+<li>Raster (r.*)
+<ul>
+<li>r.mfilter - Performs raster map matrix filter</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>In the r.mfilter tool window input/select the following:</p>
+<ul>
+<li>Input layer: band1</li>
+<li>Filter file: filter.txt (click the … button and find the <code>filter.txt</code> file you created)</li>
+<li>Number of times to repeat the filter: 1</li>
+<li>Filtered: hp_filter.tif (click the … button, click “Save to file,” and save the output to your folder)</li>
+<li>Click Run</li>
+</ul>
+<p>In the Style of the layer properties:</p>
+<ul>
+<li>under Band rendering, update the max/min values (use actual values)</li>
+<li>under Color rendering, change the blending mode from “Normal” to “Overlay”</li>
+</ul>
+<div class="question">
+<p>Q18. What improvements are the result of the high-pass filter?</p>
+</div>
+</div>
+<div id="directional-filter" class="section level3">
+<h3>Directional filter</h3>
+<p>To highlight the patterns in the lake, we can run a directional filter over band1 that emphasizes brightness variations of interest.</p>
+<p>Uncheck the high pass filter layer.</p>
+<p>Create a second new Text Document called <code>vfilter.txt</code> and copy-and-paste the following, save and close the file.</p>
+<pre><code>TITLE     3x3 directional (valley) filter
+MATRIX    3
+0  1  1
+-1  0  1
+-1  -1  0
+DIVISOR   1
+TYPE      P
+</code></pre>
+<p>Run the <code>r.mfilter</code> tool again only using the vfilter.txt this time. Save the output as <code>dfilter1.tif</code> and include this image in your lab report.</p>
+<p>Name the layer “Valleys” in the General of the layer properties.</p>
+<p>In the Style of the layer properties:</p>
+<ul>
+<li>under Band rendering, update the max/min values (use actual values)
+<ul>
+<li>set the max value equal to zero (0) to emphasize only the negative values</li>
+</ul></li>
+<li>under Color rendering, change the blending mode from “Normal” to “Soft light”</li>
+</ul>
+<p>Take a moment to compare and contrast the different features that the two filters highlight (high-pass versus directional) over landscapes and urban areas.</p>
+<dl>
+<dt>CHALLENGE</dt>
+<dd><ul>
+<li>Create a third filter text file (<code>pfilter.txt</code>)</li>
+<li>Swap the negative an positive values to emphasize peaks instead of valleys</li>
+<li>Save the filter as <code>dfilter2.tif</code></li>
+<li>Name the new layer “Peaks”</li>
+<li>Update the actual max/min values</li>
+<li>Set the maximum value to zero (0)</li>
+<li>Change the blending mode to “Soft light”</li>
+<li>Apply both the peaks and valleys filters over band 1</li>
+<li>How does the image look now?</li>
+</ul>
+</dd>
+</dl>
+<div class="question">
+<p>Q19. What is the benefit of the directional filter for showing patterns in the lake over changing the linear stretch of DN values as was done in the grayscale analysis?</p>
+</div>
+</div>
+</div>
+<div id="image-layout-and-export" class="section level2">
+<h2>Image Layout and Export</h2>
+<p>Use the Print Composer button (<img src="images/mActionNewComposer.png" id="id" class="class" width="20" height="20" />) to create output figures (also available through the Project menu in the menu bar).</p>
+<p>You may give your new Print Composer a name (optional) and click OK.</p>
+<p>The print composer window looks similar to QGIS, where there is a menu bar, toolbars, and a composer viewer, which shows you what your figure will look like (similar to the layouts in ArcGIS).</p>
+<p>In the toolbar on the left, click Add New Map, <img src="images/mActionAddMap.png" id="id" class="class" width="20" height="20" />, then click and drag a square over your blank page.</p>
+<p>Use the tools in the toolbar on the left to add other items to your figure, such as text (Add new label, <img src="images/mActionLabel.png" id="id" class="class" width="20" height="20" />), legend (Add new legend, <img src="images/mActionAddLegend.png" id="id" class="class" width="20" height="20" />), scale (Add new scalebar, <img src="images/mActionScaleBar.png" id="id" class="class" width="20" height="20" />).</p>
+<p>For each item, when they are selected (using the Select/Move item tool, <img src="images/mActionSelect.png" id="id" class="class" width="20" height="20" />, in the toolbar on the left), their properties will appear in the panel on the right. You can edit item properties in the Item properties tab (e.g., text and font styles for labels).</p>
+<p>When the figure looks as you want it, click on either the Export as image (<img src="images/mActionSaveMapAsImage.png" id="id" class="class" width="20" height="20" />) or Export as PDF (<img src="images/mActionSaveAsPDF.png" id="id" class="class" width="20" height="20" />) button in the toolbar at the top (also found in the Composer menu in the menu bar).</p>
+</div>
+<div id="deliverables" class="section level2">
+<h2>Deliverables</h2>
+<p>Please write a summary of your work for this activity.</p>
+<p>You may work together in groups. Please turn in one report per group (make certain everyone’s names are listed in the report).</p>
+<p>Your report should include a brief introduction (e.g., where the data came from and what the data represents), the methods you implemented, the results you found. Include the following figures:</p>
+<ul>
+<li>histogram of band1</li>
+<li>the linear stretch</li>
+<li>a false color image</li>
+<li>filtered images</li>
+</ul>
+<p>Use the questions posed throughout the activity as a guide.</p>
+<p>In your report include a short review of your experience using QGIS. Feel free to compared QGIS to the other GIS software tools you have used.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Windows is a registered trademark of Microsoft Corporation in the United States and/or other countries.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Mac is a trademark of Apple Inc., registered in the United States and other countries.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Linux® is the registered trademark of Linus Torvalds in the United States and other countries.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
