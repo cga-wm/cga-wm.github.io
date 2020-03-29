@@ -12,9 +12,8 @@
 <meta name="author" content="The Geofencing Project" />
 
 
-<title>Mobile Applications</title>
+<title>Web Applications</title>
 
-<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -293,21 +292,67 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Mobile Applications</h1>
+<h1 class="title toc-ignore">Web Applications</h1>
 <h4 class="author">The Geofencing Project</h4>
 
 </div>
 
 
 <hr />
+<p><strong>Evaluations will be held on Tuesday, 5 May 2020.</strong></p>
 <ul>
-<li>Performance Review Worksheet (<a href="#">.docx</a>) (<a href="#">.gdoc</a>)</li>
+<li>Performance Review Worksheet (<a href="#">.docx</a>) (<a href="#">.gdoc</a>) <strong>← please email completed form to professor by 9 AM on 4 May 2020</strong></li>
 <li>Evaluation Sign-Up Sheet (<a href="#">.gdoc</a>)</li>
-<li>Group Sign-Up Sheet (<a href="#">.gdoc</a>)</li>
 </ul>
 <hr />
+<dl>
+<dt>Geofence</dt>
+<dd>a virtual perimeter surrounding a real-world area
+</dd>
+</dl>
+<p>Given this basic definition, we can assume a geofence can be imaged as a polygon that we define over a particular location. Furthermore, we can assume that for any given coordinates (lon, lat), those coordinates exist either <strong>within</strong> our <strong>outside</strong> our geofence. Because this operation (determining if a location is within a geofence) returns a true or false state (i.e., state of being), we can use this to trigger events (e.g., if someone’s location service places them in a particular location that happens to be within a geofence).</p>
+<p>In this second scenario, the goal for this class is to create a web app that tells a story as the app user travels through a given area. With the app open, if the user enters one of your defined geofences, information will appear (e.g., to help guide them to the next geofence area). Obviously, we don’t want large polygons on a map that they are trying to find, but rather a story that unfolds as they traverse across a given landscape.</p>
+<hr />
+<div id="the-ethics" class="section level4">
+<h4>The Ethics</h4>
+<p>Please read <a href="https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761">this article</a> and think about how geofencing can impact our society. See if you can find other examples.</p>
+<hr />
+</div>
+<div id="the-challenge" class="section level4">
+<h4>The Challenge</h4>
+<p>To create a geofence, I would like you to do some field data collection. Let’s try to utilize either <a href="https://www.esri.com/en-us/arcgis/products/collector-for-arcgis/overview">Collector</a> or <a href="https://www.esri.com/en-us/arcgis/products/arcgis-quickcapture/overview">QuickCapture</a> for field collection of features.</p>
+<p>Before we collect features in the field, we need a feature service, which I would like this as an opportunity for you to create your own field geodatabase and design <strong>fields</strong> and <strong>domains</strong> to assist your feature collection.</p>
+<p>To create the geofencing app, one possibility is the Arcade/Javascript method, shown in this <a href="https://developers.arcgis.com/javascript/3/samples/streamlayer_arcade_geofence/">Geofencing app example</a>.</p>
+<hr />
+</div>
+<div id="the-communication" class="section level4">
+<h4>The Communication</h4>
+<p>In this scenario, I would like each of you to communicate one thing you learn while attempting this project as either a vlog or a podcast. It should be informative and professional, similar to the “how to” instructions you produced in the first part of the class.</p>
+<p>Additionally, I’d like each of you to share an ethics problem (or solution) that relates to geofencing one these platforms. It should reference a real-world scenario, requires citation, and a discussion based on your thoughts and opinions. Ideally, you should have a belief before researching a topic or scenario. From your research, your discussion should include whether or not your original belief was changed or enforced.</p>
+<p>So, that’s two bits of information to share publicly and two platforms to choose from.</p>
+<hr />
+</div>
 <div id="an-example-project-outline" class="section level2">
 <h2>An Example Project Outline</h2>
+<ul>
+<li>create your own file geodatabase or create a new hosted feature class</li>
+<li>if creating a file geodatabase, define fields and domains to assist your field collection</li>
+<li>use a mobile app to identify places on/around campus (or an area near you)</li>
+<li>use location to tell a story</li>
+<li>create a geofence app (draw boundaries, define popups)
+<ul>
+<li>Create you GitHub Account (if not already)</li>
+<li>Create your codepen account and link to GitHub</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html">Create a Geofence with Arcade</a></li>
+<li><a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a></li>
+</ul>
 <hr />
 </div>
 
