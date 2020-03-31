@@ -8,7 +8,9 @@ bibliography: refs.bib
 > ---Greg Milner, journalist and author</center>
 
 ## What is GPS?
-GPS (Global Positioning System) is essentially a highly reliable signal sent from space that carries two critical pieces of information: location and time.
+GPS (Global Positioning System) is essentially a highly reliable signal sent from space that carries two critical pieces of information: **location** and **time**.
+
+***
 
 ## What is GPS used for?
 The sky is really the limit on what you can do with GPS.
@@ -24,6 +26,8 @@ Some examples of GPS application include:
         - performs differential GPS (DGPS)
         - provides Global Navigation Satellite System (GNSS) data consisting of carrier phase and code range measurements in support of three dimensional positioning, meteorology, space weather, and geophysical applications throughout the United States, its territories, and a few foreign countries
 - timing (e.g., credit card transactions, stock market trades)
+
+***
 
 ## How does GPS work?
 The basic methodology of GPS:
@@ -100,6 +104,8 @@ where:
 - $b_u$ is the clock offset of the user clock relative to GPS system time (unknown)
 - $\left(x_u, y_u, z_u \right)$ is the user's location (unknown)
 
+***
+
 ## How do we find the satellites?
 
 The known location of the GPS satellites is key for how GPS works.
@@ -108,6 +114,8 @@ The science behind satellite locations comes, in part, from our understanding of
 Kepler's laws were further developed by Issac Newton (1642--1727), who drafted the governing equation in his [law of gravity](#newtons-law-of-gravity).
 Satellite operators across a global network of observation stations receive measurements from satellites to determine their locations.
 Using Newtonian physics, future satellite locations can be predicted based on their current position.
+
+***
 
 ## A brief history of GPS
 The US Navy launched the first satellite-based geopositioning system (the predecessor of our modern-day GPS) in 1959, called the TRANSIT system.
@@ -122,6 +130,8 @@ In 1999, the first commercially available GPS phone is released (Benefon Esc!).
 
 In 2005, GPS becomes integrated into smartphones, which utilize a GPS-embedded chip that costs about $1.
 
+***
+
 # The Global Positioning System
 The Global Positioning System is comprised of three main segments:
 
@@ -134,6 +144,8 @@ Control
 User
 :   the signal receivers
 
+***
+
 ## Space Segment
 In the United States, GPS satellites fly at an altitude of about 12,500 miles.
 The satellites make up a *constellation*, a series of satellites working together for a common purpose, that are arranged in six equally-spaced orbital planes surrounding Earth.
@@ -141,6 +153,8 @@ Each plane consists of four "slots" that make up a 24-satellite arrangement that
 As of October 17, 2017, there were a total of 31 operational satellites in the GPS constellation. (https://www.gps.gov/systems/gps/space/)
 
 ![The GPS satellite constellation. Image from media.defense.gov (2018). https://media.defense.gov/2010/Feb/25/2000391199/-1/-1/0/100225-F-JZ027-160.JPG](images/100225-F-JZ027-160.JPG)
+
+***
 
 ### A Message From Space
 The satellite's radio transmission is comprised of two parts (both are transmitted simultaneously):
@@ -168,6 +182,7 @@ Each GPS receiver has a list of PRNs that align with the code sent from a given 
 
 ![PRN correlation animation used to identify GPS satellites. Image by The Geographer's Craft Project, Department of Geography, The University of Colorado at Boulder (2015). Online. https://www.colorado.edu/geography/gcraft/notes/gps/gif/bitsanim.gif ](images/bitsanim.gif)
 
+***
 
 ## Control Segment
 A reference network that continuously monitors the exact locations of the GPS satellite constellation.
@@ -186,53 +201,14 @@ The GPS system time is the synchronized time that all satellites share.
 Small differences can occur between GPS time and the satellite clock.
 Corrections can be handled either digitally (accounted for through the GPS signal) or physically (an actual change to the satellite clock).
 
+***
+
 ## User Segment
 Similar to the Internet, GPS has become an essential part of the global information infrastructure.
 The free, open, and dependable nature of GPS has led to the development of hundreds of applications affecting every aspect of modern life.
 GPS technology is now in everything from cell phones and wristwatches to construction equipment, shipping containers, and ATM's. (https://www.gps.gov/applications/)
 
-# Mobile Applications
-In this course, we will be utilizing ESRI's [Collector](https://doc.arcgis.com/en/collector/) for ArcGIS.
-The app is available for iOS, Android and Windows 10 devices.
-We will be installing them on the iPad 4 mini tablets.
-
-## Collector
-Collector is one of several mobile apps provided by ESRI for ArcGIS.
-Collector requires you to have an ESRI account (this was created for you and consists of your Catawba username followed by "\_catu").
-
-Before we begin using collector, we need to create a hosted editable feature service (feature layer), which can be done in [ArcGIS Online](https://www.arcgis.com/home/index.html).
-In the "Content" page, in the top left select "Create" --> "Feature Layer."
-
-*Note: your account settings may not allow you to create a hosted feature layer, in which case, one will be created for you.*
-
-For feature layers, there are several templates that are provided by ESRI (e.g., "Field Notes").
-Select the types of features (i.e., points, lines and/or polygons) you want to map.
-Specify the extents for your feature layer by zooming into or out of the map area.
-Give your feature layer a title.
-
-Select your new feature layer to open its Overview page.
-In the top right, click the arrow next to "Open in Map Viewer" and select "Add to new map."
-
-You may edit your map settings (e.g., basemap, bookmarks, symbology).
-When you are done editing, click "Save" and give your new web map a title.
-You may share your web map with other users.
-All edits done to a shared web map will be accessible to all users.
-
-
-## Arcade
-[Arcade](https://developers.arcgis.com/arcade/) is a new secure and portable expression language with the goal of being able to run across all ArcGIS products (mobile, desktop and cloud) [@barker16].
-
-The benefit of Arcade is its ability to create new derived attributes as on-the-fly calculations, rather than using the field calculator on a new field.
-This is handy for simple operations like changing the units of a field or calculating averages across fields without the overhead of storing the results in the database [@berry16].
-
-## Uses
-- Ground truths
-- Inspections
-- Assessments
-- Inventories
-- Control points
-- and others
-
+***
 
 # Glossary
 
@@ -423,6 +399,8 @@ WAAS
 :   - Wide Area Augmentation System
     - North American **SBAS**
 
+***
+
 # Appendix
 
 ### Einstein's Theory of Relativity
@@ -437,6 +415,8 @@ General Relativity
     Massive objects cause a distortion in space-time, which is felt as gravity.
     As a result, time does not pass at the same rate for everyone.
     Under more gravitational force, time travels slower.
+
+***
 
 ### Kepler's Three Laws
 The Law of Ellipses
@@ -455,6 +435,8 @@ The Law of Harmonies
 
 $P^2 \propto a^3$
 
+***
+
 ### Keplerian Elements
 The orbits of the satellites are described using six Keplerian elements.
 
@@ -468,6 +450,8 @@ where:
 - $\Omega$ is the angle of the right ascension of the ascending node; the angle between the vector connecting Earth's center and the vernal equinox (along 0 degrees longitude at the Prime Meridian and 0 degrees latitude at the equator) and the vector connecting Earth's center to the intersection of the equatorial and orbital planes
 - $\omega$ is the angle of the perigee of the satellite orbit
 - $\nu$ is the true anomaly; the angle describing the location of the satellite within its orbit with respect to the perigee
+
+***
 
 ### Newton's Law of Gravity
 Every point mass attracts every single other point mass by a force pointing along the line intersecting both points.
@@ -483,5 +467,6 @@ where
 - $r$ is the distance between two the bodies
 - $G$ is the gravitational constant (6.674 N m<sup>2</sup>/kg<sup>2</sup>)
 
+***
 
 # References

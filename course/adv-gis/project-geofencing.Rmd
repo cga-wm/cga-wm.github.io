@@ -5,9 +5,10 @@ author: "The Geofencing Project"
 
 ***
 
-- Performance Review Worksheet ([.docx][prwdocx]) ([.gdoc][prwgdoc]) **&#8592; please email completed form to professor by 9 AM on 5 May 2020**
+**Evaluations will be held on Tuesday, 5 May 2020.**
+
+- Performance Review Worksheet ([.docx][prwdocx]) ([.gdoc][prwgdoc]) **&#8592; please email completed form to professor by 9 AM on 4 May 2020**
 - Evaluation Sign-Up Sheet ([.gdoc][esus1])
-- Group Sign-Up Sheet ([.gdoc][gsus1])
 
 [esus1]: #
 [gsus1]: #
@@ -16,7 +17,72 @@ author: "The Geofencing Project"
 
 ***
 
+Geofence
+: a virtual perimeter surrounding a real-world area
+
+Given this basic definition, we can assume a geofence can be imaged as a polygon that we define over a particular location.
+Furthermore, we can assume that for any given coordinates (lon, lat), those coordinates exist either **within** our **outside** our geofence.
+Because this operation (determining if a location is within a geofence) returns a true or false state (i.e., state of being), we can use this to trigger events (e.g., if someone's location service places them in a particular location that happens to be within a geofence).
+
+In this second scenario, the goal for this class is to create a web app that tells a story as the app user travels through a given area.
+With the app open, if the user enters one of your defined geofences, information will appear (e.g., to help guide them to the next geofence area).
+Obviously, we don't want large polygons on a map that they are trying to find, but rather a story that unfolds as they traverse across a given landscape.
+
+***
+
+#### The Ethics
+
+Please read [this article](https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761) and think about how geofencing can impact our society.
+See if you can find other examples.
+
+***
+
+#### The Challenge
+
+To create a geofence, I would like you to do some field data collection.
+Let's try to utilize either [Collector][collector] or [QuickCapture][quickcap] for field collection of features.
+
+Before we collect features in the field, we need a feature service, which I would like this as an opportunity for you to create your own field geodatabase and design **fields** and **domains** to assist your feature collection.
+
+To create the geofencing app, one possibility is the Arcade/Javascript method, shown in this [Geofencing app example][geofexample].
+
+***
+
+#### The Communication
+
+In this scenario, I would like each of you to communicate one thing you learn while attempting this project as either a vlog or a podcast.
+It should be informative and professional, similar to the "how to" instructions you produced in the first part of the class.
+
+Additionally, I'd like each of you to share an ethics problem (or solution) that relates to geofencing one these platforms.
+It should reference a real-world scenario, requires citation, and a discussion based on your thoughts and opinions.
+Ideally, you should have a belief before researching a topic or scenario.
+From your research, your discussion should include whether or not your original belief was changed or enforced.
+
+So, that's two bits of information to share publicly and two platforms to choose from.
+
+
+[collector]: https://www.esri.com/en-us/arcgis/products/collector-for-arcgis/overview
+[geofexample]: https://developers.arcgis.com/javascript/3/samples/streamlayer_arcade_geofence/
+[quickcap]: https://www.esri.com/en-us/arcgis/products/arcgis-quickcapture/overview
+
+***
+
 ## An Example Project Outline
+
+* create your own file geodatabase or create a new hosted feature class
+  - if creating a file geodatabase, define fields and domains to assist your field collection
+* use a mobile app to identify places on/around campus (or an area near you)
+  - use location to tell a story
+* create a geofence app (draw boundaries, define popups)
+    - Create you GitHub Account (if not already)
+    - Create your codepen account and link to GitHub
+
+***
+
+## Resources
+
+- [Create a Geofence with Arcade](https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html)
+- [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
 
 
 ***
