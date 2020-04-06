@@ -7,13 +7,13 @@ author: "The Geofencing Project"
 
 **Evaluations will be held on Tuesday, 5 May 2020.**
 
-- Performance Review Worksheet ([.docx][prwdocx]) ([.gdoc][prwgdoc]) **&#8592; please email completed form to professor by 9 AM on 4 May 2020**
+- Performance Accomplishments Write-Up ([.gdoc][pawgdoc]) **&#8592; please email completed form to professor by 9 AM on 4 May 2020**
+- Performance Review Worksheet ([.gdoc][prwgdoc])
 - Evaluation Sign-Up Sheet ([.gdoc][esus1])
 
-[esus1]: #
-[gsus1]: #
-[prwdocx]: #
-[prwgdoc]: #
+[esus1]: https://docs.google.com/spreadsheets/d/1_0FP0fRHuniI3wL1UyGTFopvj-Hi6Y4RPPkbMHkJyY0/edit?usp=sharing
+[pawgdoc]: https://docs.google.com/document/d/1y7-1g3Z9tL8fBBC9aDsR2ZMHKs1XjuRwEc6tWsdDGro/edit?usp=sharing
+[prwgdoc]: https://docs.google.com/document/d/132WVyFJaoyzj_wyNxK9ZMwGgLLnq_FtTw8vWmsNly-s/edit?usp=sharing
 
 ***
 
