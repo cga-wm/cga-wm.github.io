@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2020-04-06" />
+
+<title>Designing for Field Applications</title>
+
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 420/520 - Advanced GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="project-landslides.html">Landslides</a>
+    </li>
+    <li>
+      <a href="project-geofencing.html">Geofencing</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="calendar.html">Calendar</a>
+</li>
+<li>
+  <a href="blog.html">Blog</a>
+</li>
+<li>
+  <a href="../../index.html">CGA-WM</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Designing for Field Applications</h1>
+<h4 class="date">2020-04-06</h4>
+
+</div>
+
+
+<p>The following provides an example for creating a new file geodatabase, adding features and domains, publishing the feature class as a hosted service to ArcGIS Online, and adding it to a web map for field applications.</p>
+<div id="design-considerations" class="section level3">
+<h3>Design Considerations</h3>
+<p>In part 2 of this class, we are investigating how geofences can be used in a web application. One possibility is to design our own geofences through a field survey using geospatial data collection tools (e.g., Collector or QuickCapture).</p>
+<p>As a design challenge, the first goal is to brainstorm what data need collecting.</p>
+<p>Geofences are by definition virtual areas; therefore, I could collect polygon features; however, are there any other geometries that matter?</p>
+<p>I may be interested in knowing whether someone is in proximity of a feature of interest, which is best represented by a point.</p>
+<p>I may also be interested in knowing if someone is within a particular distance of a road, sidewalk, or path, which would benefit me to collect a line feature as well.</p>
+<p>As many of you already know, spatial data are not just vector geometries, but also constitute the essential attribute data as well. When it comes to field applications, your goal is to capture the world as you encounter it. What do you expect to encounter? How do you characterize it? What attributes both serve as important descriptors of the geometries and provide functionality for a web application?</p>
+<p>One of the first steps would be to look at an example web application to see what information is used.</p>
+<p>In this example, let’s say I want a user to “activate” my geofences whereby entering them causes the geofence to become visible on their web map (it is invisible to the user initially), revealing the geofence’s geometry and filling with a given color, effectively creating a pseudo color-by-numbers. Maybe the user has to activate the geofences in a particular order. The specific order is hinted to the user via a popup with some text that tells them where to go next. I envision my use walking around and having shapes filled with color appearing on their map.</p>
+<p>To facilitate all this, my features will likely need the following attributes:</p>
+<table>
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OrderNum</td>
+<td>The correct order in which geofences are to be activated; note that I am not relying on the FID such that I can easily change the order at a later time.</td>
+</tr>
+<tr class="even">
+<td>FillColor</td>
+<td>The fill color I wish my geofence area to be.</td>
+</tr>
+<tr class="odd">
+<td>HintText</td>
+<td>The hint text for the popup.</td>
+</tr>
+<tr class="even">
+<td>IsEnabled</td>
+<td>A field to turn specific features on and off; for example, to create custom maps or if a feature is giving me trouble.</td>
+</tr>
+<tr class="odd">
+<td>Name</td>
+<td>I may want to give each geofence a meaningful name for easy reference.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="creating-a-new-file-geodatabase-in-arcgis-pro" class="section level3">
+<h3>Creating a New File Geodatabase in ArcGIS Pro</h3>
+<p>Like the shapefile, the file geodatabase is an Esri creation and is designed to work with ArcGIS suite of software. Because the mobile applications for field collection we are focusing on are also Esri products, these steps will work.</p>
+<p>For those without access to Esri products, you can learn more about geodatabases <a href="https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/what-is-a-geodatabase-.htm">here</a> and more about domains <a href="https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/an-overview-of-attribute-domains.htm">here</a> and <a href="https://pro.arcgis.com/en/pro-app/help/data/validating-data/domain.htm">here</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Create a workspace folder (e.g., <code>C:\Workspace\Project</code>)</li>
+<li>Start ArcGIS Pro</li>
+<li>Open a new blank project (e.g., <code>Geofence</code>)</li>
+<li>In Catalog, under Folders, find the project folder <code>Geofence</code></li>
+<li>Right-click the project folder and select <code>New --&gt; File Geodatabase</code></li>
+<li>Right-click the new geodatabase and rename it “geofence_[YOURINITIALS]” (e.g., <code>geofence_twd.gdb</code>)</li>
+<li>Right-click on your geodatabase and select “Edit Metadata”</li>
+<li>Enter your geodatabase information:
+<ul>
+<li>Title: <em>Davis’s Geofencing File Geodatabase</em></li>
+<li>Tags: <em>AdvGIS, Field, Geofence, W&amp;M</em></li>
+<li>Summary: <em>A file geodatabase for storing geometries for a field survey of geofencing features.</em></li>
+<li>Description: <em>This file is a part of W&amp;M Advanced GIS class for the spring semester of 2020. The goal of this project is to collect geometries that can be used in a story-telling web application using geofences.</em></li>
+<li>Credits: <em>Dr. Davis, Center for Geospatial Analysis, William &amp; Mary, Williamsburg, VA.</em></li>
+</ul></li>
+</ol>
+</div>
+<div id="adding-a-feature-class-to-your-fgdb" class="section level3">
+<h3>Adding a Feature Class to Your FGDB</h3>
+<p>Create a new Feature Class in your geodatabase. You may create multiple feature classes within a single geodatabase.</p>
+<ol style="list-style-type: decimal">
+<li>Right-click on the geodatabase in the Catalog and select <code>New --&gt; Feature Class</code></li>
+<li>Enter the information in the New Feature Class window
+<ul>
+<li>Name: <code>points_of_interest</code></li>
+<li>Alias: <code>POI</code></li>
+<li>Feature Class Type: <code>Point</code></li>
+<li>Geometry Properties: (leave options unchecked)</li>
+</ul></li>
+<li>Click “Next”</li>
+<li>Fields
+<ul>
+<li>Leave fields as they are for now</li>
+</ul></li>
+<li>Click “Next”</li>
+<li>Choose the feature’s spatial reference
+<ul>
+<li>Projected Coordinate Systems
+<ul>
+<li>State Plane
+<ul>
+<li>NAD 1983 (Meters)
+<ul>
+<li>NAD 1983 StatePlane Virginia South FIPS 4502 (Meters)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Click “Next”</li>
+<li>Leave XY tolerance values as default</li>
+<li>Click “Next”</li>
+<li>Leave Resolution as default</li>
+<li>Click “Next”</li>
+<li>Leave database storage configuration as default</li>
+<li>Click “Finish”</li>
+</ol>
+<p><strong>For each feature class in your geodatabase, make certain you use the same coordinate system. Import the coordinate system from an existing layer to ensure it is the same across all your layers.</strong></p>
+</div>
+<div id="adding-additional-fields" class="section level3">
+<h3>Adding Additional Fields</h3>
+<p>Create new fields (attributes) for your feature class. One the most challenging parts of creating fields is deciding the correct data type and size/length. This can be especially tricky for text fields where you may run out of characters if you made a poor design decision for your attribute.</p>
+<ol style="list-style-type: decimal">
+<li>Right-click “points_of_interest” feature class in the Catalog and select <code>Design</code> <code>--&gt;</code> <code>Fields</code></li>
+<li>At the bottom of the table, “Click here to add a new field”</li>
+<li>Enter a new field for the closest trail name
+<ul>
+<li>Field Name: <code>NAME</code></li>
+<li>Alias: <code>Name</code></li>
+<li>Data Type: <code>Text</code></li>
+<li>Allow NULL values: <code>No</code> (unchecked)</li>
+<li>Domain: (leave blank)</li>
+<li>Default Value: (leave blank)</li>
+<li>Length: <code>100</code></li>
+</ul></li>
+<li>Enter a new field for surveyor’s name (initials)
+<ul>
+<li>Field Name: <code>SURVYR</code></li>
+<li>Alias: <code>Surveyor</code></li>
+<li>Data Type: <code>Text</code></li>
+<li>Allow NULL values: <code>No</code> (unchecked)</li>
+<li>Domain: (leave blank)</li>
+<li>Default value: (your initials)</li>
+<li>Length: <code>4</code></li>
+</ul></li>
+<li>Enter a new field for field notes
+<ul>
+<li>Field Name: <code>NOTES</code></li>
+<li>Alias: <code>Notes</code></li>
+<li>Data Type: <code>Text</code></li>
+<li>Allow NULL values: <code>Yes</code> (checked)</li>
+<li>Default value: (leave blank)</li>
+<li>Length: <code>255</code></li>
+</ul></li>
+<li>Enter a new field for the timestamp
+<ul>
+<li>Field Name: <code>DATETIME</code></li>
+<li>Alias: <code>Date</code></li>
+<li>Data Type: <code>Date</code></li>
+<li>Allow NULL values: <code>No</code> (unchecked)</li>
+<li>Domain: (leave blank)</li>
+<li>Default Value: (leave blank)</li>
+</ul></li>
+<li>Click “Save” in the Fields ribbon</li>
+</ol>
+</div>
+<div id="adding-optional-gps-receiver-fields" class="section level3">
+<h3>Adding Optional GPS Receiver Fields</h3>
+<p>Create additional fields for recording the GPS receiver data[^1]. Note that these fields only really work with point-based geometries.</p>
+<ol style="list-style-type: decimal">
+<li>Enter a new field for GPS receiver name
+<ul>
+<li>Field Name: <code>ESRIGNSS_RECEIVER</code></li>
+<li>Data Type: <code>String</code> or <code>Text</code></li>
+<li>Alias: <code>Receiver Name</code></li>
+<li>Allow NULL values: <code>Yes</code></li>
+<li>Default value: (leave blank)</li>
+<li>Length: <code>50</code></li>
+</ul></li>
+<li>Enter a new field for GPS receiver’s horizontal accuracy
+<ul>
+<li>Field Name: <code>ESRIGNSS_H_RMS</code></li>
+<li>Data Type: <code>Double</code></li>
+<li>Alias: <code>Horizontal accuracy</code></li>
+<li>Allow NULL values: <code>Yes</code></li>
+<li>Default value: (leave blank)</li>
+</ul></li>
+<li>Enter a new field for GPS latitude
+<ul>
+<li>Field Name: <code>ESRIGNSS_LATITUDE</code></li>
+<li>Data Type: <code>Double</code></li>
+<li>Alias: <code>Latitude</code></li>
+<li>Allow NULL values: <code>Yes</code></li>
+<li>Default value: (leave blank)</li>
+</ul></li>
+<li>Enter a new field for GPS longitude
+<ul>
+<li>Field Name: <code>ESRIGNSS_LONGITUDE</code></li>
+<li>Data Type: <code>Double</code></li>
+<li>Alias: <code>Longitude</code></li>
+<li>Allow NULL values: <code>Yes</code></li>
+<li>Default value: (leave blank)</li>
+</ul></li>
+<li>Enter a new field for GPS fix time
+<ul>
+<li>Field Name: <code>ESRIGNSS_FIXDATETIME</code></li>
+<li>Data Type: <code>Date</code></li>
+<li>Alias: <code>Fix time</code></li>
+<li>Allow NULL values: <code>Yes</code></li>
+<li>Default value: (leave blank)</li>
+</ul></li>
+<li>Click “Save”</li>
+</ol>
+</div>
+<div id="creating-domains" class="section level3">
+<h3>Creating Domains</h3>
+<p>Create and apply domains for your fields. These will be used in Collector for creating the selection boxes for attributes (i.e., saves you from having to type).</p>
+<ol style="list-style-type: decimal">
+<li>In the Catalog, right-click on your geodatabase and select <code>Design</code> <code>--&gt;</code> <code>Domains</code></li>
+<li>In Domains ribbon, click on “New Domain”</li>
+<li>Create a domain for trail names
+<ul>
+<li>Domain Name: <code>TrailName</code></li>
+<li>Description: <code>Name of closest trail to manhole</code></li>
+<li>Field Type: <code>Text</code></li>
+<li>Domain Type: <code>Coded Value Domain</code></li>
+<li>Split Policy: <code>Default Value</code></li>
+<li>Merge Policy: <code>Default Value</code></li>
+<li>Coded Values: as needed, for example:
+<ul>
+<li>Code: <em>Wurster</em></li>
+<li>Description: <em>Wurster Trail</em></li>
+<li>Code: <em>Pipeline</em></li>
+<li>Description: <em>Pipeline Trail</em></li>
+<li>Code: <em>BLoop</em></li>
+<li>Description: <em>Birding Loop</em></li>
+<li>Code: <em>Other</em></li>
+<li>Description: <em>Other unnamed trail</em></li>
+<li>Code: <em>None</em></li>
+<li>Description: <em>Not located near to a trail</em></li>
+</ul></li>
+</ul></li>
+<li>Create a domain for surveyor initials
+<ul>
+<li>Domain Name: <code>Surveyor</code></li>
+<li>Description: <code>Surveyor initials</code></li>
+<li>Field Type: <code>Text</code></li>
+<li>Domain Type: <code>Coded Value Domain</code></li>
+<li>Split Policy: <code>Default Value</code></li>
+<li>Merge Policy: <code>Default Value</code></li>
+<li>Coded Values: as needed, for example:
+<ul>
+<li>Code: <em>TWD</em></li>
+<li>Description: <em>T. Davis</em></li>
+</ul></li>
+</ul></li>
+<li>Create a domain for the date and time
+<ul>
+<li>Domain Name: <code>DateTime</code></li>
+<li>Description: <code>Date and time of survey</code></li>
+<li>Domain Type: <code>Range</code></li>
+<li>Field Type: <code>Date</code></li>
+<li>Split Policy: <code>Default Value</code></li>
+<li>Merge Policy: <code>Default Value</code></li>
+<li>Minimum value: <code>2019-01-01 00:00:00</code></li>
+<li>Maximum value: <code>2019-12-31 23:59:59</code></li>
+</ul></li>
+<li>Click “Apply”</li>
+<li>Click “OK” <!--
+1. Create a domain for yes and no answers
+    * Domain Name: `YN`
+    * Description: `Yes or No`
+    * Field Type: `Text`
+    * Domain Type: `Coded Values`
+    * Split Policy: `Default Value`
+    * Merge Policy: `Default Value`
+    * Coded Values:
+        * Code: *Y*; Description: *Yes*
+        * Code: *N*; Description: *No*
+--></li>
+</ol>
+<p>Apply domains to fields and set default values.</p>
+<ol style="list-style-type: decimal">
+<li>In the Catalog, right-click “manhole_survey” and select <code>Design</code> <code>--&gt;</code> <code>Fields</code></li>
+<li>Double-click the domain box for row <code>TRAIL</code>
+<ul>
+<li>Under Field Properties, click in the box to the right of Domain and select “TrailName”</li>
+</ul></li>
+<li>Select <code>SURVYR</code>
+<ul>
+<li>For Domain, select “Surveyor”</li>
+<li>For Default Value, type: [YOURINITIALS]</li>
+</ul></li>
+<li>Select <code>DATETIME</code>
+<ul>
+<li>For Domain, select “DateTime”</li>
+</ul></li>
+</ol>
+</div>
+<div id="enabling-attachments" class="section level3">
+<h3>Enabling Attachments</h3>
+<p>Adding attachments to your feature class adds support for a variety of file types (e.g., photos). This is accomplished through a geoprocessing tool, “Enable Attachments.”</p>
+<p>First, right-click on the feature class, “manhole_survey”, and select “Add to Current Map.”</p>
+<p>Then go to geoprocessing tools: <code>Data Management</code> <code>--&gt;</code> <code>Attachments</code> <code>--&gt;</code> <code>Enable Attachments</code>.</p>
+</div>
+<div id="assigning-symbology" class="section level3">
+<h3>Assigning Symbology</h3>
+<p>Create meaningful symbology for the various features in your map.</p>
+<ol style="list-style-type: decimal">
+<li>Beginning with a new empty map, click on <code>File --&gt; Add Data --&gt; Add Data...</code> (or click on the Add Data icon, <img src="images/adddatabutton.png" class="icon" width="15" />) and add the feature(s) from your geodatabase</li>
+<li>In the Table of Contents, list by source</li>
+<li>Right-click your feature class (Litter) and select “Properties…”</li>
+<li>Click on Symbology tab</li>
+<li>Under Show, click Categories and select “Unique values”</li>
+<li>Under Value Field, select “Material”</li>
+<li>Click “Add All Values”</li>
+<li>Update Symbol and Label as desired</li>
+</ol>
+<p>Note that 3D marker symbols are not currently supported in ArcGIS Online and therefore cannot be used with Collector.</p>
+</div>
+<div id="publishing-as-a-service" class="section level3">
+<h3>Publishing as a Service</h3>
+<p>A personal file geodatabase can be published to ArcGIS Online as a hosted service for editing online, sharing with other users, and accessing with Collector.</p>
+<ol style="list-style-type: decimal">
+<li>In ArcGIS Pro, from the Catalog, right-click the feature class you want to share and select “Add to Current Map”</li>
+<li>In the Contents pane, right-click the layer and select <code>Sharing</code> <code>--&gt;</code> <code>Share As Web Layer</code></li>
+<li>Provide the layer with a summary and tags (if you haven’t already).</li>
+<li>Select the web folder you wish to save it to.</li>
+<li>Choose who to share the layer with (e.g., Groups)</li>
+<li>Update the layer metadata, for example:
+<ul>
+<li>Summary: <em>A file geodatabase for storing features for field litter surveys.</em></li>
+<li>Tags: <em>Collector, GPS, Litter, Catawba</em></li>
+<li>Description: <em>This file is a part of Catawba College’s ENV 3599 Intermediate GIS/Field GPS spring semester 2018 litter survey project. The goal of this project is to use GPS receivers to survey campus litter and perform analyses using GIS geospatial tools.</em></li>
+</ul></li>
+<li>You may receive a warning that “Layer does not have a feature template.” You may ignore this warning as a default template will be created for you.</li>
+<li>Log into ArcGIS online to edit the layer settings, such as editing, updating, sync’ing, and downloading.</li>
+<li>Click on Sharing and select our group (i.e., ENV 3599)</li>
+<li>Click on Analyze at the top of the window and check to make certain no error messages appear (red x’s)</li>
+<li>Click Publish</li>
+</ol>
+</div>
+<div id="enabling-edits-sync-and-export" class="section level3">
+<h3>Enabling Edits, Sync and Export</h3>
+<p>In ArcGIS Online, find the newly create hosted feature class. Click on Settings in the top menu and scroll down until you see Feature Layer (hosted).</p>
+<p>Check the boxes next to Enable editing and Enable Sync (you may also check the other two boxes for tracking feature creation and updates).</p>
+<p>Scroll down to the bottom and check the box next to Export Data. This will allow you to download the hosted feature class as a shapefile in ArcGIS Pro.</p>
+</div>
+<div id="creating-a-web-map" class="section level3">
+<h3>Creating a Web Map</h3>
+<p>To use a hosted feature service with Collector, it must first be incorporated into a web map, which may be accomplished in ArcGIS Online.</p>
+<ol style="list-style-type: decimal">
+<li>Open a web browser and go to <a href="https://arcgis.com" class="uri">https://arcgis.com</a></li>
+<li>Log in with your ESRI account details</li>
+<li>Click on Content</li>
+<li>Find your published Feature Layer (e.g., litter_survey_YOURINITIALS); note there should also be a Service Definition file with the same name</li>
+<li>Click the more details button next to your feature layer (i.e., <code>...</code>) and select “Add to a new map”</li>
+<li>In the “Find address or place” search bar in the top right, type “Salisbury, NC” and click the suggestion option to zoom to Salisbury</li>
+<li>Zoom over Catawba College (this will be the default extents)</li>
+<li>Click Details at the top to open the Contents panel on the left</li>
+<li>Click on layer name (litter_survey_YOURINITIALS) to open the dropdown</li>
+<li>Click on the more options button (i.e., <code>...</code>) and select “Rename”</li>
+<li>Rename your layer “Litter Survey”</li>
+<li>Zoom in over the Center for the Environment and click on “Bookmarks” and “Add Bookmark”</li>
+<li>Title the bookmark “Center for the Environment” and hit return</li>
+<li>Click the close box to close the bookmarks menu</li>
+<li>Zoom out so you see all of campus</li>
+<li>Click on Bookmarks and select “Center for the Environment” to zoom back to the center</li>
+<li>You can create other bookmarks if you wish; these will be available to you in Collector</li>
+<li>Here, you may also change the basemap style (currently set to Topographic)</li>
+<li>Click Edit in the menu at the top and select Manage at bottom of the panel on the left</li>
+<li>Under each material listing is a subheading; click the down arrow next to the subheading and select “Properties”
+<ul>
+<li>Use the descriptions listed in Table 1 below to update the descriptions for each material</li>
+<li>Set the default values for the feature type template</li>
+</ul></li>
+<li>When your map is ready, click <code>Save --&gt; Save As</code></li>
+<li>Enter the information for your map
+<ul>
+<li>Title: <em>Litter Survey YOURINITIALS</em></li>
+<li>Tags: <em>Collector, GPS, Litter, Catawba</em></li>
+<li>Summary: <em>A web map for field litter surveying.</em></li>
+</ul></li>
+<li>Click “Save Map”</li>
+</ol>
+<table style="width:94%;">
+<caption>Table 1. Example property descriptions for the litter survey material types.</caption>
+<colgroup>
+<col width="18%" />
+<col width="76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Material</th>
+<th>Property Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cloth</td>
+<td>Clothing, upholstery, etc.</td>
+</tr>
+<tr class="even">
+<td>Foam</td>
+<td>Styrofoam or polystyrene food and drink containers</td>
+</tr>
+<tr class="odd">
+<td>Food</td>
+<td>Apple cores, banana peels, sandwiches, etc.</td>
+</tr>
+<tr class="even">
+<td>Glass</td>
+<td>Bottles, light bulbs, etc.</td>
+</tr>
+<tr class="odd">
+<td>Metals</td>
+<td>Soft drink cans, gum wrappers, etc.</td>
+</tr>
+<tr class="even">
+<td>Paper</td>
+<td>Newspaper, cigarette butts, cardboard, napkins, etc.</td>
+</tr>
+<tr class="odd">
+<td>Plastics</td>
+<td>Spoons, straws, bags, etc.</td>
+</tr>
+<tr class="even">
+<td>Sensitives</td>
+<td>Syringes, sharps, diapers, etc.</td>
+</tr>
+<tr class="odd">
+<td>Wood</td>
+<td>Popsicle sticks, coffee stirrers, etc.</td>
+</tr>
+<tr class="even">
+<td>Misc</td>
+<td>Unclassified</td>
+</tr>
+</tbody>
+</table>
+<p>Share your map.</p>
+<ol style="list-style-type: decimal">
+<li>Click on <code>Home --&gt; Content</code> in the top left of the web map to return to your Content page</li>
+<li>Next to your map, click the lock icon to open the Share window, check the box next to “ENV 3599” and click “OK” to share</li>
+</ol>
+</div>
+<div id="arcade" class="section level2">
+<h2>Arcade</h2>
+<p><a href="https://developers.arcgis.com/arcade/">Arcade</a> is a new secure and portable expression language with the goal of being able to run across all ArcGIS products (mobile, desktop and cloud)[^2].</p>
+<p>The benefit of Arcade is its ability to create new derived attributes as on-the-fly calculations, rather than using the field calculator on a new field. This is handy for simple operations like changing the units of a field or calculating averages across fields without the overhead of storing the results in the database[^3].</p>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
