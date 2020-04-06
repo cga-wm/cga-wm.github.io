@@ -1,0 +1,358 @@
+---
+title: "Designing for Field Applications"
+date: 2020-04-06
+url: 2020-04-06-designing-for-field-applications.html
+summary: "A look at designing web maps for field applications, including bespoke feature classes, domains, and file geodatabases."
+---
+
+The following provides an example for creating a new file geodatabase, adding features and domains, publishing the feature class as a hosted service to ArcGIS Online, and adding it to a web map for field applications.
+
+
+### Design Considerations
+In part 2 of this class, we are investigating how geofences can be used in a web application.
+One possibility is to design our own geofences through a field survey using geospatial data collection tools (e.g., Collector or QuickCapture).
+
+As a design challenge, the first goal is to brainstorm what data need collecting.
+
+Geofences are by definition virtual areas; therefore, I could collect polygon features; however, are there any other geometries that matter?
+
+I may be interested in knowing whether someone is in proximity of a feature of interest, which is best represented by a point.
+
+I may also be interested in knowing if someone is within a particular distance of a road, sidewalk, or path, which would benefit me to collect a line feature as well.
+
+As many of you already know, spatial data are not just vector geometries, but also constitute the essential attribute data as well.
+When it comes to field applications, your goal is to capture the world as you encounter it.
+What do you expect to encounter?
+How do you characterize it?
+What attributes both serve as important descriptors of the geometries and provide functionality for a web application?
+
+One of the first steps would be to look at an example web application to see what information is used.
+
+In this example, let's say I want a user to "activate" my geofences whereby entering them causes the geofence to become visible on their web map (it is invisible to the user initially), revealing the geofence's geometry and filling with a given color, effectively creating a pseudo color-by-numbers.
+Maybe the user has to activate the geofences in a particular order.
+The specific order is hinted to the user via a popup with some text that tells them where to go next.
+I envision my use walking around and having shapes filled with color appearing on their map.
+
+To facilitate all this, my features will likely need the following attributes:
+
+| Attribute | Description |
+| --------- | ----------- |
+| OrderNum  | The correct order in which geofences are to be activated; note that I am not relying on the FID such that I can easily change the order at a later time. |
+| FillColor | The fill color I wish my geofence area to be. |
+| HintText | The hint text for the popup. |
+| IsEnabled | A field to turn specific features on and off; for example, to create custom maps or if a feature is giving me trouble. |
+| Name | I may want to give each geofence a meaningful name for easy reference. |
+
+
+### Creating a New File Geodatabase in ArcGIS Pro
+Like the shapefile, the file geodatabase is an Esri creation and is designed to work with ArcGIS suite of software.
+Because the mobile applications for field collection we are focusing on are also Esri products, these steps will work.
+
+For those without access to Esri products, you can learn more about geodatabases [here](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/what-is-a-geodatabase-.htm) and more about domains [here](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/an-overview-of-attribute-domains.htm) and [here](https://pro.arcgis.com/en/pro-app/help/data/validating-data/domain.htm).
+
+1. Create a workspace folder (e.g., `C:\Workspace\Project`)
+1. Start ArcGIS Pro
+1. Open a new blank project (e.g., `Geofence`)
+1. In Catalog, under Folders, find the project folder `Geofence`
+1. Right-click the project folder and select `New --> File Geodatabase`
+1. Right-click the new geodatabase and rename it "geofence_[YOURINITIALS]" (e.g., `geofence_twd.gdb`)
+1. Right-click on your geodatabase and select "Edit Metadata"
+1. Enter your geodatabase information:
+    * Title: *Davis's Geofencing File Geodatabase*
+    * Tags: *AdvGIS, Field, Geofence, W&M*
+    * Summary: *A file geodatabase for storing geometries for a field survey of geofencing features.*
+    * Description: *This file is a part of W&M Advanced GIS class for the spring semester of 2020. The goal of this project is to collect geometries that can be used in a story-telling web application using geofences.*
+    * Credits: *Dr. Davis, Center for Geospatial Analysis, William & Mary, Williamsburg, VA.*
+
+### Adding a Feature Class to Your FGDB
+Create a new Feature Class in your geodatabase.
+You may create multiple feature classes within a single geodatabase.
+
+1. Right-click on the geodatabase in the Catalog and select `New --> Feature Class`
+1. Enter the information in the New Feature Class window
+    * Name: `points_of_interest`
+    * Alias: `POI`
+    * Feature Class Type: `Point`
+    * Geometry Properties: (leave options unchecked)
+1. Click "Next"
+1. Fields
+    * Leave fields as they are for now
+1. Click "Next"
+1. Choose the feature's spatial reference
+    * Projected Coordinate Systems
+        * State Plane
+            * NAD 1983 (Meters)
+                * NAD 1983 StatePlane Virginia South FIPS 4502 (Meters)
+1. Click "Next"
+1. Leave XY tolerance values as default
+1. Click "Next"
+1. Leave Resolution as default
+1. Click "Next"
+1. Leave database storage configuration as default
+1. Click "Finish"
+
+**For each feature class in your geodatabase, make certain you use the same coordinate system.
+Import the coordinate system from an existing layer to ensure it is the same across all your layers.**
+
+### Adding Additional Fields
+Create new fields (attributes) for your feature class.
+One the most challenging parts of creating fields is deciding the correct data type and size/length.
+This can be especially tricky for text fields where you may run out of characters if you made a poor design decision for your attribute.
+
+1. Right-click "points_of_interest" feature class in the Catalog and select `Design` `-->` `Fields`
+1. At the bottom of the table, "Click here to add a new field"
+1. Enter a new field for the closest trail name
+    * Field Name: `NAME`
+    * Alias: `Name`
+    * Data Type: `Text`
+    * Allow NULL values: `No` (unchecked)
+    * Domain: (leave blank)
+    * Default Value: (leave blank)
+    * Length: `100`
+1. Enter a new field for surveyor's name (initials)
+    * Field Name: `SURVYR`
+    * Alias: `Surveyor`
+    * Data Type: `Text`
+    * Allow NULL values: `No` (unchecked)
+    * Domain: (leave blank)
+    * Default value: (your initials)
+    * Length: `4`
+1. Enter a new field for field notes
+    * Field Name: `NOTES`
+    * Alias: `Notes`
+    * Data Type: `Text`
+    * Allow NULL values: `Yes` (checked)
+    * Default value: (leave blank)
+    * Length: `255`
+1. Enter a new field for the timestamp
+    * Field Name: `DATETIME`
+    * Alias: `Date`
+    * Data Type: `Date`
+    * Allow NULL values: `No` (unchecked)
+    * Domain: (leave blank)
+    * Default Value: (leave blank)
+1. Click "Save" in the Fields ribbon
+
+### Adding Optional GPS Receiver Fields
+Create additional fields for recording the GPS receiver data[^1].
+Note that these fields only really work with point-based geometries.
+
+1. Enter a new field for GPS receiver name
+    * Field Name: `ESRIGNSS_RECEIVER`
+    * Data Type: `String` or `Text`
+    * Alias: `Receiver Name`
+    * Allow NULL values: `Yes`
+    * Default value: (leave blank)
+    * Length: `50`
+1. Enter a new field for GPS receiver's horizontal accuracy
+    * Field Name: `ESRIGNSS_H_RMS`
+    * Data Type: `Double`
+    * Alias: `Horizontal accuracy`
+    * Allow NULL values: `Yes`
+    * Default value: (leave blank)
+1. Enter a new field for GPS latitude
+    * Field Name: `ESRIGNSS_LATITUDE`
+    * Data Type: `Double`
+    * Alias: `Latitude`
+    * Allow NULL values: `Yes`
+    * Default value: (leave blank)
+1. Enter a new field for GPS longitude
+    * Field Name: `ESRIGNSS_LONGITUDE`
+    * Data Type: `Double`
+    * Alias: `Longitude`
+    * Allow NULL values: `Yes`
+    * Default value: (leave blank)
+1. Enter a new field for GPS fix time
+    * Field Name: `ESRIGNSS_FIXDATETIME`
+    * Data Type: `Date`
+    * Alias: `Fix time`
+    * Allow NULL values: `Yes`
+    * Default value: (leave blank)
+1. Click "Save"
+
+### Creating Domains
+Create and apply domains for your fields.
+These will be used in Collector for creating the selection boxes for attributes (i.e., saves you from having to type).
+
+1. In the Catalog, right-click on your geodatabase and select `Design` `-->` `Domains`
+1. In Domains ribbon, click on "New Domain"
+1. Create a domain for trail names
+    * Domain Name: `TrailName`
+    * Description: `Name of closest trail to manhole`
+    * Field Type: `Text`
+    * Domain Type: `Coded Value Domain`
+    * Split Policy: `Default Value`
+    * Merge Policy: `Default Value`
+    * Coded Values: as needed, for example:
+        - Code: *Wurster*
+        - Description: *Wurster Trail*
+        - Code: *Pipeline*
+        - Description: *Pipeline Trail*
+        - Code: *BLoop*
+        - Description: *Birding Loop*
+        - Code: *Other*
+        - Description: *Other unnamed trail*
+        - Code: *None*
+        - Description: *Not located near to a trail*
+1. Create a domain for surveyor initials
+    * Domain Name: `Surveyor`
+    * Description: `Surveyor initials`
+    * Field Type: `Text`
+    * Domain Type: `Coded Value Domain`
+    * Split Policy: `Default Value`
+    * Merge Policy: `Default Value`
+    * Coded Values: as needed, for example:
+        - Code: *TWD*
+        - Description: *T. Davis*
+1. Create a domain for the date and time
+    * Domain Name: `DateTime`
+    * Description: `Date and time of survey`
+    * Domain Type: `Range`
+    * Field Type: `Date`
+    * Split Policy: `Default Value`
+    * Merge Policy: `Default Value`
+    * Minimum value: `2019-01-01 00:00:00`
+    * Maximum value: `2019-12-31 23:59:59`
+1. Click "Apply"
+1. Click "OK"
+<!--
+1. Create a domain for yes and no answers
+    * Domain Name: `YN`
+    * Description: `Yes or No`
+    * Field Type: `Text`
+    * Domain Type: `Coded Values`
+    * Split Policy: `Default Value`
+    * Merge Policy: `Default Value`
+    * Coded Values:
+        * Code: *Y*; Description: *Yes*
+        * Code: *N*; Description: *No*
+-->
+
+Apply domains to fields and set default values.
+
+1. In the Catalog, right-click "manhole_survey" and select `Design` `-->` `Fields`
+1. Double-click the domain box for row `TRAIL`
+    * Under Field Properties, click in the box to the right of Domain and select "TrailName"
+1. Select `SURVYR`
+    * For Domain, select "Surveyor"
+    * For Default Value, type: [YOURINITIALS]
+1. Select `DATETIME`
+    * For Domain, select "DateTime"
+
+### Enabling Attachments
+Adding attachments to your feature class adds support for a variety of file types (e.g., photos).
+This is accomplished through a geoprocessing tool, "Enable Attachments."
+
+First, right-click on the feature class, "manhole_survey", and select "Add to Current Map."
+
+Then go to geoprocessing tools: `Data Management` `-->` `Attachments` `-->` `Enable Attachments`.
+
+### Assigning Symbology
+Create meaningful symbology for the various features in your map.
+
+1. Beginning with a new empty map, click on `File --> Add Data --> Add Data...` (or click on the Add Data icon, ![](images/adddatabutton.png){.icon width=15 height=auto}) and add the feature(s) from your geodatabase
+1. In the Table of Contents, list by source
+1. Right-click your feature class (Litter) and select "Properties..."
+1. Click on Symbology tab
+1. Under Show, click Categories and select "Unique values"
+1. Under Value Field, select "Material"
+1. Click "Add All Values"
+1. Update Symbol and Label as desired
+
+Note that 3D marker symbols are not currently supported in ArcGIS Online and therefore cannot be used with Collector.
+
+### Publishing as a Service
+A personal file geodatabase can be published to ArcGIS Online as a hosted service for editing online, sharing with other users, and accessing with Collector.
+
+1. In ArcGIS Pro, from the Catalog, right-click the feature class you want to share and select "Add to Current Map"
+1. In the Contents pane, right-click the layer and select `Sharing` `-->` `Share As Web Layer`
+1. Provide the layer with a summary and tags (if you haven't already).
+1. Select the web folder you wish to save it to.
+1. Choose who to share the layer with (e.g., Groups)
+1. Update the layer metadata, for example:
+    * Summary: *A file geodatabase for storing features for field litter surveys.*
+    * Tags: *Collector, GPS, Litter, Catawba*
+    * Description: *This file is a part of Catawba College's ENV 3599 Intermediate GIS/Field GPS spring semester 2018 litter survey project. The goal of this project is to use GPS receivers to survey campus litter and perform analyses using GIS geospatial tools.*
+1. You may receive a warning that "Layer does not have a feature template." You may ignore this warning as a default template will be created for you.
+1. Log into ArcGIS online to edit the layer settings, such as editing, updating, sync'ing, and downloading.
+1. Click on Sharing and select our group (i.e., ENV 3599)
+1. Click on Analyze at the top of the window and check to make certain no error messages appear (red x's)
+1. Click Publish
+
+### Enabling Edits, Sync and Export
+In ArcGIS Online, find the newly create hosted feature class.
+Click on Settings in the top menu and scroll down until you see Feature Layer (hosted).
+
+Check the boxes next to Enable editing and Enable Sync (you may also check the other two boxes for tracking feature creation and updates).
+
+Scroll down to the bottom and check the box next to Export Data.
+This will allow you to download the hosted feature class as a shapefile in ArcGIS Pro.
+
+### Creating a Web Map
+To use a hosted feature service with Collector, it must first be incorporated into a web map, which may be accomplished in ArcGIS Online.
+
+1. Open a web browser and go to https://arcgis.com
+1. Log in with your ESRI account details
+1. Click on Content
+1. Find your published Feature Layer (e.g., litter_survey_YOURINITIALS); note there should also be a Service Definition file with the same name
+1. Click the more details button next to your feature layer (i.e., `...`) and select "Add to a new map"
+1. In the "Find address or place" search bar in the top right, type "Salisbury, NC" and click the suggestion option to zoom to Salisbury
+1. Zoom over Catawba College (this will be the default extents)
+1. Click Details at the top to open the Contents panel on the left
+1. Click on layer name (litter_survey_YOURINITIALS) to open the dropdown
+1. Click on the more options button (i.e., `...`) and select "Rename"
+1. Rename your layer "Litter Survey"
+1. Zoom in over the Center for the Environment and click on "Bookmarks" and "Add Bookmark"
+1. Title the bookmark "Center for the Environment" and hit return
+1. Click the close box to close the bookmarks menu
+1. Zoom out so you see all of campus
+1. Click on Bookmarks and select "Center for the Environment" to zoom back to the center
+1. You can create other bookmarks if you wish; these will be available to you in Collector
+1. Here, you may also change the basemap style (currently set to Topographic)
+1. Click Edit in the menu at the top and select Manage at bottom of the panel on the left
+1. Under each material listing is a subheading; click the down arrow next to the subheading and select "Properties"
+    * Use the descriptions listed in Table 1 below to update the descriptions for each material
+    * Set the default values for the feature type template
+1. When your map is ready, click `Save --> Save As`
+1. Enter the information for your map
+    * Title: *Litter Survey YOURINITIALS*
+    * Tags: *Collector, GPS, Litter, Catawba*
+    * Summary: *A web map for field litter surveying.*
+1. Click "Save Map"
+
+:   Table 1. Example property descriptions for the litter survey material types.
+
++------------+------------------------------------------------------+
+| Material   |  Property Description                                |
++============+======================================================+
+| Cloth      | Clothing, upholstery, etc.                           |
++------------+------------------------------------------------------+
+| Foam       | Styrofoam or polystyrene food and drink containers   |
++------------+------------------------------------------------------+
+| Food       | Apple cores, banana peels, sandwiches, etc.          |
++------------+------------------------------------------------------+
+| Glass      | Bottles, light bulbs, etc.                           |
++------------+------------------------------------------------------+
+| Metals     | Soft drink cans, gum wrappers, etc.                  |
++------------+------------------------------------------------------+
+| Paper      | Newspaper, cigarette butts, cardboard, napkins, etc. |
++------------+------------------------------------------------------+
+| Plastics   | Spoons, straws, bags, etc.                           |
++------------+------------------------------------------------------+
+| Sensitives | Syringes, sharps, diapers, etc.                      |
++------------+------------------------------------------------------+
+| Wood       | Popsicle sticks, coffee stirrers, etc.               |
++------------+------------------------------------------------------+
+| Misc       | Unclassified                                         |
++------------+------------------------------------------------------+
+
+Share your map.
+
+1. Click on `Home --> Content` in the top left of the web map to return to your Content page
+1. Next to your map, click the lock icon to open the Share window, check the box next to "ENV 3599" and click "OK" to share
+
+## Arcade
+[Arcade](https://developers.arcgis.com/arcade/) is a new secure and portable expression language with the goal of being able to run across all ArcGIS products (mobile, desktop and cloud)[^2].
+
+The benefit of Arcade is its ability to create new derived attributes as on-the-fly calculations, rather than using the field calculator on a new field.
+This is handy for simple operations like changing the units of a field or calculating averages across fields without the overhead of storing the results in the database[^3].
