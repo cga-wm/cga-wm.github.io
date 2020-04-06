@@ -1,13 +1,13 @@
 ---
-title: "Advanced GIS Analysis and Programming"
+title: "Syllabus | Advanced GIS Analysis and Programming"
 author: "Center for Geospatial Analysis"
 date: "Spring 2020"
 ---
 
 ****
 
-Course Syllabus
-===========================
+Course Description
+==================
 
 This course extends the existing base of GIS knowledge and skills by amplifying programmatic approaches to spatial data and analysis.
 Lectures, labs, and projects emphasize GIS model development, develop spatial database architecture and design best practices, and extend knowledge of web GIS by authoring and consuming geographic web services.
