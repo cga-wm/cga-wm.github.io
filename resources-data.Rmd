@@ -7,8 +7,14 @@ title: Data
 [ASTER Volcano Archive](https://ava.jpl.nasa.gov/)
 :   the world's largest specialty archive of volcano data, including publicly available high-resolution multispectral ASTER data.
 
+[Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets/catalog)
+:   public data catalog that includes a variety of standard Earth science raster datasets.
+
 [EarthExplorer](https://earthexplorer.usgs.gov/)
 :   search, download, and order satellite images, aerial photographs, and cartographic products.
+
+[EarthWorks](https://earthworks.stanford.edu/)
+:   search, download, and explore geospatial data shared across a multi-academic consortium.
 
 [European Commission Joint Research Centre - ESDAC](https://esdac.jrc.ec.europa.eu/themes/landslides)
 :    - European landslide inventory.
@@ -44,6 +50,9 @@ title: Data
 
 [TanDEM-X Science Server](https://tandemx-science.dlr.de/)
 :   - Global 12, 30, and 90 m digital elevation models
+
+[The Humanitarian Data Exchange (HDX)](https://data.humdata.org/)
+:   find, share and use humanitarian data all in one place.
 
 [TopoView](https://ngmdb.usgs.gov/topoview/)
 :   a digital repository of USGS 1:250,000 scale and larger (more detailed) maps printed between 1884 (the inception of the topographic mapping program), and 2006.
