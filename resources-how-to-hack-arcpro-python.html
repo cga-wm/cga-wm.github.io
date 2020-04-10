@@ -11,7 +11,7 @@
 
 
 
-<title>How To Guides</title>
+<title>How To Hack ArcGIS Pro’s Python</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -310,23 +310,22 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">How To Guides</h1>
+<h1 class="title toc-ignore">How To Hack ArcGIS Pro’s Python</h1>
 
 </div>
 
 
 <hr />
+<p><a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm</a></p>
 <ul>
-<li>
-<a href='resources-how-to-hack-arcpro-python.html'>How To Hack ArcGIS Pro’s Python</a>
-</li>
-<li>
-<a href='resources-how-to-spatial-join.html'>How To Spatial Join in ArcGIS Pro</a>
-</li>
-<li>
-<a href='resources-how-to-work-with-zip-files.html'>How To Work With Zip Files</a>
-</li>
+<li>Open ArcGIS Pro and go to Settings (bottom left) and click on Python</li>
+<li>Click on Manage Environments</li>
+<li>Clone ArcGIS Pro python environment and name it (e.g., ‘adv-gis’)</li>
+<li>Create user environment that points to <code>...\Program Files\ArcGIS\Pro\bin\Python\Scripts\</code></li>
+<li>Open a new Command Prompt window and type <code>activate adv-gis</code></li>
+<li>Try loading arcpy from Python</li>
 </ul>
+<pre class="shell"><code>python -c &quot;import arcpy; print(arcpy.__name__)&quot;</code></pre>
 
 <footer class="myfoot">
     <div class="foot-text">

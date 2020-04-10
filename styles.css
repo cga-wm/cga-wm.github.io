@@ -22,3 +22,8 @@ footer {
 dt {
     margin-top: 20px;
 }
+
+.caption {
+    font-size: 10pt;
+    color: #535353;
+}

@@ -1,0 +1,18 @@
+---
+title: "How To Hack ArcGIS Pro's Python"
+---
+
+***
+
+[https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm](https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm)
+
+- Open ArcGIS Pro and go to Settings (bottom left) and click on Python
+- Click on Manage Environments
+- Clone ArcGIS Pro python environment and name it (e.g., 'adv-gis')
+- Create user environment that points to `...\Program Files\ArcGIS\Pro\bin\Python\Scripts\`
+- Open a new Command Prompt window and type `activate adv-gis`
+- Try loading arcpy from Python
+
+```shell
+python -c "import arcpy; print(arcpy.__name__)"
+```

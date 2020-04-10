@@ -1,26 +1,26 @@
 ---
-title: "How To"
+title: "How To Guides"
 ---
 
 ***
 
-## Hack into ArcGIS Pro's Python
-[https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm](https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm)
+```{r echo = FALSE}
+library(rmarkdown)
 
-- Open ArcGIS Pro and go to Settings (bottom left) and click on Python
-- Click on Manage Environments
-- Clone ArcGIS Pro python environment and name it (e.g., 'adv-gis')
-- Create user environment that points to `...\Program Files\ArcGIS\Pro\bin\Python\Scripts\`
-- Open a new Command Prompt window and type `activate adv-gis`
-- Try loading arcpy from Python
-
-```shell
-python -c "import arcpy; print(arcpy.__name__)"
+get.content <- function(my.file){
+    my.meta <- rmarkdown::yaml_front_matter(my.file)
+    my.url <- paste(c(sub(pattern = "(.*)\\.Rmd", replacement = "\\1", my.file), ".html"), collapse = "")
+    my.out <- paste(c("<li><a href='", my.url, "'>", my.meta$title, "</a></li>"), collapse = "")
+    return(my.out)
+}
 ```
 
-***
-
-## Work with Zip Files
-[https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm](https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm)
-
-Check out this tutorial on viewing, opening and extracting data from .zip files on Windows machines.
+```{r echo = FALSE, results = 'asis', comment = NA}
+myfiles <- list.files(pattern = "^resources-how-to-.*Rmd$")
+writeLines("<ul>")
+for (f in myfiles){
+    f.out <- get.content(f)
+    writeLines(f.out)
+}
+writeLines("</ul>")
+```

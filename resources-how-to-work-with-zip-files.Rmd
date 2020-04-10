@@ -1,0 +1,9 @@
+---
+title: "How To Work With Zip Files"
+---
+
+***
+
+[https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm](https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm)
+
+Check out this tutorial on viewing, opening and extracting data from .zip files on Windows machines.
