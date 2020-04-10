@@ -9,6 +9,8 @@ navbar:
               href: course/intro/index.html
             - text: "Advanced GIS"
               href: course/adv-gis/index.html
+            - text: "Middle Earth"
+              href: course/middle-earth/index.html
         - text: Resources
           menu:
               - text: "Data"
