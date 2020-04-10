@@ -1,6 +1,6 @@
 # README
 --------
-* LAST UPDATED: 2020-02-10
+* LAST UPDATED: 2020-04-10
 * ORGANIZATION: cga-wm
 * REPOSITORY: cga-wm.github.io
 
@@ -37,11 +37,20 @@ This folder contains the website files for the CGA-WM organization.
 ### README.md
 * This file.
 
+### resources-data.html
+* The HTML rendered data resources page.
+
+### resources-data.Rmd
+* Edit this file to include new data resources on the organization website.
+
+### resources-howto.html
+* The HTML rendered how-to resources page.
+
+### resources-howto.Rmd
+* Edit this file to include new how-to's on the organization website.
+
 ### styles.css
 * The cascading style sheet (CSS) used to create user-defined HTML styles for the organization website.
-
-### code/
-* This directory stores coding files relevant to the organization.
 
 ### course/
 * This directory stores the course sites (e.g., Intro GIS and Advanced GIS) referenced by the organization's website.
