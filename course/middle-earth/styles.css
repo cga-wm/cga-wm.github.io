@@ -1,0 +1,28 @@
+.navbar-default{
+    background-color: #115740;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.myfoot {
+    width: 100%;
+    color: #ffffff;
+    background-color: #115740;
+    padding-top: 10px;
+}
+
+.foot-text {
+    text-align: center;
+}
+
+blockquote {
+  position: relative;
+  font-family: serif;
+  font-size: 2.4em;
+  line-height: 1.5em;
+  font-style: italic;
+}

@@ -1,0 +1,20 @@
+name: "middle-earth"
+output_dir: "."
+navbar:
+    title: "GIS 490 - Middle Earth"
+    right:
+        - text: "Resources"
+          menu:
+              - text: "Data Layers"
+                href: https://github.com/cga-wm/middle-earth
+        - text: CGA-WM
+          href: ../../index.html
+
+output:
+    html_document:
+        toc: false
+        theme: flatly
+        highlight: haddock
+        css: "styles.css"
+        include:
+            after_body: ../../footer.html

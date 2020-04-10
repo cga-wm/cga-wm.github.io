@@ -1,0 +1,26 @@
+---
+title: "GIS &amp; Middle Earth"
+pagetitle: "GIS &amp; Middle Earth"
+author: Center for Geospatial Analysis
+---
+
+****
+
+```{r echo=FALSE, results='asis', comment=NA}
+# Print the current date (based on local computer time)
+cat("Updated:", as.character(Sys.Date()))
+```
+
+> Did Frodo take the best path to destroy the One Ring?
+
+With the right spatial data layers and utilizing the power of a GIS, a least cost path analysis could reveal if there was a better route that Frodo could have taken from the Shire to Mount Doom.
+
+After several years of development, the CGA now has an extensive list of GIS layers of Middle Earth, including a 50 meter elevation model, roads, rivers, realms and many others.
+
+In this course, students work in teams of three or four to develop the cost layer needed to run the least cost path analysis.
+Each team is required to develop a minimum of three threat layers and three cost-of-travel layers that are combined using a weighted sum analysis into the final cost layer.
+Example threat layers included proximity to orcs, danger levels within different realms, and the likelihood of being seen by Sauron.
+Cost-to-travel layers include the slope and ruggedness of the terrain, ease of travel across different land cover types, and width of rivers based on derived stream order.
+Students learn advanced geoprocessing techniques using Esri's ArcGIS software including the viewshed analysis tool, zonal statistics, and the summed point influence (SPI) tool[^spi].
+
+[^spi]: https://doi.org/10.5281/zenodo.887367
