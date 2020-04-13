@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>ArcGIS JavaScript Tutorials: Create a JavaScript starter app</title>
+    <style>
+      html, body, #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.15/"></script>
+    <!--  ESRI BASEMAP OPTIONS:
+            light-gray-vector,  satellite,
+            dark-gray-vector,   streets-navigation-vector,
+            topo-vector,        streets-relief-vector
+                                                        -->
+    <script>
+        require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer"
+        ], function(Map, MapView, FeatureLayer) {
+
+        var map = new Map({
+          basemap: "dark-gray-vector"
+        });
+
+        // Larger zoom value, closer to point
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-118.80500, 34.02700], // longitude, latitude
+          zoom: 10
+        });
+
+        var trailheadsRenderer = {
+            type: "simple",
+            symbol: {
+                type: "picture-marker",
+                url: "http://static.arcgis.com/images/Symbols/NPS/npsPictograph_0231b.png",
+                width: "18px",
+                height: "18px"
+            }
+        };
+
+        var trailheadsLabels = {
+            symbol: {
+                type: "text",
+                color: "#FFFFFF",
+                haloColor: "#5E8D74",
+                haloSize: "2px",
+                font: {
+                    size: "12px",
+                    family: "Noto Sans",
+                    style: "italic",
+                    weight: "normal"
+                }
+            },
+            labelPlacement: "above-center",
+            labelExpressionInfo: {
+                expression: "$feature.TRL_NAME"
+            }
+        };
+
+        var popupTrailheads = {
+            "title": "{TRL_NAME}",
+            "content": "<b>City:</b> {CITY_JUR}<br><b>Cross Street:</b> {X_STREET}<br><b>Parking:</b> {PARKING}<br><b>Elevation:</b> {ELEV_FT} ft"
+        }
+
+        // Trailheads feature layer (points)
+        var trailheadsLayer = new FeatureLayer({
+            url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0",
+            renderer: trailheadsRenderer,
+            labelingInfo: [trailheadsLabels],
+            outFields: ["TRL_NAME","ELEV_FT"],
+            popupTemplate: popupTrailheads
+        });
+
+        map.add(trailheadsLayer);
+
+        var trailsRenderer = {
+            type: "simple",
+            symbol: {
+                color: "#BA55D3",
+                type: "simple-line",
+                style: "solid"
+            },
+            visualVariables: [
+                {
+                    type: "size",
+                    field: "ELEV_GAIN",
+                    minDataValue: 0,
+                    maxDataValue: 2300,
+                    minSize: "3px",
+                    maxSize: "7px"
+                }
+            ]
+        };
+
+        var bikeTrailsRenderer = {
+            type: "simple",
+            symbol: {
+                type: "simple-line",
+                style: "short-dot",
+                color: "#FF91FF",
+                width: "1px"
+            }
+        };
+
+        var popupTrails = {
+            title: "Trail Information",
+            //*** ADD ***//
+            // content: function(){
+            //    return "This is {TRL_NAME} with {ELEV_GAIN} ft of climbing.";
+            // }
+            // BAR CHART
+            //content: [{
+            //  type: "media",
+            //    mediaInfos: [{
+            //      type: "column-chart",
+            //      caption: "",
+            //      value: {
+            //        fields: [ "ELEV_MIN","ELEV_MAX" ],
+            //        normalizeField: null,
+            //        tooltipField: "Min and max elevation values"
+            //      }
+            //    }]
+            //}]
+            // ARCADE
+            expressionInfos: [
+                {
+                    name: "elevation-ratio",
+                    title: "Elevation change",
+                    expression: "Round((($feature.ELEV_MAX - $feature.ELEV_MIN)/($feature.LENGTH_MI)/5280)*100,2)"
+                },
+                {
+                    name: "length-mi",
+                    title: "Trail length",
+                    expression: "Round($feature.LENGTH_MI, 2)"
+                }
+            ],
+            content: "The {TRL_NAME} trail average slope per mile is: {expression/elevation-ratio}% over a total of {expression/length-mi} miles."
+        }
+
+        // Trails feature layer (lines)
+        var trailsLayer = new FeatureLayer({
+            url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0",
+            renderer: bikeTrailsRenderer,
+            definitionExpression: "USE_BIKE = 'YES'",
+            outFields: ["TRL_NAME","ELEV_GAIN","ELEV_MIN","ELEV_MAX","LENGTH_MI"],
+            popupTemplate: popupTrails
+        });
+
+        map.add(trailsLayer, 0);
+
+        function createFillSymbol(value, color) {
+            return {
+                value: value,
+                symbol: {
+                    color: color,
+                    type: "simple-fill",
+                    style: "solid",
+                    outline: {
+                        style: "none"
+                    }
+                },
+                label: value
+            };
+        }
+
+        var openSpacesRenderer = {
+            type: "unique-value",
+            field: "TYPE",
+            uniqueValueInfos: [
+                createFillSymbol("Natural Areas", "#9E559C"),
+                createFillSymbol("Regional Open Space", "#A7C636"),
+                createFillSymbol("Local Park", "#149ECE"),
+                createFillSymbol("Regional Recreation Park", "#ED5151")
+            ]
+        };
+
+        var popupOpenspaces = {
+            "title": "{PARK_NAME}",
+            "content": [{
+                "type": "fields",
+                "fieldInfos": [
+                    {
+                        "fieldName": "AGNCY_NAME",
+                        "label": "Agency",
+                        "isEditable": true,
+                        "tooltip": "",
+                        "visible": true,
+                        "format": null,
+                        "stringFieldOption": "text-box"
+                    },
+                    {
+                        "fieldName": "TYPE",
+                        "label": "Type",
+                        "isEditable": true,
+                        "tooltip": "",
+                        "visible": true,
+                        "format": null,
+                        "stringFieldOption": "text-box"
+                    },
+                    {
+                        "fieldName": "ACCESS_TYP",
+                        "label": "Access",
+                        "isEditable": true,
+                        "tooltip": "",
+                        "visible": true,
+                        "format": null,
+                        "stringFieldOption": "text-box"
+                    },
+                    {
+                        "fieldName": "GIS_ACRES",
+                        "label": "Acres",
+                        "isEditable": true,
+                        "tooltip": "",
+                        "visible": true,
+                        "format": {
+                            "places": 2,
+                            "digitSeparator": true
+                        },
+                        "stringFieldOption": "text-box"
+                    }
+                ]
+            }]
+        }
+
+        // Parks and open spaces (polygons)
+        var parksLayer = new FeatureLayer({
+            url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space/FeatureServer/0",
+            renderer: openSpacesRenderer,
+            opacity: 0.20,
+            outFields: ["TYPE", "PARK_NAME",  "AGNCY_NAME", "ACCESS_TYP", "GIS_ACRES"],
+            popupTemplate: popupOpenspaces
+        });
+
+        map.add(parksLayer, 0);
+
+        });
+    </script>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>

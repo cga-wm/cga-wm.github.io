@@ -1,0 +1,49 @@
+---
+title: "Hello, JavaScript World!"
+date: 2020-04-13
+url: 2020-04-13-hello-javascript-world.html
+summary: "Taking the first steps into the world of Arcade/Javascript API via ArcGIS for Developers."
+---
+
+When considering how to design your feature classes for a given project, it is good to start with an example application.
+
+In this post, let's take a look at the Hello, World introduction to JavaScript API ([link](https://developers.arcgis.com/javascript/latest/guide/quick-start/)).
+
+The first step is to create a new text document (name it `index.html`) and copy-and-paste the example HTML (hypertext markup language) from Step 3.
+For testing purposes, I will start a local HTTP (hypertext transfer protocol) service using Python 3.
+From the command line, navigate to the directory where you have your HTML file (using the `cd` command) and then run the following to evoke a simple Python-based HTTP server:
+
+```
+python -m http.server
+```
+
+You should see a response similar to:
+
+```
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000)
+```
+
+Now, if you open a web browser and copy the URL above (e.g., http://0.0.0.0:8000 or http://localhost:8000), you should see a map similar to the image in the tutorial.
+
+Continuing with the Quick Start, I went through the following tutorials:
+
+1. [Create a starter app](https://developers.arcgis.com/javascript/latest/guide/create-a-starter-app/)
+1. [Select a basemap](https://developers.arcgis.com/javascript/latest/guide/select-a-basemap/)
+1. [Add layers to a map](https://developers.arcgis.com/javascript/latest/guide/add-layers-to-a-map/)
+1. [Style feature layers](https://developers.arcgis.com/labs/javascript/style-feature-layers/)
+1. [Configure pop-ups](https://developers.arcgis.com/labs/javascript/configure-pop-ups/)
+1. [Configure layers](https://developers.arcgis.com/labs/arcgisonline/configure-layers/)
+
+Important take-aways:
+
+* Every hosted feature class has a unique REST (representational state transfer) service URL that we can use to access within our app (*i.e., we create a feature class, host it, share publicly, and grab the service URL*)
+
+Here's my example: Hello, World ([html](2020-04-13-hello-world.html))
+
+
+Important references:
+
+* [Arcade Expressions](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-ExpressionInfo.html)
+* [Reference Arcade expressions in Popup Template](https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html)
+* [Autocasting](https://developers.arcgis.com/javascript/latest/guide/programming-patterns/#autocasting)
+* [Simple Renderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-SimpleRenderer.html#visualVariables)

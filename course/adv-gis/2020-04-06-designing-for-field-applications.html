@@ -300,6 +300,7 @@ $(document).ready(function () {
 
 
 <p>The following provides an example for creating a new file geodatabase, adding features and domains, publishing the feature class as a hosted service to ArcGIS Online, and adding it to a web map for field applications.</p>
+<hr />
 <div id="design-considerations" class="section level3">
 <h3>Design Considerations</h3>
 <p>In part 2 of this class, we are investigating how geofences can be used in a web application. One possibility is to design our own geofences through a field survey using geospatial data collection tools (e.g., Collector or QuickCapture).</p>
@@ -312,6 +313,7 @@ $(document).ready(function () {
 <p>In this example, let’s say I want a user to “activate” my geofences whereby entering them causes the geofence to become visible on their web map (it is invisible to the user initially), revealing the geofence’s geometry and filling with a given color, effectively creating a pseudo color-by-numbers. Maybe the user has to activate the geofences in a particular order. The specific order is hinted to the user via a popup with some text that tells them where to go next. I envision my use walking around and having shapes filled with color appearing on their map.</p>
 <p>To facilitate all this, my features will likely need the following attributes:</p>
 <table>
+<caption>Table 1. Common fields for feature classes.</caption>
 <colgroup>
 <col width="45%" />
 <col width="55%" />
@@ -345,6 +347,7 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<hr />
 </div>
 <div id="creating-a-new-file-geodatabase-in-arcgis-pro" class="section level3">
 <h3>Creating a New File Geodatabase in ArcGIS Pro</h3>
@@ -358,19 +361,22 @@ $(document).ready(function () {
 <li>Right-click the project folder and select <code>New --&gt; File Geodatabase</code></li>
 <li>Right-click the new geodatabase and rename it “geofence_[YOURINITIALS]” (e.g., <code>geofence_twd.gdb</code>)</li>
 <li>Right-click on your geodatabase and select “Edit Metadata”</li>
-<li>Enter your geodatabase information:
+<li>Enter your geodatabase information (see below for my example metadata) and don’t forget to click the purple Save icon when you are done
 <ul>
 <li>Title: <em>Davis’s Geofencing File Geodatabase</em></li>
-<li>Tags: <em>AdvGIS, Field, Geofence, W&amp;M</em></li>
+<li>Tags: <em>Advanced, GIS, Geofence, W&amp;M</em></li>
 <li>Summary: <em>A file geodatabase for storing geometries for a field survey of geofencing features.</em></li>
 <li>Description: <em>This file is a part of W&amp;M Advanced GIS class for the spring semester of 2020. The goal of this project is to collect geometries that can be used in a story-telling web application using geofences.</em></li>
 <li>Credits: <em>Dr. Davis, Center for Geospatial Analysis, William &amp; Mary, Williamsburg, VA.</em></li>
+<li>Appropriate Scale Range: between Buildings (1:5000) and City (1:50,000)</li>
 </ul></li>
 </ol>
+<hr />
 </div>
 <div id="adding-a-feature-class-to-your-fgdb" class="section level3">
 <h3>Adding a Feature Class to Your FGDB</h3>
-<p>Create a new Feature Class in your geodatabase. You may create multiple feature classes within a single geodatabase.</p>
+<p>Create a new Feature Class in your geodatabase. You may create multiple feature classes within a single geodatabase. In this example, I am going to start with creating a point feature class for storing my points of interest.</p>
+<p>For more information on the basics of creating a feature class within a geodatabase in ArcGIS Pro, see <a href="https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm">here</a>.</p>
 <ol style="list-style-type: decimal">
 <li>Right-click on the geodatabase in the Catalog and select <code>New --&gt; Feature Class</code></li>
 <li>Enter the information in the New Feature Class window
@@ -378,15 +384,19 @@ $(document).ready(function () {
 <li>Name: <code>points_of_interest</code></li>
 <li>Alias: <code>POI</code></li>
 <li>Feature Class Type: <code>Point</code></li>
-<li>Geometry Properties: (leave options unchecked)</li>
+<li>Geometry Properties: (leave both options unchecked)
+<ul>
+<li><em>M values</em> are measurement values (for more, see <a href="https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm#GUID-06CA5779-419B-4B35-9101-F53F231D6DBD">here</a>)</li>
+<li><em>Z values</em> are elevation values (for more, see <a href="https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm#GUID-D0082867-7BA6-469F-909E-02718192D23E">here</a>)</li>
+</ul></li>
 </ul></li>
 <li>Click “Next”</li>
 <li>Fields
 <ul>
-<li>Leave fields as they are for now</li>
+<li>Leave fields as they are for now, which is likely just OBJECTID and SHAPE</li>
 </ul></li>
 <li>Click “Next”</li>
-<li>Choose the feature’s spatial reference
+<li>Choose the feature’s spatial reference (should default to the map CRS)
 <ul>
 <li>Projected Coordinate Systems
 <ul>
@@ -400,7 +410,10 @@ $(document).ready(function () {
 </ul></li>
 </ul></li>
 <li>Click “Next”</li>
-<li>Leave XY tolerance values as default</li>
+<li>Leave XY tolerance values as default
+<ul>
+<li><em>“it is best to use the default x,y tolerance values in all but extreme cases”</em> (for more on XY tolerance, see <a href="https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm#GUID-69FA8570-7C64-4213-B822-68716CD9E764">here</a>)</li>
+</ul></li>
 <li>Click “Next”</li>
 <li>Leave Resolution as default</li>
 <li>Click “Next”</li>
@@ -408,6 +421,7 @@ $(document).ready(function () {
 <li>Click “Finish”</li>
 </ol>
 <p><strong>For each feature class in your geodatabase, make certain you use the same coordinate system. Import the coordinate system from an existing layer to ensure it is the same across all your layers.</strong></p>
+<hr />
 </div>
 <div id="adding-additional-fields" class="section level3">
 <h3>Adding Additional Fields</h3>
@@ -455,6 +469,7 @@ $(document).ready(function () {
 </ul></li>
 <li>Click “Save” in the Fields ribbon</li>
 </ol>
+<hr />
 </div>
 <div id="adding-optional-gps-receiver-fields" class="section level3">
 <h3>Adding Optional GPS Receiver Fields</h3>
@@ -503,6 +518,7 @@ $(document).ready(function () {
 </ul></li>
 <li>Click “Save”</li>
 </ol>
+<hr />
 </div>
 <div id="creating-domains" class="section level3">
 <h3>Creating Domains</h3>
@@ -588,12 +604,14 @@ $(document).ready(function () {
 <li>For Domain, select “DateTime”</li>
 </ul></li>
 </ol>
+<hr />
 </div>
 <div id="enabling-attachments" class="section level3">
 <h3>Enabling Attachments</h3>
 <p>Adding attachments to your feature class adds support for a variety of file types (e.g., photos). This is accomplished through a geoprocessing tool, “Enable Attachments.”</p>
 <p>First, right-click on the feature class, “manhole_survey”, and select “Add to Current Map.”</p>
 <p>Then go to geoprocessing tools: <code>Data Management</code> <code>--&gt;</code> <code>Attachments</code> <code>--&gt;</code> <code>Enable Attachments</code>.</p>
+<hr />
 </div>
 <div id="assigning-symbology" class="section level3">
 <h3>Assigning Symbology</h3>
@@ -609,6 +627,7 @@ $(document).ready(function () {
 <li>Update Symbol and Label as desired</li>
 </ol>
 <p>Note that 3D marker symbols are not currently supported in ArcGIS Online and therefore cannot be used with Collector.</p>
+<hr />
 </div>
 <div id="publishing-as-a-service" class="section level3">
 <h3>Publishing as a Service</h3>
@@ -631,12 +650,14 @@ $(document).ready(function () {
 <li>Click on Analyze at the top of the window and check to make certain no error messages appear (red x’s)</li>
 <li>Click Publish</li>
 </ol>
+<hr />
 </div>
 <div id="enabling-edits-sync-and-export" class="section level3">
 <h3>Enabling Edits, Sync and Export</h3>
 <p>In ArcGIS Online, find the newly create hosted feature class. Click on Settings in the top menu and scroll down until you see Feature Layer (hosted).</p>
 <p>Check the boxes next to Enable editing and Enable Sync (you may also check the other two boxes for tracking feature creation and updates).</p>
 <p>Scroll down to the bottom and check the box next to Export Data. This will allow you to download the hosted feature class as a shapefile in ArcGIS Pro.</p>
+<hr />
 </div>
 <div id="creating-a-web-map" class="section level3">
 <h3>Creating a Web Map</h3>
@@ -676,7 +697,7 @@ $(document).ready(function () {
 <li>Click “Save Map”</li>
 </ol>
 <table style="width:94%;">
-<caption>Table 1. Example property descriptions for the litter survey material types.</caption>
+<caption>Table 2. Example property descriptions for the litter survey material types.</caption>
 <colgroup>
 <col width="18%" />
 <col width="76%" />
@@ -735,6 +756,7 @@ $(document).ready(function () {
 <li>Click on <code>Home --&gt; Content</code> in the top left of the web map to return to your Content page</li>
 <li>Next to your map, click the lock icon to open the Share window, check the box next to “ENV 3599” and click “OK” to share</li>
 </ol>
+<hr />
 </div>
 <div id="arcade" class="section level2">
 <h2>Arcade</h2>

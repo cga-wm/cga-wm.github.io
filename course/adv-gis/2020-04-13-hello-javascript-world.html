@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Center for Geospatial Analysis" />
 
+<meta name="date" content="2020-04-13" />
 
-<title>Advanced GIS</title>
+<title>Hello, JavaScript World!</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -293,17 +293,39 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Advanced GIS Analysis &amp; Programming</h1>
-<h4 class="author">Center for Geospatial Analysis</h4>
+<h1 class="title toc-ignore">Hello, JavaScript World!</h1>
+<h4 class="date">2020-04-13</h4>
 
 </div>
 
 
-<hr />
-<p>Updated: 2020-04-13</p>
-<p>This course extends the existing base of GIS knowledge and skills by amplifying programmatic approaches to spatial data and analysis. Lectures, labs, and projects emphasize GIS model development, develop spatial database architecture and design best practices, and extend knowledge of web GIS by authoring and consuming geographic web services. Students will become familiar with methods of leveraging programming languages (such as Python) to make GIS processing easier, faster, and more accurate by scripting and automating data management, production, manipulation, and analysis procedures. Activities develop GIS analysis skills with examples from government, social science, physical science, and the humanities.</p>
+<p>When considering how to design your feature classes for a given project, it is good to start with an example application.</p>
+<p>In this post, let’s take a look at the Hello, World introduction to JavaScript API (<a href="https://developers.arcgis.com/javascript/latest/guide/quick-start/">link</a>).</p>
+<p>The first step is to create a new text document (name it <code>index.html</code>) and copy-and-paste the example HTML (hypertext markup language) from Step 3. For testing purposes, I will start a local HTTP (hypertext transfer protocol) service using Python 3. From the command line, navigate to the directory where you have your HTML file (using the <code>cd</code> command) and then run the following to evoke a simple Python-based HTTP server:</p>
+<pre><code>python -m http.server</code></pre>
+<p>You should see a response similar to:</p>
+<pre><code>Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000)</code></pre>
+<p>Now, if you open a web browser and copy the URL above (e.g., <a href="http://0.0.0.0:8000" class="uri">http://0.0.0.0:8000</a> or <a href="http://localhost:8000" class="uri">http://localhost:8000</a>), you should see a map similar to the image in the tutorial.</p>
+<p>Continuing with the Quick Start, I went through the following tutorials:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/create-a-starter-app/">Create a starter app</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/select-a-basemap/">Select a basemap</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/add-layers-to-a-map/">Add layers to a map</a></li>
+<li><a href="https://developers.arcgis.com/labs/javascript/style-feature-layers/">Style feature layers</a></li>
+<li><a href="https://developers.arcgis.com/labs/javascript/configure-pop-ups/">Configure pop-ups</a></li>
+<li><a href="https://developers.arcgis.com/labs/arcgisonline/configure-layers/">Configure layers</a></li>
+</ol>
+<p>Important take-aways:</p>
 <ul>
-<li><a href="syllabus/">Course Syllabus (Spring 2020)</a></li>
+<li>Every hosted feature class has a unique REST (representational state transfer) service URL that we can use to access within our app (<em>i.e., we create a feature class, host it, share publicly, and grab the service URL</em>)</li>
+</ul>
+<p>Here’s my example: Hello, World (<a href="2020-04-13-hello-world.html">html</a>)</p>
+<p>Important references:</p>
+<ul>
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-ExpressionInfo.html">Arcade Expressions</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html">Reference Arcade expressions in Popup Template</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/programming-patterns/#autocasting">Autocasting</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-SimpleRenderer.html#visualVariables">Simple Renderer</a></li>
 </ul>
 
 <footer class="myfoot">

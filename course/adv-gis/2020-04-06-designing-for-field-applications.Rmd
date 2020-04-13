@@ -7,6 +7,7 @@ summary: "A look at designing web maps for field applications, including bespoke
 
 The following provides an example for creating a new file geodatabase, adding features and domains, publishing the feature class as a hosted service to ArcGIS Online, and adding it to a web map for field applications.
 
+***
 
 ### Design Considerations
 In part 2 of this class, we are investigating how geofences can be used in a web application.
@@ -35,6 +36,8 @@ I envision my use walking around and having shapes filled with color appearing o
 
 To facilitate all this, my features will likely need the following attributes:
 
+:   Table 1. Common fields for feature classes.
+
 | Attribute | Description |
 | --------- | ----------- |
 | OrderNum  | The correct order in which geofences are to be activated; note that I am not relying on the FID such that I can easily change the order at a later time. |
@@ -43,6 +46,7 @@ To facilitate all this, my features will likely need the following attributes:
 | IsEnabled | A field to turn specific features on and off; for example, to create custom maps or if a feature is giving me trouble. |
 | Name | I may want to give each geofence a meaningful name for easy reference. |
 
+***
 
 ### Creating a New File Geodatabase in ArcGIS Pro
 Like the shapefile, the file geodatabase is an Esri creation and is designed to work with ArcGIS suite of software.
@@ -57,34 +61,43 @@ For those without access to Esri products, you can learn more about geodatabases
 1. Right-click the project folder and select `New --> File Geodatabase`
 1. Right-click the new geodatabase and rename it "geofence_[YOURINITIALS]" (e.g., `geofence_twd.gdb`)
 1. Right-click on your geodatabase and select "Edit Metadata"
-1. Enter your geodatabase information:
+1. Enter your geodatabase information (see below for my example metadata) and don't forget to click the purple Save icon when you are done
     * Title: *Davis's Geofencing File Geodatabase*
-    * Tags: *AdvGIS, Field, Geofence, W&M*
+    * Tags: *Advanced, GIS, Geofence, W&M*
     * Summary: *A file geodatabase for storing geometries for a field survey of geofencing features.*
     * Description: *This file is a part of W&M Advanced GIS class for the spring semester of 2020. The goal of this project is to collect geometries that can be used in a story-telling web application using geofences.*
     * Credits: *Dr. Davis, Center for Geospatial Analysis, William & Mary, Williamsburg, VA.*
+    * Appropriate Scale Range: between Buildings (1:5000) and City (1:50,000)
+
+***
 
 ### Adding a Feature Class to Your FGDB
 Create a new Feature Class in your geodatabase.
 You may create multiple feature classes within a single geodatabase.
+In this example, I am going to start with creating a point feature class for storing my points of interest.
+
+For more information on the basics of creating a feature class within a geodatabase in ArcGIS Pro, see [here](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm).
 
 1. Right-click on the geodatabase in the Catalog and select `New --> Feature Class`
 1. Enter the information in the New Feature Class window
     * Name: `points_of_interest`
     * Alias: `POI`
     * Feature Class Type: `Point`
-    * Geometry Properties: (leave options unchecked)
+    * Geometry Properties: (leave both options unchecked)
+        - *M values* are measurement values (for more, see [here](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm#GUID-06CA5779-419B-4B35-9101-F53F231D6DBD))
+        - *Z values* are elevation values (for more, see [here](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm#GUID-D0082867-7BA6-469F-909E-02718192D23E))
 1. Click "Next"
 1. Fields
-    * Leave fields as they are for now
+    * Leave fields as they are for now, which is likely just OBJECTID and SHAPE
 1. Click "Next"
-1. Choose the feature's spatial reference
+1. Choose the feature's spatial reference (should default to the map CRS)
     * Projected Coordinate Systems
         * State Plane
             * NAD 1983 (Meters)
                 * NAD 1983 StatePlane Virginia South FIPS 4502 (Meters)
 1. Click "Next"
 1. Leave XY tolerance values as default
+    * *"it is best to use the default x,y tolerance values in all but extreme cases"* (for more on XY tolerance, see [here](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm#GUID-69FA8570-7C64-4213-B822-68716CD9E764))
 1. Click "Next"
 1. Leave Resolution as default
 1. Click "Next"
@@ -93,6 +106,8 @@ You may create multiple feature classes within a single geodatabase.
 
 **For each feature class in your geodatabase, make certain you use the same coordinate system.
 Import the coordinate system from an existing layer to ensure it is the same across all your layers.**
+
+***
 
 ### Adding Additional Fields
 Create new fields (attributes) for your feature class.
@@ -133,6 +148,8 @@ This can be especially tricky for text fields where you may run out of character
     * Default Value: (leave blank)
 1. Click "Save" in the Fields ribbon
 
+***
+
 ### Adding Optional GPS Receiver Fields
 Create additional fields for recording the GPS receiver data[^1].
 Note that these fields only really work with point-based geometries.
@@ -169,6 +186,8 @@ Note that these fields only really work with point-based geometries.
     * Allow NULL values: `Yes`
     * Default value: (leave blank)
 1. Click "Save"
+
+***
 
 ### Creating Domains
 Create and apply domains for your fields.
@@ -239,6 +258,8 @@ Apply domains to fields and set default values.
 1. Select `DATETIME`
     * For Domain, select "DateTime"
 
+***
+
 ### Enabling Attachments
 Adding attachments to your feature class adds support for a variety of file types (e.g., photos).
 This is accomplished through a geoprocessing tool, "Enable Attachments."
@@ -246,6 +267,8 @@ This is accomplished through a geoprocessing tool, "Enable Attachments."
 First, right-click on the feature class, "manhole_survey", and select "Add to Current Map."
 
 Then go to geoprocessing tools: `Data Management` `-->` `Attachments` `-->` `Enable Attachments`.
+
+***
 
 ### Assigning Symbology
 Create meaningful symbology for the various features in your map.
@@ -260,6 +283,8 @@ Create meaningful symbology for the various features in your map.
 1. Update Symbol and Label as desired
 
 Note that 3D marker symbols are not currently supported in ArcGIS Online and therefore cannot be used with Collector.
+
+***
 
 ### Publishing as a Service
 A personal file geodatabase can be published to ArcGIS Online as a hosted service for editing online, sharing with other users, and accessing with Collector.
@@ -279,6 +304,8 @@ A personal file geodatabase can be published to ArcGIS Online as a hosted servic
 1. Click on Analyze at the top of the window and check to make certain no error messages appear (red x's)
 1. Click Publish
 
+***
+
 ### Enabling Edits, Sync and Export
 In ArcGIS Online, find the newly create hosted feature class.
 Click on Settings in the top menu and scroll down until you see Feature Layer (hosted).
@@ -287,6 +314,8 @@ Check the boxes next to Enable editing and Enable Sync (you may also check the o
 
 Scroll down to the bottom and check the box next to Export Data.
 This will allow you to download the hosted feature class as a shapefile in ArcGIS Pro.
+
+***
 
 ### Creating a Web Map
 To use a hosted feature service with Collector, it must first be incorporated into a web map, which may be accomplished in ArcGIS Online.
@@ -320,7 +349,7 @@ To use a hosted feature service with Collector, it must first be incorporated in
     * Summary: *A web map for field litter surveying.*
 1. Click "Save Map"
 
-:   Table 1. Example property descriptions for the litter survey material types.
+:   Table 2. Example property descriptions for the litter survey material types.
 
 +------------+------------------------------------------------------+
 | Material   |  Property Description                                |
@@ -350,6 +379,8 @@ Share your map.
 
 1. Click on `Home --> Content` in the top left of the web map to return to your Content page
 1. Next to your map, click the lock icon to open the Share window, check the box next to "ENV 3599" and click "OK" to share
+
+***
 
 ## Arcade
 [Arcade](https://developers.arcgis.com/arcade/) is a new secure and portable expression language with the goal of being able to run across all ArcGIS products (mobile, desktop and cloud)[^2].
