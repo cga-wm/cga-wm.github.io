@@ -315,11 +315,15 @@ $(document).ready(function () {
 <li><a href="https://developers.arcgis.com/labs/javascript/configure-pop-ups/">Configure pop-ups</a></li>
 <li><a href="https://developers.arcgis.com/labs/arcgisonline/configure-layers/">Configure layers</a></li>
 </ol>
+<p>Here’s my example: Hello, World (<a href="2020-04-13-hello-world.html">html</a>).</p>
+<p>Presently, it draws points, lines, and polygons. The points have a custom symbology (graphic) and pop-up. The lines have a query to only highlight trails with bike access, custom symbology, and popup. The polygons have custom symbology (unique values) and popups.</p>
 <p>Important take-aways:</p>
 <ul>
 <li>Every hosted feature class has a unique REST (representational state transfer) service URL that we can use to access within our app (<em>i.e., we create a feature class, host it, share publicly, and grab the service URL</em>)</li>
+<li>Renderers give you access to symbology properties</li>
+<li>Pop-ups are quite similar to that in ArcGIS Online web maps</li>
+<li>Map drawing order can be manually controlled (e.g., <code>map.add(trailsLayer, 0);</code> puts the <code>trailsLayer</code> at the bottom of the drawing order because of the <code>, 0</code> added to the <code>map.add</code> function)</li>
 </ul>
-<p>Here’s my example: Hello, World (<a href="2020-04-13-hello-world.html">html</a>)</p>
 <p>Important references:</p>
 <ul>
 <li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-ExpressionInfo.html">Arcade Expressions</a></li>
@@ -327,6 +331,39 @@ $(document).ready(function () {
 <li><a href="https://developers.arcgis.com/javascript/latest/guide/programming-patterns/#autocasting">Autocasting</a></li>
 <li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-SimpleRenderer.html#visualVariables">Simple Renderer</a></li>
 </ul>
+<p>Next steps:</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://developers.arcgis.com/javascript/latest/guide/display-and-track-your-location/">Display and track your location</a>.</p>
+<p>I found the <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Locate.html">Locate</a> and <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Track.html">Track</a> widgets that show/track a user’s location on a web app. What is nice about these widgets is that they both have <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Graphic.html">Graphic</a> properties, which have <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-Geometry.html">Geometry</a> properties. <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-Geometry.html">Geometry</a> is the base class for <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-Point.html">Point</a>, Line, and Polygon features and, assuming that our location is a point feature, <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-Point.html">Point</a> has numeric properties of longitude and latitude—this could be a potential path to identifying whether a location is within a geofence.</p></li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li><p><a href="https://developers.arcgis.com/javascript/3/jssamples/popup_arcade.html">Arcade Expressions for Popup Template</a>.</p>
+<p>I feel a good first step would be to see if I can get a popup to indicate whether I’m within a certain geofence or not. There is a <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-UniqueValueRenderer.html">UniqueValueRenderer</a> that pairs with <a href="https://developers.arcgis.com/arcade/guide/logic/">Arcade Logic</a> in the geofencing demo, but I’m not sure how it all ties together yet.</p></li>
+</ol>
+<hr />
+<p><strong>Update 2020-04-15</strong></p>
+<p>This is where I got: Test Locations (<a href="2020-04-15-test-location.html">html</a>).</p>
+<ul>
+<li>I can load a polygon feature shared publicly from my ArcGIS Online account (parcels in Williamsburg, VA)</li>
+<li>I can add Track and Locate widgets to identify my location</li>
+<li>I can create an Arcade-based pop-up</li>
+</ul>
+<p>Challenge:</p>
+<ul>
+<li>Not sure how to test geometry between Track or Locate and the polygons</li>
+</ul>
+<p>Moving Forward:</p>
+<ul>
+<li>Maybe, every time the Locate button is clicked, save that location to a list
+<ul>
+<li>We can track the locate() event trigger</li>
+<li>Can we store location as a geometry (e.g., Point) to a list?</li>
+<li>Can we save all these points to a feature?</li>
+<li>Can we test the intersection of this feature with our polygons?</li>
+<li>Can we use the geofence demo to apply unique symbology based on the intersection?</li>
+</ul></li>
+</ul>
+<p>More to follow…</p>
 
 <footer class="myfoot">
     <div class="foot-text">

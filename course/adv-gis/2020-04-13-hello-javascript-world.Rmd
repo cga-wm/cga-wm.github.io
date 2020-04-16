@@ -34,12 +34,19 @@ Continuing with the Quick Start, I went through the following tutorials:
 1. [Configure pop-ups](https://developers.arcgis.com/labs/javascript/configure-pop-ups/)
 1. [Configure layers](https://developers.arcgis.com/labs/arcgisonline/configure-layers/)
 
+Here's my example: Hello, World ([html](2020-04-13-hello-world.html)).
+
+Presently, it draws points, lines, and polygons.
+The points have a custom symbology (graphic) and pop-up.
+The lines have a query to only highlight trails with bike access, custom symbology, and popup.
+The polygons have custom symbology (unique values) and popups.
+
 Important take-aways:
 
 * Every hosted feature class has a unique REST (representational state transfer) service URL that we can use to access within our app (*i.e., we create a feature class, host it, share publicly, and grab the service URL*)
-
-Here's my example: Hello, World ([html](2020-04-13-hello-world.html))
-
+* Renderers give you access to symbology properties
+* Pop-ups are quite similar to that in ArcGIS Online web maps
+* Map drawing order can be manually controlled (e.g., `map.add(trailsLayer, 0);` puts the `trailsLayer` at the bottom of the drawing order because of the `, 0` added to the `map.add` function)
 
 Important references:
 
@@ -47,3 +54,51 @@ Important references:
 * [Reference Arcade expressions in Popup Template](https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html)
 * [Autocasting](https://developers.arcgis.com/javascript/latest/guide/programming-patterns/#autocasting)
 * [Simple Renderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-SimpleRenderer.html#visualVariables)
+
+Next steps:
+
+1. [Display and track your location](https://developers.arcgis.com/javascript/latest/guide/display-and-track-your-location/).
+
+    I found the [Locate][locate] and [Track][track] widgets that show/track a user's location on a web app.
+    What is nice about these widgets is that they both have [Graphic][graphic] properties, which have [Geometry][geometry] properties.
+    [Geometry][geometry] is the base class for [Point][point], Line, and Polygon features and, assuming that our location is a point feature, [Point][point] has numeric properties of longitude and latitude---this could be a potential path to identifying whether a location is within a geofence.
+
+[locate]: https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Locate.html
+[track]: https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Track.html
+[graphic]: https://developers.arcgis.com/javascript/latest/api-reference/esri-Graphic.html
+[geometry]: https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-Geometry.html
+[point]: https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-Point.html
+
+2. [Arcade Expressions for Popup Template](https://developers.arcgis.com/javascript/3/jssamples/popup_arcade.html).
+
+    I feel a good first step would be to see if I can get a popup to indicate whether I'm within a certain geofence or not.
+    There is a [UniqueValueRenderer][uvr] that pairs with [Arcade Logic][arcade-logic] in the geofencing demo, but I'm not sure how it all ties together yet.
+
+[uvr]: https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-UniqueValueRenderer.html
+[arcade-logic]: https://developers.arcgis.com/arcade/guide/logic/
+
+***
+
+**Update 2020-04-15**
+
+This is where I got: Test Locations ([html](2020-04-15-test-location.html)).
+
+* I can load a polygon feature shared publicly from my ArcGIS Online account (parcels in Williamsburg, VA)
+* I can add Track and Locate widgets to identify my location
+* I can create an Arcade-based pop-up
+
+Challenge:
+
+* Not sure how to test geometry between Track or Locate and the polygons
+
+
+Moving Forward:
+
+* Maybe, every time the Locate button is clicked, save that location to a list
+    * We can track the locate() event trigger
+    * Can we store location as a geometry (e.g., Point) to a list?
+    * Can we save all these points to a feature?
+    * Can we test the intersection of this feature with our polygons?
+    * Can we use the geofence demo to apply unique symbology based on the intersection?
+
+More to follow...

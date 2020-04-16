@@ -20,6 +20,7 @@
             topo-vector,        streets-relief-vector
                                                         -->
     <script>
+        // NOTE: require order must match function order!
         require([
         "esri/Map",
         "esri/views/MapView",
@@ -27,15 +28,14 @@
         ], function(Map, MapView, FeatureLayer) {
 
         var map = new Map({
-          basemap: "dark-gray-vector"
+          basemap: "dark-gray-vector"  // select from one of the options above
         });
 
-        // Larger zoom value, closer to point
         var view = new MapView({
-          container: "viewDiv",
+          container: "viewDiv",  // HTML div object id on L250
           map: map,
           center: [-118.80500, 34.02700], // longitude, latitude
-          zoom: 10
+          zoom: 10  // Larger zoom value, closer to point
         });
 
         var trailheadsRenderer = {
