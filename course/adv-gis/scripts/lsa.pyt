@@ -60,7 +60,7 @@ class CritRainThresh(object):
         )
         self.canRunInBackground = False
 
-        # Check that spatial analyst tools extension is enabled
+        # Check that spatial analyst tools extension is enabled *DEPRECATED*
         arcpy.gp.checkOutExtension("spatial")
 
         # Define constants and default values used in model
