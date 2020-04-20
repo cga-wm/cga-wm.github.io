@@ -1,0 +1,22 @@
+---
+title: "The Trouble With Geofences"
+date: 2020-04-20
+url: 2020-04-20-the-trouble-with-geofences.html
+summary: "More stabs at Esri's developers API for creating geofencing application."
+---
+
+A few things worked that I worked out this week:
+
+1. The `require` statement that precedes the Javascript in Esri's examples is actually a part of Node.js, which explains the need for `outFields` within module-defined objects
+1. You can move all the stuff out of the index.html file and into its own script file (e.g., `geofence.js`) and call the script by adding the following line at the end of your head tag.
+    I've found this to be easier to work with, especially in CodePen.io.
+
+    ```
+    <script src="./geofence.js"></script>
+    ```
+
+Currently stuck on Geolocation object returned by the locate event trigger.
+
+## References
+* https://spatialreference.org/ref/esri/
+* https://www.w3.org/TR/geolocation-API/#geolocation

@@ -1,8 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Geofencing Sandbox</title>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Geofence Sandbox</title>
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="styles/index.processed.css">
   <style>
     html, body, #viewDiv {
       padding: 0;
@@ -11,126 +16,16 @@
       width: 100%;
     }
   </style>
-
   <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
   <script src="https://js.arcgis.com/4.15/"></script>
-
   <script type="text/plain" id="arcade-test">
     if (true) {
-      return "yes"
-    } else {
       return "no"
+    } else {
+      return "yes"
     }
   </script>
-
-  <script>
-    // NOTE: require order must match function order!
-    require([
-      "esri/Map",
-      "esri/views/MapView",
-      "esri/widgets/Locate",
-      "esri/widgets/Track",
-      "esri/Graphic",
-      "esri/renderers/UniqueValueRenderer",
-      "esri/layers/FeatureLayer"
-    ], function(Map, MapView, Locate, Track, Graphic, UniqueValueRenderer, FeatureLayer) {
-
-      var map = new Map({
-        basemap: "streets-navigation-vector"
-      });
-
-      // A look at Williamsburg
-      // https://en.wikipedia.org/wiki/Williamsburg%2C_Virginia
-      var view = new MapView({
-        container: "viewDiv",
-        map: map,
-        center: [-76.706944, 37.270833],
-        zoom: 12
-      });
-
-      // Simple marker symbol for tracking widget
-      var simpleMarkerSymbol = {
-        type: "simple-marker",
-        color: [0, 0, 0],
-        outline: {
-          color: [0, 0, 0],
-          width: 1
-        }
-      };
-
-      // The tracking widget
-      var track = new Track({
-        view: view,
-        graphic: new Graphic({
-          symbol: simpleMarkerSymbol
-        }),
-        useHeadingEnabled: false  // Don't change orientation of the map
-      });
-
-      // Add tracking widget to screen
-      view.ui.add(track, "top-left");
-
-      // Simple Fill Renderer (used to color Williamsburg)
-      var simpleFillRenderer = {
-        type: "simple",
-        symbol: {
-          type: "simple-fill",
-          color: [227, 139, 79, 0.8],  // orange, opacity 80%
-          outline: {
-            color: [255, 255, 255],
-            width: 1
-          }
-        }
-      };
-
-      var popupWbgh = {
-        title: "Geofence Test",
-        // FUNCTION
-        // content: function(){
-        //     return "This parcel is in the {Neighborho} neighborhood.";
-        // }
-        //
-        // ARCADE
-        expressionInfos: [
-         {
-           name: "yes-no",
-           title: "Yes/No",
-           expression: document.getElementById("arcade-test").text
-         }
-        ],
-        content: "This parcel is in the {Neighborho} neighborhood.<br />Are you here? {expression/yes-no}!"
-      };
-
-      // Create a polygon of Williamsburg Parcels
-      // REF: https://data-williamsburg.opendata.arcgis.com/
-      var williamsburg = new FeatureLayer({
-        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/CityGdb_DBO_Parcels1/FeatureServer/0",
-        renderer: simpleFillRenderer,
-        outFields: ["Neighborho"],
-        popupTemplate: popupWbgh
-      });
-
-      // The location widget (moved to view.when block)
-      var locate = new Locate({
-        view: view,
-        useHeadingEnabled: false,
-        goToOverride: function(view, options) {
-          options.target.scale = 1500;  // Override the default map scale
-          return view.goTo(options.target);
-        }
-      });
-
-      // Add location widget to screen.
-      view.ui.add(locate, "top-left");
-
-      map.add(williamsburg, 0);
-
-      // Maybe log the point everytime the locate button is triggered
-      // Then make a list of points that you could map and test
-      // whether they intersect...
-
-    });
-  </script>
+  <script src="scripts/geofence.js"></script>
 </head>
 <body>
   <div id="viewDiv"></div>
