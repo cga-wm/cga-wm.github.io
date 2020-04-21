@@ -316,14 +316,18 @@ $(document).ready(function () {
 <p>I now get my points created and they are successfully added to a new feature class with the assigned symbology of blue circles with a black outline (see image below).</p>
 <p><img src="images/2020-04-20_geolocated.png" /></p></li>
 </ol>
-<div id="next-steps" class="section level2">
-<h2>Next steps</h2>
+<div id="next-steps" class="section level3">
+<h3>Next steps</h3>
 <ul>
 <li>I now have a feature class with my polygons (currently parcels in Williamsburg) and I have a feature class with my location points (updated every time I push the Locate widget).</li>
 <li>I would like to create a boolean test for <a href="https://developers.arcgis.com/arcade/function-reference/geometry_functions/#intersects">Intersects</a> and use it to update my pop-up question of “Were you here?”</li>
 <li>Finally, I’d like to change the polygon color based on whether I have visited it.</li>
 </ul>
 <p>That should be a good start to get a geofencing storytelling application off the ground.</p>
+</div>
+<div id="challenges" class="section level3">
+<h3>Challenges</h3>
+<p>It seems Esri is using Google APIs for returning geolocations and there may be an issue with usage limits (see <a href="https://developers.google.com/maps/documentation/geolocation/intro">here</a>).</p>
 </div>
 <div id="references" class="section level2">
 <h2>References</h2>

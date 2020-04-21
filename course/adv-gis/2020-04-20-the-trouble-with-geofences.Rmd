@@ -36,12 +36,15 @@ A few things worked that I worked out this week:
 
     ![](images/2020-04-20_geolocated.png)
 
-## Next steps
+### Next steps
 - I now have a feature class with my polygons (currently parcels in Williamsburg) and I have a feature class with my location points (updated every time I push the Locate widget).
 - I would like to create a boolean test for [Intersects](https://developers.arcgis.com/arcade/function-reference/geometry_functions/#intersects) and use it to update my pop-up question of "Were you here?"
 - Finally, I'd like to change the polygon color based on whether I have visited it.
 
 That should be a good start to get a geofencing storytelling application off the ground.
+
+### Challenges
+It seems Esri is using Google APIs for returning geolocations and there may be an issue with usage limits (see [here](https://developers.google.com/maps/documentation/geolocation/intro)).
 
 ## References
 * https://spatialreference.org/ref/esri/
