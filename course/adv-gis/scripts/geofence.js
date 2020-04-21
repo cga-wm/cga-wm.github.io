@@ -125,14 +125,16 @@ require([
     var graphics = []; // empty array for storing locations
 
     // Create an event listener for when the locate button is clicked
-    locateWidget.on("locate", function(position) {
+    locateWidget.on("locate", function(evt) {
       console.log("Caught locate event trigger!");
-      console.log(position);
+      console.log(evt);
+      console.log("Latitude is: ", evt.position.coords.latitude);
+      console.log("Longitude is: ", evt.position.coords.longitude);
 
       // Scrub location from position object:
       var data = {
-        LATITUDE: position.coords().latitude,
-        LONGITUDE: position.coords().longitude,
+        LATITUDE: evt.position.coords.latitude,
+        LONGITUDE: evt.position.coords.longitude,
         NAME: "Test Point"
       };
 

@@ -14,8 +14,34 @@ A few things worked that I worked out this week:
     ```
     <script src="./geofence.js"></script>
     ```
+1. I had trouble using Locate.graphic.geometry and trying to run Arcade's Intersects tool on completely failed.
+    Additionally, I want to be able to save multiple locations, so I am trying to record each time I click the Locate button.
+1. The Locate widget has an event called `locate` that triggers with a [Position](https://www.w3.org/TR/geolocation-API/#position_interface) object.
+    I can inspect the page using through my browser's Console (see [here](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Open_the_Inspector) for instructions) and I can see the position object that I get from the triggered event (see image below).
 
-Currently stuck on Geolocation object returned by the locate event trigger.
+    ![](images/2020-04-20_geofence_console.png)
+1. Taking a closer look at what the console is printing, the highest level braces (curly brackets) represent the object, which I arbitrarily called 'position' in my code; however, the object has a property that is also called 'position' because that's the position object.
+    So, here I was thinking that 'position' was referencing my object called 'position' but it is actually referencing the parameter 'position' that is inside my object!
+    A slight adjustment to the code changing my function's variable name from `position` to `evt` (it's an event object) and adding the variable name *before* the word `position`, like so:
+
+    ```
+    var data = {
+      LATITUDE: evt.position.coords.latitude,
+      LONGITUDE: evt.position.coords.longitude,
+      NAME: "Test Point"
+    };
+    ```
+
+    I now get my points created and they are successfully added to a new feature class with the assigned symbology of blue circles with a black outline (see image below).
+
+    ![](images/2020-04-20_geolocated.png)
+
+## Next steps
+- I now have a feature class with my polygons (currently parcels in Williamsburg) and I have a feature class with my location points (updated every time I push the Locate widget).
+- I would like to create a boolean test for [Intersects](https://developers.arcgis.com/arcade/function-reference/geometry_functions/#intersects) and use it to update my pop-up question of "Were you here?"
+- Finally, I'd like to change the polygon color based on whether I have visited it.
+
+That should be a good start to get a geofencing storytelling application off the ground.
 
 ## References
 * https://spatialreference.org/ref/esri/
