@@ -4,15 +4,91 @@ require([
   "esri/widgets/Locate",
   "esri/Graphic",
   "esri/renderers/UniqueValueRenderer",
-  "esri/layers/FeatureLayer"
-  ], function(Map, MapView, Locate, Graphic, UniqueValueRenderer, FeatureLayer) {
+  "esri/layers/FeatureLayer",
+  "esri/widgets/Editor",
+  "esri/symbols/SimpleMarkerSymbol",
+  "esri/symbols/SimpleLineSymbol",
+  "esri/Color"
+], function(Map, MapView, Locate, Graphic, UniqueValueRenderer, FeatureLayer, Editor, SimpleMarkerSymbol, SimpleLineSymbol, Color) {
 
-    // https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html
-    var map = new Map({
-      basemap: "streets-navigation-vector"
+    // Create an empty feature layer for storing locator points
+    // (also use this for Editor points)
+    var locationLayer = new FeatureLayer({
+    // create an instance of esri/layers/support/Field for each field object
+      title: "My Locations",
+      fields: [
+        {
+          name: "ObjectID",
+          alias: "ObjectID",
+          type: "oid"
+        },
+        {
+          name: "NAME",
+          alias: "Name",
+          type: "string"
+        },
+        {
+          name: "ORDER",
+          alias: "Order",
+          type: "integer"
+        }
+      ],
+      objectIdField: "ObjectID",
+      geometryType: "point",
+      spatialReference: { wkid: 4326 },  // WGS84
+      source: [], // adding an empty feature collection
+      renderer: {
+        type: "simple",
+        symbol: {
+          type: "simple-marker",
+          color: [0, 0, 255],
+          outline: {
+            color: [0, 0, 0],
+            width: 0.5
+          }
+        }
+      },
+      popupTemplate: {
+        title: "{Name} ({Longitude}, {Latitude})"
+      }
     });
 
-    // A look at Williamsburg, VA
+    // Alternative renderer for Williamsburg
+    // GOAL: get this to change colors based on geofence
+    var uniqueValRenderer = new UniqueValueRenderer({
+      valueExpression: document.getElementById("arcade-geofence").text,
+      valueExpressionTitle: "Geofence Test",
+      defaultSymbol: {
+        type: "simple-marker",
+        color: "green"
+      },
+      uniqueValueInfos: [{
+        value: "within 3 miles",
+        symbol: {
+          type: "simple-marker",
+          color: "blue"
+        },
+        label: "< 3 miles"
+      }, {
+        value: "far away",
+        symbol: {
+          type: "simple-marker",
+          color: "red"
+        },
+        label: "> 3 miles"
+      }]
+    });
+
+    locationLayer.renderer = uniqueValRenderer;
+
+    // Create a map for adding layers to
+    // https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html
+    var map = new Map({
+      basemap: "streets-navigation-vector",
+      layers: [locationLayer]
+    });
+
+    // Create a MapView for rendering the map and widgets
     // point reference: https://en.wikipedia.org/wiki/Williamsburg%2C_Virginia
     // https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html
     var view = new MapView({
@@ -37,7 +113,7 @@ require([
 
     // Pop-up Object
     var popupWbgh = {
-      title: "Geofence Test",
+      //title: "Geofence Test",
       // FUNCTION
       // content: function(){
       //     return "This parcel is in the {Neighborho} neighborhood.";
@@ -54,53 +130,6 @@ require([
         content: "This parcel is in the {Neighborho} neighborhood.<br />Are you here? {expression/yes-no}!"
     };
 
-    // Create an empty feature layer for storing locator points
-    const locationLayer = new FeatureLayer({
-      // create an instance of esri/layers/support/Field for each field object
-      title: "My Locations",
-      fields: [
-        {
-          name: "ObjectID",
-          alias: "ObjectID",
-          type: "oid"
-        },
-        {
-          name: "Name",
-          alias: "Name",
-          type: "string"
-        },
-        {
-          name: "Longitude",
-          alias: "Lon",
-          type: "single"
-        },
-        {
-          name: "Latitude",
-          alias: "Lat",
-          type: "single"
-        }
-      ],
-      objectIdField: "ObjectID",
-      geometryType: "point",
-      spatialReference: { wkid: 4326 },  // WGS84
-      source: [], // adding an empty feature collection
-      renderer: {
-        type: "simple",
-        symbol: {
-          type: "simple-marker",
-          color: [0, 0, 255],
-          outline: {
-            color: [0, 0, 0],
-            width: 0.5
-          }
-        }
-      },
-      popupTemplate: {
-        title: "{Name} ({Longitude}, {Latitude})"
-      }
-    });
-    map.add(locationLayer);
-
     // Create a polygon feature layer of Williamsburg Parcels
     // data ref: https://data-williamsburg.opendata.arcgis.com/
     // https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html
@@ -112,7 +141,8 @@ require([
     });
     map.add(williamsburg, 0);
 
-    // The location widget
+    // The location widget used to find a user's location
+    // NOTE: this may use Google Geolocation API, which has daily limits!
     var locateWidget = new Locate({
       view: view,
       useHeadingEnabled: false,
@@ -122,10 +152,12 @@ require([
       }
     });
 
-    var graphics = []; // empty array for storing locations
+    // Create an empty array for storing a user's location
+    var graphics = [];
 
     // Create an event listener for when the locate button is clicked
     locateWidget.on("locate", function(evt) {
+      // Debugging; you can view this from a webpage's console
       console.log("Caught locate event trigger!");
       console.log(evt);
       console.log("Latitude is: ", evt.position.coords.latitude);
@@ -147,16 +179,19 @@ require([
         attributes: data
       });
 
+      // Add the point geometry to the array
       graphics.push(graphic);
 
-      // addEdits object tells applyEdits that you want to add the features
+      // Add our array of point geometries to an object with the keyword
+      // for adding features; this is used by the applyEditsToLayer
       const addEdits = {
         addFeatures: graphics
       };
-      // apply the edits to the layer
       applyEditsToLayer(addEdits);
     });
 
+    // Function pulled directly from arcgis.developers tutorial
+    // https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-collection-edits/index.html
     function applyEditsToLayer(edits) {
       locationLayer
       .applyEdits(edits)
@@ -189,9 +224,36 @@ require([
     // Add location widget to screen.
     view.ui.add(locateWidget, "top-left");
 
-    // Maybe log the point everytime the locate button is triggered
-    // Then make a list of points that you could map and test
-    // whether they intersect...
+    // Add editor widget (issues with running over daily limit on geolocate)
+    // https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html
+    var editorWidget = new Editor({
+      view: view
+    });
+    view.ui.add(editorWidget, "top-right");
 
+    // Create a function to get longitude and latitude:
+    function showCoordinates(pt) {
+      var coords = "Lon/Lat (" + pt.longitude.toFixed(3) +
+        ", " + pt.latitude.toFixed(3) + ")";
+      coordsWidget.innerHTML = coords;
+    }
+
+    // Add event handlers to update map coordinates
+    view.watch("stationary", function(isStationary) {
+      showCoordinates(view.center);
+    });
+
+    view.on("pointer-move", function(evt) {
+      showCoordinates(view.toMap({ x: evt.x, y: evt.y }));
+    });
+
+    // Create a simple coordinates widget for displaying current location
+    // NOTE: adds a div to the DOM
+    // https://developers.arcgis.com/labs/javascript/get-map-coordinates/
+    var coordsWidget = document.createElement("div");
+    coordsWidget.id = "coordsWidget";
+    coordsWidget.className = "esri-widget esri-component";
+    coordsWidget.style.padding = "7px 15px 5px";
+    view.ui.add(coordsWidget, "bottom-right");
 
   });
