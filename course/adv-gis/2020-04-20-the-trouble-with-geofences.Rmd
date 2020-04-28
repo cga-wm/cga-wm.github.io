@@ -2,7 +2,7 @@
 title: "The Trouble With Geofences"
 date: 2020-04-20
 url: 2020-04-20-the-trouble-with-geofences.html
-summary: "More stabs at Esri's developers API for creating geofencing application."
+summary: "More stabs at Esri's developers API for creating a geofencing application. Updated with a semi-working example."
 ---
 
 A few things worked that I worked out this week:
@@ -49,3 +49,29 @@ It seems Esri is using Google APIs for returning geolocations and there may be a
 ## References
 * https://spatialreference.org/ref/esri/
 * https://www.w3.org/TR/geolocation-API/#geolocation
+
+***
+
+**UPDATE 4/27**
+
+This is where I got with testing locations ([html](2020-04-15-test-location.html)).
+
+Lessons Learned:
+
+* Features to JSON in ArcGIS Pro to create the Geometry that is basically the geofence; not ideal, but works.
+    Notably, this is how the ArcGIS demo works.
+    *Is there a better way to get geometry rings from a feature class?*
+* Create the geometry within the Arcade expression; note that only Web Mercator (wkid: '102100') spatial reference seems to work.
+* Editor widget; saves my usage of Google's Geolocation API (via Locate widget)
+
+Challenges:
+
+* Still need to implement pop-ups.
+* Need to find a way to read JSON file that doesn't involve what I did (manual editing, ugh).
+* Is there a way to reference scripts by unique ID that are saved in separate files?
+* Instead of creating Polygon using the JSON format, can I create a Feature that has attributes in JSON?
+    This could help my problem with manually cleaning the JSON format.
+
+This is what it looks like:
+
+![**Figure**. Manually scrubbed the JSON geometries from the ten largest polygons (by area) using ArcGIS Pro's **Feature to JSON** with some format cleaning (done by hand; ugh again). Created a Polygon geometry within the Arcade expression for the unique value renderer. Used the Editor widget to update the location points and color them based on whether they are within (uses the `Within` function) the JSON-described polygon geometry. Red indicates false (not within) and blue indicates true (within).](images/2020-04-27_geofence.png)

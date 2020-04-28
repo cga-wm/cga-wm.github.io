@@ -335,6 +335,27 @@ $(document).ready(function () {
 <li><a href="https://spatialreference.org/ref/esri/" class="uri">https://spatialreference.org/ref/esri/</a></li>
 <li><a href="https://www.w3.org/TR/geolocation-API/#geolocation" class="uri">https://www.w3.org/TR/geolocation-API/#geolocation</a></li>
 </ul>
+<hr />
+<p><strong>UPDATE 4/27</strong></p>
+<p>This is where I got with testing locations (<a href="2020-04-15-test-location.html">html</a>).</p>
+<p>Lessons Learned:</p>
+<ul>
+<li>Features to JSON in ArcGIS Pro to create the Geometry that is basically the geofence; not ideal, but works. Notably, this is how the ArcGIS demo works. <em>Is there a better way to get geometry rings from a feature class?</em></li>
+<li>Create the geometry within the Arcade expression; note that only Web Mercator (wkid: ‘102100’) spatial reference seems to work.</li>
+<li>Editor widget; saves my usage of Google’s Geolocation API (via Locate widget)</li>
+</ul>
+<p>Challenges:</p>
+<ul>
+<li>Still need to implement pop-ups.</li>
+<li>Need to find a way to read JSON file that doesn’t involve what I did (manual editing, ugh).</li>
+<li>Is there a way to reference scripts by unique ID that are saved in separate files?</li>
+<li>Instead of creating Polygon using the JSON format, can I create a Feature that has attributes in JSON? This could help my problem with manually cleaning the JSON format.</li>
+</ul>
+<p>This is what it looks like:</p>
+<div class="figure">
+<img src="images/2020-04-27_geofence.png" alt="" />
+<p class="caption"><strong>Figure</strong>. Manually scrubbed the JSON geometries from the ten largest polygons (by area) using ArcGIS Pro’s <strong>Feature to JSON</strong> with some format cleaning (done by hand; ugh again). Created a Polygon geometry within the Arcade expression for the unique value renderer. Used the Editor widget to update the location points and color them based on whether they are within (uses the <code>Within</code> function) the JSON-described polygon geometry. Red indicates false (not within) and blue indicates true (within).</p>
+</div>
 </div>
 
 <footer class="myfoot">

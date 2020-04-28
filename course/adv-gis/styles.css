@@ -18,3 +18,8 @@ footer {
 .foot-text {
     text-align: center;
 }
+
+.caption {
+  font-size: 0.9em;
+  color: #646464;
+}
