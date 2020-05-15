@@ -1,0 +1,85 @@
+---
+title: "The End Of A Semester"
+date: 2020-05-14
+url: 2020-05-14-end-of-semester.html
+summary: "It has been a roller coaster of a semester, but there are some amazingly excellent work to be shown for it. Well done everyone."
+---
+
+We're going to be completely honest that this class was a bit of a shot in the dark before spring break and the great transition.
+That being said, I am super impressed with the range of results and the amazing creativity that came out of this tumultuous time.
+
+Let's take a moment to highlight the projects from the second half of the semester.
+
+***
+
+## Selected Geofencing Projects
+
+[Coco's Trail](sites/2020-05-10-cocos-trail.html) by Michele Fong
+:   The aim of this web app was to use geofencing to popup information on landmarks found along my daily walk.
+    Along with information about the landmark, the popups also serve as a guide to the next landmark along the walk.
+
+[Fairy Hunt](sites/2020-05-13-fairy-hunt.html) by Victoria Haver
+:   We're going on a fairy hunt; join me!
+    The goal was to create a map that guided the user on a fairy hunt.
+    The pop-ups provide instructions and danger levels of the current geofence.
+
+[Geofencing with Fishing](sites/2020-05-07-geofencing-with-fishing.html) by Ian Thompson
+:   The goal of this web app was to tell you if you were in or near a hot spot for fishing.
+    It implements the 3D scene view, which may not show up on all browsers (typically works with Chrome).
+
+[The Great Buzz](sites/2020-05-10-the-great-buzz.html) by Erica Stephan
+:   This web app is a part of the "The Great Buzz" mystery regarding California bee rustling.
+
+[Historic Sites in Fairfax County and How to Get There](sites/2020-05-07-historic-sites-in-fairfax-county.html) by Jacob Werner
+:   The aim was to create an app that allowed people to learn about little known historic areas that one wouldn't have thought of.
+    This geofence covers the area of Fairfax county and the app tells the user the distance and direction of the closest historic site (simulated by clicking anywhere in the county).
+    The layers included are the historic sites in point form, areas containing the sites, mostly parks, and the layer combining Euclidian Distance and Euclidean Direction.
+
+[Restaurants along the Boardwalk](sites/2020-05-05-restaurants-on-the-boardwalk.html) by Morgan Brickey
+:   This web application provides a choice of ten restaurants located around the King Neptune Statue at 31st street of the Virginia Beach Boardwalk.
+    If the user clicks on a restaurant, additional information is provided such as type of food served, amenities, and price range.
+
+[Self-Guided Tour of Fort Greene Park](sites/2020-05-10-fort-greene-park-tour.html) by Jeremy Elkayam
+:   I wanted to create an interactive tour where information would pop-up as you entered different areas of Fort Greene Park.
+    The hardest part was getting the web app to display the popups when a user intersected one of my polygons.
+    In this version, the user just clicks the map to simulate where they are.
+
+[Trail Tracker](sites/2020-05-10-trail-tracker.html) by Henry Rosalsky
+:   Coded an application such that when you hover your mouse over one of the entry points for a trail, it starts a timer that ends when you reach the end of the trail (i.e. hover over another trail point).
+    Future direction of the project would include finishing the popup that appears when you enter the start of a trail and including the data that would be helpful to people hiking including the trail name, length, average hike time, and total hikes.
+
+[Youth](sites/2020-05-07-youth.html) by Matt Cusick
+:   My geofences showcase areas of importance to me during my childhood.
+    Whether it was sledding down snowy hills at the pit or spending the summer at our neighborhood swim club, I made lots of fun memories throughout the years.
+
+***
+
+## Geoethics
+There certainly are broad applications for geofencing and each has some interesting ethical concerns.
+Here is a selection of podcasts and vlogs that examine some of these issues in more detail.
+
+<div class="podcast">
+<figure>
+<figcaption>Listen to Geoethics Podcast by Jeremy</figcaption>
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1gPObjmfQvihGm3-5P6a-Aw4vBMwTw0s8" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1gPObjmfQvihGm3-5P6a-Aw4vBMwTw0s8">link</a> instead.</p>
+</audio>
+</figure>
+
+<figure>
+<figcaption>Listen to GIS Pod Episode 1 by Sean</figcaption>
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1vGsZAGdYBBq4EYWyKVILoZ9nwJNkD60z" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1vGsZAGdYBBq4EYWyKVILoZ9nwJNkD60z">link</a> instead.</p>
+</audio>
+</figure>
+
+<figure>
+<figcaption>Listen to "Boring in the Morning" by Jake</figcaption>
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1cwc199CVkHGXp4Vp3zDifx3zOMWWPBWo" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1cwc199CVkHGXp4Vp3zDifx3zOMWWPBWo">link</a> instead.</p>
+</audio>
+</figure>
+</div>

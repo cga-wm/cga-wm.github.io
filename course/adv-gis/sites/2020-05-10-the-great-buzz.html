@@ -1,0 +1,110 @@
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Erica Stephan">
+    <meta name="description" content="Advanced GIS geofencing project">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>The Great Buzz</title>
+
+    <!-- next 2 lines are a references to the CSS and API: -->
+     <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+
+  <script src="https://js.arcgis.com/4.15/"></script>
+
+    <!-- adding the 2D map part, coordinates are mulholland ridge, found from google maps
+    a higher zoom number zooms the map in more -->
+
+    <script>
+  require([
+      "esri/Map",
+      "esri/views/MapView",
+    "esri/layers/FeatureLayer"
+    ], function(Map, MapView, FeatureLayer) {
+
+    var map = new Map({
+      basemap: "topo-vector"
+    });
+
+    var view = new MapView({
+      container: "viewDiv",
+      map: map,
+      center: [-122.13874167,37.85425333], // longitude, latitude
+      zoom: 16
+    });
+
+    //adds feasture layer from esris, url is url from feature layer content in arc gis online
+     var features = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Evidence/FeatureServer/0"
+      });
+
+      //map.add(features);
+
+    //this is for the popup stuff for area
+    var popuparea = {
+        "title": "{Evid}",
+        "content": "<p> you are, <b>{Evid}"
+      }
+
+      var area = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Evidence/FeatureServer/0",
+        outFields: ["Evid"],
+        popupTemplate: popuparea
+      });
+
+      //map.add(area);
+
+      //this is for the popup stuff for points
+    var popuparea2 = {
+        "title": "{Evid}",
+        "content": "<p> You've found, <b>{Evid}</b></p>"
+      }
+
+      var point = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Evidence/FeatureServer/0",
+        outFields: ["Evid"],
+        popupTemplate: popuparea2
+      });
+
+      map.add(point);
+  });
+  </script>
+
+    <style>
+      html, body, #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+   <!-- tracking thing?
+  [Position]
+  interface Position {
+    readonly attribute Coordinates coords;
+    readonly attribute DOMTimeStamp timestamp;
+  };
+  [NoInterfaceObject]
+  interface Coordinates {
+    readonly attribute double latitude;
+    readonly attribute double longitude;
+    readonly attribute double? altitude;
+    readonly attribute double accuracy;
+    readonly attribute double? altitudeAccuracy;
+    readonly attribute double? heading;
+    readonly attribute double? speed;
+  };
+  [NoInterfaceObject]
+  interface PositionError {
+    const unsigned short PERMISSION_DENIED = 1;
+    const unsigned short POSITION_UNAVAILABLE = 2;
+    const unsigned short TIMEOUT = 3;
+    readonly attribute unsigned short code;
+    readonly attribute DOMString message;
+  }; -->
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>

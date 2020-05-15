@@ -1,0 +1,109 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Matthew Cusick">
+  <meta name="description" content="Advanced GIS geofencing project">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Youth</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.14/"></script>
+
+  <script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+      "esri/widgets/Locate",
+      "esri/widgets/Track",
+      "esri/Graphic",
+      "esri/widgets/Compass"
+    ], function(Map, MapView, FeatureLayer, Locate, Track, Graphic, Compass) {
+
+      var map = new Map({
+        basemap: "hybrid"
+      });
+
+      var view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [-74.965, 39.887],
+        zoom: 15
+      });
+
+
+      var fenceRenderer = {
+        type: "simple",
+        symbol: {
+          type: "simple-fill",
+          style: "horizontal",
+          color: "white",
+          outline: {
+            width: 2,
+            color: "red"
+          }
+        }
+
+      };
+
+      var labelFence = {
+        "title": "Location Information",
+        "content": function(){
+           return "Location: {SchoolName} </br> Description: {Notes}";
+        }
+      }
+
+
+      // Geofence Polygons
+      var fenceLayer = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/mkcusick_Neighborhood/FeatureServer/0",
+        renderer: fenceRenderer,
+        outFields:["Notes","SchoolName"],
+        popupTemplate: labelFence
+
+      });
+
+      map.add(fenceLayer, 0);
+
+      var track = new Track({
+        view: view,
+        graphic: new Graphic({
+          symbol: {
+            type: "simple-marker",
+            size: "15px",
+            color: "green",
+            outline: {
+              color: "#efefef",
+              width: "1.5px"
+            }
+          }
+        }),
+        useHeadingEnabled: false  // Don't change orientation of the map
+      });
+
+      view.ui.add(track, "top-left");
+
+      var compass = new Compass({
+          view: view
+        });
+
+        // Adds the compass to the top left corner of the MapView
+        view.ui.add(compass, "top-left");
+
+    });
+
+
+  </script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>

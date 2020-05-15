@@ -14,7 +14,6 @@
 
 <title>Designing for Field Applications</title>
 
-<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -312,11 +311,11 @@ $(document).ready(function () {
 <p>One of the first steps would be to look at an example web application to see what information is used.</p>
 <p>In this example, let’s say I want a user to “activate” my geofences whereby entering them causes the geofence to become visible on their web map (it is invisible to the user initially), revealing the geofence’s geometry and filling with a given color, effectively creating a pseudo color-by-numbers. Maybe the user has to activate the geofences in a particular order. The specific order is hinted to the user via a popup with some text that tells them where to go next. I envision my use walking around and having shapes filled with color appearing on their map.</p>
 <p>To facilitate all this, my features will likely need the following attributes:</p>
-<table>
+<table style="width:31%;">
 <caption>Table 1. Common fields for feature classes.</caption>
 <colgroup>
-<col width="45%" />
-<col width="55%" />
+<col width="13%" />
+<col width="16%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -710,44 +709,44 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Cloth</td>
-<td>Clothing, upholstery, etc.</td>
+<td><p>Cloth</p></td>
+<td><p>Clothing, upholstery, etc.</p></td>
 </tr>
 <tr class="even">
-<td>Foam</td>
-<td>Styrofoam or polystyrene food and drink containers</td>
+<td><p>Foam</p></td>
+<td><p>Styrofoam or polystyrene food and drink containers</p></td>
 </tr>
 <tr class="odd">
-<td>Food</td>
-<td>Apple cores, banana peels, sandwiches, etc.</td>
+<td><p>Food</p></td>
+<td><p>Apple cores, banana peels, sandwiches, etc.</p></td>
 </tr>
 <tr class="even">
-<td>Glass</td>
-<td>Bottles, light bulbs, etc.</td>
+<td><p>Glass</p></td>
+<td><p>Bottles, light bulbs, etc.</p></td>
 </tr>
 <tr class="odd">
-<td>Metals</td>
-<td>Soft drink cans, gum wrappers, etc.</td>
+<td><p>Metals</p></td>
+<td><p>Soft drink cans, gum wrappers, etc.</p></td>
 </tr>
 <tr class="even">
-<td>Paper</td>
-<td>Newspaper, cigarette butts, cardboard, napkins, etc.</td>
+<td><p>Paper</p></td>
+<td><p>Newspaper, cigarette butts, cardboard, napkins, etc.</p></td>
 </tr>
 <tr class="odd">
-<td>Plastics</td>
-<td>Spoons, straws, bags, etc.</td>
+<td><p>Plastics</p></td>
+<td><p>Spoons, straws, bags, etc.</p></td>
 </tr>
 <tr class="even">
-<td>Sensitives</td>
-<td>Syringes, sharps, diapers, etc.</td>
+<td><p>Sensitives</p></td>
+<td><p>Syringes, sharps, diapers, etc.</p></td>
 </tr>
 <tr class="odd">
-<td>Wood</td>
-<td>Popsicle sticks, coffee stirrers, etc.</td>
+<td><p>Wood</p></td>
+<td><p>Popsicle sticks, coffee stirrers, etc.</p></td>
 </tr>
 <tr class="even">
-<td>Misc</td>
-<td>Unclassified</td>
+<td><p>Misc</p></td>
+<td><p>Unclassified</p></td>
 </tr>
 </tbody>
 </table>

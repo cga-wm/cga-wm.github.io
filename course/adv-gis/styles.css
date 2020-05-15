@@ -23,3 +23,15 @@ footer {
   font-size: 0.9em;
   color: #646464;
 }
+
+.podcast figure {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+dl {
+    margin-bottom: 9px;
+}
+dd {
+    padding-bottom: 12px;
+}

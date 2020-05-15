@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Morgan Brickey">
+    <meta name="description" content="Advanced GIS geofencing project">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Restaurants On the VB Boardwalk</title>
+    <style>
+      html, body, #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
+    <!--
+    Author: Morgan Brickey
+    Last Edited: 2020-05-05
+
+    This html file creates the web map showing the restaurants along the Virginia
+    Beach Boardwalk. It displays the restaurants as point data and the land parcels
+    as colored polygons. The user is able to click on either the land parcels or the
+    restaurants to view more information.
+     -->
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.15/"></script>
+
+  <script>
+  require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer"
+    ], function(Map, MapView, FeatureLayer) {
+
+    var map = new Map({
+      basemap: "topo-vector"
+    });
+
+    // this MapView centers on the VB Boardwalk at the King Neptune Statue
+    var view = new MapView({
+      container: "viewDiv",
+      map: map,
+      center: [-75.9773, 36.8606],
+      zoom: 17.75
+    });
+
+// /////////////////////////////////////////////////////////////////////////////
+// FUNCTIONS
+// /////////////////////////////////////////////////////////////////////////////
+
+      // Fills in the area with the specified value a certain color
+      function createFillSymbol(value, color) {
+        return {
+          value: value,
+          symbol: {
+            color: color,
+            type: "simple-fill",
+            style: "solid",
+            outline: {
+              style: "none"
+            }
+          },
+          label: value
+        };
+      }
+
+      // Outlines the polygon with a certain value the specified color
+      function createOutlineSymbol(value, color) {
+        return {
+          value: value,
+          symbol: {
+            color: color,
+            type: "simple-line",
+            style: "solid",
+            outline: {
+              style: "none"
+            }
+          },
+          label: value
+        };
+      }
+
+// /////////////////////////////////////////////////////////////////////////////
+// VB Land Parcels
+// /////////////////////////////////////////////////////////////////////////////
+
+      // vbLandRenderer: colors in only the land parcels with Zip code 23451
+      var vbLandRenderer = {
+        type: "unique-value",
+        field: "ZIP",
+        uniqueValueInfos: [
+          createFillSymbol("23451", "#9E559C"),
+        ]
+      };
+
+      // popupvbLand: creates the pop up for land parcels, shows the Address and whether or
+      //              not there is a restaurant in that parcel
+      var popupvbLand = {
+        "title": "Land Parcel Information",
+        "content": "<b>Address:</b> {PROP_ADDRESS}<br>"
+      }
+
+    // Feature Layer vbLand: Creates the layer and sets the renderer for the land parcel data
+    var vbLand = new FeatureLayer({
+      url: "https://gismaps.vbgov.com/arcgis/rest/services/Basemaps/PropertyInformation_VBgov/MapServer/12",
+      renderer: vbLandRenderer,
+      popupTemplate: popupvbLand,
+      opacity: .30
+    });
+
+    // Add the layer to the map
+    map.add(vbLand,0);
+
+// /////////////////////////////////////////////////////////////////////////////
+// Land Parcel Outlines
+// /////////////////////////////////////////////////////////////////////////////
+
+    // outlineRenderer: outline only those land parcels with a certain PAR_GPIN
+    // These parcels are the only ones that contain restaurants
+    var outlineRenderer = {
+      type: "unique-value",
+      field: "PAR_GPIN",
+      uniqueValueInfos: [
+        createOutlineSymbol("24280246580000", "#9E559C"),
+        createOutlineSymbol("24280331500000", "#9E559C"),
+        createOutlineSymbol("24280323110000", "#9E559C"),
+        createOutlineSymbol("24280324790000", "#9E559C"),
+        createOutlineSymbol("24280265680000", "#9E559C"),
+        createOutlineSymbol("24280273230000", "#9E559C"),
+        createOutlineSymbol("24280270870000", "#9E559C"),
+        createOutlineSymbol("24280351080000", "#9E559C"),
+      ]
+    };
+
+    // Feature Layer vbOutline: Create the layer and set the renderer for the outlining of parcels
+    var vbOutline = new FeatureLayer({
+      url: "https://gismaps.vbgov.com/arcgis/rest/services/Basemaps/PropertyInformation_VBgov/MapServer/12",
+      renderer: outlineRenderer
+    });
+
+    // Add the layer to the map
+    map.add(vbOutline,0);
+
+// /////////////////////////////////////////////////////////////////////////////
+// Restaurant Point Data
+// /////////////////////////////////////////////////////////////////////////////
+
+    // popupRestaurants: creates the pop up, shows the name of restaurant, the type of food,
+    //                   any amenities, and the price rating
+    var popupRestaurants = {
+      "title": "{Restaurant}",
+      "content": "<b>Type of Food:</b> {Type_of_Food}<br><b>Amenities:</b> {Amenities}<br><b>Price:</b> {Price__1_5_}<br>"
+    }
+
+    // restaurantLabels: styles the labels for the name of each restaurant
+    var restaurantLabels = {
+      symbol: {
+        type: "text",
+        color: "#000000",
+        haloColor: "#FFFFFF",
+        haloSize: "1px",
+        font: {
+          size: "12px",
+          family: "Noto Sans",
+          style: "italic",
+          weight: "normal"
+        }
+      },
+      labelPlacement: "above-center",
+      labelExpressionInfo: {
+        expression: "$feature.Restaurant"
+      }
+    };
+
+    // restaurantRenderer: links the image used to represent each restaurant
+    var restaurantRenderer = {
+      "type" : "simple",
+      "symbol": {
+        "type": "picture-marker",
+        "url": "http://static.arcgis.com/images/Symbols/Shapes/BlackPin1LargeB.png",
+        "width": "18px",
+        "height": "18px"
+      }
+    }
+
+    // Feature Layer vbRestaurantPoints: Creates the layer, sets the pop up, labels, and renderer
+    var vbRestaurantPoints = new FeatureLayer({
+      url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Restaurants/FeatureServer",
+      popupTemplate: popupRestaurants,
+      labelingInfo: restaurantLabels,
+      renderer: restaurantRenderer
+    });
+
+    // Add the layer to the map
+    map.add(vbRestaurantPoints,1);
+
+  });
+  </script>
+
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>

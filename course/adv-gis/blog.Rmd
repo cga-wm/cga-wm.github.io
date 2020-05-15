@@ -12,10 +12,11 @@ library(rmarkdown)
 
 get.content <- function(my.meta){
   my.out = ""
-  my.title <- paste(c("<h3>", my.meta$title, "</h3>"), collapse = "")
+  my.title <- paste(c(
+    "<h3>", "<a href='", my.meta$url, "'>", my.meta$title, "</a>", "</h3>"),
+    collapse = "")
   my.date <- paste(c("<h4>", my.meta$date, "</h4>"), collapse = "")
-  my.link <- paste(c(" <a class='intext-link' href='", my.meta$url, "'>Read more</a>."), collapse = "")
-  my.line <- paste(c("<p>", my.meta$summary, my.link, "</p>"), collapse="")
+  my.line <- paste(c("<p>", my.meta$summary, "</p>"), collapse="")
 
   my.out <- paste(c(my.title, my.date, my.line), collapse="\n")
   return(my.out)

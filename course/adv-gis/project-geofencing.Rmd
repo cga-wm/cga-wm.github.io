@@ -67,7 +67,7 @@ So, that's two bits of information to share publicly and two platforms to choose
 
 ***
 
-## An Example Project Outline
+## Example Project Outline
 
 * create your own file geodatabase or create a new hosted feature class
   - if creating a file geodatabase, define fields and domains to assist your field collection
@@ -83,6 +83,4 @@ So, that's two bits of information to share publicly and two platforms to choose
 
 - [Create a Geofence with Arcade](https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html)
 - [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
-
-
-***
+- [Static Image URLs](https://developers.arcgis.com/net/10-2/store/api-reference/html/6a641604-55f8-4173-88ce-9d0c9791db24.htm) (for point features)

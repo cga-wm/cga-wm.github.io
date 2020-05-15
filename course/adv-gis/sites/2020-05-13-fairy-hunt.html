@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>We're Going on a Fairy Hunt</title>
+       <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.15/"></script>
+        <script>
+  require([
+      "esri/Map",
+      "esri/views/MapView",
+    "esri/layers/FeatureLayer"
+    ], function(Map, MapView, FeatureLayer) {
+    var map = new Map({
+      basemap: "topo-vector"
+    });
+    var view = new MapView({
+      container: "viewDiv",
+      map: map,
+      center: [-77.157477,38.854192],
+      zoom: 16.95
+    });
+     var features = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Geofence_Polygons/FeatureServer"
+      });
+      map.add(features);
+    var popuparea = {
+        "title": "{Name}",
+        "content": "<p> You have arrived at the {Name}. {Hint} Beware! This path has a danger level of <b>{Danger_Level}."
+      }
+      var area = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Geofence_Polygons/FeatureServer",
+        outFields: ["Name"],
+        popupTemplate: popuparea
+      });
+      map.add(area);
+  });
+  </script>
+    <style>
+      html, body, #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>

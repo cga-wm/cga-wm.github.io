@@ -1,0 +1,158 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Iam Thompson">
+  <meta name="description" content="Advanced GIS geofencing project">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Geofencing with Fishing</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.14/"></script>
+
+  <script>
+    require([
+        "esri/Map",
+        "esri/views/SceneView",
+        //"esri/views/MapView",
+        "esri/widgets/Search",
+        "esri/widgets/Locate",
+        "esri/widgets/Track",
+        "esri/Graphic",
+        "esri/layers/GraphicsLayer",
+        "esri/layers/FeatureLayer"
+    ], function(Map, SceneView, Search, Locate, Track, Graphic, GraphicsLayer, FeatureLayer) {
+
+      var map = new Map({
+      basemap: "topo-vector",
+      ground: "world-elevation"  // show elevation
+    });
+
+  //     var view = new MapView({
+  //     container: "viewDiv",
+  //     map: map,
+  //     center: [-76.821749, 37.287335], // longitude, latitude(37.287335,-76.821749)-118.80500, 34.02700
+  //     zoom: 13
+  //
+  // });37.268415,-76.821284
+
+
+      var view = new SceneView({
+      container: "viewDiv",
+      map: map,
+      camera: {
+        position: {  // observation point
+          x: -76.821284,
+          y: 37.268415,
+          z: 900 // altitude in meters
+        },
+        tilt: 65  // perspective in degrees
+  }
+});
+
+     const searchWidget = new Search({
+     view: view
+    });
+// Adds the search widget below other elements in
+// the top left corner of the view
+    view.ui.add(searchWidget, {
+      position: "top-right",
+      index: 2
+});
+     var point = {
+         type: "point",
+         longitude: -118.80657463861,
+         latitude: 34.0005930608889
+       };
+
+      var simpleMarkerSymbol = {
+         type: "simple-marker",
+         color: [226, 119, 40],  // orange
+         outline: {
+          color: [255, 255, 255], // white
+          width: 1
+         }
+       };
+
+      var pointGraphic = new Graphic({
+         geometry: point,
+         symbol: simpleMarkerSymbol
+       });
+
+       var locate = new Locate({
+        view: view,
+        useHeadingEnabled: false,
+        goToOverride: function(view, options) {
+          options.target.scale = 1500;  // Override the default map scale
+          return view.goTo(options.target);
+        }
+      });
+
+      var track = new Track({
+        view: view,
+        graphic: new Graphic({
+          symbol: {
+            type: "simple-marker",
+            size: "12px",
+            color: "green",
+            outline: {
+              color: "#efefef",
+              width: "1.5px"
+            }
+          }
+        }),
+        useHeadingEnabled: false  // Don't change orientation of the map
+      });
+
+      var popupFishPt = {
+        "title": "{type}",
+        "content": "<b>Fish:</b> {type}<br><b>Weight:</b> {weight} <b>lbs</b><br><b>Lure:</b> {Lure}<br><b>Pond:</b> {pond_name}"
+      }
+      var fishPoints = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Thompson_advgis_proj2_WFL1/FeatureServer/0",
+        popupTemplate: popupFishPt
+      });
+
+      var popupPonds = {
+        "title": "{NAME}",
+        "content": "<b># Fish: </b>{Join_Count}<br><b>Avg Fish Weight: </b>{mean_fish_weight}<b>lbs</b>"
+      }
+      var pondsLayer = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Thompson_advgis_proj2_WFL1/FeatureServer/2",
+        popupTemplate: popupPonds
+      });
+      var routesLayer = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Thompson_advgis_proj2_WFL1/FeatureServer/1"
+     });
+
+      map.add(fishPoints);
+      map.add(routesLayer, 0);
+
+      map.add(pondsLayer, 0);
+
+      //map.add(trailheadsLayer);
+
+
+      view.ui.add(track, "top-left");
+      view.ui.add(locate, "top-left");
+
+      var graphicsLayer = new GraphicsLayer();
+      map.add(graphicsLayer);
+      graphicsLayer.add(pointGraphic);
+
+    });
+
+
+  </script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>

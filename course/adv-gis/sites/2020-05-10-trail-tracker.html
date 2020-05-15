@@ -1,0 +1,145 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Henry Rosalsky">
+  <meta name="description" content="Advanced GIS geofencing project">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Trail Tracker</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.15/"></script>
+
+  <script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+      "esri/Graphic",
+      "esri/geometry/geometryEngine",
+      "esri/widgets/Locate"
+    ], function(Map, MapView, FeatureLayer, Graphic, geometryEngine, Locate) {
+
+      var map = new Map({
+        basemap: "topo-vector"
+      });
+
+      var view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [-74.90800, 41.17300],
+        zoom: 16
+      });
+
+      var popup={
+        content: "This is {NAME}."
+      };
+
+      var trails = new FeatureLayer({
+        url: "https://services1.arcgis.com/7CPYy0u5Z9IAJ2OG/arcgis/rest/services/Geofence_Project/FeatureServer/1",
+        outFields:["NAME"],
+        //popupTemplate:popup
+      });
+      map.add(trails);
+
+
+      var stime;
+      var etime;
+      var activeGraphic;
+      var start;
+
+      function findNearestGraphic(event) {
+        return view.hitTest(event).then(function (response) {
+          var graphic, filteredResult;
+          // Get the Trail graphics only
+          if (response.results.length) {
+            filteredResult = response.results.filter(function (result) {
+              return (result.graphic.layer === trails);
+            })[0];
+          }
+          // Only return new graphics are found
+          if (filteredResult) {
+            graphic = filteredResult.graphic;
+            if (!activeGraphic || (activeGraphic.attributes.OBJECTID !== graphic.attributes.OBJECTID)) {
+              if(stime == null){
+                stime = new Date();
+                start = graphic.attributes.NAME;
+              }
+              else if(graphic.attributes.NAME !== start){
+                etime = new Date();
+                var elapsed = (((etime - stime)/1000));
+                var seconds = elapsed%60;
+                var minutes = Math.floor((elapsed/60)%60);
+                var hours = Math.floor((elapsed/3600)%60);
+                window.alert("This hike was "+hours+":"+minutes+":"+ seconds);
+                stime = null;
+              }
+              return graphic;
+            } else {
+              return null;
+            }
+          } else {
+            return null;
+          }
+        });
+      }
+      var bufferGraphic;
+
+      function drawBuffer(bufferGeometry) {
+        view.graphics.remove(bufferGraphic);
+        bufferGraphic = new Graphic({
+          geometry: bufferGeometry,
+          symbol: {
+            type: "simple-fill",
+            color: "rgba(0,0,0,0)",
+            outline: {
+              color: "rgba(0,0,0,.5)",
+              width: 3
+            }
+          }
+        });
+        view.graphics.add(bufferGraphic);
+      }
+
+      view.on("pointer-move", function(event){
+        findNearestGraphic(event).then(function(graphic){
+          if (graphic) {
+            activeGraphic = graphic;
+            var buffer = geometryEngine.geodesicBuffer(activeGraphic.geometry, 40, "feet");
+            drawBuffer(buffer);
+
+            if(Intersects(navigator.geolocation.getGetCurrentPos, buffer)){
+            }
+          }
+        });
+      });
+
+      var locate = new Locate({
+        view: view,
+        useHeadingEnabled: false,
+        goToOverride: function(view, options) {
+          options.target.scale = 3000;  // Override the default map scale
+
+          return view.goTo(options.target);
+        }
+      });
+
+      view.ui.add(locate, "top-left");
+      function getCurrentPos(location){
+        var pt = webMercatorUtils.geographicToWebMercator(new Point(location.coords.longitude, location.coords.latitude));
+        return pt;
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>
