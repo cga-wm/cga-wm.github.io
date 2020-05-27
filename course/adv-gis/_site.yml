@@ -5,12 +5,11 @@ navbar:
     right:
         - text: Projects
           menu:
-            - text: "Landslides"
-              href: project-landslides.html
-            - text: "Geofencing"
-              href: project-geofencing.html
-        - text: Calendar
-          href: calendar.html
+          - text: TBA
+        - text: Syllabus
+          menu:
+          - text: Spring 2020
+            href: syllabus/index.html
         - text: Blog
           href: blog.html
         - text: CGA-WM
