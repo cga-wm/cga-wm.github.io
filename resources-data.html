@@ -23,13 +23,29 @@
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script>
-function myFunction() {
+
+function search(items, terms) {
+  // Check that each search term is found within list of items:
+  var found = true;
+  for (var i = 0; i < terms.length; i++) {
+    var sresults = [];
+    for (var j = 0; j < items.length; j++) {
+      sresults.push(items[j].indexOf(terms[i]) > -1);
+    }
+    found = (found && sresults.includes(true));
+  }
+  return found;
+}
+
+
+function updateSheet() {
   // Declare variables
   var txtValue;
   var dd;
   var dt;
   var input = document.getElementById("myInput");
-  var filter = input.value.toLowerCase();
+  var filterText = input.value.toLowerCase();
+  var filter = filterText.split(" ");
   var dl = document.getElementsByTagName("dl")[0];
   var dts = dl.getElementsByTagName('dt');
   var dds = dl.getElementsByTagName('dd');
@@ -41,8 +57,11 @@ function myFunction() {
     dt = dts[i];
     if (dt) {
       txtValue = dt.textContent || dt.innerText;
+      txtValue += " ";
       txtValue += dd.textContent || dd.innerText;
-      if (txtValue.toLowerCase().indexOf(filter) > -1) {
+      txtValue = txtValue.toLowerCase().replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-.\/:;<=>?@\[\]^_`{|}~]/g,"");
+
+      if ((filterText == '') || (search(txtValue.split(" "), filter))) {
         dd.style.display = "";
         dt.style.display = "";
       } else {
@@ -351,7 +370,7 @@ $(document).ready(function () {
                       -->
 <div class="search-bar" style="border:1px solid #DDD; width:396px;">
 <p style="margin:5px;">
-<i class="icon fa fa-search"></i> <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..." style="border:none; padding:0; width:365px;">
+<i class="icon fa fa-search"></i> <input type="text" id="myInput" onkeyup="updateSheet()" placeholder="Search..." style="border:none; padding:0; width:365px;">
 </p>
 </div>
 <!--

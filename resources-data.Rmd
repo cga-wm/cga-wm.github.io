@@ -15,7 +15,7 @@ output:
 <div class="search-bar" style="border:1px solid #DDD; width:396px;">
 <p style="margin:5px;">
 <i class="icon fa fa-search"></i>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..." style="border:none; padding:0; width:365px;">
+<input type="text" id="myInput" onkeyup="updateSheet()" placeholder="Search..." style="border:none; padding:0; width:365px;">
 </p>
 </div>
 
