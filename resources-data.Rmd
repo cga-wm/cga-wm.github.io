@@ -1,5 +1,5 @@
 ---
-title: Data
+title: "Resources | Data"
 output:
   html_document:
     includes:
