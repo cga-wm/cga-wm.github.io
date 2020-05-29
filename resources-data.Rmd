@@ -4,6 +4,7 @@ output:
   html_document:
     includes:
       in_header: searchjs.html
+      after_body: footer.html
 ---
 
 ***
