@@ -1,0 +1,31 @@
+<script>
+function myFunction() {
+  // Declare variables
+  var txtValue;
+  var dd;
+  var dt;
+  var input = document.getElementById("myInput");
+  var filter = input.value.toLowerCase();
+  var dl = document.getElementsByTagName("dl")[0];
+  var dts = dl.getElementsByTagName('dt');
+  var dds = dl.getElementsByTagName('dd');
+
+  // Loop through all terms and definitions
+  // and hide those who don't match the search query
+  for (var i = 0; i < dds.length; i++) {
+    dd = dds[i];
+    dt = dts[i];
+    if (dt) {
+      txtValue = dt.textContent || dt.innerText;
+      txtValue += dd.textContent || dd.innerText;
+      if (txtValue.toLowerCase().indexOf(filter) > -1) {
+        dd.style.display = "";
+        dt.style.display = "";
+      } else {
+        dd.style.display = "none";
+        dt.style.display = "none";
+      }
+    }
+  }
+}
+</script>
