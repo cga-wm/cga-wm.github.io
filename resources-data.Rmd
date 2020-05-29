@@ -74,7 +74,7 @@ output:
 [ISRIC SOTER Database](https://www.isric.org/projects/soil-and-terrain-soter-database-programme)
 :   Soil and terrain maps for South America, Africa (parts), Europe (parts), and Asia (parts) from 1986 to 2016.
 
-[National Land Cover Database](https://www.mrlc.gov/index.php)
+[National Land Cover Database (NLDC)](https://www.mrlc.gov/index.php)
 :   Provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
 
 [Natural Earth](http://www.naturalearthdata.com/)
@@ -109,7 +109,7 @@ output:
 :   Esri shapefile for the major continent boundaries provided from the Archival Policies and Collections Database for the Woods Hole Science Center's Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0 ([Buczkowski & Kelsey, 2007](http://pubs.usgs.gov/of/2006/1187/)).
 
 [USGS The National Map](https://www.usgs.gov/core-science-systems/ngp/tnm-delivery/)
-:   GIS data download and visualization services.
+:   GIS data download and visualization services provided by the U.S. Geological Survey.
 
 [Virginia GIS Clearinghouse](https://vgin.maps.arcgis.com/home/index.html)
-:   a repository of geospatial data produced and used by state agencies in Virginia (see Virginia Geospatial Clearinghouse Nodes for open data portals of every available county or municipality in Virginia).
+:   A repository of geospatial data produced and used by state agencies in Virginia (see Virginia Geospatial Clearinghouse Nodes for open data portals of every available county or municipality in VA).
