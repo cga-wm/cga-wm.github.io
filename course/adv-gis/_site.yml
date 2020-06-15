@@ -10,8 +10,6 @@ navbar:
           menu:
           - text: Spring 2020
             href: syllabus/advgis-ay1920-spring-syllabus.html
-          - text: Summer 2020
-            href: syllabus/index.html
         - text: Blog
           href: blog.html
         - text: CGA-WM

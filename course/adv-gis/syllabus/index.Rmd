@@ -1,7 +1,7 @@
 ---
 title: "Syllabus | Advanced GIS Analysis and Programming"
 author: "Center for Geospatial Analysis"
-date: "Spring 2020"
+date: "Summer 2020"
 ---
 
 ****
@@ -10,7 +10,7 @@ Course Description
 ==================
 
 This course extends the existing base of GIS knowledge and skills by amplifying programmatic approaches to spatial data and analysis.
-Lectures, labs, and projects emphasize GIS model development, develop spatial database architecture and design best practices, and extend knowledge of web GIS by authoring and consuming geographic web services.
+Lectures, labs, and projects emphasize GIS model development, spatial database architecture and design best practices, and extend knowledge of web GIS by authoring and consuming geographic web services.
 Students will become familiar with methods of leveraging programming languages (such as Python) to make GIS processing easier, faster, and more accurate by scripting and automating data management, production, manipulation, and analysis procedures.
 Activities develop GIS analysis skills with examples from government, social science, physical science, and the humanities.
 
@@ -18,7 +18,7 @@ Catalog Number
 
 :   - GIS 420 / 520
     - Section 1
-    - CRN 23058 / 24143
+    - CRN 31963 / 32125
 
 Prerequisites
 
@@ -26,16 +26,15 @@ Prerequisites
 
 Semester
 
-:   - Spring 2020 (22 Jan 2020--13 May 2020)
+:   - Summer 2020 (06 Jul 2020--07 Aug 2020)
 
-Building
+Location
 
-:   - [Swem Library](https://www.wm.edu/about/visiting/campusmap/location/swem.php)
+:   - This course is taught online.
 
 Class Times and Room Assignments
 
-:   - Swem Library 215 (CGA Classroom)
-    - M 1800--2050
+:   - Mo--Th 1010--1200 (*aspects of this class will be delivered asynchronously*)
 
 Instructor
 
@@ -47,9 +46,7 @@ Instructor
 
 Office Hours
 
-:   - Posted on the web (see instructor website)
-    - Open-door policy (walk-ins welcome)
-    - Priority to appointments (please [email me](mailto:twdavis@wm.edu))
+:   - By appointment
 
 Textbook
 
@@ -57,11 +54,13 @@ Textbook
 
 Course Materials
 
-:   - Laptop (*recommended*)
+:   - Laptop or desktop computer (*required*)
 
-        \* _Your laptop should have at least 500 MB of free disk space, have at least 8 GB of memory, and run a modern desktop OS (e.g,. PC, Mac, or Linux)._
+        \* _Your computer should have at least 500 MB of free disk space, have at least 8 GB of memory, and run a modern desktop OS (e.g,. PC, Mac, or Linux); netbooks need not apply._
       <!-- For Summer/Fall change to 32 GB or larger -->
-    - Dedicated USB thumb drive 8 GB or larger (*required*)
+    - Dedicated USB thumb drive 32 GB or larger (*recommended*)
+
+        \* _Organizing your data and maintaining a backup can save you from serious misfortune; I know from experience._
 
 Technology
 
