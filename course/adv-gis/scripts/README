@@ -22,3 +22,6 @@ See below for the file list and descriptions.
 
 ### shp_zipper.py
 * A python script for conveniently zipping shapefiles.
+
+### web_scrub.py
+* A python script for scrubbing polling locations from web content
