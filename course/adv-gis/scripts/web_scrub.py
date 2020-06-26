@@ -2,18 +2,32 @@
 #
 # web_scrub.py
 #
-# VERSION 1.0
+# VERSION 2.0
 # AUTHOR: Tyler W. Davis, CGA, William & Mary
-# LAST EDIT: 2020-06-24
+# LAST EDIT: 2020-06-26
 #
-# This script reads polling station attribute data from a government website
-# for the purposes of geospatial analysis.
+# This script reads polling station addresses and associated attribute data
+# from a government website (state of KY) for the purposes of geocoding.
+# In present form, the script saves the address data as a tab-separated text
+# and utilizes geopy's ArcGIS geocoder for geocoding addresses.
+# The geocoder requires a token saved to a text file (see documentation).
 #
 # This script uses third-party packages including the following:
 #     bs4 v.4.8.2 (https://www.crummy.com/software/BeautifulSoup/)
+#     geopy 1.21.0 (https://geopy.readthedocs.io/)
 # To install these on your machine, either read the docs or try the following:
 #     pip install beautifulsoup4
+#     pip install geopy
 #
+# NOTE: for use with ArcGIS Notebook, you can replace geopy with arcgis,
+# see website below for details.
+# https://developers.arcgis.com/python/guide/understanding-the-geocode-function/
+#
+##############################################################################
+# GLOBAL VARIABLES
+##############################################################################
+TO_GEOCODE = False
+
 ##############################################################################
 # REQUIRED MODULES
 ##############################################################################
@@ -22,6 +36,8 @@ import re
 import urllib.request
 
 from bs4 import BeautifulSoup
+import geopy
+from geopy.geocoders import ArcGIS
 
 ##############################################################################
 # FUNCTIONS
@@ -75,6 +91,35 @@ def find_address(addr_tag):
             my_out = [addr_street, addr_city, addr_state, addr_zip]
 
     return my_out
+
+
+def geocoder(q):
+    """
+    Name:     geocoder
+    Inputs:   str, geocoder query (q)
+    Outputs:  tuple, longitude and latitude
+    Features: Returns coordinates from a geocoder query
+    Ref:      For creating an ArcGIS API token, see here:
+              https://developers.arcgis.com/rest/geocode/api-reference/geocoding-authenticate-a-request.htm
+    """
+    # Get ArcGIS application token from file:
+    token_file = r"C:\Workspace\AdvGIS\advgis-wm.token"
+    my_token = ""
+    with open(token_file) as f:
+        my_token = f.readline()
+
+    # Create geopy object
+    gc = ArcGIS()
+    gc.token = my_token
+
+    # See if you get anything:
+    try:
+        a = gc.geocode(q)
+        my_out = (a.longitude, a.latitude)
+    except:
+        my_out = ("N/A", "N/A")
+
+    return (my_out)
 
 
 def writeline(f, d):
@@ -155,7 +200,7 @@ if __name__ == '__main__':
     my_path = os.path.join(my_dir, my_doc)
 
     # Before we begin parsing the web content, let's set up the output file.
-    my_out = "ky_polling_parsed.csv"
+    my_out = "ky_polling_parsed.txt"
     out_path = os.path.join(my_dir, my_out)
 
     # Create a headerline and save to a new file:
@@ -212,16 +257,23 @@ if __name__ == '__main__':
                     my_city = my_abs_scsz[1]
                     my_state = my_abs_scsz[2]
                     my_zip = my_abs_scsz[3]
+                    if TO_GEOCODE:
+                        my_lon, my_lat = geocoder(
+                            ", ".join([my_street, my_city, my_state])
+                        )
                 else:
                     print("Failed to find address for %s" % (my_name))
                     my_street = "N/A"
                     my_city = "N/A"
                     my_state = "KY"
                     my_zip = "N/A"
+                    my_lat = "N/A"
+                    my_lon = "N/A"
 
                 # Write line to file:
-                my_parts = [my_county, my_type, my_name, my_street, my_city,
-                            my_state, my_zip, my_time, my_lon, my_lat]
+                my_parts = [my_county, my_type, my_name, my_street,
+                            my_city, my_state, my_zip, my_time,
+                            str(my_lon), str(my_lat)]
                 my_line = "\t".join(my_parts)
                 my_line += "\n"
                 writeline(out_path, my_line)
@@ -243,16 +295,23 @@ if __name__ == '__main__':
                     my_city = my_scsz[1]
                     my_state = my_scsz[2]
                     my_zip = my_scsz[3]
+                    if TO_GEOCODE:
+                        my_lon, my_lat = geocoder(
+                            ", ".join([my_street, my_city, my_state])
+                        )
                 else:
                     print("Failed to find address for %s" % (my_name))
                     my_street = "N/A"
                     my_city = "N/A"
                     my_state = "KY"
                     my_zip = "N/A"
+                    my_lat = "N/A"
+                    my_lon = "N/A"
 
                 # Write line to file:
-                my_parts = [my_county, my_type, my_name, my_street, my_city,
-                            my_state, my_zip, my_time, my_lon, my_lat]
+                my_parts = [my_county, my_type, my_name, my_street,
+                            my_city, my_state, my_zip, my_time,
+                            str(my_lon), str(my_lat)]
                 my_line = "\t".join(my_parts)
                 my_line += "\n"
                 writeline(out_path, my_line)
