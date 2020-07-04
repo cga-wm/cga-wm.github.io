@@ -11,10 +11,28 @@ author: "The Electioneering Project"
 - Performance Review Worksheet ([.gdoc][prwgdoc])
 - Evaluation Sign-Up Sheet ([.gdoc][esus1])
 
-You have been hired as a GIS expert to consult in analyzing geospatial data associated with Election 2020 for the new president of the United States.
+Welcome to Advanced GIS Consulting!
 
-Questions have arisen regarding the geoethics of the election process (i.e., electioneering).
-Your goal is to either strengthen or weaken the argument that there are any prejudices or discriminatory practices taking place regarding the election.
+You are now a team member in our organization that specializes in providing a variety of geospatial solutions.
+As a part of this summer internship program, you are expected to:
+
+* develop advanced geospatial skills and techniques
+* work collaboratively with your team to solve the main three projects along with any "special works" that may come up while you are here
+* maintain a log/report of everything *you* do (including any research, development, analysis, and collaborations)
+* communicate with your supervisor and team members using remote/web-based technology
+* meet with your supervisor three times: 1) during the first week to overview the Performance Review Worksheet and the expectations for the Performance Accomplishments; 2) during or just following the third week to report on project progress; and 3) at or near the end of the summer session for the oral evaluation of your performance accomplishments
+* ask questions and make mistakes
+* uphold professionalism in everything you do
+
+[esus1]: #
+[prwgdoc]: #
+[pagdoc]: #
+
+
+## Electioneering
+
+Questions have arisen regarding the geoethics associated with Election 2020 for the new president of the United States.
+Your goal is to either strengthen or weaken the argument that there are any prejudices or discriminatory practices taking place regarding the election (e.g., electioneering).
 
 For this project, you will keep an ArcGIS Notebook [(pdf)](https://community.esri.com/servlet/JiveServlet/downloadBody/13764-102-3-22953/agol_notebooks.pdf) of your findings and analyses.
 You will save/export your notebook as an HTML document to be shared across the web with your client.
@@ -33,10 +51,6 @@ In order to accomplish this task, you will need to learn [Markdown](https://cola
 
 ***
 
-
-[esus1]: #
-[prwgdoc]: #
-[pagdoc]: #
 
 ***
 
