@@ -1,0 +1,8 @@
+## Shark Attack
+
+Questions have arisen regarding the geoethics associated with sharks.
+Your goal is to find factual information in support of or debunking myths about shark attacks.
+
+For this project, you will keep an ArcGIS Notebook [(pdf)](https://community.esri.com/servlet/JiveServlet/downloadBody/13764-102-3-22953/agol_notebooks.pdf) of your findings and analyses.
+You will save/export your notebook as an HTML document to be shared across the web with your client.
+In order to accomplish this task, you will need to learn [Markdown](https://colab.research.google.com/notebooks/markdown_guide.ipynb) and Python scripting in a Jupyter notebook style setting, for which this class will prepare you.

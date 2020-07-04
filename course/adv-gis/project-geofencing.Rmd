@@ -1,32 +1,19 @@
----
-title: "Web Applications"
-author: "The Geofencing Project"
----
+## Geofencing
 
-***
-
-**Evaluations will begin on Tuesday, 5 May 2020. Please join me for end-of-year commiseration starting at 7 PM.**
-
-- Performance Accomplishments Write-Up ([.gdoc][pawgdoc]) **&#8592; please email completed form to professor at least 24 hours before your scheduled evaluation time**
-- Performance Review Worksheet ([.gdoc][prwgdoc])
-- Evaluation Sign-Up Sheet ([.gdoc][esus1])
-
-[esus1]: https://docs.google.com/spreadsheets/d/1_0FP0fRHuniI3wL1UyGTFopvj-Hi6Y4RPPkbMHkJyY0/edit?usp=sharing
-[pawgdoc]: https://docs.google.com/document/d/1y7-1g3Z9tL8fBBC9aDsR2ZMHKs1XjuRwEc6tWsdDGro/edit?usp=sharing
-[prwgdoc]: https://docs.google.com/document/d/132WVyFJaoyzj_wyNxK9ZMwGgLLnq_FtTw8vWmsNly-s/edit?usp=sharing
-
-***
+#### The Scenario
 
 Geofence
 : a virtual perimeter surrounding a real-world area
 
-Given this basic definition, we can assume a geofence can be imaged as a polygon that we define over a particular location.
-Furthermore, we can assume that for any given coordinates (lon, lat), those coordinates exist either **within** our **outside** our geofence.
-Because this operation (determining if a location is within a geofence) returns a true or false state (i.e., state of being), we can use this to trigger events (e.g., if someone's location service places them in a particular location that happens to be within a geofence).
+Given this basic definition, we can imagine a geofence as a polygon that we draw over a particular location (a polygon being a series of coordinates where the starting and ending node are the same location such that it defines an enclosed area).
+Furthermore, we can assume that for any given coordinate pair (longitude, latitude), it can be described as either existing **within** our **outside** our geofence.
+Because this operation (determining if a location is within a geofence) returns a true or false state of being, we can use this to trigger events (e.g., if someone's location service places them in a particular location that happens to be within a geofence, then do something).
 
-In this second scenario, the goal for this class is to create a web app that tells a story as the app user travels through a given area.
-With the app open, if the user enters one of your defined geofences, information will appear (e.g., to help guide them to the next geofence area).
-Obviously, we don't want large polygons on a map that they are trying to find, but rather a story that unfolds as they traverse across a given landscape.
+In this scenario, you have been asked to develop a web app that tells a story as the app user travels through a given area.
+You may assume that the app will run on someone's mobile device with location services available.
+You are free to define the area (or extent) of where your app works and how the app with interact with its intended user.
+
+Your client wants to see a storyboard (hand-drawn or computer drafted) of your idea and your supervisor wants to see a sequence diagram (or flowchart) of how the user interacts with your app (see diagram drawing resources below).
 
 ***
 
@@ -42,7 +29,8 @@ See if you can find other examples.
 To create a geofence, I would like you to do some field data collection.
 Let's try to utilize either [Collector][collector] or [QuickCapture][quickcap] for field collection of features.
 
-Before we collect features in the field, we need a feature service, which I would like this as an opportunity for you to create your own field geodatabase and design **fields** and **domains** to assist your feature collection.
+Before we collect features in the field, we need a feature service.
+I would like this as to be an opportunity for you to create your own file geodatabase and design **fields** and **domains** to assist your feature collection.
 
 To create the geofencing app, one possibility is the Arcade/Javascript method, shown in this [Geofencing app example][geofexample].
 
@@ -50,11 +38,11 @@ To create the geofencing app, one possibility is the Arcade/Javascript method, s
 
 #### The Communication
 
-In this scenario, I would like each of you to communicate one thing you learn while attempting this project as either a vlog or a podcast.
-It should be informative and professional, similar to the "how to" instructions you produced in the first part of the class.
+In this scenario, I would like each of you to communicate one thing you learn while working on this project as either a vlog or a podcast; it should be informative and professional.
 
-Additionally, I'd like each of you to share an ethics problem (or solution) that relates to geofencing one these platforms.
-It should reference a real-world scenario, requires citation, and a discussion based on your thoughts and opinions.
+Additionally, I'd like each of you to share an ethics problem (or solution) that relates to geofencing.
+You may choose between a vlog or a podcast.
+It should reference a real-world scenario and requires citation and discussion based on your thoughts and opinions.
 Ideally, you should have a belief before researching a topic or scenario.
 From your research, your discussion should include whether or not your original belief was changed or enforced.
 
@@ -81,6 +69,7 @@ So, that's two bits of information to share publicly and two platforms to choose
 
 ## Resources
 
+- [Draw Diagrams with Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown/)
 - [Create a Geofence with Arcade](https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html)
 - [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
 - [Static Image URLs](https://developers.arcgis.com/net/10-2/store/api-reference/html/6a641604-55f8-4173-88ce-9d0c9791db24.htm) (for point features)

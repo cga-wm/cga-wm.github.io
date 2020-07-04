@@ -1,0 +1,39 @@
+---
+title: "Summer Session"
+---
+
+# {.tabset}
+
+## Overview
+
+- Performance Review Worksheet ([.gdoc][prwgdoc])
+- Evaluation Sign-Up Sheet ([.gdoc][esus1])
+
+Welcome to Advanced GIS Consulting!
+
+You are now a team member in our organization that specializes in providing a variety of geospatial solutions.
+As a part of this summer internship program, you are expected to:
+
+* develop advanced geospatial skills and techniques
+* work collaboratively with your team to solve the main three projects along with any "special works" that may come up while you are here
+* maintain a log/report that outlines *everything* you do (including any research, development, analysis, and collaboration) and approximately how long it took you to do it
+* communicate with your supervisor and team members using remote/web-based technology
+* meet with your supervisor three times:
+    1. during the first week to overview the Performance Review Worksheet and the expectations for the Performance Accomplishments;
+    2. during or just following the third week to report on your progress; and
+    3. at or near the end of the summer session for the oral evaluation of your performance accomplishments
+* ask questions and make mistakes
+* uphold professionalism in everything you do
+
+[esus1]: #
+[prwgdoc]: #
+
+
+```{r shark, child = 'project-shark.Rmd'}
+```
+
+```{r electioneering, child = 'project-electioneering.Rmd'}
+```
+
+```{r geofencing, child = 'project-geofencing.Rmd'}
+```
