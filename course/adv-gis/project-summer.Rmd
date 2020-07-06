@@ -15,14 +15,13 @@ Welcome to Advanced GIS Consulting Summer Program!
 
 You are now a team member in our organization that specializes in providing a variety of geospatial solutions to some very esteemed clients.
 
-<!--
 Watch the introductory video by our head consultant, Dr. Tyler W. Davis.
 
-![Video Coming](# "TBA")
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f_3EM89Zynw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
--->
-
-As a part of this summer internship program, you are expected to:
+As a part of this summer program, you are expected to:
 
 * develop advanced geospatial skills and techniques
 * work collaboratively with your team to solve the main three projects along with any "special works" that may come up while you are here
