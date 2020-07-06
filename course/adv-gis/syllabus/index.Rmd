@@ -105,11 +105,12 @@ Technology
 :   - Geospatial visualizations and analysis may be handled using any of the following:
         - The latest stable release or the university's current installed versions of Esri's [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources) or [ArcMap](https://www.esri.com/en-us/arcgis/products/arcgis-desktop/resources)
 
-        \* _ArcGIS Pro may be installed on individual computers for Microsoft Windows users only (see [here](https://www.wm.edu/as/cga/arcgis-licensing/index.php) for instructions). ArcGIS Pro may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
-        \* _ArcMap (a part of ArcGIS Desktop) is being phased out. If GIS is in your future, you may wish to consider migrating to ArcGIS Pro._
+            \* _ArcGIS Pro may be installed on individual computers for Microsoft Windows users only (see [here](https://www.wm.edu/as/cga/arcgis-licensing/index.php) for instructions). ArcGIS Pro may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
+
+            \* _ArcMap (a part of ArcGIS Desktop) is being phased out. If GIS is in your future, you may wish to consider migrating to ArcGIS Pro._
         - The latest stable release or the university's current installed version of [QGIS Desktop](https://www.qgis.org/en/site/)
 
-        \* _QGIS may be downloaded and installed on all major OS's (see [here](https://www.qgis.org/en/site/) for instructions). QGIS may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
+            \* _QGIS may be downloaded and installed on all major OS's (see [here](https://www.qgis.org/en/site/) for instructions). QGIS may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
         - [ArcGIS Online](https://www.arcgis.com) (*see [here](https://youtu.be/x07Xyoe0d2k) for login instructions*).
         - ArcGIS Notebooks
 
@@ -304,7 +305,7 @@ Last day of term
 :   - 07 August 2020
 
 Final grades deadline
-:   14 August 2020 (1200 noon)
+:   - 14 August 2020 (1200 noon)
 
 Final evaluations
 :   - Final evaluations must be scheduled with your instructor on or before 13 August 2020

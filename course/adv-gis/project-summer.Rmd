@@ -41,9 +41,13 @@ As a part of this summer program, you are expected to:
 
 - Join "AdvGIS - Su2020" GroupMe chat
 - Join "AdvGIS - Summer 2020" ArcGIS Online group
-- Join "adv-gis" GitHub team
+- Join "adv-gis" GitHub team (*notify your instructor of your GitHub username*)
+- Read the syllabus/watch the video
+- Read Ben Balter's ["15 rules for communicating at GitHub"](https://ben.balter.com/2014/11/06/rules-of-communicating-at-github/)
+- Subscribe to the [Advanced GIS | Summer 2020 YouTube Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMPKtzAT_cfdge7JYdebm42A)
 - Respond to the discussion "Introduce Yourself" found on GitHub
-
+- Respond to the first discussion topic on GitHub
+- Review the Performance Accomplishments and Performance Review Worksheet (*shared with you via Google Drive*)
 
 ```{r shark, child = 'project-shark.Rmd'}
 ```
