@@ -5,9 +5,12 @@ navbar:
     right:
         - text: Projects
           menu:
-          - text: TBA
+          - text: Summer 2020
+            href: project-summer.html
         - text: Syllabus
           menu:
+          - text: Summer 2020
+            href: syllabus/index.html
           - text: Spring 2020
             href: syllabus/advgis-ay1920-spring-syllabus.html
         - text: Blog

@@ -1,4 +1,8 @@
-## Geofencing
+---
+title: Geofencing
+---
+
+## Project C
 
 #### The Scenario
 
@@ -55,7 +59,7 @@ So, that's two bits of information to share publicly and two platforms to choose
 
 ***
 
-## Example Project Outline
+#### Example Project Outline
 
 * create your own file geodatabase or create a new hosted feature class
   - if creating a file geodatabase, define fields and domains to assist your field collection
@@ -67,7 +71,7 @@ So, that's two bits of information to share publicly and two platforms to choose
 
 ***
 
-## Resources
+#### Resources
 
 - [Draw Diagrams with Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown/)
 - [Create a Geofence with Arcade](https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html)

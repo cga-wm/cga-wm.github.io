@@ -1,4 +1,10 @@
-## Shark Attack
+---
+title: Shark Attack
+---
+
+## Project A
+
+#### The Scenario
 
 Questions have arisen regarding the geoethics associated with sharks.
 Your goal is to find factual information in support of or debunking myths about shark attacks.

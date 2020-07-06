@@ -6,12 +6,22 @@ title: "Summer Session"
 
 ## Overview
 
+<!--
 - Performance Review Worksheet ([.gdoc][prwgdoc])
 - Evaluation Sign-Up Sheet ([.gdoc][esus1])
+-->
 
-Welcome to Advanced GIS Consulting!
+Welcome to Advanced GIS Consulting Summer Program!
 
-You are now a team member in our organization that specializes in providing a variety of geospatial solutions.
+You are now a team member in our organization that specializes in providing a variety of geospatial solutions to some very esteemed clients.
+
+<!--
+Watch the introductory video by our head consultant, Dr. Tyler W. Davis.
+
+![Video Coming](# "TBA")
+
+-->
+
 As a part of this summer internship program, you are expected to:
 
 * develop advanced geospatial skills and techniques
@@ -27,6 +37,13 @@ As a part of this summer internship program, you are expected to:
 
 [esus1]: #
 [prwgdoc]: #
+
+### Getting Started Checklist
+
+- Join "AdvGIS - Su2020" GroupMe chat
+- Join "AdvGIS - Summer 2020" ArcGIS Online group
+- Join "adv-gis" GitHub team
+- Respond to the discussion "Introduce Yourself" found on GitHub
 
 
 ```{r shark, child = 'project-shark.Rmd'}

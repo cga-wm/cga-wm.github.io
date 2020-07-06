@@ -1,4 +1,10 @@
-## Electioneering
+---
+title: Electioneering
+---
+
+## Project B
+
+#### The Scenario
 
 Questions have arisen regarding the geoethics associated with Election 2020 for the new president of the United States.
 Your goal is to either strengthen or weaken the argument that there are any prejudices or discriminatory practices taking place regarding the election (e.g., electioneering).
@@ -8,7 +14,7 @@ You will save/export your notebook as an HTML document to be shared across the w
 In order to accomplish this task, you will need to learn [Markdown](https://colab.research.google.com/notebooks/markdown_guide.ipynb) and Python scripting in a Jupyter notebook style setting, for which this class will prepare you.
 
 
-### The Client Meeting
+#### The Client Meeting
 * __When__: TBA
 * __Where__: Zoom
 * __Who__: Everyone

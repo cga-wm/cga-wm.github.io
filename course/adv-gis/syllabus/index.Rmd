@@ -30,11 +30,7 @@ Semester
 
 Location
 
-:   - This course is taught online.
-
-Class Times and Room Assignments
-
-:   - Mo--Th 1010--1200 (*aspects of this class will be delivered asynchronously*)
+:   - This course is taught online (remotely)
 
 Instructor
 
@@ -46,11 +42,53 @@ Instructor
 
 Office Hours
 
-:   - By appointment
+:   - Mo--Th 1010--1200
+    - *There may be certain days when office hours will be either canceled or rescheduled; notifications will be sent ahead of time*
+
+Delivery
+
+:   - Course will delivered [asynchronously](https://www.elearners.com/education-resources/degrees-and-programs/synchronous-vs-asynchronous-classes/)
+
+Final Exam
+
+:   - Written/oral evaluation on or before 13 August 2020
+
+Minimum Passing Grade
+
+:   - D
+
+Communication
+
+:   - Instant messaging using [GroupMe](https://groupme.com/)
+        - *Please create an account using your W&M email*
+    - Discussions and issue tracking using [GitHub](https://github.com/)
+        - *You will need to create a GitHub account, if you do not already have one*
+        - *Please share your GitHub username with your instructor*
+        - *You will be added to the [adv-gis team](https://github.com/orgs/cga-wm/teams/adv-gis) with read/write access to the [advgis-beta repository](https://github.com/cga-wm/advgis-beta)*
+    - Office hours, video chats and oral evaluations ([Zoom](https://cwm.zoom.us/))
+    - Performance write-ups ([Google Docs](https://www.google.com/drive/))
+        - *A Drive folder will be shared to your W&M account*
+        - *Use this folder to upload your evaluation materials*
+    - ArcGIS Notebooks and spatial data sharing on [ArcGIS Online](https://www.arcgis.com/index.html)
+        - *Please be sure to log into arcgis.com using the W&M organization URL: cga-wm.maps.arcgis.com (see [here](https://youtu.be/x07Xyoe0d2k) for instructions)*
+        - *You will be added to the AdvGIS group*
+    - Email ([twdavis-at-wm-dot-edu](mailto:twdavis@wm.edu))
+    - Website blog (https://cga-wm.github.io/course/adv-gis/blog.html)
+
+    See [**Code of Conduct**](#the-code-of-conduct) regarding how these communication platforms are (and should be) used.
 
 Textbook
 
 :   - Today's GIS text is the World Wide Web itself
+    - The following are some helpful web resources:
+        - https://cga-wm.github.io/ (*see Resources*)
+        - https://cga-wm.github.io/course/intro/ (*see Chapters and Resources*)
+        - https://doc.arcgis.com/en/
+        - https://www.esri.com/training/ (*see Course Catalog*)
+        - https://developers.arcgis.com/labs/ (*see Tutorials*)
+        - https://learn.arcgis.com/en/ (*see Lesson Gallery*)
+        - https://github.com/cga-wm/advgis-beta/wiki/Resources
+        - [CGA GIS Tutorial YouTube Playlist](https://www.youtube.com/playlist?list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl)
 
 Course Materials
 
@@ -64,69 +102,115 @@ Course Materials
 
 Technology
 
-:   - Announcements, discussions, course calendar, etc., will be related to you through the university's [Blackboard](https://blackboard.wm.edu); please make certain you have access to it.
-    - Scripting assignments will be tested and graded using [Python 3.6](https://www.python.org/) or later.
+:   - Geospatial visualizations and analysis may be handled using any of the following:
+        - The latest stable release or the university's current installed versions of Esri's [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources) or [ArcMap](https://www.esri.com/en-us/arcgis/products/arcgis-desktop/resources)
 
-        \* _Note that both ArcGIS Pro and QGIS Desktop come with their own versions of Python 3 that satisfy this requirement._
+        \* _ArcGIS Pro may be installed on individual computers for Microsoft Windows users only (see [here](https://www.wm.edu/as/cga/arcgis-licensing/index.php) for instructions). ArcGIS Pro may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
+        \* _ArcMap (a part of ArcGIS Desktop) is being phased out. If GIS is in your future, you may wish to consider migrating to ArcGIS Pro._
+        - The latest stable release or the university's current installed version of [QGIS Desktop](https://www.qgis.org/en/site/)
 
-    - Geographic visualizations and analysis will be handled using either of the latest stable releases or the university's current installed versions of Esri's [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources) and/or [QGIS Desktop](https://www.qgis.org/en/site/).
-
-        \* _Both ArcGIS Pro and QGIS are available at most campus computer labs (see [here](https://www.wm.edu/offices/it/services/computerlabs/locations/index.php) for locations). ArcGIS Pro may be installed on individual laptops for Microsoft Windows users only. QGIS may be downloaded and installed on all major OS's._
-
-        \*\* _Note that there is no 'all-in-one' problem-solving software. Software is a tool. You may be required to use alternative software to complete certain tasks._
-
-    - Communication and documentation will be reported to the public using [GitHub Pages](https://pages.github.com/).
-
-        \* _You will need to create a GitHub account, if you do not already have one._
+        \* _QGIS may be downloaded and installed on all major OS's (see [here](https://www.qgis.org/en/site/) for instructions). QGIS may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
+        - [ArcGIS Online](https://www.arcgis.com) (*see [here](https://youtu.be/x07Xyoe0d2k) for login instructions*).
+        - ArcGIS Notebooks
 
 ---
 
 Course Objectives
 =================
-1. Apply geospatial problem-solving tactics through individual and collaborative research, design, and analysis to real-world challenges.
+1. Apply geospatial problem-solving tactics through individual and collaborative research, design and analysis to real-world challenges.
 2. Define geoethics and evaluate it with regards to a real-world scenario.
-3. Develop new learning, time management, and data organization skills.
+3. Develop new learning, time management and data organization skills.
 4. Demonstrate professional communication skills for reaching broad audiences.
+5. Develop programming skills for geospatial applications.
+
+_Note that there are also project-specific objectives, see Performance Accomplishments and/or Performance Review Worksheet._
 
 What you should already know
 ----------------------------
 * You should have a basic understanding of the main two geographic data models (vector and raster), including: what they represent; how these data models are created, stored, and edited; the pros and cons of these two data models; and how to open, manipulate and visualize them using a GIS.
 * You should have a basic understanding of geographic coordinate systems, including: the main components of coordinate systems, how to perform projections and transformations of geographic data, and what it means to do so.
-* You should have a basic understanding of the GIS project workflow, including: finding and creating spatial data; managing data files and their metadata; designing a workflow of geoprocesses to meet an intended goal; and visualizing spatial data in a meaningful way.
+* You should have a basic understanding of the GIS project workflow, including: finding and creating spatial data; managing data files and their metadata; designing a workflow of geoprocesses to meet an intended goal; and visualizing spatial data (and/or products) in a meaningful way.
 
+What is expected of you
+-----------------------
+* Develop advanced geospatial skills and techniques.
+* Work collaboratively with your classmates and instructor to solve/address the course projects along with any "special works" that may come up.
+* Maintain a log/report that outlines *everything* you do (including any research, development, analysis, and collaboration) and approximately how long it took you to do it.
+
+    > The First Step Towards Effectiveness by Peter E. Drucker
+    >
+    > 1. Know thy time.
+
+* Communicate with your classmates and instructor using remote/web-based technology (see **Communication** above)
+* Schedule and meet with your instructor three times:
+    1. Once during the first week to overview the Performance Review Worksheet and the expectations for the Performance Accomplishments;
+    2. Once during or just following the third week to report on your progress; and
+    3. Once at or near the end of the summer session for the oral evaluation of your performance accomplishments.
+* Ask questions and make mistakes.
+    If you are not feeling frustrated, then you are likely not invested in the class.
+* Uphold professionalism in everything you do (see [**Code of Conduct**](#the-code-of-conduct) below).
+* Provide a course evaluation at the end of the term with a summary of things you liked and disliked; methods that worked for you and those that fell short; topics that interested you and those that were uninteresting.
+
+What to expect from your instructor
+-----------------------------------
+* Manage all web resources
+* Post videos to introduce/explain concepts and guide you through demos
+* Post links to tutorials and help guides
+* Answer questions posed in the GitHub issues
+* Respond to requests for video chats during and/or outside scheduled office hours
+* Meet with you at least twice before final evaluations
+
+---
 
 Course Structure
 ================
 
-How this class is organized
----------------------------
-_This class focuses on two major topics to be covered roughly by half a semester each._
+How this class is stylized
+--------------------------
+For the summer term, my goal is to mimic a real-world geospatial organization that hires summer interns to solve spatial problems.
+I'm taking inspiration from Ben Balter's ["15 rules for communicating at GitHub"](https://ben.balter.com/2014/11/06/rules-of-communicating-at-github/).
+This type of asynchronous workstyle is becoming more prevalent and economically gainful in today's tech world; not to mention the accelerated rate of remote work under the present pandemic.
+Having the skills to work remotely and collaboratively can give you a "leg up" in the job market.
+This course aims to pair style with content to give you a truly advanced geospatial programming and analysis experience.
 
-Both topics include a real-world challenge to be researched, analyzed, and addressed by the class (either individually or in groups); there will also be skill-building activities and assignments to supplement and complement the learning objectives.
+Your goal is to work as a team to address (and potentially solve) the projects that are assigned.
+There are a set number of core projects and each of the projects has certain necessary skills associated with it.
+You choose how to address these projects (e.g., work on all of them at the same time or tackle one at a time).
+You keep in constant communication with your classmates and instructor.
 
-At the end of each topic, there will be key deliverables accompanied by an evaluation and demonstration/discussion.
+This style of learning closely resembles what will be expected of you following graduation and entering the workforce.
+The difference here is that there is the expectation that you will help one another (not always the case in the real world) and your instructor will be your personal tutor and guide (a luxury, for certain).
+
+**Disclaimer 1**: This class is a part of the Center for Geospatial Analysis's [Certificate in Geographic Information Science Program](https://www.wm.edu/as/cga/certificate/overview/index.php) and is offered to post-baccalaureate level students.
+Undergraduates at William & Mary also have the opportunity to take this course with slightly modified expectations during evaluation.
+
+**Disclaimer 2**: In academia, it is well known that new courses take about 3--4 iterations before they are "well developed."
+That being said, this class is currently in "beta" version (i.e., second interation); therefore, two things apply: 1) class structure, methods, topics, delivery, evaluation, etc. are in a constant state of change so please be patient; 2) you are in a position to alter the course by providing feedback, so please, open a notebook and jot down your thoughts, opinions and concerns regarding the class as we go along and use this to craft your course evaluation at the end of the term.
 
 How class time is used
 ----------------------
-_This class meets for one three-hour long session per week._
+This is an advanced class aimed at introducing several new concepts, software, tools, methods, and analyses in a rather short time.
+It is strongly suggested (and even required) that you take advantage of one another and the instructor to maximum what can be done and what you can learn during this time.
 
-The session may be broken up into discussions or in-class assignments, activities, or challenge questions; however, the majority of the time will be spent working on solving the two the main challenge topics.
+Remember, your goal is to complete the Performance Accomplishments before the end of term.
+To do so, you need to demonstrate that you have satisfied the learning objectives defined in the Performance Review Worksheet.
 
-As an advanced class, it is expected that you can and will do much of the legwork on your own.
-
-
-> The First Step Towards Effectiveness by Peter E. Drucker
->
-> 1. Know thy time.
 
 How this class is assessed
 --------------------------
-_This class is assessed based on a two-step evaluation of student learning._
+_This class is assessed based on a written/oral evaluation of student learning._
 
-At the beginning of the semester and again at (or near) the midterm, students will be assigned a learning objective evaluation form for the current topic.
-During each half-semester, students will complete the Performance Accomplishments form, noting such things as what they did, how they did it, how long it took them, and what they gained from it.
+At the beginning of the semester, students will be assigned learning objectives along with the minimum requirements for meeting the course's expectations in what is called the **Performance Review Worksheet**.
+In the first video conference meeting with the instructor, students will review the criteria for meeting the expectations for the class and make any adjustments necessary with their instructor.
+The Performance Review Worksheet should not be edited again until the final evaluation.
 
-At midterm (and again at the end of the semester), students will meet with the instructor to go over their individual Performance Accomplishments.
+During the term, students will keep track of their work that addresses each of the course's expectations in the form of a written document called **Performance Accomplishments**, noting such things as what they did, how they did it, how long it took them, and what they gained from it.
+Additional materials or documentation may be linked to within the Performance Accomplishments document or added to the shared Drive folder.
+
+Near the middle of the term, students will have their second video conference meeting with their instructor to review their progress and make certain everything is on schedule for the end of term.
+Under special circumstances, adjustments may be made to the Performance Review Worksheet, which is authorized only by the instructor.
+
+At the end of the term, students will have their third video conference meeting with the instructor to go over their individual Performance Accomplishments.
 The instructor may critique each element identified by the student.
 Students may be asked to further demonstrate their skills.
 
@@ -141,276 +225,156 @@ Does Not Meet Expectations | C--, D+, or D
 Fully Meets Expectations | B, B--, C+, or C
 Exceeds Expectations | B+, A--, or A
 
-The following stipulations can impact a student's final grade.
+The following stipulations impact a student's final grade.
 
-* The instructor reserves the right to adjust a student's final evaluation score by at most one-half step of a grade (e.g., in a plus/minus scale, a C may be rewarded to a C+ or downgraded to a C--) so long as it does not conflict with the following two rules.
-* A student cannot receive higher than Fully Meets Expectations (C) for the semester if one or more of their individual accomplishments receives an Unsatisfactory evaluation score.
-* A student cannot receive less than Does Not Meet Expectations (D) for the semester if none of their individual accomplishments receive an Unsatisfactory score.
+* The instructor reserves the right to adjust a student's final evaluation score by at most one-half step (e.g., in a plus/minus scale, a C may be rewarded to a C+ or downgraded to a C--) so long as it does not conflict with the following two rules.
+* A student cannot receive a final grade higher than Fully Meets Expectations (C) if one or more of their individual accomplishments receives an Unsatisfactory evaluation score.
+* A student cannot receive a final grade less than Does Not Meet Expectations (D) if none of their individual accomplishments receive an Unsatisfactory score.
 
-
-# Course Topics
-
-## Natural Disasters
-
-### Overview
-This semester, the main focus for the natural disasters topic is __landslides__.
-Landslides may occur in every country of the world and impact every aspect of the human condition from public health; property value, taxes, and insurance; government spending, national aid, and political agendas; ethics, economics and social inequality; to hazard identification, mitigation, science and research.
-
-You (the class) will form "pop-up" consultant firms for landslide hazard assessment and tackle randomly assigned countries.
-
-### Learning Objectives
-1. Understand how GIS is used in natural hazard assessment, planning, and management.
-2. Gain a deeper understanding of the multidisciplinary roles of GIS in real-world applications.
-3. Become aware of geoethics and be able to identify ethical challenges within the geosciences.
-4. Develop programming skills for geospatial applications.
-5. Develop advanced geoprocessing skills and be able to apply them to a real-world application.
-
-### Tasks
-Below is the list of major tasks for this project as well as the course objectives (*CO*) and learning objectives (*LO*) each task is meant to satisfy.
-This is meant to help you organize your time (*CO\#4*) and prepare your performance accomplishments evaluations.
-
-+------+--------------------------------------------------------------+
-| Item | Task                                                         |
-+:====:+==============================================================+
-|  1   | Create your pop-up consultant agency.                        |
-|      |                                                              |
-|      | * create your GitHub organization                            |
-|      |     - [How to setup a GitHub Organization][cdg-18]           |
-|      | * develop your organization website (*style after a blog*)   |
-|      |     - [Creating a GitHub Pages site][gp-help]                |
-|      |     - [Creating & Hosting a Personal Site on GitHub][jm20]   |
-|      |     - [Jekyll's Directory Structure][jekyllrb]               |
-|      | - undergraduates may form teams of two or three              |
-|      | - graduate students may work individually or in pairs        |
-|      |                                                              |
-|      | *CO\#1; CO\#3; CO\#4; LO\#4*                                 |
-+------+--------------------------------------------------------------+
-|  2   | Choose your team's specialization.                           |
-|      |                                                              |
-|      | - public health, economics, government, geoscience or        |
-|      |   other related field                                        |
-|      | - identify the asset(s) you are trying to secure             |
-|      |   (e.g., infrastructure, human life, equality)               |
-|      | - must be approved by the instructor                         |
-|      | * develop your brand and incorporate it to your website      |
-|      |                                                              |
-|      | *LO\#2*                                                      |
-+------+--------------------------------------------------------------+
-|  3   | Research GIS applications for natural hazard assessment,     |
-|      | management, planning, etc.                                   |
-|      |                                                              |
-|      | - [Successful Response Starts with a Map][nap07]             |
-|      | - [Ogden (2020)][ogden20]                                    |
-|      |                                                              |
-|      | *LO\#1; LO\#2*                                               |
-+------+--------------------------------------------------------------+
-|  4   | Research landslides.                                         |
-|      |                                                              |
-|      | * Review material strength and landsliding susceptibility    |
-|      | * Review geospatial models and datasets                      |
-|      | - undergraduates will be assigned reading(s)                 |
-|      | - graduate students will be assigned a literature review     |
-|      |                                                              |
-|      | *LO\#1*                                                      |
-+------+--------------------------------------------------------------+
-|  5   | Research your specialization.                                |
-|      |                                                              |
-|      | * How is GIS used by members of your specialization?         |
-|      | * What are the ethical implications of this GIS application? |
-|      |     - Sections I, II, and IIIb of                            |
-|      |       [Bobrowsky et al. (2017)][bobrowsky17],                |
-|      |       "The Emerging Field of Geoethics"                      |
-|      |                                                              |
-|      | *CO\#2; LO\#3*                                               |
-+------+--------------------------------------------------------------+
-|  6   | Develop your methods.                                        |
-|      |                                                              |
-|      | - gather data                                                |
-|      | - complete skill-building activities                         |
-|      | - develop metrics for determining landslide susceptibility   |
-|      |                                                              |
-|      | *CO\#3; LO\#4*                                               |
-+------+--------------------------------------------------------------+
-|  7   | Formalize your analysis.                                     |
-|      |                                                              |
-|      | - develop a timeline and tasks                               |
-|      | - create a how-to for a particular geoprocess                |
-|      | - document all aspects of your project on your website       |
-|      |                                                              |
-|      | *CO\#3; LO\#5*                                               |
-+------+--------------------------------------------------------------+
-
-Final results should be published by EOD 3/16.
-
-[cdg-18]: https://github.com/collab-uniba/socialcde4eclipse/wiki/How-to-setup-a-GitHub-organization,-project-and-team
-[gp-help]: https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site#next-steps
-[jm20]: http://jmcglone.com/guides/github-pages/
-[jekyllrb]: https://jekyllrb.com/docs/structure/
-[nap07]: https://www.nap.edu/read/11793/
-[ogden20]: https://eos.org/articles/remote-landslide-puts-fraser-river-salmon-on-shaky-ground
-[bobrowsky17]: http://www.geoethics.org/articles-geoethics#comp-jjfx3jvm
-
-## GIS Web Applications
-
-### Overview
-This semester, the main focus for the web applications topic is __geofencing__.
-Geofencing is a relatively underrepresented topic in geosciences and almost unheard of by the general public; however, you can find geofencing applications across several disciplines being utilized both for and against you in your daily life!
-
-### Learning Objectives
-1. Define geofencing and explain how it is used across multiple disciplines.
-2. Design a geospatial database to meet a web-hosted application.
-3. Perform a field-based geospatial survey.
-4. Develop programming skills for geospatial applications.
-5. Design a web-based application that utilizes geofencing.
-
-### Tasks
-
-+------+--------------------------------------------------------------+
-| Item | Task                                                         |
-+:====:+==============================================================+
-|  1   | Create a vlog or podcast that discusses a real-world ethics  |
-|      | problem or solution related to geofencing.                   |
-|      |                                                              |
-|      | *CO2, CO4, LO1*                                              |
-+------+--------------------------------------------------------------+
-|  2   | Create a "how to" vlog or podcast about something you        |
-|      | learned while researching, designing, and/or developing any  |
-|      | aspect of your geofencing project.                           |
-|      |                                                              |
-|      | *CO4, [CO3, LO4]*                                            |
-+------+--------------------------------------------------------------+
-|  3   | Maintain a comprehensive log of your activities.             |
-|      |                                                              |
-|      | *CO3b*                                                       |
-+------+--------------------------------------------------------------+
-|  4   | Design a geodatabase for field applications.                 |
-|      |                                                              |
-|      | *CO3c, LO2*                                                  |
-+------+--------------------------------------------------------------+
-|  5   | Collect data using a mobile application (e.g., Collector or  |
-|      | QuickCapture).                                               |
-|      |                                                              |
-|      | *LO3, [CO1, LO5]*                                            |
-+------+--------------------------------------------------------------+
-|  6   | Test a geofencing web application using Arcade/Javascript    |
-|      | (see ArcGIS for Developers).                                 |
-|      |                                                              |
-|      | *CO1, CO3a, LO4, LO5*                                        |
-+------+--------------------------------------------------------------+
-
-Applications due by EOD 5/4.
-
-[esri-collect]: https://www.esri.com/en-us/arcgis/products/collector-for-arcgis/resources
-
-Course Calendar
-===============
-The dates in the calendar below are tentative; all changes to the schedule will be announced in class and through Blackboard's announcement service.
-Students are responsible for ensuring an awareness of any such announcements. In other words: *you must read your campus email and check Blackboard regularly!*
-
-
-+------+-------+-----------------+-----------------+--------------------------+
-| Week | Date  | Topics          | Assignments     | Notes                    |
-+======+=======+=================+=================+==========================+
-|  1   | 01/27 | *Introduction*  | ICE BREAKER     | First day of class       |
-|      |       | *to*            | CHALLENGE       |                          |
-|      |       | *Natural*       |                 |                          |
-|      |       | *Hazards and*   |                 |                          |
-|      |       | *GIS*           |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 2    | 02/03 |                 | TASKS 1--3      | Add/drop period ends     |
-|      |       |                 |                 |                          |
-|      |       |                 | * receive       |                          |
-|      |       |                 |   country       |                          |
-|      |       |                 |   assignments   |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 3    | 02/10 |                 | SKILL BUILDING  |                          |
-|      |       |                 |                 |                          |
-|      |       |                 |                 |                          |
-|      |       |                 |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 4    | 02/17 |                 | TASKS 4--6      |                          |
-|      |       |                 |                 |                          |
-|      |       |                 |                 |                          |
-|      |       |                 |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 5    | 02/24 |                 |                 |                          |
-|      |       |                 |                 |                          |
-|      |       |                 |                 |                          |
-|      |       |                 |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 6    | 03/02 |                 |  TASK 7         |                          |
-|      |       |                 |                 |                          |
-|      |       |                 |                 |                          |
-|      |       |                 |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 7    | 03/09 |                 |                 | SPRING BREAK 3/7--3/15   |
-+------+-------+-----------------+-----------------+--------------------------+
-| 8    | 03/16 | Evaluations     | Project 1       |                          |
-|      |       |                 | Reports and     |                          |
-|      |       |                 | Accomplishments |                          |
-|      |       |                 | due by 0900     |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 9    | 03/23 | *Introduction*  |                 | Withdraw deadline 5/01   |
-|      |       | *to*            |                 |                          |
-|      |       | *Web*           |                 |                          |
-|      |       | *Applications*  |                 |                          |
-|      |       |                 |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 10   | 03/30 |                 | TASKS 1 and 3   |                          |
-|      |       |                 |                 |                          |
-|      |       |                 |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 11   | 04/06 |                 | TASKS 3 and 4   |                          |
-|      |       |                 |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 12   | 04/13 |                 | TASKS 3 and 5   |                          |
-|      |       |                 |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 13   | 04/20 |                 | TASKS 3 and 6   |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| 14   | 04/27 |                 | TASKS 2 and 3   | Last day of classes 5/1  |
-|      |       |                 |                 |                          |
-|      |       |                 | Project         |                          |
-|      |       |                 | Accomplishments |                          |
-|      |       |                 | due 5/4         |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-| --   | 05/05 | FINAL           | Final project   |                          |
-|      |       | EVALUATIONS     | presentations   |                          |
-|      |       | 1900--2200      |                 |                          |
-+------+-------+-----------------+-----------------+--------------------------+
-
+There are no points, bonuses or extra credit assignments in this class.
 
 ---
 
+# Course Topics
+
+## Project A - Shark Attacks
+
+### Overview
+A client has asked whether shark attacks are predictable or perhaps coincident with some environmental or other measurable factors.
+Their interest stems from the growing number of shark deaths caused by the hands of humans (mostly) in response to misinformation regarding human-shark relations.
+As shark numbers decrease, the ethical implications of our management of their species becomes more relevant.
+
+### Learning Objectives
+1. Define geoethics and provide an example of a "myth" regarding human-shark relations.
+2. Identify, find, evaluate and organize relevant spatial data and perform necessary processes to integrate them into a single GIS workflow.
+3. Design a GIS project workflow that identifies the key information and synthesize them for addressing a spatial relationship between shark attacks and one or more external/environmental factors.
+4. Communicate your methods with your colleagues and assess and critique your process and/or results based on student and instructor feedback.
+5. Recognize the multidisciplinary roles of GIS in real-world applications.
+
+
+## Project B - Electioneering
+
+### Overview
+A client has asked whether electioneering is creating an unfair bias in the upcoming 2020 presidential election.
+They are interested in the ethical implications behind any spatial factors---such as polling locations and districting---that may lead to party-specific advantage.
+
+### Learning Objectives
+1. Define electioneering and provide an example of a potential geoethical debate associated with it.
+2. Identify, find, evaluate and organize relevant spatial data and perform necessary processes to integrate them into a single GIS workflow.
+3. Design a GIS project workflow that identifies the key information and synthesize them for addressing a particular aspect of electioneering.
+4. Communicate your methods with your colleagues and assess and critique your process and/or results based on student and instructor feedback.
+5. Recognize the multidisciplinary roles of GIS in real-world applications.
+
+
+## Project C - Geofencing
+
+### Overview
+A client has asked for a web-based application that interacts with a user's location to tell a story.
+They have purposefully been vague to see the different types and varieties of ideas.
+They want to have a storyboard (conceptual design), a sequence diagram (application design) and potentially a working prototype of the app.
+You have been advised to utilize the concept of __geofencing__.
+
+### Learning Objectives
+1. Define geofencing, explain how it is used across multiple disciplines, and give an example of a geoethical debate associated with it.
+2. Design a geospatial database to meet a web-based application.
+3. Perform a field-based geospatial survey.
+4. Design a storyboard that has spatial dependency.
+5. Construct a web-based application that utilizes geofencing.
+
+---
+
+Course Calendar
+===============
+In the five weeks of class, each week will consist of up to four discussion topics with associated readings and responses and up to one "special works" assignment that will need immediate attention.
+These simulate the real-world distractions and challenges faced by GIS specialists and developers.
+
+
 Important Dates
 ---------------
+First day of term
+:   - 06 July 2020
+
 Add/drop deadline
-:   - 31 January 2020
+:   - 09 July 2020
 
 Withdraw deadline
-:   - 23 March 2020 (*extended to 5/01*)
+:   - 24 July 2020
 
-Final period
-:   - 5 May 2020 (1900--2200)
-    - Final projects and evaluations are due during the finals period
+Last day of term
+:   - 07 August 2020
+
+Final grades deadline
+:   14 August 2020 (1200 noon)
+
+Final evaluations
+:   - Final evaluations must be scheduled with your instructor on or before 13 August 2020
+    - Performance Accomplishments are due at least 24 hours before the scheduled evaluation
 
 ---
 
 Standards & Policies
 ====================
 
-Attendance Policy
+The Code of Conduct
+-------------------
+By the basis in which this class is designed, these things hold true:
+
+1. This class utilizes several forms of communication (e.g., instant messaging, discussion boards, wikis, emails, audio/video conferencing), of which not all can be monitored by the instructor at all times.
+2. You are responsible for how you interact with each other.
+
+Remember these things as you work together:
+
+1. "Don't ascribe maliciousness to that which can be explained by inadvertence."
+
+    This comes from the fact that it is almost impossible to portray our feelings or intended meaning behind typed text.
+    If something offends you, take a breath, be cordial and ask for clarification before unleashing your wrath (BTW: you shouldn't unleash your wrath).
+    That being said, also do not be a silent witness.
+    If something offends you, let everyone know.
+    We will never learn from our mistakes if they are not pointed out.
+    If malicious actions continue, the instructor will manage it.
+2. "There is no innovation and creativity without failure. Period."
+
+    You are a college student registered in a college class.
+    You are not expected to know everything.
+    The entire purpose of this exercise is for you to gain knowledge, so make an effort.
+    If you want to try something, try it and let everyone know what you are up to.
+    Best case scenario, your innovations spark new insight.
+    Worst case scenario, we all learn something from your efforts.
+    Remember: there are not right answers to these projects---just creative approaches, innovative designs and happy accidents---so don't be afraid to make a mistake.
+    It's better to aim high for something that will make a difference rather than to play it safe with something easy.
+3. Ask lots of questions.
+
+    Questions are cheap, so ask a lot of them.
+    Remember to always strive for clarity.
+    If you don't know something or your aren't sure, then ask.
+4. Focus on opportunities.
+
+    Remember: this is not a race and you are not a judge, so don't get caught up with critiquing or competing with others.
+    Provide your opinions and perspectives and then actually take the time to read the opinions and perspectives of others.
+    Challenge yourself to see things differently and try things differently.
+    Ignore your desire to be correct or to correct someone else and try not to contradict people; they don't like it and biologically it shuts down their ability to see things logically.
+5. Document and share everything.
+
+    While it may feel natural to keep your work private, projects really thrive when you document your process publicly.
+    By writing things down and sharing them, more people can participate along the way and you might get help on something you didn't even know you needed.
+    This leads to more things being documented, which produces a better project roadmap, which leads to better transparency and feedback, which leads to good decision making and faster/better results.
+6. Everyone is bound to uphold a policy of respect for their instructor and their peers.
+    Students should be open-minded to new ideas and participate in collegiate debate, the sharing of ideas, and the receiving of feedback without defamatory remarks.
+    Students should help maintain a healthy learning environment by refraining from negative behavior, such as harmful remarks, quibbling over trivial matters, creating unnecessary debates, or bullying.
+
+    **There is zero tolerance for negative behavior. Failure to uphold this policy will result in punitive action and/or removing the offending student from access to all or part of the class.**
+
+
+Engagement Policy
 -----------------
-- *Make every effort to come to class or notify instructor of lateness or absence.*
+- *Weekly virtual engagement is expected.*
 
-Please make all planned absences (e.g., field trips, vacations, athletic events) known to your instructor at the earliest possible time.
-Please notify your instructor of your lateness or absence before class time, if possible.
+In this asynchronous virtual classroom, engagement is defined loosely as your interaction with one or more of the web-based communication tools.
 
-All in attendance are bound to uphold a policy of respect for their instructor and their peers.
-Students should be open-minded to new ideas and participate in collegiate debate without defamatory remarks.
-Students should help maintain a healthy learning environment by refraining from disruptive behavior.
-Registration in this class means you accept this policy.
-**Failure to uphold this policy may result in punitive action and/or the offending student may be asked to leave the class.**
+It is expected that you interact at a minimum with the posted discussions, chats, issues, emails, and/or video conferencing once a week.
+Failure to do so may influence your final grade.
+
+Please make any and all planned absences (e.g., field trips, vacations, athletic events) that would result in you not being able to meet this minimum interaction known to your instructor at the earliest possible time.
 
 
 Coursework Policy
@@ -432,46 +396,29 @@ Email Policy
 ------------
 - *All class-related correspondence should be made to the instructor's W&M email address ([see above](#course-syllabus)) and include the class title in the subject line.*
 
-Please post questions related to assignments, discussions, and the project to the course's FAQ discussion board forum.
 For private inquiries, please email the instructor; the instructor will confirm each email received.
-If you do not receive a confirmation message from the instructor within 12 hours of sending, you may send a follow-up email.
+If you do not receive a confirmation message from the instructor within 12 hours of sending, feel free to send a follow-up email.
 
 
 Make-Up Policy
 --------------
 - *There are no make-ups.*
 
-Evaluation dates are posted on the course calendar in the syllabus.
-If, for some reason, you are unable to meet during the scheduled time, you may email the professor before the regularly scheduled evaluation date to reschedule it at a mutually convenient time or receive an unsatisfactory scoring.
-
-Electronics Policy
-------------------
-- *Personal electronics use that is not directly related to the learning objectives of the class is not permitted.*
-
-Students may keep cellular phones on, but they should be kept in silent mode (please note that vibrate is not silent).
-In the case of an emergency, students are requested to quietly excuse themselves from the classroom to make and/or receive telephone calls.
-Please abstain from any disruptive behavior, the definition of which is at the discretion of the instructor and may include but is not limited to playing video games, listening to music, trolling the internet, or any other activity whereby the sight or sound interrupts the attention of those around you.
-
-Multiple offenses can result in punitive action.
-
-
-Digital Recording Policy
-------------------------
-- *Identifying photos or videos of people are not permitted without just cause.*
-
-Due to privacy laws/concerns, the recording of people and/or their voices during class meetings in any form is prohibited except in documented cases from the Academic Support office that require compliance with the ADA.
+Evaluation dates should be suggested by the student and approved by the instructor.
+If, for some reason, you are unable to meet during the scheduled time or turn in your performance accomplishments on time, you may email the professor before the regularly scheduled evaluation date to reschedule it at a mutually convenient time or else receive an unsatisfactory scoring.
+Under rare circumstance, students may request an incomplete; the acceptance of which is at the sole discretion of the instructor.
 
 
 Standards for Written Work
 --------------------------
 - Written work should be in English and follow, to the best of your abilities, the rules of the English language (see [Strunk & White](https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf)).
 - Written work should be neat, thorough, legible, and logically organized.
-- All submitted work should include your name, date, and assignment description.
+- All submitted work should include your name, date, and description.
 - Sketches and figures should be drawn using a straight-edge; plots and graphs should be done using a computer, where appropriate.
 - Tables, figures and images from online sources should include a citation (including the author/publisher, date created/accessed, and URL).
 - All in-text citations and references should be formatted to APA standards unless otherwise indicated.
 - Plagiarism will be taken seriously; *if you write something that is not your own original idea or in your own words, then it must be cited!* See [here](https://ctl.yale.edu/writing/using-sources/understanding-and-avoiding-plagiarism) for information on plagiarism and how to avoid it.
-- Unless otherwise stated, electronic submissions may be in one of the following acceptable open file formats:
+- Unless otherwise stated, typed electronic submissions may be in one of the following acceptable open file formats:
     * [Office Open XML Document](https://en.wikipedia.org/wiki/Office_Open_XML) (.docx)
     * [OpenDocument Text](https://en.wikipedia.org/wiki/OpenDocument) (.odt)
     * [Portable Document Format](https://en.wikipedia.org/wiki/PDF) (.pdf)
@@ -487,17 +434,9 @@ Statements and Resources
 
 ADA Statement
 -------------
-It is the policy of William & Mary to provide qualified students who have disabilities with reasonable accommodation based upon relevant law, the university's educational standards, and sound ethical practice in Student Accessibility Services.
-
-Anyone with questions or concerns can contact Student Accessibility Services staff at 757-221-2512 or at sas@wm.edu.
-More information is available at https://www.wm.edu/sas.
-
-
-Academic Support Services
--------------------------
-- [Student Accessibility Services](https://www.wm.edu/sas)
-- [Tribe TutorZone](https://www.wm.edu/offices/deanofstudents/services/academicenrichment/tutors/)
-- [Writing Resources Center](https://www.wm.edu/as/wrc/)
+William & Mary accommodates students with disabilities in accordance with federal laws and university policy.
+Any student who feels they may need an accommodation based on the impact of a learning, psychiatric, physical, or chronic health diagnosis should contact Student Accessibility Services staff at 757-221-2512 or at sas@wm.edu to determine if accommodations are warranted and to obtain an official letter of accommodation.
+For more information, please see https://www.wm.edu/sas.
 
 
 Copyright Statement
