@@ -6,10 +6,8 @@ title: "Summer Session"
 
 ## Overview
 
-<!--
 - Performance Review Worksheet ([.gdoc][prwgdoc])
 - Evaluation Sign-Up Sheet ([.gdoc][esus1])
--->
 
 Welcome to Advanced GIS Consulting Summer Program!
 
@@ -35,7 +33,7 @@ As a part of this summer program, you are expected to:
 * uphold professionalism in everything you do
 
 [esus1]: #
-[prwgdoc]: #
+[prwgdoc]: https://docs.google.com/document/d/1bOJ72vt2eomMd6ffNRbZlSVFac4CIAd7M9fYuu68-ws/edit?usp=sharing
 
 ### Getting Started Checklist
 
