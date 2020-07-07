@@ -9,14 +9,15 @@ To start off, we need to know a little about plain text.
 It's the most basic text document you can create.
 On Windows, it's Notepad.
 On Mac, it's TextEdit when you go to Format > Make Plain Text.
-It only stores text.
+This type of file can only store text.
 
 Plain text has the benefit of being readable/writable by just about everyone.
 You can open a plain text file in most (if not all) word processors and web browsers, making it highly accessible.
 
 All the websites that we enjoy browsing are written in plain text.
+
 But wait!
-Websites have style, colors, images, and videos.
+Websites have style and colors and images and videos and other such things!
 
 That's right.
 The way to introduce style to plain text is to use a type of markup syntax.
@@ -45,12 +46,13 @@ You will see something like this:
 ```
 
 What is all that?
-The web is written in HTML (Hyper-Text Markup Language), which is a way of telling your browser how to stylize the contents.
-It is accomplished through a sophisticated method of tagging (denoted by elements within `<>`).
+The web is written in HTML (HyperText Markup Language), which is a way of telling your browser how to stylize the contents.
+It is accomplished through a sophisticated method of tagging (denoted by elements between the opening `<>` and closing `</>`).
+Furthermore, each tag can also have attributes (see attribute-value pairs, such as `charset="utf-8"` and `class="author"`).
 
 HTML is not pretty to look at without a browser to decode it and transform the instructions into the content we look at on a web page.
 
-Markdown was created by John Gruber as a lightweight plain text syntax for adding style to plain text without losing the ability to easily read it.
+Markdown was created by [John Gruber](https://daringfireball.net/projects/markdown/) as a lightweight plain text syntax for "marking up" plain text to add style without losing the ability to easily read it.
 For example, the content in HTML above can be represented in markdown by the following:
 
 ```md
@@ -80,3 +82,39 @@ There are also lots of online references on Markdown syntax and documentation di
 Here is a link to GitHub's Markdown syntax cheatsheet ([pdf](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)).
 
 Give it a try.
+
+***
+
+### KML / KMZ
+
+Another popular markup language is [Keyhole Markup Language (KML)](https://developers.google.com/kml/).
+KML (sometimes in its compressed format, KMZ) is a plain text file used to display geographic data and it is one of the [approved file types](https://doc.arcgis.com/en/arcgis-online/reference/supported-items.htm) you can add to ArcGIS Online.
+
+I downloaded the USGS Earthquakes KMZ from the web and extracted[^1] the KML.
+It looks like this:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<NetworkLink>
+    <name>Real-time Earthquakes</name>
+    <open>1</open>
+    <LookAt>
+        <longitude>-104.1025</longitude>
+        <latitude>50.4913</latitude>
+        <altitude>0</altitude>
+        <range>8384245</range>
+        <tilt>0</tilt>
+        <heading>-0.2564</heading>
+    </LookAt>
+    <flyToView>1</flyToView>
+    <Url>
+        <href>http://services.google.com/earth/kmz/realtime_earthquakes.kmz</href>
+    </Url>
+</NetworkLink>
+</kml>
+```
+
+You'll notice that KML is based on the eXtensible Markup Language (XML), which should look similar to HTML.
+
+[^1]: Did you know that you can decompress a KMZ file using [7zip](https://www.7-zip.org/) to get the doc.kml file inside? Try it!
