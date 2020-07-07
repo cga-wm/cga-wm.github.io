@@ -224,7 +224,7 @@ Qualitative Assessment | Approximate Grade
 Unsatisfactory | F
 Does Not Meet Expectations | C--, D+, or D
 Fully Meets Expectations | B, B--, C+, or C
-Exceeds Expectations | B+, A--, or A
+Exceeds Expectations | A, A--, or B+
 
 The following stipulations impact a student's final grade.
 
@@ -415,6 +415,7 @@ Standards for Written Work
 - Written work should be in English and follow, to the best of your abilities, the rules of the English language (see [Strunk & White](https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf)).
 - Written work should be neat, thorough, legible, and logically organized.
 - All submitted work should include your name, date, and description.
+- Filenames should be in all lowercase and contain only alphanumeric, underscore, hyphen, and/or period characters.
 - Sketches and figures should be drawn using a straight-edge; plots and graphs should be done using a computer, where appropriate.
 - Tables, figures and images from online sources should include a citation (including the author/publisher, date created/accessed, and URL).
 - All in-text citations and references should be formatted to APA standards unless otherwise indicated.
