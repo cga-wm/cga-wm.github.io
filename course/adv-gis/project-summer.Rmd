@@ -36,17 +36,10 @@ As a part of this summer program, you are expected to:
 [prwgdoc]: https://docs.google.com/document/d/1bOJ72vt2eomMd6ffNRbZlSVFac4CIAd7M9fYuu68-ws/edit?usp=sharing
 
 ### Getting Started Checklist
+I have simplified the checklist into a [GitHub issue](https://github.com/cga-wm/advgis-beta/issues/3).
+I will update it as we go along.
+Please feel free to comment on the issue with questions, requests, or clarifications.
 
-- Join "AdvGIS - Su2020" GroupMe chat
-- Join "AdvGIS - Summer 2020" ArcGIS Online group
-- Join "adv-gis" GitHub team (*notify your instructor of your GitHub username*)
-- Read the [syllabus](syllabus/index.html)/watch the [video](https://youtu.be/P78_dVgIy9w) (sorry it's a little long)
-- Read Ben Balter's ["15 rules for communicating at GitHub"](https://ben.balter.com/2014/11/06/rules-of-communicating-at-github/)
-- Subscribe to the [Advanced GIS | Summer 2020 YouTube Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMPKtzAT_cfdge7JYdebm42A) and watch Episodes 3 and 4
-- Respond to the discussion "Introduce Yourself" found on GitHub
-- Respond to the first discussion topic on GitHub
-- Review the Performance Accomplishments and Performance Review Worksheet (*shared with you via Google Drive*)
-- Sign up for a Week 1 conference call (*see Evaluation Sign-Up Sheet link at the top of the page*)
 
 ```{r shark, child = 'project-shark.Rmd'}
 ```
