@@ -1,0 +1,82 @@
+---
+title: "Markdown, Markup"
+date: 2020-07-07
+url: 2020-07-07-markdown-markup.html
+summary: "It's summer session and we're off to the races. Now, what's the deal with markdown, markup and all this talk about plain text?"
+---
+
+To start off, we need to know a little about plain text.
+It's the most basic text document you can create.
+On Windows, it's Notepad.
+On Mac, it's TextEdit when you go to Format > Make Plain Text.
+It only stores text.
+
+Plain text has the benefit of being readable/writable by just about everyone.
+You can open a plain text file in most (if not all) word processors and web browsers, making it highly accessible.
+
+All the websites that we enjoy browsing are written in plain text.
+But wait!
+Websites have style, colors, images, and videos.
+
+That's right.
+The way to introduce style to plain text is to use a type of markup syntax.
+Try right-clicking on a website and select "View Page Source."
+You will see something like this:
+
+```html
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <meta name="author" content="cga-wm.github.io" />
+  <title>Center for Geospatial Analysis</title>
+</head>
+<body>
+  <div class="fluid-row" id="header">
+    <h1 class="title toc-ignore">Center for Geospatial Analysis</h1>
+    <h4 class="author">cga-wm.github.io</h4>
+  </div>
+</body>
+</html>
+```
+
+What is all that?
+The web is written in HTML (Hyper-Text Markup Language), which is a way of telling your browser how to stylize the contents.
+It is accomplished through a sophisticated method of tagging (denoted by elements within `<>`).
+
+HTML is not pretty to look at without a browser to decode it and transform the instructions into the content we look at on a web page.
+
+Markdown was created by John Gruber as a lightweight plain text syntax for adding style to plain text without losing the ability to easily read it.
+For example, the content in HTML above can be represented in markdown by the following:
+
+```md
+---
+title: Center for Geospatial Analysis
+---
+# Center for Geospatial Analysis
+#### cga-wm.github.io
+```
+
+Which do you find easier to read?
+
+Because HTML and Markdown are closely related, and because Markdown is so much easier to read and write for the average person, there have been several efforts to create Markdown editors/renderers for web content.
+
+GitHub has one.
+The Issues and Discussions allow you write in Markdown and then you can click "Preview" to see it converted to HTML.
+
+Notebooks has one.
+Type in text block then click "Run" and see it converted to HTML.
+
+Because the conversion of Markdown to HTML depends on whose editor/renderer you are using, we find that there are several "flavors" of markdown (i.e., subtle differences in syntax to HTML rendering).
+I guess every language has dialects so Markdown is no difference.
+
+If you want to get started testing Markdown on the web, I suggest trying out [stackedit.io](https://stackedit.io/).
+There are also lots of online references on Markdown syntax and documentation discussing the differences between the renderers (e.g., GitHub has its own flavor).
+
+Here is a link to GitHub's Markdown syntax cheatsheet ([pdf](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)).
+
+Give it a try.
