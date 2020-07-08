@@ -1,0 +1,94 @@
+---
+author: AdvGIS
+date: July 8, 2020
+pagetitle: "GeoEthics"
+---
+
+# What are Geoethics?
+
+***
+
+> "not a limit to the freedom of action<br />but a new opportunity <span style="color:gray">[...]</span> to contribute <span style="color:gray">[...]</span><br />the best way forward for society"
+
+<small>Peppoloni & Di Capua (2016)</small>
+
+***
+
+![Members of the Standing Rock Sioux Tribe and its supporters,<br />shown here during a demonstration in 2017,<br />have opposed the Dakota Access Pipeline for years.<br /><small>Alex Wong/Getty Images</small>](img/getty_wong.jpg){width=400 height=300}
+
+# Environmental Ethics
+
+> the tradeoff between <span class="fragment highlight-green">ethical concerns</span><br />and short-term <span class="fragment highlight-green">economic benefits</span>
+
+<p></p>
+
+<div class="fragment">
+<small><span style="color:#17ff2e">\*</span> these both relate to what we _value_ and how our values influence our actions</small>
+</div>
+
+# Values
+
+How do we value things?
+
+***
+
+| VALUE | DESCRIPTION |
+|--|--------|
+| Use value | Something we use directly  |
+| Existence value | Knowing that something exists, even if we never experience it ourselves |
+| Option value | Something we might use later |
+| Aesthetic value | Something of beauty or emotional appeal |
+| Scientific value  | Something for research |
+| Educational value | Something for teaching and learning |
+| Cultural value | Something that sustains or defines a culture |
+
+***
+
+|  |  |
+|--|--|
+| __MORALS__ | __ETHICS__ |
+| Personal principles with respect to right/wrong | <span class="fragment">Rules of conduct with respect to our culture</span> |
+| <span class="fragment">Individual</span> | <span class="fragment">Societal</span> |
+| <span class="fragment">Internal</span> | <span class="fragment">External</span> |
+| <span class="fragment">Something we "believe in"</span> | <span class="fragment">Because society "says so"</span> |
+| <span class="fragment">Transcendental</span> | <span class="fragment">Governed</span> |
+
+# Ethics
+
+> the set of morals or beliefs <span class="fragment highlight-green">of a given group</span> that guide and clarify our actions
+
+<div class="fragment">
+... so who is the group?
+</div>
+
+***
+
+Relativists
+:   each culture _should_ be allowed their own ethics
+
+<div class="fragment">
+(e.g., freedom of religion)
+</div>
+
+***
+
+Universalists
+:   there exist a single set of ethics that hold true for all cultures
+
+<div class="fragment">
+(e.g. human rights/equality)
+</div>
+
+# From here things get tricky
+
+
+
+# Back to geoethics
+
+
+
+# Resources
+
+- [Definition of Geoethics (IAPG)](http://www.geoethics.org/definition)
+- [The Emerging Field of Geoethics, Bobrowsky et al. (2017)](http://www.geoethics.org/articles-geoethics#comp-jjfx3jvm)
+- [International Association for Promoting Geoethics](http://www.geoethics.org/)
