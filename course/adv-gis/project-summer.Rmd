@@ -38,7 +38,12 @@ As a part of this summer program, you are expected to:
 ### Getting Started Checklist
 I have simplified the checklist into a [GitHub issue](https://github.com/cga-wm/advgis-beta/issues/3).
 I will update it as we go along.
+Most content will be delivered via our [YouTube Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMPKtzAT_cfdge7JYdebm42A), so please subscribe for notifications.
 Please feel free to comment on the issue with questions, requests, or clarifications.
+
+### Lectures
+
+* [Geoethics](lectures/geoethics/index.html)
 
 
 ```{r shark, child = 'project-shark.Rmd'}
