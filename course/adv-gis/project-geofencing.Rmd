@@ -73,7 +73,7 @@ So, that's two bits of information to share publicly and two platforms to choose
 * [JavaScript Tutorial (W3Schools)](https://www.w3schools.com/js/DEFAULT.asp)
 * [Arcade Expressions for Javascript](https://developers.arcgis.com/javascript/latest/guide/arcade/index.html)
 * [Arcade Playground](https://developers.arcgis.com/arcade/playground/)
-* Javascript/Arcade Examples and Tutorials
+* Javascript/Arcade Examples and Tutorials (*see Course Objective 5*)
     - [Buffer and Intersect](https://developers.arcgis.com/javascript/latest/guide/buffer-and-intersect-geometry/)
     - [Display Point, Line and Polygon Graphics](https://developers.arcgis.com/javascript/latest/guide/display-point-line-and-polygon-graphics/)
     - [Import Data](https://developers.arcgis.com/labs/arcgisonline/import-data/)
