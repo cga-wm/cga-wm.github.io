@@ -10,7 +10,7 @@ pagetitle: "GeoEthics"
 
 > "not a limit to the freedom of action<br />but a new opportunity <span style="color:gray">[...]</span> to contribute <span style="color:gray">[...]</span><br />the best way forward for society"
 
-<small>Peppoloni & Di Capua (2016)</small>
+<small>Peppoloni & Di Capua (2015)</small>
 
 ***
 
@@ -63,6 +63,10 @@ How do we value things?
 
 ***
 
+![](img/morals.png)
+
+***
+
 Relativists
 :   each culture _should_ be allowed their own ethics
 
@@ -85,10 +89,33 @@ Universalists
 
 # Back to geoethics
 
+> "The well-being and survival of humankind depends on the Earth's habitability and resources."
 
+***
 
-# Resources
+![The "Triple Bottom Line" aka the Three P's](img/ven-diagram.jpg)
+
+# Geoethics are
+
+> "the values which underpin appropriate behaviors and practices, wherever human activities interact with the Earth system"
+
+<small>IAPG</small>
+
+# Readings
 
 - [Definition of Geoethics (IAPG)](http://www.geoethics.org/definition)
+- [The Meaning of Geoethics, Peppoloni & Di Capua (2015)](http://www.geoethics.org/articles-geoethics#comp-ijx091vi)
+
+
+# Task
+
+<div style="text-align:left">
+Find an article online (news story, blog post, journal article, etc.), post a link to it in our [team's discussion](https://github.com/orgs/cga-wm/teams/adv-gis/discussions/5) and write a few sentences discussing what is of value and what are the major ethical points of the article.
+
+What is your opinion of the ethical concern?
+</div>
+
+# Further Readings
+
 - [The Emerging Field of Geoethics, Bobrowsky et al. (2017)](http://www.geoethics.org/articles-geoethics#comp-jjfx3jvm)
 - [International Association for Promoting Geoethics](http://www.geoethics.org/)
