@@ -23,6 +23,93 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -336,15 +423,98 @@ $(document).ready(function () {
 <li>ask questions and make mistakes</li>
 <li>uphold professionalism in everything you do</li>
 </ul>
+<hr />
 <div id="getting-started-checklist" class="section level3">
 <h3>Getting Started Checklist</h3>
 <p>I have simplified the checklist into a <a href="https://github.com/cga-wm/advgis-beta/issues/3">GitHub issue</a>. I will update it as we go along. Most content will be delivered via our <a href="https://www.youtube.com/playlist?list=PLbIkNQKCuzMPKtzAT_cfdge7JYdebm42A">YouTube Playlist</a>, so please subscribe for notifications. Please feel free to comment on the issue with questions, requests, or clarifications.</p>
+<hr />
+</div>
+<div id="keeping-on-track" class="section level3">
+<h3>Keeping on Track</h3>
+<p>I will be posting lots of videos, lessons, lectures, materials, datasets, and discussions. To avoid everything from overwhelming you, I suggest that you create your own checklist of tasks. I’ve created the “Getting Started Checklist” using GitHub’s Issue Tracker; feel free to copy this list to begin your own.</p>
+<p>In Markdown you can create task lists using the following syntax:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="ss">- </span><span class="va">[x]</span> Completed task</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ss">- </span><span class="va">[ ]</span> Todo item</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="ss">- </span><span class="va">[ ]</span> Todo item</span></code></pre></div>
+<p>You can add new items and check them off your list at any time. I suggest putting your initials in the title and assigning the Issue to yourself, so we know who’s it is.</p>
+<p>In general, I recommended that you spend the first three weeks working on Project A and/or Project B. There will be a fairly steep learning curve to all the new tools, syntax, and programming language.</p>
+<p>This will leave the last two weeks for working on Project C, which extends our lessons from programming for GIS to programming GIS for the web.</p>
+<p>You may, of course, work on all three projects simultaneously, but in terms of allocating your time, I still suggest about 60% be spent on Projects A/B and 40% spent on Project C.</p>
+<hr />
 </div>
 <div id="lectures" class="section level3">
 <h3>Lectures</h3>
 <ul>
 <li><a href="lectures/geoethics/index.html">Geoethics</a></li>
 </ul>
+<hr />
+</div>
+<div id="resources" class="section level3">
+<h3>Resources</h3>
+<div id="agol" class="section level4">
+<h4>AGOL</h4>
+<ul>
+<li><a href="https://www.arcgis.com/index.html" class="uri">https://www.arcgis.com/index.html</a></li>
+<li><a href="https://youtu.be/x07Xyoe0d2k">W&amp;M access to ArcGIS Online</a></li>
+<li><a href="https://doc.arcgis.com/en/arcgis-online/reference/supported-items.htm">What can I add to ArcGIS Online?</a></li>
+<li><a href="https://www.esri.com/en-us/arcgis/products/arcgis-online/resources">Documentation and resources</a></li>
+</ul>
+</div>
+<div id="arcgis-pro" class="section level4">
+<h4>ArcGIS Pro</h4>
+<ul>
+<li><a href="https://www.wm.edu/as/cga/arcgis-licensing/index.php">Installation instructions (for Windows users only)</a></li>
+<li>Access through VDI on Windows (see <a href="https://youtu.be/pZh-fMoaV54">here</a>) or on Mac (see <a href="https://youtu.be/lG43GtH1Ta4">here</a>)</li>
+<li><a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources">Documentation and resources</a></li>
+</ul>
+</div>
+<div id="qgis" class="section level4">
+<h4>QGIS</h4>
+<ul>
+<li><a href="https://www.qgis.org/en/site/forusers/index.html">Installation instructions</a></li>
+<li>Access through VDI on Windows (see <a href="https://youtu.be/pZh-fMoaV54">here</a>) or on Mac (see <a href="https://youtu.be/lG43GtH1Ta4">here</a>)</li>
+<li><a href="https://www.qgis.org/en/docs/index.html">Documentation and resources</a></li>
+</ul>
+</div>
+<div id="notebooks" class="section level4">
+<h4>Notebooks</h4>
+<ul>
+<li><a href="https://doc.arcgis.com/en/arcgis-online/get-started/components-of-the-notebook-editor.htm">Getting Started With Notebooks (ArcGIS Online)</a></li>
+<li><a href="https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax">Basic writing and formatting (GitHub)</a></li>
+</ul>
+</div>
+<div id="python" class="section level4">
+<h4>Python</h4>
+<ul>
+<li><a href="https://python-guide.readthedocs.io/en/latest/">The Hitchhiker’s Guide to Python</a></li>
+<li><a href="https://www.udemy.com/python-arcpy1/">Basics of Python &amp; arcpy</a></li>
+<li><a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a></li>
+<li><a href="https://doi.org/10.1007/978-3-319-18398-5">Python for ArcGIS</a>. Tateosian (2015).</li>
+<li><a href="https://livebook.manning.com/book/geoprocessing-with-python/chapter-2/1">Geoprocessing with Python; Ch. 2</a>. Garrard (2016).</li>
+<li><a href="https://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/creating-a-new-python-toolbox.htm">Creating a new Python toolbox</a></li>
+</ul>
+</div>
+<div id="geoethics" class="section level4">
+<h4>Geoethics</h4>
+<ul>
+<li><a href="http://www.geoethics.org/">International Association for Promoting Geoethics (IAPG)</a></li>
+<li><a href="http://www.geoethics.org/definition">Definition of Geoethics (IAPG)</a></li>
+<li><a href="http://www.geoethics.org/articles-geoethics#comp-ijx091vi">The Meaning of Geoethics, Peppoloni &amp; Di Capua (2015)</a></li>
+<li><a href="http://www.geoethics.org/articles-geoethics#comp-jjfx3jvm">The Emerging Field of Geoethics, Bobrowsky et al. (2017)</a></li>
+<li>Nguyen et al. (2017). Smartphone-based “geofencing” to ascertain hospitalizations. <em>Circ Cardiovasc Qual Outcomes</em> 10(3). doi: <a href="https://dx.doi.org/10.1161/CIRCOUTCOMES.116.003326">10.1161/CIRCOUTCOMES.116.003326</a></li>
+<li><a href="https://www.theverge.com/2017/4/13/15289178/snapchat-ad-tracking-snap-to-store-geofilters">Carman (2017). Snapchat advertisers can now track whether custom geofilters get you to buy their product. The Verge</a></li>
+<li><a href="https://www.citylab.com/life/2020/03/coronavirus-stay-at-home-order-lockdown-social-distancing/608857/">Patino (2020). Why Asian countries have succeeded in flattening the curve. Citylab</a></li>
+<li><a href="https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761">Schuppe (2020). Google tracked his bike ride past a burglarized home. That made him a suspect. NBC News</a></li>
+</ul>
+</div>
+<div id="vlog-podcast-tools" class="section level4">
+<h4>Vlog / Podcast Tools</h4>
+<ul>
+<li><a href="https://www.audacityteam.org/">Audacity</a> - an open-source cross-platform audio software.</li>
+<li><a href="https://www.blender.org/">Blender</a> - an open-source video editor/renderer.</li>
+<li><a href="https://www.iskysoft.com/video-editing/combine-audio-and-video.html">iSkySoft</a></li>
+</ul>
+</div>
 </div>
 </div>
 <div id="project-a" class="section level2">
@@ -376,8 +546,8 @@ $(document).ready(function () {
 </div>
 <div id="project-c" class="section level2">
 <h2>Project C</h2>
-<div id="the-scenario-2" class="section level4">
-<h4>The Scenario</h4>
+<div id="the-scenario-2" class="section level3">
+<h3>The Scenario</h3>
 <dl>
 <dt>Geofence</dt>
 <dd>a virtual perimeter surrounding a real-world area
@@ -386,29 +556,20 @@ $(document).ready(function () {
 <p>Given this basic definition, we can imagine a geofence as a polygon that we draw over a particular location (a polygon being a series of coordinates where the starting and ending node are the same location such that it defines an enclosed area). Furthermore, we can assume that for any given coordinate pair (longitude, latitude), it can be described as either existing <strong>within</strong> our <strong>outside</strong> our geofence. Because this operation (determining if a location is within a geofence) returns a true or false state of being, we can use this to trigger events (e.g., if someone’s location service places them in a particular location that happens to be within a geofence, then do something).</p>
 <p>In this scenario, you have been asked to develop a web app that tells a story as the app user travels through a given area. You may assume that the app will run on someone’s mobile device with location services available. You are free to define the area (or extent) of where your app works and how the app with interact with its intended user.</p>
 <p>Your client wants to see a storyboard (hand-drawn or computer drafted) of your idea and your supervisor wants to see a sequence diagram (or flowchart) of how the user interacts with your app (see diagram drawing resources below).</p>
-<hr />
-</div>
-<div id="the-ethics" class="section level4">
-<h4>The Ethics</h4>
-<p>Please read <a href="https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761">this article</a> and think about how geofencing can impact our society. See if you can find other examples.</p>
-<hr />
-</div>
-<div id="the-challenge" class="section level4">
-<h4>The Challenge</h4>
 <p>To create a geofence, I would like you to do some field data collection. Let’s try to utilize either <a href="https://www.esri.com/en-us/arcgis/products/collector-for-arcgis/overview">Collector</a> or <a href="https://www.esri.com/en-us/arcgis/products/arcgis-quickcapture/overview">QuickCapture</a> for field collection of features.</p>
 <p>Before we collect features in the field, we need a feature service. I would like this as to be an opportunity for you to create your own file geodatabase and design <strong>fields</strong> and <strong>domains</strong> to assist your feature collection.</p>
 <p>To create the geofencing app, one possibility is the Arcade/Javascript method, shown in this <a href="https://developers.arcgis.com/javascript/3/samples/streamlayer_arcade_geofence/">Geofencing app example</a>.</p>
 <hr />
 </div>
-<div id="the-communication" class="section level4">
-<h4>The Communication</h4>
+<div id="the-communication" class="section level3">
+<h3>The Communication</h3>
 <p>In this scenario, I would like each of you to communicate one thing you learn while working on this project as either a vlog or a podcast; it should be informative and professional.</p>
 <p>Additionally, I’d like each of you to share an ethics problem (or solution) that relates to geofencing. You may choose between a vlog or a podcast. It should reference a real-world scenario and requires citation and discussion based on your thoughts and opinions. Ideally, you should have a belief before researching a topic or scenario. From your research, your discussion should include whether or not your original belief was changed or enforced.</p>
 <p>So, that’s two bits of information to share publicly and two platforms to choose from.</p>
 <hr />
 </div>
-<div id="example-project-outline" class="section level4">
-<h4>Example Project Outline</h4>
+<div id="example-project-outline" class="section level3">
+<h3>Example Project Outline</h3>
 <ul>
 <li>create your own file geodatabase or create a new hosted feature class
 <ul>
@@ -426,14 +587,36 @@ $(document).ready(function () {
 </ul>
 <hr />
 </div>
-<div id="resources" class="section level4">
-<h4>Resources</h4>
+<div id="resources-1" class="section level3">
+<h3>Resources</h3>
+<div id="api" class="section level4">
+<h4>API</h4>
 <ul>
-<li><a href="https://support.typora.io/Draw-Diagrams-With-Markdown/">Draw Diagrams with Markdown</a></li>
-<li><a href="https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html">Create a Geofence with Arcade</a></li>
+<li><a href="https://youtu.be/BxV14h0kFs0">What is API? Ask Tom Scott (YouTube)</a></li>
 <li><a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a></li>
 <li><a href="https://developers.arcgis.com/net/10-2/store/api-reference/html/6a641604-55f8-4173-88ce-9d0c9791db24.htm">Static Image URLs</a> (for point features)</li>
 </ul>
+</div>
+<div id="javascriptarcade" class="section level4">
+<h4>Javascript/Arcade</h4>
+<ul>
+<li><a href="https://www.tutorialspoint.com/javascript/index.htm">Javascript Tutorial (Tutorialspoint)</a></li>
+<li><a href="https://www.w3schools.com/js/DEFAULT.asp">JavaScript Tutorial (W3Schools)</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/arcade/index.html">Arcade Expressions for Javascript</a></li>
+<li><a href="https://developers.arcgis.com/arcade/playground/">Arcade Playground</a></li>
+<li>Javascript/Arcade Examples and Tutorials
+<ul>
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/buffer-and-intersect-geometry/">Buffer and Intersect</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/display-point-line-and-polygon-graphics/">Display Point, Line and Polygon Graphics</a></li>
+<li><a href="https://developers.arcgis.com/labs/arcgisonline/import-data/">Import Data</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Track.html">Track Widget</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-track-basic/index.html">Track Current Location</a></li>
+<li><a href="https://developers.arcgis.com/javascript/3/jssamples/mobile_soilmap.html">Geolocation Example - Soil Map</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-collection-edits/index.html">Add or Remove Graphics From a Feature Layer</a></li>
+</ul></li>
+<li><a href="https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html">Create a Geofence with Arcade</a></li>
+</ul>
+</div>
 </div>
 </div>
 </div>

@@ -35,15 +35,96 @@ As a part of this summer program, you are expected to:
 [esus1]: https://docs.google.com/spreadsheets/d/1tmNlCMUDELGg9N_5LxvcmteH1YhipkrMT8zSxfvJkHg/edit?usp=sharing
 [prwgdoc]: https://docs.google.com/document/d/1bOJ72vt2eomMd6ffNRbZlSVFac4CIAd7M9fYuu68-ws/edit?usp=sharing
 
+***
+
 ### Getting Started Checklist
 I have simplified the checklist into a [GitHub issue](https://github.com/cga-wm/advgis-beta/issues/3).
 I will update it as we go along.
 Most content will be delivered via our [YouTube Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMPKtzAT_cfdge7JYdebm42A), so please subscribe for notifications.
 Please feel free to comment on the issue with questions, requests, or clarifications.
 
+***
+
+### Keeping on Track
+I will be posting lots of videos, lessons, lectures, materials, datasets, and discussions.
+To avoid everything from overwhelming you, I suggest that you create your own checklist of tasks.
+I've created the "Getting Started Checklist" using GitHub's Issue Tracker; feel free to copy this list to begin your own.
+
+In Markdown you can create task lists using the following syntax:
+
+```md
+- [x] Completed task
+- [ ] Todo item
+- [ ] Todo item
+```
+
+You can add new items and check them off your list at any time.
+I suggest putting your initials in the title and assigning the Issue to yourself, so we know who's it is.
+
+In general, I recommended that you spend the first three weeks working on Project A and/or Project B.
+There will be a fairly steep learning curve to all the new tools, syntax, and programming language.
+
+This will leave the last two weeks for working on Project C, which extends our lessons from programming for GIS to programming GIS for the web.
+
+You may, of course, work on all three projects simultaneously, but in terms of allocating your time, I still suggest about 60% be spent on Projects A/B and 40% spent on Project C.
+
+***
+
 ### Lectures
 
 * [Geoethics](lectures/geoethics/index.html)
+
+***
+
+### Resources
+
+#### AGOL
+
+* https://www.arcgis.com/index.html
+* [W&M access to ArcGIS Online](https://youtu.be/x07Xyoe0d2k)
+* [What can I add to ArcGIS Online?](https://doc.arcgis.com/en/arcgis-online/reference/supported-items.htm)
+* [Documentation and resources](https://www.esri.com/en-us/arcgis/products/arcgis-online/resources)
+
+#### ArcGIS Pro
+
+* [Installation instructions (for Windows users only)](https://www.wm.edu/as/cga/arcgis-licensing/index.php)
+* Access through VDI on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))
+* [Documentation and resources](https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources)
+
+#### QGIS
+
+* [Installation instructions](https://www.qgis.org/en/site/forusers/index.html)
+* Access through VDI on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))
+* [Documentation and resources](https://www.qgis.org/en/docs/index.html)
+
+#### Notebooks
+
+* [Getting Started With Notebooks (ArcGIS Online)](https://doc.arcgis.com/en/arcgis-online/get-started/components-of-the-notebook-editor.htm)
+* [Basic writing and formatting (GitHub)](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
+
+#### Python
+
+* [The Hitchhiker's Guide to Python](https://python-guide.readthedocs.io/en/latest/)
+* [Basics of Python & arcpy](https://www.udemy.com/python-arcpy1/)
+* [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+* [Python for ArcGIS](https://doi.org/10.1007/978-3-319-18398-5). Tateosian (2015).
+* [Geoprocessing with Python; Ch. 2](https://livebook.manning.com/book/geoprocessing-with-python/chapter-2/1). Garrard (2016).
+* [Creating a new Python toolbox](https://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/creating-a-new-python-toolbox.htm)
+
+#### Geoethics
+* [International Association for Promoting Geoethics (IAPG)](http://www.geoethics.org/)
+* [Definition of Geoethics (IAPG)](http://www.geoethics.org/definition)
+* [The Meaning of Geoethics, Peppoloni & Di Capua (2015)](http://www.geoethics.org/articles-geoethics#comp-ijx091vi)
+* [The Emerging Field of Geoethics, Bobrowsky et al. (2017)](http://www.geoethics.org/articles-geoethics#comp-jjfx3jvm)
+* Nguyen et al. (2017). Smartphone-based "geofencing" to ascertain hospitalizations. *Circ Cardiovasc Qual Outcomes* 10(3). doi: [10.1161/CIRCOUTCOMES.116.003326](https://dx.doi.org/10.1161/CIRCOUTCOMES.116.003326)
+* [Carman (2017). Snapchat advertisers can now track whether custom geofilters get you to buy their product. The Verge](https://www.theverge.com/2017/4/13/15289178/snapchat-ad-tracking-snap-to-store-geofilters)
+* [Patino (2020). Why Asian countries have succeeded in flattening the curve. Citylab](https://www.citylab.com/life/2020/03/coronavirus-stay-at-home-order-lockdown-social-distancing/608857/)
+* [Schuppe (2020). Google tracked his bike ride past a burglarized home. That made him a suspect. NBC News](https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761)
+
+#### Vlog / Podcast Tools
+* [Audacity](https://www.audacityteam.org/) - an open-source cross-platform audio software.
+* [Blender](https://www.blender.org/) - an open-source video editor/renderer.
+* [iSkySoft](https://www.iskysoft.com/video-editing/combine-audio-and-video.html)
 
 
 ```{r shark, child = 'project-shark.Rmd'}

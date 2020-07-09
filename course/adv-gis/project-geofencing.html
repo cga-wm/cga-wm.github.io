@@ -308,8 +308,8 @@ $(document).ready(function () {
 
 <div id="project-c" class="section level2">
 <h2>Project C</h2>
-<div id="the-scenario" class="section level4">
-<h4>The Scenario</h4>
+<div id="the-scenario" class="section level3">
+<h3>The Scenario</h3>
 <dl>
 <dt>Geofence</dt>
 <dd>a virtual perimeter surrounding a real-world area
@@ -318,29 +318,20 @@ $(document).ready(function () {
 <p>Given this basic definition, we can imagine a geofence as a polygon that we draw over a particular location (a polygon being a series of coordinates where the starting and ending node are the same location such that it defines an enclosed area). Furthermore, we can assume that for any given coordinate pair (longitude, latitude), it can be described as either existing <strong>within</strong> our <strong>outside</strong> our geofence. Because this operation (determining if a location is within a geofence) returns a true or false state of being, we can use this to trigger events (e.g., if someone’s location service places them in a particular location that happens to be within a geofence, then do something).</p>
 <p>In this scenario, you have been asked to develop a web app that tells a story as the app user travels through a given area. You may assume that the app will run on someone’s mobile device with location services available. You are free to define the area (or extent) of where your app works and how the app with interact with its intended user.</p>
 <p>Your client wants to see a storyboard (hand-drawn or computer drafted) of your idea and your supervisor wants to see a sequence diagram (or flowchart) of how the user interacts with your app (see diagram drawing resources below).</p>
-<hr />
-</div>
-<div id="the-ethics" class="section level4">
-<h4>The Ethics</h4>
-<p>Please read <a href="https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761">this article</a> and think about how geofencing can impact our society. See if you can find other examples.</p>
-<hr />
-</div>
-<div id="the-challenge" class="section level4">
-<h4>The Challenge</h4>
 <p>To create a geofence, I would like you to do some field data collection. Let’s try to utilize either <a href="https://www.esri.com/en-us/arcgis/products/collector-for-arcgis/overview">Collector</a> or <a href="https://www.esri.com/en-us/arcgis/products/arcgis-quickcapture/overview">QuickCapture</a> for field collection of features.</p>
 <p>Before we collect features in the field, we need a feature service. I would like this as to be an opportunity for you to create your own file geodatabase and design <strong>fields</strong> and <strong>domains</strong> to assist your feature collection.</p>
 <p>To create the geofencing app, one possibility is the Arcade/Javascript method, shown in this <a href="https://developers.arcgis.com/javascript/3/samples/streamlayer_arcade_geofence/">Geofencing app example</a>.</p>
 <hr />
 </div>
-<div id="the-communication" class="section level4">
-<h4>The Communication</h4>
+<div id="the-communication" class="section level3">
+<h3>The Communication</h3>
 <p>In this scenario, I would like each of you to communicate one thing you learn while working on this project as either a vlog or a podcast; it should be informative and professional.</p>
 <p>Additionally, I’d like each of you to share an ethics problem (or solution) that relates to geofencing. You may choose between a vlog or a podcast. It should reference a real-world scenario and requires citation and discussion based on your thoughts and opinions. Ideally, you should have a belief before researching a topic or scenario. From your research, your discussion should include whether or not your original belief was changed or enforced.</p>
 <p>So, that’s two bits of information to share publicly and two platforms to choose from.</p>
 <hr />
 </div>
-<div id="example-project-outline" class="section level4">
-<h4>Example Project Outline</h4>
+<div id="example-project-outline" class="section level3">
+<h3>Example Project Outline</h3>
 <ul>
 <li>create your own file geodatabase or create a new hosted feature class
 <ul>
@@ -358,14 +349,36 @@ $(document).ready(function () {
 </ul>
 <hr />
 </div>
-<div id="resources" class="section level4">
-<h4>Resources</h4>
+<div id="resources" class="section level3">
+<h3>Resources</h3>
+<div id="api" class="section level4">
+<h4>API</h4>
 <ul>
-<li><a href="https://support.typora.io/Draw-Diagrams-With-Markdown/">Draw Diagrams with Markdown</a></li>
-<li><a href="https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html">Create a Geofence with Arcade</a></li>
+<li><a href="https://youtu.be/BxV14h0kFs0">What is API? Ask Tom Scott (YouTube)</a></li>
 <li><a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a></li>
 <li><a href="https://developers.arcgis.com/net/10-2/store/api-reference/html/6a641604-55f8-4173-88ce-9d0c9791db24.htm">Static Image URLs</a> (for point features)</li>
 </ul>
+</div>
+<div id="javascriptarcade" class="section level4">
+<h4>Javascript/Arcade</h4>
+<ul>
+<li><a href="https://www.tutorialspoint.com/javascript/index.htm">Javascript Tutorial (Tutorialspoint)</a></li>
+<li><a href="https://www.w3schools.com/js/DEFAULT.asp">JavaScript Tutorial (W3Schools)</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/arcade/index.html">Arcade Expressions for Javascript</a></li>
+<li><a href="https://developers.arcgis.com/arcade/playground/">Arcade Playground</a></li>
+<li>Javascript/Arcade Examples and Tutorials
+<ul>
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/buffer-and-intersect-geometry/">Buffer and Intersect</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/guide/display-point-line-and-polygon-graphics/">Display Point, Line and Polygon Graphics</a></li>
+<li><a href="https://developers.arcgis.com/labs/arcgisonline/import-data/">Import Data</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Track.html">Track Widget</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-track-basic/index.html">Track Current Location</a></li>
+<li><a href="https://developers.arcgis.com/javascript/3/jssamples/mobile_soilmap.html">Geolocation Example - Soil Map</a></li>
+<li><a href="https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-collection-edits/index.html">Add or Remove Graphics From a Feature Layer</a></li>
+</ul></li>
+<li><a href="https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html">Create a Geofence with Arcade</a></li>
+</ul>
+</div>
 </div>
 </div>
 

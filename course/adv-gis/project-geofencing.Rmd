@@ -4,7 +4,7 @@ title: Geofencing
 
 ## Project C
 
-#### The Scenario
+### The Scenario
 
 Geofence
 : a virtual perimeter surrounding a real-world area
@@ -19,17 +19,6 @@ You are free to define the area (or extent) of where your app works and how the 
 
 Your client wants to see a storyboard (hand-drawn or computer drafted) of your idea and your supervisor wants to see a sequence diagram (or flowchart) of how the user interacts with your app (see diagram drawing resources below).
 
-***
-
-#### The Ethics
-
-Please read [this article](https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761) and think about how geofencing can impact our society.
-See if you can find other examples.
-
-***
-
-#### The Challenge
-
 To create a geofence, I would like you to do some field data collection.
 Let's try to utilize either [Collector][collector] or [QuickCapture][quickcap] for field collection of features.
 
@@ -40,7 +29,7 @@ To create the geofencing app, one possibility is the Arcade/Javascript method, s
 
 ***
 
-#### The Communication
+### The Communication
 
 In this scenario, I would like each of you to communicate one thing you learn while working on this project as either a vlog or a podcast; it should be informative and professional.
 
@@ -59,7 +48,7 @@ So, that's two bits of information to share publicly and two platforms to choose
 
 ***
 
-#### Example Project Outline
+### Example Project Outline
 
 * create your own file geodatabase or create a new hosted feature class
   - if creating a file geodatabase, define fields and domains to assist your field collection
@@ -71,9 +60,25 @@ So, that's two bits of information to share publicly and two platforms to choose
 
 ***
 
-#### Resources
+### Resources
 
-- [Draw Diagrams with Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown/)
-- [Create a Geofence with Arcade](https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html)
-- [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
-- [Static Image URLs](https://developers.arcgis.com/net/10-2/store/api-reference/html/6a641604-55f8-4173-88ce-9d0c9791db24.htm) (for point features)
+#### API
+* [What is API? Ask Tom Scott (YouTube)](https://youtu.be/BxV14h0kFs0)
+* [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
+* [Static Image URLs](https://developers.arcgis.com/net/10-2/store/api-reference/html/6a641604-55f8-4173-88ce-9d0c9791db24.htm) (for point features)
+
+
+#### Javascript/Arcade
+* [Javascript Tutorial (Tutorialspoint)](https://www.tutorialspoint.com/javascript/index.htm)
+* [JavaScript Tutorial (W3Schools)](https://www.w3schools.com/js/DEFAULT.asp)
+* [Arcade Expressions for Javascript](https://developers.arcgis.com/javascript/latest/guide/arcade/index.html)
+* [Arcade Playground](https://developers.arcgis.com/arcade/playground/)
+* Javascript/Arcade Examples and Tutorials
+    - [Buffer and Intersect](https://developers.arcgis.com/javascript/latest/guide/buffer-and-intersect-geometry/)
+    - [Display Point, Line and Polygon Graphics](https://developers.arcgis.com/javascript/latest/guide/display-point-line-and-polygon-graphics/)
+    - [Import Data](https://developers.arcgis.com/labs/arcgisonline/import-data/)
+    - [Track Widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Track.html)
+    - [Track Current Location](https://developers.arcgis.com/javascript/latest/sample-code/widgets-track-basic/index.html)
+    - [Geolocation Example - Soil Map](https://developers.arcgis.com/javascript/3/jssamples/mobile_soilmap.html)
+    - [Add or Remove Graphics From a Feature Layer](https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-collection-edits/index.html)
+* [Create a Geofence with Arcade](https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html)
