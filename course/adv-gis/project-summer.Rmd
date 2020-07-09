@@ -45,6 +45,15 @@ Please feel free to comment on the issue with questions, requests, or clarificat
 
 ***
 
+### Important Links:
+
+* [Discussion Board](https://github.com/orgs/cga-wm/teams/adv-gis/discussions)
+* [Issue Tracker](https://github.com/cga-wm/advgis-beta/issues)
+* [Video Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMPKtzAT_cfdge7JYdebm42A)
+* [ArcGIS Docs](https://doc.arcgis.com/en/)
+
+***
+
 ### Keeping on Track
 I will be posting lots of videos, lessons, lectures, materials, datasets, and discussions.
 To avoid everything from overwhelming you, I suggest that you create your own checklist of tasks.
