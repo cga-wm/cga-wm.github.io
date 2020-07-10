@@ -109,6 +109,9 @@ You may, of course, work on all three projects simultaneously, but in terms of a
 #### Notebooks
 
 * [Getting Started With Notebooks (ArcGIS Online)](https://doc.arcgis.com/en/arcgis-online/get-started/components-of-the-notebook-editor.htm)
+
+#### Markdown
+
 * [Basic writing and formatting (GitHub)](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 
 #### Python
@@ -121,14 +124,16 @@ You may, of course, work on all three projects simultaneously, but in terms of a
 * [Creating a new Python toolbox](https://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/creating-a-new-python-toolbox.htm)
 
 #### Geoethics
+*Resources and selected readings.*
+
 * [International Association for Promoting Geoethics (IAPG)](http://www.geoethics.org/)
 * [Definition of Geoethics (IAPG)](http://www.geoethics.org/definition)
-* [The Meaning of Geoethics, Peppoloni & Di Capua (2015)](http://www.geoethics.org/articles-geoethics#comp-ijx091vi)
-* [The Emerging Field of Geoethics, Bobrowsky et al. (2017)](http://www.geoethics.org/articles-geoethics#comp-jjfx3jvm)
-* Nguyen et al. (2017). Smartphone-based "geofencing" to ascertain hospitalizations. *Circ Cardiovasc Qual Outcomes* 10(3). doi: [10.1161/CIRCOUTCOMES.116.003326](https://dx.doi.org/10.1161/CIRCOUTCOMES.116.003326)
-* [Carman (2017). Snapchat advertisers can now track whether custom geofilters get you to buy their product. The Verge](https://www.theverge.com/2017/4/13/15289178/snapchat-ad-tracking-snap-to-store-geofilters)
-* [Patino (2020). Why Asian countries have succeeded in flattening the curve. Citylab](https://www.citylab.com/life/2020/03/coronavirus-stay-at-home-order-lockdown-social-distancing/608857/)
-* [Schuppe (2020). Google tracked his bike ride past a burglarized home. That made him a suspect. NBC News](https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761)
+* Peppoloni & Di Capua (2015). [The Meaning of Geoethics](http://www.geoethics.org/articles-geoethics#comp-ijx091vi). In: Geoethics: Ethical challenges and case studies in Earth Sciences, Elsevier.
+* Bobrowsky et al. (2017). [The Emerging Field of Geoethics](http://www.geoethics.org/articles-geoethics#comp-jjfx3jvm). In: Scientific Integrity and Ethics in the Geosciences, Wiley.
+* Nguyen et al. (2017). [Smartphone-based "geofencing" to ascertain hospitalizations](https://dx.doi.org/10.1161/CIRCOUTCOMES.116.003326). *Circ Cardiovasc Qual Outcomes* 10(3).
+* Carman (2017). [Snapchat advertisers can now track whether custom geofilters get you to buy their product](https://www.theverge.com/2017/4/13/15289178/snapchat-ad-tracking-snap-to-store-geofilters). The Verge.
+* Patino (2020). [Why Asian countries have succeeded in flattening the curve](https://www.citylab.com/life/2020/03/coronavirus-stay-at-home-order-lockdown-social-distancing/608857/). Citylab.
+* Schuppe (2020). [Google tracked his bike ride past a burglarized home. That made him a suspect](https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761). NBC News.
 
 #### Vlog / Podcast Tools
 * [Audacity](https://www.audacityteam.org/) - an open-source cross-platform audio software.
