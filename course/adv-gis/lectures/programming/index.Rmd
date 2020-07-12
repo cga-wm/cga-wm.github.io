@@ -1,0 +1,366 @@
+---
+author: AdvGIS
+date: July 12, 2020
+pagetitle: "AdvGIS | Programming"
+---
+
+**Programming...** <span class="fragment">**huh!**</span><br />
+<span class="fragment">**What is good for?**</span><br />
+<span class="fragment">**Absolutely...**</span>
+<span class="fragment">**Something?**</span>
+
+# Introduction to Programming
+
+<div class="fragment">
+What is programming for GIS?
+</div>
+
+<aside class="notes">
+- So what is programming for a GIS?
+</aside>
+
+# What is GIS?
+<section data-background-image="img/what-is-gis.png" data-background-size="contain">
+<aside class="notes">
+- Well, let's go back and look at how we define GIS
+- You probably recognize these images that are often used when describing GIS, but what is it?
+
+- Two common visualizations representing GIS:
+    * left is a pin-cushion of possible applications and
+    * right as the separation of the real world into individual layers that represent one category or theme (such as land elevation, land use, parcels, streets and administrative boundaries)
+</aside>
+</section>
+
+***
+
+*"Maps are both the raw material and the product of geographic information systems (GIS)."*
+
+<small>--- Xi Liu, Penn State University</small>
+
+<aside class="notes">
+- Some argue that GIS is all about maps
+- Maps, maps, maps, maps, maps
+- If it's on a map, or could be represented on a map, then it has to do with GIS
+</aside>
+
+***
+
+*"Everything is related to everything else, but near things are more related than distant things."*
+
+<small>---The First Law of Geography by Waldo Tobler</small>
+
+<aside class="notes">
+- Others point out that GIS helps us understand the spatial relationships of everything around us
+- An idea supported by quantum physics and the entanglement theory
+- and certainly we can analyze different metrics of spatial relationships (are things coincident or separated? are they randomly distributed or clustered?)
+</aside>
+
+***
+
+*"GIS is like the machinery that transforms data<br />into the commodity **information**<br />that is needed to solve problems or create opportunities."*
+
+<small>---David DiBiase, Director of Education, Industry Solutions, Esri</small>
+
+<aside class="notes">
+- But I find that I like best this simple simile that relates GIS to a kind of machinery transforming data into information
+    * data are our measurements of the world around us (could be on a map, could a table of numbers, could be an image of earth from space)
+    * as an aside, please differentiate _data_, which are measurements, from _products_, which are the outputs of our analyses and can sometimes look like data
+</aside>
+
+# Welcome to the (GIS) Machine
+
+<aside class="notes">
+- Okay, so GIS is like a machine
+- and a machine is something that performs a given task(s), takes input (like a raw material) and delivers an output (product)
+- Machines may be characterizes as a type of tool
+- Then what are tools and why do we have them?
+<aside>
+
+# The Purpose of Tools
+<section data-background-image="img/tools.png" data-background-size="contain">
+
+<aside class="notes">
+- My father-in-law says "there are no hard jobs if you have the right tool"
+- The images I'm showing here represent snippets of the history of adding devices from the hand-operated abacus, to the mechanized Odhner, to the contemporary electronic calculator app
+- We generally learn how to add at a young age
+- Adding is a simple task, right? So why the evolution of these devices?
+
+Reference: https://uxdesign.cc/evolution-of-counting-tools-ux-inspiration-from-history-7948fe6840b3
+</aside>
+</section>
+
+# Simple Task: Adding First 2 Numbers
+
+$0 + 1 =$ <span class="fragment">$1$</span>
+
+<aside class="notes">
+- Let's take a look at this "simple" task
+- Whenever you know the answer, feel free to shout it out, what is the sum of the first two numbers---yes, I am putting zero in as the first number (I'll get to why that is in a bit)
+</aside>
+
+# Simple Task: Adding First 3 Numbers
+
+$0 + 1 + 2 =$ <span class="fragment">$3$</span>
+
+# Simple Task: Adding First 5 Numbers
+
+$0 + 1 + 2 + 3 + 4 =$ <span class="fragment">$10$</span>
+
+# Simple Task: Adding First 10 Numbers
+
+$0+1+2+3+4+5+6+7+8+9 =$ <span class="fragment">$45$</span>
+
+<aside class="notes">
+...starting to slow down a bit
+</aside>
+
+# Simple Task: Adding First 25 Numbers
+
+$0+1+2+3+4+5+\ldots +23+24 =$ <span class="fragment">$300$</span>
+
+# Okay, adding sequences is just ...
+
+$0+1+2+3+4+5+\ldots +23+24 =$ <span class="fragment">$\frac{n\;\left(n+1\right)}{2}$</span>
+
+<aside class="notes">
+- Okay, math majors recognize this as equivalent to one half n times the quantity n plus 1; so I could give 1000 numbers and its just three operations: addition, division, multiplication
+- This idea of simplifying long tasks into shorter tasks is kind of like the mechanization of the adding machine (we realized that multiplication was just glorified addition over and over again);
+- and it is recognizing the repetition of simple tasks that has led to automation (a push button or in today's case, a touch screen)
+- What does any of this have to do with GIS or programming?
+</aside>
+
+***
+
+# Examples in GIS
+Calculating Distance
+
+<ul>
+<span class="fragment"><li>Euclidean</li></span>
+<span class="fragment"><li>Manhattan</li></span>
+<span class="fragment"><li>Geodesic</li></span>
+</ul>
+
+<aside class="notes">
+- Let's look at a different example: one more ingrained in GIS---the concept of distance
+- Several types of distances we could calculate; anyone know of any?
+    * Euclidean: straight line distance
+    * Rectilinear (Manhattan or taxicab): shortest distance a car could take between any two intersections
+    * Geodesic: shortest distance along the surface of sphere
+- Why is distance important in GIS?
+</aside>
+
+
+***
+
+<section data-background-image="img/nogrid.png" data-background-size="contain">
+
+<aside class="notes">
+- Here's a map.
+- Let's say that there is someone located at the plus sign there in the middle
+- Any board game or trading card game fans here?
+- Let's say the points A--E are comics and card stores in Newport News (sorry, I checked and there aren't many here in Williamsburg---my brother-in-law has got me into MTG)
+    * you could say they are anything (ATM machines, Starbucks, whatever)
+- Let's say it's your job to tell this person which store is the closest
+- So real quick, can anybody tell which of these labeled dots is closest to the plus sign?
+    * B
+- Could you order them from closest to farthest away?
+    1. d(B) = 6.08
+    2. d(A) = 7.00
+    3. d(D) = 7.28
+    4. d(E) = 8.06
+    5. d(C) = 9.22
+</aside>
+</section>
+
+***
+
+<section data-background-image="img/grid.png" data-background-size="contain">
+
+<aside class="notes">
+- What if we imposed a grid?
+- You can think of this as Manhattan distance
+- We see this a lot with our GPS navigation devices
+    * the first commercial gps was sold in 1998 (20 years ago)
+    * the first smart phone with gps was sold in 2005
+    * by 2014, every smart phone has gps and has completely changed navigation
+- The distance calculation changes slightly
+    * Now, A and B are the same distance away
+    * And D and E are also the same distance away
+- What if there were road closures?
+- What if the plus sign location moved two blocks to the right?
+- What if it continuously moved?
+- You'd have to recalculate all the distances, over and over
+</aside>
+</section>
+
+***
+
+<section data-background-image="img/earth.png" data-background-size="contain">
+
+<aside class="notes">
+- now imagine those locations on a global scale
+- we're now looking at geodesic distances (air travel)
+- what if all the people in the world operating the estimated two billion GPS units in circulation are all asking the same questions:
+    * what's closest to me?
+    * how far away is that?
+    * what's the shortest distance to there?
+- what we see is that a relatively simple task (distance calculation) is made difficult due to _scale_ (the number of requests) and _time_ (how quickly it needs to be done)
+- this is just one of countless examples where automation is critical
+</aside>
+</section>
+
+# GIS: a tool for spatial analysis
+<section data-background-image="img/gis-tool.png" data-background-size="contain">
+
+<aside class="notes">
+- We said the GIS is a tool to help us solve spatial questions,
+- Looking again at the applications (...), we see that most of these have issues concerning scale and time
+- to address this challenge, it requires us to have yet another tool: one that can handle a lot of requests in a short amount of time
+- this is where we come to computer programming
+</aside>
+</section>
+
+***
+
+*"It is difficult to dig a ditch without a shovel,<br />but it is easier if you have a backhoe."*
+
+<aside class="notes">
+- So back to this idea of there being no hard jobs if you have the right tool
+- You can think of writing computer code like building a machine that does the heavy lifting for you.
+- Yes, it takes skill to design and build a well-made machine, but once you do, the rewards are unparalleled.
+</aside>
+
+***
+
+<section data-background-image="img/languages.png" data-background-size="contain">
+
+<aside class="notes">
+- Computer programs come in a variety of languages
+- Needless to say, there are a lot to choose from
+- For GIS and, increasingly in data science---thanks to developments efforts in numerical and scientific libraries---Python is a good choice
+
+Image reference:
+
+Angshuman Goswami (17 Aug 2014). "11 Hottest Technology trends 2014 --- Keep ahead of the Pack." Online: Binary Biryani.
+
+- http://binarybiryani.com/category/programming-language/
+- http://binarybiryani.com/wp-content/uploads/2014/08/hottest-trends-in-technology-2014.jpg
+</aside>
+</section>
+
+***
+
+<section data-background-image="img/python.png" data-background-size="contain">
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<ul>
+<span class="fragment"><li>High-level language</li></span>
+<span class="fragment"><li>Object-oriented programming</li></span>
+<span class="fragment"><li>Third-party packages<br />(namely ArcGIS and QGIS)</li></span>
+</ul>
+
+
+<aside class="notes">
+- Why Python?
+1. First, it's considered a high-level language, which means it's easier---and as a result, generally faster---for us to read and write. This tends to make development quicker and simpler.
+2. Secondly, it's an object-oriented language, which has several advantages over structured or functional programming, by simplifying the process of creating programs through the use of specially defined classes of objects; these objects encapsulate a specific set of rules, values and functions that can easily be maintained, reused, shared and scaled.
+3. Third, in addition to the standard library, there is a plethora of well-documented and supported third-party packages to help support a variety of projects
+    * namely, the industry standard GIS software company, ArcGIS, and the world's leading open-source desktop GIS software, QGIS, both provide Python support
+</aside>
+</section>
+
+# Language & interpreter
+<span class="fragment">We need both.</span>
+
+<aside class="notes">
+- Python is actually two things: a language and an interpreter
+    * We need to know how to read and write in Python (language)
+    * We also need something can understands what we just wrote (translator)
+</aside>
+
+# Semantics & syntax
+<span class="fragment">It's a language after all.</span>
+
+<aside class="notes">
+- The idea that computer programs are a language means we need to get two things straight: *semantics* and *syntax*
+    * Does anyone know what either of these words mean?
+</aside>
+
+***
+
+syntax
+:   the set of <u>*symbols*</u> and <u>*rules*</u> that define terms used collectively to form a correctly structured document
+
+<aside class="notes">
+- so we have this set of symbols and rules
+- if we are going to create a new language, what's the first thing we need?
+    * alphabet `-->` symbols
+- you can think of the rules as the grammar and mechanics of a language
+- you have an alphabet used to form words; words combined with proper punctuation form sentences; sentences combine to form paragraphs; and so forth
+- So what is semantics?
+</aside>
+
+***
+
+semantics
+:   the <u>*meaning*</u> (intent or purpose) behind the syntax
+
+<aside class="notes">
+- we prescribe meaning to words; the same goes for statements in programming terms
+- if I spell out 'h' 'e' 'l' 'l' 'o' or if I say "hello" you get a sense that I'm greeting you; there's meaning behind those words
+- we also know that the general greeting, "hello," can be spoken in other languages: ni hao (Mandarin), gutentag (German), bonjour (French), shalom (Hebrew), hola (Spanish), ciao (Italian)
+- the same semantics, but different syntax
+- does that make sense?
+- in my experience, a lot of programming begins with you knowing what the intent is (e.g., I want to add all these numbers together) and it's your job as a programmer to figure out the proper syntax to accomplish the task
+- just as an aside, know that there are pros and cons to using different programming languages---there's not one perfect language for everything
+- some are more catered to or popular with certain fields of study
+    * FORTRAN for atmospheric science (speed is unparalleled)
+    * R for biology (strong in statistics)
+    * MATLAB for engineering
+    * JAVA and Flash for web apps
+    * C#, C++ and Lua for video games (I was writing a video game in Python, too)
+</aside>
+
+# Examples
+
+| English | Python |
+| :------ | :----- |
+| Write the word "Hello" | `>>> print("Hello")`<br />`Hello` |
+| Add `0+1+2+3+4` | `>>> sum(range(0,5))`<br />`10` |
+| My computer's home directory is ... | `>>> import os`<br />`>>> print(os.path.expanduser("~"))`<br />`C:\Users\twdavis17` |
+| What version of Python am I using? | `>>> import sys`<br />`>>> print(sys.version_info.major)`<br />`3` |
+
+<aside class="notes">
+- In the first example, Python doesn't actually speak, but it writes out the word "Hello"
+    * Here, we see the first example of what is called a *function*
+    * A function typically performs one process or procedure, in this case, it prints whatever is given to it
+    * If you are familiar with Microsoft Excel (or other spreadsheet software), you'll know about functions---they have a name and they take values inside their parentheses
+    * The quotes here are just to let the function know that we want it to print the characters 'h-e-l-l-o'
+- In the second example, we see two functions:  *sum* and *range*
+    * let's start inside with the *range* function: we give this function a value to start at and a value to end before, so range in this example will gives us the values 0, 1, 2, 3, and 4
+    * we are sending these five values into a function called *sum*, which like the name suggests, adds up the numbers it's given
+- In the third example, we are first introduced to the concept of packages and modules (these are more commonly referred to as libraries; they define new functions and provide additional capabilities);
+    * the 'import' statement is a keyword for Python to lookup and load an "expansion pack" to the standard library
+    * we also see the dot notation---packages are often organized hierarchically (library `-->` book `-->` chapter)
+- The fourth example, we see the import keyword again to load the "sys" library
+    * Here, we access the major number of the version_info module in the sys library
+    * It's probably good to mention here that the Python community is currently split (and has been for over a decade---since late 2008) between those who stay in Python 2 land and those who moved on to Python 3 (Python 3 has some fundamental differences in syntax and semantics that many who developed for years in Python 2 more or less refused to update all their code; hence we have two major versions available)
+    * For GIS, QGIS works with both 2 and 3, but ArcGIS Pro works only with Python 3; **if you're new to Python, learn 3**
+</aside>
+
+
+
+
+
+
+# Readings
+
+
+# Task
+
+
+# Further Readings
