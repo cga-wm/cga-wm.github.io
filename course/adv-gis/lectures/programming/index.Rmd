@@ -4,11 +4,6 @@ date: July 12, 2020
 pagetitle: "AdvGIS | Programming"
 ---
 
-**Programming...** <span class="fragment">**huh!**</span><br />
-<span class="fragment">**What is good for?**</span><br />
-<span class="fragment">**Absolutely...**</span>
-<span class="fragment">**Something?**</span>
-
 # Introduction to Programming
 
 <div class="fragment">
@@ -146,7 +141,7 @@ Calculating Distance
     * Euclidean: straight line distance
     * Rectilinear (Manhattan or taxicab): shortest distance a car could take between any two intersections
     * Geodesic: shortest distance along the surface of sphere
-- Why is distance important in GIS?
+- Distance is one of those intrinsic qualities in GIS; this idea of what is nearby or how far away is something
 </aside>
 
 
@@ -287,7 +282,7 @@ Angshuman Goswami (17 Aug 2014). "11 Hottest Technology trends 2014 --- Keep ahe
 
 <aside class="notes">
 - The idea that computer programs are a language means we need to get two things straight: *semantics* and *syntax*
-    * Does anyone know what either of these words mean?
+    * So what do either of these words mean?
 </aside>
 
 ***
@@ -301,7 +296,7 @@ syntax
     * alphabet `-->` symbols
 - you can think of the rules as the grammar and mechanics of a language
 - you have an alphabet used to form words; words combined with proper punctuation form sentences; sentences combine to form paragraphs; and so forth
-- So what is semantics?
+- So what are semantics?
 </aside>
 
 ***
@@ -331,7 +326,7 @@ semantics
 | :------ | :----- |
 | Write the word "Hello" | `>>> print("Hello")`<br />`Hello` |
 | Add `0+1+2+3+4` | `>>> sum(range(0,5))`<br />`10` |
-| My computer's home directory is ... | `>>> import os`<br />`>>> print(os.path.expanduser("~"))`<br />`C:\Users\twdavis17` |
+| My computer's home directory is ... | `>>> import os`<br />`>>> print(os.path.expanduser("~"))`<br />`C:\Users\twdavis` |
 | What version of Python am I using? | `>>> import sys`<br />`>>> print(sys.version_info.major)`<br />`3` |
 
 <aside class="notes">
@@ -346,21 +341,21 @@ semantics
 - In the third example, we are first introduced to the concept of packages and modules (these are more commonly referred to as libraries; they define new functions and provide additional capabilities);
     * the 'import' statement is a keyword for Python to lookup and load an "expansion pack" to the standard library
     * we also see the dot notation---packages are often organized hierarchically (library `-->` book `-->` chapter)
+    * the output here shows the directory of the user's home folder, which you can tell is on a Windows machine because of the backslashes
 - The fourth example, we see the import keyword again to load the "sys" library
     * Here, we access the major number of the version_info module in the sys library
     * It's probably good to mention here that the Python community is currently split (and has been for over a decade---since late 2008) between those who stay in Python 2 land and those who moved on to Python 3 (Python 3 has some fundamental differences in syntax and semantics that many who developed for years in Python 2 more or less refused to update all their code; hence we have two major versions available)
     * For GIS, QGIS works with both 2 and 3, but ArcGIS Pro works only with Python 3; **if you're new to Python, learn 3**
 </aside>
 
+# Exercises
+Shared on our AGOL Group.
 
+* Exercise 1 - Python Fundamentals
+* Exercise 2 - More Fundamentals
 
+# Additional Readings
 
-
-
-# Readings
-
-
-# Task
-
-
-# Further Readings
+* [Toms & O'Beirne (2017). Chapter 1](https://subscription.packtpub.com/book/application_development/9781787282513/1)
+* [Automate the Boring Stuff with Python (YouTube)](https://www.youtube.com/playlist?list=PL0-84-yl1fUnRuXGFe_F7qSH1LEnn9LkW)
+* [The Hitchhiker's Guide to Python](https://python-guide.readthedocs.io/en/latest/intro/learning/)
