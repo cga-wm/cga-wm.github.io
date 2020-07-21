@@ -4,7 +4,7 @@ title: Shark Attack
 
 ## Project A
 
-#### The Scenario
+### The Scenario
 
 Questions have arisen regarding the geoethics associated with sharks.
 Your goal is to find factual information in support of or debunking myths about shark attacks.
@@ -13,7 +13,9 @@ For this project, you will keep an ArcGIS Notebook [(pdf)](https://community.esr
 You will save/export your notebook as an HTML document to be shared across the web with your client.
 In order to accomplish this task, you will need to learn [Markdown](https://colab.research.google.com/notebooks/markdown_guide.ipynb) and Python scripting in a Jupyter notebook style setting, for which this class will prepare you.
 
-#### The Client Meeting
+***
+
+### The Client Meeting
 All consultants are to meet to discuss the state of their work including any results, conclusions, challenges, and setbacks with their client (played by a bonafide CGA Fellow). This is a real-world simulation of a client meet, so please be professional and respectful. You can expect that the client will report back to your professor.
 
 Just as you would meet with a real client, you should have materials prepared for the client to look at (e.g., a report with figures/tables/graphs). You may ask your client to visit web materials, such as a presentation or report file (add link to the group sign-up sheet). You should _not_ expect the client to have GIS software or know how it works. Remember, you are the GIS expert.

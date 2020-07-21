@@ -7,7 +7,8 @@ title: "Summer Session"
 ## Overview
 
 - Performance Review Worksheet ([.gdoc][prwgdoc])
-- Evaluation Sign-Up Sheet ([.gdoc][esus1]) **&#8592; please sign up for Week 1 meeting**
+- Evaluation Sign-Up Sheet ([.gdoc][esus1]) **&#8592; please sign up for review meeting**
+- Client Meeting Sign-Up Sheet ([.gdoc][cmss]) **&#8592; choose client for Project A/B**
 
 Welcome to Advanced GIS Consulting Summer Program!
 
@@ -34,6 +35,7 @@ As a part of this summer program, you are expected to:
 
 [esus1]: https://docs.google.com/spreadsheets/d/1tmNlCMUDELGg9N_5LxvcmteH1YhipkrMT8zSxfvJkHg/edit?usp=sharing
 [prwgdoc]: https://docs.google.com/document/d/1bOJ72vt2eomMd6ffNRbZlSVFac4CIAd7M9fYuu68-ws/edit?usp=sharing
+[cmss]: https://docs.google.com/spreadsheets/d/1u4qtfp9BQ0OpDJmgLmkdpXzgKxqw7jBCuLShXVoh640/edit?usp=sharing
 
 ***
 
