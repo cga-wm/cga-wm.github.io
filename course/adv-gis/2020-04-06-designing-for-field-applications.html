@@ -382,15 +382,15 @@ $(document).ready(function () {
 </ol>
 <hr />
 </div>
-<div id="adding-a-feature-class-to-your-fgdb" class="section level3">
-<h3>Adding a Feature Class to Your FGDB</h3>
-<p>Create a new Feature Class in your geodatabase. You may create multiple feature classes within a single geodatabase. In this example, I am going to start with creating a point feature class for storing my points of interest.</p>
+<div id="adding-a-feature-class-to-your-file-gdb" class="section level3">
+<h3>Adding a Feature Class to Your File GDB</h3>
+<p>Create a new Feature Class in your geodatabase. You may create multiple feature classes within a single geodatabase. In this example, I am going to start with creating a point feature class for storing my points of interest (POI).</p>
 <p>For more information on the basics of creating a feature class within a geodatabase in ArcGIS Pro, see <a href="https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm">here</a>.</p>
 <ol style="list-style-type: decimal">
 <li>Right-click on the geodatabase in the Catalog and select <code>New --&gt; Feature Class</code></li>
 <li>Enter the information in the New Feature Class window
 <ul>
-<li>Name: <code>points_of_interest</code></li>
+<li>Name: <code>landmarks</code></li>
 <li>Alias: <code>POI</code></li>
 <li>Feature Class Type: <code>Point</code></li>
 <li>Geometry Properties: (leave both options unchecked)
@@ -413,7 +413,10 @@ $(document).ready(function () {
 <ul>
 <li>NAD 1983 (Meters)
 <ul>
-<li>NAD 1983 StatePlane Virginia South FIPS 4502 (Meters)</li>
+<li>NAD 1983 StatePlane Virginia South FIPS 4502 (Meters)
+<ul>
+<li>EPSG:32147</li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -436,7 +439,7 @@ $(document).ready(function () {
 <h3>Adding Additional Fields</h3>
 <p>Create new fields (attributes) for your feature class. One the most challenging parts of creating fields is deciding the correct data type and size/length. This can be especially tricky for text fields where you may run out of characters if you made a poor design decision for your attribute.</p>
 <ol style="list-style-type: decimal">
-<li>Right-click “points_of_interest” feature class in the Catalog and select <code>Design</code> <code>--&gt;</code> <code>Fields</code></li>
+<li>Right-click “landmarks” feature class in the Catalog and select <code>Design</code> <code>--&gt;</code> <code>Fields</code></li>
 <li>At the bottom of the table, “Click here to add a new field”</li>
 <li>Enter a new field for the closest trail name
 <ul>
@@ -482,7 +485,7 @@ $(document).ready(function () {
 </div>
 <div id="adding-optional-gps-receiver-fields" class="section level3">
 <h3>Adding Optional GPS Receiver Fields</h3>
-<p>Create additional fields for recording the GPS receiver data[^1]. Note that these fields only really work with point-based geometries.</p>
+<p>Create additional fields for recording the GPS receiver data<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Note that these fields only really work with point-based geometries.</p>
 <ol style="list-style-type: decimal">
 <li>Enter a new field for GPS receiver name
 <ul>
@@ -535,28 +538,6 @@ $(document).ready(function () {
 <ol style="list-style-type: decimal">
 <li>In the Catalog, right-click on your geodatabase and select <code>Design</code> <code>--&gt;</code> <code>Domains</code></li>
 <li>In Domains ribbon, click on “New Domain”</li>
-<li>Create a domain for trail names
-<ul>
-<li>Domain Name: <code>TrailName</code></li>
-<li>Description: <code>Name of closest trail to manhole</code></li>
-<li>Field Type: <code>Text</code></li>
-<li>Domain Type: <code>Coded Value Domain</code></li>
-<li>Split Policy: <code>Default Value</code></li>
-<li>Merge Policy: <code>Default Value</code></li>
-<li>Coded Values: as needed, for example:
-<ul>
-<li>Code: <em>Wurster</em></li>
-<li>Description: <em>Wurster Trail</em></li>
-<li>Code: <em>Pipeline</em></li>
-<li>Description: <em>Pipeline Trail</em></li>
-<li>Code: <em>BLoop</em></li>
-<li>Description: <em>Birding Loop</em></li>
-<li>Code: <em>Other</em></li>
-<li>Description: <em>Other unnamed trail</em></li>
-<li>Code: <em>None</em></li>
-<li>Description: <em>Not located near to a trail</em></li>
-</ul></li>
-</ul></li>
 <li>Create a domain for surveyor initials
 <ul>
 <li>Domain Name: <code>Surveyor</code></li>
@@ -565,10 +546,12 @@ $(document).ready(function () {
 <li>Domain Type: <code>Coded Value Domain</code></li>
 <li>Split Policy: <code>Default Value</code></li>
 <li>Merge Policy: <code>Default Value</code></li>
-<li>Coded Values: as needed, for example:
+<li>Coded Values: as needed; see example below. Remember: it’s a good idea to have a miscellaneous/other/unknown domain values to catch unexpected results when you are out in the field. When you encounter these, make sure you include something in your <strong>NOTES</strong> field to explain the unique situation.
 <ul>
 <li>Code: <em>TWD</em></li>
 <li>Description: <em>T. Davis</em></li>
+<li>Code: <em>MISC</em></li>
+<li>Description: <em>Other</em></li>
 </ul></li>
 </ul></li>
 <li>Create a domain for the date and time
@@ -579,8 +562,8 @@ $(document).ready(function () {
 <li>Field Type: <code>Date</code></li>
 <li>Split Policy: <code>Default Value</code></li>
 <li>Merge Policy: <code>Default Value</code></li>
-<li>Minimum value: <code>2019-01-01 00:00:00</code></li>
-<li>Maximum value: <code>2019-12-31 23:59:59</code></li>
+<li>Minimum value: <code>2020-01-01 00:00:00</code></li>
+<li>Maximum value: <code>2020-12-31 23:59:59</code></li>
 </ul></li>
 <li>Click “Apply”</li>
 <li>Click “OK” <!--
@@ -598,12 +581,8 @@ $(document).ready(function () {
 </ol>
 <p>Apply domains to fields and set default values.</p>
 <ol style="list-style-type: decimal">
-<li>In the Catalog, right-click “manhole_survey” and select <code>Design</code> <code>--&gt;</code> <code>Fields</code></li>
-<li>Double-click the domain box for row <code>TRAIL</code>
-<ul>
-<li>Under Field Properties, click in the box to the right of Domain and select “TrailName”</li>
-</ul></li>
-<li>Select <code>SURVYR</code>
+<li>In the Catalog, right-click “landmarks” and select <code>Design</code> <code>--&gt;</code> <code>Fields</code></li>
+<li>Double-click the domain box for row <code>SURVYR</code>
 <ul>
 <li>For Domain, select “Surveyor”</li>
 <li>For Default Value, type: [YOURINITIALS]</li>
@@ -618,7 +597,7 @@ $(document).ready(function () {
 <div id="enabling-attachments" class="section level3">
 <h3>Enabling Attachments</h3>
 <p>Adding attachments to your feature class adds support for a variety of file types (e.g., photos). This is accomplished through a geoprocessing tool, “Enable Attachments.”</p>
-<p>First, right-click on the feature class, “manhole_survey”, and select “Add to Current Map.”</p>
+<p>First, right-click on the feature class, “landmarks”, and select “Add to Current Map.”</p>
 <p>Then go to geoprocessing tools: <code>Data Management</code> <code>--&gt;</code> <code>Attachments</code> <code>--&gt;</code> <code>Enable Attachments</code>.</p>
 <hr />
 </div>
@@ -628,10 +607,10 @@ $(document).ready(function () {
 <ol style="list-style-type: decimal">
 <li>Beginning with a new empty map, click on <code>File --&gt; Add Data --&gt; Add Data...</code> (or click on the Add Data icon, <img src="images/adddatabutton.png" class="icon" width="15" />) and add the feature(s) from your geodatabase</li>
 <li>In the Table of Contents, list by source</li>
-<li>Right-click your feature class (Litter) and select “Properties…”</li>
+<li>Right-click your feature class and select “Properties…”</li>
 <li>Click on Symbology tab</li>
 <li>Under Show, click Categories and select “Unique values”</li>
-<li>Under Value Field, select “Material”</li>
+<li>Under Value Field, select the appropriate field</li>
 <li>Click “Add All Values”</li>
 <li>Update Symbol and Label as desired</li>
 </ol>
@@ -675,102 +654,52 @@ $(document).ready(function () {
 <li>Open a web browser and go to <a href="https://arcgis.com" class="uri">https://arcgis.com</a></li>
 <li>Log in with your ESRI account details</li>
 <li>Click on Content</li>
-<li>Find your published Feature Layer (e.g., litter_survey_YOURINITIALS); note there should also be a Service Definition file with the same name</li>
+<li>Find your published Feature Layer; note there should also be a Service Definition file with the same name</li>
 <li>Click the more details button next to your feature layer (i.e., <code>...</code>) and select “Add to a new map”</li>
-<li>In the “Find address or place” search bar in the top right, type “Salisbury, NC” and click the suggestion option to zoom to Salisbury</li>
-<li>Zoom over Catawba College (this will be the default extents)</li>
+<li>In the “Find address or place” search bar in the top right, type your location (e.g, “Williamsburg, VA”)</li>
+<li>Click the suggestion option and zoom over your area of interest (this will be the default extents)</li>
 <li>Click Details at the top to open the Contents panel on the left</li>
-<li>Click on layer name (litter_survey_YOURINITIALS) to open the dropdown</li>
+<li>Click on layer name to open the dropdown</li>
 <li>Click on the more options button (i.e., <code>...</code>) and select “Rename”</li>
-<li>Rename your layer “Litter Survey”</li>
-<li>Zoom in over the Center for the Environment and click on “Bookmarks” and “Add Bookmark”</li>
-<li>Title the bookmark “Center for the Environment” and hit return</li>
+<li>Rename your layer</li>
+<li><em>optional</em> Zoom in closer to a starting location or area of interest and click on “Bookmarks” and “Add Bookmark”
+<ul>
+<li>Title the bookmark</li>
 <li>Click the close box to close the bookmarks menu</li>
-<li>Zoom out so you see all of campus</li>
-<li>Click on Bookmarks and select “Center for the Environment” to zoom back to the center</li>
+<li>Zoom out</li>
+<li>Click on Bookmarks and select the bookmark you just created to zoom back in</li>
 <li>You can create other bookmarks if you wish; these will be available to you in Collector</li>
+</ul></li>
 <li>Here, you may also change the basemap style (currently set to Topographic)</li>
 <li>Click Edit in the menu at the top and select Manage at bottom of the panel on the left</li>
-<li>Under each material listing is a subheading; click the down arrow next to the subheading and select “Properties”
-<ul>
-<li>Use the descriptions listed in Table 1 below to update the descriptions for each material</li>
-<li>Set the default values for the feature type template</li>
-</ul></li>
 <li>When your map is ready, click <code>Save --&gt; Save As</code></li>
 <li>Enter the information for your map
 <ul>
-<li>Title: <em>Litter Survey YOURINITIALS</em></li>
-<li>Tags: <em>Collector, GPS, Litter, Catawba</em></li>
-<li>Summary: <em>A web map for field litter surveying.</em></li>
+<li>Title: <em>please include your initials in the title</em></li>
+<li>Tags: <em>Collector, GPS, AdvGIS, W&amp;M</em></li>
+<li>Summary: <em>A web map for field surveying.</em></li>
 </ul></li>
 <li>Click “Save Map”</li>
 </ol>
-<table style="width:94%;">
-<caption>Table 2. Example property descriptions for the litter survey material types.</caption>
-<colgroup>
-<col width="18%" />
-<col width="76%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Material</th>
-<th>Property Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Cloth</td>
-<td>Clothing, upholstery, etc.</td>
-</tr>
-<tr class="even">
-<td>Foam</td>
-<td>Styrofoam or polystyrene food and drink containers</td>
-</tr>
-<tr class="odd">
-<td>Food</td>
-<td>Apple cores, banana peels, sandwiches, etc.</td>
-</tr>
-<tr class="even">
-<td>Glass</td>
-<td>Bottles, light bulbs, etc.</td>
-</tr>
-<tr class="odd">
-<td>Metals</td>
-<td>Soft drink cans, gum wrappers, etc.</td>
-</tr>
-<tr class="even">
-<td>Paper</td>
-<td>Newspaper, cigarette butts, cardboard, napkins, etc.</td>
-</tr>
-<tr class="odd">
-<td>Plastics</td>
-<td>Spoons, straws, bags, etc.</td>
-</tr>
-<tr class="even">
-<td>Sensitives</td>
-<td>Syringes, sharps, diapers, etc.</td>
-</tr>
-<tr class="odd">
-<td>Wood</td>
-<td>Popsicle sticks, coffee stirrers, etc.</td>
-</tr>
-<tr class="even">
-<td>Misc</td>
-<td>Unclassified</td>
-</tr>
-</tbody>
-</table>
 <p>Share your map.</p>
 <ol style="list-style-type: decimal">
 <li>Click on <code>Home --&gt; Content</code> in the top left of the web map to return to your Content page</li>
-<li>Next to your map, click the lock icon to open the Share window, check the box next to “ENV 3599” and click “OK” to share</li>
+<li>Next to your map, click the lock icon to open the Share window, check the box next to our AGOL group and click “OK” to share</li>
 </ol>
 <hr />
 </div>
 <div id="arcade" class="section level2">
 <h2>Arcade</h2>
-<p><a href="https://developers.arcgis.com/arcade/">Arcade</a> is a new secure and portable expression language with the goal of being able to run across all ArcGIS products (mobile, desktop and cloud)[^2].</p>
-<p>The benefit of Arcade is its ability to create new derived attributes as on-the-fly calculations, rather than using the field calculator on a new field. This is handy for simple operations like changing the units of a field or calculating averages across fields without the overhead of storing the results in the database[^3].</p>
+<p><a href="https://developers.arcgis.com/arcade/">Arcade</a> is a new secure and portable expression language with the goal of being able to run across all ArcGIS products (mobile, desktop and cloud)<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<p>The benefit of Arcade is its ability to create new derived attributes as on-the-fly calculations, rather than using the field calculator on a new field. This is handy for simple operations like changing the units of a field or calculating averages across fields without the overhead of storing the results in the database<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://doc.arcgis.com/en/collector/windows/create-maps/gps-map-prep.htm" class="uri">https://doc.arcgis.com/en/collector/windows/create-maps/gps-map-prep.htm</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://blogs.esri.com/esri/arcgis/2016/12/19/introducing-arcade/" class="uri">https://blogs.esri.com/esri/arcgis/2016/12/19/introducing-arcade/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://blogs.esri.com/esri/arcgis/2016/12/15/use-arcade-expressions-to-map-your-ideas/" class="uri">https://blogs.esri.com/esri/arcgis/2016/12/15/use-arcade-expressions-to-map-your-ideas/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 
 <footer class="myfoot">

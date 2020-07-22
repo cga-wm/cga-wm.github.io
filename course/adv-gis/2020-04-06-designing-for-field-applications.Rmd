@@ -71,16 +71,16 @@ For those without access to Esri products, you can learn more about geodatabases
 
 ***
 
-### Adding a Feature Class to Your FGDB
+### Adding a Feature Class to Your File GDB
 Create a new Feature Class in your geodatabase.
 You may create multiple feature classes within a single geodatabase.
-In this example, I am going to start with creating a point feature class for storing my points of interest.
+In this example, I am going to start with creating a point feature class for storing my points of interest (POI).
 
 For more information on the basics of creating a feature class within a geodatabase in ArcGIS Pro, see [here](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm).
 
 1. Right-click on the geodatabase in the Catalog and select `New --> Feature Class`
 1. Enter the information in the New Feature Class window
-    * Name: `points_of_interest`
+    * Name: `landmarks`
     * Alias: `POI`
     * Feature Class Type: `Point`
     * Geometry Properties: (leave both options unchecked)
@@ -95,6 +95,7 @@ For more information on the basics of creating a feature class within a geodatab
         * State Plane
             * NAD 1983 (Meters)
                 * NAD 1983 StatePlane Virginia South FIPS 4502 (Meters)
+                    * EPSG:32147
 1. Click "Next"
 1. Leave XY tolerance values as default
     * *"it is best to use the default x,y tolerance values in all but extreme cases"* (for more on XY tolerance, see [here](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/feature-class-basics.htm#GUID-69FA8570-7C64-4213-B822-68716CD9E764))
@@ -114,7 +115,7 @@ Create new fields (attributes) for your feature class.
 One the most challenging parts of creating fields is deciding the correct data type and size/length.
 This can be especially tricky for text fields where you may run out of characters if you made a poor design decision for your attribute.
 
-1. Right-click "points_of_interest" feature class in the Catalog and select `Design` `-->` `Fields`
+1. Right-click "landmarks" feature class in the Catalog and select `Design` `-->` `Fields`
 1. At the bottom of the table, "Click here to add a new field"
 1. Enter a new field for the closest trail name
     * Field Name: `NAME`
@@ -195,24 +196,6 @@ These will be used in Collector for creating the selection boxes for attributes 
 
 1. In the Catalog, right-click on your geodatabase and select `Design` `-->` `Domains`
 1. In Domains ribbon, click on "New Domain"
-1. Create a domain for trail names
-    * Domain Name: `TrailName`
-    * Description: `Name of closest trail to manhole`
-    * Field Type: `Text`
-    * Domain Type: `Coded Value Domain`
-    * Split Policy: `Default Value`
-    * Merge Policy: `Default Value`
-    * Coded Values: as needed, for example:
-        - Code: *Wurster*
-        - Description: *Wurster Trail*
-        - Code: *Pipeline*
-        - Description: *Pipeline Trail*
-        - Code: *BLoop*
-        - Description: *Birding Loop*
-        - Code: *Other*
-        - Description: *Other unnamed trail*
-        - Code: *None*
-        - Description: *Not located near to a trail*
 1. Create a domain for surveyor initials
     * Domain Name: `Surveyor`
     * Description: `Surveyor initials`
@@ -220,9 +203,13 @@ These will be used in Collector for creating the selection boxes for attributes 
     * Domain Type: `Coded Value Domain`
     * Split Policy: `Default Value`
     * Merge Policy: `Default Value`
-    * Coded Values: as needed, for example:
+    * Coded Values: as needed; see example below.
+        Remember: it's a good idea to have a miscellaneous/other/unknown domain values to catch unexpected results when you are out in the field.
+        When you encounter these, make sure you include something in your **NOTES** field to explain the unique situation.
         - Code: *TWD*
         - Description: *T. Davis*
+        - Code: *MISC*
+        - Description: *Other*
 1. Create a domain for the date and time
     * Domain Name: `DateTime`
     * Description: `Date and time of survey`
@@ -230,8 +217,8 @@ These will be used in Collector for creating the selection boxes for attributes 
     * Field Type: `Date`
     * Split Policy: `Default Value`
     * Merge Policy: `Default Value`
-    * Minimum value: `2019-01-01 00:00:00`
-    * Maximum value: `2019-12-31 23:59:59`
+    * Minimum value: `2020-01-01 00:00:00`
+    * Maximum value: `2020-12-31 23:59:59`
 1. Click "Apply"
 1. Click "OK"
 <!--
@@ -249,10 +236,8 @@ These will be used in Collector for creating the selection boxes for attributes 
 
 Apply domains to fields and set default values.
 
-1. In the Catalog, right-click "manhole_survey" and select `Design` `-->` `Fields`
-1. Double-click the domain box for row `TRAIL`
-    * Under Field Properties, click in the box to the right of Domain and select "TrailName"
-1. Select `SURVYR`
+1. In the Catalog, right-click "landmarks" and select `Design` `-->` `Fields`
+1. Double-click the domain box for row `SURVYR`
     * For Domain, select "Surveyor"
     * For Default Value, type: [YOURINITIALS]
 1. Select `DATETIME`
@@ -264,7 +249,7 @@ Apply domains to fields and set default values.
 Adding attachments to your feature class adds support for a variety of file types (e.g., photos).
 This is accomplished through a geoprocessing tool, "Enable Attachments."
 
-First, right-click on the feature class, "manhole_survey", and select "Add to Current Map."
+First, right-click on the feature class, "landmarks", and select "Add to Current Map."
 
 Then go to geoprocessing tools: `Data Management` `-->` `Attachments` `-->` `Enable Attachments`.
 
@@ -275,10 +260,10 @@ Create meaningful symbology for the various features in your map.
 
 1. Beginning with a new empty map, click on `File --> Add Data --> Add Data...` (or click on the Add Data icon, ![](images/adddatabutton.png){.icon width=15 height=auto}) and add the feature(s) from your geodatabase
 1. In the Table of Contents, list by source
-1. Right-click your feature class (Litter) and select "Properties..."
+1. Right-click your feature class and select "Properties..."
 1. Click on Symbology tab
 1. Under Show, click Categories and select "Unique values"
-1. Under Value Field, select "Material"
+1. Under Value Field, select the appropriate field
 1. Click "Add All Values"
 1. Update Symbol and Label as desired
 
@@ -323,62 +308,33 @@ To use a hosted feature service with Collector, it must first be incorporated in
 1. Open a web browser and go to https://arcgis.com
 1. Log in with your ESRI account details
 1. Click on Content
-1. Find your published Feature Layer (e.g., litter_survey_YOURINITIALS); note there should also be a Service Definition file with the same name
+1. Find your published Feature Layer; note there should also be a Service Definition file with the same name
 1. Click the more details button next to your feature layer (i.e., `...`) and select "Add to a new map"
-1. In the "Find address or place" search bar in the top right, type "Salisbury, NC" and click the suggestion option to zoom to Salisbury
-1. Zoom over Catawba College (this will be the default extents)
+1. In the "Find address or place" search bar in the top right, type your location (e.g, "Williamsburg, VA")
+1. Click the suggestion option and zoom over your area of interest (this will be the default extents)
 1. Click Details at the top to open the Contents panel on the left
-1. Click on layer name (litter_survey_YOURINITIALS) to open the dropdown
+1. Click on layer name to open the dropdown
 1. Click on the more options button (i.e., `...`) and select "Rename"
-1. Rename your layer "Litter Survey"
-1. Zoom in over the Center for the Environment and click on "Bookmarks" and "Add Bookmark"
-1. Title the bookmark "Center for the Environment" and hit return
-1. Click the close box to close the bookmarks menu
-1. Zoom out so you see all of campus
-1. Click on Bookmarks and select "Center for the Environment" to zoom back to the center
-1. You can create other bookmarks if you wish; these will be available to you in Collector
+1. Rename your layer
+1. *optional* Zoom in closer to a starting location or area of interest and click on "Bookmarks" and "Add Bookmark"
+    * Title the bookmark
+    * Click the close box to close the bookmarks menu
+    * Zoom out
+    * Click on Bookmarks and select the bookmark you just created to zoom back in
+    * You can create other bookmarks if you wish; these will be available to you in Collector
 1. Here, you may also change the basemap style (currently set to Topographic)
 1. Click Edit in the menu at the top and select Manage at bottom of the panel on the left
-1. Under each material listing is a subheading; click the down arrow next to the subheading and select "Properties"
-    * Use the descriptions listed in Table 1 below to update the descriptions for each material
-    * Set the default values for the feature type template
 1. When your map is ready, click `Save --> Save As`
 1. Enter the information for your map
-    * Title: *Litter Survey YOURINITIALS*
-    * Tags: *Collector, GPS, Litter, Catawba*
-    * Summary: *A web map for field litter surveying.*
+    * Title: *please include your initials in the title*
+    * Tags: *Collector, GPS, AdvGIS, W&M*
+    * Summary: *A web map for field surveying.*
 1. Click "Save Map"
-
-:   Table 2. Example property descriptions for the litter survey material types.
-
-+------------+------------------------------------------------------+
-| Material   |  Property Description                                |
-+============+======================================================+
-| Cloth      | Clothing, upholstery, etc.                           |
-+------------+------------------------------------------------------+
-| Foam       | Styrofoam or polystyrene food and drink containers   |
-+------------+------------------------------------------------------+
-| Food       | Apple cores, banana peels, sandwiches, etc.          |
-+------------+------------------------------------------------------+
-| Glass      | Bottles, light bulbs, etc.                           |
-+------------+------------------------------------------------------+
-| Metals     | Soft drink cans, gum wrappers, etc.                  |
-+------------+------------------------------------------------------+
-| Paper      | Newspaper, cigarette butts, cardboard, napkins, etc. |
-+------------+------------------------------------------------------+
-| Plastics   | Spoons, straws, bags, etc.                           |
-+------------+------------------------------------------------------+
-| Sensitives | Syringes, sharps, diapers, etc.                      |
-+------------+------------------------------------------------------+
-| Wood       | Popsicle sticks, coffee stirrers, etc.               |
-+------------+------------------------------------------------------+
-| Misc       | Unclassified                                         |
-+------------+------------------------------------------------------+
 
 Share your map.
 
 1. Click on `Home --> Content` in the top left of the web map to return to your Content page
-1. Next to your map, click the lock icon to open the Share window, check the box next to "ENV 3599" and click "OK" to share
+1. Next to your map, click the lock icon to open the Share window, check the box next to our AGOL group and click "OK" to share
 
 ***
 
@@ -387,3 +343,7 @@ Share your map.
 
 The benefit of Arcade is its ability to create new derived attributes as on-the-fly calculations, rather than using the field calculator on a new field.
 This is handy for simple operations like changing the units of a field or calculating averages across fields without the overhead of storing the results in the database[^3].
+
+[^1]: https://doc.arcgis.com/en/collector/windows/create-maps/gps-map-prep.htm
+[^2]: https://blogs.esri.com/esri/arcgis/2016/12/19/introducing-arcade/
+[^3]: https://blogs.esri.com/esri/arcgis/2016/12/15/use-arcade-expressions-to-map-your-ideas/
