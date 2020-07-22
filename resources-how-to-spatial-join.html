@@ -15,6 +15,7 @@
 
 <title>How To Spatial Join in ArcGIS Pro</title>
 
+<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -325,7 +326,7 @@ $(document).ready(function () {
 <div id="step-1-visualize-our-data" class="section level3">
 <h3>Step 1: Visualize our Data</h3>
 <div class="figure">
-<img src="images/sj-1-data_orig.png" alt="Figure 1." />
+<img src="images/sj-1-data_orig.png" alt="" />
 <p class="caption">Figure 1.</p>
 </div>
 <p>The ‘Neighborhoods’ feature class includes polygons of the neighborhoods of Pittsburgh, and ‘Crime Offenses’ includes point data of crimes that occurred within the month of August.</p>
@@ -334,12 +335,12 @@ $(document).ready(function () {
 <div id="step-2-create-a-spatial-join" class="section level3">
 <h3>Step 2: Create a Spatial Join</h3>
 <div class="figure">
-<img src="images/sj-2-opening-sj_orig.png" alt="Figure 2." />
+<img src="images/sj-2-opening-sj_orig.png" alt="" />
 <p class="caption">Figure 2.</p>
 </div>
 <p>Open the <strong>Spatial Join Tool</strong> by right clicking on ‘Neighborhood’, hovering over ‘Joins and Relates’, then clicking on ‘Spatial Join’. We right click ‘Neighborhood’ because it is the target feature for this join. In other words, it is the layer in which we will be trying to join data from another layer (Crime Offenses) into, to eventually create a third layer.</p>
 <div class="figure">
-<img src="images/sj-3-sj-tool-filled-out.png" alt="Figure 3." />
+<img src="images/sj-3-sj-tool-filled-out.png" alt="" />
 <p class="caption">Figure 3.</p>
 </div>
 <p>​‘Neighborhoods’ should auto fill as the Target Feature. Select ‘Crime Offenses’ as the Join Feature. Rename the Output Feature Class to something useful and descriptive. Leave Join Operation as one to one, and leave the Keep All Target Features box checked. ​Remove all Output Fields you do not need in the final feature class by clicking the red X next to the various fields (optional). In this case we are only retaining ‘Name’. This helps keep our new feature class as simple as possible. Leave all the other options the same. ​ ​​Click ‘Run’ at the bottom of the screen to execute the tool.</p>
@@ -348,7 +349,7 @@ $(document).ready(function () {
 <div id="step-3-examine-the-attribute-table" class="section level3">
 <h3>Step 3: Examine the Attribute Table</h3>
 <div class="figure">
-<img src="images/sj-4-attribute-table_orig.png" alt="Figure 4." />
+<img src="images/sj-4-attribute-table_orig.png" alt="" />
 <p class="caption">Figure 4.</p>
 </div>
 <p>When the process is complete, the new feature class will show up in the Table of Contents, shown above as ‘PGH_neighborhood_crime’. Open the Attribute Table by right clicking on the new feature layer and selecting ‘Attribute Table’. See that we have a new column ‘Join_Count’ that represents the number of crime offense points that fell within each neighborhood, and we retained the name of each neighborhood from the original target feature.</p>
@@ -357,12 +358,12 @@ $(document).ready(function () {
 <div id="step-4-change-the-symbology" class="section level3">
 <h3>Step 4: Change the Symbology</h3>
 <div class="figure">
-<img src="images/sj-5-select-symbology.png" alt="Figure 5." />
+<img src="images/sj-5-select-symbology.png" alt="" />
 <p class="caption">Figure 5.</p>
 </div>
 <p>Open Symbology by right clicking on your new feature layer in the Table of Contents, and select ‘Symbology’. Under the drop down for ‘Primary Symbology’, select ‘Graduated Colors’, as shown in Figure 5.</p>
 <div class="figure">
-<img src="images/sj-6-symbology-pt-2_orig.png" alt="Figure 6." />
+<img src="images/sj-6-symbology-pt-2_orig.png" alt="" />
 <p class="caption">Figure 6.</p>
 </div>
 <p>‘Field’ should auto-select ‘Join_Count’ as the field to symbolize, which is correct, so next we pick a color scheme from the drop down menu as shown by Figure 6. This will symbolize each neighborhood polygon by the count of crime offenses contained in each one.</p>
@@ -371,7 +372,7 @@ $(document).ready(function () {
 <div id="step-5-view-the-final-map" class="section level3">
 <h3>Step 5: View the Final Map</h3>
 <div class="figure">
-<img src="images/sj-7-final-map_orig.png" alt="Figure 7." />
+<img src="images/sj-7-final-map_orig.png" alt="" />
 <p class="caption">Figure 7.</p>
 </div>
 <p>The neighborhoods of Pittsburgh are now colored based on the count of crime offenses, and each neighborhood is labeled. The legend under ‘Join_Count’ in the Table of Contents shows the symbology of the new feature class created by the spatial join.</p>

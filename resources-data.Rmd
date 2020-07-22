@@ -26,6 +26,9 @@ output:
 [ASTER Volcano Archive](https://ava.jpl.nasa.gov/)
 :   The world's largest specialty archive of volcano data, including publicly available high-resolution multispectral ASTER data.
 
+[Climate Data Online Search](https://www.ncdc.noaa.gov/cdo-web/search)
+:   Find past weather and climate data provided by NOAA's National Centers for Environmental Information (NCDC).
+
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
 
