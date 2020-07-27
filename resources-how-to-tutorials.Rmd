@@ -1,0 +1,16 @@
+---
+title: "How To Tutorials on YouTube"
+---
+
+***
+
+Check out the GIS Tutorials and Creating My First Layout in ArcGIS Pro playlists on YouTube.
+
+
+- [GIS Tutorials (YouTube Playlist)](https://www.youtube.com/playlist?list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl)
+
+    This playlist covers all sorts of topics from logging into your organizational account, accessing ArcGIS Online, connecting to W&M's Virtual Desktop Interface, and utilizing a variety of ArcGIS geoprocessing tools.
+
+- [Creating my first layout (YouTube Playlist)](https://www.youtube.com/playlist?list=PLiOhBg8WdMaJyHqU1A7TlF-SVc5d51b9F)
+
+    This playlist walks you through the fundamentals of creating your first map layout using ArcGIS Pro.
