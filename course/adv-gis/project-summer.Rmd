@@ -126,6 +126,11 @@ You may, of course, work on all three projects simultaneously, but in terms of a
 * [Geoprocessing with Python; Ch. 2](https://livebook.manning.com/book/geoprocessing-with-python/chapter-2/1). Garrard (2016).
 * [Creating a new Python toolbox](https://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/creating-a-new-python-toolbox.htm)
 
+#### Arcade/JavaScript
+
+* [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
+* [Arcade Function Index](https://developers.arcgis.com/arcade/function-reference/)
+
 #### Geoethics
 *Resources and selected readings.*
 
