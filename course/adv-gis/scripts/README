@@ -1,9 +1,9 @@
 # README
-* LAST UPDATED: 2020-03-05
+* LAST UPDATED: 2020-07-28
 * ORGANIZATION: cga-wm
-* REPOSITORY: cga-wm.github.io/assets/scripts/
+* REPOSITORY: cga-wm.github.io/course/adv-gis/scripts/
 
-This directory contains coding projects for the CGA.
+This directory contains coding examples for the Advanced GIS course.
 See below for the file list and descriptions.
 
 ## Files
@@ -11,11 +11,14 @@ See below for the file list and descriptions.
 ### crit_rain_thresh.py
 * This script contains the "sandbox" of methods for creating the critical rainfall threshold model, which is to become a Python toolbox.
 
+### example.py
+* An example Python script that looks at variables, functions, and classes.
+
+### geofence.js
+* Geofencing ArcGIS JavaScript utilized by 2020-04-15-test-location.html.
+
 ### lsa.pyt
 * This is a Python toolbox/tool for calculating landslide susceptibility.
-
-### example.py
-* An example script for examining how Python classes work.
 
 ### random_country_generator.py
 * A python script that reads a student/team text file and assigns each team/person a random list of countries based on the current IBAN country codes.
