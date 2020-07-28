@@ -1,0 +1,16 @@
+---
+title: "Utility Scripting"
+date: 2020-07-28
+url: 2020-07-28-utility-scripting.html
+summary: "A place to keep track of utility scripts as they are created."
+---
+
+Here is a selection of scripts and toolboxes developed during, by and/or for the Advanced GIS class.
+
+* [crit_rain_thresh.py](scripts/crit_rain_thresh.py)
+* [example.py](scripts/example.py)
+* [geofence.js](scripts/geofence.js)
+* [lsa.pyt](scripts/lsa.pyt)
+* [random_country_generator.py](scripts/random_country_generator.py)
+* [shp_zipper.py](scripts/shp_zipper.py)
+* [web_scrub.py](scripts/web_scrub.py)
