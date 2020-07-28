@@ -47,7 +47,29 @@ This folder contains the website files for the CGA-WM organization.
 * The HTML rendered how-to resources page.
 
 ### resources-howto.Rmd
-* Edit this file to include new how-to's on the organization website.
+* This script automatically searches for other .Rmd files with the prefix "resources-how-to" and adds them as a hyperlinked list.
+
+    * __resources-how-to-hack-arcpro-python.Rmd/.html__
+
+        Discusses the methods for accessing the Python interpreter used by ArcGIS Pro from the command line.
+        There is a known issue where cloning the Python environment fails if there are spaces in the directory path (e.g., "Program Files").
+        Not 100% certain, but changing the install to local user directory (C:\Users\user\AppData\Local\Programs\ArcGIS\Pro) should solve that problem.
+
+    * __resources-how-to-spatial-join.Rmd/.html__
+
+        A walkthrough of performing a spatial join in ArcGIS Pro.
+
+    * __resources-how-to-tutorials.Rmd/.html__
+
+        Links to the CGA YouTube playlists.
+
+    * __resources-how-to-work-with-zip-files.Rmd/.html__
+
+        Links to Manuel Gimond's working with zip files on Windows PC tutorial.
+
+### searchjs.html
+* The JavaScript functions for updating the resources-data.html site when a user types into the search bar.
+    If none of the keywords (typed letters/words in the search bar) are found in either the title or description (dictionary term, dt, or definition, dd), then that element is hidden from the page.
 
 ### styles.css
 * The cascading style sheet (CSS) used to create user-defined HTML styles for the organization website.
@@ -55,6 +77,9 @@ This folder contains the website files for the CGA-WM organization.
 ### course/
 * This directory stores the course sites (e.g., Intro GIS and Advanced GIS) referenced by the organization's website.
     These course sites contain their own copies of source files for generating their websites.
+
+### images/
+* This directory contains image resources utilized by other pages (e.g., spatial join tutorial).
 
 ### site_libs/
 * This folder is created by rmarkdown.
