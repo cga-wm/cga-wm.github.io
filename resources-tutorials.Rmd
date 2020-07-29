@@ -1,0 +1,171 @@
+---
+title: "Resources | Tutorials"
+output:
+  html_document:
+    includes:
+      in_header: searchjs.html
+      after_body: footer.html
+---
+
+***
+
+Below are links to YouTube videos.
+Use the search bar to filter videos based on search terms.
+
+<!--
+      Search bar
+                      -->
+<div class="search-bar" style="border:1px solid #DDD; width:396px;">
+<p style="margin:5px;">
+<i class="icon fa fa-search"></i>
+<input type="text" id="myInput" onkeyup="updateSheet()" placeholder="Search..." style="border:none; padding:0; width:365px;">
+</p>
+</div>
+
+<!--
+      Definition List
+                        -->
+
+[Create Map Project on Geospatial Drive](https://www.youtube.com/watch?v=HojjOPwneJw&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=3&t=0s)
+:   This video details how to create and save an ArcGIS Pro document to the Geospatial (U:) Drive.
+
+[Mapping Geospatial Network Drive](https://www.youtube.com/watch?v=oZ-k2rUyO6A&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=25&t=0s)
+:   This video details how to connect to the Geospatial (U:) Network Drive from an off-campus location, by accessing William & Mary's Virtual Private Network (VPN) using Global Protect.
+
+[Add Folder Connection](https://www.youtube.com/watch?v=MidUYswWkAY&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=26&t=0s)
+:   This video details how to add a folder connection in ArcGIS Pro
+
+[Using Catalog View](https://www.youtube.com/watch?v=YJ6Duz_o4zU&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=4&t=0s)
+:   This video details how to open and explore catalog view in an ArcGIS Pro project.
+
+[Enabling and Configuring Labels for Line Features](https://www.youtube.com/watch?v=XEQcKiIzguA&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=7&t=0s)
+:   This video details how to turn on and configure labels for Line Features in ArcGIS Pro.
+
+[Adjusting Layer & Symbol Transparency](https://www.youtube.com/watch?v=vc8jJmntHAg&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=8&t=0s)
+:   This video details how to adjust the layer and symbol transparency for a feature layer in ArcGIS Pro.
+
+[Configuring “Graduated Symbology"](https://www.youtube.com/watch?v=njPJIHeY7VI&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=9&t=0s)
+:   This video details how to configure a graduated color or graduated symbol type of primary symbology for a feature layer in ArcGIS Pro.
+
+[Configuring “Unique Values” Symbology](https://www.youtube.com/watch?v=8_Wv_K9cfOg&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=6&t=0s)
+:   This video details how to set a Unique Value type of Primary Symbology for a feature layer in ArcGIS Pro.
+
+[Adding and Changing Basemaps](https://www.youtube.com/watch?v=yirLtlRfAeY&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=10&t=0s)
+:   This video details how to add and Change Basemaps for an ArcGIS Pro project.
+
+[Accessing W&M VDI on a Mac](https://www.youtube.com/watch?v=lG43GtH1Ta4&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=11&t=0s)
+:   This video details how to access W&M Virtual Desktop Infrastructure (VDI) on a Mac or other Apple device, including a tutorial for right-clicking on a Mac.
+
+[Accessing W&M VDI in Windows](https://www.youtube.com/watch?v=pZh-fMoaV54&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=19&t=0s)
+:   This video details how to access W&M's Virtual Desktop Infrastructure (VDI) using the VMWare Horizon Client on a Windows machine.
+
+[Project](https://www.youtube.com/watch?v=0Kmy-ryzUQE&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=23&t=0s)
+:   This video details how to use the "Project" Geoprocessing Tool in ArcGIS Pro.
+
+[Project Raster](https://www.youtube.com/watch?v=rzGPRB-hUig&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=12&t=0s)
+:   This video details how to use the "Project Raster" Geoprocessing Tool in ArcGIS Pro.
+
+[Changing Map's Coordinate System](https://www.youtube.com/watch?v=XuZkLrXfrlU&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=13&t=0s)
+:   This video details how to change the coordinate system for a Map in ArcGIS Pro.
+
+[Layer Properties](https://www.youtube.com/watch?v=XwBTt6GIo6U&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=14&t=0s)
+:   This video details how to explore layer properties for a vector feature layer.
+
+[Enable Labels](https://www.youtube.com/watch?v=pOlNALeldCU&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=15&t=0s)
+:   This video details how to turn on and configure labels for a feature layer in ArcGIS Pro.
+
+[Formatting Point Symbology](https://www.youtube.com/watch?v=7WhX9Matx5A&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=16&t=0s)
+:   This video details how to format symbology for point feature layers in ArcGIS Pro.
+
+[Editing Attribute Tables](https://www.youtube.com/watch?v=molt6hCx5TA&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=17&t=0s)
+:   This video details how to edit attribute tables in ArcGIS Pro. This includes adding and configuring fields, calculating field values, and saving edits to attributes.
+
+[Adding a Bookmark](https://www.youtube.com/watch?v=A5mraMMJ5XQ&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=18&t=0s)
+:   This video details how to add a bookmark to a map in ArcGIS Pro.
+
+[Survey123](https://www.youtube.com/watch?v=J8a6ANcgvnU&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=20&t=0s)
+:   This video details how to access the Survey123 website with a walkthrough of an example survey form.
+
+[Getting License for ArcGIS Pro](https://www.youtube.com/watch?v=m00xLPt5vxw&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=21&t=0s)
+:   This video details how to retrieve a license to use ArcGIS Pro using the W&M Enterprise login option.
+
+[Select Layer by Attribute](https://www.youtube.com/watch?v=uYgSRd3ppuc&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=22&t=0s)
+:   This video details how to use the "Select Layer by Attribute" Geoprocessing Tool in ArcGIS Pro.
+
+[Starting with ArcGIS Modelbuilder](https://www.youtube.com/watch?v=KtgAQXEJLHk&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=24&t=0s)
+:   This video details how to create a new Model using ArcGIS Modelbuilder, with an introduction on loading tools and data into the model.
+
+[Signing into ArcGIS Online (AGOL) using the W&M Enterprise Login](https://www.youtube.com/watch?v=x07Xyoe0d2k&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=27&t=0s)
+:   This video details how to sign into ArcGIS Online (AGOL) using the W&M Enterprise Login.
+
+[Creating a New Map Project on a Local Drive](https://www.youtube.com/watch?v=RnAtZFVer0I&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=28&t=0s)
+:   This video details how to create a New ArcGIS Pro Project using the Map Template, while saving to a local drive.
+
+[Clip](https://www.youtube.com/watch?v=n-wHcqybu1I&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=29&t=0s)
+:   This video details how to use the Clip Geoprocessing Tool in ArcGIS Pro.
+
+[Buffer](https://www.youtube.com/watch?v=jG7kswGNbkc&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=30&t=0s)
+:   This video details how to use the Buffer Geoprocessing Tool in ArcGIS Pro.
+
+[Adding Data to a Map](https://www.youtube.com/watch?v=CFyloFwjoZg&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=31&t=0s)
+:   This video details how to add spatial data to an ArcGIS Pro project from local drives and online portals.
+
+[Create Layout](https://www.youtube.com/watch?v=cB0PRHC3MWM&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=40&t=0s)
+:   This video details how to insert a new layout to ArcGIS Pro.
+
+[Activate Map Frame in Layout](https://www.youtube.com/watch?v=22C6Z1o7tx4&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=32&t=0s)
+:   This video details how to activate and format a Map Frame that has been inserted to a layout in ArcGIS Pro.
+
+[Create Inset Map](https://www.youtube.com/watch?v=GASt9vWAZhA&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=33&t=0s)
+:   This video details how to insert and format a map frame for use as an inset map, and how to insert an extent indicator, for a layout in ArcGIS Pro.
+
+[Creating a Legend](https://www.youtube.com/watch?v=KDkb7VSDShU&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=34&t=0s)
+:   This video details how to insert and format a legend for use in a layout in ArcGIS Pro.
+
+[Changing Legend Labels](https://www.youtube.com/watch?v=YJ6Duz_o4zU&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=4&t=0s)
+:   This video details how to change symbol labels displayed in a legend
+
+[Add Descriptive Text in Layout](https://www.youtube.com/watch?v=HwiPvdB9MYk&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=35&t=0s)
+:   This video details how to insert a textbox to add metadata and descriptive text to a layout in ArcGIS Pro.
+
+[Insert Map Frame](https://www.youtube.com/watch?v=I7DBm_i3-zE&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=36&t=0s)
+:   This video details how to insert a map frame to a layout in ArcGIS Pro.
+
+[Add Scale Bar](https://www.youtube.com/watch?v=zTMKtG0vYJU&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=37&t=0s)
+:   This video details how to insert and format a scale bar for a layout in ArcGIS Pro.
+
+[Add Title](https://www.youtube.com/watch?v=0_A7jY60XHk&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=38&t=0s)
+:   This video details how to insert Title text to a layout in ArcGIS Pro.
+
+[Insert Service Layer Credits](https://www.youtube.com/watch?v=efeJpbwpPNs&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=42&t=0s)
+:    This video details how to insert and move service layer credits in a layout in ArcGIS Pro.
+
+[Export Layout](https://www.youtube.com/watch?v=CbzCFV3vDzU&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=39&t=0s)
+:   This video details how to share a finished layout as a pdf in ArcGIS Pro.
+
+[Rename Feature Layer](https://www.youtube.com/watch?v=dBW0DEk5WSE&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=41&t=0s)
+:   This video details how to change the display name of a feature layer for a map in ArcGIS Pro.
+
+[Adding Data from ArcGIs Online](https://www.youtube.com/watch?v=d588gI3yjxY&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=2&t=0s)
+:   This video details how to add data to an ArcGIS Pro Project from ArcGIS Online (AGOL)
+
+[Finding and Downloading TIGER/Line Geography](https://www.youtube.com/watch?v=1OyRJ0TY0C4&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=43&t=0s)
+:   This video details how to search for and download shapefiles and state-level geodatabases from the U.S. Census Bureau.
+
+[Using data.census.gov](https://www.youtube.com/watch?v=8Cebi_fUwFM&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=49&t=0s)
+:   This video details how to search for tabular data using data.census.gov, and then download the table for use in ArcGIS Pro.
+
+[Setting Visibility Range for a Layer](https://www.youtube.com/watch?v=zkvTdGaBafA&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=44&t=0s)
+:   This video details how to set and edit the visibility range for a feature layer in ArcGIS Pro.
+
+[Edit Polygon Features](https://www.youtube.com/watch?v=rHaiyM3yyG0&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=45&t=0s)
+:    This video details how to modify polygon features in ArcGIS Pro, using reshaping tools.
+
+[Create Feature Class](https://www.youtube.com/watch?v=4HrYC-L8cBE&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=48&t=0s)
+:   This video details how to create an empty feature class in ArcGIS Pro.
+
+[Creating/Digitizing Features](https://www.youtube.com/watch?v=2S2OVYpKLKc&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=47&t=0s)
+:   This video details how to create features, using the process of digitizing buildings from imagery, in ArcGIS Pro.
+
+[Edit Feature Class Metadata](https://www.youtube.com/watch?v=sn0SthObvYU&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=46&t=0s)
+:   This video details how to edit metadata for a Feature Class or a Feature Layer in ArcGIS Pro.

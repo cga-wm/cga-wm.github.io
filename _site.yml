@@ -17,6 +17,8 @@ navbar:
                 href: resources-data.html
               - text: "How To"
                 href: resources-howto.html
+              - text: "Tutorials"
+                href: resources-tutorials.html
         - text: GitHub
           icon: fa-github
           href: https://github.com/cga-wm/cga-wm.github.io

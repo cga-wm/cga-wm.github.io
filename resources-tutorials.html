@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Resources | Tutorials</title>
+
+<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script>
+
+function search(items, terms) {
+  // Check that each search term is found within list of items:
+  var found = true;
+  for (var i = 0; i < terms.length; i++) {
+    var sresults = [];
+    for (var j = 0; j < items.length; j++) {
+      sresults.push(items[j].indexOf(terms[i]) > -1);
+    }
+    found = (found && sresults.includes(true));
+  }
+  return found;
+}
+
+
+function updateSheet() {
+  // Declare variables
+  var txtValue;
+  var dd;
+  var dt;
+  var input = document.getElementById("myInput");
+  var filterText = input.value.toLowerCase();
+  var filter = filterText.split(" ");
+  var dl = document.getElementsByTagName("dl")[0];
+  var dts = dl.getElementsByTagName('dt');
+  var dds = dl.getElementsByTagName('dd');
+
+  // Loop through all terms and definitions
+  // and hide those who don't match the search query
+  for (var i = 0; i < dds.length; i++) {
+    dd = dds[i];
+    dt = dts[i];
+    if (dt) {
+      txtValue = dt.textContent || dt.innerText;
+      txtValue += " ";
+      txtValue += dd.textContent || dd.innerText;
+      txtValue = txtValue.toLowerCase().replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-.\/:;<=>?@\[\]^_`{|}~]/g,"");
+
+      if ((filterText == '') || (search(txtValue.split(" "), filter))) {
+        dd.style.display = "";
+        dt.style.display = "";
+      } else {
+        dd.style.display = "none";
+        dt.style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CGA-WM</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Courses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="course/intro/index.html">Intro GIS</a>
+    </li>
+    <li>
+      <a href="course/adv-gis/index.html">Advanced GIS</a>
+    </li>
+    <li>
+      <a href="course/middle-earth/index.html">Middle Earth</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resources-data.html">Data</a>
+    </li>
+    <li>
+      <a href="resources-howto.html">How To</a>
+    </li>
+    <li>
+      <a href="resources-tutorials.html">Tutorials</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://github.com/cga-wm/cga-wm.github.io">
+    <span class="fa fa-github"></span>
+     
+    GitHub
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Resources | Tutorials</h1>
+
+</div>
+
+
+<hr />
+<p>Below are links to YouTube videos. Use the search bar to filter videos based on search terms.</p>
+<!--
+      Search bar
+                      -->
+<div class="search-bar" style="border:1px solid #DDD; width:396px;">
+<p style="margin:5px;">
+<i class="icon fa fa-search"></i> <input type="text" id="myInput" onkeyup="updateSheet()" placeholder="Search..." style="border:none; padding:0; width:365px;">
+</p>
+</div>
+<!--
+      Definition List
+                        -->
+<dl>
+<dt><a href="https://www.youtube.com/watch?v=HojjOPwneJw&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=3&amp;t=0s">Create Map Project on Geospatial Drive</a></dt>
+<dd>This video details how to create and save an ArcGIS Pro document to the Geospatial (U:) Drive.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=oZ-k2rUyO6A&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=25&amp;t=0s">Mapping Geospatial Network Drive</a></dt>
+<dd>This video details how to connect to the Geospatial (U:) Network Drive from an off-campus location, by accessing William &amp; Mary’s Virtual Private Network (VPN) using Global Protect.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=MidUYswWkAY&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=26&amp;t=0s">Add Folder Connection</a></dt>
+<dd>This video details how to add a folder connection in ArcGIS Pro
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=YJ6Duz_o4zU&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=4&amp;t=0s">Using Catalog View</a></dt>
+<dd>This video details how to open and explore catalog view in an ArcGIS Pro project.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=XEQcKiIzguA&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=7&amp;t=0s">Enabling and Configuring Labels for Line Features</a></dt>
+<dd>This video details how to turn on and configure labels for Line Features in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=vc8jJmntHAg&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=8&amp;t=0s">Adjusting Layer &amp; Symbol Transparency</a></dt>
+<dd>This video details how to adjust the layer and symbol transparency for a feature layer in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=njPJIHeY7VI&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=9&amp;t=0s">Configuring “Graduated Symbology”</a></dt>
+<dd>This video details how to configure a graduated color or graduated symbol type of primary symbology for a feature layer in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=8_Wv_K9cfOg&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=6&amp;t=0s">Configuring “Unique Values” Symbology</a></dt>
+<dd>This video details how to set a Unique Value type of Primary Symbology for a feature layer in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=yirLtlRfAeY&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=10&amp;t=0s">Adding and Changing Basemaps</a></dt>
+<dd>This video details how to add and Change Basemaps for an ArcGIS Pro project.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=lG43GtH1Ta4&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=11&amp;t=0s">Accessing W&amp;M VDI on a Mac</a></dt>
+<dd>This video details how to access W&amp;M Virtual Desktop Infrastructure (VDI) on a Mac or other Apple device, including a tutorial for right-clicking on a Mac.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=pZh-fMoaV54&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=19&amp;t=0s">Accessing W&amp;M VDI in Windows</a></dt>
+<dd>This video details how to access W&amp;M’s Virtual Desktop Infrastructure (VDI) using the VMWare Horizon Client on a Windows machine.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=0Kmy-ryzUQE&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=23&amp;t=0s">Project</a></dt>
+<dd>This video details how to use the “Project” Geoprocessing Tool in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=rzGPRB-hUig&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=12&amp;t=0s">Project Raster</a></dt>
+<dd>This video details how to use the “Project Raster” Geoprocessing Tool in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=XuZkLrXfrlU&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=13&amp;t=0s">Changing Map’s Coordinate System</a></dt>
+<dd>This video details how to change the coordinate system for a Map in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=XwBTt6GIo6U&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=14&amp;t=0s">Layer Properties</a></dt>
+<dd>This video details how to explore layer properties for a vector feature layer.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=pOlNALeldCU&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=15&amp;t=0s">Enable Labels</a></dt>
+<dd>This video details how to turn on and configure labels for a feature layer in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=7WhX9Matx5A&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=16&amp;t=0s">Formatting Point Symbology</a></dt>
+<dd>This video details how to format symbology for point feature layers in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=molt6hCx5TA&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=17&amp;t=0s">Editing Attribute Tables</a></dt>
+<dd>This video details how to edit attribute tables in ArcGIS Pro. This includes adding and configuring fields, calculating field values, and saving edits to attributes.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=A5mraMMJ5XQ&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=18&amp;t=0s">Adding a Bookmark</a></dt>
+<dd>This video details how to add a bookmark to a map in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=J8a6ANcgvnU&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=20&amp;t=0s">Survey123</a></dt>
+<dd>This video details how to access the Survey123 website with a walkthrough of an example survey form.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=m00xLPt5vxw&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=21&amp;t=0s">Getting License for ArcGIS Pro</a></dt>
+<dd>This video details how to retrieve a license to use ArcGIS Pro using the W&amp;M Enterprise login option.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=uYgSRd3ppuc&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=22&amp;t=0s">Select Layer by Attribute</a></dt>
+<dd>This video details how to use the “Select Layer by Attribute” Geoprocessing Tool in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=KtgAQXEJLHk&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=24&amp;t=0s">Starting with ArcGIS Modelbuilder</a></dt>
+<dd>This video details how to create a new Model using ArcGIS Modelbuilder, with an introduction on loading tools and data into the model.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=x07Xyoe0d2k&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=27&amp;t=0s">Signing into ArcGIS Online (AGOL) using the W&amp;M Enterprise Login</a></dt>
+<dd>This video details how to sign into ArcGIS Online (AGOL) using the W&amp;M Enterprise Login.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=RnAtZFVer0I&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=28&amp;t=0s">Creating a New Map Project on a Local Drive</a></dt>
+<dd>This video details how to create a New ArcGIS Pro Project using the Map Template, while saving to a local drive.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=n-wHcqybu1I&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=29&amp;t=0s">Clip</a></dt>
+<dd>This video details how to use the Clip Geoprocessing Tool in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=jG7kswGNbkc&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=30&amp;t=0s">Buffer</a></dt>
+<dd>This video details how to use the Buffer Geoprocessing Tool in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=CFyloFwjoZg&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=31&amp;t=0s">Adding Data to a Map</a></dt>
+<dd>This video details how to add spatial data to an ArcGIS Pro project from local drives and online portals.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=cB0PRHC3MWM&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=40&amp;t=0s">Create Layout</a></dt>
+<dd>This video details how to insert a new layout to ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=22C6Z1o7tx4&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=32&amp;t=0s">Activate Map Frame in Layout</a></dt>
+<dd>This video details how to activate and format a Map Frame that has been inserted to a layout in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=GASt9vWAZhA&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=33&amp;t=0s">Create Inset Map</a></dt>
+<dd>This video details how to insert and format a map frame for use as an inset map, and how to insert an extent indicator, for a layout in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=KDkb7VSDShU&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=34&amp;t=0s">Creating a Legend</a></dt>
+<dd>This video details how to insert and format a legend for use in a layout in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=YJ6Duz_o4zU&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=4&amp;t=0s">Changing Legend Labels</a></dt>
+<dd>This video details how to change symbol labels displayed in a legend
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=HwiPvdB9MYk&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=35&amp;t=0s">Add Descriptive Text in Layout</a></dt>
+<dd>This video details how to insert a textbox to add metadata and descriptive text to a layout in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=I7DBm_i3-zE&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=36&amp;t=0s">Insert Map Frame</a></dt>
+<dd>This video details how to insert a map frame to a layout in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=zTMKtG0vYJU&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=37&amp;t=0s">Add Scale Bar</a></dt>
+<dd>This video details how to insert and format a scale bar for a layout in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=0_A7jY60XHk&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=38&amp;t=0s">Add Title</a></dt>
+<dd>This video details how to insert Title text to a layout in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=efeJpbwpPNs&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=42&amp;t=0s">Insert Service Layer Credits</a></dt>
+<dd>This video details how to insert and move service layer credits in a layout in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=CbzCFV3vDzU&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=39&amp;t=0s">Export Layout</a></dt>
+<dd>This video details how to share a finished layout as a pdf in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=dBW0DEk5WSE&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=41&amp;t=0s">Rename Feature Layer</a></dt>
+<dd>This video details how to change the display name of a feature layer for a map in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=d588gI3yjxY&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=2&amp;t=0s">Adding Data from ArcGIs Online</a></dt>
+<dd>This video details how to add data to an ArcGIS Pro Project from ArcGIS Online (AGOL)
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=1OyRJ0TY0C4&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=43&amp;t=0s">Finding and Downloading TIGER/Line Geography</a></dt>
+<dd>This video details how to search for and download shapefiles and state-level geodatabases from the U.S. Census Bureau.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=8Cebi_fUwFM&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=49&amp;t=0s">Using data.census.gov</a></dt>
+<dd>This video details how to search for tabular data using data.census.gov, and then download the table for use in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=zkvTdGaBafA&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=44&amp;t=0s">Setting Visibility Range for a Layer</a></dt>
+<dd>This video details how to set and edit the visibility range for a feature layer in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=rHaiyM3yyG0&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=45&amp;t=0s">Edit Polygon Features</a></dt>
+<dd>This video details how to modify polygon features in ArcGIS Pro, using reshaping tools.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=4HrYC-L8cBE&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=48&amp;t=0s">Create Feature Class</a></dt>
+<dd>This video details how to create an empty feature class in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=2S2OVYpKLKc&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=47&amp;t=0s">Creating/Digitizing Features</a></dt>
+<dd>This video details how to create features, using the process of digitizing buildings from imagery, in ArcGIS Pro.
+</dd>
+<dt><a href="https://www.youtube.com/watch?v=sn0SthObvYU&amp;list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&amp;index=46&amp;t=0s">Edit Feature Class Metadata</a></dt>
+<dd>This video details how to edit metadata for a Feature Class or a Feature Layer in ArcGIS Pro.
+</dd>
+</dl>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
