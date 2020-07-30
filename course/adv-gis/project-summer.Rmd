@@ -131,6 +131,14 @@ You may, of course, work on all three projects simultaneously, but in terms of a
 * [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
 * [Arcade Function Index](https://developers.arcgis.com/arcade/function-reference/)
 
+#### QuickCapture
+
+* [Create a Project](https://doc.arcgis.com/en/quickcapture/help/guidedtour-prepare.htm)
+
+#### Collector
+
+* [Create your first Collector map](https://www.esri.com/arcgis-blog/products/collector/field-mobility/make-your-first-collector-map/)
+
 #### Geoethics
 *Resources and selected readings.*
 
