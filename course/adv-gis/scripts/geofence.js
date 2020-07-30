@@ -28,8 +28,8 @@ require([
           type: "string"
         },
         {
-          name: "ORDER",
-          alias: "Order",
+          name: "WITHIN",
+          alias: "Inside Geofence",
           type: "integer"
         }
       ],
@@ -49,7 +49,7 @@ require([
         }
       },
       popupTemplate: {
-        title: "{Name} ({Longitude}, {Latitude})"
+        title: "{NAME} ({WITHIN})"
       }
     });
 
@@ -63,19 +63,19 @@ require([
         color: "green"
       },
       uniqueValueInfos: [{
-        value: "within 3 miles",
+        value: "inside",
         symbol: {
           type: "simple-marker",
           color: "blue"
         },
-        label: "< 3 miles"
+        label: "are"
       }, {
-        value: "far away",
+        value: "outside",
         symbol: {
           type: "simple-marker",
           color: "red"
         },
-        label: "> 3 miles"
+        label: "are not"
       }]
     });
 
@@ -165,16 +165,15 @@ require([
 
       // Scrub location from position object:
       var data = {
-        LATITUDE: evt.position.coords.latitude,
-        LONGITUDE: evt.position.coords.longitude,
-        NAME: "Test Point"
+        NAME: "My Location",
+        WITHIN: 0
       };
 
       var graphic = new Graphic({
         geometry: {
           type: "point",
-          latitude: data.LATITUDE,
-          longitude: data.LONGITUDE
+          latitude: evt.position.coords.latitude,
+          longitude: evt.position.coords.longitude
         },
         attributes: data
       });

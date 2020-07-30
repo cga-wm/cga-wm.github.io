@@ -15,8 +15,8 @@
       width: 100%;
     }
   </style>
-  <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
-  <script src="https://js.arcgis.com/4.15/"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.16/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.16/"></script>
   <script type="text/plain" id="arcade-test">
     if (true) {
       return "no"
@@ -9138,7 +9138,7 @@
               ]
       }
     );
-    IIF(Within(Geometry($feature), wburg), 'within 3 miles', 'far away');
+    IIF(Within(Geometry($feature), wburg), 'inside', 'outside');
   </script>
   <script src="scripts/geofence.js"></script>
 </head>
