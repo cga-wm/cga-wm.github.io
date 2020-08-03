@@ -94,6 +94,7 @@ Use the search bar to filter videos based on search terms.
 
 [Starting with ArcGIS Modelbuilder](https://www.youtube.com/watch?v=KtgAQXEJLHk&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=24&t=0s)
 :   This video details how to create a new Model using ArcGIS Modelbuilder, with an introduction on loading tools and data into the model.
+    See also, [ArcPro Model Builder: A Simple Guide](https://unstable-ground-consulting.github.io/Landslide-Susceptibility/How-To/) by the Unstable Ground Consulting group from Advanced GIS Fall 2020.
 
 [Signing into ArcGIS Online (AGOL) using the W&M Enterprise Login](https://www.youtube.com/watch?v=x07Xyoe0d2k&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=27&t=0s)
 :   This video details how to sign into ArcGIS Online (AGOL) using the W&M Enterprise Login.
