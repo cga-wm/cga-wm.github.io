@@ -85,6 +85,7 @@ You may, of course, work on all three projects simultaneously, but in terms of a
 
 * [Intro to Geoethics](lectures/geoethics/index.html)
 * [Intro to Programming](lectures/programming/index.html)
+* [Intro to Design](lectures/design/index.html)
 
 ***
 
