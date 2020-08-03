@@ -22,4 +22,4 @@ My goals:
 * simply upload blog posts that are automatically rendered to my website (**failed**)
     - to get blog posts on to your website, you have to design a web page and somehow link to your post content, which is not entirely clear
 
-Overall, I am washed with a feeling of dissatisfaction.
+Overall, I am awash with feelings of dissatisfaction.
