@@ -1,0 +1,51 @@
+---
+author: AdvGIS
+date: July 30, 2020
+pagetitle: "AdvGIS | Design"
+---
+
+# Conceptual Design
+
+<div class="fragment">
+*a description of how a product works<br />and meets its requirements*
+</div>
+
+<div class="fragment">
+*the big idea*
+</div>
+
+<div class="fragment">
+*innovation*
+</div>
+
+# The Conceptual Model
+
+<span class="fragment">Idea</span><span class="fragment"> &rarr; Requirements</span><span class="fragment"> &rarr; Concept</span>
+
+***
+
+Idea
+:   Create a geofencing web app.
+
+***
+
+Requirements
+:   Must tell a story around a user's location.
+
+***
+
+<section data-background-image="img/concept_diagram.png" data-background-size="fill">
+<aside class="notes">
+</aside>
+</section>
+
+***
+
+<section data-background-image="img/sequence_diagram.png" data-background-size="fill">
+<aside class="notes">
+</aside>
+</section>
+
+# Example Application
+
+[![](img/geofence_example.png)](https://developers.arcgis.com/javascript/3/jssamples/streamlayer_arcade_geofence.html)
