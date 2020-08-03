@@ -22,7 +22,7 @@ output:
     html_document:
         toc: false
         theme: flatly
-        highlight: haddock
+        highlight: pygments
         css: "styles.css"
         include:
             after_body: ../../footer.html
