@@ -1,0 +1,71 @@
+---
+title: "Podcasts and Vlogs"
+date: 2020-08-03
+url: 2020-08-03-podcasts-vlogs.html
+summary: "Sometimes creativity and expression need a new medium."
+---
+
+### Podcasts
+
+<div class="card"
+<!-- Podcast by Jeremy -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">May 15, 2020</h2>
+<h1 class="xs-mb2">"Geoethics Podcast" by Jeremy</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1gPObjmfQvihGm3-5P6a-Aw4vBMwTw0s8" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1gPObjmfQvihGm3-5P6a-Aw4vBMwTw0s8">link</a> instead.</p>
+</audio>
+In this podcast, Jeremy discusses geoethics as it relates to the use of geofencing in political campaigns.
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">May 15, 2020</h2>
+<h1 class="xs-mb2">"GIS Pod Episode 1" by Sean</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1vGsZAGdYBBq4EYWyKVILoZ9nwJNkD60z" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1vGsZAGdYBBq4EYWyKVILoZ9nwJNkD60z">link</a> instead.</p>
+</audio>
+In this podcast, Sean discusses geofencing and provides examples of how this technology is used in commercial development.
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">May 15, 2020</h2>
+<h1 class="xs-mb2">"Boring in the Morning" by Jake</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1cwc199CVkHGXp4Vp3zDifx3zOMWWPBWo" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1cwc199CVkHGXp4Vp3zDifx3zOMWWPBWo">link</a> instead.</p>
+</audio>
+In this podcast, Jake explains what are geoethics and how they pertain to geofencing.
+</div>
+</div>
+</article>
+</div>
+<!-- Podcast -->
+</div>
