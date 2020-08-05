@@ -6,7 +6,6 @@ summary: "Sometimes creativity and expression need a new medium."
 ---
 
 ### Podcasts
-https://drive.google.com/file/d/1WKeTDy8sxBg1Js19XTui0aRc_bMOsiVg/view?usp=sharing
 
 <div class="card">
 <!-- Podcast by Peter -->
