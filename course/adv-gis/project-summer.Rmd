@@ -131,7 +131,7 @@ You may, of course, work on all three projects simultaneously, but in terms of a
 
 * [An introduction to JavaScript](https://javascript.info/intro)
 * [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
-* [Arcade Function Index](https://developers.arcgis.com/arcade/function-reference/)
+* [Arcade Expression Language](https://developers.arcgis.com/javascript/latest/guide/arcade/index.html)
 
 #### QuickCapture
 
