@@ -77,6 +77,9 @@ output:
 [ISRIC SOTER Database](https://www.isric.org/projects/soil-and-terrain-soter-database-programme)
 :   Soil and terrain maps for South America, Africa (parts), Europe (parts), and Asia (parts) from 1986 to 2016.
 
+[Kaggle](https://www.kaggle.com/datasets)
+:   Explore, analyze, and share quality data in an accessible, non-proprietary format where each dataset is a community where you can discuss data, discover public code and techniques, and create your own projects.
+
 [National Land Cover Database (NLDC)](https://www.mrlc.gov/index.php)
 :   Provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
 
