@@ -1,7 +1,7 @@
 ---
 title: "Syllabus | Advanced GIS Analysis and Programming"
 author: "Center for Geospatial Analysis"
-date: "Summer 2020"
+date: "Fall 2020"
 ---
 
 ****
@@ -10,15 +10,15 @@ Course Description
 ==================
 
 This course extends the existing base of GIS knowledge and skills by amplifying programmatic approaches to spatial data and analysis.
-Lectures, labs, and projects emphasize GIS model development, spatial database architecture and design best practices, and extend knowledge of web GIS by authoring and consuming geographic web services.
-Students will become familiar with methods of leveraging programming languages (such as Python) to make GIS processing easier, faster, and more accurate by scripting and automating data management, production, manipulation, and analysis procedures.
-Activities develop GIS analysis skills with examples from government, social science, physical science, and the humanities.
+Lectures, labs and projects emphasize GIS model development, spatial database architecture and design best practices, and extend knowledge of web GIS by authoring and consuming geographic web services.
+Students will become familiar with methods of leveraging programming languages (such as Python) to make GIS processing easier, faster and more accurate by scripting and automating data management, production, manipulation and analysis procedures.
+Activities develop GIS analysis skills with examples from government, social science, physical science and the humanities.
 
 Catalog Number
 
-:   - GIS 420 / 520
+:   - GIS 420
     - Section 1
-    - CRN 31963 / 32125
+    - CRN 14652
 
 Prerequisites
 
@@ -26,11 +26,11 @@ Prerequisites
 
 Semester
 
-:   - Summer 2020 (06 Jul 2020--07 Aug 2020)
+:   - Fall 2020 (2020-Aug-19 - 2020-Nov-24)
 
 Location
 
-:   - This course is taught online (remotely)
+:   - This course is taught online (remotely); therefore, it can be completed from anywhere.
 
 Instructor
 
@@ -42,16 +42,19 @@ Instructor
 
 Office Hours
 
-:   - Mo--Th 1010--1200
-    - *There may be certain days when office hours will be either canceled or rescheduled; notifications will be sent ahead of time*
+:   - Mon 1100--1300, 1530--1600, 1700--2000
+    - Wed 1100--1130, 1530--1700
+    - Fri 1100-1200
+    - *Appointments are welcome outside normally scheduled office hours; please email to set up a time.*
+    - *There may be certain days when office hours will be either canceled or rescheduled; notifications will be sent ahead of time.*
 
 Delivery
 
-:   - Course will delivered [asynchronously](https://www.elearners.com/education-resources/degrees-and-programs/synchronous-vs-asynchronous-classes/)
+:   - Course will delivered [asynchronously](https://www.elearners.com/education-resources/degrees-and-programs/synchronous-vs-asynchronous-classes/).
 
 Final Exam
 
-:   - Written/oral evaluation on or before 13 August 2020
+:   - Written/oral evaluation on or before 24 November 2020
 
 Minimum Passing Grade
 
@@ -61,14 +64,11 @@ Communication
 
 :   - Instant messaging using [GroupMe](https://groupme.com/)
         - *Please create an account using your W&M email*
-    - Discussions and issue tracking using [GitHub](https://github.com/)
-        - *You will need to create a GitHub account, if you do not already have one*
-        - *Please share your GitHub username with your instructor*
-        - *You will be added to the [adv-gis team](https://github.com/orgs/cga-wm/teams/adv-gis) with read/write access to the [advgis-beta repository](https://github.com/cga-wm/advgis-beta)*
+    - Discussion posts and issue tracking using [W&M's Blackboard](https://blackboard.wm.edu/)
     - Office hours, video chats and oral evaluations ([Zoom](https://cwm.zoom.us/))
     - Performance write-ups ([Google Docs](https://www.google.com/drive/))
         - *A Drive folder will be shared to your W&M account*
-        - *Use this folder to upload your evaluation materials*
+        - *Use this folder to upload all your evaluation materials*
     - ArcGIS Notebooks and spatial data sharing on [ArcGIS Online](https://www.arcgis.com/index.html)
         - *Please be sure to log into arcgis.com using the W&M organization URL: cga-wm.maps.arcgis.com (see [here](https://youtu.be/x07Xyoe0d2k) for instructions)*
         - *You will be added to the AdvGIS group*
@@ -87,7 +87,6 @@ Textbook
         - https://www.esri.com/training/ (*see Course Catalog*)
         - https://developers.arcgis.com/labs/ (*see Tutorials*)
         - https://learn.arcgis.com/en/ (*see Lesson Gallery*)
-        - https://github.com/cga-wm/advgis-beta/wiki/Resources
         - [CGA GIS Tutorial YouTube Playlist](https://www.youtube.com/playlist?list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl)
 
 Course Materials
@@ -95,24 +94,33 @@ Course Materials
 :   - Laptop or desktop computer (*required*)
 
         \* _Your computer should have at least 500 MB of free disk space, have at least 8 GB of memory, and run a modern desktop OS (e.g,. PC, Mac, or Linux); netbooks need not apply._
-      <!-- For Summer/Fall change to 32 GB or larger -->
-    - Dedicated USB thumb drive 32 GB or larger (*recommended*)
+    - Dedicated USB 3.0 thumb drive 64 GB or larger (*recommended*)
 
         \* _Organizing your data and maintaining a backup can save you from serious misfortune; I know from experience._
 
 Technology
 
-:   - Geospatial visualizations and analysis may be handled using any of the following:
+:   - Field collection can be handled on either a smart phone (iPhone or Android) or tablet (iPad) using either [Collector](https://www.esri.com/en-us/arcgis/products/arcgis-collector/overview) or [QuickCapture](https://www.esri.com/en-us/arcgis/products/arcgis-quickcapture/overview)
+    - Geospatial visualizations and analysis may be handled using any of the following:
         - The latest stable release or the university's current installed versions of Esri's [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources) or [ArcMap](https://www.esri.com/en-us/arcgis/products/arcgis-desktop/resources)
 
-            \* _ArcGIS Pro may be installed on individual computers for Microsoft Windows users only (see [here](https://www.wm.edu/as/cga/arcgis-licensing/index.php) for instructions). ArcGIS Pro may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
+            \* _ArcGIS Pro may be installed on individual computers for Microsoft Windows users only (see [here](https://www.wm.edu/as/cga/arcgis-licensing/index.php) for instructions)._
+            _ArcGIS Pro may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
 
-            \* _ArcMap (a part of ArcGIS Desktop) is being phased out. If GIS is in your future, you may wish to consider migrating to ArcGIS Pro._
+            \* _ArcMap (a part of ArcGIS Desktop) is being phased out of use._
+            _If GIS is in your future, you may wish to consider migrating to ArcGIS Pro._
         - The latest stable release or the university's current installed version of [QGIS Desktop](https://www.qgis.org/en/site/)
 
-            \* _QGIS may be downloaded and installed on all major OS's (see [here](https://www.qgis.org/en/site/) for instructions). QGIS may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
+            \* _QGIS may be downloaded and installed on all major OS's (see [here](https://www.qgis.org/en/site/) for instructions)._
+            _QGIS may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
         - [ArcGIS Online](https://www.arcgis.com) (*see [here](https://youtu.be/x07Xyoe0d2k) for login instructions*).
-        - ArcGIS Notebooks
+    - Programming and analysis may be handled using either [ArcGIS Notebooks](https://www.esri.com/arcgis-blog/products/arcgis-enterprise/analytics/introducing-arcgis-notebooks/) on the Portal or in ArcGIS Pro (v.2.5).
+
+            \* _The ArcGIS Notebook is a cloud-based integrated development environment built for processing, analyzing and visualizing geospatial data._
+            _You will be granted access to Notebooks through ArcGIS Online._
+            _Notebooks provide you with all the geoprocessing tools of ArcPro and ArcGIS without having to install any software on your computer._
+            _Mac users, rejoice!_
+            _You also have access to ArcGIS Notebooks through ArcGIS Pro (v 2.5 and greater)._
 
 ---
 
@@ -134,21 +142,22 @@ What you should already know
 
 What is expected of you
 -----------------------
-* Develop advanced geospatial skills and techniques.
-* Work collaboratively with your classmates and instructor to solve/address the course projects along with any "special works" that may come up.
+* Develop advanced geospatial skills and problem-solving techniques.
+* Work both collaboratively and individually on completing course tutorials and exercises, attempting special works projects as they come up, and addressing a real-world geospatial challenge.
 * Maintain a log/report that outlines *everything* you do (including any research, development, analysis, and collaboration) and approximately how long it took you to do it.
+    See example time management log ([.gdoc](https://docs.google.com/document/d/1NVhTQGSdwMTEaMbywG-01XPPGWnLVlKL6iQSLYLUoaI/edit?usp=sharing) and [.gsheet](https://docs.google.com/spreadsheets/d/1FegJTQFhiFyhvzg-mxo9tfd-Qz4ckV37fpXzo4NBMKk/edit?usp=sharing)).
 
     > The First Step Towards Effectiveness by Peter E. Drucker
     >
     > 1. Know thy time.
 
 * Communicate with your classmates and instructor using remote/web-based technology (see **Communication** above)
-* Schedule and meet with your instructor three times:
-    1. Once during the first week to overview the Performance Review Worksheet and the expectations for the Performance Accomplishments;
-    2. Once during or just following the third week to report on your progress; and
-    3. Once at or near the end of the summer session for the oral evaluation of your performance accomplishments.
+* Schedule and meet with your instructor a minimum of three times:
+    1. On or before 2 September to overview the Performance Review Worksheet and the expectations for the Performance Accomplishments;
+    2. On or before 11 October to report on your progress; and
+    3. On or before 24 November for the oral evaluation of your performance accomplishments.
 * Ask questions and make mistakes.
-    If you are not feeling frustrated, then you are likely not invested in the class.
+    If you are feeling frustrated, then you are likely invested in this class.
 * Uphold professionalism in everything you do (see [**Code of Conduct**](#the-code-of-conduct) below).
 * Provide a course evaluation at the end of the term with a summary of things you liked and disliked; methods that worked for you and those that fell short; topics that interested you and those that were uninteresting.
 
@@ -156,9 +165,9 @@ What to expect from your instructor
 -----------------------------------
 * Manage all web resources
 * Post videos to introduce/explain concepts and guide you through demos
-* Post links to tutorials and help guides
-* Answer questions posed in the GitHub issues
-* Respond to requests for video chats during and/or outside scheduled office hours
+* Post links to tutorials and other helpful guides
+* Answer questions and provide feedback as requested through email, chat, discussion board forums or other electronic means in a timely manner
+* Make accommodations for video chat requests during and/or outside scheduled office hours
 * Meet with you at least twice before final evaluations
 
 ---
@@ -168,29 +177,33 @@ Course Structure
 
 How this class is stylized
 --------------------------
-For the summer term, my goal is to mimic a real-world geospatial organization that hires summer interns to solve spatial problems.
-I'm taking inspiration from Ben Balter's ["15 rules for communicating at GitHub"](https://ben.balter.com/2014/11/06/rules-of-communicating-at-github/).
+I designed this course to mimic a real-world geospatial organization that solves spatial problems; therefore, a large focus of this class will be presenting you with challenge questions and asking you to solve them.
+To build your geospatial problem-solving skills, we will tackle these challenges together, sharing our methods and results with one another.
+I will show you tips and tricks and introduce you to new GIS methods and tools to help you become better, faster and stronger GIS professionals.
+
+I took inspiration from Ben Balter's ["15 rules for communicating at GitHub"](https://ben.balter.com/2014/11/06/rules-of-communicating-at-github/).
 This type of asynchronous workstyle is becoming more prevalent and economically gainful in today's tech world; not to mention the accelerated rate of remote work under the present pandemic.
 Having the skills to work remotely and collaboratively can give you a "leg up" in the job market.
 This course aims to pair style with content to give you a truly advanced geospatial programming and analysis experience.
 
-Your goal is to work as a team to address (and potentially solve) the projects that are assigned.
-There are a set number of core projects and each of the projects has certain necessary skills associated with it.
-You choose how to address these projects (e.g., work on all of them at the same time or tackle one at a time).
+Your goal is to work as a team to address (and potentially solve) the various projects that are assigned.
+You will then be asked to put together your experiences into your own project design plan; details on this project follows.
+For all projects, you choose how to address them.
 You keep in constant communication with your classmates and instructor.
 
 This style of learning closely resembles what will be expected of you following graduation and entering the workforce.
 The difference here is that there is the expectation that you will help one another (not always the case in the real world) and your instructor will be your personal tutor and guide (a luxury, for certain).
 
-**Disclaimer 1**: This class is a part of the Center for Geospatial Analysis's [Certificate in Geographic Information Science Program](https://www.wm.edu/as/cga/certificate/overview/index.php) and is offered to post-baccalaureate level students.
-Undergraduates at William & Mary also have the opportunity to take this course with slightly modified expectations during evaluation.
+> **Disclaimer 1**: This class is a part of the Center for Geospatial Analysis's [Certificate in Geographic Information Science Program](https://www.wm.edu/as/cga/certificate/overview/index.php) and is offered to post-baccalaureate level students.
+> Undergraduates at William & Mary also have the opportunity to take this course with slightly modified expectations during evaluation.
 
-**Disclaimer 2**: In academia, it is well known that new courses take about 3--4 iterations before they are "well developed."
-That being said, this class is currently in "beta" version (i.e., second interation); therefore, two things apply: 1) class structure, methods, topics, delivery, evaluation, etc. are in a constant state of change so please be patient; 2) you are in a position to alter the course by providing feedback, so please, open a notebook and jot down your thoughts, opinions and concerns regarding the class as we go along and use this to craft your course evaluation at the end of the term.
+
+> **Disclaimer 2**: In academia, it is well known that new courses take about 3--4 iterations before they are "well developed."
+> That being said, this class is currently in "gamma" version (i.e., third iteration); therefore, two things apply: 1) class structure, methods, topics, delivery, evaluation, etc. are in a constant state of change so please be patient; 2) you are in a position to alter the course by providing feedback, so please, open a notebook and jot down your thoughts, opinions and concerns regarding the class as we go along and use this to craft your course evaluation at the end of the term.
 
 How class time is used
 ----------------------
-This is an advanced class aimed at introducing several new concepts, software, tools, methods, and analyses in a rather short time.
+This is an advanced class aimed at introducing several new concepts, software, tools, methods, and analyses in a short time.
 It is strongly suggested (and even required) that you take advantage of one another and the instructor to maximum what can be done and what you can learn during this time.
 
 Remember, your goal is to complete the Performance Accomplishments before the end of term.
@@ -202,20 +215,23 @@ How this class is assessed
 _This class is assessed based on a written/oral evaluation of student learning._
 
 At the beginning of the semester, students will be assigned learning objectives along with the minimum requirements for meeting the course's expectations in what is called the **Performance Review Worksheet**.
-In the first video conference meeting with the instructor, students will review the criteria for meeting the expectations for the class and make any adjustments necessary with their instructor.
-The Performance Review Worksheet should not be edited again until the final evaluation.
+In the first meeting with the instructor, students will review the criteria for meeting the expectations for the class and make any adjustments necessary with their instructor.
+Other than during the meetings with the instructor, the Performance Review Worksheet should not be edited by anyone at anytime.
 
 During the term, students will keep track of their work that addresses each of the course's expectations in the form of a written document called **Performance Accomplishments**, noting such things as what they did, how they did it, how long it took them, and what they gained from it.
-Additional materials or documentation may be linked to within the Performance Accomplishments document or added to the shared Drive folder.
+Additional materials or documentation may be linked to within the Performance Accomplishments document or added to their shared Drive folder.
+Media files (such as audio/video files) should be uploaded to the specially created subfolder (**media**) where there is a license agreement for granting use of such files.
 
 Near the middle of the term, students will have their second video conference meeting with their instructor to review their progress and make certain everything is on schedule for the end of term.
+The instructor may ask to see some demonstration of your progress (e.g., project logs or notebook exercises).
 Under special circumstances, adjustments may be made to the Performance Review Worksheet, which is authorized only by the instructor.
 
-At the end of the term, students will have their third video conference meeting with the instructor to go over their individual Performance Accomplishments.
-The instructor may critique each element identified by the student.
+At the end of the term, students will have their third video conference meeting with the instructor to go over their individual Performance Accomplishments document.
+The instructor will critique each element completed by the student.
 Students may be asked to further demonstrate their skills.
+A final grade will be decided during this meeting.
 
-The criteria for each accomplishment is defined in the Performance Review worksheet and will, in general, receive an evaluation of one of the following qualities.
+The criteria for each accomplishment is defined in the Performance Review Worksheet and will, in general, receive an evaluation of one of the following qualities.
 
 Based on the cumulative assessment of individual accomplishments, a student will earn the corresponding grade for their level of achievement.
 
@@ -237,79 +253,56 @@ There are no points, bonuses or extra credit assignments in this class.
 ---
 
 # Course Topics
-
-## Project A - Shark Attacks
-
-### Overview
-A client has asked whether shark attacks are predictable or perhaps coincident with some environmental or other measurable factors.
-Their interest stems from the growing number of shark deaths caused by the hands of humans (mostly) in response to misinformation regarding human-shark relations.
-As shark numbers decrease, the ethical implications of our management of their species becomes more relevant.
-
-### Learning Objectives
-1. Define geoethics and provide an example of a "myth" regarding human-shark relations.
-2. Identify, find, evaluate and organize relevant spatial data and perform necessary processes to integrate them into a single GIS workflow.
-3. Design a GIS project workflow that identifies the key information and synthesize them for addressing a spatial relationship between shark attacks and one or more external/environmental factors.
-4. Communicate your methods with your colleagues and assess and critique your process and/or results based on student and instructor feedback.
-5. Recognize the multidisciplinary roles of GIS in real-world applications.
+The following are a list of topics that will, time provided, be covered during the term.
 
 
-## Project B - Electioneering
-
-### Overview
-A client has asked whether electioneering is creating an unfair bias in the upcoming 2020 presidential election.
-They are interested in the ethical implications behind any spatial factors---such as polling locations and districting---that may lead to party-specific advantage.
-
-### Learning Objectives
-1. Define electioneering and provide an example of a potential geoethical debate associated with it.
-2. Identify, find, evaluate and organize relevant spatial data and perform necessary processes to integrate them into a single GIS workflow.
-3. Design a GIS project workflow that identifies the key information and synthesize them for addressing a particular aspect of electioneering.
-4. Communicate your methods with your colleagues and assess and critique your process and/or results based on student and instructor feedback.
-5. Recognize the multidisciplinary roles of GIS in real-world applications.
-
-
-## Project C - Geofencing
-
-### Overview
-A client has asked for a web-based application that interacts with a user's location to tell a story.
-They have purposefully been vague to see the different types and varieties of ideas.
-They want to have a storyboard (conceptual design), a sequence diagram (application design) and potentially a working prototype of the app.
-You have been advised to utilize the concept of __geofencing__.
-
-### Learning Objectives
-1. Define geofencing, explain how it is used across multiple disciplines, and give an example of a geoethical debate associated with it.
-2. Design a geospatial database to meet a web-based application.
-3. Perform a field-based geospatial survey.
-4. Design a storyboard that has spatial dependency.
-5. Construct a web-based application that utilizes geofencing.
+* GIS Specialists versus Developers
+* Geoethics
+* GIS workflows and design
+* Geocoding, geofencing and other geoprocesses
+* Python programming language
+* JavaScript programming language
+* Arcade expression language
+* Markdown text formatting
+* Web applications for the geosciences
+* Programmatic approaches to managing geospatial data
+* Programmatic approaches to solving geospatial problems
 
 ---
 
 Course Calendar
 ===============
-In the five weeks of class, each week will consist of up to four discussion topics with associated readings and responses and up to one "special works" assignment that will need immediate attention.
-These simulate the real-world distractions and challenges faced by GIS specialists and developers.
+In this abbreviated twelve week semester, each week will consist of at least one discussion topic with associated readings and responses and up to one "special works" assignment.
+These assignments simulate the real-world challenges faced by GIS specialists and developers.
+
+Students are expected to complete three additional hours of coursework.
+These tasks include:
+
+* __The Client Meeting__: students must prepare a conference meeting with their "client" (played by a bonafide CGA fellow) who has asked them to prepare a project report (project topic and scope to be defined)
+* __The Field Collection__: students must prepare spatial data in a hosted web map and complete a field data collection
+* __The Media File__: students must create a media file (audio or video) that demonstrates their knowledge of a subject and communication skills to a broad audience (topic to be decided)
 
 
 Important Dates
 ---------------
 First day of term
-:   - 06 July 2020
+:   - 19 August 2020
 
 Add/drop deadline
-:   - 09 July 2020
+:   - 28 August 2020
 
 Withdraw deadline
-:   - 24 July 2020
+:   - 12 October 2020
 
 Last day of term
-:   - 07 August 2020
+:   - 13 November 2020
 
-Final grades deadline
-:   - 14 August 2020 (1200 noon)
+Last day of exams
+:   - 24 November 2020
 
 Final evaluations
-:   - Final evaluations must be scheduled with your instructor on or before 13 August 2020
-    - Performance Accomplishments are due at least 24 hours before the scheduled evaluation
+:   - Final evaluations must be scheduled with your instructor on or before the last day of exams.
+    - Performance Accomplishments are due at least 24 hours before your scheduled evaluation.
 
 ---
 
@@ -331,7 +324,7 @@ Remember these things as you work together:
     If something offends you, take a breath, be cordial and ask for clarification before unleashing your wrath (BTW: you shouldn't unleash your wrath).
     That being said, also do not be a silent witness.
     If something offends you, let everyone know.
-    We will never learn from our mistakes if they are not pointed out.
+    We will never learn from our mistakes if our mistakes are never pointed out.
     If malicious actions continue, the instructor will manage it.
 2. "There is no innovation and creativity without failure. Period."
 
@@ -346,11 +339,14 @@ Remember these things as you work together:
 3. Ask lots of questions.
 
     Questions are cheap, so ask a lot of them.
-    Remember to always strive for clarity.
-    If you don't know something or your aren't sure, then ask.
+    When asking questions, remember to always strive for clarity.
+    If you don't know something or your aren't sure, just ask.
+    Sometimes, knowing the right question to ask is just as difficult as finding the answer.
+    When you find yourself here, please send up a flare or simply say "I'm lost."
+    We will get you back on track.
 4. Focus on opportunities.
 
-    Remember: this is not a race and you are not a judge, so don't get caught up with critiquing or competing with others.
+    Remember: this is not a race and you are not a judge, so don't get caught up with critiquing or competing with each other.
     Provide your opinions and perspectives and then actually take the time to read the opinions and perspectives of others.
     Challenge yourself to see things differently and try things differently.
     Ignore your desire to be correct or to correct someone else and try not to contradict people; they don't like it and biologically it shuts down their ability to see things logically.
@@ -443,4 +439,11 @@ For more information, please see https://www.wm.edu/sas.
 
 Copyright Statement
 -------------------
-Your enrollment in this class means that you grant a "no rights reserved" license to the instructor, the department/program, and the university on all works submitted towards the completion of this class.
+There is a LICENSES document in your shared Drive folder.
+
+It is requested that you update the file appropriately, prescribing your ownership and license for use of your media files, including but not limited to your web app (.html), video web log (.mp4) and/or podcast (.mp3/.m4a/.aac/.wav).
+Failure to do so will result in a de facto "no rights reserved" license to the instructor, the department/program and the university on all works submitted.
+
+Please note that these media files may be reused for educational purposes on the course website, future Blackboard courses, or a YouTube playlist.
+
+You may contact the [CGA](mailto:cga@wm.edu) at any time to request that your media file be no longer used.

@@ -3,14 +3,20 @@ output_dir: "."
 navbar:
     title: "GIS 420/520 - Advanced GIS"
     right:
-        - text: Projects
+        - text: Lectures
           menu:
-          - text: Summer 2020
-            href: project-summer.html
+          - text: Design
+            href: lectures/design
+          - text: Geoethics
+            href: lectures/geoethics
+          - text: Programming
+            href: lectures/programming
         - text: Syllabus
           menu:
-          - text: Summer 2020
+          - text: Fall 2020
             href: syllabus/index.html
+          - text: Summer 2020
+            href: syllabus/advgis-ay1920-summer-syllabus.html
           - text: Spring 2020
             href: syllabus/advgis-ay1920-spring-syllabus.html
         - text: Blog
