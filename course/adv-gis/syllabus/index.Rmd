@@ -63,9 +63,12 @@ Minimum Passing Grade
 Communication
 
 :   - Instant messaging using [GroupMe](https://groupme.com/)
+        - For quick delivery of content or for questions that need quick responses
         - *Please create an account using your W&M email*
     - Discussion posts and issue tracking using [W&M's Blackboard](https://blackboard.wm.edu/)
-    - Office hours, video chats and oral evaluations ([Zoom](https://cwm.zoom.us/))
+        - For sharing ideas, methods and content and asking/responding to questions, comments or concerns
+    - Video conferencing ([Zoom](https://cwm.zoom.us/))
+        - Video conferencing is for office hours, video chats, conference meetings and oral evaluations where "face-to-face" communication or screen sharing is required
     - Performance write-ups ([Google Docs](https://www.google.com/drive/))
         - *A Drive folder will be shared to your W&M account*
         - *Use this folder to upload all your evaluation materials*
@@ -73,7 +76,11 @@ Communication
         - *Please be sure to log into arcgis.com using the W&M organization URL: cga-wm.maps.arcgis.com (see [here](https://youtu.be/x07Xyoe0d2k) for instructions)*
         - *You will be added to the AdvGIS group*
     - Email ([twdavis-at-wm-dot-edu](mailto:twdavis@wm.edu))
+        - The new snail mail; use this for personal communication or whenever sharing is inappropriate
     - Website blog (https://cga-wm.github.io/course/adv-gis/blog.html)
+        - Maintained by your instructor for communicating ideas, methods and course content
+    - Videos ([YouTube Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMMEKNxIS-W0DnFoWxrUeUPW))
+        - Complimentary to the blog and used when audio/video is the better communication medium
 
     See [**Code of Conduct**](#the-code-of-conduct) regarding how these communication platforms are (and should be) used.
 
