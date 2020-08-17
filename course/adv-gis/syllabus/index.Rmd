@@ -116,11 +116,11 @@ Technology
         - [ArcGIS Online](https://www.arcgis.com) (*see [here](https://youtu.be/x07Xyoe0d2k) for login instructions*).
     - Programming and analysis may be handled using either [ArcGIS Notebooks](https://www.esri.com/arcgis-blog/products/arcgis-enterprise/analytics/introducing-arcgis-notebooks/) on the Portal or in ArcGIS Pro (v.2.5).
 
-            \* _The ArcGIS Notebook is a cloud-based integrated development environment built for processing, analyzing and visualizing geospatial data._
-            _You will be granted access to Notebooks through ArcGIS Online._
-            _Notebooks provide you with all the geoprocessing tools of ArcPro and ArcGIS without having to install any software on your computer._
-            _Mac users, rejoice!_
-            _You also have access to ArcGIS Notebooks through ArcGIS Pro (v 2.5 and greater)._
+        \* _The ArcGIS Notebook is a cloud-based integrated development environment built for processing, analyzing and visualizing geospatial data._
+        _You will be granted access to Notebooks through ArcGIS Online._
+        _Notebooks provide you with all the geoprocessing tools of ArcPro and ArcGIS without having to install any software on your computer._
+        _Mac users, rejoice!_
+        _You also have access to ArcGIS Notebooks through ArcGIS Pro (v 2.5 and greater)._
 
 ---
 
@@ -132,7 +132,6 @@ Course Objectives
 4. Demonstrate professional communication skills for reaching broad audiences.
 5. Develop programming skills for geospatial applications.
 
-_Note that there are also project-specific objectives, see Performance Accomplishments and/or Performance Review Worksheet._
 
 What you should already know
 ----------------------------
@@ -151,11 +150,12 @@ What is expected of you
     >
     > 1. Know thy time.
 
-* Communicate with your classmates and instructor using remote/web-based technology (see **Communication** above)
+* Communicate with your classmates and instructor using remote/web-based technology (see **Communication** above).
 * Schedule and meet with your instructor a minimum of three times:
     1. On or before 2 September to overview the Performance Review Worksheet and the expectations for the Performance Accomplishments;
     2. On or before 11 October to report on your progress; and
     3. On or before 24 November for the oral evaluation of your performance accomplishments.
+* Schedule a "client" meeting with a CGA Fellow to review your course project.
 * Ask questions and make mistakes.
     If you are feeling frustrated, then you are likely invested in this class.
 * Uphold professionalism in everything you do (see [**Code of Conduct**](#the-code-of-conduct) below).
@@ -184,7 +184,7 @@ I will show you tips and tricks and introduce you to new GIS methods and tools t
 I took inspiration from Ben Balter's ["15 rules for communicating at GitHub"](https://ben.balter.com/2014/11/06/rules-of-communicating-at-github/).
 This type of asynchronous workstyle is becoming more prevalent and economically gainful in today's tech world; not to mention the accelerated rate of remote work under the present pandemic.
 Having the skills to work remotely and collaboratively can give you a "leg up" in the job market.
-This course aims to pair style with content to give you a truly advanced geospatial programming and analysis experience.
+This course aims to pair style with content to give you a truly advanced geospatial analysis and programming experience.
 
 Your goal is to work as a team to address (and potentially solve) the various projects that are assigned.
 You will then be asked to put together your experiences into your own project design plan; details on this project follows.
@@ -219,7 +219,7 @@ In the first meeting with the instructor, students will review the criteria for 
 Other than during the meetings with the instructor, the Performance Review Worksheet should not be edited by anyone at anytime.
 
 During the term, students will keep track of their work that addresses each of the course's expectations in the form of a written document called **Performance Accomplishments**, noting such things as what they did, how they did it, how long it took them, and what they gained from it.
-Additional materials or documentation may be linked to within the Performance Accomplishments document or added to their shared Drive folder.
+Additional materials or documentation may be linked to within the Performance Accomplishments document or added to their shared Drive folder (see [Standards for Submitted Work](#standards-for-submitted-work)).
 Media files (such as audio/video files) should be uploaded to the specially created subfolder (**media**) where there is a license agreement for granting use of such files.
 
 Near the middle of the term, students will have their second video conference meeting with their instructor to review their progress and make certain everything is on schedule for the end of term.
@@ -278,9 +278,9 @@ These assignments simulate the real-world challenges faced by GIS specialists an
 Students are expected to complete three additional hours of coursework.
 These tasks include:
 
-* __The Client Meeting__: students must prepare a conference meeting with their "client" (played by a bonafide CGA fellow) who has asked them to prepare a project report (project topic and scope to be defined)
-* __The Field Collection__: students must prepare spatial data in a hosted web map and complete a field data collection
-* __The Media File__: students must create a media file (audio or video) that demonstrates their knowledge of a subject and communication skills to a broad audience (topic to be decided)
+* __The Client Meeting__: students must prepare a conference meeting with their "client" (played by a bonafide CGA fellow) who has asked them to prepare a project report (project topic and scope to be defined).
+* __The Field Collection__: students must prepare spatial data in a hosted web map and complete a field data collection survey.
+* __The Media File__: students must create a media file (web, audio or video) in the format of a tutorial, podcast or vlog that demonstrates their knowledge of a subject and communication skills to a broad audience (topic to be decided).
 
 
 Important Dates
@@ -364,7 +364,7 @@ Remember these things as you work together:
 
 Engagement Policy
 -----------------
-- *Weekly virtual engagement is expected.*
+- *Weekly virtual engagement is required.*
 
 In this asynchronous virtual classroom, engagement is defined loosely as your interaction with one or more of the web-based communication tools.
 
@@ -389,9 +389,17 @@ Misconduct may include, but is not limited to, the following:
 - attempting misconduct
 
 
+Instant Messaging Policy
+------------------------
+- *The instant messaging app should be used for communication that either: (1) needs to reach people quickly or (2) needs a quick response.*
+
+You are free (and encouraged) to create your own GroupMe groups with classmates for better/faster communication.
+Do not use the instant messenger for spamming, soliciting or otherwise disrupting the peace.
+
+
 Email Policy
 ------------
-- *All class-related correspondence should be made to the instructor's W&M email address ([see above](#course-syllabus)) and include the class title in the subject line.*
+- *All personal correspondence should be made to the instructor's W&M email address ([see above](#course-syllabus)) and include the class title in the subject line.*
 
 For private inquiries, please email the instructor; the instructor will confirm each email received.
 If you do not receive a confirmation message from the instructor within 12 hours of sending, feel free to send a follow-up email.
@@ -406,7 +414,7 @@ If, for some reason, you are unable to meet during the scheduled time or turn in
 Under rare circumstance, students may request an incomplete; the acceptance of which is at the sole discretion of the instructor.
 
 
-Standards for Written Work
+Standards for Submitted Work
 --------------------------
 - Written work should be in English and follow, to the best of your abilities, the rules of the English language (see [Strunk & White](https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf)).
 - Written work should be neat, thorough, legible, and logically organized.
@@ -416,7 +424,7 @@ Standards for Written Work
 - Tables, figures and images from online sources should include a citation (including the author/publisher, date created/accessed, and URL).
 - All in-text citations and references should be formatted to APA standards unless otherwise indicated.
 - Plagiarism will be taken seriously; *if you write something that is not your own original idea or in your own words, then it must be cited!* See [here](https://ctl.yale.edu/writing/using-sources/understanding-and-avoiding-plagiarism) for information on plagiarism and how to avoid it.
-- Unless otherwise stated, typed electronic submissions may be in one of the following acceptable open file formats:
+- Unless otherwise stated, typed electronic files may be in one of the following acceptable open formats:
     * [Office Open XML Document](https://en.wikipedia.org/wiki/Office_Open_XML) (.docx)
     * [OpenDocument Text](https://en.wikipedia.org/wiki/OpenDocument) (.odt)
     * [Portable Document Format](https://en.wikipedia.org/wiki/PDF) (.pdf)
