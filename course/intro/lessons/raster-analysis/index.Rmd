@@ -1,0 +1,606 @@
+---
+pagetitle: "Raster Analysis"
+author: "Center for Geospatial Analysis"
+date: April 8, 2020
+---
+
+<section data-background-image="images/title.png" data-background-size="contain">
+</section>
+
+
+# Raster Analysis
+
+* Raster data
+* Raster algebra and statistics
+* Conditional and reclassifications
+* Assignment 1
+* Applications in Remote Sensing
+* Assignment 2
+
+<small><br />This presentation is written in [reveal.js](https://revealjs.com).<br />Click the link to learn more about how to navigate reveal.js presentations.</small>
+
+# Raster Data
+
+<section data-background-image="images/rdat.png" data-background-size="contain">
+A spatial data model that represents the world as a regular grid of cells (sometimes called a raster image) where each cell is assigned a numeric value.
+</section>
+
+***
+
+Recall:
+
+Cells (or pixels) have dimension (height and width), which corresponds to the area on the ground that each cell covers.
+This is referred to as the raster's **resolution**.
+
+
+<div class="fragment">
+Smaller cell size = higher resolution = greater detail
+
+<small>(note: high resolution can lead to long process time because there are a lot of pixels to process)</small>
+</div>
+
+***
+
+![Satellite image at **1 meter** resolution (high res)](images/image_001m.png){height="500" width="500"}
+
+***
+
+![Satellite image at **10 meter** resolution](images/image_010m.png){height="500" width="500"}
+
+***
+
+![Satellite image at **100 meter** resolution](images/image_100m.png){height="500" width="500"}
+
+***
+
+![Satellite image at **500 meter** resolution (low res)](images/image_500m.png){height="500" width="500"}
+
+***
+
+So, we see generalization of features and loss of detail as the pixel size increases.
+
+<small>That's because you can only fit one value per pixel.</small>
+
+Recall what you learned about data scale and map scale (same idea).
+
+***
+
+Rasters are grids of numbers
+
+<div class="fragment">
+and we can add, subtract, multiply, and divide numbers.
+</div>
+
+# Raster Analysis
+
+Calculations of cell values from<br />one or more raster layers.
+
+***
+
+Let's start with a simple raster with three rows and three columns, given by the following:
+
+<br />
+
+$$
+\begin{bmatrix}
+1 & 2 & 5 \\
+6 & 3 & 9 \\
+4 & 6 & 2
+\end{bmatrix}
+$$
+
+
+***
+
+Basic scalar multiplication
+
+<br />
+
+$$
+2 \times
+\begin{bmatrix}
+1 & 2 & 5 \\
+6 & 3 & 9 \\
+4 & 6 & 2
+\end{bmatrix} =
+\begin{bmatrix}
+2 & 4 & 10 \\
+12 & 6 & 18 \\
+8 & 12 & 4
+\end{bmatrix}
+$$
+
+<div class="fragment">
+<small>Each pixel multiplied by one number.</small>
+</div>
+
+***
+
+Calculations from two or more raster layers<br />are performed *pixel by pixel*
+
+<br />
+
+$$
+\begin{bmatrix}
+1 & 2 & 5 \\
+6 & 3 & 9 \\
+4 & 6 & 2
+\end{bmatrix} +
+\begin{bmatrix}
+3 & 5 & 14 \\
+8 & 6 & 5 \\
+9 & 0 & 2
+\end{bmatrix} =
+\begin{bmatrix}
+4 & 7 & 19 \\
+14 & 9 & 14 \\
+13 & 6 & 4
+\end{bmatrix}
+$$
+
+<div class="fragment">
+<small>Notice that pixel location is important, especially if the raster layers represent the same area.</small>
+</div>
+
+***
+
+These operations can be combined into algorithms<br />(i.e., **raster algebra**)
+
+<br />
+
+$$
+5 \times
+\begin{bmatrix}
+1 & 2 & 5 \\
+6 & 3 & 9 \\
+4 & 6 & 2
+\end{bmatrix} -
+\begin{bmatrix}
+3 & 5 & 14 \\
+8 & 6 & 5 \\
+9 & 0 & 2
+\end{bmatrix} =
+\begin{bmatrix}
+2 & 5 & 11 \\
+22 & 9 & 40 \\
+11 & 30 & 8
+\end{bmatrix}
+$$
+
+<div class="fragment">
+<small>Remember your order of operations from algebra class!</small>
+</div>
+
+***
+
+We can even perform statistics!
+
+<br />
+
+$$
+\begin{bmatrix}
+3 & 5 & 14 \\
+8 & 6 & 5 \\
+9 & 0 & 2
+\end{bmatrix}
+$$
+
+* Maximum: <span class="fragment">14</span>
+* Minimum: <span class="fragment">0</span>
+* Average: <span class="fragment">(3+5+14+8+6+5+9+0+2)/9 = 5.78</span>
+
+***
+
+We don't always have to perform analysis<br />over an entire raster layer.
+
+***
+
+Instead, we can perform focal analyses<br />(sometimes called kernel or neighborhood statistics).
+
+***
+
+Let's say we have a raster with six rows and six columns.
+
+<br />
+
+$$
+\begin{bmatrix}
+4 & 9 & 13 & 6 & 11 & 7 \\
+7 & 2 & 1 & 2 & 8 & 8 \\
+9 & 12 & 6 & 6 & 3 & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+Let's see if we can find focal minimum values<br />
+in a $3 \times 3$ moving window.
+
+$$
+\begin{bmatrix}
+4 & 9 & 13 & 6 & 11 & 7 \\
+7 & 2 & 1 & 2 & 8 & 8 \\
+9 & 12 & 6 & 6 & 3 & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+To begin, we look at the first value, which is 4.
+
+$$
+\begin{bmatrix}
+{\color{blue}4} & 9 & 13 & 6 & 11 & 7 \\
+7 & 2 & 1 & 2 & 8 & 8 \\
+9 & 12 & 6 & 6 & 3 & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+Then we look at the eight values that surround it.<br /><small>note that along the top and left edges there are no values, so we just ignore them</small>
+
+$$
+\begin{bmatrix}
+{\color{blue}4} & {\color{red}9} & 13 & 6 & 11 & 7 \\
+{\color{red}7} & {\color{red}2} & 1 & 2 & 8 & 8 \\
+9 & 12 & 6 & 6 & 3 & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+Then we check these nine values (four in this edge case) and calculate their minimum (it's 2), which will replace the 4 in our output.
+
+$$
+\begin{bmatrix}
+{\color{blue}4} & {\color{red}9} & 13 & 6 & 11 & 7 \\
+{\color{red}7} & {\color{red}2} & 1 & 2 & 8 & 8 \\
+9 & 12 & 6 & 6 & 3 & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+Let's skip down to the 2
+
+$$
+\begin{bmatrix}
+4 & 9 & 13 & 6 & 11 & 7 \\
+7 & {\color{blue}2} & 1 & 2 & 8 & 8 \\
+9 & 12 & 6 & 6 & 3 & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+and look at the eight surrounding values
+
+$$
+\begin{bmatrix}
+{\color{red}4} & {\color{red}9} & {\color{red}{13}} & 6 & 11 & 7 \\
+{\color{red}7} & {\color{blue}2} & {\color{red}1} & 2 & 8 & 8 \\
+{\color{red}9} & {\color{red}{12}} & {\color{red}6} & 6 & 3 & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+and we see the minimum of these 9 values is 1<br />
+<small>1 will replace the 2 in our output</small>
+
+$$
+\begin{bmatrix}
+{\color{red}4} & {\color{red}9} & {\color{red}{13}} & 6 & 11 & 7 \\
+{\color{red}7} & {\color{blue}2} & {\color{red}1} & 2 & 8 & 8 \\
+{\color{red}9} & {\color{red}{12}} & {\color{red}6} & 6 & 3 & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+Repeat this process for each cell.
+
+***
+
+The minimum around 1 is 1.
+
+$$
+\begin{bmatrix}
+4 & {\color{red}9} & {\color{red}{13}} & {\color{red}6} & 11 & 7 \\
+7 & {\color{red}2} & {\color{blue}1} & {\color{red}2} & 8 & 8 \\
+9 & {\color{red}{12}} & {\color{red}6} & {\color{red}6} & 3 & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+The minimum around 2 is 1.
+
+$$
+\begin{bmatrix}
+4 & 9 & {\color{red}{13}} & {\color{red}6} & {\color{red}{11}} & 7 \\
+7 & 2 & {\color{red}1} & {\color{blue}2} & {\color{red}8} & 8 \\
+9 & 12 & {\color{red}6} & {\color{red}6} & {\color{red}3} & 9 \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+The minimum around 8 is 2.
+
+$$
+\begin{bmatrix}
+4 & 9 & 13 & {\color{red}6} & {\color{red}{11}} & {\color{red}7} \\
+7 & 2 & 1 & {\color{red}2} & {\color{blue}8} & {\color{red}8} \\
+9 & 12 & 6 & {\color{red}6} & {\color{red}3} & {\color{red}9} \\
+2 & 3 & 1 & 7 & 1 & 10 \\
+15 & 13 & 6 & 14 & 9 & 10 \\
+9 & 7 & 20 & 15 & 17 & 9 \\
+\end{bmatrix}
+$$
+
+***
+
+and so we go until we find<br />the focal minimum for each pixel.
+
+***
+
+The neighborhood analysis is important for understanding local influences<br />(e.g., crime statistics or pollution levels).
+
+***
+
+The window size and shape may be adjusted as well as the statistics type (e.g., average, maximum, sum) to accommodate a wide variety of analyses.
+
+<small>For more on focal statistics, see [here](https://pro.arcgis.com/en/pro-app/tool-reference/image-analyst/how-focal-statistics-works.htm)</small>
+
+***
+
+Another important analysis that we can perform is the conditional (i.e., testing whether our pixel values meet certain conditions).
+
+***
+
+The output of conditional analysis are **boolean** rasters (i.e, a raster with pixel values that are either true or false or, because it has to be numeric, 1 or 0, respectively).
+
+***
+
+Example conditional statement:<br />*"Where pixel value is greater than 5"*
+
+<br />
+
+$$
+\mathrm{Input} =
+\begin{bmatrix}
+3 & 5 & 14 \\
+8 & 6 & 5 \\
+9 & 0 & 2
+\end{bmatrix}
+$$
+
+<br />
+
+<div class="fragment">
+$$
+\mathrm{Output} =
+\begin{bmatrix}
+0 & 0 & 1 \\
+1 & 1 & 0 \\
+1 & 0 & 0
+\end{bmatrix}
+$$
+</div>
+
+***
+
+Notice that false is equal to zero and true is equal to one.
+
+This makes it easy to mix conditionals with raster algebra because multiplying by zero always returns zero and multiplying by one always returns the same value.
+
+<div class="fragment">
+<small>note that, depending on your GIS, true and false values<br />may be assigned any value of your choice</small>
+</div>
+
+***
+
+Example conditional used with raster algebra.
+
+$$
+A =
+\begin{bmatrix}
+12 & 5 & 14 \\
+8 & 16 & 5 \\
+9 & 10 & 3
+\end{bmatrix}, B =
+\begin{bmatrix}
+1 & 2 & 5 \\
+6 & 3 & 9 \\
+4 & 6 & 2
+\end{bmatrix}
+$$
+
+<br />
+
+*Raster $B$ where raster $A$ is less than 10.*
+
+<div class="fragment">
+$$
+\mathrm{Output} =
+\begin{bmatrix}
+0 & 2 & 0 \\
+6 & 0 & 9 \\
+4 & 0 & 2
+\end{bmatrix}
+$$
+</div>
+
+<div class="fragment">
+<br />
+<small>(note: this example assumes 0 represents no data)</small>
+</div>
+
+***
+
+You can also change pixel values based on conditional statements in what is called **reclassification**.
+
+***
+
+Reclassifications typically have an input raster and a reclassification table that describes conditional statements along with their associated new pixel values.
+
+***
+
+:   Reclassification Table.
+
+| Condition\* | New Value |
+| :-------- | :-------: |
+| $p < 5$ | 1 |
+| $5 \le p < 10$ | 2 |
+| $p \ge 10$ | 3 |
+
+<small>\*where $p$ is pixel value</small>
+
+<br />
+
+$$
+\mathrm{Input} =
+\begin{bmatrix}
+12 & 5 & 14 \\
+8 & 16 & 5 \\
+9 & 10 & 3
+\end{bmatrix},
+\mathrm{Output} =
+\begin{bmatrix}
+3 & 2 & 3 \\
+2 & 3 & 2 \\
+2 & 3 & 1
+\end{bmatrix}
+$$
+
+
+***
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nQ6nzC4kQYk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<small>
+<br /><br />
+Please follow along with the demo.
+</small>
+
+# Assignment
+
+For this assignment, you'll want to grab a pen and paper.
+
+***
+
+Here are your rasters:
+
+$$
+A =
+\begin{bmatrix}
+16&18&24&28\\
+16&20&26&30\\
+14&18&20&26\\
+14&16&18&22\\
+12&14&14&18\\
+\end{bmatrix},\;B =
+\begin{bmatrix}
+30&33&30&27\\
+27&27&24&21\\
+27&24&21&18\\
+24&24&21&15\\
+18&15&15&12\\
+\end{bmatrix}
+$$
+
+***
+
+Perform the following tasks in the given order:
+
+1. Multiply *A* by one half (i.e., 1/2 $\times$ *A*)
+1. Multiply *B* by one third (i.e., 1/3 $\times$ *B*)
+1. Add the two results together (i.e., 1/2 $\times$ *A* + 1/3 $\times$ *B*)
+1. Subtract the result from *B* (i.e., *B* - 1/2 $\times$ *A* - 1/3 $\times$ *B*)
+
+***
+
+5. Apply the following reclassification on the result
+
+<br />
+
+:   Reclassification Table.
+
+| Condition\* | New Value |
+| :-------- | :-------: |
+| $p < 0$ | 4 |
+| $0 \le p < 4$ | 3 |
+| $4 \le p < 8$ | 2 |
+| $8 \le p < 12$ | 1 |
+| $p \ge 12$ | 0 |
+
+<small>\*where $p$ is pixel value</small>
+
+***
+
+6. Apply the following conditional to the result, setting true values equal to 1 and false values equal to 0.
+
+<br />
+*"Where the result is less than 2."*
+
+***
+
+7. What is the sum of all the resulting pixel values?
+<!-- ans. 8 -->
+
+***
+
+8. Perform a 3 by 3 focal minimum on *A*
+9. Perform a 3 by 3 focal maximum on *B*
+10. Subtract what you get in step (8) from what you got in step (9)
+11. What is the average pixel value of the results you got from step (10)?
+<!-- ans. 12.45 -->
+
+# Applications
+There are numerous applications where raster analysis, raster algebra, and neighborhood statistics are useful.
+One such application is in the broad field of remote sensing, specializes in the analysis of raster images.
+
+***
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sx3skSTI2Co" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<small>
+<br /><br />
+Please watch this brief introduction to the field of remote sensing.
+</small>
+
+***
+
+Please find the activity and assignment for remote sensing on Blackboard under Lab 9.

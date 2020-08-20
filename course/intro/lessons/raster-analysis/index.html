@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Center for Geospatial Analysis" />
+  <meta name="dcterms.date" content="2020-04-08" />
+  <title>Raster Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/theme/sky.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="style.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="index_files/header-attrs-2.3/header-attrs.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level1">
+
+<section data-background-image="images/title.png" data-background-size="contain">
+</section>
+</section>
+<section id="raster-analysis" class="slide level1">
+<h1>Raster Analysis</h1>
+<ul>
+<li>Raster data</li>
+<li>Raster algebra and statistics</li>
+<li>Conditional and reclassifications</li>
+<li>Assignment 1</li>
+<li>Applications in Remote Sensing</li>
+<li>Assignment 2</li>
+</ul>
+<p><small><br />This presentation is written in <a href="https://revealjs.com">reveal.js</a>.<br />Click the link to learn more about how to navigate reveal.js presentations.</small></p>
+</section>
+<section id="raster-data" class="slide level1">
+<h1>Raster Data</h1>
+<section data-background-image="images/rdat.png" data-background-size="contain">
+A spatial data model that represents the world as a regular grid of cells (sometimes called a raster image) where each cell is assigned a numeric value.
+</section>
+</section>
+<section class="slide level1">
+
+<p>Recall:</p>
+<p>Cells (or pixels) have dimension (height and width), which corresponds to the area on the ground that each cell covers. This is referred to as the raster’s <strong>resolution</strong>.</p>
+<div class="fragment">
+<p>Smaller cell size = higher resolution = greater detail</p>
+<p><small>(note: high resolution can lead to long process time because there are a lot of pixels to process)</small></p>
+</div>
+</section>
+<section class="slide level1">
+
+<figure>
+<img data-src="images/image_001m.png" width="500" height="500" alt="" /><figcaption>Satellite image at <strong>1 meter</strong> resolution (high res)</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure>
+<img data-src="images/image_010m.png" width="500" height="500" alt="" /><figcaption>Satellite image at <strong>10 meter</strong> resolution</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure>
+<img data-src="images/image_100m.png" width="500" height="500" alt="" /><figcaption>Satellite image at <strong>100 meter</strong> resolution</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure>
+<img data-src="images/image_500m.png" width="500" height="500" alt="" /><figcaption>Satellite image at <strong>500 meter</strong> resolution (low res)</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<p>So, we see generalization of features and loss of detail as the pixel size increases.</p>
+<p><small>That’s because you can only fit one value per pixel.</small></p>
+<p>Recall what you learned about data scale and map scale (same idea).</p>
+</section>
+<section class="slide level1">
+
+<p>Rasters are grids of numbers</p>
+<div class="fragment">
+<p>and we can add, subtract, multiply, and divide numbers.</p>
+</div>
+</section>
+<section id="raster-analysis-1" class="slide level1">
+<h1>Raster Analysis</h1>
+<p>Calculations of cell values from<br />one or more raster layers.</p>
+</section>
+<section class="slide level1">
+
+<p>Let’s start with a simple raster with three rows and three columns, given by the following:</p>
+<p><br /></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1 &amp; 2 &amp; 5 \\
+6 &amp; 3 &amp; 9 \\
+4 &amp; 6 &amp; 2
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>Basic scalar multiplication</p>
+<p><br /></p>
+<p><span class="math display">\[
+2 \times
+\begin{bmatrix}
+1 &amp; 2 &amp; 5 \\
+6 &amp; 3 &amp; 9 \\
+4 &amp; 6 &amp; 2
+\end{bmatrix} =
+\begin{bmatrix}
+2 &amp; 4 &amp; 10 \\
+12 &amp; 6 &amp; 18 \\
+8 &amp; 12 &amp; 4
+\end{bmatrix}
+\]</span></p>
+<div class="fragment">
+<p><small>Each pixel multiplied by one number.</small></p>
+</div>
+</section>
+<section class="slide level1">
+
+<p>Calculations from two or more raster layers<br />are performed <em>pixel by pixel</em></p>
+<p><br /></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1 &amp; 2 &amp; 5 \\
+6 &amp; 3 &amp; 9 \\
+4 &amp; 6 &amp; 2
+\end{bmatrix} +
+\begin{bmatrix}
+3 &amp; 5 &amp; 14 \\
+8 &amp; 6 &amp; 5 \\
+9 &amp; 0 &amp; 2
+\end{bmatrix} =
+\begin{bmatrix}
+4 &amp; 7 &amp; 19 \\
+14 &amp; 9 &amp; 14 \\
+13 &amp; 6 &amp; 4
+\end{bmatrix}
+\]</span></p>
+<div class="fragment">
+<p><small>Notice that pixel location is important, especially if the raster layers represent the same area.</small></p>
+</div>
+</section>
+<section class="slide level1">
+
+<p>These operations can be combined into algorithms<br />(i.e., <strong>raster algebra</strong>)</p>
+<p><br /></p>
+<p><span class="math display">\[
+5 \times
+\begin{bmatrix}
+1 &amp; 2 &amp; 5 \\
+6 &amp; 3 &amp; 9 \\
+4 &amp; 6 &amp; 2
+\end{bmatrix} -
+\begin{bmatrix}
+3 &amp; 5 &amp; 14 \\
+8 &amp; 6 &amp; 5 \\
+9 &amp; 0 &amp; 2
+\end{bmatrix} =
+\begin{bmatrix}
+2 &amp; 5 &amp; 11 \\
+22 &amp; 9 &amp; 40 \\
+11 &amp; 30 &amp; 8
+\end{bmatrix}
+\]</span></p>
+<div class="fragment">
+<p><small>Remember your order of operations from algebra class!</small></p>
+</div>
+</section>
+<section class="slide level1">
+
+<p>We can even perform statistics!</p>
+<p><br /></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+3 &amp; 5 &amp; 14 \\
+8 &amp; 6 &amp; 5 \\
+9 &amp; 0 &amp; 2
+\end{bmatrix}
+\]</span></p>
+<ul>
+<li>Maximum: <span class="fragment">14</span></li>
+<li>Minimum: <span class="fragment">0</span></li>
+<li>Average: <span class="fragment">(3+5+14+8+6+5+9+0+2)/9 = 5.78</span></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p>We don’t always have to perform analysis<br />over an entire raster layer.</p>
+</section>
+<section class="slide level1">
+
+<p>Instead, we can perform focal analyses<br />(sometimes called kernel or neighborhood statistics).</p>
+</section>
+<section class="slide level1">
+
+<p>Let’s say we have a raster with six rows and six columns.</p>
+<p><br /></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+4 &amp; 9 &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+7 &amp; 2 &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>Let’s see if we can find focal minimum values<br /> in a <span class="math inline">\(3 \times 3\)</span> moving window.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+4 &amp; 9 &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+7 &amp; 2 &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>To begin, we look at the first value, which is 4.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+{\color{blue}4} &amp; 9 &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+7 &amp; 2 &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>Then we look at the eight values that surround it.<br /><small>note that along the top and left edges there are no values, so we just ignore them</small></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+{\color{blue}4} &amp; {\color{red}9} &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+{\color{red}7} &amp; {\color{red}2} &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>Then we check these nine values (four in this edge case) and calculate their minimum (it’s 2), which will replace the 4 in our output.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+{\color{blue}4} &amp; {\color{red}9} &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+{\color{red}7} &amp; {\color{red}2} &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>Let’s skip down to the 2</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+4 &amp; 9 &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+7 &amp; {\color{blue}2} &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>and look at the eight surrounding values</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+{\color{red}4} &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; 6 &amp; 11 &amp; 7 \\
+{\color{red}7} &amp; {\color{blue}2} &amp; {\color{red}1} &amp; 2 &amp; 8 &amp; 8 \\
+{\color{red}9} &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; 6 &amp; 3 &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>and we see the minimum of these 9 values is 1<br /> <small>1 will replace the 2 in our output</small></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+{\color{red}4} &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; 6 &amp; 11 &amp; 7 \\
+{\color{red}7} &amp; {\color{blue}2} &amp; {\color{red}1} &amp; 2 &amp; 8 &amp; 8 \\
+{\color{red}9} &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; 6 &amp; 3 &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>Repeat this process for each cell.</p>
+</section>
+<section class="slide level1">
+
+<p>The minimum around 1 is 1.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+4 &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; {\color{red}6} &amp; 11 &amp; 7 \\
+7 &amp; {\color{red}2} &amp; {\color{blue}1} &amp; {\color{red}2} &amp; 8 &amp; 8 \\
+9 &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; {\color{red}6} &amp; 3 &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>The minimum around 2 is 1.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+4 &amp; 9 &amp; {\color{red}{13}} &amp; {\color{red}6} &amp; {\color{red}{11}} &amp; 7 \\
+7 &amp; 2 &amp; {\color{red}1} &amp; {\color{blue}2} &amp; {\color{red}8} &amp; 8 \\
+9 &amp; 12 &amp; {\color{red}6} &amp; {\color{red}6} &amp; {\color{red}3} &amp; 9 \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>The minimum around 8 is 2.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+4 &amp; 9 &amp; 13 &amp; {\color{red}6} &amp; {\color{red}{11}} &amp; {\color{red}7} \\
+7 &amp; 2 &amp; 1 &amp; {\color{red}2} &amp; {\color{blue}8} &amp; {\color{red}8} \\
+9 &amp; 12 &amp; 6 &amp; {\color{red}6} &amp; {\color{red}3} &amp; {\color{red}9} \\
+2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>and so we go until we find<br />the focal minimum for each pixel.</p>
+</section>
+<section class="slide level1">
+
+<p>The neighborhood analysis is important for understanding local influences<br />(e.g., crime statistics or pollution levels).</p>
+</section>
+<section class="slide level1">
+
+<p>The window size and shape may be adjusted as well as the statistics type (e.g., average, maximum, sum) to accommodate a wide variety of analyses.</p>
+<p><small>For more on focal statistics, see <a href="https://pro.arcgis.com/en/pro-app/tool-reference/image-analyst/how-focal-statistics-works.htm">here</a></small></p>
+</section>
+<section class="slide level1">
+
+<p>Another important analysis that we can perform is the conditional (i.e., testing whether our pixel values meet certain conditions).</p>
+</section>
+<section class="slide level1">
+
+<p>The output of conditional analysis are <strong>boolean</strong> rasters (i.e, a raster with pixel values that are either true or false or, because it has to be numeric, 1 or 0, respectively).</p>
+</section>
+<section class="slide level1">
+
+<p>Example conditional statement:<br /><em>“Where pixel value is greater than 5”</em></p>
+<p><br /></p>
+<p><span class="math display">\[
+\mathrm{Input} =
+\begin{bmatrix}
+3 &amp; 5 &amp; 14 \\
+8 &amp; 6 &amp; 5 \\
+9 &amp; 0 &amp; 2
+\end{bmatrix}
+\]</span></p>
+<p><br /></p>
+<div class="fragment">
+<p><span class="math display">\[
+\mathrm{Output} =
+\begin{bmatrix}
+0 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0
+\end{bmatrix}
+\]</span></p>
+</div>
+</section>
+<section class="slide level1">
+
+<p>Notice that false is equal to zero and true is equal to one.</p>
+<p>This makes it easy to mix conditionals with raster algebra because multiplying by zero always returns zero and multiplying by one always returns the same value.</p>
+<div class="fragment">
+<p><small>note that, depending on your GIS, true and false values<br />may be assigned any value of your choice</small></p>
+</div>
+</section>
+<section class="slide level1">
+
+<p>Example conditional used with raster algebra.</p>
+<p><span class="math display">\[
+A =
+\begin{bmatrix}
+12 &amp; 5 &amp; 14 \\
+8 &amp; 16 &amp; 5 \\
+9 &amp; 10 &amp; 3
+\end{bmatrix}, B =
+\begin{bmatrix}
+1 &amp; 2 &amp; 5 \\
+6 &amp; 3 &amp; 9 \\
+4 &amp; 6 &amp; 2
+\end{bmatrix}
+\]</span></p>
+<p><br /></p>
+<p><em>Raster <span class="math inline">\(B\)</span> where raster <span class="math inline">\(A\)</span> is less than 10.</em></p>
+<div class="fragment">
+<p><span class="math display">\[
+\mathrm{Output} =
+\begin{bmatrix}
+0 &amp; 2 &amp; 0 \\
+6 &amp; 0 &amp; 9 \\
+4 &amp; 0 &amp; 2
+\end{bmatrix}
+\]</span></p>
+</div>
+<div class="fragment">
+<p><br /> <small>(note: this example assumes 0 represents no data)</small></p>
+</div>
+</section>
+<section class="slide level1">
+
+<p>You can also change pixel values based on conditional statements in what is called <strong>reclassification</strong>.</p>
+</section>
+<section class="slide level1">
+
+<p>Reclassifications typically have an input raster and a reclassification table that describes conditional statements along with their associated new pixel values.</p>
+</section>
+<section class="slide level1">
+
+<table>
+<caption>Reclassification Table.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condition*</th>
+<th style="text-align: center;">New Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(p &lt; 5\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(5 \le p &lt; 10\)</span></td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(p \ge 10\)</span></td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+<p><small>*where <span class="math inline">\(p\)</span> is pixel value</small></p>
+<p><br /></p>
+<p><span class="math display">\[
+\mathrm{Input} =
+\begin{bmatrix}
+12 &amp; 5 &amp; 14 \\
+8 &amp; 16 &amp; 5 \\
+9 &amp; 10 &amp; 3
+\end{bmatrix},
+\mathrm{Output} =
+\begin{bmatrix}
+3 &amp; 2 &amp; 3 \\
+2 &amp; 3 &amp; 2 \\
+2 &amp; 3 &amp; 1
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nQ6nzC4kQYk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><small> <br /><br /> Please follow along with the demo. </small></p>
+</section>
+<section id="assignment" class="slide level1">
+<h1>Assignment</h1>
+<p>For this assignment, you’ll want to grab a pen and paper.</p>
+</section>
+<section class="slide level1">
+
+<p>Here are your rasters:</p>
+<p><span class="math display">\[
+A =
+\begin{bmatrix}
+16&amp;18&amp;24&amp;28\\
+16&amp;20&amp;26&amp;30\\
+14&amp;18&amp;20&amp;26\\
+14&amp;16&amp;18&amp;22\\
+12&amp;14&amp;14&amp;18\\
+\end{bmatrix},\;B =
+\begin{bmatrix}
+30&amp;33&amp;30&amp;27\\
+27&amp;27&amp;24&amp;21\\
+27&amp;24&amp;21&amp;18\\
+24&amp;24&amp;21&amp;15\\
+18&amp;15&amp;15&amp;12\\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>Perform the following tasks in the given order:</p>
+<ol type="1">
+<li>Multiply <em>A</em> by one half (i.e., 1/2 <span class="math inline">\(\times\)</span> <em>A</em>)</li>
+<li>Multiply <em>B</em> by one third (i.e., 1/3 <span class="math inline">\(\times\)</span> <em>B</em>)</li>
+<li>Add the two results together (i.e., 1/2 <span class="math inline">\(\times\)</span> <em>A</em> + 1/3 <span class="math inline">\(\times\)</span> <em>B</em>)</li>
+<li>Subtract the result from <em>B</em> (i.e., <em>B</em> - 1/2 <span class="math inline">\(\times\)</span> <em>A</em> - 1/3 <span class="math inline">\(\times\)</span> <em>B</em>)</li>
+</ol>
+</section>
+<section class="slide level1">
+
+<ol start="5" type="1">
+<li>Apply the following reclassification on the result</li>
+</ol>
+<p><br /></p>
+<table>
+<caption>Reclassification Table.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condition*</th>
+<th style="text-align: center;">New Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(p &lt; 0\)</span></td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(0 \le p &lt; 4\)</span></td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(4 \le p &lt; 8\)</span></td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(8 \le p &lt; 12\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(p \ge 12\)</span></td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p><small>*where <span class="math inline">\(p\)</span> is pixel value</small></p>
+</section>
+<section class="slide level1">
+
+<ol start="6" type="1">
+<li>Apply the following conditional to the result, setting true values equal to 1 and false values equal to 0.</li>
+</ol>
+<p><br /> <em>“Where the result is less than 2.”</em></p>
+</section>
+<section class="slide level1">
+
+<ol start="7" type="1">
+<li>What is the sum of all the resulting pixel values? <!-- ans. 8 --></li>
+</ol>
+</section>
+<section class="slide level1">
+
+<ol start="8" type="1">
+<li>Perform a 3 by 3 focal minimum on <em>A</em></li>
+<li>Perform a 3 by 3 focal maximum on <em>B</em></li>
+<li>Subtract what you get in step (8) from what you got in step (9)</li>
+<li>What is the average pixel value of the results you got from step (10)? <!-- ans. 12.45 --></li>
+</ol>
+</section>
+<section id="applications" class="slide level1">
+<h1>Applications</h1>
+<p>There are numerous applications where raster analysis, raster algebra, and neighborhood statistics are useful. One such application is in the broad field of remote sensing, specializes in the analysis of raster images.</p>
+</section>
+<section class="slide level1">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sx3skSTI2Co" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><small> <br /><br /> Please watch this brief introduction to the field of remote sensing. </small></p>
+</section>
+<section class="slide level1">
+
+<p>Please find the activity and assignment for remote sensing on Blackboard under Lab 9.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="index_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="index_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

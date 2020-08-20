@@ -6,7 +6,7 @@ navbar:
         - text: "Lessons"
           menu:
               - text: "Raster Analysis"
-                href: lesson-raster-analysis.html
+                href: lessons/raster-analysis
               - text: "Remote Sensing with QGIS"
                 href: lesson-remote-sensing-with-qgis.html
         - text: "Chapters"
