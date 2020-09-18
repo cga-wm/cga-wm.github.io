@@ -110,7 +110,7 @@ Universalists
 # Task
 
 <div style="text-align:left">
-Find an article online (news story, blog post, journal article, etc.), post a link to it in our [team's discussion](https://github.com/orgs/cga-wm/teams/adv-gis/discussions/5) and write a few sentences discussing what is of value and what are the major ethical points of the article.
+Find an article online (news story, blog post, journal article, etc.), post a link to it in our discussion forum and write a few sentences discussing what is of value and what are the major ethical points of the article.
 
 What is your opinion of the ethical concern?
 </div>
