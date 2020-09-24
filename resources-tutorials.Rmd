@@ -26,6 +26,9 @@ Use the search bar to filter videos based on search terms.
       Definition List
                         -->
 
+[Calculating Statistics in an Attribute Table](https://youtu.be/E_2oJNZ1GUM)
+:   This video tutorial demonstrates how to calculate field statistics within a feature layer's attribute table.
+
 [How to make a layout in ArcGIS Online](https://youtu.be/i0TlNfeJ2Aw)
 :   This video tutorial demonstrates how to create a layout from a Web Map in ArcGIS Online (AGOL).
 
