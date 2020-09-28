@@ -1,0 +1,20 @@
+---
+title: "The Ethics of Geoethics"
+date: 2020-09-28
+url: 2020-09-28-ethics-of-geoethics.html
+summary: "Here, I try to provide some resources to help guide you on discovering the world of geoethics and how it likely relates to the work you are doing."
+---
+
+More to come on this later.
+For now, please find the resources and selected readings below for your reference.
+
+### Resources
+
+* [International Association for Promoting Geoethics (IAPG)](http://www.geoethics.org/)
+* [Definition of Geoethics (IAPG)](http://www.geoethics.org/definition)
+* Peppoloni & Di Capua (2015). [The Meaning of Geoethics](http://www.geoethics.org/articles-geoethics#comp-ijx091vi). In: Geoethics: Ethical challenges and case studies in Earth Sciences, Elsevier.
+* Bobrowsky et al. (2017). [The Emerging Field of Geoethics](http://www.geoethics.org/articles-geoethics#comp-jjfx3jvm). In: Scientific Integrity and Ethics in the Geosciences, Wiley.
+* Nguyen et al. (2017). [Smartphone-based "geofencing" to ascertain hospitalizations](https://dx.doi.org/10.1161/CIRCOUTCOMES.116.003326). *Circ Cardiovasc Qual Outcomes* 10(3).
+* Carman (2017). [Snapchat advertisers can now track whether custom geofilters get you to buy their product](https://www.theverge.com/2017/4/13/15289178/snapchat-ad-tracking-snap-to-store-geofilters). The Verge.
+* Patino (2020). [Why Asian countries have succeeded in flattening the curve](https://www.citylab.com/life/2020/03/coronavirus-stay-at-home-order-lockdown-social-distancing/608857/). Citylab.
+* Schuppe (2020). [Google tracked his bike ride past a burglarized home. That made him a suspect](https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761). NBC News.
