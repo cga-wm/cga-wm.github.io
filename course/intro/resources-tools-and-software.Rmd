@@ -4,8 +4,7 @@ title: "Resources | Tools and Software"
 
 ***
 
-[ArcGIS Online](https://www.arcgis.com/index.html)
-:   Part of the Esri Geospatial Cloud, ArcGIS Online (AGOL) is a complete mapping and analysis solution that you can access directly through your browser (see [Supported Browsers](https://doc.arcgis.com/en/arcgis-online/reference/browsers.htm)).
+[ArcGIS Online](https://www.arcgis.com/index.html) --- a part of the Esri Geospatial Cloud, ArcGIS Online (AGOL) is a complete mapping and analysis solution that you can access directly through your browser (see [Supported Browsers](https://doc.arcgis.com/en/arcgis-online/reference/browsers.htm)).
 
 [EnviroAtlas](https://www.epa.gov/enviroatlas) --- interactive tools that allow users to discover, analyze, and download data and maps related to ecosystem services, or the benefits people receive from nature
 
