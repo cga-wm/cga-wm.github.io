@@ -1,0 +1,88 @@
+---
+title: "Web GIS"
+date: 2020-10-05
+url: 2020-10-05-web-gis.html
+summary: "Why do we care about web GIS and what is it anyways?"
+---
+
+Check out [this article](https://mangomap.com/web-gis) by Mango﻿ (10 minute read).
+There are a lot of good points made about why web GIS is good, but the authors ultimately point to StoryMaps as the go-to solution.
+
+In my opinion, StoryMaps are a cute paint by numbers application where the box is clearly defined in which you can "create" your own web media.
+I was partial to the older "classic" StoryMaps where you could download the application and host it on your own website.
+With a little HTML and CSS know-how, you can start to take advantage of some of the stuff behind-the-scenes to make StoryMaps really your own.
+For example, [this StoryMap](https://kateforrestauthor.com/story/map/2018/) I created for a travel guide.
+
+But it doesn't take long before you realize the limitations of StoryMaps and start to see the paint-by-numbers for what it truly is.
+Even now, the new StoryMap editor is beginning to look like the Shutterfly of photobooks for GIS---an over-whelming abundance of selectable options, but at the end of the day, they are still just pre-defined options.
+
+This may be fine for those who want an off the shelf solution that masks the hidden nature of what's going on; what it means to be a web GIS.
+
+We're in developer land.
+
+We demand freedom.
+
+This is what makes the web great.
+
+There is a dark corner of Esri, called [ArcGIS for Developers](https://developers.arcgis.com/), which provides some of what is sought.
+I think an outstanding example to demonstrate to students is how to create maps and do something with them without ever touching StoryMaps, ArcGIS Desktop, or ArcGIS Pro.
+Yes, you still need ArcGIS Online (or another REST data service), but these data services are becoming more prevalent and (hopefully) easier to use.
+
+Okay, so what is web GIS?
+
+You could [run a search](https://www.esri.com/en-us/search/?q=web%20gis) on Esri for "web gis" and browse the 4000+ topics, but I recommend reading [this article](https://www.gislounge.com/difference-web-gis-internet-gis/) by Majid Hojati (2014), which references the book *Web GIS: Principles and Applications* (2010) by Fu & Sun.
+The article provides a nice figure that demonstrates the hierarchy of GIS, Distributed GIS, Internet GIS, and Web GIS.
+
+![Figure from GIS Lounge](https://i2.wp.com/www.gislounge.com/wp-content/uploads/2014/02/GIS-terms.png)
+
+For a more concrete definition, let's turn to [VizExperts](https://www.vizexperts.com/webgis):
+
+> "WebGIS is an advanced form of Geospatial Information System (most commonly known as Geographic Information System) available on the web platform.
+> The exchange of information takes place between a server and a client, where the server is a Geospatial Information System (GIS) server and the client is a web browser, mobile application and desktop application.
+> The server has a unique Uniform Resource Locator (URL) so that clients can find it on the web.
+> WebGIS brings GIS into the hands of the people.
+> It reduces the need to create custom application.
+> It provides a platform for integrating GIS with other business systems and enables cross-organizational collaboration."
+
+How do we break this down?
+
+1. Web GIS is GIS accessed through the web. Great.
+1. Information is exchanged between a cloud-based server (i.e., a computer connected to the internet running server software + GIS software) and a user (aka the client) that's accessing the server with a browser (such as their desktop computer, tablet or smartphone). So, it's basically like a website.
+1. A unique URL is just the web address; this means it's hosted and (presumably) open to the public. Again, so it's like a website.
+1. The rest is just gush.
+
+Okay, so how do they do it?
+
+Let's take a look at the ArcGIS for Developers site again (https://developers.arcgis.com/).
+As a member of the W&M community, your account unlocks a lot of the resources available here.
+Keep that in mind as you plan you future using GIS.
+
+Navigating to the "Get Started" section of this site (https://developers.arcgis.com/labs/), we see lots of options.
+Under "Find Tutorials by API or SDK" (that's Application Programming Interface or Software Developer Kit), we see the familiar Python.
+
+Click it.
+
+You'll see there are a variety of tutorials at your disposal for learning how to use Python in Notebooks.
+
+Wait!
+This isn't the Python blog!
+
+Click JavaScript.
+
+What is JavaScript?
+
+Check out [this post](https://skillcrush.com/blog/javascript/) by Scott Morris.
+Basically, if you have ever visited a website with any interactive elements, that's all due to JavaScript.
+
+So JavaScript brings the web to life.
+Great.
+What about the GIS?
+
+This is where Esri steps in.
+They have JavaScript libraries that perform and provide the functionality that we are familiar with in GIS, such as creating feature layers and web maps, assigning symbology, and defining pop-ups to display attributes.
+
+Try it out yourself!
+
+* Create a [CodePen](https://codepen.io/) account---this will let you save your projects and share them---it's optional, but helpful
+* Test the [Create a starter app](https://developers.arcgis.com/labs/javascript/create-a-starter-app/)
+* Try your hand at some more tutorials
