@@ -5,6 +5,9 @@ url: 2020-08-03-podcasts-vlogs.html
 summary: "Sometimes creativity and expression need a new medium."
 ---
 
+### Vlogs
+[Advanced GIS Student Vlog Series Playlist (YouTube)](https://www.youtube.com/playlist?list=PLiOhBg8WdMaI6C5r57ZhFcJzjegflsI4A)
+
 ### Podcasts
 
 <div class="card">
