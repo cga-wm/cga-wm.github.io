@@ -35,6 +35,13 @@ output:
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
 
+[Data.gov.uk](https://data.gov.uk/)
+:   UK's Find Open Data service providing data published by central government, local authorities and public bodies with links to download data files.
+
+[Defra Data Services Platform](https://environment.data.gov.uk/)
+:   The Department for Environment, Food & Rural Affairs make environmental data (e.g., LIDAR, photography, bathymetry, multispectral) openly available to a wide range of users available for download in commonly used formats.
+    Click "Surveys" to open a web-based mapping interface.
+
 [Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets/catalog)
 :   Public data catalog that includes a variety of standard Earth science raster datasets.
 
