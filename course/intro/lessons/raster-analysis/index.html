@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Center for Geospatial Analysis" />
-  <meta name="dcterms.date" content="2020-04-08" />
+  <meta name="dcterms.date" content="2020-10-16" />
   <title>Raster Analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -463,9 +463,9 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Raster data</li>
 <li>Raster algebra and statistics</li>
 <li>Conditional and reclassifications</li>
-<li>Assignment 1</li>
+<li>Exercise A</li>
 <li>Applications in Remote Sensing</li>
-<li>Assignment 2</li>
+<li>Exercise B</li>
 </ul>
 <p><small><br />This presentation is written in <a href="https://revealjs.com">reveal.js</a>.<br />Click the link to learn more about how to navigate reveal.js presentations.</small></p>
 </section>
@@ -523,18 +523,22 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section id="raster-analysis-1" class="slide level1">
 <h1>Raster Analysis</h1>
-<p>Calculations of cell values from<br />one or more raster layers.</p>
+<p>Calculations of cell values from<br />one or more raster layers</p>
 </section>
 <section class="slide level1">
 
 <p>Let’s start with a simple raster with three rows and three columns, given by the following:</p>
 <p><br /></p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 1 &amp; 2 &amp; 5 \\
+\hline
 6 &amp; 3 &amp; 9 \\
-4 &amp; 6 &amp; 2
-\end{bmatrix}
+\hline
+4 &amp; 6 &amp; 2 \\
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
@@ -543,16 +547,24 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p><br /></p>
 <p><span class="math display">\[
 2 \times
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 1 &amp; 2 &amp; 5 \\
+\hline
 6 &amp; 3 &amp; 9 \\
-4 &amp; 6 &amp; 2
-\end{bmatrix} =
-\begin{bmatrix}
+\hline
+4 &amp; 6 &amp; 2 \\
+\hline
+\end{array} =
+\begin{array}{|c|c|c|}
+\hline
 2 &amp; 4 &amp; 10 \\
+\hline
 12 &amp; 6 &amp; 18 \\
-8 &amp; 12 &amp; 4
-\end{bmatrix}
+\hline
+8 &amp; 12 &amp; 4 \\
+\hline
+\end{array}
 \]</span></p>
 <div class="fragment">
 <p><small>Each pixel multiplied by one number.</small></p>
@@ -563,21 +575,33 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p>Calculations from two or more raster layers<br />are performed <em>pixel by pixel</em></p>
 <p><br /></p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 1 &amp; 2 &amp; 5 \\
+\hline
 6 &amp; 3 &amp; 9 \\
-4 &amp; 6 &amp; 2
-\end{bmatrix} +
-\begin{bmatrix}
+\hline
+4 &amp; 6 &amp; 2 \\
+\hline
+\end{array} +
+\begin{array}{|c|c|c|}
+\hline
 3 &amp; 5 &amp; 14 \\
+\hline
 8 &amp; 6 &amp; 5 \\
-9 &amp; 0 &amp; 2
-\end{bmatrix} =
-\begin{bmatrix}
+\hline
+9 &amp; 0 &amp; 2 \\
+\hline
+\end{array} =
+\begin{array}{|c|c|c|}
+\hline
 4 &amp; 7 &amp; 19 \\
+\hline
 14 &amp; 9 &amp; 14 \\
-13 &amp; 6 &amp; 4
-\end{bmatrix}
+\hline
+13 &amp; 6 &amp; 4 \\
+\hline
+\end{array}
 \]</span></p>
 <div class="fragment">
 <p><small>Notice that pixel location is important, especially if the raster layers represent the same area.</small></p>
@@ -589,21 +613,33 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p><br /></p>
 <p><span class="math display">\[
 5 \times
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 1 &amp; 2 &amp; 5 \\
+\hline
 6 &amp; 3 &amp; 9 \\
-4 &amp; 6 &amp; 2
-\end{bmatrix} -
-\begin{bmatrix}
+\hline
+4 &amp; 6 &amp; 2 \\
+\hline
+\end{array} -
+\begin{array}{|c|c|c|}
+\hline
 3 &amp; 5 &amp; 14 \\
+\hline
 8 &amp; 6 &amp; 5 \\
-9 &amp; 0 &amp; 2
-\end{bmatrix} =
-\begin{bmatrix}
+\hline
+9 &amp; 0 &amp; 2 \\
+\hline
+\end{array} =
+\begin{array}{|c|c|c|}
+\hline
 2 &amp; 5 &amp; 11 \\
+\hline
 22 &amp; 9 &amp; 40 \\
-11 &amp; 30 &amp; 8
-\end{bmatrix}
+\hline
+11 &amp; 30 &amp; 8 \\
+\hline
+\end{array}
 \]</span></p>
 <div class="fragment">
 <p><small>Remember your order of operations from algebra class!</small></p>
@@ -614,11 +650,15 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p>We can even perform statistics!</p>
 <p><br /></p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 3 &amp; 5 &amp; 14 \\
+\hline
 8 &amp; 6 &amp; 5 \\
-9 &amp; 0 &amp; 2
-\end{bmatrix}
+\hline
+9 &amp; 0 &amp; 2 \\
+\hline
+\end{array}
 \]</span></p>
 <ul>
 <li>Maximum: <span class="fragment">14</span></li>
@@ -636,115 +676,170 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>Let’s say we have a raster with six rows and six columns.</p>
-<p><br /></p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 &amp; 9 &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+\hline
 7 &amp; 2 &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+\hline
 9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
+<p>Let’s say we have a raster with six rows and six columns.</p>
 </section>
 <section class="slide level1">
 
 <p>Let’s see if we can find focal minimum values<br /> in a <span class="math inline">\(3 \times 3\)</span> moving window.</p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 &amp; 9 &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+\hline
 7 &amp; 2 &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+\hline
 9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
 
-<p>To begin, we look at the first value, which is 4.</p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{blue}4} &amp; 9 &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+\hline
 7 &amp; 2 &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+\hline
 9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
+<p>To begin, we look at the first (top-left) value, which is 4.</p>
 </section>
 <section class="slide level1">
 
 <p>Then we look at the eight values that surround it.<br /><small>note that along the top and left edges there are no values, so we just ignore them</small></p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{blue}4} &amp; {\color{red}9} &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+\hline
 {\color{red}7} &amp; {\color{red}2} &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+\hline
 9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
 
-<p>Then we check these nine values (four in this edge case) and calculate their minimum (it’s 2), which will replace the 4 in our output.</p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{blue}4} &amp; {\color{red}9} &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+\hline
 {\color{red}7} &amp; {\color{red}2} &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+\hline
 9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
+<p>Then we check these nine values (four in this edge case) and calculate their minimum (it’s 2), which will replace the 4 in our output.</p>
 </section>
 <section class="slide level1">
 
 <p>Let’s skip down to the 2</p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 &amp; 9 &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+\hline
 7 &amp; {\color{blue}2} &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
+\hline
 9 &amp; 12 &amp; 6 &amp; 6 &amp; 3 &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
 
-<p>and look at the eight surrounding values</p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{red}4} &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; 6 &amp; 11 &amp; 7 \\
+\hline
 {\color{red}7} &amp; {\color{blue}2} &amp; {\color{red}1} &amp; 2 &amp; 8 &amp; 8 \\
+\hline
 {\color{red}9} &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; 6 &amp; 3 &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
+<p>and look at the eight surrounding values</p>
 </section>
 <section class="slide level1">
 
 <p>and we see the minimum of these 9 values is 1<br /> <small>1 will replace the 2 in our output</small></p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{red}4} &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; 6 &amp; 11 &amp; 7 \\
+\hline
 {\color{red}7} &amp; {\color{blue}2} &amp; {\color{red}1} &amp; 2 &amp; 8 &amp; 8 \\
+\hline
 {\color{red}9} &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; 6 &amp; 3 &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
@@ -755,51 +850,101 @@ A spatial data model that represents the world as a regular grid of cells (somet
 
 <p>The minimum around 1 is 1.</p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; {\color{red}6} &amp; 11 &amp; 7 \\
+\hline
 7 &amp; {\color{red}2} &amp; {\color{blue}1} &amp; {\color{red}2} &amp; 8 &amp; 8 \\
+\hline
 9 &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; {\color{red}6} &amp; 3 &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
 
 <p>The minimum around 2 is 1.</p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 &amp; 9 &amp; {\color{red}{13}} &amp; {\color{red}6} &amp; {\color{red}{11}} &amp; 7 \\
+\hline
 7 &amp; 2 &amp; {\color{red}1} &amp; {\color{blue}2} &amp; {\color{red}8} &amp; 8 \\
+\hline
 9 &amp; 12 &amp; {\color{red}6} &amp; {\color{red}6} &amp; {\color{red}3} &amp; 9 \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
 
 <p>The minimum around 8 is 2.</p>
 <p><span class="math display">\[
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 &amp; 9 &amp; 13 &amp; {\color{red}6} &amp; {\color{red}{11}} &amp; {\color{red}7} \\
+\hline
 7 &amp; 2 &amp; 1 &amp; {\color{red}2} &amp; {\color{blue}8} &amp; {\color{red}8} \\
+\hline
 9 &amp; 12 &amp; 6 &amp; {\color{red}6} &amp; {\color{red}3} &amp; {\color{red}9} \\
+\hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
+\hline
 15 &amp; 13 &amp; 6 &amp; 14 &amp; 9 &amp; 10 \\
+\hline
 9 &amp; 7 &amp; 20 &amp; 15 &amp; 17 &amp; 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
 
-<p>and so we go until we find<br />the focal minimum for each pixel.</p>
+<p>and so we go until we find<br />the focal minimum for each pixel</p>
 </section>
 <section class="slide level1">
 
-<p>The neighborhood analysis is important for understanding local influences<br />(e.g., crime statistics or pollution levels).</p>
+<p>writing down the new values as we go</p>
+</section>
+<section class="slide level1">
+
+<p>until we’ve searched the <span class="math inline">\(3 \times 3\)</span> windows<br />around all our original values</p>
+</section>
+<section class="slide level1">
+
+<p>and get a result like this</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 2 &amp; 7 \\
+\hline
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 2 &amp; 3 \\
+\hline
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+\hline
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+\hline
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+\hline
+7 &amp; 6 &amp; 6 &amp; 6 &amp; 9 &amp; 9 \\
+\hline
+\end{array}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>The neighborhood analysis is important for understanding local influences<br /> <small>(e.g., crime statistics or pollution levels)</small></p>
 </section>
 <section class="slide level1">
 
@@ -820,58 +965,100 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p><br /></p>
 <p><span class="math display">\[
 \mathrm{Input} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 3 &amp; 5 &amp; 14 \\
+\hline
 8 &amp; 6 &amp; 5 \\
-9 &amp; 0 &amp; 2
-\end{bmatrix}
+\hline
+9 &amp; 0 &amp; 2 \\
+\hline
+\end{array}
 \]</span></p>
 <p><br /></p>
 <div class="fragment">
 <p><span class="math display">\[
 \mathrm{Output} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 0 &amp; 0 &amp; 1 \\
+\hline
 1 &amp; 1 &amp; 0 \\
-1 &amp; 0 &amp; 0
-\end{bmatrix}
+\hline
+1 &amp; 0 &amp; 0 \\
+\hline
+\end{array}
 \]</span></p>
 </div>
 </section>
 <section class="slide level1">
 
 <p>Notice that false is equal to zero and true is equal to one.</p>
+</section>
+<section class="slide level1">
+
 <p>This makes it easy to mix conditionals with raster algebra because multiplying by zero always returns zero and multiplying by one always returns the same value.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">False</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">True</td>
+</tr>
+</tbody>
+</table>
 <div class="fragment">
 <p><small>note that, depending on your GIS, true and false values<br />may be assigned any value of your choice</small></p>
 </div>
 </section>
 <section class="slide level1">
 
+<p>This can be represented in a VAT (value attribute table)<br /> <small>an attribute table that associates raster values to a class, group, category, or membership</small></p>
+<figure>
+<img data-src="images/raster_vat.png" alt="" /><figcaption>Example raster VAT.</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
 <p>Example conditional used with raster algebra.</p>
 <p><span class="math display">\[
 A =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 12 &amp; 5 &amp; 14 \\
+\hline
 8 &amp; 16 &amp; 5 \\
-9 &amp; 10 &amp; 3
-\end{bmatrix}, B =
-\begin{bmatrix}
+\hline
+9 &amp; 10 &amp; 3 \\
+\hline
+\end{array}, B =
+\begin{array}{|c|c|c|}
+\hline
 1 &amp; 2 &amp; 5 \\
+\hline
 6 &amp; 3 &amp; 9 \\
-4 &amp; 6 &amp; 2
-\end{bmatrix}
+\hline
+4 &amp; 6 &amp; 2 \\
+\hline
+\end{array}
 \]</span></p>
 <p><br /></p>
 <p><em>Raster <span class="math inline">\(B\)</span> where raster <span class="math inline">\(A\)</span> is less than 10.</em></p>
 <div class="fragment">
 <p><span class="math display">\[
 \mathrm{Output} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 0 &amp; 2 &amp; 0 \\
+\hline
 6 &amp; 0 &amp; 9 \\
-4 &amp; 0 &amp; 2
-\end{bmatrix}
+\hline
+4 &amp; 0 &amp; 2 \\
+\hline
+\end{array}
 \]</span></p>
 </div>
 <div class="fragment">
@@ -915,48 +1102,68 @@ A =
 <p><br /></p>
 <p><span class="math display">\[
 \mathrm{Input} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 12 &amp; 5 &amp; 14 \\
+\hline
 8 &amp; 16 &amp; 5 \\
-9 &amp; 10 &amp; 3
-\end{bmatrix},
+\hline
+9 &amp; 10 &amp; 3 \\
+\hline
+\end{array},
 \mathrm{Output} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 3 &amp; 2 &amp; 3 \\
+\hline
 2 &amp; 3 &amp; 2 \\
-2 &amp; 3 &amp; 1
-\end{bmatrix}
+\hline
+2 &amp; 3 &amp; 1 \\
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nQ6nzC4kQYk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p><small> <br /><br /> Please follow along with the demo. </small></p>
+<p><small> <br /><br /> Please follow along with the video demonstration.<br /> <i>Note the correction at 11:36 where the maximum should be 11.</i> </small></p>
 </section>
-<section id="assignment" class="slide level1">
-<h1>Assignment</h1>
+<section id="exercise-a" class="slide level1">
+<h1>Exercise A</h1>
 <p>For this assignment, you’ll want to grab a pen and paper.</p>
 </section>
 <section class="slide level1">
 
-<p>Here are your rasters:</p>
+<p>Here are your raster sets:</p>
 <p><span class="math display">\[
 A =
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|}
+\hline
 16&amp;18&amp;24&amp;28\\
+\hline
 16&amp;20&amp;26&amp;30\\
+\hline
 14&amp;18&amp;20&amp;26\\
+\hline
 14&amp;16&amp;18&amp;22\\
+\hline
 12&amp;14&amp;14&amp;18\\
-\end{bmatrix},\;B =
-\begin{bmatrix}
+\hline
+\end{array},\;B =
+\begin{array}{|c|c|c|c|}
+\hline
 30&amp;33&amp;30&amp;27\\
+\hline
 27&amp;27&amp;24&amp;21\\
+\hline
 27&amp;24&amp;21&amp;18\\
+\hline
 24&amp;24&amp;21&amp;15\\
+\hline
 18&amp;15&amp;15&amp;12\\
-\end{bmatrix}
+\hline
+\end{array}
 \]</span></p>
 </section>
 <section class="slide level1">
@@ -1042,7 +1249,7 @@ A =
 </section>
 <section class="slide level1">
 
-<p>Please find the activity and assignment for remote sensing on Blackboard under Lab 9.</p>
+<p>Please find the deliverables worksheet for<br />Lab 9 Exercises A and B on Blackboard</p>
 </section>
     </div>
   </div>

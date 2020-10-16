@@ -1,7 +1,7 @@
 ---
 pagetitle: "Raster Analysis"
 author: "Center for Geospatial Analysis"
-date: April 8, 2020
+date: October 16, 2020
 ---
 
 <section data-background-image="images/title.png" data-background-size="contain">
@@ -13,9 +13,9 @@ date: April 8, 2020
 * Raster data
 * Raster algebra and statistics
 * Conditional and reclassifications
-* Assignment 1
+* Exercise A
 * Applications in Remote Sensing
-* Assignment 2
+* Exercise B
 
 <small><br />This presentation is written in [reveal.js](https://revealjs.com).<br />Click the link to learn more about how to navigate reveal.js presentations.</small>
 
@@ -73,7 +73,7 @@ and we can add, subtract, multiply, and divide numbers.
 
 # Raster Analysis
 
-Calculations of cell values from<br />one or more raster layers.
+Calculations of cell values from<br />one or more raster layers
 
 ***
 
@@ -81,14 +81,18 @@ Let's start with a simple raster with three rows and three columns, given by the
 
 <br />
 
-$$
-\begin{bmatrix}
-1 & 2 & 5 \\
-6 & 3 & 9 \\
-4 & 6 & 2
-\end{bmatrix}
-$$
 
+$$
+\begin{array}{|c|c|c|}
+\hline
+1 & 2 & 5 \\
+\hline
+6 & 3 & 9 \\
+\hline
+4 & 6 & 2 \\
+\hline
+\end{array}
+$$
 
 ***
 
@@ -98,16 +102,24 @@ Basic scalar multiplication
 
 $$
 2 \times
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 1 & 2 & 5 \\
+\hline
 6 & 3 & 9 \\
-4 & 6 & 2
-\end{bmatrix} =
-\begin{bmatrix}
+\hline
+4 & 6 & 2 \\
+\hline
+\end{array} =
+\begin{array}{|c|c|c|}
+\hline
 2 & 4 & 10 \\
+\hline
 12 & 6 & 18 \\
-8 & 12 & 4
-\end{bmatrix}
+\hline
+8 & 12 & 4 \\
+\hline
+\end{array}
 $$
 
 <div class="fragment">
@@ -121,21 +133,33 @@ Calculations from two or more raster layers<br />are performed *pixel by pixel*
 <br />
 
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 1 & 2 & 5 \\
+\hline
 6 & 3 & 9 \\
-4 & 6 & 2
-\end{bmatrix} +
-\begin{bmatrix}
+\hline
+4 & 6 & 2 \\
+\hline
+\end{array} +
+\begin{array}{|c|c|c|}
+\hline
 3 & 5 & 14 \\
+\hline
 8 & 6 & 5 \\
-9 & 0 & 2
-\end{bmatrix} =
-\begin{bmatrix}
+\hline
+9 & 0 & 2 \\
+\hline
+\end{array} =
+\begin{array}{|c|c|c|}
+\hline
 4 & 7 & 19 \\
+\hline
 14 & 9 & 14 \\
-13 & 6 & 4
-\end{bmatrix}
+\hline
+13 & 6 & 4 \\
+\hline
+\end{array}
 $$
 
 <div class="fragment">
@@ -150,21 +174,33 @@ These operations can be combined into algorithms<br />(i.e., **raster algebra**)
 
 $$
 5 \times
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 1 & 2 & 5 \\
+\hline
 6 & 3 & 9 \\
-4 & 6 & 2
-\end{bmatrix} -
-\begin{bmatrix}
+\hline
+4 & 6 & 2 \\
+\hline
+\end{array} -
+\begin{array}{|c|c|c|}
+\hline
 3 & 5 & 14 \\
+\hline
 8 & 6 & 5 \\
-9 & 0 & 2
-\end{bmatrix} =
-\begin{bmatrix}
+\hline
+9 & 0 & 2 \\
+\hline
+\end{array} =
+\begin{array}{|c|c|c|}
+\hline
 2 & 5 & 11 \\
+\hline
 22 & 9 & 40 \\
-11 & 30 & 8
-\end{bmatrix}
+\hline
+11 & 30 & 8 \\
+\hline
+\end{array}
 $$
 
 <div class="fragment">
@@ -178,11 +214,15 @@ We can even perform statistics!
 <br />
 
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 3 & 5 & 14 \\
+\hline
 8 & 6 & 5 \\
-9 & 0 & 2
-\end{bmatrix}
+\hline
+9 & 0 & 2 \\
+\hline
+\end{array}
 $$
 
 * Maximum: <span class="fragment">14</span>
@@ -199,20 +239,25 @@ Instead, we can perform focal analyses<br />(sometimes called kernel or neighbor
 
 ***
 
-Let's say we have a raster with six rows and six columns.
-
-<br />
-
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 & 9 & 13 & 6 & 11 & 7 \\
+\hline
 7 & 2 & 1 & 2 & 8 & 8 \\
+\hline
 9 & 12 & 6 & 6 & 3 & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
+
+Let's say we have a raster with six rows and six columns.
 
 ***
 
@@ -220,90 +265,132 @@ Let's see if we can find focal minimum values<br />
 in a $3 \times 3$ moving window.
 
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 & 9 & 13 & 6 & 11 & 7 \\
+\hline
 7 & 2 & 1 & 2 & 8 & 8 \\
+\hline
 9 & 12 & 6 & 6 & 3 & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
 
 ***
 
-To begin, we look at the first value, which is 4.
-
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{blue}4} & 9 & 13 & 6 & 11 & 7 \\
+\hline
 7 & 2 & 1 & 2 & 8 & 8 \\
+\hline
 9 & 12 & 6 & 6 & 3 & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
+
+To begin, we look at the first (top-left) value, which is 4.
 
 ***
 
 Then we look at the eight values that surround it.<br /><small>note that along the top and left edges there are no values, so we just ignore them</small>
 
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{blue}4} & {\color{red}9} & 13 & 6 & 11 & 7 \\
+\hline
 {\color{red}7} & {\color{red}2} & 1 & 2 & 8 & 8 \\
+\hline
 9 & 12 & 6 & 6 & 3 & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
 
 ***
 
-Then we check these nine values (four in this edge case) and calculate their minimum (it's 2), which will replace the 4 in our output.
-
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{blue}4} & {\color{red}9} & 13 & 6 & 11 & 7 \\
+\hline
 {\color{red}7} & {\color{red}2} & 1 & 2 & 8 & 8 \\
+\hline
 9 & 12 & 6 & 6 & 3 & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
+
+Then we check these nine values (four in this edge case) and calculate their minimum (it's 2), which will replace the 4 in our output.
 
 ***
 
 Let's skip down to the 2
 
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 & 9 & 13 & 6 & 11 & 7 \\
+\hline
 7 & {\color{blue}2} & 1 & 2 & 8 & 8 \\
+\hline
 9 & 12 & 6 & 6 & 3 & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
 
 ***
 
-and look at the eight surrounding values
-
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{red}4} & {\color{red}9} & {\color{red}{13}} & 6 & 11 & 7 \\
+\hline
 {\color{red}7} & {\color{blue}2} & {\color{red}1} & 2 & 8 & 8 \\
+\hline
 {\color{red}9} & {\color{red}{12}} & {\color{red}6} & 6 & 3 & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
+
+and look at the eight surrounding values
 
 ***
 
@@ -311,14 +398,21 @@ and we see the minimum of these 9 values is 1<br />
 <small>1 will replace the 2 in our output</small>
 
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 {\color{red}4} & {\color{red}9} & {\color{red}{13}} & 6 & 11 & 7 \\
+\hline
 {\color{red}7} & {\color{blue}2} & {\color{red}1} & 2 & 8 & 8 \\
+\hline
 {\color{red}9} & {\color{red}{12}} & {\color{red}6} & 6 & 3 & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
 
 ***
@@ -330,14 +424,21 @@ Repeat this process for each cell.
 The minimum around 1 is 1.
 
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 & {\color{red}9} & {\color{red}{13}} & {\color{red}6} & 11 & 7 \\
+\hline
 7 & {\color{red}2} & {\color{blue}1} & {\color{red}2} & 8 & 8 \\
+\hline
 9 & {\color{red}{12}} & {\color{red}6} & {\color{red}6} & 3 & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
 
 ***
@@ -345,14 +446,21 @@ $$
 The minimum around 2 is 1.
 
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 & 9 & {\color{red}{13}} & {\color{red}6} & {\color{red}{11}} & 7 \\
+\hline
 7 & 2 & {\color{red}1} & {\color{blue}2} & {\color{red}8} & 8 \\
+\hline
 9 & 12 & {\color{red}6} & {\color{red}6} & {\color{red}3} & 9 \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
 
 ***
@@ -360,23 +468,62 @@ $$
 The minimum around 8 is 2.
 
 $$
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
 4 & 9 & 13 & {\color{red}6} & {\color{red}{11}} & {\color{red}7} \\
+\hline
 7 & 2 & 1 & {\color{red}2} & {\color{blue}8} & {\color{red}8} \\
+\hline
 9 & 12 & 6 & {\color{red}6} & {\color{red}3} & {\color{red}9} \\
+\hline
 2 & 3 & 1 & 7 & 1 & 10 \\
+\hline
 15 & 13 & 6 & 14 & 9 & 10 \\
+\hline
 9 & 7 & 20 & 15 & 17 & 9 \\
-\end{bmatrix}
+\hline
+\end{array}
 $$
 
 ***
 
-and so we go until we find<br />the focal minimum for each pixel.
+and so we go until we find<br />the focal minimum for each pixel
 
 ***
 
-The neighborhood analysis is important for understanding local influences<br />(e.g., crime statistics or pollution levels).
+writing down the new values as we go
+
+***
+
+until we've searched the $3 \times 3$ windows<br />around all our original values
+
+***
+
+and get a result like this
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+2 & 1 & 1 & 1 & 2 & 7 \\
+\hline
+2 & 1 & 1 & 1 & 2 & 3 \\
+\hline
+2 & 1 & 1 & 1 & 1 & 1 \\
+\hline
+2 & 1 & 1 & 1 & 1 & 1 \\
+\hline
+2 & 1 & 1 & 1 & 1 & 1 \\
+\hline
+7 & 6 & 6 & 6 & 9 & 9 \\
+\hline
+\end{array}
+$$
+
+
+***
+
+The neighborhood analysis is important for understanding local influences<br />
+<small>(e.g., crime statistics or pollution levels)</small>
 
 ***
 
@@ -400,11 +547,15 @@ Example conditional statement:<br />*"Where pixel value is greater than 5"*
 
 $$
 \mathrm{Input} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 3 & 5 & 14 \\
+\hline
 8 & 6 & 5 \\
-9 & 0 & 2
-\end{bmatrix}
+\hline
+9 & 0 & 2 \\
+\hline
+\end{array}
 $$
 
 <br />
@@ -412,11 +563,15 @@ $$
 <div class="fragment">
 $$
 \mathrm{Output} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 0 & 0 & 1 \\
+\hline
 1 & 1 & 0 \\
-1 & 0 & 0
-\end{bmatrix}
+\hline
+1 & 0 & 0 \\
+\hline
+\end{array}
 $$
 </div>
 
@@ -424,7 +579,14 @@ $$
 
 Notice that false is equal to zero and true is equal to one.
 
+***
+
 This makes it easy to mix conditionals with raster algebra because multiplying by zero always returns zero and multiplying by one always returns the same value.
+
+|   |   |
+|:--|:--|
+| 0 | False |
+| 1 | True |
 
 <div class="fragment">
 <small>note that, depending on your GIS, true and false values<br />may be assigned any value of your choice</small>
@@ -432,20 +594,40 @@ This makes it easy to mix conditionals with raster algebra because multiplying b
 
 ***
 
+This can be represented in a VAT (value attribute table)<br />
+<small>an attribute table that associates raster values to a class, group, category, or membership</small>
+
+![Example raster VAT.](images/raster_vat.png)
+
+<!--
+IMAGE REFERENCE:
+https://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/raster-dataset-attribute-tables.htm
+-->
+
+***
+
 Example conditional used with raster algebra.
 
 $$
 A =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 12 & 5 & 14 \\
+\hline
 8 & 16 & 5 \\
-9 & 10 & 3
-\end{bmatrix}, B =
-\begin{bmatrix}
+\hline
+9 & 10 & 3 \\
+\hline
+\end{array}, B =
+\begin{array}{|c|c|c|}
+\hline
 1 & 2 & 5 \\
+\hline
 6 & 3 & 9 \\
-4 & 6 & 2
-\end{bmatrix}
+\hline
+4 & 6 & 2 \\
+\hline
+\end{array}
 $$
 
 <br />
@@ -455,11 +637,15 @@ $$
 <div class="fragment">
 $$
 \mathrm{Output} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 0 & 2 & 0 \\
+\hline
 6 & 0 & 9 \\
-4 & 0 & 2
-\end{bmatrix}
+\hline
+4 & 0 & 2 \\
+\hline
+\end{array}
 $$
 </div>
 
@@ -492,17 +678,25 @@ Reclassifications typically have an input raster and a reclassification table th
 
 $$
 \mathrm{Input} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 12 & 5 & 14 \\
+\hline
 8 & 16 & 5 \\
-9 & 10 & 3
-\end{bmatrix},
+\hline
+9 & 10 & 3 \\
+\hline
+\end{array},
 \mathrm{Output} =
-\begin{bmatrix}
+\begin{array}{|c|c|c|}
+\hline
 3 & 2 & 3 \\
+\hline
 2 & 3 & 2 \\
-2 & 3 & 1
-\end{bmatrix}
+\hline
+2 & 3 & 1 \\
+\hline
+\end{array}
 $$
 
 
@@ -512,33 +706,46 @@ $$
 
 <small>
 <br /><br />
-Please follow along with the demo.
+Please follow along with the video demonstration.<br />
+<i>Note the correction at 11:36 where the maximum should be 11.</i>
 </small>
 
-# Assignment
+# Exercise A
 
 For this assignment, you'll want to grab a pen and paper.
 
 ***
 
-Here are your rasters:
+Here are your raster sets:
 
 $$
 A =
-\begin{bmatrix}
+\begin{array}{|c|c|c|c|}
+\hline
 16&18&24&28\\
+\hline
 16&20&26&30\\
+\hline
 14&18&20&26\\
+\hline
 14&16&18&22\\
+\hline
 12&14&14&18\\
-\end{bmatrix},\;B =
-\begin{bmatrix}
+\hline
+\end{array},\;B =
+\begin{array}{|c|c|c|c|}
+\hline
 30&33&30&27\\
+\hline
 27&27&24&21\\
+\hline
 27&24&21&18\\
+\hline
 24&24&21&15\\
+\hline
 18&15&15&12\\
-\end{bmatrix}
+\hline
+\end{array}
 $$
 
 ***
@@ -603,4 +810,4 @@ Please watch this brief introduction to the field of remote sensing.
 
 ***
 
-Please find the activity and assignment for remote sensing on Blackboard under Lab 9.
+Please find the deliverables worksheet for<br />Lab 9 Exercises A and B on Blackboard
