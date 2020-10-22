@@ -445,7 +445,6 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="index_files/header-attrs-2.4/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -478,7 +477,7 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <section class="slide level1">
 
 <p>Recall:</p>
-<p>Cells (or pixels) have dimension (height and width), which corresponds to the area on the ground that each cell covers. This is referred to as the raster’s <strong>resolution</strong>.</p>
+<p>Cells (or pixels) have dimension (height and width), which corresponds to the area on the ground that each cell covers. This is referred to as the raster's <strong>resolution</strong>.</p>
 <div class="fragment">
 <p>Smaller cell size = higher resolution = greater detail</p>
 <p><small>(note: high resolution can lead to long process time because there are a lot of pixels to process)</small></p>
@@ -487,31 +486,31 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <section class="slide level1">
 
 <figure>
-<img data-src="images/image_001m.png" width="500" height="500" alt="" /><figcaption>Satellite image at <strong>1 meter</strong> resolution (high res)</figcaption>
+<img src="images/image_001m.png" alt="Satellite image at 1 meter resolution (high res)" width="500" height="500" /><figcaption>Satellite image at <strong>1 meter</strong> resolution (high res)</figcaption>
 </figure>
 </section>
 <section class="slide level1">
 
 <figure>
-<img data-src="images/image_010m.png" width="500" height="500" alt="" /><figcaption>Satellite image at <strong>10 meter</strong> resolution</figcaption>
+<img src="images/image_010m.png" alt="Satellite image at 10 meter resolution" width="500" height="500" /><figcaption>Satellite image at <strong>10 meter</strong> resolution</figcaption>
 </figure>
 </section>
 <section class="slide level1">
 
 <figure>
-<img data-src="images/image_100m.png" width="500" height="500" alt="" /><figcaption>Satellite image at <strong>100 meter</strong> resolution</figcaption>
+<img src="images/image_100m.png" alt="Satellite image at 100 meter resolution" width="500" height="500" /><figcaption>Satellite image at <strong>100 meter</strong> resolution</figcaption>
 </figure>
 </section>
 <section class="slide level1">
 
 <figure>
-<img data-src="images/image_500m.png" width="500" height="500" alt="" /><figcaption>Satellite image at <strong>500 meter</strong> resolution (low res)</figcaption>
+<img src="images/image_500m.png" alt="Satellite image at 500 meter resolution (low res)" width="500" height="500" /><figcaption>Satellite image at <strong>500 meter</strong> resolution (low res)</figcaption>
 </figure>
 </section>
 <section class="slide level1">
 
 <p>So, we see generalization of features and loss of detail as the pixel size increases.</p>
-<p><small>That’s because you can only fit one value per pixel.</small></p>
+<p><small>That's because you can only fit one value per pixel.</small></p>
 <p>Recall what you learned about data scale and map scale (same idea).</p>
 </section>
 <section class="slide level1">
@@ -527,7 +526,7 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>Let’s start with a simple raster with three rows and three columns, given by the following:</p>
+<p>Let's start with a simple raster with three rows and three columns, given by the following:</p>
 <p><br /></p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|}
@@ -668,7 +667,7 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>We don’t always have to perform analysis<br />over an entire raster layer.</p>
+<p>We don't always have to perform analysis<br />over an entire raster layer.</p>
 </section>
 <section class="slide level1">
 
@@ -693,11 +692,11 @@ A spatial data model that represents the world as a regular grid of cells (somet
 \hline
 \end{array}
 \]</span></p>
-<p>Let’s say we have a raster with six rows and six columns.</p>
+<p>Let's say we have a raster with six rows and six columns.</p>
 </section>
 <section class="slide level1">
 
-<p>Let’s see if we can find focal minimum values<br /> in a <span class="math inline">\(3 \times 3\)</span> moving window.</p>
+<p>Let's see if we can find focal minimum values<br /> in a <span class="math inline">\(3 \times 3\)</span> moving window.</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
@@ -777,11 +776,11 @@ A spatial data model that represents the world as a regular grid of cells (somet
 \hline
 \end{array}
 \]</span></p>
-<p>Then we check these nine values (four in this edge case) and calculate their minimum (it’s 2), which will replace the 4 in our output.</p>
+<p>Then we check these nine values (four in this edge case) and calculate their minimum (it's 2), which will replace the 4 in our output.</p>
 </section>
 <section class="slide level1">
 
-<p>Let’s skip down to the 2</p>
+<p>Let's skip down to the 2</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
@@ -919,7 +918,7 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>until we’ve searched the <span class="math inline">\(3 \times 3\)</span> windows<br />around all our original values</p>
+<p>until we've searched the <span class="math inline">\(3 \times 3\)</span> windows<br />around all our original values</p>
 </section>
 <section class="slide level1">
 
@@ -961,7 +960,7 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>Example conditional statement:<br /><em>“Where pixel value is greater than 5”</em></p>
+<p>Example conditional statement:<br /><em>&quot;Where pixel value is greater than 5&quot;</em></p>
 <p><br /></p>
 <p><span class="math display">\[
 \mathrm{Input} =
@@ -1018,7 +1017,7 @@ A spatial data model that represents the world as a regular grid of cells (somet
 
 <p>This can be represented in a VAT (value attribute table)<br /> <small>an attribute table that associates raster values to a class, group, category, or membership</small></p>
 <figure>
-<img data-src="images/raster_vat.png" alt="" /><figcaption>Example raster VAT.</figcaption>
+<img src="images/raster_vat.png" alt="Example raster VAT." /><figcaption>Example raster VAT.</figcaption>
 </figure>
 <!--
 IMAGE REFERENCE:
@@ -1135,7 +1134,7 @@ A =
 </section>
 <section id="exercise-a" class="slide level1">
 <h1>Exercise A</h1>
-<p>For this assignment, you’ll want to grab a pen and paper.</p>
+<p>For this assignment, you'll want to grab a pen and paper.</p>
 </section>
 <section class="slide level1">
 
@@ -1224,7 +1223,7 @@ A =
 <ol start="6" type="1">
 <li>Apply the following conditional to the result, setting true values equal to 1 and false values equal to 0.</li>
 </ol>
-<p><br /> <em>“Where the result is less than 2.”</em></p>
+<p><br /> <em>&quot;Where the result is less than 2.&quot;</em></p>
 </section>
 <section class="slide level1">
 
@@ -1243,7 +1242,7 @@ A =
 </section>
 <section id="applications" class="slide level1">
 <h1>Applications</h1>
-<p>There are numerous applications where raster analysis, raster algebra, and neighborhood statistics are useful. One such application is in the broad field of remote sensing, specializes in the analysis of raster images.</p>
+<p>There are numerous applications where raster analysis, raster algebra, and neighborhood statistics are useful. One such application is in the field of remote sensing or the science of obtaining information about objects or areas from a distance, typically from aircraft or satellites.</p>
 </section>
 <section class="slide level1">
 
