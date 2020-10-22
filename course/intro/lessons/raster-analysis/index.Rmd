@@ -797,7 +797,7 @@ Perform the following tasks in the given order:
 
 # Applications
 There are numerous applications where raster analysis, raster algebra, and neighborhood statistics are useful.
-One such application is in the broad field of remote sensing, specializes in the analysis of raster images.
+One such application is in the broad field of remote sensing, which specializes in the analysis of raster images.
 
 ***
 
