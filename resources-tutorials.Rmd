@@ -124,6 +124,9 @@ Use the search bar to filter videos based on search terms.
 [Finding and Downloading TIGER/Line Geography](https://www.youtube.com/watch?v=1OyRJ0TY0C4&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=43&t=0s)
 :   This video details how to search for and download shapefiles and state-level geodatabases from the U.S. Census Bureau.
 
+[Formatting Numeric Legends](https://youtu.be/V3c4nOQwJRk)
+:   This video details how to format numeric attribute value labels---such as how to round to significant digits, assign percentages, add thousands separator commas, or add a suffix (e.g., units)---in preparation for creating a map legend in ArcGIS Pro.
+
 [Formatting Point Symbology](https://www.youtube.com/watch?v=7WhX9Matx5A&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=16&t=0s)
 :   This video details how to format symbology for point feature layers in ArcGIS Pro.
 
