@@ -10,9 +10,9 @@
 
 
 
-<meta name="date" content="2020-03-18" />
+<meta name="date" content="2020-10-29" />
 
-<title>QGIS and Me</title>
+<title>Getting Started With Notebooks</title>
 
 <script src="site_libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -320,112 +320,85 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">QGIS and Me</h1>
-<h4 class="date">2020-03-18</h4>
+<h1 class="title toc-ignore">Getting Started With Notebooks</h1>
+<h4 class="date">2020-10-29</h4>
 
 </div>
 
 
-<p>Open source GIS for the win; except we haven’t taught it in any classes yet. Here we go. Let’s start with a bit about QGIS and how you get a copy of it.</p>
-<p>QGIS is the leading open-source desktop GIS software, is available <a href="https://www.qgis.org">here</a>. This means that no matter which major operating system you are running (Windows, macOS, or a flavor of Linux), you should be able to get QGIS up and running.</p>
-<p>One of the strengths of QGIS is that—in addition to providing a GIS interface of its own—it also integrates tools from a range of other GIS programs. These include:</p>
-<ul>
-<li>The Geospatial Data Abstraction Library (<a href="http://www.gdal.org/">GDAL</a>), which provides a suite of tools and programs for converting and manipulating spatial data</li>
-<li>The Geographic Resources Analysis Support System (<a href="http://grass.osgeo.org/">GRASS GIS</a>), which is a complete GIS system in its own right, but has until recently been largely a command-line application.</li>
-</ul>
-<div id="installation" class="section level2">
-<h2>Installation</h2>
-<p>Clicking on the <strong>Download Now</strong> option will take you to “Download QGIS for your platform” page.</p>
-<div id="on-a-mac" class="section level3">
-<h3>On a Mac</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/908NyL7roFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-</div>
-<div id="on-windows" class="section level3">
-<h3>On Windows</h3>
-<p>I prefer to use the OSGeo4W Network Installer (64-bit), but you are welcome to use the standalone installer.</p>
-<p>The reason I like the OSGeo4W Network Installer is that I get the Advanced Install options screen.</p>
-<p>When you run the installer, you will get a screen like this:</p>
-<p><img src="images/osgeo4w_netinstall-1.png" /></p>
-<p>I personally like to know what I’m getting, so I do the Advanced Install, which takes you to a series of menus where you click “Next” to</p>
-<ul>
-<li>Choose Installation Type: Install from Internet</li>
-<li>Choose Installation Directory: Install for All Users (Recommended)</li>
-<li>Select Local Package Directory: defaults directories are fine</li>
-<li>Select Connection Type: Direct Connection</li>
-<li>Choose Download Sites: I use the second one, <a href="http://download.osgeo.org" class="uri">http://download.osgeo.org</a> (I think the first one is in France)</li>
-</ul>
+<p>I can’t really gush more about the Notebooks environment. Finally, we have something that everyone can access and it has (nearly) all the flexibility and power of ArcGIS Online and ArcGIS Pro.</p>
+<p>So what’s the catch?</p>
+<p>Well, it turns out the interface using something called <em>Python</em>.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/PythonTimoriensisRooij.jpg" /></p>
+<p>No, not that kind!</p>
+<p>Here, we’re talking about the computer programming language.</p>
+<p>As we know GIS (not just ArcGIS) depends on a lot on geoprocessing. It turns out that these geoprocesses run in our favorite software as function calls written in computer code. Think of a function as something that handles anything you do in ArcGIS where you click “OK” or “Run.” All those selection and input boxes for geoprocessing tools are just function parameters.</p>
+<p>If you don’t believe me, take a look for yourself.</p>
+<p>Think of your favorite GIS geoprocess. Buffer, right?! I knew it would be buffer.</p>
+<p>Run a quick search for “arcgis pro buffer” and you will likely see a top hit for ArcGIS Pro Tool Reference page for <a href="https://pro.arcgis.com/en/pro-app/tool-reference/analysis/buffer.htm">Buffer (Analysis)</a>.</p>
+<p>Remember these help pages?</p>
+<p>They are still helpful.</p>
+<p>Now scroll down… way down to nearly the bottom of the page.</p>
+<p>You should find a section called Syntax. Syntax is the lexicon for how we write computer code in a particular language.</p>
+<p>ArcGIS has developed a site package in the Python programming language, called <code>arcpy</code>. This library contains modules for all manner of tasks that we are familiar with in ArcGIS Pro (or ArcMap), including all the tools referenced <a href="https://pro.arcgis.com/en/pro-app/tool-reference/main/arcgis-pro-tool-reference.htm">here</a>.</p>
+<p>We can create a file geodatabase, populate it with layers, and run analyses all from Python and all with <code>arcpy</code>.</p>
+<p>From there, we can host layers onto ArcGIS Online and add the layers to a web map for visualizing. This is thanks to the <a href="https://developers.arcgis.com/python/guide/the-gis-module/">GIS module</a> provided by the ArcGIS API for Python.</p>
+<p>It can be a little clunky at times, but it’s incredible that we have these two worlds brought together in one place on the cloud.</p>
+<p><strong>Lexicon</strong></p>
 <table>
+<colgroup>
+<col width="28%" />
+<col width="71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Word</th>
+<th align="left">Definition</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><img src="images/osgeo4w_netinstall-2.png" /></td>
-<td align="right"><img src="images/osgeo4w_netinstall-3.png" /></td>
+<td align="left">API</td>
+<td align="left">Abbreviation for Application Programming Interface, or the set of instructions for allowing one programming language to work with another. In this case, the API allows Python to interact with ArcGIS REST services.</td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/osgeo4w_netinstall-4.png" /></td>
-<td align="right"><img src="images/osgeo4w_netinstall-5.png" /></td>
+<td align="left">Cloud</td>
+<td align="left">A metaphor for the collection of remote servers (computers), where each server performs a function or runs a certain application. In the case of ArcGIS Notebooks, it is a server that allows us (the users) to begin a Python environment with access to a variety of libraries.</td>
 </tr>
-</tbody>
-</table>
-<p>After muddling through those option screens you are presented with the “Select Packages” screen.</p>
-<p><img src="images/osgeo4w_netinstall-6.png" /></p>
-<p>Here’s where things get interesting. You have options to select the packages you want from the following drop-down menus:</p>
-<ul>
-<li>Commandline_Utilities</li>
-<li>Desktop</li>
-<li>Libs</li>
-<li>Web</li>
-</ul>
-<p>Once you’ve selected your personal options, the next screen will check to make certain all dependencies are met and ask that you also include them with your download/installation. We can always come back to this screen to add/change/remove options later, so let’s start with just getting the goods, which I personally choose to be qgis-ltr-full under Desktop or just type it in the search at the top. Click Skip to change it to Install. In the image below, you’ll see that I’ve already installed a version.</p>
-<p><img src="images/osgeo4w_netinstall-7.png" /></p>
-<p>Clicking Next will take you to the Resolve Dependencies screen. Click Next to install these packages to meet dependencies.</p>
-<p>If you have time to browse, you’ll find some nice Easter eggs available in OSGeo4W, including:</p>
-<ul>
-<li>Libs/ffmpeg (audo/video encoding)</li>
-<li>Libs/java (the Java runtime environment)</li>
-<li>Libs/opencv (computer vision library)</li>
-<li>Libs/python3-pandas (data analysis and statistics package)</li>
-</ul>
-</div>
-</div>
-<div id="interface" class="section level2">
-<h2>Interface</h2>
-<p>When you open QGIS Desktop, click on the <strong>New Project</strong> button in the toolbar. Just like ArcGIS, QGIS also stores your work (e.g., links to data layers, symbology, label preferences) in a project file.</p>
-<ul>
-<li>The QGIS project file (.qgs)</li>
-<li>The ArcMap project file (.mxd)</li>
-<li>The ArcGIS Pro project file (.aprx)</li>
-</ul>
-<p>No matter the flavor of GIS software, no spatial data is stored in your project file.</p>
-<table>
-<caption>Table: Side by side comparison of QGIS Desktop (left) and ArcGIS Pro (right).</caption>
-<tbody>
 <tr class="odd">
-<td align="left"><img src="images/2020-03-18_qgis_desktop.png" /></td>
-<td align="right"><img src="images/2020-03-18_arcgis_desktop.png" /></td>
+<td align="left">Function</td>
+<td align="left">A set of instructions for performing a certain task.</td>
+</tr>
+<tr class="even">
+<td align="left">Module</td>
+<td align="left">A file containing Python code that provide definitions of variables or functions for a particular task.</td>
+</tr>
+<tr class="odd">
+<td align="left">Parameter</td>
+<td align="left">Symbolic placeholders for data used in a function to allow tasks to run on any given data (so long as it matches the expected type; for example, you can’t take the square root of a string of characters).</td>
+</tr>
+<tr class="even">
+<td align="left">Library</td>
+<td align="left">A collection of Python modules that perform the functions of a given purpose or application (aka a package).</td>
+</tr>
+<tr class="odd">
+<td align="left">Package</td>
+<td align="left">A collection of Python modules. If in reference to the core packages distributed with Python, they may be referred to as the Standard Library; otherwise, refer to them as a site package.</td>
+</tr>
+<tr class="even">
+<td align="left">REST</td>
+<td align="left">Abbreviation for REpresentational State Transfer. Essentially these are well-designed web services where you submit an HTTP request (to a website) and receive a response with information from the server. In the case of ArcGIS, these requests may be simple attribute queries or more complex analytical or administrative requests.</td>
+</tr>
+<tr class="odd">
+<td align="left">Syntax</td>
+<td align="left">For a given programming language, these are the rules for grammar and mechanics or how to correctly build meaningful expressions.</td>
 </tr>
 </tbody>
 </table>
-<p>The graphical user interface (GUI) of QGIS has analogs to ArcGIS:</p>
+<div id="references" class="section level2">
+<h2>References</h2>
 <ul>
-<li><strong>Browser</strong> = <strong>Catalog Pane</strong></li>
-<li><strong>Layers</strong> = <strong>Contents Pane</strong></li>
-<li><strong>Processing Toolbox</strong> = <strong>Geoprocessing Pane</strong></li>
-</ul>
-<p>Some things are rearranged a bit, including the status bar, which is below the map pane in ArcGIS Pro and along the bottom of the window in QGIS. ArcGIS Pro utilizes the Microsoft Office-esque ribbon with groups and tools while QGIS uses the more standard menus and toolbars.</p>
-<p>Notably, QGIS projects do not start you out with a basemap, while ArcGIS Pro gives you two representational state transfer (REST) services for a basemap and hillshade.</p>
-<p>To get a basemap in QGIS, you can either double-click on OpenStreetMap under XYZ Tiles in the Browser or install the <a href="https://digital-geography.com/qgis-quickmapservices/">QuickMapServices plugin</a>, which offers some options for basemap layers or dozens when you get the contributed pack from the plugin settings.</p>
-</div>
-<div id="notable-differences" class="section level2">
-<h2>Notable Differences</h2>
-<p>Working in QGIS after spending time with ArcGIS, you will come across some notable differences, such as:</p>
-<p>Add Data</p>
-<ul>
-<li>ArcGIS does not really care about the data model of the spatial data you want to add to a map. In QGIS, the Data Source Manager requires you select the data model (e.g., Vector, Raster, Delimited Text) and choose the correct file. This can be tricky, especially for shapefiles, where there are several files associated with a single shapefile. Luckily, in the bottom corner of the selection window, there is a file filter that lets you choose what type of data you are expecting to find. By default, the filter is set to <strong>All files (*)</strong>.</li>
-</ul>
-<p>Projections</p>
-<ul>
-<li><strong>Project</strong> and <strong>Project Raster</strong> are big deals in the world of ArcGIS; however, data projections, by default, are handled on the fly in QGIS to match the projection of your project (<a href="https://docs.qgis.org/3.10/en/docs/user_manual/working_with_projections/working_with_projections.html">read more</a>). If you want your data stored in a new/different projection, you have to right-click the layer to Export as a new raster or vector file. During the export, you can specify what the new CRS should be.</li>
+<li><a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm">What is ArcPy?</a></li>
 </ul>
 </div>
 

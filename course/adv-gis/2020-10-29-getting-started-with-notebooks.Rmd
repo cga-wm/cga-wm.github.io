@@ -1,0 +1,70 @@
+---
+title: "Getting Started With Notebooks"
+date: 2020-10-29
+url: 2020-10-29-getting-started-with-notebooks.html
+summary: "In the past year, ArcGIS Notebooks became a part of ArcGIS Online. This cloud environment gives us the features of AGOL combined with the power of arcpy - the Python interface to ArcGIS Pro's geoprocessing and analysis. So long Windows only troubles and hello platform independent programming. Post includes Python lexicon."
+---
+
+I can't really gush more about the Notebooks environment.
+Finally, we have something that everyone can access and it has (nearly) all the flexibility and power of ArcGIS Online and ArcGIS Pro.
+
+So what's the catch?
+
+Well, it turns out the interface using something called *Python*.
+
+![](https://upload.wikimedia.org/wikipedia/commons/3/3c/PythonTimoriensisRooij.jpg)
+
+No, not that kind!
+
+Here, we're talking about the computer programming language.
+
+As we know GIS (not just ArcGIS) depends on a lot on geoprocessing.
+It turns out that these geoprocesses run in our favorite software as function calls written in computer code.
+Think of a function as something that handles anything you do in ArcGIS where you click "OK" or "Run."
+All those selection and input boxes for geoprocessing tools are just function parameters.
+
+If you don't believe me, take a look for yourself.
+
+Think of your favorite GIS geoprocess.
+Buffer, right?!
+I knew it would be buffer.
+
+Run a quick search for "arcgis pro buffer" and you will likely see a top hit for ArcGIS Pro Tool Reference page for [Buffer (Analysis)](https://pro.arcgis.com/en/pro-app/tool-reference/analysis/buffer.htm).
+
+Remember these help pages?
+
+They are still helpful.
+
+Now scroll down... way down to nearly the bottom of the page.
+
+You should find a section called Syntax.
+Syntax is the lexicon for how we write computer code in a particular language.
+
+ArcGIS has developed a site package in the Python programming language, called `arcpy`.
+This library contains modules for all manner of tasks that we are familiar with in ArcGIS Pro (or ArcMap), including all the tools referenced [here](https://pro.arcgis.com/en/pro-app/tool-reference/main/arcgis-pro-tool-reference.htm).
+
+We can create a file geodatabase, populate it with layers, and run analyses all from Python and all with `arcpy`.
+
+From there, we can host layers onto ArcGIS Online and add the layers to a web map for visualizing.
+This is thanks to the [GIS module](https://developers.arcgis.com/python/guide/the-gis-module/) provided by the ArcGIS API for Python.
+
+It can be a little clunky at times, but it's incredible that we have these two worlds brought together in one place on the cloud.
+
+
+**Lexicon**
+
+| Word | Definition |
+| :--- | :--------- |
+| API | Abbreviation for Application Programming Interface, or the set of instructions for allowing one programming language to work with another. In this case, the API allows Python to interact with ArcGIS REST services. |
+| Cloud | A metaphor for the collection of remote servers (computers), where each server performs a function or runs a certain application. In the case of ArcGIS Notebooks, it is a server that allows us (the users) to begin a Python environment with access to a variety of libraries. |
+| Function | A set of instructions for performing a certain task. |
+| Module | A file containing Python code that provide definitions of variables or functions for a particular task.  |
+| Parameter | Symbolic placeholders for data used in a function to allow tasks to run on any given data (so long as it matches the expected type; for example, you can't take the square root of a string of characters). |
+| Library | A collection of Python modules that perform the functions of a given purpose or application (aka a package).  |
+| Package | A collection of Python modules. If in reference to the core packages distributed with Python, they may be referred to as the Standard Library; otherwise, refer to them as a site package. |
+| REST | Abbreviation for REpresentational State Transfer. Essentially these are well-designed web services where you submit an HTTP request (to a website) and receive a response with information from the server. In the case of ArcGIS, these requests may be simple attribute queries or more complex analytical or administrative requests. |
+| Syntax | For a given programming language, these are the rules for grammar and mechanics or how to correctly build meaningful expressions. |
+
+
+## References
+* [What is ArcPy?](https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm)
