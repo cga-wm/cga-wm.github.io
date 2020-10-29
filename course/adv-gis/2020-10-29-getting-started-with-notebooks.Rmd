@@ -50,6 +50,31 @@ This is thanks to the [GIS module](https://developers.arcgis.com/python/guide/th
 
 It can be a little clunky at times, but it's incredible that we have these two worlds brought together in one place on the cloud.
 
+### Getting Started With Notebooks
+There is a lot to learn about the Notebook environment.
+Below are some resources to help get you started.
+
+Please watch [this short video](https://youtu.be/vydDSl0hTn0) to introduce you to ArcGIS Notebooks.
+
+Then, on ArcGIS Online, you can find several Notebooks that I have shared with you.
+To get the most out of them, I recommend completing them in the following order:
+
+1. [My First Notebook][nb0]
+1. [Python Fundamentals][nb1]
+1. [More Python Fundamentals][nb2]
+1. [Files and Folders][nb3]
+1. [Working with Data][nb4]
+1. [The File Geodatabase][nb5]
+1. [Geoprocessing with the ArcGIS API][nb6]
+
+[nb0]: https://wm-gis.maps.arcgis.com/home/item.html?id=c8cc47cf8c0f4f5aadcff34aed8b48b3
+[nb1]: https://wm-gis.maps.arcgis.com/home/item.html?id=0be90664f6e345709832b6cc60361bff
+[nb2]: https://wm-gis.maps.arcgis.com/home/item.html?id=6ae79225677547978e5e86eef75cd39d
+[nb3]: https://wm-gis.maps.arcgis.com/home/item.html?id=67d191b2a0a94b6ebe6cc7f1aec50c48
+[nb4]: https://wm-gis.maps.arcgis.com/home/item.html?id=367fcabcb8da4dac9851b7e80c246706
+[nb5]: https://wm-gis.maps.arcgis.com/home/item.html?id=31b93985ce284cb1876c8483cab78366
+[nb6]: https://wm-gis.maps.arcgis.com/home/item.html?id=0c4825b7e0f04fa6afba2b108eb338a4#overview
+
 
 **Lexicon**
 
@@ -67,4 +92,6 @@ It can be a little clunky at times, but it's incredible that we have these two w
 
 
 ## References
+* [Basic markdown writing and formatting](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
+* [Getting Started With Notebooks](https://doc.arcgis.com/en/arcgis-online/get-started/components-of-the-notebook-editor.htm)
 * [What is ArcPy?](https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm)
