@@ -334,7 +334,9 @@ $(document).ready(function () {
 <p>Here, we’re talking about the computer programming language.</p>
 <p>As we know GIS (not just ArcGIS) depends on a lot on geoprocessing. It turns out that these geoprocesses run in our favorite software as function calls written in computer code. Think of a function as something that handles anything you do in ArcGIS where you click “OK” or “Run.” All those selection and input boxes for geoprocessing tools are just function parameters.</p>
 <p>If you don’t believe me, take a look for yourself.</p>
-<p>Think of your favorite GIS geoprocess. Buffer, right?! I knew it would be buffer.</p>
+<p>Think of your favorite GIS geoprocess.</p>
+<p>Buffer, right?!</p>
+<p>I knew it would be buffer.</p>
 <p>Run a quick search for “arcgis pro buffer” and you will likely see a top hit for ArcGIS Pro Tool Reference page for <a href="https://pro.arcgis.com/en/pro-app/tool-reference/analysis/buffer.htm">Buffer (Analysis)</a>.</p>
 <p>Remember these help pages?</p>
 <p>They are still helpful.</p>
@@ -342,8 +344,16 @@ $(document).ready(function () {
 <p>You should find a section called Syntax. Syntax is the lexicon for how we write computer code in a particular language.</p>
 <p>ArcGIS has developed a site package in the Python programming language, called <code>arcpy</code>. This library contains modules for all manner of tasks that we are familiar with in ArcGIS Pro (or ArcMap), including all the tools referenced <a href="https://pro.arcgis.com/en/pro-app/tool-reference/main/arcgis-pro-tool-reference.htm">here</a>.</p>
 <p>We can create a file geodatabase, populate it with layers, and run analyses all from Python and all with <code>arcpy</code>.</p>
-<p>From there, we can host layers onto ArcGIS Online and add the layers to a web map for visualizing. This is thanks to the <a href="https://developers.arcgis.com/python/guide/the-gis-module/">GIS module</a> provided by the ArcGIS API for Python.</p>
+<p>But that’s not all.</p>
+<p>Notebooks also provides us with access to <code>arcgis</code>, the ArcGIS API for Python. The <code>arcgis</code> package connects to your ArcGIS Online account and provides several interfaces.</p>
+<p>Some are quite simple, like updating your ArcGIS Online thumbnail.</p>
+<p>Some are expected, such as accessing and hosting layers in ArcGIS Online and adding the layers to a web map for visualizing.</p>
+<p>Some are more complex, like creating and editing features and running geoprocesses.</p>
+<p>This is thanks to the <a href="https://developers.arcgis.com/python/guide/the-gis-module/">GIS module</a> provided by the ArcGIS API for Python.</p>
 <p>It can be a little clunky at times, but it’s incredible that we have these two worlds brought together in one place on the cloud.</p>
+<p>For those of you who are familiar with the <a href="https://pandas.pydata.org/">pandas</a> package and its DataFrame object, <code>arcgis</code> expands on this object with the <a href="https://developers.arcgis.com/python/guide/introduction-to-the-spatially-enabled-dataframe/">spatially enabled dataframe</a>. There are a lot of interesting things that we can do to analyze and visualize using this data object.</p>
+<p>So, what are you waiting for?</p>
+<p>Let’s get started with notebooks.</p>
 <hr />
 <div id="getting-started-with-notebooks" class="section level3">
 <h3>Getting Started With Notebooks</h3>
@@ -351,13 +361,22 @@ $(document).ready(function () {
 <p>Please watch <a href="https://youtu.be/vydDSl0hTn0">this short video</a> to introduce you to ArcGIS Notebooks.</p>
 <p>Then, on ArcGIS Online, you can find several Notebooks that I have shared with you. To get the most out of them, I recommend completing them in the following order:</p>
 <ol style="list-style-type: decimal">
-<li><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=c8cc47cf8c0f4f5aadcff34aed8b48b3">My First Notebook</a></li>
-<li><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=0be90664f6e345709832b6cc60361bff">Python Fundamentals</a></li>
-<li><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=6ae79225677547978e5e86eef75cd39d">More Python Fundamentals</a></li>
-<li><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=67d191b2a0a94b6ebe6cc7f1aec50c48">Files and Folders</a></li>
-<li><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=367fcabcb8da4dac9851b7e80c246706">Working with Data</a></li>
-<li><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=31b93985ce284cb1876c8483cab78366">The File Geodatabase</a></li>
-<li><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=0c4825b7e0f04fa6afba2b108eb338a4#overview">Geoprocessing with the ArcGIS API</a></li>
+<li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=c8cc47cf8c0f4f5aadcff34aed8b48b3">My First Notebook</a></p>
+<p>An introduction to markdown and how to organize a notebook into an effective communication and work logging tool.</p></li>
+<li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=0be90664f6e345709832b6cc60361bff">Python Fundamentals</a></p>
+<p>A first look at (or refresher on) the Python syntax.</p></li>
+<li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=6ae79225677547978e5e86eef75cd39d">More Python Fundamentals</a></p>
+<p>A second look at fundamental Python concepts.</p></li>
+<li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=67d191b2a0a94b6ebe6cc7f1aec50c48">Files and Folders</a></p>
+<p>A one-stop shop for methods to create, download, manage, and remove files and folders from the ArcGIS Online Notebooks environment.</p></li>
+<li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=367fcabcb8da4dac9851b7e80c246706">Working with Data</a></p>
+<p>Examples of how to explore different data formats found in the samplesdata of ArcGIS Online Notebooks.</p></li>
+<li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=31b93985ce284cb1876c8483cab78366">The File Geodatabase</a></p>
+<p>Tutorial on how to create your own file geodatabase for organizing your geoprocess inputs and outputs or field collection features.</p></li>
+<li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=0c4825b7e0f04fa6afba2b108eb338a4#overview">Geoprocessing with the ArcGIS API</a></p>
+<p>A walkthrough for solving a geospatial problem using the ArcGIS API for Python geoprocessing tools.</p></li>
+<li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=d81dd1f12f574b39b248a6311c619a7b">Geoprocessing with arcpy</a></p>
+<p>An introduction to arcpy and a walkthrough for solving a common task of dealing with raster data in ArcGIS Online Notebooks.</p></li>
 </ol>
 <hr />
 </div>
@@ -384,32 +403,40 @@ $(document).ready(function () {
 <td align="left">A metaphor for the collection of remote servers (computers), where each server performs a function or runs a certain application. In the case of ArcGIS Notebooks, it is a server that allows us (the users) to begin a Python environment with access to a variety of libraries.</td>
 </tr>
 <tr class="odd">
+<td align="left">Dataframe</td>
+<td align="left">A two-dimensional data structure where data are aligned in a tabular fashion in rows and columns.</td>
+</tr>
+<tr class="even">
 <td align="left">Function</td>
 <td align="left">A set of instructions for performing a certain task.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Module</td>
 <td align="left">A file containing Python code that provide definitions of variables or functions for a particular task.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Parameter</td>
 <td align="left">Symbolic placeholders for data used in a function to allow tasks to run on any given data (so long as it matches the expected type; for example, you can’t take the square root of a string of characters).</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Library</td>
 <td align="left">A collection of Python modules that perform the functions of a given purpose or application (aka a package).</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Package</td>
 <td align="left">A collection of Python modules. If in reference to the core packages distributed with Python, they may be referred to as the Standard Library; otherwise, refer to them as a site package.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">REST</td>
 <td align="left">Abbreviation for REpresentational State Transfer. Essentially these are well-designed web services where you submit an HTTP request (to a website) and receive a response with information from the server. In the case of ArcGIS, these requests may be simple attribute queries or more complex analytical or administrative requests.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Syntax</td>
 <td align="left">For a given programming language, these are the rules for grammar and mechanics or how to correctly build meaningful expressions.</td>
+</tr>
+<tr class="odd">
+<td align="left">Widget</td>
+<td align="left">A small software app designed to provide particular information or service</td>
 </tr>
 </tbody>
 </table>
