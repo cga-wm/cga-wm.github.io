@@ -14,7 +14,7 @@
 
 <title>Center for Geospatial Analysis</title>
 
-<script src="site_libs/header-attrs-2.4/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -22,6 +22,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -32,7 +34,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 
 
@@ -333,7 +335,7 @@ $(document).ready(function () {
 <p>The Center for Geospatial Analysis at William &amp; Mary (CGA-WM) is now on GitHub!</p>
 <p>The CGA is William &amp; Mary’s comprehensive resource for those interested in learning and utilizing geographic information systems (GIS). We offer students and faculty access to the hardware, software, and expertise they need to make the most of this powerful mapping tool.</p>
 <p>Our courses are open to undergraduate and graduate students in any program, and we also host free workshops for faculty, staff, and students. Whether you’re in the arts or sciences, business or law, learning how to best visualize, analyze, and share spatial data can greatly improve the quality and value of any project or proposal.</p>
-<p>Updated: 2020-10-27</p>
+<p>Updated: 2020-11-04</p>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -349,7 +351,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
