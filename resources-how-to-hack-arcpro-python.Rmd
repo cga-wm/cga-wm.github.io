@@ -4,15 +4,32 @@ title: "How To Hack ArcGIS Pro's Python"
 
 ***
 
-[https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm](https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm)
+There are three ways to access `arcpy`.
+
+1. In ArcGIS Pro via the Python interpreter or Notebooks
+1. In ArcGIS Online Notebooks using Advanced Python 3 kernel
+1. From the command line on Windows by activating the ArcGIS Pro Python environment
+
+Two methods require you to have access to a Windows computer; these instructions are for one of them.
+
+If you want access to `arcpy` from the command line to run alongside your own code and other third-party Python packages, follow these instructions.
 
 - Open ArcGIS Pro and go to Settings (bottom left) and click on Python
 - Click on Manage Environments
 - Clone ArcGIS Pro python environment and name it (e.g., 'adv-gis')
-- Create user environment that points to `...\Program Files\ArcGIS\Pro\bin\Python\Scripts\`
+    * This can take a while
+    * _Note: if you activate the cloned environment, you can update existing and install third-party packages from the Python interpreter in ArcGIS Pro or Notebooks environment_
+- Update your user "Path" environment variable to point to `...\Program Files\ArcGIS\Pro\bin\Python\Scripts\`
+    * This folder contains the activate.bat, which you need to access the conda virtual Python environment
 - Open a new Command Prompt window and type `activate adv-gis`
 - Try loading arcpy from Python
 
 ```shell
 python -c "import arcpy; print(arcpy.__name__)"
 ```
+
+### References
+- [Introducing ArcGIS Notebooks in ArcGIS Pro](https://www.esri.com/arcgis-blog/products/arcgis-pro/analytics/introducing-arcgis-notebooks-in-arcgis-pro/)
+- [Getting started with notebooks](https://doc.arcgis.com/en/arcgis-online/get-started/components-of-the-notebook-editor.htm)
+- [How to set the path and environment variables in Windows](https://www.computerhope.com/issues/ch000549.htm)
+- [https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm](https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm)

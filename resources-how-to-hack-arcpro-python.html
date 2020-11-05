@@ -330,16 +330,39 @@ $(document).ready(function () {
 
 
 <hr />
-<p><a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm</a></p>
+<p>There are three ways to access <code>arcpy</code>.</p>
+<ol style="list-style-type: decimal">
+<li>In ArcGIS Pro via the Python interpreter or Notebooks</li>
+<li>In ArcGIS Online Notebooks using Advanced Python 3 kernel</li>
+<li>From the command line on Windows by activating the ArcGIS Pro Python environment</li>
+</ol>
+<p>Two methods require you to have access to a Windows computer; these instructions are for one of them.</p>
+<p>If you want access to <code>arcpy</code> from the command line to run alongside your own code and other third-party Python packages, follow these instructions.</p>
 <ul>
 <li>Open ArcGIS Pro and go to Settings (bottom left) and click on Python</li>
 <li>Click on Manage Environments</li>
-<li>Clone ArcGIS Pro python environment and name it (e.g., ‘adv-gis’)</li>
-<li>Create user environment that points to <code>...\Program Files\ArcGIS\Pro\bin\Python\Scripts\</code></li>
+<li>Clone ArcGIS Pro python environment and name it (e.g., ‘adv-gis’)
+<ul>
+<li>This can take a while</li>
+<li><em>Note: if you activate the cloned environment, you can update existing and install third-party packages from the Python interpreter in ArcGIS Pro or Notebooks environment</em></li>
+</ul></li>
+<li>Update your user “Path” environment variable to point to <code>...\Program Files\ArcGIS\Pro\bin\Python\Scripts\</code>
+<ul>
+<li>This folder contains the activate.bat, which you need to access the conda virtual Python environment</li>
+</ul></li>
 <li>Open a new Command Prompt window and type <code>activate adv-gis</code></li>
 <li>Try loading arcpy from Python</li>
 </ul>
 <pre class="shell"><code>python -c &quot;import arcpy; print(arcpy.__name__)&quot;</code></pre>
+<div id="references" class="section level3">
+<h3>References</h3>
+<ul>
+<li><a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/analytics/introducing-arcgis-notebooks-in-arcgis-pro/">Introducing ArcGIS Notebooks in ArcGIS Pro</a></li>
+<li><a href="https://doc.arcgis.com/en/arcgis-online/get-started/components-of-the-notebook-editor.htm">Getting started with notebooks</a></li>
+<li><a href="https://www.computerhope.com/issues/ch000549.htm">How to set the path and environment variables in Windows</a></li>
+<li><a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm</a></li>
+</ul>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
