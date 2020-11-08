@@ -27,6 +27,9 @@ output:
 :   Provides city- and census tract-level small area estimates for chronic disease risk factors, health outcomes, and clinical preventive service use for the largest 500 cities in the United States.
     Includes an interactive map and data portal.
 
+[Alaska Hydrography Database](http://akhydro.uaa.alaska.edu/)
+:   Provides updated hydrography (surface water such as streams, rivers and watershed areas) data that meet statewide and national standards.
+
 [ArcGIS Living Atlas - Indicators of the Planet](https://experience.arcgis.com/experience/003f05cc447b46dc8818640c38b69b83/)
 :   See the latest in global issues with links to their respective open data portals.
 
