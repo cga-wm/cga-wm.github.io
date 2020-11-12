@@ -86,6 +86,7 @@ To get the most out of them, I recommend completing them in the following order:
 1. [My First Notebook][nb0]
 
     An introduction to markdown and how to organize a notebook into an effective communication and work logging tool.
+
     _Digitize your process!_
 1. [Python Fundamentals][nb1]
 
