@@ -14,7 +14,7 @@
 
 <title>Getting Started With Notebooks</title>
 
-<script src="site_libs/header-attrs-2.4/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -22,6 +22,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -30,7 +32,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 
 
@@ -362,17 +364,17 @@ $(document).ready(function () {
 <p>Then, on ArcGIS Online, you can find several Notebooks that I have shared with you. To get the most out of them, I recommend completing them in the following order:</p>
 <ol style="list-style-type: decimal">
 <li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=c8cc47cf8c0f4f5aadcff34aed8b48b3">My First Notebook</a></p>
-<p>An introduction to markdown and how to organize a notebook into an effective communication and work logging tool.</p></li>
+<p>An introduction to markdown and how to organize a notebook into an effective communication and work logging tool. <em>Digitize your process!</em></p></li>
 <li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=0be90664f6e345709832b6cc60361bff">Python Fundamentals</a></p>
-<p>A first look at (or refresher on) the Python syntax.</p></li>
+<p>A first look at (or a refresher on) the Python syntax.</p></li>
 <li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=6ae79225677547978e5e86eef75cd39d">More Python Fundamentals</a></p>
-<p>A second look at fundamental Python concepts.</p></li>
+<p>A further look at fundamental Python concepts.</p></li>
 <li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=67d191b2a0a94b6ebe6cc7f1aec50c48">Files and Folders</a></p>
 <p>A one-stop shop for methods to create, download, manage, and remove files and folders from the ArcGIS Online Notebooks environment.</p></li>
 <li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=367fcabcb8da4dac9851b7e80c246706">Working with Data</a></p>
-<p>Examples of how to explore different data formats found in the samplesdata of ArcGIS Online Notebooks.</p></li>
+<p>Examples of how to explore different data formats found in the <code>/samplesdata</code> of ArcGIS Online Notebooks.</p></li>
 <li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=31b93985ce284cb1876c8483cab78366">The File Geodatabase</a></p>
-<p>Tutorial on how to create your own file geodatabase for organizing your geoprocess inputs and outputs or field collection features.</p></li>
+<p>Tutorial on how to create your own file geodatabase for organizing your geoprocessing inputs and outputs or field collection features.</p></li>
 <li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=0c4825b7e0f04fa6afba2b108eb338a4#overview">Geoprocessing with the ArcGIS API</a></p>
 <p>A walkthrough for solving a geospatial problem using the ArcGIS API for Python geoprocessing tools.</p></li>
 <li><p><a href="https://wm-gis.maps.arcgis.com/home/item.html?id=d81dd1f12f574b39b248a6311c619a7b">Geoprocessing with arcpy</a></p>
@@ -465,7 +467,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

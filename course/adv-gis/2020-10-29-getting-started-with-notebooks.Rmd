@@ -86,21 +86,22 @@ To get the most out of them, I recommend completing them in the following order:
 1. [My First Notebook][nb0]
 
     An introduction to markdown and how to organize a notebook into an effective communication and work logging tool.
+    _Digitize your process!_
 1. [Python Fundamentals][nb1]
 
-    A first look at (or refresher on) the Python syntax.
+    A first look at (or a refresher on) the Python syntax.
 1. [More Python Fundamentals][nb2]
 
-    A second look at fundamental Python concepts.
+    A further look at fundamental Python concepts.
 1. [Files and Folders][nb3]
 
     A one-stop shop for methods to create, download, manage, and remove files and folders from the ArcGIS Online Notebooks environment.
 1. [Working with Data][nb4]
 
-    Examples of how to explore different data formats found in the samplesdata of ArcGIS Online Notebooks.
+    Examples of how to explore different data formats found in the `/samplesdata` of ArcGIS Online Notebooks.
 1. [The File Geodatabase][nb5]
 
-    Tutorial on how to create your own file geodatabase for organizing your geoprocess inputs and outputs or field collection features.
+    Tutorial on how to create your own file geodatabase for organizing your geoprocessing inputs and outputs or field collection features.
 1. [Geoprocessing with the ArcGIS API][nb6]
 
     A walkthrough for solving a geospatial problem using the ArcGIS API for Python geoprocessing tools.
