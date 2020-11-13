@@ -25,14 +25,6 @@ navbar:
                 href: chapter-6-applications.html
               - text: "7. Remote Sensing"
                 href: chapter-7-remote-sensing.html
-        - text: "Resources"
-          menu:
-              - text: "General Information"
-                href: resources-general-information.html
-              - text: "Additional Reading"
-                href: resources-additional-reading.html
-              - text: "Tools and Software"
-                href: resources-tools-and-software.html
         - text: CGA-WM
           href: ../../index.html
 

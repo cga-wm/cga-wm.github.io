@@ -14,7 +14,7 @@
 
 <title>Intro GIS</title>
 
-<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -22,6 +22,17 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -305,24 +316,6 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Resources
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="resources-general-information.html">General Information</a>
-    </li>
-    <li>
-      <a href="resources-additional-reading.html">Additional Reading</a>
-    </li>
-    <li>
-      <a href="resources-tools-and-software.html">Tools and Software</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../../index.html">CGA-WM</a>
 </li>
@@ -342,7 +335,7 @@ $(document).ready(function () {
 
 
 <hr />
-<p>Updated: 2020-10-01</p>
+<p>Updated: 2020-11-13</p>
 <p>This course provides an introduction to the fundamentals of geospatial technologies, including using Geographic Information Systems (GIS), Global Positioning Systems (GPS), basics of cartography, remote sensing and spatial analysis. Emphasis will be on hands-on application of these technologies to create maps, to organize and visualize spatial data, and to utilize spatial data to analyze and address social, economic, political and environmental issues.as a tool in earth and environmental science and policy.</p>
 
 <footer class="myfoot">
@@ -359,7 +352,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
