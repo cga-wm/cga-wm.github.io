@@ -10,7 +10,10 @@ title: "Resources | Tools and Software"
 
 [GeoDa](https://geodacenter.github.io/) --- a free and open source software tool that provides a user-friendly graphical user interface for exploratory spatial data analysis developed by Dr. Luc Anselin and his team. GeoDa runs on Windows, MacOSX and Linux (Ubuntu).
 
-[GeoHack](https://tools.wmflabs.org/geohack/) --- a modified version of map sources from Egil Kvaleberg's gis extension. It is designed to do simple HTML replacements of a template on Wikipedia and serve it to the client. It is used by Wikipedia to provide links to various mapping services, when a user clicks on a link with geographical coordinates. For example, [click here](https://tools.wmflabs.org/geohack/geohack.php?params=35_41_25.8_N_80_28_49_W) to GeoHack the Center for the Environment.
+[GeoHack](https://tools.wmflabs.org/geohack/) --- a modified version of map sources from Egil Kvaleberg's gis extension.
+It is designed to do simple HTML replacements of a template on Wikipedia and serve it to the client.
+It is used by Wikipedia to provide links to various mapping services, when a user clicks on a link with geographical coordinates.
+For example, [click here](https://geohack.toolforge.org/geohack.php?params=37_16_11_N_76_42_58_W) to GeoHack the Swem Library.
 
 [GEOLocate Web Application](http://www.geo-locate.org/web/WebGeoref.aspx) --- simply type in your locality description and get back georeferenced results.
 
