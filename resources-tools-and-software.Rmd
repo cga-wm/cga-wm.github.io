@@ -19,7 +19,7 @@ For example, [click here](https://geohack.toolforge.org/geohack.php?params=37_16
 
 [Google Earth](https://www.google.com/earth/) --- software that renders a 3D representation of Earth based on satellite imagery based on the superimposition of images obtained from satellite imagery, aerial photography, and GIS data onto a 3D globe, allowing users to see cities and landscapes from various angles.
 
-[OpenStreetMap.org](https://www.openstreetmap.org/#map=16/35.6918/-80.4897) --- a collaborative project to create a free editable map of the world.
+[OpenStreetMap.org](https://www.openstreetmap.org/#map=15/37.2707/-76.7191) --- a collaborative project to create a free editable map of the world.
 
 [ReefBase](http://www.reefbase.org/) ---  A Global Information System for Coral Reefs.
 
