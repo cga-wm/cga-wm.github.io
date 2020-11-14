@@ -1,0 +1,73 @@
+---
+title: "Resources | General Info"
+---
+
+***
+
+[ArcGIS Tutorials](https://mgimond.github.io/ArcGIS_tutorials/index.html)
+
+[Do you know where you are? - The Global Positioning System](https://oceanservice.noaa.gov/education/tutorial_geodesy/geo09_gps.html). National Oceanic and Atmospheric Administration (NOAA). 2017.
+
+[Documentation for ArcGIS](https://doc.arcgis.com/en/)
+
+[GIS Certification Institute](https://www.gisci.org) --- a non-profit organization that provides the GIS community with a complete certification program leading to Certified GIS Professional recognition focused on six key knowledge areas: *Conceptual Foundations*, *Cartography and Visualization*, *GIS Design Aspects and Data Modelling*, *GIS Analytical Methods*, *Data Manipulation*, and *Geospatial Data*
+
+[Geography Realm](https://www.geographyrealm.com/) --- an information site about all things geography (formerly Geo Lounge). Find information here about physical and human geography as well as guides for learning about geography and developing a career in geography.
+
+[Geography & Map Reading Room](https://www.loc.gov/rr/geogmap/index.html) --- The Geography and Map Division of the Library of Congress provides cartographic and geographic information for all parts of the world to the Congress, Federal agencies, state and local governments, the scholarly community, and to the general public; it is the largest and most comprehensive cartographic collection in the world, numbering over 5.2 million maps.
+
+[GIS Lounge](https://www.gislounge.com/) --- news, data and information on GIS
+
+[GPS: An Introduction to Satellite Navigation](https://www.youtube.com/playlist?list=PLGvhNIiu1ubyEOJga50LJMzVXtbUq6CPo) ("GPS MOOC"). Stanford University. 2014.
+
+[Living Atlas of the World](https://livingatlas.arcgis.com/) --- the foremost collection of global geographic information from Esri and its partners, including maps, apps, and data layers used to support critical decision making.
+
+[Map Projections](http://geology.isu.edu/wapi/geostac/Field_Exercise/topomaps/map_proj.htm) --- Geospatial Training and Analysis
+
+[Mapping our Changing World](https://www.e-education.psu.edu/geog160/) --- An e-class in geography by Xi Liu at Penn State University
+
+[National Geospatial-Intelligence Agency](https://www.nga.mil)
+
+[Projections and Coordinate Systems](https://courses.washington.edu/gis250/lessons/projection/)
+
+[The Field Calculator Unleashed (pdf)](https://www.esri.com/news/arcuser/0405/files/fieldcalc_1.pdf)
+
+[The GIS Encyclopedia](http://wiki.gis.com/wiki/index.php/New_to_GIS)
+
+[The World Factbook](https://www.cia.gov/library/publications/the-world-factbook/docs/refmaps.html) --- Regional and world maps provided by the United States Central Intelligence Agency
+
+[UNAVCO](https://www.unavco.org/unavco.html)
+
+***
+
+### Podcasts
+
+[Esri and the Science of Where](https://www.esri.com/about/newsroom/podcast/) ---  this podcast is to help executives and leaders in the industry and government understand how modern GIS technology enables digital transformation and drives growth.
+
+[Geodorable](http://cast.rocks/hosting/6022/feeds/1I9KO.html) --- by New Zealanders Chris Morris & Mark Thompson.
+
+[VerySpatial](https://veryspatial.com/) --- your source for information on Geography and geospatial technologies.
+
+***
+
+### Online Articles and Textbooks
+
+[Geographic Information Systems, First Edition, 1991](https://www.wiley.com/legacy/wileychi/gis/volumes.html) ---  Copyright &copy; John Wiley & Sons 1991. Converted to HTML by Jim Harper. Last updated January 16, 2001.
+
+[Geometric Aspects of Mapping](http://kartoweb.itc.nl/geometrics/index.html) --- provides information on concepts of spatial referencing, including a brief introduction followed by more in-depth notes on coordinate systems, reference surfaces, map projections and coordinate transformations. International Institute for Geo-Information Science and Earth Observation (ITC), Enschede, 2009.
+
+[GIS as an Integrating Technology](https://foote.geography.uconn.edu/gcraft/contents.html) --- materials by Kenneth E. Foote and Margaret Lynch, The Geographer's Craft Project, Department of Geography, The University of Colorado at Boulder. Copyright 2000--2015.
+
+[GPS: The Global Positioning System](https://www.gps.gov/). Maintained by the National Coordination Office for Space-Based Positioning, Navigation, and Timing. 2018.
+
+[GPS Basics](https://learn.sparkfun.com/tutorials/gps-basics). Written by Aaron Weiss (a1ronzo). Available online at SparkFun Electronics. Accessed 18 January 2018.
+
+[GPS Tutorial](http://www.trimble.com/gps_tutorial/). Trimble Inc. 2018.
+
+[Intro to GIS and Spatial Analysis](https://mgimond.github.io/Spatial/index.html) --- a compilation of lecture notes into an online textbook on data manipulation & visualization and exploratory spatial data analysis by Manuel Gimond
+
+[Johannes Kepler: His Life, His Laws and Times](https://www.nasa.gov/kepler/education/johannes). National Aeronautics and Space Administration (NASA). 2017.
+
+[The Global Positioning System](https://foote.geography.uconn.edu/gcraft/notes/gps/gps_f.html). Written by Peter H. Dana, Department of Geography, University of Texas at Austin. 1994. Provided by Ken Foote, The Geographer's Craft, Department of Geography, University of Colorado at Boulder. 2015.
+
+[The Nature of Geographic Information](https://www.e-education.psu.edu/natureofgeoinfo/) --- an open-access textbook to promote understanding of the Geographic Information Science and Technology enterprise.
