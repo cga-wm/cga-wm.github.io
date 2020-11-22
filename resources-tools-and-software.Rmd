@@ -4,23 +4,33 @@ title: "Resources | Tools and Software"
 
 ***
 
-[ArcGIS Online](https://www.arcgis.com/index.html) --- a part of the Esri Geospatial Cloud, ArcGIS Online (AGOL) is a complete mapping and analysis solution that you can access directly through your browser (see [Supported Browsers](https://doc.arcgis.com/en/arcgis-online/reference/browsers.htm)).
+[ArcGIS Online](https://www.arcgis.com/index.html)
+:   A part of the Esri Geospatial Cloud, ArcGIS Online (AGOL) is a complete mapping and analysis solution that you can access directly through your browser (see [Supported Browsers](https://doc.arcgis.com/en/arcgis-online/reference/browsers.htm)).
 
-[EnviroAtlas](https://www.epa.gov/enviroatlas) --- interactive tools that allow users to discover, analyze, and download data and maps related to ecosystem services, or the benefits people receive from nature
+[EnviroAtlas](https://www.epa.gov/enviroatlas)
+:   Provides interactive tools that allow users to discover, analyze, and download data and maps related to ecosystem services, or the benefits people receive from nature.
 
-[GeoDa](https://geodacenter.github.io/) --- a free and open source software tool that provides a user-friendly graphical user interface for exploratory spatial data analysis developed by Dr. Luc Anselin and his team. GeoDa runs on Windows, MacOSX and Linux (Ubuntu).
+[GeoDa](https://geodacenter.github.io/)
+:   A free and open source software tool that provides a user-friendly graphical user interface for exploratory spatial data analysis developed by Dr. Luc Anselin and his team.
+    GeoDa runs on Windows, MacOSX and Linux (Ubuntu).
 
-[GeoHack](https://tools.wmflabs.org/geohack/) --- a modified version of map sources from Egil Kvaleberg's gis extension.
-It is designed to do simple HTML replacements of a template on Wikipedia and serve it to the client.
-It is used by Wikipedia to provide links to various mapping services, when a user clicks on a link with geographical coordinates.
-For example, [click here](https://geohack.toolforge.org/geohack.php?params=37_16_11_N_76_42_58_W) to GeoHack the Swem Library.
+[GeoHack](https://tools.wmflabs.org/geohack/)
+:   A modified version of map sources from Egil Kvaleberg's gis extension.
+    It is designed to do simple HTML replacements of a template on Wikipedia and serve it to the client.
+    It is used by Wikipedia to provide links to various mapping services, when a user clicks on a link with geographical coordinates.
+    For example, [click here](https://geohack.toolforge.org/geohack.php?params=37_16_11_N_76_42_58_W) to GeoHack the Swem Library.
 
-[GEOLocate Web Application](http://www.geo-locate.org/web/WebGeoref.aspx) --- simply type in your locality description and get back georeferenced results.
+[GEOLocate Web Application](http://www.geo-locate.org/web/WebGeoref.aspx)
+:   Simply type in your locality description and get back georeferenced results.
 
-[Google Earth](https://www.google.com/earth/) --- software that renders a 3D representation of Earth based on satellite imagery based on the superimposition of images obtained from satellite imagery, aerial photography, and GIS data onto a 3D globe, allowing users to see cities and landscapes from various angles.
+[Google Earth](https://www.google.com/earth/)
+:   Software that renders a 3D representation of Earth based on satellite imagery based on the superimposition of images obtained from satellite imagery, aerial photography, and GIS data onto a 3D globe, allowing users to see cities and landscapes from various angles.
 
-[OpenStreetMap.org](https://www.openstreetmap.org/#map=15/37.2707/-76.7191) --- a collaborative project to create a free editable map of the world.
+[OpenStreetMap.org](https://www.openstreetmap.org/#map=15/37.2707/-76.7191)
+:   A collaborative project to create a free editable map of the world.
 
-[ReefBase](http://www.reefbase.org/) ---  A Global Information System for Coral Reefs.
+[ReefBase](http://www.reefbase.org/)
+:   A Global Information System for Coral Reefs.
 
-[USGS Data and Tools](https://www.usgs.gov/products/data-and-tools/overview) --- digital information provided in a format suitable for direct input to software that can analyze its meaning in the scientific, engineering, or business context.
+[USGS Data and Tools](https://www.usgs.gov/products/data-and-tools/overview)
+:   Digital information provided in a format suitable for direct input to software that can analyze its meaning in the scientific, engineering, or business context.
