@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="cga-wm.github.io" />
 
 
-<title>Center for Geospatial Analysis</title>
+<title>How To Locate Your Google Places</title>
 
 <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -331,17 +330,27 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Center for Geospatial Analysis</h1>
-<h4 class="author">cga-wm.github.io</h4>
+<h1 class="title toc-ignore">How To Locate Your Google Places</h1>
 
 </div>
 
 
 <hr />
-<p>The Center for Geospatial Analysis at William &amp; Mary (CGA-WM) is now on GitHub!</p>
-<p>The CGA is William &amp; Mary’s comprehensive resource for those interested in learning and utilizing geographic information systems (GIS). We offer students and faculty access to the hardware, software, and expertise they need to make the most of this powerful mapping tool.</p>
-<p>Our courses are open to undergraduate and graduate students in any program, and we also host free workshops for faculty, staff, and students. Whether you’re in the arts or sciences, business or law, learning how to best visualize, analyze, and share spatial data can greatly improve the quality and value of any project or proposal.</p>
-<p>Updated: 2020-11-21</p>
+<ol style="list-style-type: decimal">
+<li>In Google Maps, save locations to starred places
+<ul>
+<li><a href="https://support.google.com/maps/answer/3184808?co=GENIE.Platform%3DDesktop&amp;hl=en">Google Maps Help</a></li>
+</ul></li>
+<li>Open <a href="https://takeout.google.com/">Google Takeout</a></li>
+<li>Unselect everything except for <strong>Maps (your places)</strong></li>
+<li>Choose your delivery method (e.g., email link) and file type (e.g., compressed zip)</li>
+<li>Archive will save as a <a href="https://geojson.org/">GeoJSON</a></li>
+<li>Open GeoJSON in a GIS or other geospatial application
+<ul>
+<li><a href="https://opengislab.com/blog/2018/11/8/adding-and-viewing-geojson-in-qgis-and-arcgis">Adding and Viewing GeoJSON in QGIS and ArcGIS (open.gis.lab)</a></li>
+<li><a href="https://pro.arcgis.com/en/pro-app/tool-reference/conversion/json-to-features.htm">JSON to Features (Esri ArcGIS Pro)</a></li>
+</ul></li>
+</ol>
 
 <footer class="myfoot">
     <div class="foot-text">
