@@ -47,6 +47,9 @@ title: "Resources | General Info"
 [Projections and Coordinate Systems](https://courses.washington.edu/gis250/lessons/projection/)
 :   The University of Washington Spatial Technology, GIS, and Remote Sensing in the School of Forest Resources (2010).
 
+[State Plane Coordinate System](https://www.ret3.net/p/state-plane-coordinate-system.html)
+:   Rich King's county-level State Plane coordinate system reference also available as an MS Excel spreadsheet.
+
 [The Field Calculator Unleashed (pdf)](https://www.esri.com/news/arcuser/0405/files/fieldcalc_1.pdf)
 :   by Tom Neer, EDAW, Inc.
     ArcUser, pp 51--55 (2005).
