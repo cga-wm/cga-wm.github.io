@@ -122,7 +122,7 @@ In this podcast, RJ summarizes the work of [Tan et al. (2020)](https://doi.org/1
 </div>
 <div class="col-9">
 <h2 class="xs-mb1">November 22 | Fall 2020</h2>
-<h1 class="xs-mb2">"Data and GIS"</h1>
+<h1 class="xs-mb2">"Geoethics"</h1>
 <div class="episode-player">
 <audio controls="">
 <source src="https://drive.google.com/uc?export=view&id=1aLkLLzpaM7o5DuzhhGnOktloi0xVcluY" type="audio/mpeg">
@@ -142,7 +142,7 @@ In this podcast, Haley and Dorian provide an open discussion of the geoethics be
 </div>
 <div class="col-9">
 <h2 class="xs-mb1">November 14 | Fall 2020</h2>
-<h1 class="xs-mb2">"Fireside Chat"</h1>
+<h1 class="xs-mb2">"Fireside Chats"</h1>
 <div class="episode-player">
 <audio controls="">
 <source src="https://drive.google.com/uc?export=view&id=1lP0MwooA-hYrFPnG88WBaFYW4eMsGx7O" type="audio/mpeg">
@@ -168,7 +168,7 @@ In this podcast, the fictitious host, Caroline Santos, interviews renowned GIS e
 <source src="https://drive.google.com/uc?export=view&id=1bxHZkDxHMMNF3LiX4Qp-mzjR2_QqDY_x" type="audio/mpeg">
 <p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1bxHZkDxHMMNF3LiX4Qp-mzjR2_QqDY_x">link</a> instead.</p>
 </audio>
-In this podcast, Lindsay and Sarah Grace discuss the challenges and benefits of open data in reference to this [Iain Brown (2006)](https://doi.org/10.1016/j.envsoft.2005.07.011) article.
+In this podcast, Lindsey and Sarah Grace discuss the challenges and benefits of open data in reference to this [Iain Brown (2006)](https://doi.org/10.1016/j.envsoft.2005.07.011) article.
 </div>
 </div>
 </article>
