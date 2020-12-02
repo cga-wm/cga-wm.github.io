@@ -56,30 +56,4 @@ Let's take a moment to highlight the projects from the second half of the semest
 
 ## Geoethics
 There certainly are broad applications for geofencing and each has some interesting ethical concerns.
-Here is a selection of podcasts and [vlogs](https://www.youtube.com/playlist?list=PLiOhBg8WdMaI6C5r57ZhFcJzjegflsI4A) that examine some of these issues in more detail.
-
-<div class="podcast">
-<figure>
-<figcaption>Listen to Geoethics Podcast by Jeremy</figcaption>
-<audio controls="">
-<source src="https://drive.google.com/uc?export=view&id=1gPObjmfQvihGm3-5P6a-Aw4vBMwTw0s8" type="audio/mpeg">
-<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1gPObjmfQvihGm3-5P6a-Aw4vBMwTw0s8">link</a> instead.</p>
-</audio>
-</figure>
-
-<figure>
-<figcaption>Listen to GIS Pod Episode 1 by Sean</figcaption>
-<audio controls="">
-<source src="https://drive.google.com/uc?export=view&id=1vGsZAGdYBBq4EYWyKVILoZ9nwJNkD60z" type="audio/mpeg">
-<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1vGsZAGdYBBq4EYWyKVILoZ9nwJNkD60z">link</a> instead.</p>
-</audio>
-</figure>
-
-<figure>
-<figcaption>Listen to "Boring in the Morning" by Jake</figcaption>
-<audio controls="">
-<source src="https://drive.google.com/uc?export=view&id=1cwc199CVkHGXp4Vp3zDifx3zOMWWPBWo" type="audio/mpeg">
-<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1cwc199CVkHGXp4Vp3zDifx3zOMWWPBWo">link</a> instead.</p>
-</audio>
-</figure>
-</div>
+Check out the selection of [podcasts and vlogs](https://cga-wm.github.io/course/adv-gis/2020-08-03-podcasts-vlogs.html) that examine some of these issues in more detail.

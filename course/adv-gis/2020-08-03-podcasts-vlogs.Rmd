@@ -2,15 +2,178 @@
 title: "Podcasts and Vlogs"
 date: 2020-08-03
 url: 2020-08-03-podcasts-vlogs.html
-summary: "Sometimes creativity and expression need a new medium."
+summary: "Sometimes creativity and expression need a new medium. A new section has been added for web tutorials."
 ---
+
+All web tutorials, vlogs, and podcasts are licensed for use by their respective authors under the guidelines of [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) unless otherwise noted.
+
+***
+
+### Web Tutorials
+
+[ArcPro Model Builder](https://unstable-ground-consulting.github.io/Landslide-Susceptibility/How-To/)
+:   Check out this simple guide to using ArcGIS Pro's ModelBuilder by Jake Werner.
+
+[How to Basemap in Q](https://slopeconsulting.github.io/)
+:   Check out this tutorial by Sean O'Rahilly on how to add a basemap to a map project in QGIS.
+
+[Spatial Joins](https://tunisda.weebly.com/tutorials.html)
+:   Check out this tutorial by Ian, Morgan, and Michele on how to join crime offenses to different neighborhoods in Pittsburgh, PA.
+
+[Tabulate Intersection](https://tabintersectionadvgis.weebly.com/)
+:   Check out this tutorial by Lauren Kohout on how to use the Tabulate Intersection geoprocessing tool to calculate the amount of intersection between two feature classes or variables of interest.
+
+***
 
 ### Vlogs
 [Advanced GIS Student Vlog Series Playlist (YouTube)](https://www.youtube.com/playlist?list=PLiOhBg8WdMaI6C5r57ZhFcJzjegflsI4A)
 
+***
+
+
 ### Podcasts
 
 <div class="card">
+<!-- Podcast by Sean -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">November 24 | Fall 2020</h2>
+<h1 class="xs-mb2">"The Geospatial Day Show"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1UmYwZjzAI_UnXxd3IlGgIGtdKV53xO18" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1UmYwZjzAI_UnXxd3IlGgIGtdKV53xO18">link</a> instead.</p>
+</audio>
+In this podcast, Sean defines geoethics and examines the ethical challenges associated with a few recent applications of GIS and data science, including articles by [Leow (2019)](https://towardsdatascience.com/analysis-of-tweets-on-the-hong-kong-protest-movement-2019-with-python-a331851f061), [Lee and Lau (2020)](https://www.scmp.com/news/hong-kong/law-and-crime/article/3097478/national-security-law-google-urges-hong-kong-police), [Purnell (2020)](https://www.wsj.com/articles/whatsapp-to-suspend-processing-law-enforcement-requests-for-user-data-in-hong-kong-11594034580), and [Amnesty.org (2020)](https://www.amnesty.org/en/latest/news/2020/07/hong-kong-national-security-arrests-over-social-media-posts-violate-freedom-of-expression/).
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast by Mayada -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">November 24 | Fall 2020</h2>
+<h1 class="xs-mb2">"Geoethics and Diversity and Inclusion"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1dIXQ2pyBwrw9TGDW_aauwXrpC9Y5H9Og" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1dIXQ2pyBwrw9TGDW_aauwXrpC9Y5H9Og">link</a> instead.</p>
+</audio>
+In this podcast, Mayada addresses the challenges of diversity and inclusion as a woman of color pursuing a career in STEM and challenges her peers to think about diversity and inclusion when considering geoethics in their own personal and professional lives.
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast by Jerry -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">November 23 | Fall 2020</h2>
+<h1 class="xs-mb2">"Geoethics of Geofencing"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1aDjYelx00hpy_GVwHIvJvm194QxTy5Ym" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1aDjYelx00hpy_GVwHIvJvm194QxTy5Ym">link</a> instead.</p>
+</audio>
+In this podcast, Jerry examines the ethical concerns surrounding the use of geofencing on our mobile devices.
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast by RJ -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">November 23 | Fall 2020</h2>
+<h1 class="xs-mb2">"IoT Geofencing for COVID-19 Home Quarantine Enforcement"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1Fk2ZNPde_f9YOKdqAgeLQaF7p0qqpIOZ" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1Fk2ZNPde_f9YOKdqAgeLQaF7p0qqpIOZ">link</a> instead.</p>
+</audio>
+In this podcast, RJ summarizes the work of [Tan et al. (2020)](https://doi.org/10.1109/IOTM.0001.2000097) regarding the use of geofencing technology for home quarantine measures during the COVID-19 pandemic.
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast by Haley and Dorian -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">November 22 | Fall 2020</h2>
+<h1 class="xs-mb2">"Data and GIS"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1aLkLLzpaM7o5DuzhhGnOktloi0xVcluY" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1aLkLLzpaM7o5DuzhhGnOktloi0xVcluY">link</a> instead.</p>
+</audio>
+In this podcast, Haley and Dorian provide an open discussion of the geoethics behind articles by [Patino (2020)](https://www.bloomberg.com/news/articles/2020-03-31/how-to-make-people-stay-home) and [Carman (2017)](https://www.theverge.com/2017/4/13/15289178/snapchat-ad-tracking-snap-to-store-geofilters).
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast by Caroline -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">November 14 | Fall 2020</h2>
+<h1 class="xs-mb2">"Fireside Chat"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1lP0MwooA-hYrFPnG88WBaFYW4eMsGx7O" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1lP0MwooA-hYrFPnG88WBaFYW4eMsGx7O">link</a> instead.</p>
+</audio>
+In this podcast, the fictitious host, Caroline Santos, interviews renowned GIS expert and (someday) President of the United States, Dr. Lauren Bartlett, and Senator of New Jersey, Meg Vinick, about the White House's "Take Back the Map" initiative.
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast by Lindsay and Sarah Grace -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">October 17 | Fall 2020</h2>
+<h1 class="xs-mb2">"Data and GIS"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1bxHZkDxHMMNF3LiX4Qp-mzjR2_QqDY_x" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1bxHZkDxHMMNF3LiX4Qp-mzjR2_QqDY_x">link</a> instead.</p>
+</audio>
+In this podcast, Lindsay and Sarah Grace discuss the challenges and benefits of open data in reference to this [Iain Brown (2006)](https://doi.org/10.1016/j.envsoft.2005.07.011) article.
+</div>
+</div>
+</article>
+</div>
+
 <!-- Podcast by Eric -->
 <div class="card-body">
 <article class="row episode">
