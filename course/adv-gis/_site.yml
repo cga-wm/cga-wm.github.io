@@ -5,8 +5,6 @@ navbar:
     right:
         - text: Lectures
           menu:
-          - text: Design
-            href: lectures/design
           - text: Geoethics
             href: lectures/geoethics
           - text: Programming
