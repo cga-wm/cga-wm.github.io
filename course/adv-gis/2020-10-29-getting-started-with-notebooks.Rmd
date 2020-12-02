@@ -109,6 +109,9 @@ To get the most out of them, I recommend completing them in the following order:
 1. [Geoprocessing with arcpy][nb7]
 
     An introduction to arcpy and a walkthrough for solving a common task of dealing with raster data in ArcGIS Online Notebooks.
+1. [RevealJS Presentation Notebook][nb8]
+
+    Tutorial on how to convert your Notebook into a web-based slide show.
 
 [nb0]: https://wm-gis.maps.arcgis.com/home/item.html?id=c8cc47cf8c0f4f5aadcff34aed8b48b3
 [nb1]: https://wm-gis.maps.arcgis.com/home/item.html?id=0be90664f6e345709832b6cc60361bff
@@ -118,6 +121,7 @@ To get the most out of them, I recommend completing them in the following order:
 [nb5]: https://wm-gis.maps.arcgis.com/home/item.html?id=31b93985ce284cb1876c8483cab78366
 [nb6]: https://wm-gis.maps.arcgis.com/home/item.html?id=0c4825b7e0f04fa6afba2b108eb338a4#overview
 [nb7]: https://wm-gis.maps.arcgis.com/home/item.html?id=d81dd1f12f574b39b248a6311c619a7b
+[nb8]: https://wm-gis.maps.arcgis.com/home/item.html?id=913ac54ed2fb4847a4a41cfc56a59549
 
 ***
 
