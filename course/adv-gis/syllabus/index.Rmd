@@ -1,7 +1,7 @@
 ---
 title: "Syllabus | Advanced GIS Analysis and Programming"
 author: "Center for Geospatial Analysis"
-date: "Fall 2020"
+date: "Spring 2021"
 ---
 
 ****
@@ -16,9 +16,9 @@ Activities develop GIS analysis skills with examples from government, social sci
 
 Catalog Number
 
-:   - GIS 420
+:   - GIS 420/520
     - Section 1
-    - CRN 14652
+    - CRN 23058/
 
 Prerequisites
 
