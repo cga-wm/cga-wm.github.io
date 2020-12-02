@@ -12,13 +12,7 @@ navbar:
           - text: Programming
             href: lectures/programming
         - text: Syllabus
-          menu:
-          - text: Fall 2020
-            href: syllabus/index.html
-          - text: Summer 2020
-            href: syllabus/advgis-ay1920-summer-syllabus.html
-          - text: Spring 2020
-            href: syllabus/advgis-ay1920-spring-syllabus.html
+          href: syllabus/index.html
         - text: Blog
           href: blog.html
         - text: CGA-WM
