@@ -103,6 +103,10 @@ output:
 [Google Dataset Search](https://toolbox.google.com/datasetsearch)
 :   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
 
+[Google Public Data Directory](https://www.google.com/publicdata/directory)
+:   A repository for public data.
+    Quickly retrieve geographic coordinates for world countries ([countries.csv](https://developers.google.com/public-data/docs/canonical/countries_csv)) and US states ([states.csv](https://developers.google.com/public-data/docs/canonical/states_csv)).
+
 [Harmonized World Soil Database v 1.2](https://webarchive.iiasa.ac.at/Research/LUC/External-World-soil-database/HTML/)
 :   Global elevation, slope, and aspect data in 5 min and 30 arc second resolutions.
 
@@ -111,6 +115,11 @@ output:
 
 [International Best Track Archive for Climate Stewardship (IBTrACS)](https://www.ncdc.noaa.gov/ibtracs/)
 :   Tropical cyclone (TC) best track data already exist as individual storm tracks at other agencies and IBTrACS merges these data sets into a worldwide TC database available in netCDF, CSV, and shapefile formats.
+
+[International IDEA](https://www.idea.int/)
+:   The International Institute for Democracy and Electoral Assistance is an intergovernmental organization that works to support and strengthen democratic institutions and processes around the world, to develop sustainable, effective and legitimate democracies.
+    Browse their databases, which focus on three main impact areas: electoral processes, constitution-building, political participation and representation.
+    They also address issues of gender, diversity, and conflict and security.
 
 [ISRIC SOTER Database](https://www.isric.org/projects/soil-and-terrain-soter-database-programme)
 :   Soil and terrain maps for South America, Africa (parts), Europe (parts), and Asia (parts) from 1986 to 2016.
@@ -125,7 +134,7 @@ output:
 :   Wikipedia guide of GIS data sources (including some geoportals) that provide information that can be used in GIS and spatial databases for purposes of geospatial analysis and cartographic mapping.
 
 [Movebank](https://www.movebank.org/cms/movebank-main)
-:   Hosted by the Max Planck Institute of Animal Behavior in coordination with the North Carolina Museum of Natural Sciences, the Ohio State University and the University of Konstanz, MoveBank is a free online platform that helps researchers manage, share, analyze and archive animal movement data.
+:   Hosted by the Max Planck Institute of Animal Behavior in coordination with the North Carolina Museum of Natural Sciences, the Ohio State University and the University of Konstanz, Movebank is a free online platform that helps researchers manage, share, analyze and archive animal movement data.
 
 [National Land Cover Database (NLDC)](https://www.mrlc.gov/index.php)
 :   Provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
