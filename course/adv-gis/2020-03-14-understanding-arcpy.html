@@ -15,7 +15,6 @@
 
 <title>Understanding Arcpy</title>
 
-<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -38,27 +37,26 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -67,9 +65,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -418,28 +416,28 @@ $(document).ready(function () {
 <h4>Getting Started</h4>
 <p>Okay, so every programmer knows that the worst way to write anything is just to open up your handy-dandy, trusty-rusty text editor and start plonking down code into that little keyboard of yours. The syntax of programming languages, library functions, and methods are just too specific and complicated to memorize well enough that you get it perfect on your first try. Plus, when you write a huge thing and then realize it’s broken, it’s a lot harder to find the broken part than if you just write something small that’s broken. Assuming that our first try will be wrong, let’s use ArcPro’s built-in <strong>Python shell</strong>, which you can find by clicking “Python” under the Analysis tab, to test everything we do on a really granular level before we throw it to the dogs. If you want to follow along, have a look at <a href="scripts/crit_rain_thresh.py">this script</a> by Dr. Davis.</p>
 <p>The first thing we need to do is load in the project and set up where our data are coming and going from. <code>arcpy</code> is available by default, but we should also <code>import os</code> before we do anything.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># Setting up my folders</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">&quot;CURRENT&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>base_dir <span class="op">=</span> os.path.dirname(aprx.filePath)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>out_dir <span class="op">=</span> os.path.join(base_dir, <span class="st">&quot;Output&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Setting up my folders</span></a>
+<a class="sourceLine" id="cb1-2" title="2">aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">&quot;CURRENT&quot;</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3">base_dir <span class="op">=</span> os.path.dirname(aprx.filePath)</a>
+<a class="sourceLine" id="cb1-4" title="4">out_dir <span class="op">=</span> os.path.join(base_dir, <span class="st">&quot;Output&quot;</span>)</a></code></pre></div>
 <p>This is pretty self-explanatory. The first line is a constructor for an ArcGISProject class. Classes are the “objects” of object-oriented programming; they allow programmers to represent structures and perform operations on them in a way that can be extended to many different instances of a single type of structure, or more specific versions of that structure. The important thing to understand here is that now your code has set aside space to store an <code>ArcGISProject</code> and filled it with a class representing the current project. We are also using OS functions to get directory names and file paths. This is because different operating systems have different naming schemes for their file paths, so rather than try and make something that works for everyone, we’ll defer to the OS and let it handle file paths the way it wants to. Our output directory will be set to a subdirectory of the base directory called <code>Output</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co"># Define constants</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>k_pi <span class="op">=</span> <span class="fl">3.14159</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>gamma_r_nm3 <span class="op">=</span> <span class="fl">20000.0</span>  <span class="co"># unit weight of soil, N/m3</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>gamma_w_nm3 <span class="op">=</span> <span class="fl">10000.0</span>  <span class="co"># unit weight of water, N/m3</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="co"># Define input rasters</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>lands_h <span class="op">=</span> <span class="st">&quot;soilmu_a_aoi_utm_h&quot;</span>       <span class="co"># depth of regolith, m</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>lands_phi <span class="op">=</span> <span class="st">&quot;soilmu_a_aoi_utm_psi&quot;</span>   <span class="co"># internal friction angle, deg</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>lands_c <span class="op">=</span> <span class="st">&quot;soilmu_a_aoi_utm_c&quot;</span>       <span class="co"># soil cohesion, Pa</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>lands_theta <span class="op">=</span> <span class="st">&quot;collbran_slope&quot;</span>       <span class="co"># hillslope angle, deg</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a><span class="co"># Define input water depth, m</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>water_h <span class="op">=</span> <span class="fl">.2</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Define constants</span></a>
+<a class="sourceLine" id="cb2-2" title="2">k_pi <span class="op">=</span> <span class="fl">3.14159</span></a>
+<a class="sourceLine" id="cb2-3" title="3">gamma_r_nm3 <span class="op">=</span> <span class="fl">20000.0</span>  <span class="co"># unit weight of soil, N/m3</span></a>
+<a class="sourceLine" id="cb2-4" title="4">gamma_w_nm3 <span class="op">=</span> <span class="fl">10000.0</span>  <span class="co"># unit weight of water, N/m3</span></a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co"># Define input rasters</span></a>
+<a class="sourceLine" id="cb2-7" title="7">lands_h <span class="op">=</span> <span class="st">&quot;soilmu_a_aoi_utm_h&quot;</span>       <span class="co"># depth of regolith, m</span></a>
+<a class="sourceLine" id="cb2-8" title="8">lands_phi <span class="op">=</span> <span class="st">&quot;soilmu_a_aoi_utm_psi&quot;</span>   <span class="co"># internal friction angle, deg</span></a>
+<a class="sourceLine" id="cb2-9" title="9">lands_c <span class="op">=</span> <span class="st">&quot;soilmu_a_aoi_utm_c&quot;</span>       <span class="co"># soil cohesion, Pa</span></a>
+<a class="sourceLine" id="cb2-10" title="10">lands_theta <span class="op">=</span> <span class="st">&quot;collbran_slope&quot;</span>       <span class="co"># hillslope angle, deg</span></a>
+<a class="sourceLine" id="cb2-11" title="11"></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="co"># Define input water depth, m</span></a>
+<a class="sourceLine" id="cb2-13" title="13">water_h <span class="op">=</span> <span class="fl">.2</span></a></code></pre></div>
 <p>Here we create variables to store our constants (which are needed for the equation) and the names of our inputs. In Dr. Davis’s case, these were datasets about Collbran, CO, but obviously that’s only for this application. We’re storing these input names in variables so that, when we turn this into a toolbox, we can easily fill those variables with whatever inputs the user provides without having to rewrite any code. We’re anticipating portability from the outset!</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co"># Create radian version of slope</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>theta_rad <span class="op">=</span> arcpy.sa.Times(lands_theta, k_pi<span class="op">/</span><span class="fl">180.0</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>phi_rad <span class="op">=</span> arcpy.sa.Times(lands_psi, k_pi<span class="op">/</span><span class="fl">180.0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Create radian version of slope</span></a>
+<a class="sourceLine" id="cb3-2" title="2">theta_rad <span class="op">=</span> arcpy.sa.Times(lands_theta, k_pi<span class="op">/</span><span class="fl">180.0</span>)</a>
+<a class="sourceLine" id="cb3-3" title="3">phi_rad <span class="op">=</span> arcpy.sa.Times(lands_psi, k_pi<span class="op">/</span><span class="fl">180.0</span>)</a></code></pre></div>
 <p>What we’re doing here is converting our slope and internal friction angle rasters from degrees to radians, because our model uses those darn trig functions, which are built into Arc (👍), but only take radians (👎). Remember that we defined <code>k_pi</code> above as a truncated version of pi. π radians is 180 degrees, so we can just do <code>lands_theta = lands_theta * k_pi/180</code>, right?</p>
 <p>WRONG!</p>
 <p><code>lands_theta</code> is just a text string containing the name of our raster, and we can’t multiply that by any floating-point numbers anyway. We need to multiply <em>every cell</em> of these rasters by <code>k_pi/180</code>, and for that, we must defer to the <code>arcpy.sa.Times</code> function. It’s verbose, but what can you do.</p>
@@ -453,172 +451,172 @@ F_s = \frac{\tan \phi}{\tan \theta} + \frac{C}{\gamma_r * H * \sin \theta * \cos
 F_s = F_f + F_c + F_w
 \]</span></p>
 <p>As you can see above, he’s dubbed the three fractions <code>Ff</code>, <code>Fc</code>, and <code>Fw</code>. It’ll be easier for us to calculate those three on their own first and then put them into the final equation. Let’s start things out easy with <code>Ff</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># STEP - Calculate Ff</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>ff <span class="op">=</span> arcpy.sa.Divide(arcpy.sa.Tan(phi_rad), arcpy.sa.Tan(theta_rad))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># STEP - Calculate Ff</span></a>
+<a class="sourceLine" id="cb4-2" title="2">ff <span class="op">=</span> arcpy.sa.Divide(arcpy.sa.Tan(phi_rad), arcpy.sa.Tan(theta_rad))</a></code></pre></div>
 <p><code>Ff</code> is the simplest one. As I said above, since we’re doing calculations on geospatial datasets, the division sign isn’t going to do what we want here, so we have to call some built-in ArcPy functions. Luckily, they already have everything we need built-in so it’s really not too bad.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co"># STEP - Calculate Fc</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># STEP - Calculate Fc</span></a></code></pre></div>
 <p>Here, things start to get crazy. Let’s go line by line.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>sin_cos <span class="op">=</span> arcpy.sa.Times(arcpy.sa.Sin(theta_rad), arcpy.sa.Cos(theta_rad))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1">sin_cos <span class="op">=</span> arcpy.sa.Times(arcpy.sa.Sin(theta_rad), arcpy.sa.Cos(theta_rad))</a></code></pre></div>
 <p>What we’re doing here is making the <code>(sin θ) * (cos θ)</code> part of the equation. It appears in both <code>Fc</code> and <code>Fw</code>, so making it its own thing now will help us down the line too.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co"># Soil depth vertical (influenced by gravity)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>big_z <span class="op">=</span> arcpy.sa.Divide(lands_h, arcpy.sa.Cos(theta_rad))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># Soil depth vertical (influenced by gravity)</span></a>
+<a class="sourceLine" id="cb7-2" title="2">big_z <span class="op">=</span> arcpy.sa.Divide(lands_h, arcpy.sa.Cos(theta_rad))</a></code></pre></div>
 <p>We need to calculate the vertical soil depth here. The soil depth measured from our raster <em>is</em> the distance from the soil surface to the bedrock, but the problem is that it’s measured <em>perpendicular</em> to the slope of the surface. This is fine if we’re working with totally flat land, since perpendicular to that would just be straight down, but we’re not. So, since we already have all the slopes, we can use cosine to get the vertical slope. If that explanation wasn’t sufficient, check out this diagram.</p>
 <div class="figure">
-<img src="images/2020-03-14_slope_surface_diagram.png" alt="" />
+<img src="images\2020-03-14_slope_surface_diagram.png" alt="Figure. Diagram showing regolith surface, bedrock surface, measured height and slope angle for getting vertical height." />
 <p class="caption"><strong>Figure.</strong> Diagram showing regolith surface, bedrock surface, measured height and slope angle for getting vertical height.</p>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>h_sin_cos <span class="op">=</span> arcpy.sa.Times(big_z, sin_cos)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>c_gr <span class="op">=</span> arcpy.sa.Divide(lands_c, gamma_r_nm3)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>fc <span class="op">=</span> arcpy.sa.Divide(c_gr, h_sin_cos)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1">h_sin_cos <span class="op">=</span> arcpy.sa.Times(big_z, sin_cos)</a>
+<a class="sourceLine" id="cb8-2" title="2">c_gr <span class="op">=</span> arcpy.sa.Divide(lands_c, gamma_r_nm3)</a>
+<a class="sourceLine" id="cb8-3" title="3">fc <span class="op">=</span> arcpy.sa.Divide(c_gr, h_sin_cos)</a></code></pre></div>
 <p>Now we’re back into the simple stuff. We multiply our new <code>H</code> by <code>sin_cos</code> to get <code>H * (sin θ) * (cos θ)</code> and store it in <code>h_sin_cos</code>. Then we do the <code>C / γr</code> portion of the equation, store it in <code>c_gr</code>, and then divide <code>h_sin_cos</code> by <code>c_gr</code> to get <code>Fc</code>.</p>
 <p>We’re in the home stretch! Time to do do <code>Fw</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co"># Step - Calculate Fw</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="co"># Pressure head parallel to hillslope</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>ls_psit <span class="op">=</span> arcpy.sa.Times(water_h, arcpy.sa.Cos(theta_rad))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># Step - Calculate Fw</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="co"># Pressure head parallel to hillslope</span></a>
+<a class="sourceLine" id="cb9-3" title="3">ls_psit <span class="op">=</span> arcpy.sa.Times(water_h, arcpy.sa.Cos(theta_rad))</a></code></pre></div>
 <p>It’s time to calculate <code>ψt</code>. To do this, we have to do something similar to what we did before. We need the water pressure head parallel to the hillslope, so we get that by multiplying the cosine of the slope by the depth to water.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a>g_wr <span class="op">=</span> gamma_w_nm3<span class="op">/</span>gamma_r_nm3</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>pgwr <span class="op">=</span> arcpy.sa.Times(ls_psit, g_wr)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>pgwrt <span class="op">=</span> arcpy.sa.Times(pgwr, arcpy.sa.Tan(phi_rad))</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>fw <span class="op">=</span> arcpy.sa.Divide(pgwrt, h_sin_cos)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1">g_wr <span class="op">=</span> gamma_w_nm3<span class="op">/</span>gamma_r_nm3</a>
+<a class="sourceLine" id="cb10-2" title="2">pgwr <span class="op">=</span> arcpy.sa.Times(ls_psit, g_wr)</a>
+<a class="sourceLine" id="cb10-3" title="3">pgwrt <span class="op">=</span> arcpy.sa.Times(pgwr, arcpy.sa.Tan(phi_rad))</a>
+<a class="sourceLine" id="cb10-4" title="4">fw <span class="op">=</span> arcpy.sa.Divide(pgwrt, h_sin_cos)</a></code></pre></div>
 <p>Now we just have to put everything we have together. First we calculate <code>γw / γr</code>, then multiply it by <code>ls_psit</code> to get <code>ψt</code> in the numerator. Then we multiply by <code>tan φ</code> to get that in the numerator too. Now all we need is to get <code>H * (sin θ) * (cos θ)</code>in the denominator. Thankfully, we already calculated that in the previous step, so to get it in the denominator we can just divide by<code>h_sin_cos</code>. And then we’re done with<code>Fw</code>!</p>
 <p>Now for the last step.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="co"># Step - calculate Fs</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a><span class="co"># REMINDER: where fs &lt; 1, UNSAFE</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a>fs <span class="op">=</span> ff <span class="op">+</span> fc <span class="op">-</span> fw</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Step - calculate Fs</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="co"># REMINDER: where fs &lt; 1, UNSAFE</span></a>
+<a class="sourceLine" id="cb11-3" title="3">fs <span class="op">=</span> ff <span class="op">+</span> fc <span class="op">-</span> fw</a></code></pre></div>
 <p>Boom! Easy as that.</p>
 <hr />
 </div>
 <div id="creating-an-arcgis-toolbox" class="section level4">
 <h4>Creating an ArcGIS Toolbox</h4>
 <p>Okay, so we did the legwork of calculating <code>Fs</code> for Collbran. But if we want to calculate <code>Fs</code> for different cities, we should turn it into a tool we can use with ArcMap. To do that, we need to make our own classes. Luckily, the syntax isn’t all that different from creating a function. <a href="https://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/a-template-for-python-toolboxes.htm">You can see Esri’s toolbox template here</a>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="kw">class</span> Toolbox(<span class="bu">object</span>):</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a><span class="co">    The class needed for importing as an ArcGIS toolbox.</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Toolbox class initialization&quot;&quot;&quot;</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true"></a>        <span class="va">self</span>.label <span class="op">=</span> <span class="st">&quot;Landslide Analysis&quot;</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true"></a>        <span class="va">self</span>.alias <span class="op">=</span> <span class="st">&quot;Landslides&quot;</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true"></a>        <span class="va">self</span>.tools <span class="op">=</span> [CritRainThresh]</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">class</span> Toolbox(<span class="bu">object</span>):</a>
+<a class="sourceLine" id="cb12-2" title="2">    <span class="co">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="co">    The class needed for importing as an ArcGIS toolbox.</span></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb12-5" title="5">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb12-6" title="6">        <span class="co">&quot;&quot;&quot;Toolbox class initialization&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb12-7" title="7">        <span class="va">self</span>.label <span class="op">=</span> <span class="st">&quot;Landslide Analysis&quot;</span></a>
+<a class="sourceLine" id="cb12-8" title="8">        <span class="va">self</span>.alias <span class="op">=</span> <span class="st">&quot;Landslides&quot;</span></a>
+<a class="sourceLine" id="cb12-9" title="9">        <span class="va">self</span>.tools <span class="op">=</span> [CritRainThresh]</a></code></pre></div>
 <p>Here Dr. Davis has just replaced the empty/default text with his own.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="kw">class</span> CritRainThresh(<span class="bu">object</span>):</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a><span class="co">    Name:     CritRainThresh</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a><span class="co">    Features: Creates a factor of safety raster based on the Critical Rainfall</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a><span class="co">              Threshold Model (Iverson, 2000)</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a><span class="co">    History:  VERSION 1.0</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a><span class="co">              - initial attempt at an ArcGIS Toolbox</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a><span class="co">    Ref:      https://doi.org/10.1029/2000WR900090</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true"></a>    <span class="co"># \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true"></a>    <span class="co"># Class Initialization</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true"></a>    <span class="co"># ////////////////////////////////////////////////////////////////////////</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true"></a><span class="co">        Name:     CritRainThresh.__init__</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true"></a><span class="co">        Inputs:   None</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true"></a><span class="co">        Outputs:  None</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true"></a><span class="co">        Features: Initialize the tool</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true"></a><span class="co">        &quot;&quot;&quot;</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true"></a>        <span class="co"># ArcGIS Tool descriptors</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true"></a>        <span class="va">self</span>.label <span class="op">=</span> <span class="st">&quot;Critical Rainfall Threshold Model&quot;</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true"></a>        <span class="va">self</span>.description <span class="op">=</span> (</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true"></a>            <span class="st">&quot;Creates a factor of safety raster based on the Critical Rainfall &quot;</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true"></a>            <span class="st">&quot;Threshold Model (Iverson, 2000)&quot;</span></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true"></a>        )</span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true"></a>        <span class="va">self</span>.canRunInBackground <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true"></a></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true"></a>        <span class="co"># Check that spatial analyst tools extension is enabled</span></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true"></a>        arcpy.gp.checkOutExtension(<span class="st">&quot;spatial&quot;</span>)</span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true"></a></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true"></a>        <span class="co"># Define constants and default values used in model</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true"></a>        <span class="va">self</span>.k_pi <span class="op">=</span> <span class="fl">3.14159</span></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true"></a>        <span class="va">self</span>.deg2rad <span class="op">=</span> <span class="va">self</span>.k_pi <span class="op">/</span> <span class="fl">180.0</span></span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true"></a>        <span class="va">self</span>.gamma_r_nm3 <span class="op">=</span> <span class="fl">20000.0</span>  <span class="co"># unit weight of soil, N/m3</span></span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true"></a>        <span class="va">self</span>.gamma_w_nm3 <span class="op">=</span> <span class="fl">10000.0</span>  <span class="co"># unit weight of water, N/m3</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">class</span> CritRainThresh(<span class="bu">object</span>):</a>
+<a class="sourceLine" id="cb13-2" title="2">    <span class="co">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="co">    Name:     CritRainThresh</span></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="co">    Features: Creates a factor of safety raster based on the Critical Rainfall</span></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="co">              Threshold Model (Iverson, 2000)</span></a>
+<a class="sourceLine" id="cb13-6" title="6"><span class="co">    History:  VERSION 1.0</span></a>
+<a class="sourceLine" id="cb13-7" title="7"><span class="co">              - initial attempt at an ArcGIS Toolbox</span></a>
+<a class="sourceLine" id="cb13-8" title="8"><span class="co">    Ref:      https://doi.org/10.1029/2000WR900090</span></a>
+<a class="sourceLine" id="cb13-9" title="9"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb13-10" title="10">    <span class="co"># \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</span></a>
+<a class="sourceLine" id="cb13-11" title="11">    <span class="co"># Class Initialization</span></a>
+<a class="sourceLine" id="cb13-12" title="12">    <span class="co"># ////////////////////////////////////////////////////////////////////////</span></a>
+<a class="sourceLine" id="cb13-13" title="13">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb13-14" title="14">        <span class="co">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb13-15" title="15"><span class="co">        Name:     CritRainThresh.__init__</span></a>
+<a class="sourceLine" id="cb13-16" title="16"><span class="co">        Inputs:   None</span></a>
+<a class="sourceLine" id="cb13-17" title="17"><span class="co">        Outputs:  None</span></a>
+<a class="sourceLine" id="cb13-18" title="18"><span class="co">        Features: Initialize the tool</span></a>
+<a class="sourceLine" id="cb13-19" title="19"><span class="co">        &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb13-20" title="20">        <span class="co"># ArcGIS Tool descriptors</span></a>
+<a class="sourceLine" id="cb13-21" title="21">        <span class="va">self</span>.label <span class="op">=</span> <span class="st">&quot;Critical Rainfall Threshold Model&quot;</span></a>
+<a class="sourceLine" id="cb13-22" title="22">        <span class="va">self</span>.description <span class="op">=</span> (</a>
+<a class="sourceLine" id="cb13-23" title="23">            <span class="st">&quot;Creates a factor of safety raster based on the Critical Rainfall &quot;</span></a>
+<a class="sourceLine" id="cb13-24" title="24">            <span class="st">&quot;Threshold Model (Iverson, 2000)&quot;</span></a>
+<a class="sourceLine" id="cb13-25" title="25">        )</a>
+<a class="sourceLine" id="cb13-26" title="26">        <span class="va">self</span>.canRunInBackground <span class="op">=</span> <span class="va">False</span></a>
+<a class="sourceLine" id="cb13-27" title="27"></a>
+<a class="sourceLine" id="cb13-28" title="28">        <span class="co"># Check that spatial analyst tools extension is enabled</span></a>
+<a class="sourceLine" id="cb13-29" title="29">        arcpy.gp.checkOutExtension(<span class="st">&quot;spatial&quot;</span>)</a>
+<a class="sourceLine" id="cb13-30" title="30"></a>
+<a class="sourceLine" id="cb13-31" title="31">        <span class="co"># Define constants and default values used in model</span></a>
+<a class="sourceLine" id="cb13-32" title="32">        <span class="va">self</span>.k_pi <span class="op">=</span> <span class="fl">3.14159</span></a>
+<a class="sourceLine" id="cb13-33" title="33">        <span class="va">self</span>.deg2rad <span class="op">=</span> <span class="va">self</span>.k_pi <span class="op">/</span> <span class="fl">180.0</span></a>
+<a class="sourceLine" id="cb13-34" title="34">        <span class="va">self</span>.gamma_r_nm3 <span class="op">=</span> <span class="fl">20000.0</span>  <span class="co"># unit weight of soil, N/m3</span></a>
+<a class="sourceLine" id="cb13-35" title="35">        <span class="va">self</span>.gamma_w_nm3 <span class="op">=</span> <span class="fl">10000.0</span>  <span class="co"># unit weight of water, N/m3</span></a></code></pre></div>
 <p>Most of this is from our earlier script file. This stuff will happen every time you click on the tool in ArcPro, so don’t do anything that takes a long time in this. What we’re doing here is setting our constants that we used in the script file, making labels and documentation so people know what this is, and checking for the spatial analyst extension (because we’re going to use some of its methods). We’re also going to set <code>self.canRunInBackground</code> to <code>False</code>, because everything runs slower if you do background processing, and for our purposes, this is the end result of our project, so there wouldn’t be anything else we could work on while this is running.</p>
 <p>First, we need to set our parameter info. We’re just going to get the parameters (a.k.a. arguments) that the user passes in as a list, and the only way we’ll figure out what’s what is by the list order. So we have to specify the order in which the user should give us the data.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="kw">def</span> getParameterInfo(<span class="va">self</span>):</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a>    [ ... documentation stuff ... ]</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a>    param0 <span class="op">=</span> arcpy.Parameter(</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a>        displayName <span class="op">=</span> <span class="st">&quot;Hillslope raster (deg)&quot;</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true"></a>        name <span class="op">=</span> <span class="st">&quot;lands_theta&quot;</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true"></a>        datatype <span class="op">=</span> <span class="st">&quot;GPLayer&quot;</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true"></a>        parameterType <span class="op">=</span> <span class="st">&quot;Required&quot;</span>,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true"></a>        direction <span class="op">=</span> <span class="st">&quot;Input&quot;</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true"></a>    )</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">def</span> getParameterInfo(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb14-2" title="2">    [ ... documentation stuff ... ]</a>
+<a class="sourceLine" id="cb14-3" title="3">    param0 <span class="op">=</span> arcpy.Parameter(</a>
+<a class="sourceLine" id="cb14-4" title="4">        displayName <span class="op">=</span> <span class="st">&quot;Hillslope raster (deg)&quot;</span>,</a>
+<a class="sourceLine" id="cb14-5" title="5">        name <span class="op">=</span> <span class="st">&quot;lands_theta&quot;</span>,</a>
+<a class="sourceLine" id="cb14-6" title="6">        datatype <span class="op">=</span> <span class="st">&quot;GPLayer&quot;</span>,</a>
+<a class="sourceLine" id="cb14-7" title="7">        parameterType <span class="op">=</span> <span class="st">&quot;Required&quot;</span>,</a>
+<a class="sourceLine" id="cb14-8" title="8">        direction <span class="op">=</span> <span class="st">&quot;Input&quot;</span></a>
+<a class="sourceLine" id="cb14-9" title="9">    )</a></code></pre></div>
 <p>The <code>getParameterInfo</code> function tells the user what parameters they need to pass in, in order. This is an example for our first parameter. You may have noticed that it’s labeled <code>param0</code>. Computers like to start counting at 0 because that’s just how they roll.</p>
 <p><code>displayName</code> is what the user’s going to see, <code>name</code> is what you’re going to use, <code>datatype</code> is one of a number of types specified by ArcPy, and <code>parameterType</code> and <code>direction</code> are pretty self-explanatory—they set whether the param is mandatory or optional, and whether it’s input or output.</p>
 <p>The other parameters are similar to this, so have a look at <a href="scripts/lsa.pyt">Dr. Davis’ toolbox file</a> for the full function. Let’s skip to the end because it’s a little different.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="co"># Set default soil moisture value (m)</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>param4.value <span class="op">=</span> <span class="fl">0.2</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>param5 <span class="op">=</span> arcpy.Parameter(</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a>    displayName <span class="op">=</span> <span class="st">&quot;Output factor of safety raster&quot;</span>,</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true"></a>    name <span class="op">=</span> <span class="st">&quot;outFs&quot;</span>,</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true"></a>    datatype <span class="op">=</span> <span class="st">&quot;DEFile&quot;</span>,</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true"></a>    parameterType <span class="op">=</span> <span class="st">&quot;Required&quot;</span>,</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true"></a>    direction <span class="op">=</span> <span class="st">&quot;Output&quot;</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true"></a>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true"></a></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true"></a><span class="co"># Send ArcGIS your parameters :)</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true"></a>params <span class="op">=</span> [param0, param1, param2, param3, param4, param5]</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true"></a><span class="cf">return</span> params</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># Set default soil moisture value (m)</span></a>
+<a class="sourceLine" id="cb15-2" title="2">param4.value <span class="op">=</span> <span class="fl">0.2</span></a>
+<a class="sourceLine" id="cb15-3" title="3">param5 <span class="op">=</span> arcpy.Parameter(</a>
+<a class="sourceLine" id="cb15-4" title="4">    displayName <span class="op">=</span> <span class="st">&quot;Output factor of safety raster&quot;</span>,</a>
+<a class="sourceLine" id="cb15-5" title="5">    name <span class="op">=</span> <span class="st">&quot;outFs&quot;</span>,</a>
+<a class="sourceLine" id="cb15-6" title="6">    datatype <span class="op">=</span> <span class="st">&quot;DEFile&quot;</span>,</a>
+<a class="sourceLine" id="cb15-7" title="7">    parameterType <span class="op">=</span> <span class="st">&quot;Required&quot;</span>,</a>
+<a class="sourceLine" id="cb15-8" title="8">    direction <span class="op">=</span> <span class="st">&quot;Output&quot;</span></a>
+<a class="sourceLine" id="cb15-9" title="9">)</a>
+<a class="sourceLine" id="cb15-10" title="10"></a>
+<a class="sourceLine" id="cb15-11" title="11"><span class="co"># Send ArcGIS your parameters :)</span></a>
+<a class="sourceLine" id="cb15-12" title="12">params <span class="op">=</span> [param0, param1, param2, param3, param4, param5]</a>
+<a class="sourceLine" id="cb15-13" title="13"><span class="cf">return</span> params</a></code></pre></div>
 <p><code>param4</code> is simple to set because it’s a constant, although we’re setting it as a parameter for now in case we want the user to be able to input it. <code>param5</code> is similar to the others, but we need to specify where the user will store the output. Finally, we need to build a list of parameters to send to ArcPy. We already named everything in a nice easy way, so it’s intuitive to build the list and return it!</p>
 <p>Hooray!</p>
 <p>The <code>execute</code> method runs when you run your tool. So we should put all our calculations in here! First we need to load in our current map:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a><span class="kw">def</span> execute(<span class="va">self</span>, parameters, messages):</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true"></a><span class="co">    Name:     CritRainThresh.execute</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true"></a><span class="co">    Inputs:   - list, list of ArcGIS Parameter objects (parameters)</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true"></a><span class="co">              - list?</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true"></a><span class="co">    Outputs:  None.</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true"></a><span class="co">    Features: The ArcGIS toolbox tool execute function (i.e., Run)</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true"></a>    <span class="co"># Get pointers to the current project and map:</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true"></a>    aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">&quot;CURRENT&quot;</span>)</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true"></a>    <span class="bu">map</span> <span class="op">=</span> aprx.activeMap</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">def</span> execute(<span class="va">self</span>, parameters, messages):</a>
+<a class="sourceLine" id="cb16-2" title="2">    <span class="co">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb16-3" title="3"><span class="co">    Name:     CritRainThresh.execute</span></a>
+<a class="sourceLine" id="cb16-4" title="4"><span class="co">    Inputs:   - list, list of ArcGIS Parameter objects (parameters)</span></a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="co">              - list?</span></a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="co">    Outputs:  None.</span></a>
+<a class="sourceLine" id="cb16-7" title="7"><span class="co">    Features: The ArcGIS toolbox tool execute function (i.e., Run)</span></a>
+<a class="sourceLine" id="cb16-8" title="8"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb16-9" title="9">    <span class="co"># Get pointers to the current project and map:</span></a>
+<a class="sourceLine" id="cb16-10" title="10">    aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">&quot;CURRENT&quot;</span>)</a>
+<a class="sourceLine" id="cb16-11" title="11">    <span class="bu">map</span> <span class="op">=</span> aprx.activeMap</a></code></pre></div>
 <p>Then, we need to get parameters:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="co"># Get user-defined parameters by list order:</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a><span class="va">self</span>.lands_theta <span class="op">=</span> parameters[<span class="dv">0</span>].valueAsText</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a><span class="va">self</span>.lands_phi <span class="op">=</span> parameters[<span class="dv">1</span>].valueAsText</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true"></a><span class="va">self</span>.lands_c <span class="op">=</span> parameters[<span class="dv">2</span>].valueAsText</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true"></a><span class="va">self</span>.lands_h <span class="op">=</span> parameters[<span class="dv">3</span>].valueAsText</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true"></a><span class="va">self</span>.water_h <span class="op">=</span> parameters[<span class="dv">4</span>].value</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true"></a><span class="va">self</span>.outFs <span class="op">=</span> parameters[<span class="dv">5</span>].valueAsText</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="co"># Get user-defined parameters by list order:</span></a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="va">self</span>.lands_theta <span class="op">=</span> parameters[<span class="dv">0</span>].valueAsText</a>
+<a class="sourceLine" id="cb17-3" title="3"><span class="va">self</span>.lands_phi <span class="op">=</span> parameters[<span class="dv">1</span>].valueAsText</a>
+<a class="sourceLine" id="cb17-4" title="4"><span class="va">self</span>.lands_c <span class="op">=</span> parameters[<span class="dv">2</span>].valueAsText</a>
+<a class="sourceLine" id="cb17-5" title="5"><span class="va">self</span>.lands_h <span class="op">=</span> parameters[<span class="dv">3</span>].valueAsText</a>
+<a class="sourceLine" id="cb17-6" title="6"><span class="va">self</span>.water_h <span class="op">=</span> parameters[<span class="dv">4</span>].value</a>
+<a class="sourceLine" id="cb17-7" title="7"><span class="va">self</span>.outFs <span class="op">=</span> parameters[<span class="dv">5</span>].valueAsText</a></code></pre></div>
 <p>You’ll notice that these are the parameters we specified in the <code>getParameterInfo</code> method. That’s why we needed to get that taken care of first.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a><span class="co"># Create and initialize a step progressor to update the user</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true"></a>out_steps <span class="op">=</span> <span class="dv">6</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true"></a>arcpy.SetProgressor(</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true"></a>    <span class="st">&quot;step&quot;</span>, <span class="st">&quot;Converting slope to radians...&quot;</span>, <span class="dv">0</span>, out_steps, <span class="dv">1</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1"><span class="co"># Create and initialize a step progressor to update the user</span></a>
+<a class="sourceLine" id="cb18-2" title="2">out_steps <span class="op">=</span> <span class="dv">6</span></a>
+<a class="sourceLine" id="cb18-3" title="3">arcpy.SetProgressor(</a>
+<a class="sourceLine" id="cb18-4" title="4">    <span class="st">&quot;step&quot;</span>, <span class="st">&quot;Converting slope to radians...&quot;</span>, <span class="dv">0</span>, out_steps, <span class="dv">1</span></a>
+<a class="sourceLine" id="cb18-5" title="5">)</a></code></pre></div>
 <p>This isn’t strictly necessary, but it’s a nice thing to do for the user. What we’re doing here is creating a progress display for the user so that they know what our tool is doing while it’s working. We have 6 steps, so we tell it that, and then we set a message to tell the user what we’re doing right now.</p>
 <p>Speaking of which…</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a><span class="co"># Create radian version of slope</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true"></a>theta_rad <span class="op">=</span> arcpy.sa.Times(<span class="va">self</span>.lands_theta, <span class="va">self</span>.deg2rad)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true"></a>phi_rad <span class="op">=</span> arcpy.sa.Times(<span class="va">self</span>.lands_phi, <span class="va">self</span>.deg2rad)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1"><span class="co"># Create radian version of slope</span></a>
+<a class="sourceLine" id="cb19-2" title="2">theta_rad <span class="op">=</span> arcpy.sa.Times(<span class="va">self</span>.lands_theta, <span class="va">self</span>.deg2rad)</a>
+<a class="sourceLine" id="cb19-3" title="3">phi_rad <span class="op">=</span> arcpy.sa.Times(<span class="va">self</span>.lands_phi, <span class="va">self</span>.deg2rad)</a></code></pre></div>
 <p>This is basically copied from our other script, but we’ve changed <code>k_pi / 180</code> into a constant. Most of the rest of this is just things copied from the script we wrote already, but with extra stuff like progress updates for the user. I’ll do one more section and then skip ahead—if you want the whole thing, check Dr. Davis’s file.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a><span class="co"># Create Fc</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true"></a>arcpy.SetProgressorLabel(<span class="st">&quot;Calculating Fc...&quot;</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true"></a>arcpy.SetProgressorPosition()</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true"></a>sin_cos <span class="op">=</span> arcpy.sa.Times(</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true"></a>    arcpy.sa.Sin(theta_rad), arcpy.sa.Cos(theta_rad))</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true"></a><span class="co"># Get vertical component of soil depth (influenced by gravity)</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true"></a>big_z <span class="op">=</span> arcpy.sa.Divide(<span class="va">self</span>.lands_h, arcpy.sa.Cos(theta_rad))</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true"></a>h_sin_cos <span class="op">=</span> arcpy.sa.Times(big_z, sin_cos)</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true"></a>c_gr <span class="op">=</span> arcpy.sa.Divide(<span class="va">self</span>.lands_c, <span class="va">self</span>.gamma_r_nm3)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true"></a>fc <span class="op">=</span> arcpy.sa.Divide(c_gr, h_sin_cos)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1"><span class="co"># Create Fc</span></a>
+<a class="sourceLine" id="cb20-2" title="2">arcpy.SetProgressorLabel(<span class="st">&quot;Calculating Fc...&quot;</span>)</a>
+<a class="sourceLine" id="cb20-3" title="3">arcpy.SetProgressorPosition()</a>
+<a class="sourceLine" id="cb20-4" title="4">sin_cos <span class="op">=</span> arcpy.sa.Times(</a>
+<a class="sourceLine" id="cb20-5" title="5">    arcpy.sa.Sin(theta_rad), arcpy.sa.Cos(theta_rad))</a>
+<a class="sourceLine" id="cb20-6" title="6"><span class="co"># Get vertical component of soil depth (influenced by gravity)</span></a>
+<a class="sourceLine" id="cb20-7" title="7">big_z <span class="op">=</span> arcpy.sa.Divide(<span class="va">self</span>.lands_h, arcpy.sa.Cos(theta_rad))</a>
+<a class="sourceLine" id="cb20-8" title="8">h_sin_cos <span class="op">=</span> arcpy.sa.Times(big_z, sin_cos)</a>
+<a class="sourceLine" id="cb20-9" title="9">c_gr <span class="op">=</span> arcpy.sa.Divide(<span class="va">self</span>.lands_c, <span class="va">self</span>.gamma_r_nm3)</a>
+<a class="sourceLine" id="cb20-10" title="10">fc <span class="op">=</span> arcpy.sa.Divide(c_gr, h_sin_cos)</a></code></pre></div>
 <p>Again, mostly copied from our earlier script, but we use <code>SetProgressorLabel</code> and <code>SetProgressorPosition</code> to tell the user updates.</p>
 <p>Skipping ahead…</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a><span class="co"># Save output raster</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true"></a>arcpy.SetProgressorLabel(<span class="st">&quot;Writing Fs to disk...&quot;</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true"></a>arcpy.SetProgressorPosition()</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true"></a>fs.save(<span class="va">self</span>.outFs)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true"></a>arcpy.SetProgressorLabel(<span class="st">&quot;Complete!&quot;</span>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true"></a>arcpy.ResetProgressor()</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true"></a></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true"></a><span class="co"># Add raster to current map</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true"></a><span class="bu">map</span>.addDataFromPath(<span class="va">self</span>.outFs)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" title="1"><span class="co"># Save output raster</span></a>
+<a class="sourceLine" id="cb21-2" title="2">arcpy.SetProgressorLabel(<span class="st">&quot;Writing Fs to disk...&quot;</span>)</a>
+<a class="sourceLine" id="cb21-3" title="3">arcpy.SetProgressorPosition()</a>
+<a class="sourceLine" id="cb21-4" title="4">fs.save(<span class="va">self</span>.outFs)</a>
+<a class="sourceLine" id="cb21-5" title="5"></a>
+<a class="sourceLine" id="cb21-6" title="6">arcpy.SetProgressorLabel(<span class="st">&quot;Complete!&quot;</span>)</a>
+<a class="sourceLine" id="cb21-7" title="7">arcpy.ResetProgressor()</a>
+<a class="sourceLine" id="cb21-8" title="8"></a>
+<a class="sourceLine" id="cb21-9" title="9"><span class="co"># Add raster to current map</span></a>
+<a class="sourceLine" id="cb21-10" title="10"><span class="bu">map</span>.addDataFromPath(<span class="va">self</span>.outFs)</a></code></pre></div>
 <p>This is the last thing we have to do. We didn’t actually save anything in our old script, so we can do that by calling the aptly-named <code>save</code> method!</p>
 <p>How convenient.</p>
 <p>Then we tell the user we’re done, and add the finished raster to the map! And that’s it! We’re done. For the rest of the functions, we can just leave them all like they were in the template! So we’re done! Hope you learned something.</p>
