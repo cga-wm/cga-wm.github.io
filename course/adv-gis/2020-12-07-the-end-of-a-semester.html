@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2020-12-07" />
+
+<title>The End of A Semester</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">GIS 420/520 - Advanced GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Lectures
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="lectures/geoethics">Geoethics</a>
+    </li>
+    <li>
+      <a href="lectures/programming">Programming</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="syllabus/index.html">Syllabus</a>
+</li>
+<li>
+  <a href="blog.html">Blog</a>
+</li>
+<li>
+  <a href="../../index.html">CGA-WM</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">The End of A Semester</h1>
+<h4 class="date">2020-12-07</h4>
+
+</div>
+
+
+<p>We made it through a full (truncated) semester in one piece. As I continue the redesign of my Advanced GIS course, it’s good to hear what students had to say about this semester and see what changes I can make to improve the class for the coming term.</p>
+<p>Below is a selection of comments that I received and I will do my best to respond.</p>
+<blockquote>
+<p>I think overall the course was fine but the one area that I personally had trouble with was the grading and teaching. This class did not follow the standard trend of showing up to lecture, learning material, doing a lab/project, and getting graded. Even though the grading system is not what usually happens in college, I think there is a lot of value to it since it more similarly reflects the real world and how we’d be “graded” in our jobs. For the instruction portion, I think the videos that you uploaded were very helpful but there’s just something about learning directly from you rather than watching a prerecorded video that makes learning the material easier. Overall, I think the unorthodox nature of this class compared to most college classes wasn’t a bad thing at all, especially since it prepares us more for the real world, but it wasn’t exactly what I was expecting when I signed up for the course.</p>
+</blockquote>
+<p>There’s a little nuance to this critique. The first is the teaching style, which is remote asynchronous and will not be directly from me; however, I am available every week to meet with students in office hours or during other scheduled appointments. Yes, this moves the effort onto you the student to get that one-on-one contact.</p>
+<p>I believe that college has an obligation to prepare students for the world after graduation and I don’t see how the present course delivery (especially at the advanced levels) is successfully accomplishing this. My motivation for change in course delivery and grading comes from experience and communication with those hiring newly minted college grads complaining about a lack of adherence to schedules, disrespecting superiors, attending meetings late, and expecting outcomes and solutions to be handed out or explained.</p>
+<p>This grieves me.</p>
+<p>I’ve reflected on my part as an educator and given serious thought to both what academia stands for (core pillars of knowledge) and what successful employment looks like after college.</p>
+<p>With this class, I hope to bring some experiential learning and thought-provoking challenges that mimic the real world to help students be better prepared for what comes next.</p>
+<blockquote>
+<p>The format of this class was just not very clear, and the way our final grades are evaluated felt very ambiguous. If we exceeded the expectations in our final evaluation, this could result in a grade anywhere from a B+ to an A, with not much distinguishment about how to improve your grade within the bounds of “exceeding expectations”.</p>
+</blockquote>
+<p>I have two thoughts about this.</p>
+<ol style="list-style-type: decimal">
+<li><p>I think “ambiguity” here is misused. In my opinion, there is no ambiguity. I clearly state what each expectation is and what the requirement level is to fulfill each one. I clearly state the grades associated with each expectation level.</p>
+If you think it’s arbitrary, then welcome to education. As an educator, I am expected to set my own levels of expectations for student learning. This is what all educators are meant to do and it turns out to be a rather complicated process that I have yet to see perfected.</li>
+<li><p>I give you the opportunity during the final evaluation to tell me where you think you stand. Self-evaluation is a powerful tool and everyone leaving my class this semester received at least the grade they expected to get. So what’s the problem?</p></li>
+</ol>
+<p>I appreciate that revealing the arbitrary nature of grade assignments may come as a shock to some, but if you think that point-based systems are any less arbitrary or less subjective or less quality based, then you are simply fooling yourself.</p>
+<p>I don’t like assigning grades any more than you like receiving them; however, by removing points from the equation, we can focus simply on the learning outcomes and whether or not you got what was expected. We are now both fully responsible for what was delivered and what was gained. There is no hiding behind extra credit, bonus points, or make-up work.</p>
+<p>It’s simple.</p>
+<p>Did you do what was asked for?</p>
+<p>If you didn’t like it, then you are absolutely welcome to post your criticisms to the course evaluation and I will (just as I have done this semester) reflect on how to make the course better.</p>
+<p>Your opinion matters to me!</p>
+<blockquote>
+<p>Given that this is a course still under development, I think it was relatively well done and will be a great course to take in the future. I learned a lot about a lot of different topics, skills, and tools that I hadn’t known anything about before the start of this semester. Professor Davis made himself available to students more than any other professor I have had—messages on groupme were always answered surprisingly fast! I appreciated that all of the assignments in the class were shaped to be practical and prepare us for using GIS in future careers. My biggest critique about the current presentation of the course is the organization. I think the syllabus laid out the expectations for the course nicely, but I would have appreciated it if more of the expectations/assignments had due dates, or ranges of time for expected completion, because everything felt a little too open-ended.</p>
+</blockquote>
+<p>Okay, so moving straight passed the praise, the first critique is a lack of due dates. This goes back to my philosophy for the class. Due dates are not always the lunchbox of weekly lecture, assignments and grades. Oftentimes, you will have to plan out several tasks over a longer period of time. As an advanced GIS student, you already had the grindstone of working through long labs of instructions. Now, the assignments are open-ended. Put your knowledge to the test and, if you get stuck, consult with your peers.</p>
+<blockquote>
+<p>It was also difficult to keep track of all the different platforms we used to engage with the class (Prof. Davis’s blog, the syllabus, the CGA site, Blackboard, the Youtube channel, Zoom, Nooks, the shared google folder, AGOL, groupme, etc). I felt like I had to be constantly checking in with all of these different locations to make sure I was able to keep up and engage.</p>
+</blockquote>
+<p>Yeah, that’s on me. I have not found a great “all-in-one” solution for organizing this course. I personally don’t like Blackboard, so I try to steer away from it when I can. During the summer of 2020, I tried GitHub teams, which was somewhat successful, but there were other challenges that term, which we can get into elsewhere on this blog.</p>
+<p>I try to make it clear that each outlet has its purpose:</p>
+<ul>
+<li>GroupMe is an instant messaging platform that logs all communication in our group and provides instant outreach and feedback to everyone. It’s primary purpose is for quick messaging.</li>
+<li>My blog was originally created in the Fall of 2019 because I asked my students to keep a blog for the class and I told them I would also do everything I asked them to do—a shared learning experience. This blog now serves as a place of reference.</li>
+<li>The syllabus is an academic document required by law. It serves as the foundation of our agreement and is used to guide all decisions within a given semester.</li>
+<li>The CGA site is the course website. It hosts a link to syllabus, my blog, and my lecture slideshows.</li>
+<li>The YouTube channel is actually just a playlist of tutorials, lectures and demos. It’s a bit of a mess, but I am trying to structure these videos in a more logical series that is easier to follow and work through.</li>
+<li>Zoom is the video conferencing platform to be used for our one-on-one meetings and final evaluation.</li>
+<li>Nooks is a new Zoom alternative that provides a virtual space for collaborating. I also use this for my office hours. It is not Safari nor mobile friendly (at this time) and for that I apologize.</li>
+<li>The Google shared folder is a repository for your work. I meant for it to be an easy way to upload all assignments, datasets, articles, etc. so that nothing got lost.</li>
+<li>Our AGOL shared group was meant for easy sharing of spatial data, notebooks, and other web resources.</li>
+</ul>
+<p>I see now that there are too many places for things. Moving forward, I will choose one as the primary place where all communication and records are kept and, from there, link out to the other resources.</p>
+<p>So what is the best central location for course content delivery?</p>
+<blockquote>
+<p>I was not prepared for the focus on Notebooks/Python that the course seemed to expect. At the beginning of the semester I spent far too much time anxiously trying to figure out how to use Notebooks for fear I wouldn’t pass the class otherwise. I think it is definitely a great tool to know, but maybe in the future either emphasize that you don’t <em>have to</em> use notebooks, or make a coding class a pre-requisite for the class.</p>
+</blockquote>
+<p>Okay, so I’m not going to make coding a pre-requisite for this class. Yes, ambition got the better of me and I focused a lot more on the data science side (I am a Data Science faculty after all).</p>
+<p>The reason I cared so much is that Notebooks provides the equity for accessing ArcGIS geoprocesses that has been missing for so long. Finally, a cloud-based ArcGIS! The catch is, you have to know your way around Python to use it.</p>
+<p>This review is right. Python is necessary to take advantage of Notebooks.</p>
+<p>With that in mind, I have decided to implement a focus option for the class:</p>
+<ul>
+<li>Advanced Analysis: focus more on geoprocessing tools and problem solving regardless of platform/software; though, I will push you to use ModelBuilder and see how automation and programming can assist you in geospatial problem solving</li>
+<li>Advanced Programming: deep-dive into Notebooks for those comfortable using Python and see where this new tool can take you. There are a lot more data science majors/minors taking GIS courses and I am trying to be mindful of their experience and expectations without alienating those without a coding background.</li>
+</ul>
+<p>I believe there is a lot both sides can learn from one another, which is why I encourage collaboration and teamwork.</p>
+<blockquote>
+<p>Most of the assignments were optional and highly structured around class collaboration which was really difficult because of the asynchronous structure. Although the point was to work on the projects that interested you. I found myself working on the assignments that were easy and I already had the skills to complete because they took the least amount of time.</p>
+</blockquote>
+<p>This is true.</p>
+<p>I rushed assignments from summer to fall becuase I had about five days to turn around between terms. It was probably a placeholder that only one special works assignment was required, but I didn’t change it in time, so I left it, as it didn’t seem fair to change it after the course had begun.</p>
+<p>For next term, I’m working on a way to better incentivize working through all the projects in something like a randomized final exam question.</p>
+<blockquote>
+<p>The class met synchronously every week, the meetings weren’t necessary, but if you missed a meeting, there weren’t notes and so there were aspects about projects that you would miss.</p>
+</blockquote>
+<p>While this is not entirely true—I keep a spreadsheet with notes from every synchronous meeting—they are correct in that it probably wasn’t a good choice.</p>
+<p>So this came from last fall and summer semesters when students wanted more synchronous meetings. I blindly agreed, but this directly contradicts the asynchronous class structure and disadvantages students taking the class specifically for this attribute.</p>
+<p>Now, I see that we just need something to encourage contact / engagement each week. I completed weekly reports all during grad school and for both my post-docs. This is an invaluable tool and I plan to utilize this as a way to both keep students engaged (here’s your weekly assignment) and encourage collaboration (everyone can see everyone else’s reports) and time management (you can see where you stand amongst your classmates).</p>
+<p>The weekly report can also serve as a medium for me to provide the much-requested feedback.</p>
+<blockquote>
+<p>It would have been helpful to have some classes that were more like lectures: explaining exactly what everything was doing.</p>
+</blockquote>
+<p>Yes, I agree and I plan to make more lectures; however, due to the asynchronous nature of the class they will likely be videos, self-guided slideshows or assignments.</p>
+<blockquote>
+<p>This class also requires a lot of programming knowledge up front because programming basics are not covered in the class. This class almost needs a prerequisite because of the level of programming needed to do well.</p>
+</blockquote>
+<p>While I do introduce programming and I have revised my introduction with several activities / demos, I agree that I was overly ambitious presenting only solutions that utilize programming approaches.</p>
+<p>As such, I plan to introduce two focus paths: analysis and programming. The analysis path is more concerned about figuring out tools and introducing you to automation using ModelBuilder and some code. The programming path pushes you directly into using code for solving geospatial challenges to see if you can achieve higher-level automation and efficiency.</p>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>CGA at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
