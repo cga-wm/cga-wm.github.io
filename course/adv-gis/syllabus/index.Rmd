@@ -18,7 +18,7 @@ Catalog Number
 
 :   - GIS 420/520
     - Section 1
-    - CRN 23058/
+    - CRN 23058/24143
 
 Prerequisites
 
@@ -26,7 +26,7 @@ Prerequisites
 
 Semester
 
-:   - Fall 2020 (2020-Aug-19 - 2020-Nov-24)
+:   - Spring 2021 (2021-Jan-27 to 2021-May-18)
 
 Location
 
@@ -37,14 +37,13 @@ Instructor
 :   - Dr. Tyler W. Davis
     - Email: twdavis@wm.edu
     - Office: Center for Geospatial Analysis, Swem Library Rm 213
+    - Virtual Office: [Nooks](https://nooks.in/goto/7cc0KabvZpnfVKyV?pwd=o162Tu)
     - Phone: 757-221-6449
     - Website: https://drdavis.space
 
 Office Hours
 
-:   - Mon 1100--1300, 1530--1600, 1700--2000
-    - Wed 1100--1130, 1530--1700
-    - Fri 1100-1200
+:   - TBA
     - *Appointments are welcome outside normally scheduled office hours; please email to set up a time.*
     - *There may be certain days when office hours will be either canceled or rescheduled; notifications will be sent ahead of time.*
 
@@ -54,7 +53,7 @@ Delivery
 
 Final Exam
 
-:   - Written/oral evaluation on or before 24 November 2020
+:   - Written/oral evaluation on or before 18 May 2021
 
 Minimum Passing Grade
 
@@ -64,22 +63,25 @@ Communication
 
 :   - Instant messaging using [GroupMe](https://groupme.com/)
         - For quick delivery of content or for questions that need quick responses
-        - *Please create an account using your W&M email*
-    - Discussion posts and issue tracking using [W&M's Blackboard](https://blackboard.wm.edu/)
+        - *Please email me your preferred GroupMe email address*
+    - Discussion posts, Q&A, and schedule management using [GitHub](https://github.com/cga-wm/advgis-delta)
         - For sharing ideas, methods and content and asking/responding to questions, comments or concerns
-    - Video conferencing ([Zoom](https://cwm.zoom.us/))
+        - This will serve as a primary hub; all other content will be linked from here
+        - *Please create a GitHub account and email your username to your professor*
+    - Video conferencing (e.g, [Zoom](https://cwm.zoom.us/) or [Nooks](https://nooks.in/goto/7cc0KabvZpnfVKyV?pwd=o162Tu))
         - Video conferencing is for office hours, video chats, conference meetings and oral evaluations where "face-to-face" communication or screen sharing is required
-    - Performance write-ups ([Google Docs](https://www.google.com/drive/))
+        - *Please note that Nooks presently does not support mobile devices or Safari web browser*
+    - Evaluation using ([Google Drive](https://www.google.com/drive/))
         - *A Drive folder will be shared to your W&M account*
         - *Use this folder to upload all your evaluation materials*
-    - ArcGIS Notebooks and spatial data sharing on [ArcGIS Online](https://www.arcgis.com/index.html)
+    - ArcGIS Notebooks and item sharing on [ArcGIS Online](https://www.arcgis.com/index.html)
         - *Please be sure to log into arcgis.com using the W&M organization URL: cga-wm.maps.arcgis.com (see [here](https://youtu.be/x07Xyoe0d2k) for instructions)*
         - *You will be added to the AdvGIS group*
     - Email ([twdavis-at-wm-dot-edu](mailto:twdavis@wm.edu))
         - The new snail mail; use this for personal communication or whenever sharing is inappropriate
     - Website blog (https://cga-wm.github.io/course/adv-gis/blog.html)
         - Maintained by your instructor for communicating ideas, methods and course content
-    - Videos ([YouTube Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMMEKNxIS-W0DnFoWxrUeUPW))
+    - Videos ([YouTube Playlist](https://youtube.com/playlist?list=PLbIkNQKCuzMNp93D3wzRh8x8ceL4HKpIA))
         - Complimentary to the blog and used when audio/video is the better communication medium
 
     See [**Code of Conduct**](#the-code-of-conduct) regarding how these communication platforms are (and should be) used.
