@@ -36,15 +36,15 @@ Instructor
 
 :   - Dr. Tyler W. Davis
     - Email: twdavis@wm.edu
-    - Office: Center for Geospatial Analysis, Swem Library Rm 213
+    - Physical Office: Center for Geospatial Analysis, Swem Library Rm 213
     - Virtual Office: [Nooks](https://nooks.in/goto/7cc0KabvZpnfVKyV?pwd=o162Tu)
     - Phone: 757-221-6449
     - Website: https://drdavis.space
 
 Office Hours
 
-:   - TBA
-    - *Appointments are welcome outside normally scheduled office hours; please email to set up a time.*
+:   - Schedule is posted on virtual office website
+    - *Appointments are welcome outside normally scheduled office hours; please message or email to set up a time.*
     - *There may be certain days when office hours will be either canceled or rescheduled; notifications will be sent ahead of time.*
 
 Delivery
@@ -62,27 +62,27 @@ Minimum Passing Grade
 Communication
 
 :   - Instant messaging using [GroupMe](https://groupme.com/)
-        - For quick delivery of content or for questions that need quick responses
+        - For instant delivery of content or for questions that need quick responses.
         - *Please email me your preferred GroupMe email address*
     - Discussion posts, Q&A, and schedule management using [GitHub](https://github.com/cga-wm/advgis-delta)
-        - For sharing ideas, methods and content and asking/responding to questions, comments or concerns
-        - This will serve as a primary hub; all other content will be linked from here
-        - *Please create a GitHub account and email your username to your professor*
+        - For weekly engagement including sharing ideas, methods and content and asking/responding to questions, comments or concerns.
+        - This will serve as a primary hub; all other content will be linked from here.
+        - *Please create a GitHub account and send your username to your professor*
     - Video conferencing (e.g, [Zoom](https://cwm.zoom.us/) or [Nooks](https://nooks.in/goto/7cc0KabvZpnfVKyV?pwd=o162Tu))
-        - Video conferencing is for office hours, video chats, conference meetings and oral evaluations where "face-to-face" communication or screen sharing is required
-        - *Please note that Nooks presently does not support mobile devices or Safari web browser*
+        - Video conferencing is for office hours, video chats, conference meetings and oral evaluations where "face-to-face" communication or screen sharing is required.
+        - *Please note that Nooks presently does not support mobile devices or Safari web browser :(*
     - Evaluation using ([Google Drive](https://www.google.com/drive/))
         - *A Drive folder will be shared to your W&M account*
         - *Use this folder to upload all your evaluation materials*
     - ArcGIS Notebooks and item sharing on [ArcGIS Online](https://www.arcgis.com/index.html)
-        - *Please be sure to log into arcgis.com using the W&M organization URL: cga-wm.maps.arcgis.com (see [here](https://youtu.be/x07Xyoe0d2k) for instructions)*
+        - _Please be sure to log into [arcgis.com](https://www.arcgis.com/index.html) using the W&M organization URL: **cga-wm**.maps.arcgis.com (see [here](https://youtu.be/x07Xyoe0d2k) for instructions)_
         - *You will be added to the AdvGIS group*
     - Email ([twdavis-at-wm-dot-edu](mailto:twdavis@wm.edu))
-        - The new snail mail; use this for personal communication or whenever sharing is inappropriate
+        - The new snail mail; use this for personal communication or whenever sharing is inappropriate.
     - Website blog (https://cga-wm.github.io/course/adv-gis/blog.html)
-        - Maintained by your instructor for communicating ideas, methods and course content
+        - Maintained by your instructor for communicating ideas, methods and course content.
     - Videos ([YouTube Playlist](https://youtube.com/playlist?list=PLbIkNQKCuzMNp93D3wzRh8x8ceL4HKpIA))
-        - Complimentary to the blog and used when audio/video is the better communication medium
+        - Complimentary to the blog and used when audio/video is the better communication medium.
 
     See [**Code of Conduct**](#the-code-of-conduct) regarding how these communication platforms are (and should be) used.
 
@@ -97,6 +97,7 @@ Textbook
         - https://developers.arcgis.com/labs/ (*see Tutorials*)
         - https://learn.arcgis.com/en/ (*see Lesson Gallery*)
         - [CGA GIS Tutorial YouTube Playlist](https://www.youtube.com/playlist?list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl)
+        - [Advanced GIS Spring 2021 YouTube Playlist](https://youtube.com/playlist?list=PLbIkNQKCuzMNp93D3wzRh8x8ceL4HKpIA)
 
 Course Materials
 
@@ -109,19 +110,18 @@ Course Materials
 
 Technology
 
-:   - Field collection can be handled on either a smart phone (iPhone or Android) or tablet (iPad) using either [Collector](https://www.esri.com/en-us/arcgis/products/arcgis-collector/overview) or [QuickCapture](https://www.esri.com/en-us/arcgis/products/arcgis-quickcapture/overview)
-    - Geospatial visualizations and analysis may be handled using any of the following:
+:   - Geospatial visualizations and analysis may be handled using any of the following:
         - The latest stable release or the university's current installed versions of Esri's [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources) or [ArcMap](https://www.esri.com/en-us/arcgis/products/arcgis-desktop/resources)
 
             \* _ArcGIS Pro may be installed on individual computers for Microsoft Windows users only (see [here](https://www.wm.edu/as/cga/arcgis-licensing/index.php) for instructions)._
-            _ArcGIS Pro may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
+            _ArcGIS Pro may also be accessed via the W&M Virtual Desktop Infrastructure on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
 
             \* _ArcMap (a part of ArcGIS Desktop) is being phased out of use._
             _If GIS is in your future, you may wish to consider migrating to ArcGIS Pro._
         - The latest stable release or the university's current installed version of [QGIS Desktop](https://www.qgis.org/en/site/)
 
             \* _QGIS may be downloaded and installed on all major OS's (see [here](https://www.qgis.org/en/site/) for instructions)._
-            _QGIS may also be accessed via the W&M Virtual Desktop Interface on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
+            _QGIS may also be accessed via the W&M Virtual Desktop Infrastructure on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
         - [ArcGIS Online](https://www.arcgis.com) (*see [here](https://youtu.be/x07Xyoe0d2k) for login instructions*).
     - Programming and analysis may be handled using either [ArcGIS Notebooks](https://www.esri.com/arcgis-blog/products/arcgis-enterprise/analytics/introducing-arcgis-notebooks/) on the Portal or in ArcGIS Pro (v.2.5).
 
@@ -130,6 +130,7 @@ Technology
         _Notebooks provide you with all the geoprocessing tools of ArcPro and ArcGIS without having to install any software on your computer._
         _Mac users, rejoice!_
         _You also have access to ArcGIS Notebooks through ArcGIS Pro (v 2.5 and greater)._
+    - Remote access to W&M computing services are handled using the Virtual Desktop Infrastructure, which may be accessed on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4)).
 
 ---
 
@@ -151,19 +152,21 @@ What you should already know
 What is expected of you
 -----------------------
 * Develop advanced geospatial skills and problem-solving techniques.
-* Work both collaboratively and individually on completing course tutorials and exercises, attempting special works projects as they come up, and addressing a real-world geospatial challenge.
-* Maintain a log/report that outlines *everything* you do (including any research, development, analysis, and collaboration) and approximately how long it took you to do it.
-    See example time management log ([.gdoc](https://docs.google.com/document/d/1NVhTQGSdwMTEaMbywG-01XPPGWnLVlKL6iQSLYLUoaI/edit?usp=sharing) and [.gsheet](https://docs.google.com/spreadsheets/d/1FegJTQFhiFyhvzg-mxo9tfd-Qz4ckV37fpXzo4NBMKk/edit?usp=sharing)).
+* Work both collaboratively and individually on completing course tutorials, exercises and special works projects.
+* Create a fictitious consultancy for evaluating the reproducibility of a real-world geospatial problem.
+* Maintain a weekly log/report that outlines *everything* you do (including any research, development, analysis, and collaboration) and approximately how long it took you to do it.
+    See [example weekly log](https://github.com/cga-wm/advgis-delta/blob/main/2021-01-01_Example-Weekly-Log.md) on GitHub.
 
     > The First Step Towards Effectiveness by Peter E. Drucker
     >
     > 1. Know thy time.
 
 * Communicate with your classmates and instructor using remote/web-based technology (see **Communication** above).
+    This includes contributing to the weekly discussion topics.
 * Schedule and meet with your instructor a minimum of three times:
-    1. On or before 2 September to overview the Performance Review Worksheet and the expectations for the Performance Accomplishments;
-    2. On or before 11 October to report on your progress; and
-    3. On or before 24 November for the oral evaluation of your performance accomplishments.
+    1. On or before 12 February to overview the Performance Review Worksheet and the expectations for the Performance Accomplishments;
+    2. On or before 19 March to report on your progress; and
+    3. On or before 18 May for the oral evaluation of your performance accomplishments.
 * Schedule a "client" meeting with a CGA Fellow to review your course project.
 * Ask questions and make mistakes.
     If you are feeling frustrated, then you are likely invested in this class.
@@ -195,8 +198,7 @@ This type of asynchronous workstyle is becoming more prevalent and economically 
 Having the skills to work remotely and collaboratively can give you a "leg up" in the job market.
 This course aims to pair style with content to give you a truly advanced geospatial analysis and programming experience.
 
-Your goal is to work as a team to address (and potentially solve) the various projects that are assigned.
-You will then be asked to put together your experiences into your own project design plan; details on this project follows.
+Your goal is to work both individually and as a team to address (and potentially solve) the various projects that are assigned.
 For all projects, you choose how to address them.
 You keep in constant communication with your classmates and instructor.
 
@@ -207,40 +209,37 @@ The difference here is that there is the expectation that you will help one anot
 > Undergraduates at William & Mary also have the opportunity to take this course with slightly modified expectations during evaluation.
 
 
-> **Disclaimer 2**: In academia, it is well known that new courses take about 3--4 iterations before they are "well developed."
-> That being said, this class is currently in "gamma" version (i.e., third iteration); therefore, two things apply: 1) class structure, methods, topics, delivery, evaluation, etc. are in a constant state of change so please be patient; 2) you are in a position to alter the course by providing feedback, so please, open a notebook and jot down your thoughts, opinions and concerns regarding the class as we go along and use this to craft your course evaluation at the end of the term.
+> **Disclaimer 2**: In academia, it is well known that new courses take about 4--6 iterations before they are "well developed."
+> That being said, this class is currently in "delta" version (i.e., fourth iteration); therefore, two things apply: 1) class structure, methods, topics, delivery, evaluation, etc. are in a constant state of change so please be patient; 2) you are in a position to alter the course by providing feedback, so please, open a notebook and jot down your thoughts, opinions and concerns regarding the class as we go along and use this to craft your course evaluation at the end of the term.
 
 How class time is used
 ----------------------
-This is an advanced class aimed at introducing several new concepts, software, tools, methods, and analyses in a short time.
-It is strongly suggested (and even required) that you take advantage of one another and the instructor to maximum what can be done and what you can learn during this time.
+This is a remote asynchronous class---there is no "class time."
 
-Remember, your goal is to complete the Performance Accomplishments before the end of term.
-To do so, you need to demonstrate that you have satisfied the learning objectives defined in the Performance Review Worksheet.
+This is an advanced class aimed at introducing several new concepts, software, tools, methods, and analyses in a short time.
+It is strongly suggested (and even required) that you take advantage of one another and the instructor to maximize what can be done and what you can learn during this time.
+
+Remember, your goal is to complete the Master Checklist and Performance Accomplishments write up before the end of term.
+To do so, you need to demonstrate that you have satisfied the [learning objectives](#course-objectives) for this course.
 
 
 How this class is assessed
 --------------------------
 _This class is assessed based on a written/oral evaluation of student learning._
 
-At the beginning of the semester, students will be assigned learning objectives along with the minimum requirements for meeting the course's expectations in what is called the **Performance Review Worksheet**.
-In the first meeting with the instructor, students will review the criteria for meeting the expectations for the class and make any adjustments necessary with their instructor.
-Other than during the meetings with the instructor, the Performance Review Worksheet should not be edited by anyone at anytime.
+You will schedule a one-on-one final evaluation with your instructor following at least two individual meetings (one at the beginning and one in the middle of the semester).
 
-During the term, students will keep track of their work that addresses each of the course's expectations in the form of a written document called **Performance Accomplishments**, noting such things as what they did, how they did it, how long it took them, and what they gained from it.
-Additional materials or documentation may be linked to within the Performance Accomplishments document or added to their shared Drive folder (see [Standards for Submitted Work](#standards-for-submitted-work)).
-Media files (such as audio/video files) should be uploaded to the specially created subfolder (**media**) where there is a license agreement for granting use of such files.
+You grade is based on your demonstration of your mastery of the course objectives.
+You are solely responsible for communicating what you have done to succeed in each of these categories.
+This is accomplished by the following:
 
-Near the middle of the term, students will have their second video conference meeting with their instructor to review their progress and make certain everything is on schedule for the end of term.
-The instructor may ask to see some demonstration of your progress (e.g., project logs or notebook exercises).
-Under special circumstances, adjustments may be made to the Performance Review Worksheet, which is authorized only by the instructor.
-
-At the end of the term, students will have their third video conference meeting with the instructor to go over their individual Performance Accomplishments document.
-The instructor will critique each element completed by the student.
-Students may be asked to further demonstrate their skills.
-A final grade will be decided during this meeting.
-
-The criteria for each accomplishment is defined in the Performance Review Worksheet and will, in general, receive an evaluation of one of the following qualities.
+1. Positive, productive engagement as demonstrated by weekly discussions, weekly reports, and communication with the class (e.g., usage of GitHub Issues, GroupMe chat, email, etc.).
+1. Successful and professional client meeting.
+1. Accomplishments write up and completion of the master checklist.
+    - You are solely responsible for communicating what you have done this semester and how it contributes to the course's learning objectives.
+1. Final evaluation.
+    - Successfully complete two (2) special works projects: one written in the performance accomplishments document and one demonstrated live during the final evaluation.
+    - Successfully answer a series of GIS-related questions.
 
 Based on the cumulative assessment of individual accomplishments, a student will earn the corresponding grade for their level of achievement.
 
@@ -253,9 +252,10 @@ Exceeds Expectations | A, A--, or B+
 
 The following stipulations impact a student's final grade.
 
-* The instructor reserves the right to adjust a student's final evaluation score by at most one-half step (e.g., in a plus/minus scale, a C may be rewarded to a C+ or downgraded to a C--) so long as it does not conflict with the following two rules.
-* A student cannot receive a final grade higher than Fully Meets Expectations (C) if one or more of their individual accomplishments receives an Unsatisfactory evaluation score.
-* A student cannot receive a final grade less than Does Not Meet Expectations (D) if none of their individual accomplishments receive an Unsatisfactory score.
+* Any section of the course evaluation (i.e., sections A--D) with more evaluations in the "Does Not Meet" category than in the "Fully Meets" and "Exceeds" categories combined will be considered "Unsatisfactory" for that section.
+* The instructor reserves the right to adjust a student's final evaluation score by at most one-half step (e.g., in a plus/minus scale, a C may be rewarded to a C+ or downgraded to a C--) so long as it does not conflict with the following rules.
+    * A student cannot receive a final grade higher than Fully Meets Expectations (B) if one or more of their individual accomplishments receives an Unsatisfactory evaluation score.
+    * A student cannot receive a final grade less than Does Not Meet Expectations (D) if none of their individual accomplishments receive an Unsatisfactory score.
 
 There are no points, bonuses or extra credit assignments in this class.
 
@@ -322,7 +322,7 @@ The Code of Conduct
 -------------------
 By the basis in which this class is designed, these things hold true:
 
-1. This class utilizes several forms of communication (e.g., instant messaging, discussion boards, wikis, emails, audio/video conferencing), of which not all can be monitored by the instructor at all times.
+1. This class utilizes several forms of communication (e.g., instant messaging, discussion boards, emails, audio/video conferencing), of which not all can be monitored by the instructor at all times.
 2. You are responsible for how you interact with each other.
 
 Remember these things as you work together:
@@ -364,6 +364,8 @@ Remember these things as you work together:
     While it may feel natural to keep your work private, projects really thrive when you document your process publicly.
     By writing things down and sharing them, more people can participate along the way and you might get help on something you didn't even know you needed.
     This leads to more things being documented, which produces a better project roadmap, which leads to better transparency and feedback, which leads to good decision making and faster/better results.
+
+    We cannot manage what we do not measure: so digitize your process!!!
 6. Everyone is bound to uphold a policy of respect for their instructor and their peers.
     Students should be open-minded to new ideas and participate in collegiate debate, the sharing of ideas, and the receiving of feedback without defamatory remarks.
     Students should help maintain a healthy learning environment by refraining from negative behavior, such as harmful remarks, quibbling over trivial matters, creating unnecessary debates, or bullying.
