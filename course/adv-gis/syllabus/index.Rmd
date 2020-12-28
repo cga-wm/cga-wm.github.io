@@ -71,9 +71,8 @@ Communication
     - Video conferencing (e.g, [Zoom](https://cwm.zoom.us/) or [Nooks](https://nooks.in/goto/7cc0KabvZpnfVKyV?pwd=o162Tu))
         - Video conferencing is for office hours, video chats, conference meetings and oral evaluations where "face-to-face" communication or screen sharing is required.
         - *Please note that Nooks presently does not support mobile devices or Safari web browser :(*
-    - Evaluation using ([Google Drive](https://www.google.com/drive/))
-        - *A Drive folder will be shared to your W&M account*
-        - *Use this folder to upload all your evaluation materials*
+    - Evaluation using Google Docs
+        - *Please be sure to share with edit permissions your Performance Accomplishments document*
     - ArcGIS Notebooks and item sharing on [ArcGIS Online](https://www.arcgis.com/index.html)
         - _Please be sure to log into [arcgis.com](https://www.arcgis.com/index.html) using the W&M organization URL: **cga-wm**.maps.arcgis.com (see [here](https://youtu.be/x07Xyoe0d2k) for instructions)_
         - *You will be added to the AdvGIS group*
@@ -123,7 +122,7 @@ Technology
             \* _QGIS may be downloaded and installed on all major OS's (see [here](https://www.qgis.org/en/site/) for instructions)._
             _QGIS may also be accessed via the W&M Virtual Desktop Infrastructure on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
         - [ArcGIS Online](https://www.arcgis.com) (*see [here](https://youtu.be/x07Xyoe0d2k) for login instructions*).
-    - Programming and analysis may be handled using either [ArcGIS Notebooks](https://www.esri.com/arcgis-blog/products/arcgis-enterprise/analytics/introducing-arcgis-notebooks/) on the Portal or in ArcGIS Pro (v.2.5).
+    - Programming and analysis may be handled using either [ArcGIS Notebooks](https://www.esri.com/arcgis-blog/products/arcgis-enterprise/analytics/introducing-arcgis-notebooks/) on the Portal or in ArcGIS Pro (v.2.5 or above).
 
         \* _The ArcGIS Notebook is a cloud-based integrated development environment built for processing, analyzing and visualizing geospatial data._
         _You will be granted access to Notebooks through ArcGIS Online._
@@ -137,10 +136,17 @@ Technology
 Course Objectives
 =================
 1. Apply geospatial problem-solving tactics through individual and collaborative research, design and analysis to real-world challenges.
+    - *Achieved through the client meeting and special works projects.*
 2. Define geoethics and evaluate it with regards to a real-world scenario.
+    - *See items in the* **Become More Geoethical** *section of the master checklist.*
 3. Develop new learning, time management and data organization skills.
+    - *Skill development through tutorials, videos, research, collaborations, etc.*
+    - *Time management through weekly reports and scheduled meetings.*
+    - *Data organization through proper metadata and file geodatabase design.*
 4. Demonstrate professional communication skills for reaching broad audiences.
+    - *Through web presence, audio/video presentations, discussion board responses, and client meeting.*
 5. Develop programming skills for geospatial applications.
+    - *Through ModelBuilder, ArcGIS Notebooks and ArcGIS for Developers tutorials.*
 
 
 What you should already know
@@ -151,7 +157,6 @@ What you should already know
 
 What is expected of you
 -----------------------
-* Develop advanced geospatial skills and problem-solving techniques.
 * Work both collaboratively and individually on completing course tutorials, exercises and special works projects.
 * Create a fictitious consultancy for evaluating the reproducibility of a real-world geospatial problem.
 * Maintain a weekly log/report that outlines *everything* you do (including any research, development, analysis, and collaboration) and approximately how long it took you to do it.
@@ -200,7 +205,7 @@ This course aims to pair style with content to give you a truly advanced geospat
 
 Your goal is to work both individually and as a team to address (and potentially solve) the various projects that are assigned.
 For all projects, you choose how to address them.
-You keep in constant communication with your classmates and instructor.
+You keep in constant communication with your classmates and instructor, build off of each other's strengths, share ideas and methods, and create new ways of efficiently solving geospatial challenges.
 
 This style of learning closely resembles what will be expected of you following graduation and entering the workforce.
 The difference here is that there is the expectation that you will help one another (not always the case in the real world) and your instructor will be your personal tutor and guide (a luxury, for certain).
@@ -235,27 +240,34 @@ This is accomplished by the following:
 
 1. Positive, productive engagement as demonstrated by weekly discussions, weekly reports, and communication with the class (e.g., usage of GitHub Issues, GroupMe chat, email, etc.).
 1. Successful and professional client meeting.
+   I am debriefed on how your meeting went by the CGA Fellows.
 1. Accomplishments write up and completion of the master checklist.
     - You are solely responsible for communicating what you have done this semester and how it contributes to the course's learning objectives.
+    - That being said, I have created the master checklist and tips/suggestions in the performance accomplishments to help and guide you with this process.
 1. Final evaluation.
-    - Successfully complete two (2) special works projects: one written in the performance accomplishments document and one demonstrated live during the final evaluation.
+    - Successfully complete two (2) special works projects: one written (and/or video recorded) and one demonstrated live during the final evaluation.
     - Successfully answer a series of GIS-related questions.
 
 Based on the cumulative assessment of individual accomplishments, a student will earn the corresponding grade for their level of achievement.
 
-Qualitative Assessment | Approximate Grade
-:--- | :---
-Unsatisfactory | F
-Does Not Meet Expectations | C--, D+, or D
-Fully Meets Expectations | B, B--, C+, or C
-Exceeds Expectations | A, A--, or B+
+Qualitative Assessment | Approximate Grade | Meaning |
+:--- | :--- | :------ |
+Unsatisfactory | F | Demonstrates a lack of effort, lack of care, and/or lack of understanding the course objectives. |
+Does Not Meet Expectations | C--, D+, or D | Demonstrates a lack of understanding of one or more course objectives. |
+Fully Meets Expectations | B, B--, C+, or C | Demonstrates a basic understanding of the course objectives. |
+Exceeds Expectations | A, A--, or B+ | Demonstrates exceptional understanding of the course objectives. |
 
-The following stipulations impact a student's final grade.
+The following stipulations impact a student's final grade and are evaluated in the following order.
 
-* Any section of the course evaluation (i.e., sections A--D) with more evaluations in the "Does Not Meet" category than in the "Fully Meets" and "Exceeds" categories combined will be considered "Unsatisfactory" for that section.
-* The instructor reserves the right to adjust a student's final evaluation score by at most one-half step (e.g., in a plus/minus scale, a C may be rewarded to a C+ or downgraded to a C--) so long as it does not conflict with the following rules.
-    * A student cannot receive a final grade higher than Fully Meets Expectations (B) if one or more of their individual accomplishments receives an Unsatisfactory evaluation score.
-    * A student cannot receive a final grade less than Does Not Meet Expectations (D) if none of their individual accomplishments receive an Unsatisfactory score.
+* Any given task consisting entirely of "Does Not Meet" or a total of nine (9) or more evaluations as "Does Not Meet" results in an overall "Unsatisfactory" grade
+* A total of 5--8 "Does Not Meet" evaluations results in an overall "Does Not Meet Expectations" grade
+* Three (3) or more given tasks consisting entirely of "Exceeds" or a total of eleven (11) or more evaluations as "Exceeds" results in an overall "Exceeds Expectations" grade
+* All other grades fall into the "Fully Meets Expectations" category
+
+The instructor reserves the right to adjust a student's final evaluation score by at most one-half step (e.g., in a plus/minus scale, a C may be rewarded to a C+ or downgraded to a C--) so long as it does not conflict with the following rules.
+
+* A student cannot receive a final grade higher than Unsatisfactory (F) if they receive an Unsatisfactory evaluation.
+* A student cannot receive a final grade less than Does Not Meet Expectations (D) if they did not receive an Unsatisfactory evaluation.
 
 There are no points, bonuses or extra credit assignments in this class.
 
@@ -269,10 +281,10 @@ The following are a list of topics that will, time provided, be covered during t
 * Geoethics
 * GIS workflows and design
 * Geocoding, geofencing and other geoprocesses
-* Python programming language
-* JavaScript programming language
-* Arcade expression language
 * Markdown text formatting
+* Python programming language
+* Arcade expression language
+* JavaScript programming language
 * Web applications for the geosciences
 * Programmatic approaches to managing geospatial data
 * Programmatic approaches to solving geospatial problems
@@ -281,33 +293,28 @@ The following are a list of topics that will, time provided, be covered during t
 
 Course Calendar
 ===============
-In this abbreviated twelve week semester, each week will consist of at least one discussion topic with associated readings and responses and up to one "special works" assignment.
-These assignments simulate the real-world challenges faced by GIS specialists and developers.
-
-Students are expected to complete three additional hours of coursework.
-These tasks include:
-
-* __The Client Meeting__: students must prepare a conference meeting with their "client" (played by a bonafide CGA fellow) who has asked them to prepare a project report (project topic and scope to be defined).
-* __The Field Collection__: students must prepare spatial data in a hosted web map and complete a field data collection survey.
-* __The Media File__: students must create a media file (web, audio or video) in the format of a tutorial, podcast or vlog that demonstrates their knowledge of a subject and communication skills to a broad audience (topic to be decided).
+This semester, each week will consist of at least five discussion topics, potential readings and responses, and a weekly write-up.
 
 
 Important Dates
 ---------------
+First day of Add/Drop
+:   - 26 January 2021
+
 First day of term
-:   - 19 August 2020
+:   - 27 January 2021
 
 Add/drop deadline
-:   - 28 August 2020
+:   - 5 February 2021
 
 Withdraw deadline
-:   - 12 October 2020
+:   - 29 March 2021
 
 Last day of term
-:   - 13 November 2020
+:   - 7 May 2021
 
 Last day of exams
-:   - 24 November 2020
+:   - 18 May 2021
 
 Final evaluations
 :   - Final evaluations must be scheduled with your instructor on or before the last day of exams.
@@ -343,7 +350,7 @@ Remember these things as you work together:
     If you want to try something, try it and let everyone know what you are up to.
     Best case scenario, your innovations spark new insight.
     Worst case scenario, we all learn something from your efforts.
-    Remember: there are not right answers to these projects---just creative approaches, innovative designs and happy accidents---so don't be afraid to make a mistake.
+    Remember: there are no right answers to these projects---just creative approaches, innovative designs and happy accidents---so don't be afraid to make a mistake.
     It's better to aim high for something that will make a difference rather than to play it safe with something easy.
 3. Ask lots of questions.
 
@@ -380,7 +387,7 @@ Engagement Policy
 In this asynchronous virtual classroom, engagement is defined loosely as your interaction with one or more of the web-based communication tools.
 
 It is expected that you interact at a minimum with the posted discussions, chats, issues, emails, and/or video conferencing once a week.
-Failure to do so may influence your final grade.
+Failure to do so may negatively influence your final grade.
 
 Please make any and all planned absences (e.g., field trips, vacations, athletic events) that would result in you not being able to meet this minimum interaction known to your instructor at the earliest possible time.
 
@@ -406,6 +413,7 @@ Instant Messaging Policy
 
 You are free (and encouraged) to create your own GroupMe groups with classmates for better/faster communication.
 Do not use the instant messenger for spamming, soliciting or otherwise disrupting the peace.
+Be sure to change your notification settings on your mobile device to provide "Do Not Disturb" periods when sleeping or studying.
 
 
 Email Policy
@@ -421,14 +429,14 @@ Make-Up Policy
 - *There are no make-ups.*
 
 Evaluation dates should be suggested by the student and approved by the instructor.
-If, for some reason, you are unable to meet during the scheduled time or turn in your performance accomplishments on time, you may email the professor before the regularly scheduled evaluation date to reschedule it at a mutually convenient time or else receive an unsatisfactory scoring.
+If, for some reason, you are unable to meet during the scheduled time or turn in your performance accomplishments on time, you may email the professor before the regularly scheduled evaluation date to reschedule it at a mutually convenient time or else receive an unsatisfactory score.
 Under rare circumstance, students may request an incomplete; the acceptance of which is at the sole discretion of the instructor.
 
 
 Standards for Submitted Work
 --------------------------
-- Written work should be in English and follow, to the best of your abilities, the rules of the English language (see [Strunk & White](https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf)).
-- Written work should be neat, thorough, legible, and logically organized.
+- Written (and/or typed) work should be in English and follow, to the best of your abilities, the rules of the English language (see [Strunk & White](https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf)).
+- Written (and/or typed) work should be neat, thorough, legible, and logically organized.
 - All submitted work should include your name, date, and description.
 - Filenames should be in all lowercase and contain only alphanumeric, underscore, hyphen, and/or period characters.
 - Sketches and figures should be drawn using a straight-edge; plots and graphs should be done using a computer, where appropriate.
@@ -458,11 +466,9 @@ For more information, please see https://www.wm.edu/sas.
 
 Copyright Statement
 -------------------
-There is a LICENSES document in your shared Drive folder.
-
-It is requested that you update the file appropriately, prescribing your ownership and license for use of your media files, including but not limited to your web app (.html), video web log (.mp4) and/or podcast (.mp3/.m4a/.aac/.wav).
+It is requested that for each audio, video or web file, you provide an appropriate license (e.g., CC-BY; see [also](https://creativecommons.org/licenses/)), prescribing your ownership and license for use of your media files, including but not limited to your web app (.html), video web log (.mp4) and/or podcast (.mp3/.m4a/.aac/.wav).
 Failure to do so will result in a de facto "no rights reserved" license to the instructor, the department/program and the university on all works submitted.
 
 Please note that these media files may be reused for educational purposes on the course website, future Blackboard courses, or a YouTube playlist.
 
-You may contact the [CGA](mailto:cga@wm.edu) at any time to request that your media file be no longer used.
+You may contact the [CGA](mailto:cga@wm.edu) at any time to request that your media file(s) be no longer used.
