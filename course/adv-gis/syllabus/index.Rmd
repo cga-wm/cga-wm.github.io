@@ -39,7 +39,9 @@ Instructor
     - Physical Office: Center for Geospatial Analysis, Swem Library Rm 213
     - Virtual Office: [Nooks](https://nooks.in/goto/7cc0KabvZpnfVKyV?pwd=o162Tu)
     - Phone: 757-221-6449
-    - Website: https://drdavis.space
+    - Websites:
+        - https://drdavis.space
+        - https://cga-wm.github.io/
 
 Office Hours
 
@@ -50,6 +52,7 @@ Office Hours
 Delivery
 
 :   - Course will delivered [asynchronously](https://www.elearners.com/education-resources/degrees-and-programs/synchronous-vs-asynchronous-classes/).
+    It is advised that you read up on what this means.
 
 Final Exam
 
@@ -70,6 +73,7 @@ Communication
         - *Please create a GitHub account and send your username to your professor*
     - Video conferencing (e.g, [Zoom](https://cwm.zoom.us/) or [Nooks](https://nooks.in/goto/7cc0KabvZpnfVKyV?pwd=o162Tu))
         - Video conferencing is for office hours, video chats, conference meetings and oral evaluations where "face-to-face" communication or screen sharing is required.
+        - If one of these options doesn't work for you, please let me know and I'll work with you on finding a suitable alternative.
         - *Please note that Nooks presently does not support mobile devices or Safari web browser :(*
     - Evaluation using Google Docs
         - *Please be sure to share with edit permissions your Performance Accomplishments document*
@@ -82,6 +86,7 @@ Communication
         - Maintained by your instructor for communicating ideas, methods and course content.
     - Videos ([YouTube Playlist](https://youtube.com/playlist?list=PLbIkNQKCuzMNp93D3wzRh8x8ceL4HKpIA))
         - Complimentary to the blog and used when audio/video is the better communication medium.
+        - Be on the lookout as new videos will be added throughout the semester.
 
     See [**Code of Conduct**](#the-code-of-conduct) regarding how these communication platforms are (and should be) used.
 
@@ -183,7 +188,7 @@ What to expect from your instructor
 * Manage all web resources
 * Post videos to introduce/explain concepts and guide you through demos
 * Post links to tutorials and other helpful guides
-* Answer questions and provide feedback as requested through email, chat, discussion board forums or other electronic means in a timely manner
+* Answer questions and provide feedback as requested through email, chat, discussion board forums, weekly reports or other electronic means in a timely manner
 * Make accommodations for video chat requests during and/or outside scheduled office hours
 * Meet with you at least twice before final evaluations
 
@@ -221,7 +226,7 @@ How class time is used
 ----------------------
 This is a remote asynchronous class---there is no "class time."
 
-This is an advanced class aimed at introducing several new concepts, software, tools, methods, and analyses in a short time.
+This is an advanced class aimed at introducing several new concepts, software, tools, methods, and analyses.
 It is strongly suggested (and even required) that you take advantage of one another and the instructor to maximize what can be done and what you can learn during this time.
 
 Remember, your goal is to complete the Master Checklist and Performance Accomplishments write up before the end of term.
