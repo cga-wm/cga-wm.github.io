@@ -78,7 +78,7 @@ Communication
     - Evaluation using Google Docs
         - *Please be sure to share with edit permissions your Performance Accomplishments document*
     - ArcGIS Notebooks and item sharing on [ArcGIS Online](https://www.arcgis.com/index.html)
-        - _Please be sure to log into [arcgis.com](https://www.arcgis.com/index.html) using the W&M organization URL: **cga-wm**.maps.arcgis.com (see [here](https://youtu.be/x07Xyoe0d2k) for instructions)_
+        - _Please be sure to log into [arcgis.com](https://www.arcgis.com/index.html) using the W&M organization URL: **wm-gis**.maps.arcgis.com (see [here](https://youtu.be/x07Xyoe0d2k) for instructions)_
         - *You will be added to the AdvGIS group*
     - Email ([twdavis-at-wm-dot-edu](mailto:twdavis@wm.edu))
         - The new snail mail; use this for personal communication or whenever sharing is inappropriate.
