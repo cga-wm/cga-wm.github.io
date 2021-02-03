@@ -23,7 +23,7 @@ get.content <- function(my.meta){
 }
 
 post.path <- "."
-my.files <- list.files(path = post.path, pattern = "^2020.*Rmd$")
+my.files <- list.files(path = post.path, pattern = "^202[01].*Rmd$")
 my.files <- sort(my.files, decreasing = TRUE)
 for (f in my.files){
     f.path <- file.path(post.path, f)

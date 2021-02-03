@@ -14,6 +14,7 @@
 
 <title>The Trouble With Geofences</title>
 
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -311,12 +312,12 @@ $(document).ready(function () {
 
 <p>A few things worked that I worked out this week:</p>
 <ol style="list-style-type: decimal">
-<li>The <code>require</code> statement that precedes the Javascript in Esri’s examples is actually a part of Node.js, which explains the need for <code>outFields</code> within module-defined objects</li>
+<li><p>The <code>require</code> statement that precedes the Javascript in Esri’s examples is actually a part of Node.js, which explains the need for <code>outFields</code> within module-defined objects</p></li>
 <li><p>You can move all the stuff out of the index.html file and into its own script file (e.g., <code>geofence.js</code>) and call the script by adding the following line at the end of your head tag. I’ve found this to be easier to work with, especially in CodePen.io.</p>
 <pre><code>&lt;script src=&quot;./geofence.js&quot;&gt;&lt;/script&gt;</code></pre></li>
-<li>I had trouble using Locate.graphic.geometry and trying to run Arcade’s Intersects tool on completely failed. Additionally, I want to be able to save multiple locations, so I am trying to record each time I click the Locate button.</li>
+<li><p>I had trouble using Locate.graphic.geometry and trying to run Arcade’s Intersects tool on completely failed. Additionally, I want to be able to save multiple locations, so I am trying to record each time I click the Locate button.</p></li>
 <li><p>The Locate widget has an event called <code>locate</code> that triggers with a <a href="https://www.w3.org/TR/geolocation-API/#position_interface">Position</a> object. I can inspect the page using through my browser’s Console (see <a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Open_the_Inspector">here</a> for instructions) and I can see the position object that I get from the triggered event (see image below).</p>
-<img src="images/2020-04-20_geofence_console.png" /></li>
+<p><img src="images/2020-04-20_geofence_console.png" /></p></li>
 <li><p>Taking a closer look at what the console is printing, the highest level braces (curly brackets) represent the object, which I arbitrarily called ‘position’ in my code; however, the object has a property that is also called ‘position’ because that’s the position object. So, here I was thinking that ‘position’ was referencing my object called ‘position’ but it is actually referencing the parameter ‘position’ that is inside my object! A slight adjustment to the code changing my function’s variable name from <code>position</code> to <code>evt</code> (it’s an event object) and adding the variable name <em>before</em> the word <code>position</code>, like so:</p>
 <pre><code>var data = {
   LATITUDE: evt.position.coords.latitude,
@@ -363,7 +364,7 @@ $(document).ready(function () {
 </ul>
 <p>This is what it looks like:</p>
 <div class="figure">
-<img src="images/2020-04-27_geofence.png" alt="Figure. Manually scrubbed the JSON geometries from the ten largest polygons (by area) using ArcGIS Pro’s Feature to JSON with some format cleaning (done by hand; ugh again). Created a Polygon geometry within the Arcade expression for the unique value renderer. Used the Editor widget to update the location points and color them based on whether they are within (uses the Within function) the JSON-described polygon geometry. Red indicates false (not within) and blue indicates true (within)." />
+<img src="images/2020-04-27_geofence.png" alt="" />
 <p class="caption"><strong>Figure</strong>. Manually scrubbed the JSON geometries from the ten largest polygons (by area) using ArcGIS Pro’s <strong>Feature to JSON</strong> with some format cleaning (done by hand; ugh again). Created a Polygon geometry within the Arcade expression for the unique value renderer. Used the Editor widget to update the location points and color them based on whether they are within (uses the <code>Within</code> function) the JSON-described polygon geometry. Red indicates false (not within) and blue indicates true (within).</p>
 </div>
 </div>
