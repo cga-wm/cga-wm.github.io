@@ -9,11 +9,14 @@ summary: "Happy Groundhog's Day. Yay! More winter. Here's the low-down on Client
 
 | Term  | Project                   | Team              | Grade |
 | :-----| :------------------------ | :---------------- | :---: |
-| Fall 2020 | ["Infant and Child Mortality in India in the Last Two Decades: A Geospatial Analysis"](https://doi.org/10.1371/journal.pone.0026856) | [Joshua Habib](https://sites.google.com/email.wm.edu/joshuahabib/client-meeting/purpose-and-key-concepts?authuser=0) | S |
-| Fall 2020 | ["Modelling future landscape change on coastal floodplains using a rule-based GIS"](https://doi.org/10.1016/j.envsoft.2005.07.011) | [Lindsay Rogers and Sarah Grace Lott](https://sites.google.com/email.wm.edu/client-meeting/home) | M |
-| Fall 2020 | ["Towards the development of a GIS method for identifying rural food deserts: Geographic access in Vermont, USA"](https://doi.org/10.1016/j.apgeog.2009.05.004) | [Caroline Duckworth and Lauren Kohout](https://storymaps.arcgis.com/stories/9379895103e34c0aafc922ed57d0cba3) | M |
-| Fall 2020 | [Geology and Wine 8. Modeling Viticultural Landscapes:  A  GIS Analysis  of  the  Terroir Potential  in  the  Umpqua Valley of Oregon](https://journals.lib.unb.ca/index.php/GC/article/view/2779/3267) | Dorian Miller and Haley Meyrowitz | S |
+| Fall 2020 | [Geology and Wine 8. Modeling Viticultural Landscapes:  A  GIS Analysis  of  the  Terroir Potential  in  the  Umpqua Valley of Oregon](https://journals.lib.unb.ca/index.php/GC/article/view/2779/3267) | Dorian and Haley | S |
+| Fall 2020 | ["Infant and Child Mortality in India in the Last Two Decades: A Geospatial Analysis"](https://doi.org/10.1371/journal.pone.0026856) | [Josh](https://sites.google.com/email.wm.edu/joshuahabib/client-meeting/purpose-and-key-concepts?authuser=0) | S |
+| Fall 2020 | ["GIS bio-waste assessment and suitability analysis for biogas power plant: A case study of Anambra state of Nigeria"](https://doi.org/10.1016/j.renene.2020.09.046) | [Maeve and Sam](https://storymaps.arcgis.com/stories/bbf8d416c924465aa137b546dbcb1921) | S |
+| Fall 2020 | ["Using a geographic information system to enhance patient access to point-of-care diagnostics in a limited-resource setting"](http://doi.org/10.1186/s12942-016-0037-9) | Jerry, Mayada, and Sean | S |
+| Fall 2020 | ["Geographic access to gynecologic cancer care in the United States"](https://doi.org/10.1016/j.ygyno.2015.04.025) | Austin, Ciaran, and Amelia | M |
 | Fall 2020 | [Least cost path analysis of early maritime movement on the Pacific Northwest Coast](http://dx.doi.org/10.1016/j.jas.2016.11.006) | [Kat and RJ](https://sites.google.com/email.wm.edu/marine-lcp-analysis/overview) | M |
+| Fall 2020 | ["Modelling future landscape change on coastal floodplains using a rule-based GIS"](https://doi.org/10.1016/j.envsoft.2005.07.011) | [Lindsay and Sarah Grace](https://sites.google.com/email.wm.edu/client-meeting/home) | M |
+| Fall 2020 | ["Towards the development of a GIS method for identifying rural food deserts: Geographic access in Vermont, USA"](https://doi.org/10.1016/j.apgeog.2009.05.004) | [Caroline and Lauren](https://storymaps.arcgis.com/stories/9379895103e34c0aafc922ed57d0cba3) | M |
 
 
 ***
@@ -24,4 +27,7 @@ S
 :   Satisfactory (methods are clear and reproducible).
 
 M
-:   Marginal (some methods are unclear and/or data are outdated or not available).
+:   Marginal (it is hard to say because some methods are unclear and/or data are outdated or not readily available).
+
+U
+:   Unsatisfactory (there is no way to reproduce these methods)
