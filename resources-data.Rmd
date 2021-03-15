@@ -146,6 +146,10 @@ output:
 [Natural Earth](http://www.naturalearthdata.com/)
 :   A public domain map dataset featuring vector and raster data.
 
+[Open Data Inception](https://opendatainception.io/#)
+:   An interactive map of 2k+ open data portals from around the world.
+    Opendatasoft's mission is to support organizations by helping people access data and make sense of it and they offer market-leading data sharing solutions that allow you to easily publish, manage, combine, analyze, visualize, and share data in a variety of formats on a single platform.
+
 [OpenTopography](https://opentopography.org/)
 :   OpenTopography aims to democratize access to high-resolution topographic data in a manner that serves users with varied expertise, application domains, and computing resources.
 
