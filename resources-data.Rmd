@@ -30,6 +30,9 @@ output:
 [Alaska Hydrography Database](http://akhydro.uaa.alaska.edu/)
 :   Provides updated hydrography (surface water such as streams, rivers and watershed areas) data that meet statewide and national standards.
 
+[American Panorama](https://dsl.richmond.edu/panorama/)
+:   A historical atlas of the United States for the twenty-first century combining cutting-edge research with innovative interactive mapping techniques, designed to appeal to anyone with an interest in American history or a love of maps.
+
 [ArcGIS Living Atlas - Indicators of the Planet](https://experience.arcgis.com/experience/003f05cc447b46dc8818640c38b69b83/)
 :   See the latest in global issues with links to their respective open data portals.
 
@@ -136,6 +139,10 @@ output:
 
 [List of GIS data sources](https://en.wikipedia.org/wiki/List_of_GIS_data_sources)
 :   Wikipedia guide of GIS data sources (including some geoportals) that provide information that can be used in GIS and spatial databases for purposes of geospatial analysis and cartographic mapping.
+
+[Mapping Inequality](https://dsl.richmond.edu/panorama/redlining/)
+:   The Home Owners' Loan Corporation (HOLC), between 1935 and 1940, created thousands of area descriptions using data and evaluations organized by local real estate professionals, such that, in each city, grades could be assigned to residential neighborhoods that reflect their "mortgage security" that would then be visualized on color-coded maps.
+    These data, under CC-BY-NC-SA, are now available to download in GIS data formats (e.g., Shapefile, GeoJSON, and imagery).
 
 [Movebank](https://www.movebank.org/cms/movebank-main)
 :   Hosted by the Max Planck Institute of Animal Behavior in coordination with the North Carolina Museum of Natural Sciences, the Ohio State University and the University of Konstanz, Movebank is a free online platform that helps researchers manage, share, analyze and archive animal movement data.
