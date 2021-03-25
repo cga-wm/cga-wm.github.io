@@ -11,6 +11,6 @@ Check out the GIS Tutorials and Creating My First Layout in ArcGIS Pro playlists
 
     This playlist covers all sorts of topics from logging into your organizational account, accessing ArcGIS Online, connecting to W&M's Virtual Desktop Interface, and utilizing a variety of ArcGIS geoprocessing tools.
 
-- [Creating my first layout (YouTube Playlist)](https://www.youtube.com/playlist?list=PLiOhBg8WdMaJyHqU1A7TlF-SVc5d51b9F)
+- [Creating my first map layout (YouTube Playlist)](https://youtube.com/playlist?list=PLiOhBg8WdMaLVZ8-wY9TYzNreop-ktrWA)
 
     This playlist walks you through the fundamentals of creating your first map layout using ArcGIS Pro.
