@@ -5,7 +5,7 @@ url: 2021-02-02-reproducibility.html
 summary: "Happy Groundhog's Day. Yay! More winter. Here's the low-down on Client Meeting progress reports on the reproducibility of published geoprocesses."
 ---
 
-:   Table 1. Reproducibility results
+:   Table 1. Reproducibility results. Links the project papers and team websites (where available).
 
 | Term  | Project                   | Team              | Grade |
 | :-----| :------------------------ | :---------------- | :---: |
@@ -17,7 +17,19 @@ summary: "Happy Groundhog's Day. Yay! More winter. Here's the low-down on Client
 | Fall 2020 | [Least cost path analysis of early maritime movement on the Pacific Northwest Coast](http://dx.doi.org/10.1016/j.jas.2016.11.006) | [Kat and RJ](https://sites.google.com/email.wm.edu/marine-lcp-analysis/overview) | M |
 | Fall 2020 | ["Modelling future landscape change on coastal floodplains using a rule-based GIS"](https://doi.org/10.1016/j.envsoft.2005.07.011) | [Lindsay and Sarah Grace](https://sites.google.com/email.wm.edu/client-meeting/home) | M |
 | Fall 2020 | ["Towards the development of a GIS method for identifying rural food deserts: Geographic access in Vermont, USA"](https://doi.org/10.1016/j.apgeog.2009.05.004) | [Caroline and Lauren](https://storymaps.arcgis.com/stories/9379895103e34c0aafc922ed57d0cba3) | M |
+| Spring 2021 | ["A GIS-based method for the selection of the location of residence"][albacete-12] | [Geo-Problem Solvers][geo-problem-solvers] | TBD |
+| Spring 2021 | ["The Effects of Historical Housing Policies on Resident Exposure to Intra-Urban Heat: A Study of 108 US Urban Areas"][hoffman-20] | [Urban Thermal Taskforce][urban-thermal-taskforce] | TBD |
+| Spring 2021 | ["Mapping Land Use Land Cover Change in the Lower Mekong Basin From 1997 to 2010"][spruce-20] | [VPRSC][vprsc] | TBD |
+| Spring 2021 | ["Forest Fire Risk Assessment Using Hotspot Analysis in GIS"][said-17] | [First Ascent Spatial Solutions][first-ascent] | TBD |
 
+[albacete-12]: https://doi.org/10.1080/10095020.2012.708159
+[first-ascent]: https://sites.google.com/email.wm.edu/first-ascent/home
+[hoffman-20]: http://dx.doi.org/10.3390/cli8010012
+[said-17]: http://dx.doi.org/10.2174/1874149501711010786
+[spruce-20]: https://doi.org/10.3389/fenvs.2020.00021
+[geo-problem-solvers]: https://sites.google.com/email.wm.edu/geoproblemsolving-gis420/home
+[urban-thermal-taskforce]: https://urbanthermaltaskforce.weebly.com/
+[vprsc]: https://vprsc.weebly.com/
 
 ***
 
