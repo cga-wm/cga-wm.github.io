@@ -160,6 +160,9 @@ output:
 [OpenTopography](https://opentopography.org/)
 :   OpenTopography aims to democratize access to high-resolution topographic data in a manner that serves users with varied expertise, application domains, and computing resources.
 
+[PRISM Climate Group](https://www.prism.oregonstate.edu/)
+:   A gathering of climate observations from a wide range of monitoring networks available at multiple spatial/temporal resolutions, covering the period from 1895 to the present.
+
 [Global Shark Attack File](http://www.sharkattackfile.net/)
 :   A time-stamped semi-geolocated incident log of global shark attacks.
 
