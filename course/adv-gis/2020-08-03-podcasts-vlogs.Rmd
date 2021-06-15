@@ -55,6 +55,66 @@ All web tutorials, vlogs, and podcasts are licensed for use by their respective 
 </div>
 
 
+<!-- Podcast by John -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">May 1 | Spring 2021</h2>
+<h1 class="xs-mb2">"Geoethics Podcast"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1heBauTxq090ZKFKIG5Ao5g1Im1WePXAJ" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1heBauTxq090ZKFKIG5Ao5g1Im1WePXAJ">link</a> instead.</p>
+</audio>
+<p>In this podcast, John talks about the geoethics of the privacy concerns when combating the COVID-19 pandemic with the focus on the differences between eastern and western world tactics. The articles discussed include [Huang et al. (2020)][huang-20], [Laurent (2020)][laurent-20], and [Hui (2020)][hui-20].</p>
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast by Caleb, Ben and Sidonie -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">April 29 | Spring 2021</h2>
+<h1 class="xs-mb2">"Geoethics Podcast"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1rvynKQQLHaZJFelZuhza9htscqTNu3Dr" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1rvynKQQLHaZJFelZuhza9htscqTNu3Dr">link</a> instead.</p>
+</audio>
+<p>In this podcast, the members of First Ascent Spatial Solutions consultancy (Sidonie, Ben and Caleb) discuss the the idea of climate reparations paid to island nations impacted by greenhouse gas emissions from "carbon major" countries.</p>
+</div>
+</div>
+</article>
+</div>
+
+<!-- Podcast by Andrew -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo">
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">April 27 | Spring 2021</h2>
+<h1 class="xs-mb2">"Geoethics Podcast"</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1pIPnxebnA14YgWbrrCg6J0nEaVfKPyz9" type="audio/mpeg">
+<p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1pIPnxebnA14YgWbrrCg6J0nEaVfKPyz9">link</a> instead.</p>
+</audio>
+<p>In this podcast, Andrew discusses the geoethical concerns on zoning laws based on a [Tweet][samdman95] by Sam Deutsch.</p>
+</div>
+</div>
+</article>
+</div>
+
 <!-- Podcast by Maddy -->
 <div class="card-body">
 <article class="row episode">
@@ -386,3 +446,7 @@ In this podcast, Jesus takes a look at the ethics behind location services and g
 [^Patino20]: https://www.bloomberg.com/news/articles/2020-03-31/how-to-make-people-stay-home
 [^Purnell20]: https://www.wsj.com/articles/whatsapp-to-suspend-processing-law-enforcement-requests-for-user-data-in-hong-kong-11594034580
 [^Tan20]: https://doi.org/10.1109/IOTM.0001.2000097
+[huang-20]: https://hbr.org/2020/04/how-digital-contact-tracing-slowed-covid-19-in-east-asia
+[hui-20]: https://qz.com/1825997/taiwan-phone-tracking-system-monitors-55000-under-coronavirus-quarantine/
+[laurent-20]: https://www.washingtonpost.com/business/dont-ignore-the-good-news-on-covid-19-from-asia/2020/10/30/ee2541dc-1a8a-11eb-8bda-814ca56e138b_story.html
+[samdman95]: https://twitter.com/samdman95/status/1371855298994966528
