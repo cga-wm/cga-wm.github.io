@@ -42,6 +42,12 @@ output:
 [Climate Data Online Search](https://www.ncdc.noaa.gov/cdo-web/search)
 :   Find past weather and climate data provided by NOAA's National Centers for Environmental Information (NCDC).
 
+[Copernicus Land Monitoring Service](https://land.copernicus.eu/)
+:   [Copernicus](https://www.copernicus.eu/en) is the European Union's Earth observation programme that draws from satellite and in-situ (non-space) data.
+    Information from this programme is provided through six thematic services: land, marine, atmosphere, climate change, emergency management and security.
+    All information is free and openly accessible to all users.
+    The Land Monitoring Service provides access to bio-geophysical products, land cover and land use, environmental hotspots, and satellite imagery.
+
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
 
