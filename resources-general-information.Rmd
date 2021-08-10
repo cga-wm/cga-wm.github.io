@@ -80,6 +80,10 @@ title: "Resources | General Info"
 
 ### Online Articles and Textbooks
 
+[Essentials of Geographic Information Systems v.1.0](https://open.umn.edu/opentextbooks/textbooks/67)
+:   by Jonathan Campbell and Michael Shin (2011).
+    Copyright &copy; Saylor Academy Open Textbooks (saylor.org).
+
 [Geographic Information Systems, First Edition, 1991](https://www.wiley.com/legacy/wileychi/gis/volumes.html)
 :   Copyright &copy; John Wiley & Sons 1991.
     Converted to HTML by Jim Harper. Last updated January 16, 2001.
