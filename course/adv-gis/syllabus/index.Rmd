@@ -1,7 +1,7 @@
 ---
 title: "Syllabus | Advanced GIS Analysis and Programming"
 author: "Center for Geospatial Analysis"
-date: "Spring 2021"
+date: "Fall 2021"
 ---
 
 ****
@@ -15,28 +15,27 @@ Students will become familiar with methods of leveraging programming languages (
 Activities develop GIS analysis skills with examples from government, social science, physical science and the humanities.
 
 Catalog Number
-
 :   - GIS 420/520
     - Section 1
-    - CRN 23058/24143
+    - CRN 14652/16164
 
 Prerequisites
-
 :   - BIOL 445 "GIS for Biologists" or GIS 201/INTR 204 "Introduction to Geographic Information Systems and Spatial Analysis"
 
 Semester
-
-:   - Spring 2021 (2021-Jan-27 to 2021-May-18)
+:   - Fall 2021 (2021-Sep-01 to 2021-Dec-21)
 
 Location
+:   - [Swem Library](https://www.wm.edu/about/visiting/campusmap/location/swem.php), Rm 215
 
-:   - This course is taught online (remotely); therefore, it can be completed from anywhere.
+Class Times
+:   - Tuesday, Thursday
+    - 11:00-12:20
 
 Instructor
-
 :   - Dr. Tyler W. Davis
     - Email: twdavis@wm.edu
-    - Physical Office: Center for Geospatial Analysis, Swem Library Rm 213
+    - Physical Office: [Center for Geospatial Analysis](https://www.wm.edu/as/cga/), Swem Library Rm 213
     - Virtual Office: [Nooks](https://nooks.in/goto/7cc0KabvZpnfVKyV?pwd=o162Tu)
     - Phone: 757-221-6449
     - Websites:
@@ -44,19 +43,15 @@ Instructor
         - https://cga-wm.github.io/
 
 Office Hours
-
-:   - Schedule is posted on virtual office website
+:   - Posted online and by appointment
     - *Appointments are welcome outside normally scheduled office hours; please message or email to set up a time.*
     - *There may be certain days when office hours will be either canceled or rescheduled; notifications will be sent ahead of time.*
 
 Delivery
-
-:   - Course will delivered [asynchronously](https://www.elearners.com/education-resources/degrees-and-programs/synchronous-vs-asynchronous-classes/).
-    It is advised that you read up on what this means.
+:   - This lecture/lab class has a labeled modality of __FS__, which means that it meets predominantly in person (face-to-face) and predominantly synchronous (all meet at the same scheduled place at the same scheduled time).
 
 Final Exam
-
-:   - Written/oral evaluation on or before 18 May 2021
+:   - Written/oral evaluation on or before COB 20 December 2021
 
 Minimum Passing Grade
 
@@ -66,8 +61,9 @@ Communication
 
 :   - Instant messaging using [GroupMe](https://groupme.com/)
         - For instant delivery of content or for questions that need quick responses.
-        - *Please email me your preferred GroupMe email address*
-    - Discussion posts, Q&A, and schedule management using [GitHub](https://github.com/cga-wm/advgis-delta)
+        - *Please email me your preferred GroupMe email address or use the join link below*
+        - Join Link: https://groupme.com/join_group/69693978/Fe5J6QsW
+    - Discussion posts, Q&A, and schedule management using [GitHub](https://github.com/cga-wm/advgis-echo)
         - For weekly engagement including sharing ideas, methods and content and asking/responding to questions, comments or concerns.
         - This will serve as a primary hub; all other content will be linked from here.
         - *Please create a GitHub account and send your username to your professor*
@@ -84,14 +80,10 @@ Communication
         - The new snail mail; use this for personal communication or whenever sharing is inappropriate.
     - Website blog (https://cga-wm.github.io/course/adv-gis/blog.html)
         - Maintained by your instructor for communicating ideas, methods and course content.
-    - Videos ([YouTube Playlist](https://youtube.com/playlist?list=PLbIkNQKCuzMNp93D3wzRh8x8ceL4HKpIA))
-        - Complimentary to the blog and used when audio/video is the better communication medium.
-        - Be on the lookout as new videos will be added throughout the semester.
 
     See [**Code of Conduct**](#the-code-of-conduct) regarding how these communication platforms are (and should be) used.
 
 Textbook
-
 :   - Today's GIS text is the World Wide Web itself
     - The following are some helpful web resources:
         - https://cga-wm.github.io/ (*see Resources*)
@@ -101,11 +93,10 @@ Textbook
         - https://developers.arcgis.com/labs/ (*see Tutorials*)
         - https://learn.arcgis.com/en/ (*see Lesson Gallery*)
         - [CGA GIS Tutorial YouTube Playlist](https://www.youtube.com/playlist?list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl)
-        - [Advanced GIS Spring 2021 YouTube Playlist](https://youtube.com/playlist?list=PLbIkNQKCuzMNp93D3wzRh8x8ceL4HKpIA)
+        - [Advanced GIS Workflow Playlist](https://youtube.com/playlist?list=PLbIkNQKCuzMPSwHHGZ4nFncmlw52l57fv)
 
 Course Materials
-
-:   - Laptop or desktop computer (*required*)
+:   - Laptop or desktop computer (*recommended*)
 
         \* _Your computer should have at least 500 MB of free disk space, have at least 8 GB of memory, and run a modern desktop OS (e.g,. PC, Mac, or Linux); netbooks need not apply._
     - Dedicated USB 3.0 thumb drive 64 GB or larger (*recommended*)
@@ -113,11 +104,10 @@ Course Materials
         \* _Organizing your data and maintaining a backup can save you from serious misfortune; I know from experience._
 
 Technology
-
 :   - Geospatial visualizations and analysis may be handled using any of the following:
         - The latest stable release or the university's current installed versions of Esri's [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources) or [ArcMap](https://www.esri.com/en-us/arcgis/products/arcgis-desktop/resources)
 
-            \* _ArcGIS Pro may be installed on individual computers for Microsoft Windows users only (see [here](https://www.wm.edu/as/cga/arcgis-licensing/index.php) for instructions)._
+            \* _ArcGIS Pro may be installed on individual computers for Microsoft Windows users only (see [here](https://www.wm.edu/as/cga/resources/software/index.php) for instructions)._
             _ArcGIS Pro may also be accessed via the W&M Virtual Desktop Infrastructure on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
 
             \* _ArcMap (a part of ArcGIS Desktop) is being phased out of use._
@@ -127,13 +117,13 @@ Technology
             \* _QGIS may be downloaded and installed on all major OS's (see [here](https://www.qgis.org/en/site/) for instructions)._
             _QGIS may also be accessed via the W&M Virtual Desktop Infrastructure on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4))._
         - [ArcGIS Online](https://www.arcgis.com) (*see [here](https://youtu.be/x07Xyoe0d2k) for login instructions*).
-    - Programming and analysis may be handled using either [ArcGIS Notebooks](https://www.esri.com/arcgis-blog/products/arcgis-enterprise/analytics/introducing-arcgis-notebooks/) on the Portal or in ArcGIS Pro (v.2.5 or above).
+    - Programming and analysis may be handled using either [ArcGIS Notebooks](https://www.esri.com/en-us/arcgis/products/arcgis-notebooks/overview) on the Portal or in ArcGIS Pro (v.2.5 or above).
 
         \* _The ArcGIS Notebook is a cloud-based integrated development environment built for processing, analyzing and visualizing geospatial data._
         _You will be granted access to Notebooks through ArcGIS Online._
         _Notebooks provide you with all the geoprocessing tools of ArcPro and ArcGIS without having to install any software on your computer._
         _Mac users, rejoice!_
-        _You also have access to ArcGIS Notebooks through ArcGIS Pro (v 2.5 and greater)._
+        _You also have access to ArcGIS Notebooks through [ArcGIS Pro](https://www.esri.com/arcgis-blog/products/arcgis-pro/analytics/introducing-arcgis-notebooks-in-arcgis-pro/) (v 2.5 and greater)._
     - Remote access to W&M computing services are handled using the Virtual Desktop Infrastructure, which may be accessed on Windows (see [here](https://youtu.be/pZh-fMoaV54)) or on Mac (see [here](https://youtu.be/lG43GtH1Ta4)).
 
 ---
