@@ -51,7 +51,7 @@ Delivery
 :   - This lecture/lab class has a labeled modality of __FS__, which means that it meets predominantly in person (face-to-face) and predominantly synchronous (all meet at the same scheduled place at the same scheduled time).
 
 Final Exam
-:   - Written/oral evaluation on or before COB 20 December 2021
+:   - Written/oral evaluation on or before COB Monday, 20 December 2021
 
 Minimum Passing Grade
 
@@ -153,9 +153,13 @@ What you should already know
 What is expected of you
 -----------------------
 * Work both collaboratively and individually on completing course tutorials, exercises and special works projects.
-* Create a fictitious consultancy for evaluating the reproducibility of a real-world geospatial problem.
-* Maintain a weekly log/report that outlines *everything* you do (including any research, development, analysis, and collaboration) and approximately how long it took you to do it.
-    See [example weekly log](https://github.com/cga-wm/advgis-delta/blob/main/2021-01-01_Example-Weekly-Log.md) on GitHub.
+* Create a fictitious consultancy responsible for:
+    - evaluating the reproducibility of a real-world geospatial problem of your choice (pending instructor approval);
+    - building a public-facing website that includes a summary of the project, an evaluation of geoethics, and a blog of milestones / accomplishments
+    - providing at least two methodologies for solving at least one special works problem;
+    - creating and disseminating a novel dataset in at least two file formats (e.g., file geodatabase and GeoJSON)
+    - scheduling a "client" meeting to review the progress of the reproducibility project
+* Maintain a weekly log/report posted on the course repository's wiki that outlines *everything* you do for this class (including any research, development, analysis, and collaboration) and approximately how long it took you to do it.
 
     > The First Step Towards Effectiveness by Peter E. Drucker
     >
@@ -163,24 +167,27 @@ What is expected of you
 
 * Communicate with your classmates and instructor using remote/web-based technology (see **Communication** above).
     This includes contributing to the weekly discussion topics.
-* Schedule and meet with your instructor a minimum of three times:
-    1. On or before 12 February to overview the expectations for the Performance Accomplishments;
-    2. On or before 19 March to report on your progress; and
-    3. On or before 18 May for the oral evaluation of your performance accomplishments.
-* Schedule a "client" meeting with a CGA Fellow to review your course project.
 * Ask questions and make mistakes.
     If you are feeling frustrated, then you are likely invested in this class.
 * Uphold professionalism in everything you do (see [**Code of Conduct**](#the-code-of-conduct) below).
 * Provide a course evaluation at the end of the term with a summary of things you liked and disliked; methods that worked for you and those that fell short; topics that interested you and those that were uninteresting.
 
+**GIS 520 Students only**
+
+* Complete a performance accomplishments document that summarizes the work done in this class that satisfies the learning objectives (see [Course Objectives](#course-objectives) above).
+* Schedule and meet with your instructor a minimum of three times:
+    1. On or before the end of week 3 (17 September) to overview the expectations for the Performance Accomplishments;
+    2. On or before the end of week 8 (22 October) to report on your progress; and
+    3. On or before the end of finals (20 December) for the oral evaluation of your performance accomplishments.
+
+
 What to expect from your instructor
 -----------------------------------
 * Manage all web resources
-* Post videos to introduce/explain concepts and guide you through demos
-* Post links to tutorials and other helpful guides
-* Answer questions and provide feedback as requested through email, chat, discussion board forums, weekly reports or other electronic means in a timely manner
-* Make accommodations for video chat requests during and/or outside scheduled office hours
-* Meet with you at least twice before final evaluations
+* Introduce/explain concepts and guide you through demos
+* Provide links to tutorials and other helpful guides
+* Answer questions and provide feedback as requested through email, chat, discussion board forums, weekly reports or other means in a timely manner
+* Make accommodations for meeting requests during and/or outside scheduled office hours
 
 ---
 
@@ -189,11 +196,11 @@ Course Structure
 
 How this class is stylized
 --------------------------
-I designed this course to mimic a real-world geospatial organization that solves spatial problems; therefore, a large focus of this class will be presenting you with challenge questions and asking you to solve them.
+Originally, I designed this course to mimic a real-world geospatial organization that solves spatial problems; therefore, a large focus of this class will be presenting you with challenge questions and asking you to solve them.
 To build your geospatial problem-solving skills, we will tackle these challenges together, sharing our methods and results with one another.
 I will show you tips and tricks and introduce you to new GIS methods and tools to help you become better, faster and stronger GIS professionals.
 
-I took inspiration from Ben Balter's ["15 rules for communicating at GitHub"](https://ben.balter.com/2014/11/06/rules-of-communicating-at-github/).
+For this class, I took inspiration from Ben Balter's ["15 rules for communicating at GitHub"](https://ben.balter.com/2014/11/06/rules-of-communicating-at-github/).
 This type of asynchronous workstyle is becoming more prevalent and economically gainful in today's tech world; not to mention the accelerated rate of remote work under the present pandemic.
 Having the skills to work remotely and collaboratively can give you a "leg up" in the job market.
 This course aims to pair style with content to give you a truly advanced geospatial analysis and programming experience.
@@ -210,21 +217,26 @@ The difference here is that there is the expectation that you will help one anot
 
 
 > **Disclaimer 2**: In academia, it is well known that new courses take about 4--6 iterations before they are "well developed."
-> That being said, this class is currently in "delta" version (i.e., fourth iteration); therefore, two things apply: 1) class structure, methods, topics, delivery, evaluation, etc. are in a constant state of change so please be patient; 2) you are in a position to alter the course by providing feedback, so please, open a notebook and jot down your thoughts, opinions and concerns regarding the class as we go along and use this to craft your course evaluation at the end of the term.
+> That being said, this class is currently in "echo" version (i.e., fifth iteration); therefore, two things apply: 1) class structure, methods, topics, delivery, evaluation, etc. are in a constant state of change so please be patient; 2) you are in a position to alter the course by providing feedback, so please, in your personal notes, jot down your thoughts, opinions and concerns regarding the class as we go along; you may use this to craft your course evaluation at the end of the term.
 
 How class time is used
 ----------------------
-This is a remote asynchronous class---there is no "class time."
+This class is scheduled to meet twice a week.
+The goal is to have one class session each week dedicated to discussions (e.g., topics of the week, consultancy issues and concerns, etc.).
+The other day each week should be the instructor introducing topics, skills, or methods relevant to the class.
+See the posted [course calendar](https://cga-wm.github.io/course/adv-gis/calendar.html) for tentative schedule.
 
 This is an advanced class aimed at introducing several new concepts, software, tools, methods, and analyses.
 It is strongly suggested (and even required) that you take advantage of one another and the instructor to maximize what can be done and what you can learn during this time.
 
-Remember, your goal is to complete the Master Checklist and Performance Accomplishments write up before the end of term.
+Remember, your goal is to complete the Master Checklist (and, if you are a certificate student, the Performance Accomplishments write up) before the end of term.
 To do so, you need to demonstrate that you have satisfied the [learning objectives](#course-objectives) for this course.
 
 
 How this class is assessed
 --------------------------
+
+### Certificate Level (GIS 520)
 _This class is assessed based on a written/oral evaluation of student learning._
 
 You will schedule a one-on-one final evaluation with your instructor following at least two individual meetings (one at the beginning and one in the middle of the semester).
@@ -235,12 +247,12 @@ This is accomplished by the following:
 
 1. Positive, productive engagement as demonstrated by weekly discussions, weekly reports, and communication with the class (e.g., usage of GitHub Issues, GroupMe chat, email, etc.).
 1. Successful and professional client meeting.
-   I am debriefed on how your meeting went by the CGA Fellows.
+   Please be aware that I am debriefed on how your meeting went by the CGA Fellows.
 1. Accomplishments write up and completion of the master checklist.
     - You are solely responsible for communicating what you have done this semester and how it contributes to the course's learning objectives.
     - That being said, I have created the master checklist and tips/suggestions in the performance accomplishments to help and guide you with this process.
 1. Final evaluation.
-    - Successfully complete two (2) special works projects: one written (and/or video recorded) and one demonstrated live during the final evaluation.
+    - Successfully complete two (2) special works projects: one written (and/or video recorded) and one demonstrated live (either during the last weeks of class or one-on-one during the final evaluation).
     - Successfully answer a series of GIS-related questions.
 
 Based on the cumulative assessment of individual accomplishments, a student will earn the corresponding grade for their level of achievement.
@@ -264,12 +276,58 @@ The instructor reserves the right to adjust a student's final evaluation score b
 * A student cannot receive a final grade higher than Unsatisfactory (F) if they receive an Unsatisfactory evaluation.
 * A student cannot receive a final grade less than Does Not Meet Expectations (D) if they did not receive an Unsatisfactory evaluation.
 
-There are no points, bonuses or extra credit assignments in this class.
+There are no points, bonuses or extra credit assignments awarded at the certificate level (GIS 520) of this class.
+
+### Undergraduate Level (GIS 420)
+_This class is assessed based on the completion of course tasks (master checklist) and final evaluation of student learning (written exam)._
+
+On the course repository, there is a master checklist of over 100 tasks (dismissing any tasks labeled _GIS 520 only_).
+Undergraduate students are awarded 1 point for each completed task (checked item) on their master checklist.
+
+The undergraduate final exam will be administered during the final exam period (see the registrar's [online schedule](https://www.wm.edu/offices/registrar/calendarsandexams/examschedules/fall21exam/index.php#class)).
+The final exam is comprised of five questions.
+Each question completed successfully contributes 1 point to a student's final grade.
+Each question not answered (or answered unsuccessfully) deducts two points from a student's final grade.
+
+An undergraduate student's final grade is the summation of their total points (checked items) from the master checklist with their score on the final exam.
+An undergraduate student's final letter grade is determined based on the values in the following table.
+
+----------------------
+Letter     Point Score
+------  --------------
+A               >93.0
+
+A--       90.0--92.99
+
+B+        87.0--89.99
+
+B         83.0--86.99
+
+B--       80.0--82.99
+
+C+        77.0--79.99
+
+C         73.0--76.99
+
+C--       70.0--72.99
+
+D+        67.0--69.99
+
+D         60.0--66.99
+
+F               <60.0
+---------------------------------------------------
+
+> There is no expectation that students can or will complete all tasks on the master checklist; however, students who keep pace with the instructor can and should be able to complete a sufficient number of items to both successfully complete the class and pass the final exam.
+
+There are no bonus points nor extra credit awarded at the undergraduate level (GIS 420) of this class.
+Final scores are based on the level of completion of the master checklist and evaluation of the final exam responses as of COB on Monday, 20 December 2021.
+No further adjustments can be made following the final exam period.
 
 ---
 
 # Course Topics
-The following are a list of topics that will, time provided, be covered during the term.
+The following are a list of topics that may covered during the term.
 
 
 * GIS Specialists versus Developers
@@ -279,8 +337,6 @@ The following are a list of topics that will, time provided, be covered during t
 * Markdown text formatting
 * Python programming language
 * Arcade expression language
-* JavaScript programming language
-* Web applications for the geosciences
 * Programmatic approaches to managing geospatial data
 * Programmatic approaches to solving geospatial problems
 
@@ -293,27 +349,23 @@ This semester, each week will consist of at least five discussion topics, potent
 
 Important Dates
 ---------------
-First day of Add/Drop
-:   - 26 January 2021
-
 First day of term
-:   - 27 January 2021
+:   - 1 September 2021
 
 Add/drop deadline
-:   - 5 February 2021
+:   - 10 September 2021
+
+Fall break
+:   - 16--19 October 2021
 
 Withdraw deadline
-:   - 29 March 2021
+:   - 1 November 2021
 
 Last day of term
-:   - 7 May 2021
+:   - 10 December 2021
 
-Last day of exams
-:   - 18 May 2021
-
-Final evaluations
-:   - Final evaluations must be scheduled with your instructor on or before the last day of exams.
-    - Performance Accomplishments are due at least 24 hours before your scheduled evaluation.
+Day of final exam
+:   - 20 December 2021
 
 ---
 
@@ -353,7 +405,7 @@ Remember these things as you work together:
     When asking questions, remember to always strive for clarity.
     If you don't know something or your aren't sure, just ask.
     Sometimes, knowing the right question to ask is just as difficult as finding the answer.
-    When you find yourself here, please send up a flare or simply say "I'm lost."
+    When you find yourself here, it's okay send up a flare or simply say "I'm lost."
     We will get you back on track.
 4. Focus on opportunities.
 
@@ -377,14 +429,19 @@ Remember these things as you work together:
 
 Engagement Policy
 -----------------
-- *Weekly virtual engagement is required.*
+- *Weekly engagement is required.*
 
-In this asynchronous virtual classroom, engagement is defined loosely as your interaction with one or more of the web-based communication tools.
+It is the expectation that all students perform their tasks and coordinate with their teams in pursuit of accomplishing the tasks outlined for this class.
 
-It is expected that you interact at a minimum with the posted discussions, chats, issues, emails, and/or video conferencing once a week.
-Failure to do so may negatively influence your final grade.
+### Removal of a Team Member
 
-Please make any and all planned absences (e.g., field trips, vacations, athletic events) that would result in you not being able to meet this minimum interaction known to your instructor at the earliest possible time.
+Any student (or team member) recorded as being absent (e.g., not responding to instant messages, not replying to emails, and not attending out-of-class meetings) for two or more weeks is eligible to be removed from a team.
+The petition to remove a team member from a team need only show the documentation of failed attempts of communication along with dates / times of meetings in an email (with all member's CC'd) or in print with signatures from all other members.
+All completed items by the team following the removal of a team member do not count towards the removed team member's accomplishments.
+
+### Planned Absences
+
+Please make any and all planned absences (e.g., field trips, vacations, athletic events) along with any unplanned absences (e.g., illnesses and emergencies) known to your instructor at the earliest possible time.
 
 
 Coursework Policy
@@ -421,11 +478,15 @@ If you do not receive a confirmation message from the instructor within 12 hours
 
 Make-Up Policy
 --------------
-- *There are no make-ups.*
+- *There are no make-ups or extensions.*
 
-Evaluation dates should be suggested by the student and approved by the instructor.
+Undergraduate final exam times are final.
+All accomplishments are due on or before the final exam period ends.
+
+Evaluation dates for certificate students should be suggested by the student and approved by the instructor.
 If, for some reason, you are unable to meet during the scheduled time or turn in your performance accomplishments on time, you may email the professor before the regularly scheduled evaluation date to reschedule it at a mutually convenient time or else receive an unsatisfactory score.
-Under rare circumstance, students may request an incomplete; the acceptance of which is at the sole discretion of the instructor.
+
+Under the most rare and extraordinary circumstances, students may request an incomplete; the acceptance of which is at the sole discretion of the instructor.
 
 
 Standards for Submitted Work
@@ -438,13 +499,14 @@ Standards for Submitted Work
 - Tables, figures and images from online sources should include a citation (including the author/publisher, date created/accessed, and URL).
 - All in-text citations and references should be formatted to APA standards unless otherwise indicated.
 - Plagiarism will be taken seriously; *if you write something that is not your own original idea or in your own words, then it must be cited!* See [here](https://ctl.yale.edu/writing/using-sources/understanding-and-avoiding-plagiarism) for information on plagiarism and how to avoid it.
-- Unless otherwise stated, typed electronic files may be in one of the following acceptable open formats:
+- Unless otherwise stated, typed electronic files may be submitted in one of the following acceptable open formats:
     * [Office Open XML Document](https://en.wikipedia.org/wiki/Office_Open_XML) (.docx)
     * [OpenDocument Text](https://en.wikipedia.org/wiki/OpenDocument) (.odt)
     * [Portable Document Format](https://en.wikipedia.org/wiki/PDF) (.pdf)
     * [Markdown](https://en.wikipedia.org/wiki/Markdown) (.md/.Rmd)
     * [Markup](https://en.wikipedia.org/wiki/Markup_language) (.html/.tex)
     * [Plain Text](https://en.wikipedia.org/wiki/Plain_text) (.txt)
+- All image files should be saved in either JPEG (.jpg) or PNG (.png) format.
 
 
 ---
@@ -461,9 +523,9 @@ For more information, please see https://www.wm.edu/sas.
 
 Copyright Statement
 -------------------
-It is requested that for each audio, video or web file, you provide an appropriate license (e.g., CC-BY; see [also](https://creativecommons.org/licenses/)), prescribing your ownership and license for use of your media files, including but not limited to your web app (.html), video web log (.mp4) and/or podcast (.mp3/.m4a/.aac/.wav).
-Failure to do so will result in a de facto "no rights reserved" license to the instructor, the department/program and the university on all works submitted.
+It is requested for each audio, video, image, data, or web file, that you provide an appropriate license (e.g., CC-BY; see [also](https://creativecommons.org/licenses/)), prescribing your ownership and license for use of your media files.
+Failure to do so will result in a de facto "no rights reserved" license granted to the instructor, the Center for Geospatial Analysis and William & Mary on all works submitted.
 
-Please note that these media files may be reused for educational purposes on the course website, future Blackboard courses, or a YouTube playlist.
+Please note that these media files may be reused for educational purposes on the course website, future Blackboard courses, or in a YouTube playlist.
 
 You may contact the [CGA](mailto:cga@wm.edu) at any time to request that your media file(s) be no longer used.
