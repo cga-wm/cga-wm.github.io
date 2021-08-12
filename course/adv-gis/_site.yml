@@ -9,8 +9,12 @@ navbar:
             href: lectures/geoethics
           - text: Programming
             href: lectures/programming
-        - text: Syllabus
-          href: syllabus/index.html
+        - text: Class
+          menu:
+          - text: Syllabus
+            href: syllabus.html
+          - text: Calendar
+            href: calendar.html
         - text: Blog
           href: blog.html
         - text: CGA-WM

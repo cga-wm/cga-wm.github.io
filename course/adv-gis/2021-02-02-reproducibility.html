@@ -20,6 +20,15 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 <style type="text/css">
@@ -34,32 +43,6 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
@@ -71,10 +54,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -91,40 +70,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -152,7 +104,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -164,7 +116,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -175,10 +127,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -190,7 +155,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -284,8 +248,20 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
-<li>
-  <a href="syllabus/index.html">Syllabus</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Class
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="syllabus.html">Syllabus</a>
+    </li>
+    <li>
+      <a href="calendar.html">Calendar</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="blog.html">Blog</a>
@@ -298,7 +274,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -326,76 +302,76 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">Spring 2021</td>
+<td align="left"><a href="https://doi.org/10.3389/fenvs.2020.00021">“Mapping Land Use Land Cover Change in the Lower Mekong Basin From 1997 to 2010”</a></td>
+<td align="left"><a href="https://vprsc.weebly.com/">VPRSC</a></td>
+<td align="center">S</td>
+</tr>
+<tr class="even">
 <td align="left">Fall 2020</td>
 <td align="left"><a href="https://journals.lib.unb.ca/index.php/GC/article/view/2779/3267">Geology and Wine 8. Modeling Viticultural Landscapes: A GIS Analysis of the Terroir Potential in the Umpqua Valley of Oregon</a></td>
 <td align="left">Dorian and Haley</td>
 <td align="center">S</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Fall 2020</td>
 <td align="left"><a href="https://doi.org/10.1371/journal.pone.0026856">“Infant and Child Mortality in India in the Last Two Decades: A Geospatial Analysis”</a></td>
 <td align="left"><a href="https://sites.google.com/email.wm.edu/joshuahabib/client-meeting/purpose-and-key-concepts?authuser=0">Josh</a></td>
 <td align="center">S</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Fall 2020</td>
-<td align="left"><a href="https://doi.org/10.1016/j.renene.2020.09.046">“GIS bio-waste assessment and suitability analysis for biogas power plant: A case study of Anambra state of Nigeria”</a></td>
+<td align="left">[“GIS bio-waste assessment and suitability analysis for biogas power plant: A case study of Anambra state of Nigeria”][chukwuma-11]</td>
 <td align="left"><a href="https://storymaps.arcgis.com/stories/bbf8d416c924465aa137b546dbcb1921">Maeve and Sam</a></td>
 <td align="center">S</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Fall 2020</td>
 <td align="left"><a href="http://doi.org/10.1186/s12942-016-0037-9">“Using a geographic information system to enhance patient access to point-of-care diagnostics in a limited-resource setting”</a></td>
 <td align="left">Jerry, Mayada, and Sean</td>
 <td align="center">S</td>
 </tr>
+<tr class="even">
+<td align="left">Spring 2021</td>
+<td align="left"><a href="http://dx.doi.org/10.2174/1874149501711010786">“Forest Fire Risk Assessment Using Hotspot Analysis in GIS”</a></td>
+<td align="left"><a href="https://sites.google.com/email.wm.edu/first-ascent/home">First Ascent Spatial Solutions</a></td>
+<td align="center">M</td>
+</tr>
 <tr class="odd">
+<td align="left">Spring 2021</td>
+<td align="left"><a href="http://dx.doi.org/10.3390/cli8010012">“The Effects of Historical Housing Policies on Resident Exposure to Intra-Urban Heat: A Study of 108 US Urban Areas”</a></td>
+<td align="left"><a href="https://urbanthermaltaskforce.weebly.com/">Urban Thermal Taskforce</a></td>
+<td align="center">M</td>
+</tr>
+<tr class="even">
 <td align="left">Fall 2020</td>
 <td align="left"><a href="https://doi.org/10.1016/j.ygyno.2015.04.025">“Geographic access to gynecologic cancer care in the United States”</a></td>
 <td align="left">Austin, Ciaran, and Amelia</td>
 <td align="center">M</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Fall 2020</td>
 <td align="left"><a href="http://dx.doi.org/10.1016/j.jas.2016.11.006">Least cost path analysis of early maritime movement on the Pacific Northwest Coast</a></td>
 <td align="left"><a href="https://sites.google.com/email.wm.edu/marine-lcp-analysis/overview">Kat and RJ</a></td>
 <td align="center">M</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Fall 2020</td>
 <td align="left"><a href="https://doi.org/10.1016/j.envsoft.2005.07.011">“Modelling future landscape change on coastal floodplains using a rule-based GIS”</a></td>
-<td align="left"><a href="https://sites.google.com/email.wm.edu/client-meeting/home">Lindsay and Sarah Grace</a></td>
+<td align="left"><a href="https://sites.google.com/email.wm.edu/client-meeting/home">Lindsey and Sarah Grace</a></td>
 <td align="center">M</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Fall 2020</td>
 <td align="left"><a href="https://doi.org/10.1016/j.apgeog.2009.05.004">“Towards the development of a GIS method for identifying rural food deserts: Geographic access in Vermont, USA”</a></td>
 <td align="left"><a href="https://storymaps.arcgis.com/stories/9379895103e34c0aafc922ed57d0cba3">Caroline and Lauren</a></td>
 <td align="center">M</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Spring 2021</td>
 <td align="left"><a href="https://doi.org/10.1080/10095020.2012.708159">“A GIS-based method for the selection of the location of residence”</a></td>
 <td align="left"><a href="https://sites.google.com/email.wm.edu/geoproblemsolving-gis420/home">Geo-Problem Solvers</a></td>
-<td align="center">TBD</td>
-</tr>
-<tr class="even">
-<td align="left">Spring 2021</td>
-<td align="left"><a href="http://dx.doi.org/10.3390/cli8010012">“The Effects of Historical Housing Policies on Resident Exposure to Intra-Urban Heat: A Study of 108 US Urban Areas”</a></td>
-<td align="left"><a href="https://urbanthermaltaskforce.weebly.com/">Urban Thermal Taskforce</a></td>
-<td align="center">TBD</td>
-</tr>
-<tr class="odd">
-<td align="left">Spring 2021</td>
-<td align="left"><a href="https://doi.org/10.3389/fenvs.2020.00021">“Mapping Land Use Land Cover Change in the Lower Mekong Basin From 1997 to 2010”</a></td>
-<td align="left"><a href="https://vprsc.weebly.com/">VPRSC</a></td>
-<td align="center">TBD</td>
-</tr>
-<tr class="even">
-<td align="left">Spring 2021</td>
-<td align="left"><a href="http://dx.doi.org/10.2174/1874149501711010786">“Forest Fire Risk Assessment Using Hotspot Analysis in GIS”</a></td>
-<td align="left"><a href="https://sites.google.com/email.wm.edu/first-ascent/home">First Ascent Spatial Solutions</a></td>
-<td align="center">TBD</td>
+<td align="center">U</td>
 </tr>
 </tbody>
 </table>
@@ -447,7 +423,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

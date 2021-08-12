@@ -20,6 +20,15 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 <style type="text/css">
@@ -34,32 +43,6 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
@@ -71,10 +54,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -91,40 +70,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -152,7 +104,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -164,7 +116,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -175,10 +127,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -190,7 +155,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -284,8 +248,20 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
-<li>
-  <a href="syllabus/index.html">Syllabus</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Class
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="syllabus.html">Syllabus</a>
+    </li>
+    <li>
+      <a href="calendar.html">Calendar</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="blog.html">Blog</a>
@@ -298,7 +274,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -336,6 +312,168 @@ $(document).ready(function () {
 <div id="podcasts" class="section level3">
 <h3>Podcasts</h3>
 <div class="card">
+<!-- Podcast by Jake, Bella and Evie -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<p><img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo"></p>
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">
+May 8 | Spring 2021
+</h2>
+<h1 class="xs-mb2">
+“Geoethics Podcast”
+</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1r1fRGCW9ZYxwodFiXXH0ukxPlqN6R73x" type="audio/mpeg">
+<p>
+Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1r1fRGCW9ZYxwodFiXXH0ukxPlqN6R73x">link</a> instead.
+</p>
+</audio>
+<p>
+In this podcast, Jake, Ella and Evie of the Urban Thermal Taskforce discuss the geoethics involved with the extreme heat caused by the urban heat island effect and the practice of redlining.
+</p>
+</div>
+</div>
+</article>
+</div>
+<!-- Podcast by John -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<p><img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo"></p>
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">
+May 1 | Spring 2021
+</h2>
+<h1 class="xs-mb2">
+“Geoethics Podcast”
+</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1heBauTxq090ZKFKIG5Ao5g1Im1WePXAJ" type="audio/mpeg">
+<p>
+Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1heBauTxq090ZKFKIG5Ao5g1Im1WePXAJ">link</a> instead.
+</p>
+</audio>
+<p>
+In this podcast, John talks about the geoethics of the privacy concerns when combating the COVID-19 pandemic with the focus on the differences between eastern and western world tactics. The articles discussed include [Huang et al. (2020)][huang-20], [Laurent (2020)][laurent-20], and [Hui (2020)][hui-20].
+</p>
+</div>
+</div>
+</article>
+</div>
+<!-- Podcast by Caleb, Ben and Sidonie -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<p><img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo"></p>
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">
+April 29 | Spring 2021
+</h2>
+<h1 class="xs-mb2">
+“Geoethics Podcast”
+</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1rvynKQQLHaZJFelZuhza9htscqTNu3Dr" type="audio/mpeg">
+<p>
+Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1rvynKQQLHaZJFelZuhza9htscqTNu3Dr">link</a> instead.
+</p>
+</audio>
+<p>
+In this podcast, the members of First Ascent Spatial Solutions consultancy (Sidonie, Ben and Caleb) discuss the the idea of climate reparations paid to island nations impacted by greenhouse gas emissions from “carbon major” countries.
+</p>
+</div>
+</div>
+</article>
+</div>
+<!-- Podcast by Andrew -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<p><img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo"></p>
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">
+April 27 | Spring 2021
+</h2>
+<h1 class="xs-mb2">
+“Geoethics Podcast”
+</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1pIPnxebnA14YgWbrrCg6J0nEaVfKPyz9" type="audio/mpeg">
+<p>
+Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1pIPnxebnA14YgWbrrCg6J0nEaVfKPyz9">link</a> instead.
+</p>
+</audio>
+<p>
+In this podcast, Andrew discusses the geoethical concerns on zoning laws based on a [Tweet][samdman95] by Sam Deutsch.
+</p>
+</div>
+</div>
+</article>
+</div>
+<!-- Podcast by Maddy -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<p><img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo"></p>
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">
+April 26 | Spring 2021
+</h2>
+<h1 class="xs-mb2">
+“GEOETHICS Podcast”
+</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1254fZ3eT2TaJk3_IbdpSQjIA9ljpzzL-" type="audio/mpeg">
+<p>
+Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1254fZ3eT2TaJk3_IbdpSQjIA9ljpzzL-">link</a> instead.
+</p>
+</audio>
+<p>
+In this podcast, Maddy walks us through the geoethics of aerial geotourism. See also, [Maghsoudi, Moradi, and Moradipour (2021)][maghsoudi21].
+</p>
+</div>
+</div>
+</article>
+</div>
+<!-- Podcast by Quentin -->
+<div class="card-body">
+<article class="row episode">
+<div class="col-3">
+<p><img class="episode-image" src="images/globe-arrow-logo.png" alt="Logo"></p>
+</div>
+<div class="col-9">
+<h2 class="xs-mb1">
+March 29 | Spring 2021
+</h2>
+<h1 class="xs-mb2">
+“Geoethics Podcast”
+</h1>
+<div class="episode-player">
+<audio controls="">
+<source src="https://drive.google.com/uc?export=view&id=1ikP81lqI3J1tPPni6hzxDBJLW5ZVoHj4" type="audio/mpeg">
+<p>
+Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1ikP81lqI3J1tPPni6hzxDBJLW5ZVoHj4">link</a> instead.
+</p>
+</audio>
+<p>
+In this podcast, Quentin introduces the concept of zoning laws and the electoral college followed by a discussion on the geoethics of racial segregation.
+</p>
+</div>
+</div>
+</article>
+</div>
 <!-- Podcast by Sean -->
 <div class="card-body">
 <article class="row episode">
@@ -693,10 +831,10 @@ In this podcast, Jesus takes a look at the ethics behind location services and g
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p><a href="https://towardsdatascience.com/analysis-of-tweets-on-the-hong-kong-protest-movement-2019-with-python-a331851f061" class="uri">https://towardsdatascience.com/analysis-of-tweets-on-the-hong-kong-protest-movement-2019-with-python-a331851f061</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p><a href="https://towardsdatascience.com/analysis-of-tweets-on-the-hong-kong-protest-movement-2019-with-python-a331851f061" class="uri">https://towardsdatascience.com/analysis-of-tweets-on-the-hong-kong-protest-movement-2019-with-python-a331851f061</a> [maghsoudi21]: Maghsoudi, M., Moradi, A. &amp; Moradipour, F. Aerial Geotourism: New Branch of Geotourism for Promoting Geoconservation (Examples from Iran). <em>Geoheritage</em> 13, 4 (2021). <a href="https://doi.org/10.1007/s12371-020-00526-8" class="uri">https://doi.org/10.1007/s12371-020-00526-8</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p><a href="https://www.wsj.com/articles/whatsapp-to-suspend-processing-law-enforcement-requests-for-user-data-in-hong-kong-11594034580" class="uri">https://www.wsj.com/articles/whatsapp-to-suspend-processing-law-enforcement-requests-for-user-data-in-hong-kong-11594034580</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
 <li id="fn3"><p><a href="https://www.amnesty.org/en/latest/news/2020/07/hong-kong-national-security-arrests-over-social-media-posts-violate-freedom-of-expression/" class="uri">https://www.amnesty.org/en/latest/news/2020/07/hong-kong-national-security-arrests-over-social-media-posts-violate-freedom-of-expression/</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p><a href="https://doi.org/10.1109/IOTM.0001.2000097" class="uri">https://doi.org/10.1109/IOTM.0001.2000097</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p><a href="https://doi.org/10.1109/IOTM.0001.2000097" class="uri">https://doi.org/10.1109/IOTM.0001.2000097</a> [huang-20]: <a href="https://hbr.org/2020/04/how-digital-contact-tracing-slowed-covid-19-in-east-asia" class="uri">https://hbr.org/2020/04/how-digital-contact-tracing-slowed-covid-19-in-east-asia</a> [hui-20]: <a href="https://qz.com/1825997/taiwan-phone-tracking-system-monitors-55000-under-coronavirus-quarantine/" class="uri">https://qz.com/1825997/taiwan-phone-tracking-system-monitors-55000-under-coronavirus-quarantine/</a> [laurent-20]: <a href="https://www.washingtonpost.com/business/dont-ignore-the-good-news-on-covid-19-from-asia/2020/10/30/ee2541dc-1a8a-11eb-8bda-814ca56e138b_story.html" class="uri">https://www.washingtonpost.com/business/dont-ignore-the-good-news-on-covid-19-from-asia/2020/10/30/ee2541dc-1a8a-11eb-8bda-814ca56e138b_story.html</a> [samdman95]: <a href="https://twitter.com/samdman95/status/1371855298994966528" class="uri">https://twitter.com/samdman95/status/1371855298994966528</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
 <li id="fn5"><p><a href="https://www.bloomberg.com/news/articles/2020-03-31/how-to-make-people-stay-home" class="uri">https://www.bloomberg.com/news/articles/2020-03-31/how-to-make-people-stay-home</a><a href="#fnref5" class="footnote-back">↩</a></p></li>
 <li id="fn6"><p><a href="https://www.theverge.com/2017/4/13/15289178/snapchat-ad-tracking-snap-to-store-geofilters" class="uri">https://www.theverge.com/2017/4/13/15289178/snapchat-ad-tracking-snap-to-store-geofilters</a><a href="#fnref6" class="footnote-back">↩</a></p></li>
 <li id="fn7"><p><a href="https://doi.org/10.1016/j.envsoft.2005.07.011" class="uri">https://doi.org/10.1016/j.envsoft.2005.07.011</a><a href="#fnref7" class="footnote-back">↩</a></p></li>
@@ -735,7 +873,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
