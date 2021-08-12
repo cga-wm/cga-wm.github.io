@@ -6,4 +6,125 @@ summary: "Spring 2021 is in the can and it was a mostly successful fully remote 
 ---
 
 Another semester is in the books.
-Below is a selection of comments that I received and I will do my best to respond.
+Following a *mostly* successful remote asynchronous semester, we once again pivot to an in-person course delivery.
+
+Each new delivery has its challenges.
+This semester, I am tacking the following.
+
+1. Separation of course requirements (GIS 420 versus GIS 520)
+
+    In previous semesters, the difference between the undergraduate (GIS 420) and certificate (GIS 520) levels of this class were relatively small.
+    This semester, I am making a much clearer break.
+    Undergraduates will have a much simpler course structure---not necessarily less challenging, but simpler.
+    The undergraduates will only be concerned with the master checklist, which will be mostly the same as it was in previous semesters (see changes to the master checklist), and will have a final exam to make the course "feel" more like a college class.
+
+    Certificate students will keep the requirement of having to complete the end of semester performance accomplishments evaluation, of which the master checklist is only one part.
+    The live demonstration of a special works project may be done before the class or during the individual evaluation period (depending on the schedule).
+    This allows the certificate student to elicit feedback from an audience, if interested.
+
+2. Changes in undergraduate grading
+
+    To accommodate the change in how undergraduate students complete the class, I decided to implement a point-based system.
+    While I generally do not like point-based grading systems, this simplified approach puts the reward of a higher grade on students accomplishing tasks throughout the semester, rather than on an onus of graded / regraded work, creating bonus assignments, and awarding extra credit (of which there are none).
+    One point is given for each task completed on the master checklist.
+    There are over 100 tasks (precluding those labeled GIS 520 only).
+    In the majority, the tasks have remained the same as previous semesters with some changes (see changes to the master checklist).
+    Because undergraduate students were able, on average, to complete 94 out of 100 tasks (including those now delegated to GIS 520 students only), it is my belief that undergraduates can successfully complete the class to a high standard (i.e., it is still possible to earn an A).
+    Whether this class is graded too easily for undergraduates is yet to be determined; although, average grades for this class are historically high.
+3. Changes to the master checklist
+
+    The biggest change to come to the master checklist is the separation of exclusive GIS 520 tasks, of which there are nine.
+    These nine tasks deal specifically with the completion of the performance accomplishments document and the scheduling of the three one-on-one meetings.
+
+    The second largest change is how the special works projects are handled.
+    Last semester, the entire class worked together on the solutions: one to be turned in as a written assignment and one to be completed live during the final evaluation period.
+    I am no longer requiring a live demonstration by undergraduate students; this frees them up to focus on the final exam.
+    Instead, undergraduates will focus on two or three special works problems (or semester challenges) with their consultancy, choose one, and provide two differing methodologies on how to address it.
+
+# Last Semester Review
+
+As always, I am striving to improve this course based on student evaluation feedback.
+Below is a selection of comments that I received from last semester (Spring 2021) along with my best attempts for response.
+
+> "I really liked the course and learned a lot.
+> The big thing I didn't like was the structure of expectations.
+> It felt like what was required was not apparent at all in a lot of sections and was really confusing.
+> Also, grading really confused me."
+
+This is fair evaluation.
+As it was pointed out by another student, this class was delivered asynchronously and the subject matter was complex.
+This added with an unconventional grading system would certainly and unavoidably confuse people.
+
+This, along with other reasons, is why I chose to simplify the undergraduate experience and streamline the grading expectations, such that they are much clearer and easier to follow along with, plan for, and understand.
+
+> "Lots of work was put in to creating videos and notebooks to teach Python and other aspects of the course."
+
+Yes, this is true.
+And thank you for noting it here.
+I intend to utilize these hard-earned resources this semester, which I hope are to the benefit of others.
+
+> "I [...] disliked the structure of the Special Works project.
+> [...]
+> All students are responsible for having each project ready to present.
+> This system is too convoluted, and for no apparent purpose, and
+encourages students to delay work until the final four special works projects have been selected.
+> I suggest allowing students to choose two special works projects to do."
+
+This is a great point and a great idea!
+So let's do that.
+Rather, let's have students choose only one to solve, but in two different ways; therefore, there is more focus on a single challenge.
+I think adding more options to the mix is also good, so I plan to incorporate two semester challenges into the mix.
+
+> "The only thing I would have preferred to have done differently is perhaps more structured GIS lessons, because other than the YouTube videos and the Special Works Projects I didn't feel that I actually improved my GIS skills in anyway.
+> I really enjoyed and benefited from the real-life applications and discussions in the course, but I would have liked to improve my technical skills a bit more."
+
+While this is a valid complaint, in my opinion, it stems from the asynchronous nature and flexibility of how students prepared and spent their time.
+Last semester, it was possible (and even easy) to complete the class without being pushed into learning new skills, because they were optional or could be avoided.
+
+This semester, due to the in-person nature, I will be able to direct students' attention toward what's new and ask them to try something new.
+I am also putting in place a requirement that student teams select a special works project that requires one of their self-identified weaknesses as a GIS practitioner.
+We shall see how that goes.
+
+> "Advanced is the GIS class I have learned the most in and has tested me a lot, but man is it stressful.
+> It's just a lot, but that is to be expected and the experiences I had as a result of the class really helped me professionally.
+> I think that the Special Works Projects could be a bigger part of the check list, just so that people know they have that to work towards as well."
+
+This is really encouraging to hear and is exactly the kind of outcome I hoped for.
+The point of clarity surrounding the special works project is valid; I very much underplayed it in the checklist and introduced them awkwardly as "additional tasks to be accomplished."
+
+This semester, to make it clearer, I added the special works solutions to be part of the consultancy work; it is clearly group-based and solutions are to be pushed to the website.
+There are now six check boxes in the master checklist pertaining to the special works.
+
+> "I loved all the different modes of teaching (there were videos, notebooks, tutorials, projects, texts to read).
+> All of the variety kept the class engaging and there were many different ways for different kinds of learners to take in the material.
+> Moreover, all of the different activities all felt applicable to different aspects of real life GIS tasks."
+
+This is also encouraging to hear.
+I am glad to hear that the variety of materials were useful and engaging.
+I hope that the in-person delivery this semester does not diminish the variety of modes of teaching and I will strive to incorporate as many of these alternatives as possible.
+
+> "One thing that might improve the class is more group work, I personally learned the most from the group work even though I know group work can be the bane of some peoples' existence but maybe more open opportunities where students can opt to work in groups might be helpful for some students."
+
+This is helpful feedback.
+I agree that group work fosters more innovation and *can* lead to faster turn-around on projects.
+In this vein, I am placing more tasks (i.e., special works and novel dataset creation) under the purview of the consultancy, which is considered group work.
+
+> "Additionally, while the students are in charge of their own success and time management and it is not on Professor Davis to keep students on track maybe dedicating certain times/office hours to working on special works/other projects might be helpful in fostering community, engagement, and understanding."
+
+Another good point is being made here.
+I intend to focus on a community approach to addressing the special works projects (and semester challenges) with in-class discussions and shared approaches.
+This was unfortunately missing from last semester's class.
+
+> "I found Professor Davis's teaching style to be quite dry, and his pre-recorded lectures could be hard to sit through for extended periods of time (which isn't really ideal for an entirely–asynchronous class format).
+> That said, he was very responsive to questions and always helpful when issues did arise."
+
+I seem to get this one a lot.
+There's not much I can do about my personality (it's who I am) and it is unfortunate that it rubs some people the wrong way.
+That's life!
+I am glad to hear that I was able to respond quickly and solve problems as they arose.
+
+That's all from last semester.
+
+Here's to better times.
+
+:)
