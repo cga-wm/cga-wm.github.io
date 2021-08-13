@@ -69,7 +69,7 @@ All web tutorials, vlogs, and podcasts are licensed for use by their respective 
 <source src="https://drive.google.com/uc?export=view&id=1heBauTxq090ZKFKIG5Ao5g1Im1WePXAJ" type="audio/mpeg">
 <p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1heBauTxq090ZKFKIG5Ao5g1Im1WePXAJ">link</a> instead.</p>
 </audio>
-<p>In this podcast, John talks about the geoethics of the privacy concerns when combating the COVID-19 pandemic with the focus on the differences between eastern and western world tactics. The articles discussed include [Huang et al. (2020)][huang-20], [Laurent (2020)][laurent-20], and [Hui (2020)][hui-20].</p>
+<p>In this podcast, John talks about the geoethics of the privacy concerns when combating the COVID-19 pandemic with the focus on the differences between eastern and western world tactics. The articles discussed include Huang et al. (2020)[^Huang20], Laurent (2020)[^Laurent20], and Hui (2020)[^Hui20].</p>
 </div>
 </div>
 </article>
@@ -109,7 +109,7 @@ All web tutorials, vlogs, and podcasts are licensed for use by their respective 
 <source src="https://drive.google.com/uc?export=view&id=1pIPnxebnA14YgWbrrCg6J0nEaVfKPyz9" type="audio/mpeg">
 <p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1pIPnxebnA14YgWbrrCg6J0nEaVfKPyz9">link</a> instead.</p>
 </audio>
-<p>In this podcast, Andrew discusses the geoethical concerns on zoning laws based on a [Tweet][samdman95] by Sam Deutsch.</p>
+<p>In this podcast, Andrew discusses the geoethical concerns on zoning laws based on a Tweet[^Samdman95] by Sam Deutsch.</p>
 </div>
 </div>
 </article>
@@ -129,7 +129,7 @@ All web tutorials, vlogs, and podcasts are licensed for use by their respective 
 <source src="https://drive.google.com/uc?export=view&id=1254fZ3eT2TaJk3_IbdpSQjIA9ljpzzL-" type="audio/mpeg">
 <p>Your browser does not support HTML5 audio. Here is a <a href="https://drive.google.com/uc?export=view&id=1254fZ3eT2TaJk3_IbdpSQjIA9ljpzzL-">link</a> instead.</p>
 </audio>
-<p>In this podcast, Maddy walks us through the geoethics of aerial geotourism. See also, [Maghsoudi, Moradi, and Moradipour (2021)][maghsoudi21].</p>
+<p>In this podcast, Maddy walks us through the geoethics of aerial geotourism. See also, Maghsoudi, Moradi, and Moradipour (2021)[^Maghsoudi21].</p>
 </div>
 </div>
 </article>
@@ -442,11 +442,11 @@ In this podcast, Jesus takes a look at the ethics behind location services and g
 [^Brown06]: https://doi.org/10.1016/j.envsoft.2005.07.011
 [^Carman17]: https://www.theverge.com/2017/4/13/15289178/snapchat-ad-tracking-snap-to-store-geofilters
 [^Leow19]: https://towardsdatascience.com/analysis-of-tweets-on-the-hong-kong-protest-movement-2019-with-python-a331851f061
-[maghsoudi21]: Maghsoudi, M., Moradi, A. & Moradipour, F. Aerial Geotourism: New Branch of Geotourism for Promoting Geoconservation (Examples from Iran). _Geoheritage_ 13, 4 (2021). https://doi.org/10.1007/s12371-020-00526-8
+[^Maghsoudi21]: Maghsoudi, M., Moradi, A. & Moradipour, F. Aerial Geotourism: New Branch of Geotourism for Promoting Geoconservation (Examples from Iran). _Geoheritage_ 13, 4 (2021). https://doi.org/10.1007/s12371-020-00526-8
 [^Patino20]: https://www.bloomberg.com/news/articles/2020-03-31/how-to-make-people-stay-home
 [^Purnell20]: https://www.wsj.com/articles/whatsapp-to-suspend-processing-law-enforcement-requests-for-user-data-in-hong-kong-11594034580
 [^Tan20]: https://doi.org/10.1109/IOTM.0001.2000097
-[huang-20]: https://hbr.org/2020/04/how-digital-contact-tracing-slowed-covid-19-in-east-asia
-[hui-20]: https://qz.com/1825997/taiwan-phone-tracking-system-monitors-55000-under-coronavirus-quarantine/
-[laurent-20]: https://www.washingtonpost.com/business/dont-ignore-the-good-news-on-covid-19-from-asia/2020/10/30/ee2541dc-1a8a-11eb-8bda-814ca56e138b_story.html
-[samdman95]: https://twitter.com/samdman95/status/1371855298994966528
+[^Huang20]: https://hbr.org/2020/04/how-digital-contact-tracing-slowed-covid-19-in-east-asia
+[^Hui20]: https://qz.com/1825997/taiwan-phone-tracking-system-monitors-55000-under-coronavirus-quarantine/
+[^Laurent20]: https://www.washingtonpost.com/business/dont-ignore-the-good-news-on-covid-19-from-asia/2020/10/30/ee2541dc-1a8a-11eb-8bda-814ca56e138b_story.html
+[^Samdman95]: https://twitter.com/samdman95/status/1371855298994966528
