@@ -94,6 +94,7 @@ Textbook
         - https://learn.arcgis.com/en/ (*see Lesson Gallery*)
         - [CGA GIS Tutorial YouTube Playlist](https://www.youtube.com/playlist?list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl)
         - [Advanced GIS Workflow Playlist](https://youtube.com/playlist?list=PLbIkNQKCuzMPSwHHGZ4nFncmlw52l57fv)
+        - [Advanced GIS Geocoding Playlist](https://youtube.com/playlist?list=PLbIkNQKCuzMOSgHamvzS0KaEGaJ3goke1)
 
 Course Materials
 :   - Laptop or desktop computer (*recommended*)
@@ -429,7 +430,7 @@ Remember these things as you work together:
 
 Engagement Policy
 -----------------
-- *Weekly engagement is required.*
+- *Weekly engagement is expected.*
 
 It is the expectation that all students perform their tasks and coordinate with their teams in pursuit of accomplishing the tasks outlined for this class.
 
