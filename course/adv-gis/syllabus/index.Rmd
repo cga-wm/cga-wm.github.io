@@ -267,15 +267,16 @@ Exceeds Expectations | A, A--, or B+ | Demonstrates exceptional understanding of
 
 The following stipulations impact a student's final grade and are evaluated in the following order.
 
-* Any given task consisting entirely of "Does Not Meet" or a total of nine (9) or more evaluations as "Does Not Meet" results in an overall "Unsatisfactory" grade
-* A total of 5--8 "Does Not Meet" evaluations results in an overall "Does Not Meet Expectations" grade
-* Three (3) or more given tasks consisting entirely of "Exceeds" or a total of eleven (11) or more evaluations as "Exceeds" results in an overall "Exceeds Expectations" grade
+* A single "Unsatisfactory" evaluation results in an overall "Unsatisfactory" grade
+* Any given task (A--D) consisting entirely of "Does Not Meet" or a total of nine (9) or more evaluations as "Does Not Meet" across tasks results in an overall "Unsatisfactory" grade
+* More than 4 "Does Not Meet" evaluations results in an overall "Does Not Meet Expectations" grade
+* Three (3) or more  tasks consisting entirely of "Exceeds" or a total of eleven (11) or more evaluations as "Exceeds" results in an overall "Exceeds Expectations" grade
 * All other grades fall into the "Fully Meets Expectations" category
 
 The instructor reserves the right to adjust a student's final evaluation score by at most one-half step (e.g., in a plus/minus scale, a C may be rewarded to a C+ or downgraded to a C--) so long as it does not conflict with the following rules.
 
 * A student cannot receive a final grade higher than Unsatisfactory (F) if they receive an Unsatisfactory evaluation.
-* A student cannot receive a final grade less than Does Not Meet Expectations (D) if they did not receive an Unsatisfactory evaluation.
+* A student cannot receive a final grade less than Does Not Meet Expectations (D) if they did not receive an Unsatisfactory evaluation based on the criteria above.
 
 There are no points, bonuses or extra credit assignments awarded at the certificate level (GIS 520) of this class.
 
