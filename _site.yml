@@ -15,13 +15,15 @@ navbar:
           menu:
               - text: "Data"
                 href: resources-data.html
-              - text: "General Info"
+              - text: "General"
                 href: resources-general-information.html
-              - text: "How To Guides"
+              - text: "Guides"
                 href: resources-howto.html
+              - text: "Playlists"
+                href: resources-playlists.html
               - text: "Tools & Software"
                 href: resources-tools-and-software.html
-              - text: "YouTube Tutorials"
+              - text: "Tutorials"
                 href: resources-tutorials.html
         - text: GitHub
           icon: fa-github
