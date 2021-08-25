@@ -1,0 +1,58 @@
+---
+title: "Resources | Playlists"
+---
+
+***
+
+Check out these CGA playlists now available on YouTube.
+
+
+[Welcome to the CGA](https://www.youtube.com/playlist?list=PLiOhBg8WdMaK5FulTFT8Mw46isJj88uZw)
+:   This playlist gives an overview to the CGA, including a tour!
+
+[Getting Started in ArcPro](https://www.youtube.com/playlist?list=PLiOhBg8WdMaJaofqio8VOxNpRAAtCIBxS)
+:   This playlist explains how to install ArcGIS Pro and how to start a project in ArcGIS Pro.
+    Topics include navigating ArcGIS Pro and importing data.
+
+[ArcGIS Online](https://www.youtube.com/playlist?list=PLiOhBg8WdMaKMLJHX5zsgdnfr43nXI6mJ)
+:   This playlist explains how to use ArcGIS Online (AGOL), including Survey123.
+
+[Attribute Tables](https://www.youtube.com/playlist?list=PLiOhBg8WdMaIwvpHD3Yr9O5HIFaWDC9JN)
+:   This playlist shows how to manipulate attribute tables in ArcGIS Pro.
+    Topics include attribute joins and calculating statistics.
+
+[Data Analysis](https://www.youtube.com/playlist?list=PLiOhBg8WdMaKT30z8BpdcyJtWn99hBJ3G)
+:   This playlist runs through some of the many geoprocessing tools in ArcGIS Pro.
+    Topics include clip and intersect, creating feature classes, and digitization.
+
+[Symbology](https://www.youtube.com/playlist?list=PLiOhBg8WdMaLzHaLdaM4mldNXAXDlVo1x)
+:   This playlist explains how to change symbology in ArcGIS Pro.
+    Topics include formatting points and changing labels.
+
+[Map Layouts](https://www.youtube.com/playlist?list=PLiOhBg8WdMaLVZ8-wY9TYzNreop-ktrWA)
+:   This playlist explains how to make a map layout in ArcGIS Pro.
+    Topics include creating and moving map frames, creating legends, and adding titles and scale bars.
+
+[Windows Self-Install](https://www.youtube.com/playlist?list=PLiOhBg8WdMaL5OJCTzUsKe84NoGQPD4oK)
+:   This playlist explains how to install and license ArcGIS Pro, map to the network drive, and create a map project.
+
+[Mac Remote Users](https://www.youtube.com/playlist?list=PLiOhBg8WdMaKvUVLLIXMndkiuaEggR7vE)
+:   This playlist, designed for Mac users, explains how to access the W&M VDI and create a project remotely.
+
+[Windows Remote Users](https://www.youtube.com/playlist?list=PLiOhBg8WdMaKgjLJFbSyvzYOwc39Goldt)
+:   This playlist, designed for Windows users, explains how to access the William & Mary (W&M) Virtual Desktop Infrastructure (VDI) and create a GIS project remotely.
+
+[GIS Tutorials](https://www.youtube.com/playlist?list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl)
+:   This playlist contains all the GIS Tutorials created by the CGA.
+
+[CGA Lecture Series](https://www.youtube.com/playlist?list=PLiOhBg8WdMaKB16w_KzcufboYUy5tM-nt)
+:   This playlist contains the recordings of the CGA Lecture Series.
+
+[CGA Winter Demo Series](https://www.youtube.com/playlist?list=PLiOhBg8WdMaI7pvwyUdhvj18mYo-8E90X)
+:   This playlist contains the recordings of the CGA Winter Demo Series.
+
+[Watershed Workflow Tutorial in ArcGIS Pro, Python and Notebooks](https://youtube.com/playlist?list=PLbIkNQKCuzMPSwHHGZ4nFncmlw52l57fv)
+:   This playlist presents a walkthrough to delineating watersheds in GIS using ArcGIS Pro, Python and ArcGIS Online Notebooks.
+
+[Geocoding Tutorial Series](https://youtube.com/playlist?list=PLbIkNQKCuzMOSgHamvzS0KaEGaJ3goke1)
+:   This eight-part tutorial series walks you through a real world example of scrubbing addresses from a website, formatting the addresses for use in a geocoder (both programmatically and with a spreadsheet program), and converting the addresses to geospatial data using the ArcGIS World Geocoder.
