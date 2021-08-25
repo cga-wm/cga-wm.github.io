@@ -156,13 +156,16 @@ Use the search bar to filter videos based on search terms.
 
 [Raster to Polygon: Continuous Data](https://youtu.be/47p5Bh9dY8A)
 :   This video provides an example of how to convert a continuous raster into a polygon in ArcGIS Pro using the Extract By Mask and Raster to Polygon geoprocessing tools before hosting the layer to ArcGIS Online.
-    To reduce the number of unique polygons, the masked raster is first classified into a set number of categories based on pixel value ranges using the Reclassify tool. 
+    To reduce the number of unique polygons, the masked raster is first classified into a set number of categories based on pixel value ranges using the Reclassify tool.
 
 [Raster to Polygon: Discrete Data](https://youtu.be/4Z35iDIp2jw)
 :   This video provides an example of how to convert a discrete raster into a polygon using ArcGIS Pro's Extract By Mask and Raster to Polygon geoprocessing tools before hosting the layer to ArcGIS Online.
 
 [Rename Feature Layer](https://www.youtube.com/watch?v=dBW0DEk5WSE&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=41&t=0s)
 :   This video details how to change the display name of a feature layer for a map in ArcGIS Pro.
+
+[Select by Attribute: Filtering in AGOL](https://youtu.be/CToxr2zFzR4)
+:   This video details how to use the Filter tool in ArcGIS Online to select features from a layer by their attribute value using the expression builder.
 
 [Select Layer by Attribute](https://www.youtube.com/watch?v=uYgSRd3ppuc&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=22&t=0s)
 :   This video details how to use the "Select Layer by Attribute" Geoprocessing Tool in ArcGIS Pro.
@@ -185,3 +188,6 @@ Use the search bar to filter videos based on search terms.
 
 [Using data.census.gov](https://www.youtube.com/watch?v=8Cebi_fUwFM&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=49&t=0s)
 :   This video details how to search for tabular data using data.census.gov, and then download the table for use in ArcGIS Pro.
+
+[Using Google Takeout](https://youtu.be/W7sAHmQTxmA)
+:   This video demonstrates how to use Google Takeout to extract starred locations from your Google Maps and import them to GIS.
