@@ -24,6 +24,9 @@ title: "Resources | General Info"
 :   The Geography and Map Division of the Library of Congress provides cartographic and geographic information for all parts of the world to the Congress, Federal agencies, state and local governments, the scholarly community, and to the general public.
     It is the largest and most comprehensive cartographic collection in the world, numbering over 5.2 million maps.
 
+[GIS&T Body of Knowledge](https://gistbok.ucgis.org/)
+:   Provided by the University Consortium for Geographic Information Science (UCGIS), this Body of Knowledge (BOK) documents the domain of geographic information science and its associated technologies (GIS&T) in a new digital format to support the GIS&T higher education community and the increasingly diverse collection of GIS&T professionals.
+
 [GIS Lounge](https://www.gislounge.com/)
 :   News, data and information on GIS.
 
