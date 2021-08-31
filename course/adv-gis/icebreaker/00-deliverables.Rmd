@@ -1,0 +1,117 @@
+## Deliverables
+
+### Instructions
+To tackle these two problems, the class will be divided into two teams: **Red Team** and **Blue Team**.
+Each team is assigned to solve one of the two real-world problems (see the corresponding tabs at the top of this page).
+You have approximately two (2) hours to research solutions to your problem.
+
+In general, the rules are:
+
+* You may use any means necessary; this includes all tools and resources you have access to.
+
+    _Your professor does not count towards this rule._
+* You must submit only one deliverable packet (see description below), which must be signed off by all members of your team.
+* Each member of your team must be able to explain your solution and, in general, how the answer was decided upon.
+
+    _Work together and keep a complete record of your research, data sources, and processes!_
+
+
+### The Deliverables Packet
+To complete this task, each team should create and submit a single report that includes the following sections.
+
+*You may use Google Docs.*
+
+1. Cover Page
+    - cover page should read like a memo
+    - include a description of each team members' roles and/or contributions
+    - dated and signed by all team members
+    - use the following as a template:
+
+        ```
+        TO:      DAVIS, CGA, WILLIAM & MARY, VA
+        FROM:    RED/BLUE TEAM (*choose appropriately)
+        DATE:    2021-09-02
+        SUBJECT: RECOMMENDED ACTIONS
+
+        The following report is accurate and complete to the best of our ability.
+        Please find the summary of our findings along with our methods and references
+        in the pages attached to this report. We have outlined the contributions from
+        each of our group members below. If you have any questions, you may follow up
+        with any one of us.
+
+
+        MEMBER NAME A - Roles:
+
+        __________________
+        signature/date
+
+
+        MEMBER NAME B - Roles:
+
+        __________________
+        signature/date
+        ```
+
+1. Introduction - *"what you intend to do"*
+    - include the problem title
+    - include the problem summary
+    - include the intended goals
+1. Findings - *"your main results"*
+    - include succinct answers to the question(s) that were raised
+    - support your answers with tables and figures as necessary
+1. Methods - *"how you did it"*
+    - include any data sources you used
+        - note the coordinate reference systems of any GIS data sources you used
+        - note spatial resolutions of any raster datasets (*x* and *y* cell sizes)
+        - also note other web resources you used
+    - include any geoprocessing tools you used
+        - summarize what the tool was used to accomplish
+        - mention inputs/outputs and any options you selected
+    - you may include figures to help demonstrate your methods (e.g., ModelBuilder)
+1. Discussion - *"what you learned from what you did"*
+    - here you can include what you would have done differently if you had more time or if you had to start all over again
+    - leave a blank page to fill in later if you do not have any changes you would make
+1. References - *"what you used to get things done"*
+    - data sources and any other research you did to complete your project
+    - choose a reference style (e.g. APA) and be consistent
+    - make certain you cite your references appropriately in the introduction, methods, finding, and/or discussion
+1. Appendix (*optional*)
+    - you may include files, tables, datasets, etc. on the class USB drive to exemplify the work you did
+    - be sure to include a text file that lists the names and paths to your resources with a description of what they are and/or where you got them
+
+<!--
+### Rubric
+
++--------------+--------------------+------------------+----------------+
+| Criteria     | Less-Than          | Satisfactory     | Superior       |
+|              | Satisfactory       |                  |                |
++==============+====================+==================+================+
+| Teamwork     | Does not work      |  Each member     | Works          |
+|              | well together      |  participates    | together and   |
+|              |                    |  collaboratively | helps one      |
+|              |                    |                  | another        |
++--------------+--------------------+------------------+----------------+
+| Completeness | No solutions       | Mostly           | Fully          |
+|              | given              | answered         | answered       |
++--------------+--------------------+------------------+----------------+
+| Correctness  | Directions         | Directions       | Directions     |
+|              | ignored; bad or    | generally        | followed;      |
+|              | unhelpful answers  | followed;        | thoughtful     |
+|              |                    | suitable         | responses      |
+|              |                    | answers          | given          |
+|              |                    | given            |                |
++--------------+--------------------+------------------+----------------+
+| Paperwork    | Incomplete         | All              | All            |
+|              | and/or poorly      | documents        | documents      |
+|              | drafted            | accounted for    | are            |
+|              |                    | in some form or  | complete       |
+|              |                    | another          |                |
++--------------+--------------------+------------------+----------------+
+
+***
+
+### Bonus Question
+
+What do the titles of the two problems have in common?
+
+-->

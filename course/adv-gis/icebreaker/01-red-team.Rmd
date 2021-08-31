@@ -1,0 +1,112 @@
+## Red Team
+
+### "Find the River"
+
+!["Elk Bath" (2000) by J. McColgan, Bureau of Land Management, Alaska Fire Service. Online: [Wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deerfire_high_res.jpg/640px-Deerfire_high_res.jpg).](elk-bath_640x395.jpg){width=640 height=395}
+
+Intended goals
+:   - Understand the role of GIS in disaster response
+    - Exercise data exploration and feature geolocating and projecting
+    - Utilize distance and direction geoprocessing tools
+    - Analyze maps to determine specific outcomes
+
+**Problem Statement**
+
+Six people are lost within the Caldor Fire in California as the fast-moving wildfire spreads out in their direction.
+They are hiking the area's state and national forests as a part of an animal rescue expedition.
+Five of the hikers have radioed in their locations (see **Table 1**) and the last known location of the sixth was near Frog Pond just south of Nebelhorn.
+
+The National Aeronautics and Space Agency's Fire Information for Resource Management System ([FIRMS](https://firms.modaps.eosdis.nasa.gov/)) has been helpful providing data on the latest fires in the area.
+
+You have less than one hour to provide recommendations to the closest haven for each of the six hikers.
+The hikers have no mode of transportation other than hiking.
+Assume that all residences and businesses in the area have been evacuated.
+
+You may use whatever information is available to you.
+This includes GIS data from previous classes and from other web sources.
+You may use ArcGIS Pro, QGIS, Google Earth, or other web-based mapping service.
+
+
+:   **Table 1.** Five of six hiker coordinates.
+
++---------------+----------------------+-----------------------+
+|               | Latitude (DMS)       | Longitude (DMS)       |
++===============+======================+=======================+
+| Hiker 1       | 38&deg; 50' 45.60" N | 119&deg; 59' 24.00" W |
++---------------+----------------------+-----------------------+
+| Hiker 2       | 38&deg; 39' 28.80" N | 120&deg; 39' 14.40" W |
++---------------+----------------------+-----------------------+
+| Hiker 3       | 38&deg; 36' 32.40" N | 120&deg; 39' 0.00" W  |
++---------------+----------------------+-----------------------+
+| Hiker 4       | 38&deg; 50' 24.00" N | 120&deg; 4' 4.80" W   |
++---------------+----------------------+-----------------------+
+| Hiker 5       | 38&deg; 37' 55.12" N | 120&deg; 12' 25.12" W |
++---------------+----------------------+-----------------------+
+| Hiker 6       | N/A                  | N/A                   |
++---------------+----------------------+-----------------------+
+
+**Before You Begin**
+
+1. Meet with your team and introduce yourselves
+1. Consider what you need
+    a. Quickly brainstorm a list of information you think you need to solve this problem.
+    a. Examine your list and prioritize each item as either critical or supplemental to addressing this issue.
+    a. Starting with your critical items, make a note next to each item of who or where you might be able to get this information from.
+1. Identify sources
+    a. How can you identify where the six hikers are located on a map?
+    a. What might serve as a haven for a hiker in a wildfire?
+    a. What might serve as an obstacle for a hiker?
+    a. How can you show where fires, obstacles, and havens are located on a map?
+    a. What resources did you use to find these answers?
+1. Define the space
+    a. Where can you find maps of your study area?
+    a. What kind of maps do you need?
+    a. Based on current maps of the region, what's there?
+    a. Find maps of the current fires in the area. What are you using at "current" (e.g., 24 hours, 48 hours, or 7 days)?
+    a. Do your best to draw or create a map that combines the fires and the hikers.
+        - Where might some obstacles be located that impede a hiker's travel?
+        - Where might some potential safe havens be located?
+        - Based on your map, which hiker appears to be at the greatest risk?
+1. Delegate tasks among your team
+    - You don't have a lot of time to come up with your solution.
+    - Decide who will be in charge of what tasks.
+    - Take advantage of each other's strengths.
+    - Pair up when possible.
+
+**Questions to Answer**
+
+1. Identify potential havens.
+    - Come up with a list of locations where your hikers can seek shelter.
+1. Identify potential obstructions.
+    - Come up with a list of obstacles that hikers may need to avoid and reasoning for each.
+1. What geolocation did you give the sixth hiker?
+1. Determine the nearest haven for each hiker.
+
+If you have time, please try to answer the following questions.
+
+1. How should each hiker get to their haven?
+1. How far and in what direction must they travel? Include an estimate of how long it might take them to get there.
+1. What is the maximum elevation change they must travel over?
+
+Include figures in your report
+
+- area map of the locations of all six hikers over a basemap that shows topography
+- locations of labeled potential havens proximal to each of the hikers; if possible, overlay your features with potential obstacles
+    - for clarity, you may need to separate this into multiple figures
+
+<!--
+### References
+
+Degree Minute Second (DMS) to Decimal Degrees (DD)
+:   https://www.latlong.net/degrees-minutes-seconds-to-decimal-degrees
+
+Merge points, lines or polygons into single feature class
+:   https://pro.arcgis.com/en/pro-app/tool-reference/data-management/merge.htm
+
+Add x,y coordinate data as layer
+:   https://pro.arcgis.com/en/pro-app/help/mapping/layer-properties/add-x-y-coordinate-data-as-a-layer.htm
+
+Create points from a table
+:   https://pro.arcgis.com/en/pro-app/get-started/create-points-from-a-table.htm
+
+-->

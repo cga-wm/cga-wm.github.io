@@ -1,0 +1,48 @@
+body {
+    margin-bottom: 75px;
+}
+
+.caption {
+    font-size: 10pt;
+    color: #535353;
+}
+h1.hasAnchor {
+    visibility: hidden;
+    height: 0px;
+}
+#header {
+    display: none;
+}
+.nav {
+    margin-top:
+}
+.nav a {
+    font-weight: bold;
+    color: #323232;
+}
+#nws-alert {
+    background-color: #0000FF;
+}
+.warning {
+    border: 0;
+    margin: 5px 0px 50px 0px;
+    padding: 75px 25px 75px 25px;
+    color: #FFFFFF;
+    background-color: #0000FF;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    text-align: center;
+}
+dd {
+    margin-bottom: 1em;
+}
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+th, td {
+    vertical-align: top;
+    padding: 10px;
+    border: 1px solid black;
+}
