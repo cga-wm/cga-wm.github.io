@@ -6,7 +6,7 @@ navbar:
         - text: Lectures
           menu:
           - text: Geoethics
-            href: lectures/geoethics
+            href: lecture-geoethics.html
           - text: Programming
             href: lectures/programming
         - text: Class

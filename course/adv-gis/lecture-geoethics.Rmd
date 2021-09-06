@@ -1,0 +1,15 @@
+---
+title: "Lecture | Geoethics"
+---
+
+***
+
+Click [here](lectures/geoethics/index.html) to open on a separate page.
+
+<iframe style="height:500px; width:100%; border:3px solid black;" src="lectures/geoethics/index.html" id="frame"></iframe>
+
+---
+
+Follow along with the video presentation of this lecture.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IWJla9-daEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br />Having trouble viewing this embedded video? Click <a href="https://youtu.be/IWJla9-daEE" target="_blank">here</a>.
