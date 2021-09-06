@@ -1,0 +1,23 @@
+---
+title: "Lecture | Programming"
+---
+
+***
+
+Click [here](lectures/programming/index.html) to open on a separate page.
+
+<iframe style="height:500px; width:100%; border:3px solid black;" src="lectures/programming/index.html" id="frame"></iframe>
+
+---
+
+You may follow along with the video presentation of this lecture (link below).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2uwj50K87dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br />Having trouble viewing this embedded video? Click <a href="https://youtu.be/2uwj50K87dc" target="_blank">here</a>.
+
+
+---
+
+## See also
+
+* [Understanding Arcpy (Davis's blog)](https://cga-wm.github.io/course/adv-gis/2020-03-14-understanding-arcpy.html)
+* [Getting Started With Notebooks](https://cga-wm.github.io/course/adv-gis/2020-10-29-getting-started-with-notebooks.html)

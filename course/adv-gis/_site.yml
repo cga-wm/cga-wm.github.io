@@ -8,7 +8,7 @@ navbar:
           - text: Geoethics
             href: lecture-geoethics.html
           - text: Programming
-            href: lectures/programming
+            href: lecture-programming.html
         - text: Class
           menu:
           - text: Syllabus
