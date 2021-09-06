@@ -10,6 +10,12 @@ Click [here](lectures/geoethics/index.html) to open on a separate page.
 
 ---
 
-Follow along with the video presentation of this lecture.
+You may follow along with the video presentation of this lecture (link below).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IWJla9-daEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br />Having trouble viewing this embedded video? Click <a href="https://youtu.be/IWJla9-daEE" target="_blank">here</a>.
+
+---
+
+## See also
+* [The Ethics of Geoethics (Davis's blog)](https://cga-wm.github.io/course/adv-gis/2020-09-28-ethics-of-geoethics.html)
+* [Geoethics Podcast (Davis's blog)](https://cga-wm.github.io/course/adv-gis/2020-08-03-podcasts-vlogs.html)
