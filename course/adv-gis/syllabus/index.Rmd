@@ -37,6 +37,7 @@ Instructor
     - Email: twdavis@wm.edu
     - Physical Office: [Center for Geospatial Analysis](https://www.wm.edu/as/cga/), Swem Library Rm 213
     - Virtual Office: [Nooks](https://nooks.in/goto/7cc0KabvZpnfVKyV?pwd=o162Tu)
+    - Zoom Room: https://cwm.zoom.us/my/twdavis
     - Phone: 757-221-6449
     - Websites:
         - https://drdavis.space
