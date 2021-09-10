@@ -6,7 +6,7 @@ navbar:
         - text: "Resources"
           menu:
               - text: "Data Layers"
-                href: https://github.com/cga-wm/middle-earth
+                href: https://scholarworks.wm.edu/asoer/3/
         - text: CGA-WM
           href: ../../index.html
 
