@@ -10,6 +10,10 @@ title: "Resources | Tools and Software"
 [Cartopy](http://earthpy.org/category/visualization.html)
 :   The [cartopy](https://scitools.org.uk/cartopy/docs/latest/) package is a great tool for creating maps using Python.
 
+[Center for Conservation Biology Mapping Portal](https://ccbbirds.org/maps/)
+:   The Center for Conservation Biology (CCB) is is a research group within The College of William and Mary and the Virginia Commonwealth University that consists of professionals, students, and citizens who are dedicated to the common vision that the natural environment is an important part of our quality of life.
+    The Mapping Portal is a complimentary service to the conservation community centered around birds (e.g., bald eagles and ospreys) within the Chesapeake Bay area.
+
 [EnviroAtlas](https://www.epa.gov/enviroatlas)
 :   Provides interactive tools that allow users to discover, analyze, and download data and maps related to ecosystem services, or the benefits people receive from nature.
 
@@ -32,6 +36,9 @@ title: "Resources | Tools and Software"
 [Jupyter Notebooks](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
 :   The Jupyter Notebook is an incredibly powerful tool for interactively developing and presenting data-centric projects.
     Take a look at [these](https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks#earth-science-and-geo-spatial-data) notebook with a focus on Earth science and geospatial data.
+
+[NOAA Sea Level Rise Viewer](https://bit.ly/3CoqyBC)
+:   The National Oceanic and Atmospheric Administration (NOAA) provides an open access interactive Sea Level Rise Viewer that shows you what currently dry land could be under water with different sea level rise scenarios along with their confidence value.
 
 [OpenStreetMap.org](https://www.openstreetmap.org/#map=15/37.2707/-76.7191)
 :   A collaborative project to create a free editable map of the world.
