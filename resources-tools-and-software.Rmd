@@ -17,6 +17,9 @@ title: "Resources | Tools and Software"
 [EnviroAtlas](https://www.epa.gov/enviroatlas)
 :   Provides interactive tools that allow users to discover, analyze, and download data and maps related to ecosystem services, or the benefits people receive from nature.
 
+[Felt](https://www.felt.com/)
+:   Self-proclaimed world's first-ever modern collaborative mapping tool. 
+
 [GeoDa](https://geodacenter.github.io/)
 :   A free and open source software tool that provides a user-friendly graphical user interface for exploratory spatial data analysis developed by Dr. Luc Anselin and his team.
     GeoDa runs on Windows, MacOSX and Linux (Ubuntu).
