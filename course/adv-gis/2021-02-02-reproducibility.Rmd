@@ -2,8 +2,15 @@
 title: "Reproducibility"
 date: 2021-02-02
 url: 2021-02-02-reproducibility.html
-summary: "Happy Groundhog's Day. Yay! More winter. Here's the low-down on Client Meeting progress reports on the reproducibility of published geoprocesses."
+summary: "Happy Groundhog's Day. Yay! More winter. Here's the low-down on Client Meeting progress reports on the reproducibility of published geoprocesses. This will be updated each semester, so check back to see how it's going."
 ---
+
+***
+
+A part of the Advanced GIS course consists of student-led consultancies, who are examining the state of the literature by identifying an article published by a reputable journal within the last 20 years to see if the geospatial methodology is reproducible to the best of their abilities.
+
+Consultancies are listed in the table below along with the article under review and one of three grades determined by the teams members.
+Links to consultancy websites provide more information on the article background, data and methods.
 
 :   Table 1. Reproducibility results. Links the project papers and team websites (where available).
 
@@ -14,7 +21,7 @@ summary: "Happy Groundhog's Day. Yay! More winter. Here's the low-down on Client
 | Spring 2021 | ["Mapping Land Use Land Cover Change in the Lower Mekong Basin From 1997 to 2010"][spruce-20] | [VPRSC][vprsc] | S |
 | Fall 2020 | [Geology and Wine 8. Modeling Viticultural Landscapes:  A  GIS Analysis  of  the  Terroir Potential  in  the  Umpqua Valley of Oregon][jones-04] | Dorian and Haley | S |
 | Fall 2020 | ["Infant and Child Mortality in India in the Last Two Decades: A Geospatial Analysis"][sing-11] | [Josh][habib] | S |
-| Fall 2020 | ["GIS bio-waste assessment and suitability analysis for biogas power plant: A case study of Anambra state of Nigeria"][chukwuma-11] | [Maeve and Sam][maeve-sam] | S |
+| Fall 2020 | ["GIS bio-waste assessment and suitability analysis for biogas power plant: A case study of Anambra state of Nigeria"][chukwuma-21] | [Maeve and Sam][maeve-sam] | S |
 | Fall 2020 | ["Using a geographic information system to enhance patient access to point-of-care diagnostics in a limited-resource setting"][ferguson-16] | Jerry, Mayada, and Sean | S |
 | Spring 2021 | ["Forest Fire Risk Assessment Using Hotspot Analysis in GIS"][said-17] | [First Ascent Spatial Solutions][first-ascent] | M |
 | Spring 2021 | ["The Effects of Historical Housing Policies on Resident Exposure to Intra-Urban Heat: A Study of 108 US Urban Areas"][hoffman-20] | [Urban Thermal Taskforce][urban-thermal-taskforce] | M |
