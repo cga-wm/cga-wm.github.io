@@ -16,7 +16,7 @@ Links to consultancy websites provide more information on the article background
 
 | Term  | Project                   | Team              | Grade |
 | :-----| :------------------------ | :---------------- | :---: |
-| Fall 2021 | TBA | [Atlas][atlas] | TBA |
+| Fall 2021 | ["High-resolution prediction of American red squirrel in Interior Alaska: a role model for conservation using open access data, machine learning, GIS and LIDAR"][robold-huettmann-21] | [Atlas][atlas] | TBA |
 | Fall 2021 | ["A Comparative Assessment of Food Deserts Using Geographic Information Systems (GIS) in El Paso
 County, TX and Loudoun County, VA"][raysoni-18] | [Carto Consulting][carto-consult] | TBA |
 | Spring 2021 | ["Mapping Land Use Land Cover Change in the Lower Mekong Basin From 1997 to 2010"][spruce-20] | [VPRSC][vprsc] | S |
@@ -49,6 +49,7 @@ County, TX and Loudoun County, VA"][raysoni-18] | [Carto Consulting][carto-consu
 [maeve-sam]: https://storymaps.arcgis.com/stories/bbf8d416c924465aa137b546dbcb1921
 [mcentee-10]: https://doi.org/10.1016/j.apgeog.2009.05.004
 [raysoni-18]: https://digitalcommons.utep.edu/open_etd/1525
+[robold-huettmann-21]: https://doi.org/10.7717/peerj.11830
 [said-17]: http://dx.doi.org/10.2174/1874149501711010786
 [shalowitz-15]: https://doi.org/10.1016/j.ygyno.2015.04.025
 [sing-11]: https://doi.org/10.1371/journal.pone.0026856
