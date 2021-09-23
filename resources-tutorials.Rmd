@@ -85,6 +85,9 @@ Use the search bar to filter videos based on search terms.
 [Create Feature Class](https://www.youtube.com/watch?v=4HrYC-L8cBE&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=48&t=0s)
 :   This video details how to create an empty feature class in ArcGIS Pro.
 
+[Create Polygon Feature With Right Angles](https://youtu.be/-8zXqWSKIa0)
+:   In ArcGIS Pro, you can quickly create new polygon features using the right-angle tool.
+
 [Create Inset Map](https://www.youtube.com/watch?v=GASt9vWAZhA&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=33&t=0s)
 :   This video details how to insert and format a map frame for use as an inset map, and how to insert an extent indicator, for a layout in ArcGIS Pro.
 
