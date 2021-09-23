@@ -47,6 +47,9 @@ title: "Resources | General Info"
 [National Geospatial-Intelligence Agency (NGA)](https://www.nga.mil)
 :   Delivering world-class geospatial intelligence that provides a decisive advantage to policymakers, warfighters, intelligence professionals and first responders.
 
+[Open Data Charter](https://opendatacharter.net/)
+:   The ODC is an international charter with the mission to make data open and freely available, which protecting the rights of people and communities.
+
 [Projections and Coordinate Systems](https://courses.washington.edu/gis250/lessons/projection/)
 :   The University of Washington Spatial Technology, GIS, and Remote Sensing in the School of Forest Resources (2010).
 
