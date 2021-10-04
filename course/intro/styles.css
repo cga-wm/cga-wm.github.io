@@ -120,6 +120,9 @@ blockquote em{
 dl {
     padding-left: 30px;
 }
+dt {
+    padding-top: 15px;
+}
 
 .navbar-default{
     background-color: #115740;

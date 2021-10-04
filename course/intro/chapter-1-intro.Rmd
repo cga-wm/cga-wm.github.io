@@ -23,13 +23,15 @@ Information comes from our understanding of data---in this case, the symbolic re
 GIS typically convey maps in separate *thematic layers*, or features of common geographic information, which may represent roads, houses, vegetation cover, population density, etc.
 Because the layers are geographically referenced, they may overlay one another to build a more complete picture of the geographic area (see figure pictured right.)
 
-[Dr. Roger Tomlinson](https://en.wikipedia.org/wiki/Roger_Tomlinson)---considered the "father of GIS"---describes the concepts of thematic layers and overlays as the cornerstone of GIS.
-
-Maps also serve as a form of communication that can illustrate similarities and differences between places.
-
-Maps help us conceptualize by enabling us to reconstruct our past, illustrate the present, and plan for the future.
+* [Dr. Roger Tomlinson](https://en.wikipedia.org/wiki/Roger_Tomlinson)---considered the "father of GIS"---describes the concepts of thematic layers and overlays as the cornerstone of GIS.
+* Maps also serve as a form of communication that can illustrate similarities and differences between places.
+* Maps help us conceptualize by enabling us to reconstruct our past, illustrate the present, and plan for the future.
 
 Understanding maps allows us to answer important questions, like the "where" (i.e., *absolute* and *relative locations*) and "what" (i.e., properties and attributes) of important features.
+
+#### Lexicon
+
+Below are some terms and definitions to help with conceptualizing our ideas of maps, features, and locations.
 
 map
 :   a way of representing any real-world location or object on a two-dimensional surface (for example: on paper or a computer monitor)
@@ -56,15 +58,15 @@ We use GIS to gather and use spatial data.
 The breadth of GIS encompasses the latest technology of advanced communication networks and software down to the simplest hand-drawn field maps.
 Modern technology is changing the way we use GIS and how we gather and use spatial data continues to evolve.
 
-Note that many GIS software packages exist---some quite specialized, others quite broad---and the techniques that will be explored in this course form a common core of GIS that can be applied across various platforms.
+Note that many GIS software packages exist---some quite specialized, others quite broad---and the techniques that we explore form a common core of GIS that can be applied across various platforms.
 
 ### Why use GIS?
 
-GIS lends us the utilization of maps, which we saw provides us with the tools to answer questions regarding the "what" and the "where" of things.
+GIS lends us the utilization of maps, which provides us with the tools to answer questions regarding the "what" and the "where" of things.
 These are important questions for planning and resource management.
 There is another use for GIS, which is to answer analytical questions, such as "why" or "what if" through GIS models and prediction.
 
-While GIS was originally an extension of managing and analyzing traditional paper maps, it has since become primarily a computer-based field and there are several reasons for this, including the following:
+While GIS was originally an extension of managing and analyzing traditional paper maps, it has since become primarily computer-based and there are several reasons for this, including the following:
 
 - computers are better at handling complex spatial analyses that would otherwise be impossible or impractical on paper
 - computers provide large storage capacity for managing a massive amount of map data
@@ -138,6 +140,7 @@ This means that every 1 inch on the map represents 24,000 inches on the ground.
 
 The next evolution of ESRI's ArcGIS Desktop software slated to replace ArcMap.
 ArcPro uses projects (.aprx files) as the basis for bringing together data layers and visualizations.
+It includes all the benefits described above for ArcMap wrapped in a new user interface with backends written in the Python 3 computer programming language.
 
 For help, see [Getting Started with ArcGIS Pro](https://www.esri.com/training/catalog/57630435851d31e02a43f007/getting-started-with-arcgis-pro/).
 
@@ -152,5 +155,25 @@ These include:
 
 - The Geospatial Data Abstraction Library ([GDAL](http://www.gdal.org/)), which provides a suite of tools and programs for converting and manipulating spatial data
 - The Geographic Resources Analysis Support System ([GRASS GIS](http://grass.osgeo.org/)), which is a complete GIS system in its own right, but has until recently been largely a command-line application.
+
+### Python
+
+Computer programming languages come in a variety of languages and it may be difficult to choose one language to learn.
+For GIS, and increasingly in the computational sciences, Python is a good choice for the following reasons:
+
+1. First, it's considered a high-level language, which means it's easier---and as a result, generally faster---for us to read and write.
+    This tends to make development quicker and simpler.
+2. Second, it's an object-oriented language, which has several advantages over structured or functional programming, by simplifying the process of creating programs through the use of specially defined classes of objects.
+    These objects encapsulate a specific set of rules, parameters and functions that can easily be maintained, reused, shared and/or scaled.
+3. Lastly, in addition to the standard Python library, there is a plethora of well-documented and supported third-party packages to help support a variety of projects.
+    Namely, the industry standard GIS software company, ArcGIS, and the world's leading open-source desktop GIS software, QGIS, both provide Python support.
+
+In addition to Python packages that link to GIS processes (e.g., [arcpy][arcpy], [ArcGIS API for Python][arc-api], and [pyqgis][pyqgis]), programmers are taking advantage of interactive development tools, such as Jupyter Notebooks.
+[ArcGIS Notebooks][arc-notebook] provide the tools for accessing datasets, scripting processes, visualizing data, and documenting methods.
+
+[arc-api]: https://developers.arcgis.com/python/
+[arc-notebook]: https://www.esri.com/en-us/arcgis/products/arcgis-notebooks/overview
+[arcpy]: https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/what-is-arcpy-.htm
+[pyqgis]: https://qgis.org/pyqgis/master/
 
 ## References
