@@ -19,6 +19,9 @@ Links to consultancy websites provide more information on the article background
 | Fall 2021 | ["High-resolution prediction of American red squirrel in Interior Alaska: a role model for conservation using open access data, machine learning, GIS and LIDAR"][robold-huettmann-21] | [Atlas][atlas] | ? |
 | Fall 2021 | ["A Comparative Assessment of Food Deserts Using Geographic Information Systems (GIS) in El Paso County, TX and Loudoun County, VA"][raysoni-18] | [Carto Consulting][carto-consult] | ? |
 | Fall 2021 | ["Use of GIS Geoprocessing to Select the Most Favorable Sites for Geothermal Exploration in Oregon"][poux-12] | [Crunch Consulting][crunch] | ? |
+| Fall 2021 | ["Modeling relative habitat suitability of southern Florida for invasive Burmese pythons (_Python molurus bivittatus_)"][mutascio-17] | [Geo-Inspired Solutions, Inc.][geo-insp-inc] | ? |
+| Fall 2021 | ["Fossil site prediction using geographic information systems (GIS) and suitability analysis: The Two Medicine Formation, MT, a test case"][oheim-07] | [Geolytic Solutions][geolytic-sol] | ? |
+| Fall 2021 | ["Assessing Coastal Squeeze of Tidal Wetlands"][torio-13] | [Marsh Mappers][marsh-map] | ? |
 | Spring 2021 | ["Mapping Land Use Land Cover Change in the Lower Mekong Basin From 1997 to 2010"][spruce-20] | [VPRSC][vprsc] | S |
 | Fall 2020 | [Geology and Wine 8. Modeling Viticultural Landscapes:  A  GIS Analysis  of  the  Terroir Potential  in  the  Umpqua Valley of Oregon][jones-04] | Dorian and Haley | S |
 | Fall 2020 | ["Infant and Child Mortality in India in the Last Two Decades: A Geospatial Analysis"][sing-11] | [Josh][habib] | S |
@@ -40,6 +43,8 @@ Links to consultancy websites provide more information on the article background
 [crunch]: https://sites.google.com/email.wm.edu/crunchconsulting/home
 [ferguson-16]: http://doi.org/10.1186/s12942-016-0037-9
 [first-ascent]: https://sites.google.com/email.wm.edu/first-ascent/home
+[geo-insp-inc]: https://gisinc.weebly.com/
+[geolytic-sol]: http://geolyticsolutions.weebly.com/
 [gustas-17]: http://dx.doi.org/10.1016/j.jas.2016.11.006
 [habib]: https://sites.google.com/email.wm.edu/joshuahabib/client-meeting/purpose-and-key-concepts?authuser=0
 [hoffman-20]: http://dx.doi.org/10.3390/cli8010012
@@ -48,7 +53,10 @@ Links to consultancy websites provide more information on the article background
 [lauren-caroline]: https://storymaps.arcgis.com/stories/9379895103e34c0aafc922ed57d0cba3
 [lindsey-sarah-grace]: https://sites.google.com/email.wm.edu/client-meeting/home
 [maeve-sam]: https://storymaps.arcgis.com/stories/bbf8d416c924465aa137b546dbcb1921
+[marsh-map]: https://marshmapper.weebly.com/
 [mcentee-10]: https://doi.org/10.1016/j.apgeog.2009.05.004
+[mutascio-17]: https://doi.org/10.1007/s10980-017-0597-5
+[oheim-07]: https://doi.org/10.1016/j.palaeo.2007.04.005
 [poux-12]: https://publications.mygeoenergynow.org/grc/1030311.pdf
 [raysoni-18]: https://digitalcommons.utep.edu/open_etd/1525
 [robold-huettmann-21]: https://doi.org/10.7717/peerj.11830
@@ -56,6 +64,7 @@ Links to consultancy websites provide more information on the article background
 [shalowitz-15]: https://doi.org/10.1016/j.ygyno.2015.04.025
 [sing-11]: https://doi.org/10.1371/journal.pone.0026856
 [spruce-20]: https://doi.org/10.3389/fenvs.2020.00021
+[torio-13]: https://doi.org/10.2112/JCOASTRES-D-12-00162.1
 [geo-problem-solvers]: https://sites.google.com/email.wm.edu/geoproblemsolving-gis420/home
 [urban-thermal-taskforce]: https://urbanthermaltaskforce.weebly.com/
 [vprsc]: https://vprsc.weebly.com/
