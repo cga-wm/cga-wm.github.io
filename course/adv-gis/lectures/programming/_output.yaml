@@ -5,3 +5,5 @@ revealjs::revealjs_presentation:
     transition: fade
     fig_caption: true
     css: style.css
+    reveal_plugins: ["notes"]
+    self_contained: false
