@@ -21,7 +21,7 @@ Links to consultancy websites provide more information on the article background
 | Fall 2021 | ["Use of GIS Geoprocessing to Select the Most Favorable Sites for Geothermal Exploration in Oregon"][poux-12] | [Crunch Consulting][crunch] | ? |
 | Fall 2021 | ["Modeling relative habitat suitability of southern Florida for invasive Burmese pythons (_Python molurus bivittatus_)"][mutascio-17] | [Geo-Inspired Solutions, Inc.][geo-insp-inc] | ? |
 | Fall 2021 | ["Fossil site prediction using geographic information systems (GIS) and suitability analysis: The Two Medicine Formation, MT, a test case"][oheim-07] | [Geolytic Solutions][geolytic-sol] | ? |
-| Fall 2021 | ["Assessing Coastal Squeeze of Tidal Wetlands"][torio-13] | [Marsh Mappers][marsh-map] | ? |
+| Fall 2021 | ["Climate Change Driving Widespread Loss of Coastal Forested Wetlands Throughout the North American Coastal Plain"][white-21] | [Marsh Mappers][marsh-map] | ? |
 | Spring 2021 | ["Mapping Land Use Land Cover Change in the Lower Mekong Basin From 1997 to 2010"][spruce-20] | [VPRSC][vprsc] | S |
 | Fall 2020 | [Geology and Wine 8. Modeling Viticultural Landscapes:  A  GIS Analysis  of  the  Terroir Potential  in  the  Umpqua Valley of Oregon][jones-04] | Dorian and Haley | S |
 | Fall 2020 | ["Infant and Child Mortality in India in the Last Two Decades: A Geospatial Analysis"][sing-11] | [Josh][habib] | S |
@@ -64,7 +64,7 @@ Links to consultancy websites provide more information on the article background
 [shalowitz-15]: https://doi.org/10.1016/j.ygyno.2015.04.025
 [sing-11]: https://doi.org/10.1371/journal.pone.0026856
 [spruce-20]: https://doi.org/10.3389/fenvs.2020.00021
-[torio-13]: https://doi.org/10.2112/JCOASTRES-D-12-00162.1
+[white-21]: https://doi.org/10.1007/s10021-021-00686-w
 [geo-problem-solvers]: https://sites.google.com/email.wm.edu/geoproblemsolving-gis420/home
 [urban-thermal-taskforce]: https://urbanthermaltaskforce.weebly.com/
 [vprsc]: https://vprsc.weebly.com/
