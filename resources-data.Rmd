@@ -54,6 +54,10 @@ output:
 [Data.gov.uk](https://data.gov.uk/)
 :   UK's Find Open Data service providing data published by central government, local authorities and public bodies with links to download data files.
 
+[Data Is Plural](https://www.data-is-plural.com/archive/)
+:   Not just a good reminder, but a weekly newsletter of useful/curious datasets published by Jeremy Singer-Vine.
+    The archive provides access to historical editions of the newsletter, each with links that point out to a variety of datasets.
+
 [Defra Data Services Platform](https://environment.data.gov.uk/)
 :   The Department for Environment, Food & Rural Affairs make environmental data (e.g., LIDAR, photography, bathymetry, multispectral) openly available to a wide range of users available for download in commonly used formats.
     Click "Surveys" in the menu at the top to open a web-based mapping interface.
@@ -106,8 +110,14 @@ output:
 [Global Dataset of Historic Yield](https://doi.pangaea.de/10.1594/PANGAEA.909132)
 :   Offers annual time series data of 0.5-degree grid-cell yield estimates of major crops worldwide for the period 1981-2016.
 
+[Global Forest Change](https://storage.googleapis.com/earthenginepartners-hansen/GFC-2020-v1.8/download.html)
+:   Sometimes referred to as the "Hansen Data," the Global Land Analysis and Discovery (GLAD) laboratory at the University of Maryland, in partnership with Global Forest Watch (GFW), provides annually updated global-scale forest loss data, derived using Landsat time-series imagery.
+    This global dataset is divided into 10x10 degree tiles, consisting of seven files per tile.
+    All files contain unsigned 8-bit values and have a spatial resolution of 1 arc-second per pixel, or approximately 30 meters per pixel at the equator.
+
 [Global Forest Watch](https://data.globalforestwatch.org/)
 :   Committed to providing the highest-quality data on the world's forests.
+    _Includes links to the Hansen datasets._
 
 [Global Shoreline Dataset](https://dnc.nga.mil/PrototypeGSD.php)
 :   The NGA Office of Global Navigation, Maritime Domain is in the process of developing a new version of World Vector Shoreline (WVS) and in support of this effort has acquired a satellite-derived Global Shoreline Data set.
@@ -123,6 +133,9 @@ output:
 
 [Harmonized World Soil Database v 1.2](https://webarchive.iiasa.ac.at/Research/LUC/External-World-soil-database/HTML/)
 :   Global elevation, slope, and aspect data in 5 min and 30 arc second resolutions.
+
+[Harvard Dataverse](https://dataverse.harvard.edu/)
+:   A free data repository open to all researchers from any discipline where you can share, archive, cite, access, and explore research data.
 
 [Homeland Infrastructure Foundation-Level Data (HIFLD)](https://hifld-geoplatform.opendata.arcgis.com/)
 :   This site provides national foundation-level geospatial data within the open public domain that can be useful to support community preparedness, resiliency, research, and more.
