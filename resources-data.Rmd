@@ -175,7 +175,7 @@ output:
 :   A gathering of climate observations from a wide range of monitoring networks available at multiple spatial/temporal resolutions, covering the period from 1895 to the present.
 
 [Global Shark Attack File](http://www.sharkattackfile.net/)
-:   A time-stamped semi-geolocated incident log of global shark attacks.
+:   A time-stamped semi-geolocated incident log of global shark attacks. See also [this link](https://www.sharks.org/global-shark-attack-file).
 
 [Socioeconomic Data and Applications Center (sedac)](https://sedac.ciesin.columbia.edu/)
 :   One of the Distributed Active Archive Centers (DAACs) in the Earth Observing System Data and Information System (EOSDIS) that focuses on human interactions in the environment.
