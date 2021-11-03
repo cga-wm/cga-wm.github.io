@@ -28,7 +28,7 @@ Use the search bar to filter videos based on search terms.
 [Accessing W&M VDI on a Mac](https://www.youtube.com/watch?v=lG43GtH1Ta4&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=11&t=0s)
 :   This video details how to access W&M Virtual Desktop Infrastructure (VDI) on a Mac or other Apple device, including a tutorial for right-clicking on a Mac.
 
-[Accessing W&M VDI in Windows](https://www.youtube.com/watch?v=pZh-fMoaV54&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=19&t=0s)
+[Accessing W&M VDI in Windows](https://youtu.be/pZh-fMoaV54)
 :   This video details how to access W&M's Virtual Desktop Infrastructure (VDI) using the VMWare Horizon Client on a Windows machine.
 
 [Activate Map Frame in Layout](https://www.youtube.com/watch?v=22C6Z1o7tx4&list=PLiOhBg8WdMaLx_cg5FmBEA0hUvnrsplKl&index=32&t=0s)
