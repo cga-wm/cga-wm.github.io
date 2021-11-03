@@ -4,6 +4,4 @@ title: "Calendar"
 
 ***
 
-Click [here](calendar/index.html) to open on a separate page.
-
-<iframe style="height:500px; width:100%; border:3px solid black;" src="calendar/index.html" id="frame"></iframe>
+<iframe style="height:500px; width:100%; border:3px solid black;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQe-IacuFNKizaNYXRK9WR5zTLkyiKw47dTJLzlI39hdYcQJO6JkRrt8VQ4VFOf3OaGKjsgciTO9oa/pubhtml?gid=358636143&single=true" id="frame"></iframe>
