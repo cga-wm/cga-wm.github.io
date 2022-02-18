@@ -445,6 +445,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
+    <script src="index_files/header-attrs-2.11/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -466,52 +467,74 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Applications in Remote Sensing</li>
 <li>Exercise B</li>
 </ul>
-<p><small><br />This presentation is written in <a href="https://revealjs.com">reveal.js</a>.<br />Click the link to learn more about how to navigate reveal.js presentations.</small></p>
+<p><small><br />This presentation is written in <a
+href="https://revealjs.com">reveal.js</a>.<br />Click the link to learn
+more about how to navigate reveal.js presentations.</small></p>
 </section>
 <section id="raster-data" class="slide level1">
 <h1>Raster Data</h1>
 <section data-background-image="images/rdat.png" data-background-size="contain">
-A spatial data model that represents the world as a regular grid of cells (sometimes called a raster image) where each cell is assigned a numeric value.
+A spatial data model that represents the world as a regular grid of
+cells (sometimes called a raster image) where each cell is assigned a
+numeric value.
 </section>
 </section>
 <section class="slide level1">
 
 <p>Recall:</p>
-<p>Cells (or pixels) have dimension (height and width), which corresponds to the area on the ground that each cell covers. This is referred to as the raster's <strong>resolution</strong>.</p>
+<p>Cells (or pixels) have dimension (height and width), which
+corresponds to the area on the ground that each cell covers. This is
+referred to as the raster’s <strong>resolution</strong>.</p>
 <div class="fragment">
 <p>Smaller cell size = higher resolution = greater detail</p>
-<p><small>(note: high resolution can lead to long process time because there are a lot of pixels to process)</small></p>
+<p><small>(note: high resolution can lead to long process time because
+there are a lot of pixels to process)</small></p>
 </div>
 </section>
 <section class="slide level1">
 
 <figure>
-<img src="images/image_001m.png" alt="Satellite image at 1 meter resolution (high res)" width="500" height="500" /><figcaption>Satellite image at <strong>1 meter</strong> resolution (high res)</figcaption>
+<img data-src="images/image_001m.png" width="500" height="500"
+alt="Satellite image at 1 meter resolution (high res)" />
+<figcaption aria-hidden="true">Satellite image at <strong>1
+meter</strong> resolution (high res)</figcaption>
 </figure>
 </section>
 <section class="slide level1">
 
 <figure>
-<img src="images/image_010m.png" alt="Satellite image at 10 meter resolution" width="500" height="500" /><figcaption>Satellite image at <strong>10 meter</strong> resolution</figcaption>
+<img data-src="images/image_010m.png" width="500" height="500"
+alt="Satellite image at 10 meter resolution" />
+<figcaption aria-hidden="true">Satellite image at <strong>10
+meter</strong> resolution</figcaption>
 </figure>
 </section>
 <section class="slide level1">
 
 <figure>
-<img src="images/image_100m.png" alt="Satellite image at 100 meter resolution" width="500" height="500" /><figcaption>Satellite image at <strong>100 meter</strong> resolution</figcaption>
+<img data-src="images/image_100m.png" width="500" height="500"
+alt="Satellite image at 100 meter resolution" />
+<figcaption aria-hidden="true">Satellite image at <strong>100
+meter</strong> resolution</figcaption>
 </figure>
 </section>
 <section class="slide level1">
 
 <figure>
-<img src="images/image_500m.png" alt="Satellite image at 500 meter resolution (low res)" width="500" height="500" /><figcaption>Satellite image at <strong>500 meter</strong> resolution (low res)</figcaption>
+<img data-src="images/image_500m.png" width="500" height="500"
+alt="Satellite image at 500 meter resolution (low res)" />
+<figcaption aria-hidden="true">Satellite image at <strong>500
+meter</strong> resolution (low res)</figcaption>
 </figure>
 </section>
 <section class="slide level1">
 
-<p>So, we see generalization of features and loss of detail as the pixel size increases.</p>
-<p><small>That's because you can only fit one value per pixel.</small></p>
-<p>Recall what you learned about data scale and map scale (same idea).</p>
+<p>So, we see generalization of features and loss of detail as the pixel
+size increases.</p>
+<p><small>That’s because you can only fit one value per
+pixel.</small></p>
+<p>Recall what you learned about data scale and map scale (same
+idea).</p>
 </section>
 <section class="slide level1">
 
@@ -526,7 +549,8 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>Let's start with a simple raster with three rows and three columns, given by the following:</p>
+<p>Let’s start with a simple raster with three rows and three columns,
+given by the following:</p>
 <p><br /></p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|}
@@ -571,7 +595,8 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>Calculations from two or more raster layers<br />are performed <em>pixel by pixel</em></p>
+<p>Calculations from two or more raster layers<br />are performed
+<em>pixel by pixel</em></p>
 <p><br /></p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|}
@@ -603,12 +628,14 @@ A spatial data model that represents the world as a regular grid of cells (somet
 \end{array}
 \]</span></p>
 <div class="fragment">
-<p><small>Notice that pixel location is important, especially if the raster layers represent the same area.</small></p>
+<p><small>Notice that pixel location is important, especially if the
+raster layers represent the same area.</small></p>
 </div>
 </section>
 <section class="slide level1">
 
-<p>These operations can be combined into algorithms<br />(i.e., <strong>raster algebra</strong>)</p>
+<p>These operations can be combined into algorithms<br />(i.e.,
+<strong>raster algebra</strong>)</p>
 <p><br /></p>
 <p><span class="math display">\[
 5 \times
@@ -641,7 +668,8 @@ A spatial data model that represents the world as a regular grid of cells (somet
 \end{array}
 \]</span></p>
 <div class="fragment">
-<p><small>Remember your order of operations from algebra class!</small></p>
+<p><small>Remember your order of operations from algebra
+class!</small></p>
 </div>
 </section>
 <section class="slide level1">
@@ -662,16 +690,19 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <ul>
 <li>Maximum: <span class="fragment">14</span></li>
 <li>Minimum: <span class="fragment">0</span></li>
-<li>Average: <span class="fragment">(3+5+14+8+6+5+9+0+2)/9 = 5.78</span></li>
+<li>Average: <span class="fragment">(3+5+14+8+6+5+9+0+2)/9 =
+5.78</span></li>
 </ul>
 </section>
 <section class="slide level1">
 
-<p>We don't always have to perform analysis<br />over an entire raster layer.</p>
+<p>We don’t always have to perform analysis<br />over an entire raster
+layer.</p>
 </section>
 <section class="slide level1">
 
-<p>Instead, we can perform focal analyses<br />(sometimes called kernel or neighborhood statistics).</p>
+<p>Instead, we can perform focal analyses<br />(sometimes called kernel
+or neighborhood statistics).</p>
 </section>
 <section class="slide level1">
 
@@ -692,11 +723,12 @@ A spatial data model that represents the world as a regular grid of cells (somet
 \hline
 \end{array}
 \]</span></p>
-<p>Let's say we have a raster with six rows and six columns.</p>
+<p>Let’s say we have a raster with six rows and six columns.</p>
 </section>
 <section class="slide level1">
 
-<p>Let's see if we can find focal minimum values<br /> in a <span class="math inline">\(3 \times 3\)</span> moving window.</p>
+<p>Let’s see if we can find focal minimum values<br /> in a <span
+class="math inline">\(3 \times 3\)</span> moving window.</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
@@ -738,11 +770,14 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>Then we look at the eight values that surround it.<br /><small>note that along the top and left edges there are no values, so we just ignore them</small></p>
+<p>Then we look at the eight values that surround it.<br /><small>note
+that along the top and left edges there are no values, so we just ignore
+them</small></p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-{\color{blue}4} &amp; {\color{red}9} &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+{\color{blue}4} &amp; {\color{red}9} &amp; 13 &amp; 6 &amp; 11 &amp; 7
+\\
 \hline
 {\color{red}7} &amp; {\color{red}2} &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
 \hline
@@ -762,7 +797,8 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-{\color{blue}4} &amp; {\color{red}9} &amp; 13 &amp; 6 &amp; 11 &amp; 7 \\
+{\color{blue}4} &amp; {\color{red}9} &amp; 13 &amp; 6 &amp; 11 &amp; 7
+\\
 \hline
 {\color{red}7} &amp; {\color{red}2} &amp; 1 &amp; 2 &amp; 8 &amp; 8 \\
 \hline
@@ -776,11 +812,13 @@ A spatial data model that represents the world as a regular grid of cells (somet
 \hline
 \end{array}
 \]</span></p>
-<p>Then we check these nine values (four in this edge case) and calculate their minimum (it's 2), which will replace the 4 in our output.</p>
+<p>Then we check these nine values (four in this edge case) and
+calculate their minimum (it’s 2), which will replace the 4 in our
+output.</p>
 </section>
 <section class="slide level1">
 
-<p>Let's skip down to the 2</p>
+<p>Let’s skip down to the 2</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
@@ -804,11 +842,14 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-{\color{red}4} &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; 6 &amp; 11 &amp; 7 \\
+{\color{red}4} &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; 6
+&amp; 11 &amp; 7 \\
 \hline
-{\color{red}7} &amp; {\color{blue}2} &amp; {\color{red}1} &amp; 2 &amp; 8 &amp; 8 \\
+{\color{red}7} &amp; {\color{blue}2} &amp; {\color{red}1} &amp; 2 &amp;
+8 &amp; 8 \\
 \hline
-{\color{red}9} &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; 6 &amp; 3 &amp; 9 \\
+{\color{red}9} &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; 6
+&amp; 3 &amp; 9 \\
 \hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
 \hline
@@ -822,15 +863,19 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>and we see the minimum of these 9 values is 1<br /> <small>1 will replace the 2 in our output</small></p>
+<p>and we see the minimum of these 9 values is 1<br /> <small>1 will
+replace the 2 in our output</small></p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-{\color{red}4} &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; 6 &amp; 11 &amp; 7 \\
+{\color{red}4} &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; 6
+&amp; 11 &amp; 7 \\
 \hline
-{\color{red}7} &amp; {\color{blue}2} &amp; {\color{red}1} &amp; 2 &amp; 8 &amp; 8 \\
+{\color{red}7} &amp; {\color{blue}2} &amp; {\color{red}1} &amp; 2 &amp;
+8 &amp; 8 \\
 \hline
-{\color{red}9} &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; 6 &amp; 3 &amp; 9 \\
+{\color{red}9} &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; 6
+&amp; 3 &amp; 9 \\
 \hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
 \hline
@@ -851,11 +896,14 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-4 &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; {\color{red}6} &amp; 11 &amp; 7 \\
+4 &amp; {\color{red}9} &amp; {\color{red}{13}} &amp; {\color{red}6}
+&amp; 11 &amp; 7 \\
 \hline
-7 &amp; {\color{red}2} &amp; {\color{blue}1} &amp; {\color{red}2} &amp; 8 &amp; 8 \\
+7 &amp; {\color{red}2} &amp; {\color{blue}1} &amp; {\color{red}2} &amp;
+8 &amp; 8 \\
 \hline
-9 &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; {\color{red}6} &amp; 3 &amp; 9 \\
+9 &amp; {\color{red}{12}} &amp; {\color{red}6} &amp; {\color{red}6}
+&amp; 3 &amp; 9 \\
 \hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
 \hline
@@ -872,11 +920,14 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-4 &amp; 9 &amp; {\color{red}{13}} &amp; {\color{red}6} &amp; {\color{red}{11}} &amp; 7 \\
+4 &amp; 9 &amp; {\color{red}{13}} &amp; {\color{red}6} &amp;
+{\color{red}{11}} &amp; 7 \\
 \hline
-7 &amp; 2 &amp; {\color{red}1} &amp; {\color{blue}2} &amp; {\color{red}8} &amp; 8 \\
+7 &amp; 2 &amp; {\color{red}1} &amp; {\color{blue}2} &amp;
+{\color{red}8} &amp; 8 \\
 \hline
-9 &amp; 12 &amp; {\color{red}6} &amp; {\color{red}6} &amp; {\color{red}3} &amp; 9 \\
+9 &amp; 12 &amp; {\color{red}6} &amp; {\color{red}6} &amp;
+{\color{red}3} &amp; 9 \\
 \hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
 \hline
@@ -893,11 +944,14 @@ A spatial data model that represents the world as a regular grid of cells (somet
 <p><span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-4 &amp; 9 &amp; 13 &amp; {\color{red}6} &amp; {\color{red}{11}} &amp; {\color{red}7} \\
+4 &amp; 9 &amp; 13 &amp; {\color{red}6} &amp; {\color{red}{11}} &amp;
+{\color{red}7} \\
 \hline
-7 &amp; 2 &amp; 1 &amp; {\color{red}2} &amp; {\color{blue}8} &amp; {\color{red}8} \\
+7 &amp; 2 &amp; 1 &amp; {\color{red}2} &amp; {\color{blue}8} &amp;
+{\color{red}8} \\
 \hline
-9 &amp; 12 &amp; 6 &amp; {\color{red}6} &amp; {\color{red}3} &amp; {\color{red}9} \\
+9 &amp; 12 &amp; 6 &amp; {\color{red}6} &amp; {\color{red}3} &amp;
+{\color{red}9} \\
 \hline
 2 &amp; 3 &amp; 1 &amp; 7 &amp; 1 &amp; 10 \\
 \hline
@@ -918,7 +972,8 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>until we've searched the <span class="math inline">\(3 \times 3\)</span> windows<br />around all our original values</p>
+<p>until we’ve searched the <span class="math inline">\(3 \times
+3\)</span> windows<br />around all our original values</p>
 </section>
 <section class="slide level1">
 
@@ -943,24 +998,33 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>The neighborhood analysis is important for understanding local influences<br /> <small>(e.g., crime statistics or pollution levels)</small></p>
+<p>The neighborhood analysis is important for understanding local
+influences<br /> <small>(e.g., crime statistics or pollution
+levels)</small></p>
 </section>
 <section class="slide level1">
 
-<p>The window size and shape may be adjusted as well as the statistics type (e.g., average, maximum, sum) to accommodate a wide variety of analyses.</p>
-<p><small>For more on focal statistics, see <a href="https://pro.arcgis.com/en/pro-app/tool-reference/image-analyst/how-focal-statistics-works.htm">here</a></small></p>
+<p>The window size and shape may be adjusted as well as the statistics
+type (e.g., average, maximum, sum) to accommodate a wide variety of
+analyses.</p>
+<p><small>For more on focal statistics, see <a
+href="https://pro.arcgis.com/en/pro-app/tool-reference/image-analyst/how-focal-statistics-works.htm">here</a></small></p>
 </section>
 <section class="slide level1">
 
-<p>Another important analysis that we can perform is the conditional (i.e., testing whether our pixel values meet certain conditions).</p>
+<p>Another important analysis that we can perform is the conditional
+(i.e., testing whether our pixel values meet certain conditions).</p>
 </section>
 <section class="slide level1">
 
-<p>The output of conditional analysis are <strong>boolean</strong> rasters (i.e, a raster with pixel values that are either true or false or, because it has to be numeric, 1 or 0, respectively).</p>
+<p>The output of conditional analysis are <strong>boolean</strong>
+rasters (i.e, a raster with pixel values that are either true or false
+or, because it has to be numeric, 1 or 0, respectively).</p>
 </section>
 <section class="slide level1">
 
-<p>Example conditional statement:<br /><em>&quot;Where pixel value is greater than 5&quot;</em></p>
+<p>Example conditional statement:<br /><em>“Where pixel value is greater
+than 5”</em></p>
 <p><br /></p>
 <p><span class="math display">\[
 \mathrm{Input} =
@@ -996,7 +1060,9 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </section>
 <section class="slide level1">
 
-<p>This makes it easy to mix conditionals with raster algebra because multiplying by zero always returns zero and multiplying by one always returns the same value.</p>
+<p>This makes it easy to mix conditionals with raster algebra because
+multiplying by zero always returns zero and multiplying by one always
+returns the same value.</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -1010,14 +1076,18 @@ A spatial data model that represents the world as a regular grid of cells (somet
 </tbody>
 </table>
 <div class="fragment">
-<p><small>note that, depending on your GIS, true and false values<br />may be assigned any value of your choice</small></p>
+<p><small>note that, depending on your GIS, true and false
+values<br />may be assigned any value of your choice</small></p>
 </div>
 </section>
 <section class="slide level1">
 
-<p>This can be represented in a VAT (value attribute table)<br /> <small>an attribute table that associates raster values to a class, group, category, or membership</small></p>
+<p>This can be represented in a VAT (value attribute table)<br />
+<small>an attribute table that associates raster values to a class,
+group, category, or membership</small></p>
 <figure>
-<img src="images/raster_vat.png" alt="Example raster VAT." /><figcaption>Example raster VAT.</figcaption>
+<img data-src="images/raster_vat.png" alt="Example raster VAT." />
+<figcaption aria-hidden="true">Example raster VAT.</figcaption>
 </figure>
 <!--
 IMAGE REFERENCE:
@@ -1049,7 +1119,8 @@ A =
 \end{array}
 \]</span></p>
 <p><br /></p>
-<p><em>Raster <span class="math inline">\(B\)</span> where raster <span class="math inline">\(A\)</span> is less than 10.</em></p>
+<p><em>Raster <span class="math inline">\(B\)</span> where raster <span
+class="math inline">\(A\)</span> is less than 10.</em></p>
 <div class="fragment">
 <p><span class="math display">\[
 \mathrm{Output} =
@@ -1065,16 +1136,20 @@ A =
 \]</span></p>
 </div>
 <div class="fragment">
-<p><br /> <small>(note: this example assumes 0 represents no data)</small></p>
+<p><br /> <small>(note: this example assumes 0 represents no
+data)</small></p>
 </div>
 </section>
 <section class="slide level1">
 
-<p>You can also change pixel values based on conditional statements in what is called <strong>reclassification</strong>.</p>
+<p>You can also change pixel values based on conditional statements in
+what is called <strong>reclassification</strong>.</p>
 </section>
 <section class="slide level1">
 
-<p>Reclassifications typically have an input raster and a reclassification table that describes conditional statements along with their associated new pixel values.</p>
+<p>Reclassifications typically have an input raster and a
+reclassification table that describes conditional statements along with
+their associated new pixel values.</p>
 </section>
 <section class="slide level1">
 
@@ -1088,20 +1163,24 @@ A =
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(p &lt; 5\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p &lt;
+5\)</span></td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(5 \le p &lt; 10\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(5 \le p &lt;
+10\)</span></td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(p \ge 10\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p \ge
+10\)</span></td>
 <td style="text-align: center;">3</td>
 </tr>
 </tbody>
 </table>
-<p><small>*where <span class="math inline">\(p\)</span> is pixel value</small></p>
+<p><small>*where <span class="math inline">\(p\)</span> is pixel
+value</small></p>
 <p><br /></p>
 <p><span class="math display">\[
 \mathrm{Input} =
@@ -1130,11 +1209,13 @@ A =
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nQ6nzC4kQYk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p><small> <br /><br /> Please follow along with the video demonstration.<br /> <i>Note the correction at 11:36 where the maximum should be 11.</i> </small></p>
+<p><small> <br /><br /> Please follow along with the video
+demonstration.<br /> <i>Note the correction at 11:36 where the maximum
+should be 11.</i> </small></p>
 </section>
 <section id="exercise-a" class="slide level1">
 <h1>Exercise A</h1>
-<p>For this assignment, you'll want to grab a pen and paper.</p>
+<p>For this assignment, you’ll want to grab a pen and paper.</p>
 </section>
 <section class="slide level1">
 
@@ -1173,10 +1254,16 @@ A =
 
 <p>Perform the following tasks in the given order:</p>
 <ol type="1">
-<li>Multiply <em>A</em> by one half (i.e., 1/2 <span class="math inline">\(\times\)</span> <em>A</em>)</li>
-<li>Multiply <em>B</em> by one third (i.e., 1/3 <span class="math inline">\(\times\)</span> <em>B</em>)</li>
-<li>Add the two results together (i.e., 1/2 <span class="math inline">\(\times\)</span> <em>A</em> + 1/3 <span class="math inline">\(\times\)</span> <em>B</em>)</li>
-<li>Subtract the result from <em>B</em> (i.e., <em>B</em> - 1/2 <span class="math inline">\(\times\)</span> <em>A</em> - 1/3 <span class="math inline">\(\times\)</span> <em>B</em>)</li>
+<li>Multiply <em>A</em> by one half (i.e., 1/2 <span
+class="math inline">\(\times\)</span> <em>A</em>)</li>
+<li>Multiply <em>B</em> by one third (i.e., 1/3 <span
+class="math inline">\(\times\)</span> <em>B</em>)</li>
+<li>Add the two results together (i.e., 1/2 <span
+class="math inline">\(\times\)</span> <em>A</em> + 1/3 <span
+class="math inline">\(\times\)</span> <em>B</em>)</li>
+<li>Subtract the result from <em>B</em> (i.e., <em>B</em> - 1/2 <span
+class="math inline">\(\times\)</span> <em>A</em> - 1/3 <span
+class="math inline">\(\times\)</span> <em>B</em>)</li>
 </ol>
 </section>
 <section class="slide level1">
@@ -1195,40 +1282,48 @@ A =
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(p &lt; 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p &lt;
+0\)</span></td>
 <td style="text-align: center;">4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(0 \le p &lt; 4\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(0 \le p &lt;
+4\)</span></td>
 <td style="text-align: center;">3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(4 \le p &lt; 8\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(4 \le p &lt;
+8\)</span></td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(8 \le p &lt; 12\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(8 \le p &lt;
+12\)</span></td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(p \ge 12\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p \ge
+12\)</span></td>
 <td style="text-align: center;">0</td>
 </tr>
 </tbody>
 </table>
-<p><small>*where <span class="math inline">\(p\)</span> is pixel value</small></p>
+<p><small>*where <span class="math inline">\(p\)</span> is pixel
+value</small></p>
 </section>
 <section class="slide level1">
 
 <ol start="6" type="1">
-<li>Apply the following conditional to the result, setting true values equal to 1 and false values equal to 0.</li>
+<li>Apply the following conditional to the result, setting true values
+equal to 1 and false values equal to 0.</li>
 </ol>
-<p><br /> <em>&quot;Where the result is less than 2.&quot;</em></p>
+<p><br /> <em>“Where the result is less than 2.”</em></p>
 </section>
 <section class="slide level1">
 
 <ol start="7" type="1">
-<li>What is the sum of all the resulting pixel values? <!-- ans. 8 --></li>
+<li>What is the sum of all the resulting pixel values?
+<!-- ans. 8 --></li>
 </ol>
 </section>
 <section class="slide level1">
@@ -1237,22 +1332,29 @@ A =
 <li>Perform a 3 by 3 focal minimum on <em>A</em></li>
 <li>Perform a 3 by 3 focal maximum on <em>B</em></li>
 <li>Subtract what you get in step (8) from what you got in step (9)</li>
-<li>What is the average pixel value of the results you got from step (10)? <!-- ans. 12.45 --></li>
+<li>What is the average pixel value of the results you got from step
+(10)? <!-- ans. 12.45 --></li>
 </ol>
 </section>
 <section id="applications" class="slide level1">
 <h1>Applications</h1>
-<p>There are numerous applications where raster analysis, raster algebra, and neighborhood statistics are useful. One such application is in the field of remote sensing or the science of obtaining information about objects or areas from a distance, typically from aircraft or satellites.</p>
+<p>There are numerous applications where raster analysis, raster
+algebra, and neighborhood statistics are useful. One such application is
+in the field of remote sensing or the science of obtaining information
+about objects or areas from a distance, typically from aircraft or
+satellites.</p>
 </section>
 <section class="slide level1">
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sx3skSTI2Co" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p><small> <br /><br /> Please watch this brief introduction to the field of remote sensing. </small></p>
+<p><small> <br /><br /> Please watch this brief introduction to the
+field of remote sensing. </small></p>
 </section>
 <section class="slide level1">
 
-<p>Please find the deliverables worksheet for<br />Lab 9 Exercises A and B on Blackboard</p>
+<p>Please find the deliverables worksheet for<br />Lab 9 Exercises A and
+B on Blackboard</p>
 </section>
     </div>
   </div>
@@ -1265,14 +1367,39 @@ A =
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: true,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 
